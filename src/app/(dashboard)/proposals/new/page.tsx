@@ -6,7 +6,7 @@ import {
   createProposalAction,
   generateWithAI,
 } from "@/modules/proposal/server/proposal.actions";
-import type { PaymentType } from "@/shared/types";
+import type { CommercialMode, PaymentType } from "@/shared/types";
 import { useLocale, useT } from "@/shared/i18n/context";
 import { validateProposalFields } from "@/shared/i18n/locale";
 
@@ -25,6 +25,7 @@ export default function NewProposalPage() {
     description: "",
     budget: 0,
     paymentType: "milestone_30_40_30" as PaymentType,
+    commercialMode: "fixed_price" as CommercialMode,
   });
 
   const forward = locale === "ar" ? "←" : "→";
@@ -57,6 +58,13 @@ export default function NewProposalPage() {
       setError(t.form.errors[localeError]);
       return false;
     }
+    if (
+      form.commercialMode === "fixed_price" &&
+      (!form.budget || form.budget <= 0)
+    ) {
+      setError(t.form.errors.budgetRequired);
+      return false;
+    }
     return true;
   };
 
@@ -73,6 +81,7 @@ export default function NewProposalPage() {
         description: form.description,
         budget: form.budget,
         paymentType: form.paymentType,
+        commercialMode: form.commercialMode,
       });
 
       if (!created.success) {
@@ -221,6 +230,35 @@ export default function NewProposalPage() {
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-900">
+              {t.form.commercialMode}
+            </label>
+            <div className="mt-2 space-y-2">
+              <label className="flex cursor-pointer items-start gap-3 rounded-lg border border-gray-200 p-3 hover:bg-gray-50 has-[:checked]:border-brand-500 has-[:checked]:bg-brand-50/30">
+                <input
+                  type="radio"
+                  name="commercialMode"
+                  value="fixed_price"
+                  checked={form.commercialMode === "fixed_price"}
+                  onChange={() => updateField("commercialMode", "fixed_price")}
+                  className="mt-0.5"
+                />
+                <span className="text-sm text-gray-800">{t.form.commercialModeFixed}</span>
+              </label>
+              <label className="flex cursor-pointer items-start gap-3 rounded-lg border border-gray-200 p-3 hover:bg-gray-50 has-[:checked]:border-brand-500 has-[:checked]:bg-brand-50/30">
+                <input
+                  type="radio"
+                  name="commercialMode"
+                  value="estimate_only"
+                  checked={form.commercialMode === "estimate_only"}
+                  onChange={() => updateField("commercialMode", "estimate_only")}
+                  className="mt-0.5"
+                />
+                <span className="text-sm text-gray-800">{t.form.commercialModeEstimate}</span>
+              </label>
+            </div>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-900">
               {t.form.budget}
             </label>
             <input
@@ -231,6 +269,9 @@ export default function NewProposalPage() {
               dir="ltr"
               className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
             />
+            {form.commercialMode === "estimate_only" && (
+              <p className="mt-1 text-xs text-gray-500">{t.form.budgetOptional}</p>
+            )}
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-900">

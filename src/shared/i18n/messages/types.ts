@@ -20,6 +20,10 @@ export type Messages = {
     descriptionHint: string;
     budget: string;
     budgetPlaceholder: string;
+    budgetOptional: string;
+    commercialMode: string;
+    commercialModeFixed: string;
+    commercialModeEstimate: string;
     paymentStructure: string;
     paymentOptions: {
       milestone_30_40_30: string;
@@ -35,12 +39,18 @@ export type Messages = {
     errors: {
       projectRequired: string;
       descriptionRequired: string;
+      budgetRequired: string;
       arabicOnly: string;
       englishOnly: string;
       generic: string;
     };
   };
   review: {
+    trustBanner: string;
+    reviewGatesTitle: string;
+    reviewGatesHint: string;
+    exportBlocked: string;
+    estimateOnlyBadge: string;
     guestBanner: string;
     guestLink: string;
     backToNew: string;
@@ -100,6 +110,7 @@ export type Messages = {
     feature1: string;
     feature2: string;
     feature3: string;
+    trustLine: string;
   };
   list: {
     title: string;
@@ -152,6 +163,7 @@ export type Messages = {
     preparedBy: string;
     proposalNumber: string;
     date: string;
+    validity: string;
     scopeOfWork: string;
     deliverables: string;
     timeline: string;
@@ -163,5 +175,17 @@ export type Messages = {
     amount: string;
     assumptions: string;
     exclusions: string;
+    estimateOnly: string;
+    estimatePending: string;
+    estimateIndicative: string;
+    tbd: string;
+    crNumber: string;
+    vatNumber: string;
+    phone: string;
+    email: string;
+    acceptance: string;
+    acceptanceText: string;
+    clientSignature: string;
+    providerSignature: string;
   };
 };

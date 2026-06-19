@@ -46,7 +46,7 @@ export default async function HomePage() {
           </Link>
         </div>
 
-        <div className="mx-auto mt-12 grid max-w-lg gap-3 text-sm text-gray-600 sm:grid-cols-3">
+        <div className="mx-auto mt-10 grid max-w-lg gap-3 text-sm text-gray-600 sm:grid-cols-3">
           <div className="rounded-xl border border-gray-100 bg-gray-50/50 px-4 py-3">
             {t.landing.feature1}
           </div>
@@ -57,6 +57,9 @@ export default async function HomePage() {
             {t.landing.feature3}
           </div>
         </div>
+        <p className="mx-auto mt-6 max-w-md text-sm text-gray-500">
+          {t.landing.trustLine}
+        </p>
       </main>
     </div>
   );

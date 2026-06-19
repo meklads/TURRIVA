@@ -17,6 +17,8 @@ export type PaymentType =
   | "fixed"
   | "custom";
 
+export type CommercialMode = "fixed_price" | "estimate_only";
+
 // --- User Input ---
 
 export interface ProposalInput {
@@ -25,6 +27,7 @@ export interface ProposalInput {
   description: string;
   budget: number;
   paymentType: PaymentType;
+  commercialMode: CommercialMode;
 }
 
 // --- AI Generated Structures ---
@@ -86,6 +89,7 @@ export interface Proposal {
   description: string;
   budget: number;
   paymentType: PaymentType;
+  commercialMode: CommercialMode;
   locale: "ar" | "en";
   introduction: string | null;
 
@@ -118,6 +122,7 @@ export interface CreateProposalInput {
   description: string;
   budget: number;
   paymentType: PaymentType;
+  commercialMode?: CommercialMode;
 }
 
 export interface UpdateFieldInput {

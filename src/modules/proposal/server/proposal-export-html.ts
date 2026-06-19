@@ -1,3 +1,4 @@
+import type { CommercialMode } from "@/shared/types";
 import type { Locale } from "@/shared/i18n/locale";
 import { getMessages } from "@/shared/i18n";
 import { localeDir, localeToBcp47 } from "@/shared/i18n/locale";
@@ -47,9 +48,14 @@ export function buildProposalExportHtml(
     projectName: string;
     clientName: string;
     companyName?: string;
+    crNumber?: string;
+    vatNumber?: string;
+    companyPhone?: string;
+    companyEmail?: string;
     proposalNumber?: string | null;
     introduction?: string | null;
     date: string;
+    validityDate: string;
     scopeItems: Record<string, unknown>[];
     deliverables: Record<string, unknown>[];
     timeline: Record<string, unknown> | null;
@@ -57,6 +63,7 @@ export function buildProposalExportHtml(
     assumptions: string[];
     exclusions: string[];
     budget: number;
+    commercialMode: CommercialMode;
   }
 ): string {
   const labels = getMessages(locale).export;
@@ -65,17 +72,55 @@ export function buildProposalExportHtml(
   const currency = locale === "ar" ? "ريال" : "SAR";
   const docTitle = locale === "ar" ? "عرض" : "Proposal";
 
+  const isEstimate = data.commercialMode === "estimate_only";
+  const displayTotal =
+    isEstimate && data.budget <= 0
+      ? labels.estimatePending
+      : `${formatAmount(data.budget, locale)} ${currency}`;
+
+  const companyMeta = [
+    data.companyName
+      ? `<div><strong>${escapeHtml(labels.preparedBy)}</strong> ${escapeHtml(data.companyName)}</div>`
+      : "",
+    data.crNumber
+      ? `<div><strong>${escapeHtml(labels.crNumber)}</strong> ${escapeHtml(data.crNumber)}</div>`
+      : "",
+    data.vatNumber
+      ? `<div><strong>${escapeHtml(labels.vatNumber)}</strong> ${escapeHtml(data.vatNumber)}</div>`
+      : "",
+    data.companyPhone
+      ? `<div><strong>${escapeHtml(labels.phone)}</strong> ${escapeHtml(data.companyPhone)}</div>`
+      : "",
+    data.companyEmail
+      ? `<div><strong>${escapeHtml(labels.email)}</strong> ${escapeHtml(data.companyEmail)}</div>`
+      : "",
+  ]
+    .filter(Boolean)
+    .join("");
+
   const paymentSchedule = Array.isArray(data.commercialTerms?.paymentSchedule)
     ? (data.commercialTerms.paymentSchedule as Record<string, unknown>[])
     : [];
 
+  const estimateBanner = isEstimate
+    ? `<p style="background:#fef3c7;border:1px solid #fcd34d;border-radius:8px;padding:12px 16px;font-size:13px;color:#92400e;margin:16px 0;">${escapeHtml(labels.estimateOnly)}</p>`
+    : "";
+
   const paymentRows = paymentSchedule
     .map(
-      (m) => `<tr>
+      (m) => {
+        const amount =
+          typeof m.amount === "number" && m.amount > 0
+            ? `${formatAmount(m.amount, locale)} ${currency}`
+            : isEstimate
+              ? labels.tbd
+              : `${formatAmount(m.amount, locale)} ${currency}`;
+        return `<tr>
         <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${escapeHtml(m.label)}</td>
         <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;">${escapeHtml(m.percentage)}%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:${dir === "rtl" ? "left" : "right"};">${formatAmount(m.amount, locale)} ${currency}</td>
-      </tr>`
+        <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:${dir === "rtl" ? "left" : "right"};">${escapeHtml(amount)}</td>
+      </tr>`;
+      }
     )
     .join("");
 
@@ -127,6 +172,8 @@ export function buildProposalExportHtml(
     .print-btn { position: fixed; top: 16px; ${printBtnPos}; padding: 10px 20px; background: #1a56db; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-size: 14px; z-index: 10; font-family: inherit; }
     ul { padding-inline-start: 20px; }
     li { margin: 6px 0; font-size: 13px; }
+    .signature { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .signature-box { border-top: 1px solid #d1d5db; padding-top: 8px; font-size: 13px; color: #4b5563; min-height: 64px; }
   </style>
 </head>
 <body>
@@ -134,9 +181,10 @@ export function buildProposalExportHtml(
   <h1>${escapeHtml(data.projectName)}</h1>
   <div class="meta">
     <div><strong>${escapeHtml(labels.preparedFor)}</strong> ${escapeHtml(data.clientName)}</div>
-    ${data.companyName ? `<div><strong>${escapeHtml(labels.preparedBy)}</strong> ${escapeHtml(data.companyName)}</div>` : ""}
+    ${companyMeta}
     ${data.proposalNumber ? `<div><strong>${escapeHtml(labels.proposalNumber)}</strong> ${escapeHtml(data.proposalNumber)}</div>` : ""}
     <div><strong>${escapeHtml(labels.date)}</strong> ${escapeHtml(data.date)}</div>
+    <div><strong>${escapeHtml(labels.validity)}</strong> ${escapeHtml(data.validityDate)}</div>
   </div>
   ${
     data.introduction
@@ -174,7 +222,8 @@ export function buildProposalExportHtml(
       : ""
   }
   <h2>${escapeHtml(labels.commercialTerms)}</h2>
-  <div class="total">${escapeHtml(labels.total)} ${formatAmount(data.budget, locale)} ${currency}</div>
+  ${estimateBanner}
+  <div class="total">${escapeHtml(labels.total)} ${escapeHtml(displayTotal)}${isEstimate && data.budget > 0 ? ` <span style="font-size:13px;font-weight:normal;color:#92400e;">(${escapeHtml(labels.estimateIndicative)})</span>` : ""}</div>
   <table>
     <thead><tr><th>${escapeHtml(labels.milestone)}</th><th>${escapeHtml(labels.percentage)}</th><th>${escapeHtml(labels.amount)}</th></tr></thead>
     <tbody>${paymentRows}</tbody>
@@ -189,6 +238,12 @@ export function buildProposalExportHtml(
       ? `<h2>${escapeHtml(labels.exclusions)}</h2><ul>${data.exclusions.map((e) => `<li>${escapeHtml(e)}</li>`).join("")}</ul>`
       : ""
   }
+  <h2>${escapeHtml(labels.acceptance)}</h2>
+  <p style="font-size:13px;color:#4b5563;">${escapeHtml(labels.acceptanceText)}</p>
+  <div class="signature">
+    <div class="signature-box"><strong>${escapeHtml(labels.clientSignature)}</strong><br>${escapeHtml(data.clientName)}</div>
+    <div class="signature-box"><strong>${escapeHtml(labels.providerSignature)}</strong><br>${escapeHtml(data.companyName ?? "—")}</div>
+  </div>
   <div class="footer"><p>${escapeHtml(labels.footer)}</p></div>
 </body>
 </html>`;

@@ -52,6 +52,7 @@ export async function createProposal(
       description: input.description,
       budget: input.budget,
       paymentType: input.paymentType,
+      commercialMode: input.commercialMode ?? "fixed_price",
       status: "draft",
       confidence: {
         scopeItems: "medium" as const,
@@ -86,6 +87,8 @@ export async function getProposal(id: string): Promise<Proposal | null> {
     description: p.description,
     budget: p.budget,
     paymentType: p.paymentType as Proposal["paymentType"],
+    commercialMode:
+      p.commercialMode === "estimate_only" ? "estimate_only" : "fixed_price",
     locale: p.locale === "en" ? "en" : "ar",
     introduction: p.introduction ?? null,
     scopeItems: (p.scopeItems ?? []) as unknown as ScopeItem[],
@@ -118,6 +121,7 @@ export async function updateProposalField(
     "description",
     "budget",
     "paymentType",
+    "commercialMode",
     "status",
     "introduction",
   ];
@@ -377,6 +381,7 @@ export async function duplicateProposal(
       description: source.description,
       budget: source.budget,
       paymentType: source.paymentType,
+      commercialMode: source.commercialMode ?? "fixed_price",
       status: "review",
       scopeItems: source.scopeItems ?? undefined,
       deliverables: source.deliverables ?? undefined,

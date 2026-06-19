@@ -46,16 +46,16 @@ export function ProposalReviewClient({
   const [shareUrl, setShareUrl] = useState<string | null>(null);
   const [toast, setToast] = useState<string | null>(null);
 
-  const sections = [
-    { id: "scopeItems", label: t.review.sections.scopeItems },
+  const REVIEW_GATES = [
     { id: "commercialTerms", label: t.review.sections.commercialTerms },
     { id: "assumptions", label: t.review.sections.assumptions },
     { id: "exclusions", label: t.review.sections.exclusions },
   ] as const;
 
   const reviewed = (proposal.reviewedSections ?? []) as string[];
-  const allReviewed = sections.every((s) => reviewed.includes(s.id));
+  const gatesComplete = REVIEW_GATES.every((s) => reviewed.includes(s.id));
   const confidence = proposal.confidence as unknown as Record<string, string> | null;
+  const isEstimateOnly = proposal.commercialMode === "estimate_only";
 
   const handleEdit = useCallback(
     async (field: string, value: unknown) => {
@@ -119,11 +119,18 @@ export function ProposalReviewClient({
       ...prev,
       reviewedSections: result.reviewedSections,
       status:
-        result.reviewedSections.length === sections.length ? "reviewed" : "review",
+        result.reviewedSections.length >= REVIEW_GATES.length &&
+        REVIEW_GATES.every((g) => result.reviewedSections.includes(g.id))
+          ? "reviewed"
+          : "review",
     }));
   };
 
   const handleExport = async () => {
+    if (!gatesComplete) {
+      alert(t.review.exportBlocked);
+      return;
+    }
     setExporting(true);
     const result = await exportPdfAction(proposal.id);
     if (result.success) {
@@ -177,9 +184,12 @@ export function ProposalReviewClient({
 
   const statusLabel = exported
     ? t.review.exported
-    : allReviewed
+    : gatesComplete
       ? t.review.allReviewed
-      : t.review.reviewedCount(reviewed.length, sections.length);
+      : t.review.reviewedCount(
+          REVIEW_GATES.filter((s) => reviewed.includes(s.id)).length,
+          REVIEW_GATES.length
+        );
 
   return (
     <div className="mx-auto max-w-3xl pb-24">
@@ -236,7 +246,8 @@ export function ProposalReviewClient({
             </button>
             <button
               onClick={handleExport}
-              disabled={exporting}
+              disabled={exporting || !gatesComplete}
+              title={!gatesComplete ? t.review.exportBlocked : undefined}
               className="rounded-lg bg-brand-500 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-600 disabled:opacity-50"
             >
               {exporting ? t.review.exporting : t.review.downloadPdf}
@@ -244,6 +255,14 @@ export function ProposalReviewClient({
           </div>
         </div>
         <p className="mt-2 text-xs text-gray-500">{statusLabel}</p>
+        {!gatesComplete && (
+          <p className="mt-1 text-xs text-amber-700">{t.review.reviewGatesHint}</p>
+        )}
+      </div>
+
+      <div className="mb-6 rounded-xl border border-brand-100 bg-brand-50/40 px-4 py-3 text-sm text-brand-900">
+        <p className="font-medium">{t.review.reviewGatesTitle}</p>
+        <p className="mt-1 text-brand-800/90">{t.review.trustBanner}</p>
       </div>
 
       {/* Title */}
@@ -342,6 +361,11 @@ export function ProposalReviewClient({
         >
           {proposal.commercialTerms && (
             <div className="space-y-4">
+              {isEstimateOnly && (
+                <span className="inline-block rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-medium text-amber-900">
+                  {t.review.estimateOnlyBadge}
+                </span>
+              )}
               <div className="text-lg font-semibold tabular-nums">
                 {t.review.total}{" "}
                 <span
@@ -622,11 +646,14 @@ export function ProposalReviewClient({
       <div className="sticky bottom-0 -mx-4 mt-8 border-t border-gray-100 bg-white/95 px-4 py-4 backdrop-blur">
         <div className="flex items-center justify-between">
           <span className="text-sm text-gray-500">
-            {t.review.reviewedCount(reviewed.length, sections.length)}
+            {t.review.reviewedCount(
+              REVIEW_GATES.filter((s) => reviewed.includes(s.id)).length,
+              REVIEW_GATES.length
+            )}
           </span>
           <button
             onClick={handleExport}
-            disabled={exporting}
+            disabled={exporting || !gatesComplete}
             className="rounded-lg bg-brand-500 px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-600 disabled:opacity-50"
           >
             {exporting ? t.review.exporting : t.review.downloadPdf}

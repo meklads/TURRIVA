@@ -95,8 +95,10 @@ model Proposal {
   description String   @default("")
 
   /// USER INPUT — Step 2
-  budget      Float    @default(0)
-  paymentType String   @default("milestone_30_40_30")
+  budget         Float   @default(0)
+  paymentType    String  @default("milestone_30_40_30")
+  /// fixed_price | estimate_only
+  commercialMode String  @default("fixed_price")
 
   /// AI GENERATED OUTPUT (JSON)
   scopeItems      Json? /// ScopeItem[]
