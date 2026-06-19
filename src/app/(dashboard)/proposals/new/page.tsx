@@ -39,21 +39,37 @@ export default function NewProposalPage() {
     setProgress(10);
 
     try {
-      const { id } = await createProposalAction({
+      const created = await createProposalAction({
         projectName: form.projectName,
         clientName: form.clientName,
         description: form.description,
         budget: form.budget,
         paymentType: form.paymentType,
       });
+
+      if (!created.success) {
+        throw new Error(
+          created.error ?? "Could not save proposal. Check database connection."
+        );
+      }
+
       setProgress(40);
 
-      await generateWithAI(id);
-      setProgress(100);
+      const generated = await generateWithAI(created.id);
+      if (!generated.success) {
+        throw new Error(
+          generated.error ?? "AI generation failed. Please try again."
+        );
+      }
 
-      router.push(`/proposals/${id}`);
-    } catch {
-      setError("Something went wrong. Please try again.");
+      setProgress(100);
+      router.push(`/proposals/${created.id}`);
+    } catch (err) {
+      const message =
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again.";
+      setError(message);
       setStep("commercial");
     }
   };

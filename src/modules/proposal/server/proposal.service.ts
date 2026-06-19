@@ -14,11 +14,18 @@ import type {
 export async function createProposal(
   input: CreateProposalInput
 ): Promise<{ id: string }> {
-  const session = await getSession();
+  let userId: string | null = null;
+  try {
+    const session = await getSession();
+    userId = session?.user?.id ?? null;
+  } catch {
+    // Guest flow — auth not required to create a proposal
+    userId = null;
+  }
 
   const proposal = await db.proposal.create({
     data: {
-      userId: session?.user?.id ?? null,
+      userId: userId ?? null,
       projectName: input.projectName,
       clientName: input.clientName,
       description: input.description,

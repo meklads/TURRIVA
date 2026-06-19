@@ -29,7 +29,20 @@ npx prisma db push
 npm run build
 ```
 
-## Start Command
+## Start Command (Coolify / Docker)
 ```bash
 npm start
 ```
+This runs `prisma db push` automatically before starting the server.
+
+## Health Check
+After deploy, verify database is connected:
+```
+GET /api/health
+```
+Expected: `{ "ok": true, "db": true, "tables": true }`
+
+## Coolify Settings
+- **Build Command:** `npm ci && npm run build`
+- **Start Command:** `npm start` (default)
+- **Port:** 3000

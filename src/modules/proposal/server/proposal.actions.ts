@@ -10,15 +10,31 @@ import {
 import type { CreateProposalInput } from "@/shared/types";
 import { getSession } from "@/modules/auth/server/session";
 
+function actionError(error: unknown, fallback: string) {
+  const message = error instanceof Error ? error.message : fallback;
+  console.error(`[proposal.action] ${fallback}:`, error);
+  return { success: false as const, error: message };
+}
+
 // SA1
 export async function createProposalAction(input: CreateProposalInput) {
-  return createProposalSvc(input);
+  try {
+    const result = await createProposalSvc(input);
+    return { success: true as const, id: result.id };
+  } catch (error) {
+    return actionError(error, "Failed to create proposal");
+  }
 }
 
 // SA2
 export async function generateWithAI(proposalId: string) {
-  const { generateProposalContent } = await import("./proposal-ai.service");
-  return generateProposalContent(proposalId);
+  try {
+    const { generateProposalContent } = await import("./proposal-ai.service");
+    await generateProposalContent(proposalId);
+    return { success: true as const, id: proposalId };
+  } catch (error) {
+    return actionError(error, "Failed to generate proposal with AI");
+  }
 }
 
 // SA3
