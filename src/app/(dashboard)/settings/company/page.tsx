@@ -3,6 +3,8 @@ import { db } from "@/shared/lib/db";
 import { redirect } from "next/navigation";
 import { CompanySettingsForm } from "@/modules/company/components/company-settings-form";
 
+export const dynamic = "force-dynamic";
+
 export default async function CompanySettingsPage() {
   const session = await getSession();
   if (!session?.user?.id) redirect("/login");

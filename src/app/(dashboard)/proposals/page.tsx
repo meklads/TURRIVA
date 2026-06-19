@@ -1,5 +1,7 @@
-import { listProposalsQuery } from "@/modules/proposal/server/proposal.actions";
+import { listProposalsQuery } from "@/modules/proposal/server/proposal.queries";
 import Link from "next/link";
+
+export const dynamic = "force-dynamic";
 
 export default async function ProposalsListPage() {
   const proposals = await listProposalsQuery();

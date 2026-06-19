@@ -23,21 +23,27 @@ type Env = z.infer<typeof envSchema>;
 
 function parseEnv(): Env {
   const parsed = envSchema.safeParse(process.env);
+  const isBuildTime =
+    process.env.NEXT_PHASE === "phase-production-build" ||
+    process.env.npm_lifecycle_event === "build";
 
   if (!parsed.success) {
     console.error(
       "❌ Invalid environment variables:",
       JSON.stringify(parsed.error.flatten().fieldErrors, null, 2)
     );
-    if (process.env.NODE_ENV === "production") {
+    // During Docker/Coolify build, env vars are injected at runtime — not build time
+    if (process.env.NODE_ENV === "production" && !isBuildTime) {
       throw new Error("Invalid environment variables");
     }
     return {
-      DATABASE_URL: process.env.DATABASE_URL ?? "postgresql://localhost:5432/postgres",
-      AUTH_SECRET: process.env.AUTH_SECRET ?? "dev-secret-not-for-prod",
+      DATABASE_URL:
+        process.env.DATABASE_URL ?? "postgresql://localhost:5432/postgres",
+      AUTH_SECRET: process.env.AUTH_SECRET ?? "build-time-placeholder-secret",
       AUTH_URL: process.env.AUTH_URL ?? "http://localhost:3000",
       OPENAI_API_KEY: process.env.OPENAI_API_KEY ?? "",
-      NEXT_PUBLIC_APP_URL: "http://localhost:3000",
+      NEXT_PUBLIC_APP_URL:
+        process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
       NEXT_PUBLIC_APP_NAME: "Saudi Proposal OS",
     };
   }

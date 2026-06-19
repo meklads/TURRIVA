@@ -1,8 +1,10 @@
-import { getProposalQuery } from "@/modules/proposal/server/proposal.actions";
+import { getProposalQuery } from "@/modules/proposal/server/proposal.queries";
 import { ProposalReviewClient } from "@/modules/proposal/components/proposal-review-client";
 import { getSession } from "@/modules/auth/server/session";
 import { db } from "@/shared/lib/db";
 import { notFound } from "next/navigation";
+
+export const dynamic = "force-dynamic";
 
 export default async function ProposalReviewPage({
   params,

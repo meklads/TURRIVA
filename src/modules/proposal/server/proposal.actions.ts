@@ -2,15 +2,11 @@
 
 import {
   createProposal as createProposalSvc,
-  getProposal,
   updateProposalField,
   addProposalItem,
   removeProposalItem,
   markSectionReviewed,
-  listUserProposals,
 } from "./proposal.service";
-import { generateProposalContent } from "./proposal-ai.service";
-import { exportProposalAsPdf } from "./proposal-pdf.service";
 import type { CreateProposalInput } from "@/shared/types";
 import { getSession } from "@/modules/auth/server/session";
 
@@ -21,6 +17,7 @@ export async function createProposalAction(input: CreateProposalInput) {
 
 // SA2
 export async function generateWithAI(proposalId: string) {
+  const { generateProposalContent } = await import("./proposal-ai.service");
   return generateProposalContent(proposalId);
 }
 
@@ -70,18 +67,8 @@ export async function markReviewedAction(
 
 // SA8
 export async function exportPdfAction(proposalId: string) {
+  const { exportProposalAsPdf } = await import("./proposal-pdf.service");
   return exportProposalAsPdf(proposalId);
-}
-
-// Query (not server action, but exported for server components)
-export async function getProposalQuery(id: string) {
-  return getProposal(id);
-}
-
-export async function listProposalsQuery() {
-  const session = await getSession();
-  if (!session?.user?.id) return [];
-  return listUserProposals(session.user.id);
 }
 
 export async function claimProposalAction(proposalId: string) {
