@@ -6,22 +6,27 @@ echo " Saudi Proposal OS"
 echo " PORT=$PORT"
 echo "=========================================="
 
-# Never block app startup — Bad Gateway happens when the container exits here.
+# Sync once before accepting traffic (adds new columns e.g. Proposal.locale)
 if [ -n "$DATABASE_URL" ]; then
-  echo "→ Database schema setup (background)..."
-  (
-    n=1
-    while [ "$n" -le 15 ]; do
-      if ./node_modules/.bin/prisma db push --skip-generate 2>&1; then
-        echo "→ Database schema ready ✓"
-        exit 0
-      fi
-      echo "→ DB retry $n/15..."
-      sleep 2
-      n=$((n + 1))
-    done
-    echo "⚠ Database setup failed — app is running but DB features need DATABASE_URL"
-  ) &
+  echo "→ Database schema setup..."
+  if ./node_modules/.bin/prisma db push --skip-generate 2>&1; then
+    echo "→ Database schema ready ✓"
+  else
+    echo "→ DB push failed — retrying in background..."
+    (
+      n=1
+      while [ "$n" -le 15 ]; do
+        sleep 2
+        if ./node_modules/.bin/prisma db push --skip-generate 2>&1; then
+          echo "→ Database schema ready ✓ (background)"
+          exit 0
+        fi
+        echo "→ DB retry $n/15..."
+        n=$((n + 1))
+      done
+      echo "⚠ Database setup failed — check DATABASE_URL"
+    ) &
+  fi
 else
   echo "⚠ DATABASE_URL is not set — add PostgreSQL in Coolify environment"
 fi

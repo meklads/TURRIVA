@@ -1,6 +1,7 @@
 "use client";
 
-import { createContext, useContext } from "react";
+import { createContext, useContext, useMemo } from "react";
+import { getMessages } from "@/shared/i18n";
 import type { Messages } from "./messages/types";
 import type { Locale } from "./locale";
 
@@ -11,15 +12,21 @@ interface LocaleContextValue {
 
 const LocaleContext = createContext<LocaleContextValue | null>(null);
 
+/** Client-only: messages may contain functions and cannot cross the RSC boundary. */
 export function LocaleProvider({
   locale,
-  messages,
   children,
-}: LocaleContextValue & { children: React.ReactNode }) {
+}: {
+  locale: Locale;
+  children: React.ReactNode;
+}) {
+  const value = useMemo(
+    () => ({ locale, messages: getMessages(locale) }),
+    [locale]
+  );
+
   return (
-    <LocaleContext.Provider value={{ locale, messages }}>
-      {children}
-    </LocaleContext.Provider>
+    <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>
   );
 }
 
