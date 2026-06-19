@@ -92,10 +92,14 @@ export function ProposalReviewClient({ proposal: initial, companyName, isGuest }
     setExporting(true);
     try {
       const result = await exportPdfAction(proposal.id);
+      if (!result?.url) {
+        throw new Error("Export failed");
+      }
       setExported(true);
-      window.open(result.url, "_blank");
+      window.open(result.url, "_blank", "noopener,noreferrer");
     } catch {
-      alert("Failed to export. Please try again.");
+      // Fallback: open export route directly
+      window.open(`/api/proposals/${proposal.id}/export/pdf`, "_blank", "noopener,noreferrer");
     }
     setExporting(false);
   };
