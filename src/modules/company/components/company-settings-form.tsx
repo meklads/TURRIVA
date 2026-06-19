@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import type { CompanyProfile } from "@prisma/client";
-import { t } from "@/shared/i18n";
+import { useT } from "@/shared/i18n/context";
 
 interface Props {
   userId: string;
@@ -11,6 +11,7 @@ interface Props {
 }
 
 export function CompanySettingsForm({ userId, initial }: Props) {
+  const t = useT();
   const router = useRouter();
   const [saving, setSaving] = useState(false);
   const [form, setForm] = useState({

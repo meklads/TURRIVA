@@ -1,11 +1,17 @@
 "use client";
 
 import { signIn } from "next-auth/react";
-import { t } from "@/shared/i18n";
+import { useT } from "@/shared/i18n/context";
+import { LocaleSwitcher } from "@/shared/i18n/locale-switcher";
 
 export default function LoginPage() {
+  const t = useT();
+
   return (
-    <div className="flex min-h-screen items-center justify-center px-4">
+    <div className="relative flex min-h-screen items-center justify-center px-4">
+      <div className="absolute end-4 top-4">
+        <LocaleSwitcher />
+      </div>
       <div className="w-full max-w-sm">
         <h1 className="text-2xl font-bold text-gray-900">{t.login.title}</h1>
         <p className="mt-1 text-sm text-gray-500">{t.login.subtitle}</p>

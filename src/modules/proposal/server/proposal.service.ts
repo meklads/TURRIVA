@@ -1,5 +1,11 @@
 import { db } from "@/shared/lib/db";
 import { getSession } from "@/modules/auth/server/session";
+import { getLocale } from "@/shared/i18n/server";
+import {
+  validateProposalFields,
+  type Locale,
+} from "@/shared/i18n/locale";
+import { getMessages } from "@/shared/i18n";
 import type {
   CreateProposalInput,
   Proposal,
@@ -19,13 +25,27 @@ export async function createProposal(
     const session = await getSession();
     userId = session?.user?.id ?? null;
   } catch {
-    // Guest flow — auth not required to create a proposal
     userId = null;
+  }
+
+  const locale = await getLocale();
+  const localeError = validateProposalFields(
+    {
+      projectName: input.projectName,
+      clientName: input.clientName,
+      description: input.description,
+    },
+    locale
+  );
+  if (localeError) {
+    const t = getMessages(locale);
+    throw new Error(t.form.errors[localeError]);
   }
 
   const proposal = await db.proposal.create({
     data: {
       userId: userId ?? null,
+      locale,
       projectName: input.projectName,
       clientName: input.clientName,
       description: input.description,
@@ -65,6 +85,7 @@ export async function getProposal(id: string): Promise<Proposal | null> {
     description: p.description,
     budget: p.budget,
     paymentType: p.paymentType as Proposal["paymentType"],
+    locale: p.locale === "en" ? "en" : "ar",
     scopeItems: (p.scopeItems ?? []) as unknown as ScopeItem[],
     deliverables: (p.deliverables ?? []) as unknown as Deliverable[],
     timeline: p.timeline as unknown as Timeline | null,

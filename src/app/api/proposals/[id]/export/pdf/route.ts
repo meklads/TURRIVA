@@ -6,6 +6,8 @@ import {
   asStringList,
   buildProposalExportHtml,
 } from "@/modules/proposal/server/proposal-export-html";
+import type { Locale } from "@/shared/i18n/locale";
+import { localeToBcp47 } from "@/shared/i18n/locale";
 
 export const dynamic = "force-dynamic";
 
@@ -31,12 +33,14 @@ export async function GET(
       companyName = profile?.companyName ?? "";
     }
 
-    const html = buildProposalExportHtml({
+    const locale: Locale = proposal.locale === "en" ? "en" : "ar";
+
+    const html = buildProposalExportHtml(locale, {
       projectName: proposal.projectName,
       clientName: proposal.clientName,
       companyName,
       proposalNumber: proposal.proposalNumber,
-      date: new Date().toLocaleDateString("ar-SA", {
+      date: new Date().toLocaleDateString(localeToBcp47(locale), {
         year: "numeric",
         month: "long",
         day: "numeric",

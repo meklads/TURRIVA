@@ -83,6 +83,9 @@ model Proposal {
   status      String   @default("draft") /// draft | generating | review | reviewed | exported
   version     Int      @default(1)
 
+  /// Document language at creation — ar | en
+  locale      String   @default("ar")
+
   /// USER INPUT — Step 1
   projectName String   @default("")
   clientName  String   @default("")

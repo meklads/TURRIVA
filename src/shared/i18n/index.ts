@@ -1,13 +1,16 @@
 import { ar } from "./messages/ar";
+import { en } from "./messages/en";
+import type { Messages } from "./messages/types";
+import type { Locale } from "./locale";
+export { defaultLocale, type Locale } from "./locale";
 
-/** Default locale: Arabic. English toggle in Phase 3. */
-export type Locale = "ar" | "en";
+const catalogs: Record<Locale, Messages> = { ar, en };
 
-export const defaultLocale: Locale = "ar";
-
-export function getMessages(_locale: Locale = defaultLocale) {
-  return ar;
+export function getMessages(locale: Locale): Messages {
+  return catalogs[locale];
 }
 
-/** Shorthand for components */
+/** @deprecated Use getMessages(locale) in server components or useT() in client */
 export const t = ar;
+
+export type { Messages };

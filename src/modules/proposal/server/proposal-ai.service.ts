@@ -1,4 +1,5 @@
 import { db } from "@/shared/lib/db";
+import type { Locale } from "@/shared/i18n/locale";
 import OpenAI from "openai";
 
 const openai = process.env.OPENAI_API_KEY
@@ -13,8 +14,15 @@ type MockStage =
   | "intro"
   | "timeline";
 
-const ARABIC_OUTPUT =
-  "Write all user-facing text in Arabic (Saudi dialect/formal business Arabic). Keep JSON keys in English.";
+function proposalLocale(raw: string | null | undefined): Locale {
+  return raw === "en" ? "en" : "ar";
+}
+
+function languageDirective(locale: Locale): string {
+  return locale === "ar"
+    ? "Write ALL user-facing text in Arabic only (formal Saudi business Arabic). Do NOT use any English words. Keep JSON keys in English."
+    : "Write ALL user-facing text in English only. Do NOT use any Arabic words or characters. Keep JSON keys in English.";
+}
 
 export async function regenerateSection(
   proposalId: string,
@@ -22,6 +30,9 @@ export async function regenerateSection(
 ): Promise<{ section: string; success: boolean }> {
   const proposal = await db.proposal.findUnique({ where: { id: proposalId } });
   if (!proposal) throw new Error("Proposal not found");
+
+  const locale = proposalLocale(proposal.locale);
+  const lang = languageDirective(locale);
 
   const context = `
 Project: ${proposal.projectName}
@@ -35,9 +46,10 @@ Payment: ${proposal.paymentType}
 
   if (section === "scopeItems") {
     const scopeResult = await callAI(
+      locale,
       "scope",
       "You are a scope of work writer for Saudi construction projects.",
-      `Generate scope items for:\n\n${context}\n\n${ARABIC_OUTPUT}\n\nRespond in JSON: { "scopeItems": [{ "id": "unique", "title": "string", "description": "string" }], "deliverables": [{ "id": "unique", "name": "string", "description": "string" }] }`
+      `Generate scope items for:\n\n${context}\n\n${lang}\n\nRespond in JSON: { "scopeItems": [{ "id": "unique", "title": "string", "description": "string" }], "deliverables": [{ "id": "unique", "name": "string", "description": "string" }] }`
     );
     const parsed = parseJson<{ scopeItems?: any[]; deliverables?: any[] }>(
       scopeResult,
@@ -52,13 +64,15 @@ Payment: ${proposal.paymentType}
     });
   } else if (section === "commercialTerms") {
     const commercialResult = await callAI(
+      locale,
       "commercial",
       "You are a commercial terms specialist for Saudi contracts.",
-      `Generate commercial terms:\n\nBudget: SAR ${proposal.budget}\nPayment: ${proposal.paymentType}\n\n${ARABIC_OUTPUT}\n\nRespond in JSON: { "totalValue": number, "paymentSchedule": [{ "percentage": number, "label": "string" }], "warrantyPeriod": "string", "retention": number | null }`
+      `Generate commercial terms:\n\nBudget: SAR ${proposal.budget}\nPayment: ${proposal.paymentType}\n\n${lang}\n\nRespond in JSON: { "totalValue": number, "paymentSchedule": [{ "percentage": number, "label": "string" }], "warrantyPeriod": "string", "retention": number | null }`
     );
     const commercialTerms = buildCommercialTerms(
       parseJson(commercialResult, {}),
-      proposal.budget
+      proposal.budget,
+      locale
     );
     await db.proposal.update({
       where: { id: proposalId },
@@ -66,9 +80,10 @@ Payment: ${proposal.paymentType}
     });
   } else if (section === "assumptions" || section === "exclusions") {
     const result = await callAI(
+      locale,
       "assumptions",
       "You are a commercial terms specialist for Saudi contracts.",
-      `Generate assumptions and exclusions:\n\nScope: ${scopeItems.map((s: any) => s.title).join(", ")}\n\n${ARABIC_OUTPUT}\n\nRespond in JSON: { "assumptions": ["string"], "exclusions": ["string"] }`
+      `Generate assumptions and exclusions:\n\nScope: ${scopeItems.map((s: any) => s.title).join(", ")}\n\n${lang}\n\nRespond in JSON: { "assumptions": ["string"], "exclusions": ["string"] }`
     );
     const parsed = parseJson<{ assumptions?: string[]; exclusions?: string[] }>(
       result,
@@ -90,6 +105,10 @@ export async function generateProposalContent(proposalId: string) {
   const proposal = await db.proposal.findUnique({ where: { id: proposalId } });
   if (!proposal) throw new Error("Proposal not found");
 
+  const locale = proposalLocale(proposal.locale);
+  const lang = languageDirective(locale);
+  const defaults = localeDefaults(locale);
+
   await db.proposal.update({
     where: { id: proposalId },
     data: { status: "generating" },
@@ -104,18 +123,18 @@ Budget: SAR ${proposal.budget}
 Payment: ${proposal.paymentType}
 `;
 
-    // === Stage 1: Project Analysis ===
     const analysis = await callAI(
+      locale,
       "analysis",
       "You are a proposal analyst for the Saudi construction industry.",
-      `Analyze this Saudi construction project:\n\n${context}`
+      `Analyze this Saudi construction project:\n\n${context}\n\n${lang}`
     );
 
-    // === Stage 2: Scope Generation ===
     const scopeResult = await callAI(
+      locale,
       "scope",
       "You are a scope of work writer for Saudi construction projects.",
-      `Generate scope items for:\n\n${context}\nAnalysis: ${analysis}\n\n${ARABIC_OUTPUT}\n\nRespond in JSON: { "scopeItems": [{ "id": "unique", "title": "string", "description": "string" }], "deliverables": [{ "id": "unique", "name": "string", "description": "string" }] }`
+      `Generate scope items for:\n\n${context}\nAnalysis: ${analysis}\n\n${lang}\n\nRespond in JSON: { "scopeItems": [{ "id": "unique", "title": "string", "description": "string" }], "deliverables": [{ "id": "unique", "name": "string", "description": "string" }] }`
     );
 
     let scopeItems: any[] = [];
@@ -127,51 +146,41 @@ Payment: ${proposal.paymentType}
     scopeItems = scopeParsed.scopeItems ?? [];
     deliverables = scopeParsed.deliverables ?? [];
     if (scopeItems.length === 0) {
-      scopeItems = [
-        { id: "1", title: "تنفيذ المشروع", description: proposal.description },
-      ];
+      scopeItems = [{ id: "1", ...defaults.fallbackScopeItem(proposal.description) }];
     }
 
-    // === Stage 3: Commercial Terms ===
     const commercialResult = await callAI(
+      locale,
       "commercial",
       "You are a commercial terms specialist for Saudi contracts.",
-      `Generate commercial terms:\n\nBudget: SAR ${proposal.budget}\nPayment: ${proposal.paymentType}\nScope: ${scopeItems.map((s: any) => s.title).join(", ")}\n\n${ARABIC_OUTPUT}\n\nRespond in JSON: { "totalValue": number, "paymentSchedule": [{ "percentage": number, "label": "string" }], "warrantyPeriod": "string", "retention": number | null }`
+      `Generate commercial terms:\n\nBudget: SAR ${proposal.budget}\nPayment: ${proposal.paymentType}\nScope: ${scopeItems.map((s: any) => s.title).join(", ")}\n\n${lang}\n\nRespond in JSON: { "totalValue": number, "paymentSchedule": [{ "percentage": number, "label": "string" }], "warrantyPeriod": "string", "retention": number | null }`
     );
 
     const commercialTerms = buildCommercialTerms(
       parseJson(commercialResult, {}),
-      proposal.budget
+      proposal.budget,
+      locale
     );
 
-    // Assumptions & Exclusions
     const assumptionsResult = await callAI(
+      locale,
       "assumptions",
       "You are a commercial terms specialist for Saudi contracts.",
-      `Generate assumptions and exclusions:\n\nScope: ${scopeItems.map((s: any) => s.title).join(", ")}\n\n${ARABIC_OUTPUT}\n\nRespond in JSON: { "assumptions": ["string"], "exclusions": ["string"] }`
+      `Generate assumptions and exclusions:\n\nScope: ${scopeItems.map((s: any) => s.title).join(", ")}\n\n${lang}\n\nRespond in JSON: { "assumptions": ["string"], "exclusions": ["string"] }`
     );
 
     const legalParsed = parseJson<{ assumptions?: string[]; exclusions?: string[] }>(
       assumptionsResult,
       {}
     );
-    const assumptions: string[] =
-      legalParsed.assumptions ?? [
-        "يوفر العميل الوصول للموقع خلال ساعات العمل",
-        "جميع المواد متوفرة في السوق السعودي",
-      ];
-    const exclusions: string[] =
-      legalParsed.exclusions ?? [
-        "التعديلات الإنشائية على الجدران",
-        "أعمال تنسيق الحدائق الخارجية",
-        "موافقات الدفاع المدني والجهات الحكومية",
-      ];
+    const assumptions: string[] = legalParsed.assumptions ?? defaults.assumptions;
+    const exclusions: string[] = legalParsed.exclusions ?? defaults.exclusions;
 
-    // === Stage 4: Timeline ===
     const timelineResult = await callAI(
+      locale,
       "timeline",
       "You are a project scheduler for Saudi construction.",
-      `Estimate timeline for:\n\n${context}\nScope: ${scopeItems.map((s: any) => s.title).join(", ")}\n\n${ARABIC_OUTPUT}\n\nRespond in JSON: { "duration": "string", "startDate": null, "endDate": null, "milestones": [{ "name": "string", "date": null }] }`
+      `Estimate timeline for:\n\n${context}\nScope: ${scopeItems.map((s: any) => s.title).join(", ")}\n\n${lang}\n\nRespond in JSON: { "duration": "string", "startDate": null, "endDate": null, "milestones": [{ "name": "string", "date": null }] }`
     );
 
     const timelineParsed = parseJson<{
@@ -181,21 +190,17 @@ Payment: ${proposal.paymentType}
       milestones?: { name: string; date: string | null }[];
     }>(timelineResult, {});
     const timeline = {
-      duration: timelineParsed.duration ?? "6-8 أسابيع",
+      duration: timelineParsed.duration ?? defaults.timeline.duration,
       startDate: timelineParsed.startDate ?? null,
       endDate: timelineParsed.endDate ?? null,
-      milestones: timelineParsed.milestones ?? [
-        { name: "بدء المشروع", date: null },
-        { name: "مراجعة منتصف المشروع", date: null },
-        { name: "التسليم النهائي", date: null },
-      ],
+      milestones: timelineParsed.milestones ?? defaults.timeline.milestones,
     };
 
-    // === Stage 5: Assembly ===
     await callAI(
+      locale,
       "intro",
       "You are a proposal assembler.",
-      `Write a 2 sentence proposal introduction for:\n\nProject: ${proposal.projectName}\nClient: ${proposal.clientName}\nTotal: SAR ${proposal.budget}`
+      `Write a 2 sentence proposal introduction for:\n\nProject: ${proposal.projectName}\nClient: ${proposal.clientName}\nTotal: SAR ${proposal.budget}\n\n${lang}`
     );
 
     await db.proposal.update({
@@ -232,12 +237,13 @@ Payment: ${proposal.paymentType}
 }
 
 async function callAI(
+  locale: Locale,
   stage: MockStage,
   systemPrompt: string,
   userMessage: string
 ): Promise<string> {
   if (!openai) {
-    return mockResponse(stage, userMessage);
+    return mockResponse(locale, stage, userMessage);
   }
 
   const response = await openai.chat.completions.create({
@@ -269,16 +275,21 @@ function parseJson<T extends Record<string, unknown>>(
   }
 }
 
-function buildCommercialTerms(parsed: Record<string, any>, budget: number) {
+function buildCommercialTerms(
+  parsed: Record<string, any>,
+  budget: number,
+  locale: Locale
+) {
+  const defaults = localeDefaults(locale);
+
   if (!parsed.paymentSchedule?.length) {
     return {
       totalValue: budget,
-      paymentSchedule: [
-        { percentage: 30, label: "دفعة مقدمة", amount: Math.round(budget * 0.3) },
-        { percentage: 40, label: "عند التسليم", amount: Math.round(budget * 0.4) },
-        { percentage: 30, label: "بعد الاستلام", amount: Math.round(budget * 0.3) },
-      ],
-      warrantyPeriod: "سنة واحدة",
+      paymentSchedule: defaults.paymentSchedule.map((m) => ({
+        ...m,
+        amount: Math.round((budget * m.percentage) / 100),
+      })),
+      warrantyPeriod: defaults.warrantyPeriod,
       retention: null,
     };
   }
@@ -290,64 +301,158 @@ function buildCommercialTerms(parsed: Record<string, any>, budget: number) {
       ...m,
       amount: Math.round((totalValue * m.percentage) / 100),
     })),
-    warrantyPeriod: parsed.warrantyPeriod ?? "سنة واحدة",
+    warrantyPeriod: parsed.warrantyPeriod ?? defaults.warrantyPeriod,
     retention: parsed.retention ?? null,
   };
 }
 
-function mockResponse(stage: MockStage, userMessage: string): string {
+function localeDefaults(locale: Locale) {
+  if (locale === "en") {
+    return {
+      fallbackScopeItem: (description: string) => ({
+        title: "Project Execution",
+        description,
+      }),
+      assumptions: [
+        "Client provides site access during working hours",
+        "All materials are available in the Saudi market",
+      ],
+      exclusions: [
+        "Structural modifications to walls",
+        "External landscaping",
+        "Government approvals and permits",
+      ],
+      timeline: {
+        duration: "6-8 weeks",
+        milestones: [
+          { name: "Project kickoff", date: null },
+          { name: "Mid-project review", date: null },
+          { name: "Final handover", date: null },
+        ],
+      },
+      paymentSchedule: [
+        { percentage: 30, label: "Down Payment" },
+        { percentage: 40, label: "On Delivery" },
+        { percentage: 30, label: "After Handover" },
+      ],
+      warrantyPeriod: "1 year",
+    };
+  }
+
+  return {
+    fallbackScopeItem: (description: string) => ({
+      title: "تنفيذ المشروع",
+      description,
+    }),
+    assumptions: [
+      "يوفر العميل الوصول للموقع خلال ساعات العمل",
+      "جميع المواد متوفرة في السوق السعودي",
+    ],
+    exclusions: [
+      "التعديلات الإنشائية على الجدران",
+      "أعمال تنسيق الحدائق الخارجية",
+      "موافقات الدفاع المدني والجهات الحكومية",
+    ],
+    timeline: {
+      duration: "6-8 أسابيع",
+      milestones: [
+        { name: "بدء المشروع", date: null },
+        { name: "مراجعة منتصف المشروع", date: null },
+        { name: "التسليم النهائي", date: null },
+      ],
+    },
+    paymentSchedule: [
+      { percentage: 30, label: "دفعة مقدمة" },
+      { percentage: 40, label: "عند التسليم" },
+      { percentage: 30, label: "بعد الاستلام" },
+    ],
+    warrantyPeriod: "سنة واحدة",
+  };
+}
+
+function mockResponse(
+  locale: Locale,
+  stage: MockStage,
+  userMessage: string
+): string {
   const budgetMatch = userMessage.match(/SAR (\d+)/);
   const budget = budgetMatch ? parseInt(budgetMatch[1]!, 10) : 100000;
+  const d = localeDefaults(locale);
 
   switch (stage) {
     case "analysis":
-      return "مشروع تشطيب وتجهيز في السعودية يتطلب أعمال تشطيب وتسليم بشروط تجارية قياسية.";
+      return locale === "en"
+        ? "Saudi fit-out project requiring standard commercial delivery terms."
+        : "مشروع تشطيب وتجهيز في السعودية يتطلب أعمال تشطيب وتسليم بشروط تجارية قياسية.";
     case "scope":
       return JSON.stringify({
         scopeItems: [
-          { id: "1", title: "إدارة المشروع", description: "إدارة جميع أنشطة المشروع والتنسيق مع العميل" },
-          { id: "2", title: "التنفيذ", description: "تنفيذ نطاق العمل الكامل كما هو موصوف" },
-          { id: "3", title: "ضبط الجودة", description: "ضمان معايير الجودة والتسليم النهائي" },
+          {
+            id: "1",
+            title: locale === "en" ? "Project Management" : "إدارة المشروع",
+            description:
+              locale === "en"
+                ? "Manage all project activities and coordination with the client"
+                : "إدارة جميع أنشطة المشروع والتنسيق مع العميل",
+          },
+          {
+            id: "2",
+            title: locale === "en" ? "Execution" : "التنفيذ",
+            description:
+              locale === "en"
+                ? "Execute the full scope of work as described"
+                : "تنفيذ نطاق العمل الكامل كما هو موصوف",
+          },
+          {
+            id: "3",
+            title: locale === "en" ? "Quality Control" : "ضبط الجودة",
+            description:
+              locale === "en"
+                ? "Ensure quality standards and final handover"
+                : "ضمان معايير الجودة والتسليم النهائي",
+          },
         ],
         deliverables: [
-          { id: "d1", name: "الأعمال المنجزة", description: "إنجاز جميع بنود النطاق وفق المواصفات" },
-          { id: "d2", name: "محضر التسليم", description: "توثيق التسليم النهائي للمشروع" },
+          {
+            id: "d1",
+            name: locale === "en" ? "Completed Works" : "الأعمال المنجزة",
+            description:
+              locale === "en"
+                ? "All scope items completed to specification"
+                : "إنجاز جميع بنود النطاق وفق المواصفات",
+          },
+          {
+            id: "d2",
+            name: locale === "en" ? "Handover Report" : "محضر التسليم",
+            description:
+              locale === "en"
+                ? "Final project handover documentation"
+                : "توثيق التسليم النهائي للمشروع",
+          },
         ],
       });
     case "commercial":
       return JSON.stringify({
         totalValue: budget,
-        paymentSchedule: [
-          { percentage: 30, label: "دفعة مقدمة" },
-          { percentage: 40, label: "عند التسليم" },
-          { percentage: 30, label: "بعد الاستلام" },
-        ],
-        warrantyPeriod: "سنة واحدة",
+        paymentSchedule: d.paymentSchedule,
+        warrantyPeriod: d.warrantyPeriod,
         retention: null,
       });
     case "assumptions":
       return JSON.stringify({
-        assumptions: [
-          "يوفر العميل الوصول للموقع خلال ساعات العمل",
-          "المواد متوفرة في السوق السعودي",
-        ],
-        exclusions: [
-          "التعديلات الإنشائية",
-          "الموافقات والتصاريح الحكومية",
-        ],
+        assumptions: d.assumptions,
+        exclusions: d.exclusions,
       });
     case "timeline":
       return JSON.stringify({
-        duration: "6-8 أسابيع",
+        duration: d.timeline.duration,
         startDate: null,
         endDate: null,
-        milestones: [
-          { name: "بدء المشروع", date: null },
-          { name: "مراجعة منتصف المشروع", date: null },
-          { name: "التسليم النهائي", date: null },
-        ],
+        milestones: d.timeline.milestones,
       });
     case "intro":
-      return "عرض احترافي مُعد لنطاق المشروع الموصوف.";
+      return locale === "en"
+        ? "Professional proposal prepared for the described project scope."
+        : "عرض احترافي مُعد لنطاق المشروع الموصوف.";
   }
 }

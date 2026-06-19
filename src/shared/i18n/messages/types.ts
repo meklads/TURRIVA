@@ -1,0 +1,137 @@
+export type Messages = {
+  app: { name: string; subtitle: string };
+  nav: {
+    myProposals: string;
+    settings: string;
+    signIn: string;
+    newProposal: string;
+  };
+  form: {
+    title: string;
+    subtitle: string;
+    steps: { project: string; scope: string; commercial: string };
+    projectName: string;
+    projectNamePlaceholder: string;
+    clientName: string;
+    clientNamePlaceholder: string;
+    description: string;
+    descriptionPlaceholder: string;
+    descriptionHint: string;
+    budget: string;
+    budgetPlaceholder: string;
+    paymentStructure: string;
+    paymentOptions: {
+      milestone_30_40_30: string;
+      monthly: string;
+      fixed: string;
+      custom: string;
+    };
+    continue: string;
+    back: string;
+    generate: string;
+    generatingAnalyze: string;
+    generatingWrite: string;
+    errors: {
+      projectRequired: string;
+      descriptionRequired: string;
+      arabicOnly: string;
+      englishOnly: string;
+      generic: string;
+    };
+  };
+  review: {
+    guestBanner: string;
+    guestLink: string;
+    backToNew: string;
+    draftBadge: string;
+    reviewedCount: (n: number, total: number) => string;
+    allReviewed: string;
+    exported: string;
+    regenerate: string;
+    regenerating: string;
+    regenerateConfirm: string;
+    regenerateFailed: string;
+    downloadPdf: string;
+    exporting: string;
+    preparedFor: string;
+    preparedBy: string;
+    date: string;
+    sections: {
+      scopeItems: string;
+      commercialTerms: string;
+      timeline: string;
+      deliverables: string;
+      assumptions: string;
+      exclusions: string;
+    };
+    total: string;
+    currency: string;
+    milestone: string;
+    percentage: string;
+    amount: string;
+    duration: string;
+    aiDraftHint: string;
+    noAssumptions: string;
+    noExclusions: string;
+    addItem: string;
+    addAssumption: string;
+    addExclusion: string;
+    markReviewed: string;
+    reviewed: string;
+    badges: { review: string; aiEstimated: string };
+    placeholders: { itemTitle: string; itemDescription: string };
+    localeMismatch: string;
+  };
+  list: {
+    title: string;
+    new: string;
+    empty: string;
+    emptyCta: string;
+    untitled: string;
+    status: {
+      draft: string;
+      generating: string;
+      review: string;
+      reviewed: string;
+      exported: string;
+    };
+  };
+  login: {
+    title: string;
+    subtitle: string;
+    google: string;
+    hint: string;
+  };
+  company: {
+    title: string;
+    subtitle: string;
+    companyName: string;
+    crNumber: string;
+    vatNumber: string;
+    phone: string;
+    email: string;
+    website: string;
+    save: string;
+    saving: string;
+    saveFailed: string;
+  };
+  export: {
+    savePdf: string;
+    footer: string;
+    preparedFor: string;
+    preparedBy: string;
+    proposalNumber: string;
+    date: string;
+    scopeOfWork: string;
+    deliverables: string;
+    timeline: string;
+    duration: string;
+    commercialTerms: string;
+    total: string;
+    milestone: string;
+    percentage: string;
+    amount: string;
+    assumptions: string;
+    exclusions: string;
+  };
+};

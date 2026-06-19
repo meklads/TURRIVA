@@ -11,7 +11,8 @@ import {
   generateWithAI,
 } from "@/modules/proposal/server/proposal.actions";
 import Link from "next/link";
-import { t } from "@/shared/i18n";
+import { useLocale, useT } from "@/shared/i18n/context";
+import { validateLocaleText } from "@/shared/i18n/locale";
 import { formatDate, formatSar } from "@/shared/lib/format";
 
 interface Props {
@@ -25,6 +26,11 @@ export function ProposalReviewClient({
   companyName,
   isGuest,
 }: Props) {
+  const t = useT();
+  const uiLocale = useLocale();
+  const contentLocale = initial.locale ?? "ar";
+  const canEdit = uiLocale === contentLocale;
+
   const [proposal, setProposal] = useState(initial);
   const [exporting, setExporting] = useState(false);
   const [exported, setExported] = useState(false);
@@ -43,6 +49,14 @@ export function ProposalReviewClient({
 
   const handleEdit = useCallback(
     async (field: string, value: unknown) => {
+      if (!canEdit) return;
+      if (typeof value === "string") {
+        const localeError = validateLocaleText(value, contentLocale);
+        if (localeError) {
+          alert(t.form.errors[localeError]);
+          return;
+        }
+      }
       setProposal((prev) => {
         const updated = { ...prev };
         const parts = field.split(".");
@@ -55,7 +69,7 @@ export function ProposalReviewClient({
       });
       await updateFieldAction(proposal.id, field, value);
     },
-    [proposal.id]
+    [proposal.id, canEdit, contentLocale, t.form.errors]
   );
 
   const handleAddItem = async (section: string) => {
@@ -134,6 +148,11 @@ export function ProposalReviewClient({
 
   return (
     <div className="mx-auto max-w-3xl pb-24">
+      {!canEdit && (
+        <div className="mb-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+          {t.review.localeMismatch}
+        </div>
+      )}
       {isGuest && (
         <div className="mb-4 rounded-xl border border-brand-100 bg-brand-50 px-4 py-3 text-sm text-brand-800">
           <Link href="/login" className="font-semibold underline">
@@ -205,7 +224,7 @@ export function ProposalReviewClient({
           </p>
         )}
         <p className="mt-1 text-xs text-gray-400">
-          {t.review.date} {formatDate(proposal.createdAt)}
+          {t.review.date} {formatDate(proposal.createdAt, contentLocale)}
         </p>
       </div>
 
@@ -216,24 +235,28 @@ export function ProposalReviewClient({
           confidence={confidence?.scopeItems}
           reviewed={reviewed.includes("scopeItems")}
           onMarkReviewed={() => handleMarkReviewed("scopeItems")}
+          canEdit={canEdit}
         >
           {(proposal.scopeItems ?? []).map((item: any, i: number) => (
             <ScopeItemCard
               key={item.id}
               index={i}
               item={item}
+              canEdit={canEdit}
               onUpdate={(field, value) =>
                 handleEdit(`scopeItems[${i}].${field}`, value)
               }
               onRemove={() => handleRemoveItem("scopeItems", item.id)}
             />
           ))}
+          {canEdit && (
           <button
             onClick={() => handleAddItem("scopeItems")}
             className="mt-2 text-sm font-medium text-brand-600 hover:text-brand-700"
           >
             {t.review.addItem}
           </button>
+          )}
         </SectionWrapper>
 
         {/* Commercial */}
@@ -242,16 +265,18 @@ export function ProposalReviewClient({
           confidence={confidence?.commercialTerms}
           reviewed={reviewed.includes("commercialTerms")}
           onMarkReviewed={() => handleMarkReviewed("commercialTerms")}
+          canEdit={canEdit}
         >
           {proposal.commercialTerms && (
             <div className="space-y-4">
               <div className="text-lg font-semibold tabular-nums">
                 {t.review.total}{" "}
                 <span
-                  contentEditable
+                  contentEditable={canEdit}
                   suppressContentEditableWarning
                   className="break-all outline-none"
                   onBlur={(e) => {
+                    if (!canEdit) return;
                     const val = parseInt(
                       e.currentTarget.textContent?.replace(/[^\d]/g, "") ?? "0",
                       10
@@ -259,7 +284,7 @@ export function ProposalReviewClient({
                     handleEdit("budget", val);
                   }}
                 >
-                  {formatSar(proposal.budget)} {t.review.currency}
+                  {formatSar(proposal.budget, contentLocale)} {t.review.currency}
                 </span>
               </div>
               <div className="overflow-x-auto">
@@ -283,37 +308,39 @@ export function ProposalReviewClient({
                         <tr key={i} className="border-b border-gray-50">
                           <td className="py-2">
                             <span
-                              contentEditable
+                              contentEditable={canEdit}
                               suppressContentEditableWarning
                               className="inline-edit-input"
-                              onBlur={(e) =>
+                              onBlur={(e) => {
+                                if (!canEdit) return;
                                 handleEdit(
                                   `commercialTerms.paymentSchedule[${i}].label`,
                                   e.currentTarget.textContent
-                                )
-                              }
+                                );
+                              }}
                             >
                               {m.label}
                             </span>
                           </td>
                           <td className="py-2 text-center tabular-nums">
                             <span
-                              contentEditable
+                              contentEditable={canEdit}
                               suppressContentEditableWarning
                               className="inline-block w-10 text-center outline-none focus:bg-gray-50"
-                              onBlur={(e) =>
+                              onBlur={(e) => {
+                                if (!canEdit) return;
                                 handleEdit(
                                   `commercialTerms.paymentSchedule[${i}].percentage`,
                                   parseInt(e.currentTarget.textContent ?? "0", 10)
-                                )
-                              }
+                                );
+                              }}
                             >
                               {m.percentage}
                             </span>
                             %
                           </td>
                           <td className="py-2 text-end tabular-nums text-gray-700">
-                            {formatSar(m.amount)} {t.review.currency}
+                            {formatSar(m.amount, contentLocale)} {t.review.currency}
                           </td>
                         </tr>
                       )
@@ -333,16 +360,18 @@ export function ProposalReviewClient({
             reviewed={false}
             onMarkReviewed={() => {}}
             hideReview
+            canEdit={canEdit}
           >
             <p className="text-sm text-gray-700">
               {t.review.duration}{" "}
               <span
-                contentEditable
+                contentEditable={canEdit}
                 suppressContentEditableWarning
                 className="inline-edit-input font-medium"
-                onBlur={(e) =>
-                  handleEdit("timeline.duration", e.currentTarget.textContent)
-                }
+                onBlur={(e) => {
+                  if (!canEdit) return;
+                  handleEdit("timeline.duration", e.currentTarget.textContent);
+                }}
               >
                 {proposal.timeline.duration}
               </span>
@@ -353,15 +382,16 @@ export function ProposalReviewClient({
                   <li key={i} className="flex gap-2 text-sm">
                     <span className="text-gray-400">•</span>
                     <span
-                      contentEditable
+                      contentEditable={canEdit}
                       suppressContentEditableWarning
                       className="inline-edit-input flex-1"
-                      onBlur={(e) =>
+                      onBlur={(e) => {
+                        if (!canEdit) return;
                         handleEdit(
                           `timeline.milestones[${i}].name`,
                           e.currentTarget.textContent
-                        )
-                      }
+                        );
+                      }}
                     >
                       {m.name}
                     </span>
@@ -380,6 +410,7 @@ export function ProposalReviewClient({
             reviewed={false}
             onMarkReviewed={() => {}}
             hideReview
+            canEdit={canEdit}
           >
             <ul className="space-y-3">
               {proposal.deliverables.map((item, i) => (
@@ -391,6 +422,7 @@ export function ProposalReviewClient({
                       onBlur={(e) =>
                         handleEdit(`deliverables[${i}].name`, e.target.value)
                       }
+                      readOnly={!canEdit}
                       className="inline-edit-input text-sm font-medium"
                     />
                     <input
@@ -401,16 +433,19 @@ export function ProposalReviewClient({
                           e.target.value
                         )
                       }
+                      readOnly={!canEdit}
                       className="inline-edit-input mt-1 text-xs text-gray-600"
                     />
                   </div>
+                  {canEdit && (
                   <button
                     onClick={() => handleRemoveItem("deliverables", item.id)}
                     className="opacity-0 transition-opacity group-hover:opacity-100"
-                    aria-label="حذف"
+                    aria-label="remove"
                   >
                     <span className="text-xs text-gray-400 hover:text-red-500">✕</span>
                   </button>
+                  )}
                 </li>
               ))}
             </ul>
@@ -423,6 +458,7 @@ export function ProposalReviewClient({
           confidence={confidence?.assumptions}
           reviewed={reviewed.includes("assumptions")}
           onMarkReviewed={() => handleMarkReviewed("assumptions")}
+          canEdit={canEdit}
         >
           <p className="mb-3 text-xs text-amber-700">{t.review.aiDraftHint}</p>
           {proposal.assumptions.length > 0 ? (
@@ -430,6 +466,7 @@ export function ProposalReviewClient({
               {proposal.assumptions.map((item: any, i: number) => (
                 <EditableListItem
                   key={i}
+                  canEdit={canEdit}
                   value={typeof item === "string" ? item : item.text}
                   onUpdate={(val) => {
                     const newArr = [...proposal.assumptions];
@@ -448,12 +485,14 @@ export function ProposalReviewClient({
           ) : (
             <p className="text-sm text-gray-400">{t.review.noAssumptions}</p>
           )}
+          {canEdit && (
           <button
             onClick={() => handleEdit("assumptions", [...proposal.assumptions, ""])}
             className="mt-2 text-sm font-medium text-brand-600"
           >
             {t.review.addAssumption}
           </button>
+          )}
         </SectionWrapper>
 
         {/* Exclusions */}
@@ -462,6 +501,7 @@ export function ProposalReviewClient({
           confidence={confidence?.exclusions}
           reviewed={reviewed.includes("exclusions")}
           onMarkReviewed={() => handleMarkReviewed("exclusions")}
+          canEdit={canEdit}
         >
           <p className="mb-3 text-xs text-amber-700">{t.review.aiDraftHint}</p>
           {proposal.exclusions.length > 0 ? (
@@ -469,6 +509,7 @@ export function ProposalReviewClient({
               {proposal.exclusions.map((item: any, i: number) => (
                 <EditableListItem
                   key={i}
+                  canEdit={canEdit}
                   value={typeof item === "string" ? item : item.text}
                   onUpdate={(val) => {
                     const newArr = [...proposal.exclusions];
@@ -487,12 +528,14 @@ export function ProposalReviewClient({
           ) : (
             <p className="text-sm text-gray-400">{t.review.noExclusions}</p>
           )}
+          {canEdit && (
           <button
             onClick={() => handleEdit("exclusions", [...proposal.exclusions, ""])}
             className="mt-2 text-sm font-medium text-brand-600"
           >
             {t.review.addExclusion}
           </button>
+          )}
         </SectionWrapper>
       </div>
 
@@ -521,6 +564,7 @@ function SectionWrapper({
   reviewed,
   onMarkReviewed,
   hideReview,
+  canEdit = true,
   children,
 }: {
   label: string;
@@ -528,8 +572,11 @@ function SectionWrapper({
   reviewed: boolean;
   onMarkReviewed: () => void;
   hideReview?: boolean;
+  canEdit?: boolean;
   children: React.ReactNode;
 }) {
+  const t = useT();
+
   return (
     <section
       className={`section-card ${reviewed ? "section-card-reviewed" : ""}`}
@@ -550,6 +597,7 @@ function SectionWrapper({
           )}
         </div>
         {!hideReview &&
+          canEdit &&
           (reviewed ? (
             <span className="text-xs font-medium text-green-700">
               {t.review.reviewed}
@@ -573,12 +621,15 @@ function ScopeItemCard({
   item,
   onUpdate,
   onRemove,
+  canEdit = true,
 }: {
   index: number;
   item: any;
   onUpdate: (field: string, value: unknown) => void;
   onRemove: () => void;
+  canEdit?: boolean;
 }) {
+  const t = useT();
   return (
     <div className="group mb-3 rounded-lg border border-gray-100 bg-gray-50/30 p-3 transition-colors hover:border-brand-100 hover:bg-white">
       <div className="flex items-start gap-2">
@@ -587,24 +638,28 @@ function ScopeItemCard({
           <input
             defaultValue={item.title}
             onBlur={(e) => onUpdate("title", e.target.value)}
+            readOnly={!canEdit}
             className="inline-edit-input mb-1 text-sm font-semibold"
             placeholder={t.review.placeholders.itemTitle}
           />
           <textarea
             defaultValue={item.description}
             onBlur={(e) => onUpdate("description", e.target.value)}
+            readOnly={!canEdit}
             className="inline-edit-area text-xs text-gray-600"
             placeholder={t.review.placeholders.itemDescription}
             rows={2}
           />
         </div>
+        {canEdit && (
         <button
           onClick={onRemove}
           className="opacity-0 transition-opacity group-hover:opacity-100"
-          aria-label="حذف"
+          aria-label="remove"
         >
           <span className="text-xs text-gray-400 hover:text-red-500">✕</span>
         </button>
+        )}
       </div>
     </div>
   );
@@ -614,10 +669,12 @@ function EditableListItem({
   value,
   onUpdate,
   onRemove,
+  canEdit = true,
 }: {
   value: string;
   onUpdate: (val: string) => void;
   onRemove: () => void;
+  canEdit?: boolean;
 }) {
   return (
     <li className="group flex items-start gap-2">
@@ -625,15 +682,18 @@ function EditableListItem({
       <input
         defaultValue={value}
         onBlur={(e) => onUpdate(e.target.value)}
+        readOnly={!canEdit}
         className="inline-edit-input flex-1 text-sm"
       />
+      {canEdit && (
       <button
         onClick={onRemove}
         className="opacity-0 transition-opacity group-hover:opacity-100"
-        aria-label="حذف"
+        aria-label="remove"
       >
         <span className="text-xs text-gray-400 hover:text-red-500">✕</span>
       </button>
+      )}
     </li>
   );
 }

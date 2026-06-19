@@ -24,7 +24,7 @@ export const ar = {
     description: "صف العمل باختصار",
     descriptionPlaceholder:
       "مثال: تشطيب داخلي لفيلا 300م² في الرياض. يشمل الأرضيات، الدهان، المطابخ، الحمامات، والإضاءة.",
-    descriptionHint: "اكتب بالعربية أو الإنجليزية — الذكاء الاصطناعي يفهم الاثنين.",
+    descriptionHint: "العربية فقط — لا يُقبل النص الإنجليزي في هذا الوضع.",
     budget: "إجمالي الميزانية (ريال)",
     budgetPlaceholder: "مثال: 185000",
     paymentStructure: "طريقة الدفع",
@@ -42,6 +42,8 @@ export const ar = {
     errors: {
       projectRequired: "اسم المشروع واسم العميل مطلوبان.",
       descriptionRequired: "يرجى وصف العمل باختصار.",
+      arabicOnly: "يرجى الكتابة بالعربية فقط — لا يُقبل الإنجليزي في هذا الوضع.",
+      englishOnly: "يرجى الكتابة بالإنجليزية فقط — لا يُقبل العربي في هذا الوضع.",
       generic: "حدث خطأ. يرجى المحاولة مرة أخرى.",
     },
   },
@@ -93,6 +95,8 @@ export const ar = {
       itemTitle: "عنوان البند",
       itemDescription: "الوصف",
     },
+    localeMismatch:
+      "هذا العرض أُنشئ بلغة مختلفة. بدّل اللغة لتعديله.",
   },
   list: {
     title: "عروضي",
@@ -126,6 +130,25 @@ export const ar = {
     save: "حفظ",
     saving: "جاري الحفظ...",
     saveFailed: "فشل الحفظ. حاول مرة أخرى.",
+  },
+  export: {
+    savePdf: "حفظ PDF",
+    footer: "مسودة مولّدة بالذكاء الاصطناعي — راجع قبل الإرسال.",
+    preparedFor: "مُعد لـ:",
+    preparedBy: "مُعد بواسطة:",
+    proposalNumber: "رقم العرض:",
+    date: "التاريخ:",
+    scopeOfWork: "نطاق العمل",
+    deliverables: "المخرجات",
+    timeline: "الجدول الزمني",
+    duration: "المدة:",
+    commercialTerms: "الشروط التجارية",
+    total: "الإجمالي:",
+    milestone: "المرحلة",
+    percentage: "النسبة",
+    amount: "المبلغ",
+    assumptions: "الافتراضات",
+    exclusions: "الاستثناءات",
   },
 } as const;
 

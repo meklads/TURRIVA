@@ -1,20 +1,23 @@
 import { listProposalsQuery } from "@/modules/proposal/server/proposal.queries";
-import { t } from "@/shared/i18n";
+import { getMessages } from "@/shared/i18n";
+import { getLocale } from "@/shared/i18n/server";
 import { formatDate } from "@/shared/lib/format";
 import Link from "next/link";
 
 export const dynamic = "force-dynamic";
 
-const statusLabels: Record<string, string> = {
-  draft: t.list.status.draft,
-  generating: t.list.status.generating,
-  review: t.list.status.review,
-  reviewed: t.list.status.reviewed,
-  exported: t.list.status.exported,
-};
-
 export default async function ProposalsListPage() {
+  const locale = await getLocale();
+  const t = getMessages(locale);
   const proposals = await listProposalsQuery();
+
+  const statusLabels: Record<string, string> = {
+    draft: t.list.status.draft,
+    generating: t.list.status.generating,
+    review: t.list.status.review,
+    reviewed: t.list.status.reviewed,
+    exported: t.list.status.exported,
+  };
 
   return (
     <div>
@@ -51,7 +54,7 @@ export default async function ProposalsListPage() {
                   {p.projectName || t.list.untitled}
                 </p>
                 <p className="text-xs text-gray-500">
-                  {p.clientName} · {formatDate(p.createdAt.toISOString())}
+                  {p.clientName} · {formatDate(p.createdAt.toISOString(), locale)}
                 </p>
               </div>
               <span

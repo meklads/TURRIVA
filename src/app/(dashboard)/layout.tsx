@@ -1,11 +1,16 @@
 import Link from "next/link";
-import { t } from "@/shared/i18n";
+import { getMessages } from "@/shared/i18n";
+import { getLocale } from "@/shared/i18n/server";
+import { LocaleSwitcher } from "@/shared/i18n/locale-switcher";
 
-export default function DashboardLayout({
+export default async function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const locale = await getLocale();
+  const t = getMessages(locale);
+
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur">
@@ -14,7 +19,8 @@ export default function DashboardLayout({
             <span className="text-sm font-bold text-brand-600">{t.app.name}</span>
             <span className="text-[10px] text-gray-400">{t.app.subtitle}</span>
           </Link>
-          <nav className="flex items-center gap-4 text-sm text-gray-600">
+          <nav className="flex items-center gap-3 text-sm text-gray-600">
+            <LocaleSwitcher />
             <Link href="/proposals" className="hover:text-gray-900">
               {t.nav.myProposals}
             </Link>
