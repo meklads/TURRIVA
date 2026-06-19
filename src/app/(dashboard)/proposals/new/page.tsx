@@ -49,7 +49,8 @@ export default function NewProposalPage() {
 
       if (!created.success) {
         throw new Error(
-          created.error ?? "Could not save proposal. Check database connection."
+          created.error ??
+            "Could not save proposal. Database may not be configured."
         );
       }
 

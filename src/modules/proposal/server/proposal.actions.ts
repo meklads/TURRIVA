@@ -11,7 +11,19 @@ import type { CreateProposalInput } from "@/shared/types";
 import { getSession } from "@/modules/auth/server/session";
 
 function actionError(error: unknown, fallback: string) {
-  const message = error instanceof Error ? error.message : fallback;
+  let message = error instanceof Error ? error.message : fallback;
+
+  if (
+    message.includes("DATABASE_URL") ||
+    message.includes("Environment variable not found")
+  ) {
+    message =
+      "Database is not connected. The server administrator must add DATABASE_URL in Coolify.";
+  } else if (message.includes("Can't reach database server")) {
+    message =
+      "Cannot reach the database server. Check DATABASE_URL and that PostgreSQL is running.";
+  }
+
   console.error(`[proposal.action] ${fallback}:`, error);
   return { success: false as const, error: message };
 }
