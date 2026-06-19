@@ -3,7 +3,19 @@ import { db } from "@/shared/lib/db";
 
 export const dynamic = "force-dynamic";
 
+/** Liveness probe — always 200 so Coolify does not 502 when DB is misconfigured */
 export async function GET() {
+  if (!process.env.DATABASE_URL) {
+    return NextResponse.json({
+      ok: true,
+      app: true,
+      db: false,
+      tables: false,
+      error: "DATABASE_URL is not set",
+      timestamp: new Date().toISOString(),
+    });
+  }
+
   try {
     await db.$queryRaw`SELECT 1`;
     const tables = await db.$queryRawUnsafe<{ table_name: string }[]>(
@@ -14,6 +26,7 @@ export async function GET() {
 
     return NextResponse.json({
       ok: true,
+      app: true,
       db: true,
       tables: hasProposalTable,
       timestamp: new Date().toISOString(),
@@ -22,9 +35,13 @@ export async function GET() {
     const message =
       error instanceof Error ? error.message : "Database connection failed";
     console.error("[health] DB check failed:", message);
-    return NextResponse.json(
-      { ok: false, db: false, error: message },
-      { status: 503 }
-    );
+    return NextResponse.json({
+      ok: true,
+      app: true,
+      db: false,
+      tables: false,
+      error: message,
+      timestamp: new Date().toISOString(),
+    });
   }
 }

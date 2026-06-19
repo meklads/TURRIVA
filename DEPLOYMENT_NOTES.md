@@ -43,7 +43,36 @@ GET /api/health
 Expected: `{ "ok": true, "db": true, "tables": true }`
 
 ## Coolify Settings
-- **Build Command:** `npm ci && npm run build`
-- **Start Command:** `npm start` (default)
-- **Port:** 3000
-- **Health Check Path:** `/api/health` (recommended)
+
+### Required: PostgreSQL database
+1. In Coolify → add a **PostgreSQL** database resource
+2. Link it to the `ruwaq` application (this injects `DATABASE_URL`)
+3. Or paste `DATABASE_URL` manually in Environment Variables
+
+### Application settings
+| Setting | Value |
+|---------|-------|
+| **Port** | `3000` |
+| **Start Command** | `npm start` |
+| **Health Check Path** | `/api/health` |
+| **Build Command** | `npm ci && npm run build` |
+
+### Environment variables (runtime)
+| Variable | Required | Example |
+|----------|----------|---------|
+| `DATABASE_URL` | ✅ | `postgresql://user:pass@postgres:5432/ruwaq` |
+| `AUTH_SECRET` | ✅ | random 32+ char string |
+| `AUTH_URL` | ✅ | `https://ruwaq.co` |
+| `NEXT_PUBLIC_APP_URL` | ✅ | `https://ruwaq.co` |
+| `OPENAI_API_KEY` | optional | leave empty for mock AI |
+
+### Fix "Bad Gateway" (502)
+502 means the container is **not running**. Common causes:
+1. `DATABASE_URL` missing or wrong → container exited on old start script
+2. Port mismatch → set Coolify port to **3000**
+3. Check **Application Logs** (not Build Logs) for errors
+
+After deploy, verify:
+```
+https://ruwaq.co/api/health
+```
