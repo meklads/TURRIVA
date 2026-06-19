@@ -1,5 +1,4 @@
 import { db } from "@/shared/lib/db";
-import { env } from "@/shared/lib/env";
 
 export async function exportProposalAsPdf(proposalId: string) {
   const proposal = await db.proposal.findUnique({ where: { id: proposalId } });

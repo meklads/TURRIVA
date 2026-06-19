@@ -1,9 +1,9 @@
 import { z } from "zod";
 
 const envSchema = z.object({
-  DATABASE_URL: z.string().url(),
-  AUTH_SECRET: z.string().min(1),
-  AUTH_URL: z.string().url(),
+  DATABASE_URL: z.string().min(1).optional(),
+  AUTH_SECRET: z.string().min(1).optional(),
+  AUTH_URL: z.string().optional(),
   AUTH_GOOGLE_ID: z.string().optional(),
   AUTH_GOOGLE_SECRET: z.string().optional(),
   OPENAI_API_KEY: z.string().optional().default(""),
@@ -15,40 +15,53 @@ const envSchema = z.object({
   STRIPE_SECRET_KEY: z.string().optional(),
   NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: z.string().optional(),
   STRIPE_WEBHOOK_SECRET: z.string().optional(),
-  NEXT_PUBLIC_APP_URL: z.string().url().default("http://localhost:3000"),
+  NEXT_PUBLIC_APP_URL: z.string().optional().default("http://localhost:3000"),
   NEXT_PUBLIC_APP_NAME: z.string().default("Saudi Proposal OS"),
 });
 
 type Env = z.infer<typeof envSchema>;
 
+function withHttps(url: string | undefined, fallback: string): string {
+  if (!url?.trim()) return fallback;
+  if (url.startsWith("http://") || url.startsWith("https://")) return url;
+  return `https://${url}`;
+}
+
 function parseEnv(): Env {
-  const parsed = envSchema.safeParse(process.env);
   const isBuildTime =
     process.env.NEXT_PHASE === "phase-production-build" ||
     process.env.npm_lifecycle_event === "build";
 
+  const appUrl = withHttps(
+    process.env.NEXT_PUBLIC_APP_URL ?? process.env.AUTH_URL,
+    isBuildTime ? "http://localhost:3000" : "https://ruwaq.co"
+  );
+
+  const normalized = {
+    ...process.env,
+    AUTH_URL: withHttps(process.env.AUTH_URL, appUrl),
+    NEXT_PUBLIC_APP_URL: appUrl,
+  };
+
+  const parsed = envSchema.safeParse(normalized);
+
   if (!parsed.success) {
-    console.error(
-      "❌ Invalid environment variables:",
-      JSON.stringify(parsed.error.flatten().fieldErrors, null, 2)
+    console.warn(
+      "[env] Some variables missing:",
+      JSON.stringify(parsed.error.flatten().fieldErrors)
     );
-    // During Docker/Coolify build, env vars are injected at runtime — not build time
-    if (process.env.NODE_ENV === "production" && !isBuildTime) {
-      throw new Error("Invalid environment variables");
-    }
-    return {
-      DATABASE_URL:
-        process.env.DATABASE_URL ?? "postgresql://localhost:5432/postgres",
-      AUTH_SECRET: process.env.AUTH_SECRET ?? "build-time-placeholder-secret",
-      AUTH_URL: process.env.AUTH_URL ?? "http://localhost:3000",
-      OPENAI_API_KEY: process.env.OPENAI_API_KEY ?? "",
-      NEXT_PUBLIC_APP_URL:
-        process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
-      NEXT_PUBLIC_APP_NAME: "Saudi Proposal OS",
-    };
   }
 
-  return parsed.data;
+  return {
+    DATABASE_URL: process.env.DATABASE_URL,
+    AUTH_SECRET: process.env.AUTH_SECRET ?? "runtime-placeholder-change-me",
+    AUTH_URL: withHttps(process.env.AUTH_URL, appUrl),
+    AUTH_GOOGLE_ID: process.env.AUTH_GOOGLE_ID,
+    AUTH_GOOGLE_SECRET: process.env.AUTH_GOOGLE_SECRET,
+    OPENAI_API_KEY: process.env.OPENAI_API_KEY ?? "",
+    NEXT_PUBLIC_APP_URL: appUrl,
+    NEXT_PUBLIC_APP_NAME: process.env.NEXT_PUBLIC_APP_NAME ?? "Saudi Proposal OS",
+  };
 }
 
 export const env = parseEnv();

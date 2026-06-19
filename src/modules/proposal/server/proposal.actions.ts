@@ -18,7 +18,10 @@ function actionError(error: unknown, fallback: string) {
     message.includes("Environment variable not found")
   ) {
     message =
-      "Database is not connected. The server administrator must add DATABASE_URL in Coolify.";
+      "Database is not connected. Add DATABASE_URL in Coolify Environment Variables, then Redeploy.";
+  } else if (message.includes("Invalid environment variables")) {
+    message =
+      "Server configuration incomplete. In Coolify add: DATABASE_URL, AUTH_SECRET, AUTH_URL=https://ruwaq.co — then Redeploy.";
   } else if (message.includes("Can't reach database server")) {
     message =
       "Cannot reach the database server. Check DATABASE_URL and that PostgreSQL is running.";

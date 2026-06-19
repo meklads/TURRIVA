@@ -1,9 +1,8 @@
 import { db } from "@/shared/lib/db";
 import OpenAI from "openai";
-import { env } from "@/shared/lib/env";
 
-const openai = env.OPENAI_API_KEY
-  ? new OpenAI({ apiKey: env.OPENAI_API_KEY })
+const openai = process.env.OPENAI_API_KEY
+  ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
   : null;
 
 type MockStage =
