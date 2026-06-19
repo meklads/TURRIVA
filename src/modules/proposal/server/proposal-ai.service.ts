@@ -13,6 +13,9 @@ type MockStage =
   | "intro"
   | "timeline";
 
+const ARABIC_OUTPUT =
+  "Write all user-facing text in Arabic (Saudi dialect/formal business Arabic). Keep JSON keys in English.";
+
 export async function regenerateSection(
   proposalId: string,
   section: string
@@ -34,7 +37,7 @@ Payment: ${proposal.paymentType}
     const scopeResult = await callAI(
       "scope",
       "You are a scope of work writer for Saudi construction projects.",
-      `Generate scope items for:\n\n${context}\n\nRespond in JSON: { "scopeItems": [{ "id": "unique", "title": "string", "description": "string" }], "deliverables": [{ "id": "unique", "name": "string", "description": "string" }] }`
+      `Generate scope items for:\n\n${context}\n\n${ARABIC_OUTPUT}\n\nRespond in JSON: { "scopeItems": [{ "id": "unique", "title": "string", "description": "string" }], "deliverables": [{ "id": "unique", "name": "string", "description": "string" }] }`
     );
     const parsed = parseJson<{ scopeItems?: any[]; deliverables?: any[] }>(
       scopeResult,
@@ -51,7 +54,7 @@ Payment: ${proposal.paymentType}
     const commercialResult = await callAI(
       "commercial",
       "You are a commercial terms specialist for Saudi contracts.",
-      `Generate commercial terms:\n\nBudget: SAR ${proposal.budget}\nPayment: ${proposal.paymentType}\n\nRespond in JSON: { "totalValue": number, "paymentSchedule": [{ "percentage": number, "label": "string" }], "warrantyPeriod": "string", "retention": number | null }`
+      `Generate commercial terms:\n\nBudget: SAR ${proposal.budget}\nPayment: ${proposal.paymentType}\n\n${ARABIC_OUTPUT}\n\nRespond in JSON: { "totalValue": number, "paymentSchedule": [{ "percentage": number, "label": "string" }], "warrantyPeriod": "string", "retention": number | null }`
     );
     const commercialTerms = buildCommercialTerms(
       parseJson(commercialResult, {}),
@@ -65,7 +68,7 @@ Payment: ${proposal.paymentType}
     const result = await callAI(
       "assumptions",
       "You are a commercial terms specialist for Saudi contracts.",
-      `Generate assumptions and exclusions:\n\nScope: ${scopeItems.map((s: any) => s.title).join(", ")}\n\nRespond in JSON: { "assumptions": ["string"], "exclusions": ["string"] }`
+      `Generate assumptions and exclusions:\n\nScope: ${scopeItems.map((s: any) => s.title).join(", ")}\n\n${ARABIC_OUTPUT}\n\nRespond in JSON: { "assumptions": ["string"], "exclusions": ["string"] }`
     );
     const parsed = parseJson<{ assumptions?: string[]; exclusions?: string[] }>(
       result,
@@ -112,7 +115,7 @@ Payment: ${proposal.paymentType}
     const scopeResult = await callAI(
       "scope",
       "You are a scope of work writer for Saudi construction projects.",
-      `Generate scope items for:\n\n${context}\nAnalysis: ${analysis}\n\nRespond in JSON: { "scopeItems": [{ "id": "unique", "title": "string", "description": "string" }], "deliverables": [{ "id": "unique", "name": "string", "description": "string" }] }`
+      `Generate scope items for:\n\n${context}\nAnalysis: ${analysis}\n\n${ARABIC_OUTPUT}\n\nRespond in JSON: { "scopeItems": [{ "id": "unique", "title": "string", "description": "string" }], "deliverables": [{ "id": "unique", "name": "string", "description": "string" }] }`
     );
 
     let scopeItems: any[] = [];
@@ -125,7 +128,7 @@ Payment: ${proposal.paymentType}
     deliverables = scopeParsed.deliverables ?? [];
     if (scopeItems.length === 0) {
       scopeItems = [
-        { id: "1", title: "Project Execution", description: proposal.description },
+        { id: "1", title: "تنفيذ المشروع", description: proposal.description },
       ];
     }
 
@@ -133,7 +136,7 @@ Payment: ${proposal.paymentType}
     const commercialResult = await callAI(
       "commercial",
       "You are a commercial terms specialist for Saudi contracts.",
-      `Generate commercial terms:\n\nBudget: SAR ${proposal.budget}\nPayment: ${proposal.paymentType}\nScope: ${scopeItems.map((s: any) => s.title).join(", ")}\n\nRespond in JSON: { "totalValue": number, "paymentSchedule": [{ "percentage": number, "label": "string" }], "warrantyPeriod": "string", "retention": number | null }`
+      `Generate commercial terms:\n\nBudget: SAR ${proposal.budget}\nPayment: ${proposal.paymentType}\nScope: ${scopeItems.map((s: any) => s.title).join(", ")}\n\n${ARABIC_OUTPUT}\n\nRespond in JSON: { "totalValue": number, "paymentSchedule": [{ "percentage": number, "label": "string" }], "warrantyPeriod": "string", "retention": number | null }`
     );
 
     const commercialTerms = buildCommercialTerms(
@@ -145,7 +148,7 @@ Payment: ${proposal.paymentType}
     const assumptionsResult = await callAI(
       "assumptions",
       "You are a commercial terms specialist for Saudi contracts.",
-      `Generate assumptions and exclusions:\n\nScope: ${scopeItems.map((s: any) => s.title).join(", ")}\n\nRespond in JSON: { "assumptions": ["string"], "exclusions": ["string"] }`
+      `Generate assumptions and exclusions:\n\nScope: ${scopeItems.map((s: any) => s.title).join(", ")}\n\n${ARABIC_OUTPUT}\n\nRespond in JSON: { "assumptions": ["string"], "exclusions": ["string"] }`
     );
 
     const legalParsed = parseJson<{ assumptions?: string[]; exclusions?: string[] }>(
@@ -154,21 +157,21 @@ Payment: ${proposal.paymentType}
     );
     const assumptions: string[] =
       legalParsed.assumptions ?? [
-        "Client provides site access during working hours",
-        "All materials are available in the Saudi market",
+        "يوفر العميل الوصول للموقع خلال ساعات العمل",
+        "جميع المواد متوفرة في السوق السعودي",
       ];
     const exclusions: string[] =
       legalParsed.exclusions ?? [
-        "Structural modifications to walls",
-        "External landscaping",
-        "Civil defense approvals",
+        "التعديلات الإنشائية على الجدران",
+        "أعمال تنسيق الحدائق الخارجية",
+        "موافقات الدفاع المدني والجهات الحكومية",
       ];
 
     // === Stage 4: Timeline ===
     const timelineResult = await callAI(
       "timeline",
       "You are a project scheduler for Saudi construction.",
-      `Estimate timeline for:\n\n${context}\nScope: ${scopeItems.map((s: any) => s.title).join(", ")}\n\nRespond in JSON: { "duration": "string", "startDate": null, "endDate": null, "milestones": [{ "name": "string", "date": null }] }`
+      `Estimate timeline for:\n\n${context}\nScope: ${scopeItems.map((s: any) => s.title).join(", ")}\n\n${ARABIC_OUTPUT}\n\nRespond in JSON: { "duration": "string", "startDate": null, "endDate": null, "milestones": [{ "name": "string", "date": null }] }`
     );
 
     const timelineParsed = parseJson<{
@@ -178,13 +181,13 @@ Payment: ${proposal.paymentType}
       milestones?: { name: string; date: string | null }[];
     }>(timelineResult, {});
     const timeline = {
-      duration: timelineParsed.duration ?? "6-8 weeks",
+      duration: timelineParsed.duration ?? "6-8 أسابيع",
       startDate: timelineParsed.startDate ?? null,
       endDate: timelineParsed.endDate ?? null,
       milestones: timelineParsed.milestones ?? [
-        { name: "Project kickoff", date: null },
-        { name: "Mid-project review", date: null },
-        { name: "Final handover", date: null },
+        { name: "بدء المشروع", date: null },
+        { name: "مراجعة منتصف المشروع", date: null },
+        { name: "التسليم النهائي", date: null },
       ],
     };
 
@@ -271,11 +274,11 @@ function buildCommercialTerms(parsed: Record<string, any>, budget: number) {
     return {
       totalValue: budget,
       paymentSchedule: [
-        { percentage: 30, label: "Down Payment", amount: Math.round(budget * 0.3) },
-        { percentage: 40, label: "On Delivery", amount: Math.round(budget * 0.4) },
-        { percentage: 30, label: "After Handover", amount: Math.round(budget * 0.3) },
+        { percentage: 30, label: "دفعة مقدمة", amount: Math.round(budget * 0.3) },
+        { percentage: 40, label: "عند التسليم", amount: Math.round(budget * 0.4) },
+        { percentage: 30, label: "بعد الاستلام", amount: Math.round(budget * 0.3) },
       ],
-      warrantyPeriod: "1 year",
+      warrantyPeriod: "سنة واحدة",
       retention: null,
     };
   }
@@ -287,7 +290,7 @@ function buildCommercialTerms(parsed: Record<string, any>, budget: number) {
       ...m,
       amount: Math.round((totalValue * m.percentage) / 100),
     })),
-    warrantyPeriod: parsed.warrantyPeriod ?? "1 year",
+    warrantyPeriod: parsed.warrantyPeriod ?? "سنة واحدة",
     retention: parsed.retention ?? null,
   };
 }
@@ -298,53 +301,53 @@ function mockResponse(stage: MockStage, userMessage: string): string {
 
   switch (stage) {
     case "analysis":
-      return "Saudi construction project requiring fit-out and finishing work with standard commercial terms.";
+      return "مشروع تشطيب وتجهيز في السعودية يتطلب أعمال تشطيب وتسليم بشروط تجارية قياسية.";
     case "scope":
       return JSON.stringify({
         scopeItems: [
-          { id: "1", title: "Project Management", description: "Manage all project activities and coordination with client" },
-          { id: "2", title: "Execution", description: "Execute the full scope of work as described" },
-          { id: "3", title: "Quality Control", description: "Ensure quality standards and final handover" },
+          { id: "1", title: "إدارة المشروع", description: "إدارة جميع أنشطة المشروع والتنسيق مع العميل" },
+          { id: "2", title: "التنفيذ", description: "تنفيذ نطاق العمل الكامل كما هو موصوف" },
+          { id: "3", title: "ضبط الجودة", description: "ضمان معايير الجودة والتسليم النهائي" },
         ],
         deliverables: [
-          { id: "d1", name: "Completed Works", description: "All scope items completed to specification" },
-          { id: "d2", name: "Handover Report", description: "Final project handover documentation" },
+          { id: "d1", name: "الأعمال المنجزة", description: "إنجاز جميع بنود النطاق وفق المواصفات" },
+          { id: "d2", name: "محضر التسليم", description: "توثيق التسليم النهائي للمشروع" },
         ],
       });
     case "commercial":
       return JSON.stringify({
         totalValue: budget,
         paymentSchedule: [
-          { percentage: 30, label: "Down Payment" },
-          { percentage: 40, label: "On Delivery" },
-          { percentage: 30, label: "After Handover" },
+          { percentage: 30, label: "دفعة مقدمة" },
+          { percentage: 40, label: "عند التسليم" },
+          { percentage: 30, label: "بعد الاستلام" },
         ],
-        warrantyPeriod: "1 year",
+        warrantyPeriod: "سنة واحدة",
         retention: null,
       });
     case "assumptions":
       return JSON.stringify({
         assumptions: [
-          "Client provides site access during working hours",
-          "Materials are available in the Saudi market",
+          "يوفر العميل الوصول للموقع خلال ساعات العمل",
+          "المواد متوفرة في السوق السعودي",
         ],
         exclusions: [
-          "Structural modifications",
-          "Government approvals and permits",
+          "التعديلات الإنشائية",
+          "الموافقات والتصاريح الحكومية",
         ],
       });
     case "timeline":
       return JSON.stringify({
-        duration: "6-8 weeks",
+        duration: "6-8 أسابيع",
         startDate: null,
         endDate: null,
         milestones: [
-          { name: "Project kickoff", date: null },
-          { name: "Mid-project review", date: null },
-          { name: "Final handover", date: null },
+          { name: "بدء المشروع", date: null },
+          { name: "مراجعة منتصف المشروع", date: null },
+          { name: "التسليم النهائي", date: null },
         ],
       });
     case "intro":
-      return "Professional proposal prepared for the described project scope.";
+      return "عرض احترافي مُعد لنطاق المشروع الموصوف.";
   }
 }

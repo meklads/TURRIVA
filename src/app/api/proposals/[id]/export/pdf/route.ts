@@ -36,7 +36,7 @@ export async function GET(
       clientName: proposal.clientName,
       companyName,
       proposalNumber: proposal.proposalNumber,
-      date: new Date().toLocaleDateString("en-US", {
+      date: new Date().toLocaleDateString("ar-SA", {
         year: "numeric",
         month: "long",
         day: "numeric",

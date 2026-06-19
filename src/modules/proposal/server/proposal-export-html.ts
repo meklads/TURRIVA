@@ -60,7 +60,7 @@ export function buildProposalExportHtml(data: {
       (m) => `<tr>
         <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${escapeHtml(m.label)}</td>
         <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;">${escapeHtml(m.percentage)}%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:right;">SAR ${formatSar(m.amount)}</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:right;">${formatSar(m.amount)} ريال</td>
       </tr>`
     )
     .join("");
@@ -73,22 +73,32 @@ export function buildProposalExportHtml(data: {
 <html dir="rtl" lang="ar">
 <head>
   <meta charset="utf-8">
-  <title>${escapeHtml(data.projectName)} — Proposal</title>
+  <title>${escapeHtml(data.projectName)} — عرض</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     @media print { .no-print { display: none !important; } body { margin: 0; } }
-    body { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; margin: 40px; color: #1f2937; }
-    h1 { font-size: 24px; margin-bottom: 4px; word-break: break-word; }
+    body {
+      font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+      margin: 40px;
+      color: #1f2937;
+      direction: rtl;
+      text-align: right;
+      line-height: 1.6;
+    }
+    h1 { font-size: 24px; margin-bottom: 4px; word-break: break-word; font-weight: 700; }
     .meta { color: #6b7280; font-size: 14px; margin-bottom: 24px; }
-    h2 { font-size: 18px; border-bottom: 2px solid #1a56db; padding-bottom: 8px; margin-top: 32px; }
+    h2 { font-size: 18px; border-bottom: 2px solid #1a56db; padding-bottom: 8px; margin-top: 32px; font-weight: 600; }
     .scope-item { margin: 12px 0; }
-    .scope-item h3 { font-size: 15px; margin: 0 0 4px; }
+    .scope-item h3 { font-size: 15px; margin: 0 0 4px; font-weight: 600; }
     .scope-item p { font-size: 13px; color: #4b5563; margin: 0; white-space: pre-wrap; }
     table { width: 100%; border-collapse: collapse; margin: 16px 0; }
-    th { background: #f3f4f6; padding: 8px 12px; font-size: 13px; text-align: start; }
+    th { background: #f3f4f6; padding: 8px 12px; font-size: 13px; text-align: start; font-weight: 600; }
     td { font-size: 13px; }
     .total { font-size: 16px; font-weight: bold; margin: 16px 0; }
     .footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid #e5e7eb; font-size: 11px; color: #9ca3af; }
-    .print-btn { position: fixed; top: 16px; left: 16px; padding: 10px 20px; background: #1a56db; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-size: 14px; z-index: 10; }
+    .print-btn { position: fixed; top: 16px; left: 16px; padding: 10px 20px; background: #1a56db; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-size: 14px; z-index: 10; font-family: inherit; }
     ul { padding-inline-start: 20px; }
     li { margin: 6px 0; font-size: 13px; }
   </style>
