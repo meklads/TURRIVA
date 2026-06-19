@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { LocaleProvider } from "@/shared/i18n/context";
+import { Providers } from "./providers";
 import { getLocale } from "@/shared/i18n/server";
 import { localeDir } from "@/shared/i18n/locale";
 
@@ -29,7 +29,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} dir={dir}>
       <body className="min-h-screen bg-white font-sans">
-        <LocaleProvider locale={locale}>{children}</LocaleProvider>
+        <Providers locale={locale}>{children}</Providers>
       </body>
     </html>
   );

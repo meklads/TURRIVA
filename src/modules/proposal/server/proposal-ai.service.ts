@@ -196,17 +196,23 @@ Payment: ${proposal.paymentType}
       milestones: timelineParsed.milestones ?? defaults.timeline.milestones,
     };
 
-    await callAI(
+    const introResult = await callAI(
       locale,
       "intro",
       "You are a proposal assembler.",
       `Write a 2 sentence proposal introduction for:\n\nProject: ${proposal.projectName}\nClient: ${proposal.clientName}\nTotal: SAR ${proposal.budget}\n\n${lang}`
     );
+    const introduction =
+      introResult.trim() ||
+      (locale === "en"
+        ? `We are pleased to submit this proposal for ${proposal.projectName} to ${proposal.clientName}.`
+        : `يسعدنا تقديم هذا العرض لمشروع ${proposal.projectName} إلى ${proposal.clientName}.`);
 
     await db.proposal.update({
       where: { id: proposalId },
       data: {
         status: "review",
+        introduction,
         scopeItems: scopeItems as any,
         deliverables: deliverables as any,
         commercialTerms: commercialTerms as any,

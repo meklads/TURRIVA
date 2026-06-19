@@ -1,8 +1,9 @@
+import Link from "next/link";
 import { listProposalsQuery } from "@/modules/proposal/server/proposal.queries";
 import { getMessages } from "@/shared/i18n";
 import { getLocale } from "@/shared/i18n/server";
 import { formatDate } from "@/shared/lib/format";
-import Link from "next/link";
+import { ProposalListActions } from "@/modules/proposal/components/proposal-list-actions";
 
 export const dynamic = "force-dynamic";
 
@@ -44,21 +45,21 @@ export default async function ProposalsListPage() {
       ) : (
         <div className="space-y-2">
           {proposals.map((p) => (
-            <Link
+            <div
               key={p.id}
-              href={`/proposals/${p.id}`}
-              className="flex items-center justify-between rounded-xl border border-gray-100 px-4 py-3 transition-colors hover:bg-gray-50"
+              className="flex items-center justify-between gap-3 rounded-xl border border-gray-100 px-4 py-3 transition-colors hover:bg-gray-50"
             >
-              <div>
+              <Link href={`/proposals/${p.id}`} className="min-w-0 flex-1">
                 <p className="text-sm font-medium text-gray-900">
                   {p.projectName || t.list.untitled}
                 </p>
                 <p className="text-xs text-gray-500">
                   {p.clientName} · {formatDate(p.createdAt.toISOString(), locale)}
                 </p>
-              </div>
+              </Link>
+              <ProposalListActions proposalId={p.id} />
               <span
-                className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
+                className={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-medium ${
                   p.status === "exported"
                     ? "bg-green-50 text-green-700"
                     : p.status === "review" || p.status === "reviewed"
@@ -68,7 +69,7 @@ export default async function ProposalsListPage() {
               >
                 {statusLabels[p.status] ?? p.status}
               </span>
-            </Link>
+            </div>
           ))}
         </div>
       )}

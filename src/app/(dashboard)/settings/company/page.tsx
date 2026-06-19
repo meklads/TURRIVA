@@ -23,10 +23,7 @@ export default async function CompanySettingsPage() {
       <h1 className="text-xl font-bold text-gray-900">{t.company.title}</h1>
       <p className="mt-1 text-sm text-gray-500">{t.company.subtitle}</p>
       <div className="mt-6">
-        <CompanySettingsForm
-          userId={session.user.id}
-          initial={profile}
-        />
+        <CompanySettingsForm initial={profile} />
       </div>
     </div>
   );

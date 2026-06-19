@@ -48,6 +48,7 @@ export function buildProposalExportHtml(
     clientName: string;
     companyName?: string;
     proposalNumber?: string | null;
+    introduction?: string | null;
     date: string;
     scopeItems: Record<string, unknown>[];
     deliverables: Record<string, unknown>[];
@@ -137,6 +138,11 @@ export function buildProposalExportHtml(
     ${data.proposalNumber ? `<div><strong>${escapeHtml(labels.proposalNumber)}</strong> ${escapeHtml(data.proposalNumber)}</div>` : ""}
     <div><strong>${escapeHtml(labels.date)}</strong> ${escapeHtml(data.date)}</div>
   </div>
+  ${
+    data.introduction
+      ? `<p class="intro" style="font-size:14px;color:#374151;margin-bottom:24px;line-height:1.7;white-space:pre-wrap;">${escapeHtml(data.introduction)}</p>`
+      : ""
+  }
   <h2>${escapeHtml(labels.scopeOfWork)}</h2>
   ${data.scopeItems
     .map(

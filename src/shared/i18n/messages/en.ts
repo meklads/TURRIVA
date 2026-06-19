@@ -9,6 +9,7 @@ export const en: Messages = {
     myProposals: "My Proposals",
     settings: "Settings",
     signIn: "Sign In",
+    signOut: "Sign Out",
     newProposal: "New Proposal",
   },
   form: {
@@ -99,6 +100,25 @@ export const en: Messages = {
     },
     localeMismatch:
       "This proposal was created in a different language. Switch language to edit it.",
+    claimSuccess: "Proposal saved to your account.",
+    claiming: "Saving proposal to your account...",
+    postExportGuest: "Sign in to save this proposal and access it later from My Proposals.",
+    copyWhatsApp: "Copy WhatsApp message",
+    whatsAppCopied: "Message copied!",
+    regenerateSection: "Regenerate",
+    sectionRegenerating: "Regenerating...",
+    introduction: "Introduction",
+    removeItem: "Remove",
+  },
+  landing: {
+    title: "Professional proposals in two minutes",
+    subtitle:
+      "Ruwaq turns your project description into a complete business proposal — scope, terms, and timeline — powered by AI.",
+    cta: "Create a new proposal",
+    ctaSecondary: "My proposals",
+    feature1: "Ready in 60–90 seconds",
+    feature2: "Instant PDF export",
+    feature3: "Separate Arabic & English modes",
   },
   list: {
     title: "My Proposals",
@@ -106,6 +126,9 @@ export const en: Messages = {
     empty: "No proposals yet.",
     emptyCta: "Create your first proposal",
     untitled: "Untitled",
+    delete: "Delete",
+    duplicate: "Duplicate",
+    deleteConfirm: "Delete this proposal? This cannot be undone.",
     status: {
       draft: "Draft",
       generating: "Generating",
@@ -132,6 +155,14 @@ export const en: Messages = {
     save: "Save",
     saving: "Saving...",
     saveFailed: "Failed to save. Please try again.",
+  },
+  errors: {
+    title: "Something went wrong",
+    message: "Sorry, an unexpected error occurred. Please try again.",
+    retry: "Try again",
+    home: "Go home",
+    notFoundTitle: "Page not found",
+    notFoundMessage: "We couldn't find the page you're looking for.",
   },
   export: {
     savePdf: "Save as PDF",

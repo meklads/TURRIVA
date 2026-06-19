@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getMessages } from "@/shared/i18n";
 import { getLocale } from "@/shared/i18n/server";
 import { LocaleSwitcher } from "@/shared/i18n/locale-switcher";
+import { UserNav } from "@/modules/auth/components/user-nav";
 
 export default async function DashboardLayout({
   children,
@@ -27,12 +28,7 @@ export default async function DashboardLayout({
             <Link href="/settings/company" className="hover:text-gray-900">
               {t.nav.settings}
             </Link>
-            <Link
-              href="/login"
-              className="rounded-lg border border-gray-200 px-3 py-1.5 hover:bg-gray-50"
-            >
-              {t.nav.signIn}
-            </Link>
+            <UserNav />
           </nav>
         </div>
       </header>

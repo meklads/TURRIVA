@@ -7,6 +7,7 @@ export const ar = {
     myProposals: "عروضي",
     settings: "الإعدادات",
     signIn: "تسجيل الدخول",
+    signOut: "تسجيل الخروج",
     newProposal: "عرض جديد",
   },
   form: {
@@ -97,6 +98,25 @@ export const ar = {
     },
     localeMismatch:
       "هذا العرض أُنشئ بلغة مختلفة. بدّل اللغة لتعديله.",
+    claimSuccess: "تم حفظ العرض في حسابك.",
+    claiming: "جاري حفظ العرض في حسابك...",
+    postExportGuest: "سجّل الدخول لحفظ هذا العرض والوصول إليه لاحقاً من «عروضي».",
+    copyWhatsApp: "نسخ رسالة واتساب",
+    whatsAppCopied: "تم نسخ الرسالة!",
+    regenerateSection: "إعادة توليد",
+    sectionRegenerating: "جاري التوليد...",
+    introduction: "المقدمة",
+    removeItem: "حذف",
+  },
+  landing: {
+    title: "عروض احترافية في دقيقتين",
+    subtitle:
+      "رواق يحوّل وصف مشروعك إلى عرض تجاري كامل — نطاق عمل، شروط، وجدول زمني — بالذكاء الاصطناعي.",
+    cta: "ابدأ عرضاً جديداً",
+    ctaSecondary: "عروضي",
+    feature1: "⚡ جاهز في 60–90 ثانية",
+    feature2: "📄 تصدير PDF فوري",
+    feature3: "🇸🇦 عربي وإنجليزي منفصلين",
   },
   list: {
     title: "عروضي",
@@ -104,6 +124,9 @@ export const ar = {
     empty: "لا توجد عروض بعد.",
     emptyCta: "أنشئ أول عرض",
     untitled: "بدون عنوان",
+    delete: "حذف",
+    duplicate: "نسخ",
+    deleteConfirm: "حذف هذا العرض؟ لا يمكن التراجع.",
     status: {
       draft: "مسودة",
       generating: "جاري التوليد",
@@ -130,6 +153,14 @@ export const ar = {
     save: "حفظ",
     saving: "جاري الحفظ...",
     saveFailed: "فشل الحفظ. حاول مرة أخرى.",
+  },
+  errors: {
+    title: "حدث خطأ",
+    message: "عذراً، حدث خطأ غير متوقع. حاول مرة أخرى.",
+    retry: "إعادة المحاولة",
+    home: "الصفحة الرئيسية",
+    notFoundTitle: "الصفحة غير موجودة",
+    notFoundMessage: "لم نجد الصفحة التي تبحث عنها.",
   },
   export: {
     savePdf: "حفظ PDF",

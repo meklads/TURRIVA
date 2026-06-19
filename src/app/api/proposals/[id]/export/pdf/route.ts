@@ -40,6 +40,7 @@ export async function GET(
       clientName: proposal.clientName,
       companyName,
       proposalNumber: proposal.proposalNumber,
+      introduction: proposal.introduction,
       date: new Date().toLocaleDateString(localeToBcp47(locale), {
         year: "numeric",
         month: "long",

@@ -87,6 +87,7 @@ export interface Proposal {
   budget: number;
   paymentType: PaymentType;
   locale: "ar" | "en";
+  introduction: string | null;
 
   // AI generated
   scopeItems: ScopeItem[];

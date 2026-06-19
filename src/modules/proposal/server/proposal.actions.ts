@@ -6,14 +6,20 @@ import {
   addProposalItem,
   removeProposalItem,
   markSectionReviewed,
+  getProposal,
+  deleteProposal,
+  duplicateProposal,
 } from "./proposal.service";
 import type { CreateProposalInput } from "@/shared/types";
 import { getSession } from "@/modules/auth/server/session";
+import { ProposalAccessError } from "./proposal-auth";
 
 function actionError(error: unknown, fallback: string) {
   let message = error instanceof Error ? error.message : fallback;
 
-  if (
+  if (error instanceof ProposalAccessError) {
+    message = error.message;
+  } else if (
     message.includes("DATABASE_URL") ||
     message.includes("Environment variable not found")
   ) {
@@ -44,6 +50,7 @@ export async function createProposalAction(input: CreateProposalInput) {
 // SA2
 export async function generateWithAI(proposalId: string) {
   try {
+    await assertCanMutate(proposalId);
     const { generateProposalContent } = await import("./proposal-ai.service");
     await generateProposalContent(proposalId);
     return { success: true as const, id: proposalId };
@@ -57,8 +64,18 @@ export async function regenerateSectionAction(
   proposalId: string,
   section: string
 ) {
-  const { regenerateSection } = await import("./proposal-ai.service");
-  return regenerateSection(proposalId, section);
+  try {
+    await assertCanMutate(proposalId);
+    const { regenerateSection } = await import("./proposal-ai.service");
+    await regenerateSection(proposalId, section);
+    const proposal = await getProposal(proposalId);
+    if (!proposal) {
+      return { success: false as const, error: "Proposal not found" };
+    }
+    return { success: true as const, proposal };
+  } catch (error) {
+    return actionError(error, "Failed to regenerate section");
+  }
 }
 
 // SA4
@@ -67,7 +84,13 @@ export async function updateFieldAction(
   field: string,
   value: unknown
 ) {
-  return updateProposalField(proposalId, field, value);
+  try {
+    await assertCanMutate(proposalId);
+    const result = await updateProposalField(proposalId, field, value);
+    return { success: result.success };
+  } catch (error) {
+    return actionError(error, "Failed to update field");
+  }
 }
 
 // SA5
@@ -76,7 +99,13 @@ export async function addItemAction(
   section: string,
   item: Record<string, unknown>
 ) {
-  return addProposalItem(proposalId, section, item);
+  try {
+    await assertCanMutate(proposalId);
+    const result = await addProposalItem(proposalId, section, item);
+    return { success: true as const, id: result.id };
+  } catch (error) {
+    return actionError(error, "Failed to add item");
+  }
 }
 
 // SA6
@@ -85,7 +114,13 @@ export async function removeItemAction(
   section: string,
   itemId: string
 ) {
-  return removeProposalItem(proposalId, section, itemId);
+  try {
+    await assertCanMutate(proposalId);
+    const result = await removeProposalItem(proposalId, section, itemId);
+    return { success: result.success };
+  } catch (error) {
+    return actionError(error, "Failed to remove item");
+  }
 }
 
 // SA7
@@ -93,18 +128,83 @@ export async function markReviewedAction(
   proposalId: string,
   section: string
 ) {
-  return markSectionReviewed(proposalId, section);
+  try {
+    await assertCanMutate(proposalId);
+    const result = await markSectionReviewed(proposalId, section);
+    return { success: true as const, reviewedSections: result.reviewedSections };
+  } catch (error) {
+    return actionError(error, "Failed to mark section reviewed");
+  }
 }
 
 // SA8
 export async function exportPdfAction(proposalId: string) {
-  const { exportProposalAsPdf } = await import("./proposal-pdf.service");
-  return exportProposalAsPdf(proposalId);
+  try {
+    await assertCanMutate(proposalId);
+    const { exportProposalAsPdf } = await import("./proposal-pdf.service");
+    const result = await exportProposalAsPdf(proposalId);
+    return { success: true as const, ...result };
+  } catch (error) {
+    return actionError(error, "Failed to export proposal");
+  }
 }
 
 export async function claimProposalAction(proposalId: string) {
-  const session = await getSession();
-  if (!session?.user?.id) return { success: false };
-  const { claimProposal } = await import("./proposal.service");
-  return claimProposal(proposalId, session.user.id);
+  try {
+    const session = await getSession();
+    if (!session?.user?.id) {
+      return { success: false as const, error: "Sign in required" };
+    }
+    const { claimProposal } = await import("./proposal.service");
+    const result = await claimProposal(proposalId, session.user.id);
+    if (!result.success) {
+      return {
+        success: false as const,
+        error: "Could not save proposal to your account",
+      };
+    }
+    return { success: true as const };
+  } catch (error) {
+    return actionError(error, "Failed to claim proposal");
+  }
+}
+
+export async function refreshProposalAction(proposalId: string) {
+  try {
+    const proposal = await getProposal(proposalId);
+    if (!proposal) {
+      return { success: false as const, error: "Proposal not found" };
+    }
+    return { success: true as const, proposal };
+  } catch (error) {
+    return actionError(error, "Failed to load proposal");
+  }
+}
+
+export async function deleteProposalAction(proposalId: string) {
+  try {
+    await assertCanMutate(proposalId);
+    await deleteProposal(proposalId);
+    return { success: true as const };
+  } catch (error) {
+    return actionError(error, "Failed to delete proposal");
+  }
+}
+
+export async function duplicateProposalAction(proposalId: string) {
+  try {
+    const session = await getSession();
+    if (!session?.user?.id) {
+      return { success: false as const, error: "Sign in required" };
+    }
+    const { id } = await duplicateProposal(proposalId, session.user.id);
+    return { success: true as const, id };
+  } catch (error) {
+    return actionError(error, "Failed to duplicate proposal");
+  }
+}
+
+async function assertCanMutate(proposalId: string) {
+  const { assertCanMutateProposal } = await import("./proposal-auth");
+  await assertCanMutateProposal(proposalId);
 }

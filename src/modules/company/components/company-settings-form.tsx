@@ -6,11 +6,10 @@ import type { CompanyProfile } from "@prisma/client";
 import { useT } from "@/shared/i18n/context";
 
 interface Props {
-  userId: string;
   initial: CompanyProfile | null;
 }
 
-export function CompanySettingsForm({ userId, initial }: Props) {
+export function CompanySettingsForm({ initial }: Props) {
   const t = useT();
   const router = useRouter();
   const [saving, setSaving] = useState(false);
@@ -29,7 +28,7 @@ export function CompanySettingsForm({ userId, initial }: Props) {
       await fetch("/api/company/profile", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, userId }),
+        body: JSON.stringify(form),
       });
       router.refresh();
     } catch {

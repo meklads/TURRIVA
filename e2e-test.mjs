@@ -6,7 +6,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const BASE = "http://localhost:3456";
+const BASE = process.env.E2E_BASE_URL ?? "http://localhost:3000";
 
 async function e2e() {
   console.log("\n🧪 SAUDI PROPOSAL OS — FULL E2E TEST");
@@ -57,6 +57,7 @@ async function e2e() {
       description: "Complete interior fit-out of a 300sqm villa in Riyadh's Al Malqa district. Includes porcelain tile flooring throughout, full interior painting with premium water-based paints, custom kitchen cabinets with quartz countertops, bathroom fixtures and sanitaryware installation, LED lighting throughout, and built-in wardrobes for all bedrooms.",
       budget: 185000,
       paymentType: "milestone_30_40_30",
+      locale: "en",
       status: "draft",
       confidence: {
         scopeItems: "medium",

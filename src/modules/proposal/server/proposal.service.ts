@@ -6,6 +6,7 @@ import {
   type Locale,
 } from "@/shared/i18n/locale";
 import { getMessages } from "@/shared/i18n";
+import { assertCanMutateProposal, assertCanClaimProposal } from "./proposal-auth";
 import type {
   CreateProposalInput,
   Proposal,
@@ -86,6 +87,7 @@ export async function getProposal(id: string): Promise<Proposal | null> {
     budget: p.budget,
     paymentType: p.paymentType as Proposal["paymentType"],
     locale: p.locale === "en" ? "en" : "ar",
+    introduction: p.introduction ?? null,
     scopeItems: (p.scopeItems ?? []) as unknown as ScopeItem[],
     deliverables: (p.deliverables ?? []) as unknown as Deliverable[],
     timeline: p.timeline as unknown as Timeline | null,
@@ -108,6 +110,8 @@ export async function updateProposalField(
   field: string,
   value: unknown
 ): Promise<{ success: boolean }> {
+  await assertCanMutateProposal(proposalId);
+
   const scalarFields = [
     "projectName",
     "clientName",
@@ -115,6 +119,7 @@ export async function updateProposalField(
     "budget",
     "paymentType",
     "status",
+    "introduction",
   ];
 
   if (scalarFields.includes(field)) {
@@ -224,6 +229,8 @@ export async function addProposalItem(
   section: string,
   item: Record<string, unknown>
 ): Promise<{ id: string }> {
+  await assertCanMutateProposal(proposalId);
+
   const current = await db.proposal.findUnique({
     where: { id: proposalId },
     select: { [section]: true },
@@ -249,6 +256,8 @@ export async function removeProposalItem(
   section: string,
   itemId: string
 ): Promise<{ success: boolean }> {
+  await assertCanMutateProposal(proposalId);
+
   const current = await db.proposal.findUnique({
     where: { id: proposalId },
     select: { [section]: true },
@@ -272,6 +281,8 @@ export async function markSectionReviewed(
   proposalId: string,
   section: string
 ): Promise<{ reviewedSections: string[] }> {
+  await assertCanMutateProposal(proposalId);
+
   const current = await db.proposal.findUnique({
     where: { id: proposalId },
     select: { reviewedSections: true },
@@ -325,18 +336,70 @@ export async function claimProposal(
   proposalId: string,
   userId: string
 ): Promise<{ success: boolean }> {
-  const proposal = await db.proposal.findUnique({
-    where: { id: proposalId },
-    select: { userId: true },
-  });
-  if (!proposal) return { success: false };
-  if (proposal.userId && proposal.userId !== userId) return { success: false };
+  try {
+    await assertCanClaimProposal(proposalId, userId);
+  } catch {
+    return { success: false };
+  }
 
   await db.proposal.update({
     where: { id: proposalId },
     data: { userId },
   });
   return { success: true };
+}
+
+export async function deleteProposal(proposalId: string): Promise<void> {
+  await assertCanMutateProposal(proposalId);
+  await db.proposal.delete({ where: { id: proposalId } });
+}
+
+export async function duplicateProposal(
+  proposalId: string,
+  userId: string
+): Promise<{ id: string }> {
+  const source = await db.proposal.findUnique({ where: { id: proposalId } });
+  if (!source) throw new Error("Proposal not found");
+  if (source.userId && source.userId !== userId) {
+    throw new Error("Unauthorized");
+  }
+
+  const copy = await db.proposal.create({
+    data: {
+      userId,
+      locale: source.locale,
+      introduction: source.introduction,
+      projectName:
+        source.locale === "en"
+          ? `${source.projectName} (copy)`
+          : `${source.projectName} (نسخة)`,
+      clientName: source.clientName,
+      description: source.description,
+      budget: source.budget,
+      paymentType: source.paymentType,
+      status: "review",
+      scopeItems: source.scopeItems ?? undefined,
+      deliverables: source.deliverables ?? undefined,
+      timeline: source.timeline ?? undefined,
+      commercialTerms: source.commercialTerms ?? undefined,
+      assumptions: source.assumptions ?? undefined,
+      exclusions: source.exclusions ?? undefined,
+      confidence: source.confidence ?? undefined,
+      reviewedSections: [],
+    },
+  });
+
+  return { id: copy.id };
+}
+
+export async function getProposalIdByShareToken(
+  token: string
+): Promise<string | null> {
+  const doc = await db.generatedDocument.findFirst({
+    where: { shareToken: token },
+    select: { proposalId: true },
+  });
+  return doc?.proposalId ?? null;
 }
 
 // ─── HELPERS ───

@@ -86,6 +86,9 @@ model Proposal {
   /// Document language at creation — ar | en
   locale      String   @default("ar")
 
+  /// AI-generated introduction paragraph
+  introduction String?
+
   /// USER INPUT — Step 1
   projectName String   @default("")
   clientName  String   @default("")

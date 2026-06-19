@@ -4,6 +4,7 @@ export type Messages = {
     myProposals: string;
     settings: string;
     signIn: string;
+    signOut: string;
     newProposal: string;
   };
   form: {
@@ -81,6 +82,24 @@ export type Messages = {
     badges: { review: string; aiEstimated: string };
     placeholders: { itemTitle: string; itemDescription: string };
     localeMismatch: string;
+    claimSuccess: string;
+    claiming: string;
+    postExportGuest: string;
+    copyWhatsApp: string;
+    whatsAppCopied: string;
+    regenerateSection: string;
+    sectionRegenerating: string;
+    introduction: string;
+    removeItem: string;
+  };
+  landing: {
+    title: string;
+    subtitle: string;
+    cta: string;
+    ctaSecondary: string;
+    feature1: string;
+    feature2: string;
+    feature3: string;
   };
   list: {
     title: string;
@@ -88,6 +107,9 @@ export type Messages = {
     empty: string;
     emptyCta: string;
     untitled: string;
+    delete: string;
+    duplicate: string;
+    deleteConfirm: string;
     status: {
       draft: string;
       generating: string;
@@ -114,6 +136,14 @@ export type Messages = {
     save: string;
     saving: string;
     saveFailed: string;
+  };
+  errors: {
+    title: string;
+    message: string;
+    retry: string;
+    home: string;
+    notFoundTitle: string;
+    notFoundMessage: string;
   };
   export: {
     savePdf: string;

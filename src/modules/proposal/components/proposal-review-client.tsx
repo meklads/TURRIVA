@@ -9,11 +9,16 @@ import {
   markReviewedAction,
   exportPdfAction,
   generateWithAI,
+  regenerateSectionAction,
 } from "@/modules/proposal/server/proposal.actions";
 import Link from "next/link";
 import { useLocale, useT } from "@/shared/i18n/context";
 import { validateLocaleText } from "@/shared/i18n/locale";
 import { formatDate, formatSar } from "@/shared/lib/format";
+import { ClaimProposal } from "@/modules/proposal/components/claim-proposal";
+import {
+  buildWhatsAppMessage,
+} from "@/modules/proposal/lib/whatsapp";
 
 interface Props {
   proposal: Proposal;
@@ -33,8 +38,13 @@ export function ProposalReviewClient({
 
   const [proposal, setProposal] = useState(initial);
   const [exporting, setExporting] = useState(false);
-  const [exported, setExported] = useState(false);
+  const [exported, setExported] = useState(!!initial.exportedAt);
   const [regenerating, setRegenerating] = useState(false);
+  const [sectionRegenerating, setSectionRegenerating] = useState<string | null>(
+    null
+  );
+  const [shareUrl, setShareUrl] = useState<string | null>(null);
+  const [toast, setToast] = useState<string | null>(null);
 
   const sections = [
     { id: "scopeItems", label: t.review.sections.scopeItems },
@@ -73,8 +83,13 @@ export function ProposalReviewClient({
   );
 
   const handleAddItem = async (section: string) => {
+    if (!canEdit) return;
     const item: any = { id: crypto.randomUUID(), title: "", description: "" };
     const result = await addItemAction(proposal.id, section, item);
+    if (!result.success) {
+      alert(result.error ?? t.form.errors.generic);
+      return;
+    }
     setProposal((prev) => ({
       ...prev,
       [section as keyof typeof prev]: [
@@ -96,6 +111,10 @@ export function ProposalReviewClient({
 
   const handleMarkReviewed = async (section: string) => {
     const result = await markReviewedAction(proposal.id, section);
+    if (!result.success) {
+      alert(result.error ?? t.form.errors.generic);
+      return;
+    }
     setProposal((prev) => ({
       ...prev,
       reviewedSections: result.reviewedSections,
@@ -106,38 +125,54 @@ export function ProposalReviewClient({
 
   const handleExport = async () => {
     setExporting(true);
-    try {
-      const result = await exportPdfAction(proposal.id);
-      if (result?.url) {
-        setExported(true);
-        window.open(result.url, "_blank", "noopener,noreferrer");
-      } else {
-        window.open(
-          `/api/proposals/${proposal.id}/export/pdf`,
-          "_blank",
-          "noopener,noreferrer"
-        );
-      }
-    } catch {
-      window.open(
-        `/api/proposals/${proposal.id}/export/pdf`,
-        "_blank",
-        "noopener,noreferrer"
-      );
+    const result = await exportPdfAction(proposal.id);
+    if (result.success) {
+      setExported(true);
+      if (result.shareUrl) setShareUrl(result.shareUrl);
+      window.open(result.url, "_blank", "noopener,noreferrer");
+    } else {
+      alert(result.error ?? t.form.errors.generic);
     }
     setExporting(false);
   };
 
   const handleRegenerate = async () => {
-    if (!confirm(t.review.regenerateConfirm)) return;
+    if (!canEdit || !confirm(t.review.regenerateConfirm)) return;
     setRegenerating(true);
-    try {
-      await generateWithAI(proposal.id);
+    const result = await generateWithAI(proposal.id);
+    if (result.success) {
       window.location.reload();
-    } catch {
-      alert(t.review.regenerateFailed);
+    } else {
+      alert(result.error ?? t.review.regenerateFailed);
       setRegenerating(false);
     }
+  };
+
+  const handleSectionRegenerate = async (section: string) => {
+    if (!canEdit || !confirm(t.review.regenerateConfirm)) return;
+    setSectionRegenerating(section);
+    const result = await regenerateSectionAction(proposal.id, section);
+    if (result.success && result.proposal) {
+      setProposal(result.proposal);
+    } else if (!result.success) {
+      alert(result.error ?? t.review.regenerateFailed);
+    }
+    setSectionRegenerating(null);
+  };
+
+  const handleCopyWhatsApp = async () => {
+    const url =
+      shareUrl ??
+      `${window.location.origin}/api/proposals/${proposal.id}/export/pdf`;
+    const text = buildWhatsAppMessage(contentLocale, {
+      projectName: proposal.projectName,
+      clientName: proposal.clientName,
+      budget: proposal.budget,
+      shareUrl: url,
+    });
+    await navigator.clipboard.writeText(text);
+    setToast(t.review.whatsAppCopied);
+    setTimeout(() => setToast(null), 3000);
   };
 
   const statusLabel = exported
@@ -148,17 +183,26 @@ export function ProposalReviewClient({
 
   return (
     <div className="mx-auto max-w-3xl pb-24">
+      {toast && (
+        <div className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2 rounded-lg bg-gray-900 px-4 py-2 text-sm text-white shadow-lg">
+          {toast}
+        </div>
+      )}
       {!canEdit && (
         <div className="mb-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
           {t.review.localeMismatch}
         </div>
       )}
-      {isGuest && (
-        <div className="mb-4 rounded-xl border border-brand-100 bg-brand-50 px-4 py-3 text-sm text-brand-800">
-          <Link href="/login" className="font-semibold underline">
+      <ClaimProposal proposalId={proposal.id} isGuest={!!isGuest} />
+      {exported && isGuest && (
+        <div className="mb-4 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800">
+          {t.review.postExportGuest}{" "}
+          <Link
+            href={`/login?callbackUrl=${encodeURIComponent(`/proposals/${proposal.id}?claim=1`)}`}
+            className="font-semibold underline"
+          >
             {t.review.guestLink}
-          </Link>{" "}
-          {t.review.guestBanner}
+          </Link>
         </div>
       )}
 
@@ -178,8 +222,14 @@ export function ProposalReviewClient({
           </div>
           <div className="flex items-center gap-2">
             <button
+              onClick={handleCopyWhatsApp}
+              className="rounded-lg border border-gray-200 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+            >
+              {t.review.copyWhatsApp}
+            </button>
+            <button
               onClick={handleRegenerate}
-              disabled={regenerating}
+              disabled={regenerating || !canEdit}
               className="rounded-lg border border-gray-200 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50"
             >
               {regenerating ? t.review.regenerating : t.review.regenerate}
@@ -200,7 +250,7 @@ export function ProposalReviewClient({
       <div className="mb-8 rounded-xl border border-gray-100 bg-gray-50/50 p-6">
         <h1
           className="text-2xl font-bold text-gray-900 outline-none"
-          contentEditable
+          contentEditable={canEdit}
           suppressContentEditableWarning
           onBlur={(e) => handleEdit("projectName", e.currentTarget.textContent)}
         >
@@ -210,13 +260,30 @@ export function ProposalReviewClient({
           {t.review.preparedFor}{" "}
           <span
             className="font-medium text-gray-800 outline-none"
-            contentEditable
+            contentEditable={canEdit}
             suppressContentEditableWarning
             onBlur={(e) => handleEdit("clientName", e.currentTarget.textContent)}
           >
             {proposal.clientName}
           </span>
         </p>
+        {proposal.introduction && (
+          <div className="mt-4 border-t border-gray-100 pt-4">
+            <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">
+              {t.review.introduction}
+            </p>
+            <p
+              className="text-sm leading-relaxed text-gray-700 outline-none"
+              contentEditable={canEdit}
+              suppressContentEditableWarning
+              onBlur={(e) =>
+                handleEdit("introduction", e.currentTarget.textContent)
+              }
+            >
+              {proposal.introduction}
+            </p>
+          </div>
+        )}
         {companyName && (
           <p className="mt-1 text-sm text-gray-500">
             {t.review.preparedBy}{" "}
@@ -236,6 +303,9 @@ export function ProposalReviewClient({
           reviewed={reviewed.includes("scopeItems")}
           onMarkReviewed={() => handleMarkReviewed("scopeItems")}
           canEdit={canEdit}
+          sectionId="scopeItems"
+          onSectionRegenerate={handleSectionRegenerate}
+          sectionRegenerating={sectionRegenerating === "scopeItems"}
         >
           {(proposal.scopeItems ?? []).map((item: any, i: number) => (
             <ScopeItemCard
@@ -266,6 +336,9 @@ export function ProposalReviewClient({
           reviewed={reviewed.includes("commercialTerms")}
           onMarkReviewed={() => handleMarkReviewed("commercialTerms")}
           canEdit={canEdit}
+          sectionId="commercialTerms"
+          onSectionRegenerate={handleSectionRegenerate}
+          sectionRegenerating={sectionRegenerating === "commercialTerms"}
         >
           {proposal.commercialTerms && (
             <div className="space-y-4">
@@ -441,7 +514,7 @@ export function ProposalReviewClient({
                   <button
                     onClick={() => handleRemoveItem("deliverables", item.id)}
                     className="opacity-0 transition-opacity group-hover:opacity-100"
-                    aria-label="remove"
+                    aria-label={t.review.removeItem}
                   >
                     <span className="text-xs text-gray-400 hover:text-red-500">✕</span>
                   </button>
@@ -459,6 +532,9 @@ export function ProposalReviewClient({
           reviewed={reviewed.includes("assumptions")}
           onMarkReviewed={() => handleMarkReviewed("assumptions")}
           canEdit={canEdit}
+          sectionId="assumptions"
+          onSectionRegenerate={handleSectionRegenerate}
+          sectionRegenerating={sectionRegenerating === "assumptions"}
         >
           <p className="mb-3 text-xs text-amber-700">{t.review.aiDraftHint}</p>
           {proposal.assumptions.length > 0 ? (
@@ -502,6 +578,9 @@ export function ProposalReviewClient({
           reviewed={reviewed.includes("exclusions")}
           onMarkReviewed={() => handleMarkReviewed("exclusions")}
           canEdit={canEdit}
+          sectionId="exclusions"
+          onSectionRegenerate={handleSectionRegenerate}
+          sectionRegenerating={sectionRegenerating === "exclusions"}
         >
           <p className="mb-3 text-xs text-amber-700">{t.review.aiDraftHint}</p>
           {proposal.exclusions.length > 0 ? (
@@ -565,6 +644,9 @@ function SectionWrapper({
   onMarkReviewed,
   hideReview,
   canEdit = true,
+  sectionId,
+  onSectionRegenerate,
+  sectionRegenerating,
   children,
 }: {
   label: string;
@@ -573,6 +655,9 @@ function SectionWrapper({
   onMarkReviewed: () => void;
   hideReview?: boolean;
   canEdit?: boolean;
+  sectionId?: string;
+  onSectionRegenerate?: (section: string) => void;
+  sectionRegenerating?: boolean;
   children: React.ReactNode;
 }) {
   const t = useT();
@@ -596,20 +681,34 @@ function SectionWrapper({
             </span>
           )}
         </div>
-        {!hideReview &&
-          canEdit &&
-          (reviewed ? (
-            <span className="text-xs font-medium text-green-700">
-              {t.review.reviewed}
-            </span>
-          ) : (
+        <div className="flex items-center gap-2">
+          {sectionId && onSectionRegenerate && canEdit && (
             <button
-              onClick={onMarkReviewed}
-              className="rounded-lg border border-gray-200 px-3 py-1 text-xs font-medium text-gray-600 hover:bg-gray-50"
+              type="button"
+              onClick={() => onSectionRegenerate(sectionId)}
+              disabled={sectionRegenerating}
+              className="rounded-lg border border-gray-200 px-2 py-1 text-xs font-medium text-gray-600 hover:bg-gray-50 disabled:opacity-50"
             >
-              {t.review.markReviewed}
+              {sectionRegenerating
+                ? t.review.sectionRegenerating
+                : t.review.regenerateSection}
             </button>
-          ))}
+          )}
+          {!hideReview &&
+            canEdit &&
+            (reviewed ? (
+              <span className="text-xs font-medium text-green-700">
+                {t.review.reviewed}
+              </span>
+            ) : (
+              <button
+                onClick={onMarkReviewed}
+                className="rounded-lg border border-gray-200 px-3 py-1 text-xs font-medium text-gray-600 hover:bg-gray-50"
+              >
+                {t.review.markReviewed}
+              </button>
+            ))}
+        </div>
       </div>
       {children}
     </section>
@@ -655,7 +754,7 @@ function ScopeItemCard({
         <button
           onClick={onRemove}
           className="opacity-0 transition-opacity group-hover:opacity-100"
-          aria-label="remove"
+          aria-label={t.review.removeItem}
         >
           <span className="text-xs text-gray-400 hover:text-red-500">✕</span>
         </button>
@@ -676,6 +775,7 @@ function EditableListItem({
   onRemove: () => void;
   canEdit?: boolean;
 }) {
+  const t = useT();
   return (
     <li className="group flex items-start gap-2">
       <span className="mt-2 text-gray-400">•</span>
@@ -689,7 +789,7 @@ function EditableListItem({
       <button
         onClick={onRemove}
         className="opacity-0 transition-opacity group-hover:opacity-100"
-        aria-label="remove"
+        aria-label={t.review.removeItem}
       >
         <span className="text-xs text-gray-400 hover:text-red-500">✕</span>
       </button>
