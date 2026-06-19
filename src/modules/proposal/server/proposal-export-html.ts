@@ -34,7 +34,7 @@ export function asciiFilename(name: string, fallback = "proposal"): string {
 export function formatSar(amount: unknown): string {
   const n = typeof amount === "number" ? amount : Number(amount ?? 0);
   if (!Number.isFinite(n)) return "0";
-  return n.toLocaleString("en-US");
+  return n.toLocaleString("ar-SA");
 }
 
 export function buildProposalExportHtml(data: {
@@ -94,15 +94,15 @@ export function buildProposalExportHtml(data: {
   </style>
 </head>
 <body>
-  <button class="print-btn no-print" onclick="window.print()">Save as PDF — اطبع كـ PDF</button>
+  <button class="print-btn no-print" onclick="window.print()">حفظ PDF — Save as PDF</button>
   <h1>${escapeHtml(data.projectName)}</h1>
   <div class="meta">
-    <div><strong>Prepared for:</strong> ${escapeHtml(data.clientName)}</div>
-    ${data.companyName ? `<div><strong>Prepared by:</strong> ${escapeHtml(data.companyName)}</div>` : ""}
-    ${data.proposalNumber ? `<div><strong>Proposal #:</strong> ${escapeHtml(data.proposalNumber)}</div>` : ""}
-    <div><strong>Date:</strong> ${escapeHtml(data.date)}</div>
+    <div><strong>مُعد لـ / Prepared for:</strong> ${escapeHtml(data.clientName)}</div>
+    ${data.companyName ? `<div><strong>مُعد بواسطة / Prepared by:</strong> ${escapeHtml(data.companyName)}</div>` : ""}
+    ${data.proposalNumber ? `<div><strong>رقم العرض / Proposal #:</strong> ${escapeHtml(data.proposalNumber)}</div>` : ""}
+    <div><strong>التاريخ / Date:</strong> ${escapeHtml(data.date)}</div>
   </div>
-  <h2>Scope of Work</h2>
+  <h2>نطاق العمل / Scope of Work</h2>
   ${data.scopeItems
     .map(
       (item, i) => `<div class="scope-item">
@@ -113,7 +113,7 @@ export function buildProposalExportHtml(data: {
     .join("")}
   ${
     data.deliverables.length
-      ? `<h2>Deliverables</h2><ul>${data.deliverables
+      ? `<h2>المخرجات / Deliverables</h2><ul>${data.deliverables
           .map(
             (d) =>
               `<li><strong>${escapeHtml(d.name)}</strong> — ${escapeHtml(d.description)}</li>`
@@ -123,8 +123,8 @@ export function buildProposalExportHtml(data: {
   }
   ${
     data.timeline
-      ? `<h2>Timeline</h2>
-         <p>Duration: ${escapeHtml(data.timeline.duration ?? "TBD")}</p>
+      ? `<h2>الجدول الزمني / Timeline</h2>
+         <p>المدة / Duration: ${escapeHtml(data.timeline.duration ?? "TBD")}</p>
          ${
            milestones.length
              ? `<ul>${milestones.map((m) => `<li>${escapeHtml(m.name)}</li>`).join("")}</ul>`
@@ -132,23 +132,23 @@ export function buildProposalExportHtml(data: {
          }`
       : ""
   }
-  <h2>Commercial Terms</h2>
-  <div class="total">Total Value: SAR ${formatSar(data.budget)}</div>
+  <h2>الشروط التجارية / Commercial Terms</h2>
+  <div class="total">الإجمالي / Total: ${formatSar(data.budget)} ريال</div>
   <table>
-    <thead><tr><th>Milestone</th><th>%</th><th>Amount</th></tr></thead>
+    <thead><tr><th>المرحلة</th><th>%</th><th>المبلغ</th></tr></thead>
     <tbody>${paymentRows}</tbody>
   </table>
   ${
     data.assumptions.length
-      ? `<h2>Assumptions</h2><ul>${data.assumptions.map((a) => `<li>${escapeHtml(a)}</li>`).join("")}</ul>`
+      ? `<h2>الافتراضات / Assumptions</h2><ul>${data.assumptions.map((a) => `<li>${escapeHtml(a)}</li>`).join("")}</ul>`
       : ""
   }
   ${
     data.exclusions.length
-      ? `<h2>Exclusions</h2><ul>${data.exclusions.map((e) => `<li>${escapeHtml(e)}</li>`).join("")}</ul>`
+      ? `<h2>الاستثناءات / Exclusions</h2><ul>${data.exclusions.map((e) => `<li>${escapeHtml(e)}</li>`).join("")}</ul>`
       : ""
   }
-  <div class="footer"><p>Generated with AI assistance. Review before submitting.</p></div>
+  <div class="footer"><p>مسودة مولّدة بالذكاء الاصطناعي — راجع قبل الإرسال.</p></div>
 </body>
 </html>`;
 }

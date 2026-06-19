@@ -1,22 +1,21 @@
 "use client";
 
 import { signIn } from "next-auth/react";
+import { t } from "@/shared/i18n";
 
 export default function LoginPage() {
   return (
     <div className="flex min-h-screen items-center justify-center px-4">
       <div className="w-full max-w-sm">
-        <h1 className="text-2xl font-bold text-gray-900">Sign in</h1>
-        <p className="mt-1 text-sm text-gray-500">
-          Save your proposals and add your company branding.
-        </p>
+        <h1 className="text-2xl font-bold text-gray-900">{t.login.title}</h1>
+        <p className="mt-1 text-sm text-gray-500">{t.login.subtitle}</p>
 
         <div className="mt-6">
           <button
             onClick={() => signIn("google", { callbackUrl: "/proposals" })}
             className="flex w-full items-center justify-center gap-3 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50"
           >
-            <svg className="h-5 w-5" viewBox="0 0 24 24">
+            <svg className="h-5 w-5 shrink-0" viewBox="0 0 24 24">
               <path
                 d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"
                 fill="#4285F4"
@@ -34,13 +33,11 @@ export default function LoginPage() {
                 fill="#EA4335"
               />
             </svg>
-            Sign in with Google
+            {t.login.google}
           </button>
         </div>
 
-        <p className="mt-6 text-center text-xs text-gray-400">
-          No account needed to create proposals. Sign in only to save them.
-        </p>
+        <p className="mt-6 text-center text-xs text-gray-400">{t.login.hint}</p>
       </div>
     </div>
   );

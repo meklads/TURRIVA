@@ -2,6 +2,7 @@ import { getSession } from "@/modules/auth/server/session";
 import { db } from "@/shared/lib/db";
 import { redirect } from "next/navigation";
 import { CompanySettingsForm } from "@/modules/company/components/company-settings-form";
+import { t } from "@/shared/i18n";
 
 export const dynamic = "force-dynamic";
 
@@ -15,10 +16,8 @@ export default async function CompanySettingsPage() {
 
   return (
     <div className="mx-auto max-w-lg">
-      <h1 className="text-xl font-bold text-gray-900">Company Settings</h1>
-      <p className="mt-1 text-sm text-gray-500">
-        Your branding appears on every proposal.
-      </p>
+      <h1 className="text-xl font-bold text-gray-900">{t.company.title}</h1>
+      <p className="mt-1 text-sm text-gray-500">{t.company.subtitle}</p>
       <div className="mt-6">
         <CompanySettingsForm
           userId={session.user.id}

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import type { CompanyProfile } from "@prisma/client";
+import { t } from "@/shared/i18n";
 
 interface Props {
   userId: string;
@@ -31,7 +32,7 @@ export function CompanySettingsForm({ userId, initial }: Props) {
       });
       router.refresh();
     } catch {
-      alert("Failed to save");
+      alert(t.company.saveFailed);
     }
     setSaving(false);
   };
@@ -40,7 +41,7 @@ export function CompanySettingsForm({ userId, initial }: Props) {
     <div className="space-y-4">
       <div>
         <label className="block text-sm font-medium text-gray-900">
-          Company name
+          {t.company.companyName}
         </label>
         <input
           type="text"
@@ -52,7 +53,7 @@ export function CompanySettingsForm({ userId, initial }: Props) {
       <div className="grid grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-900">
-            CR Number
+            {t.company.crNumber}
           </label>
           <input
             type="text"
@@ -63,7 +64,7 @@ export function CompanySettingsForm({ userId, initial }: Props) {
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-900">
-            VAT Number
+            {t.company.vatNumber}
           </label>
           <input
             type="text"
@@ -74,7 +75,9 @@ export function CompanySettingsForm({ userId, initial }: Props) {
         </div>
       </div>
       <div>
-        <label className="block text-sm font-medium text-gray-900">Phone</label>
+        <label className="block text-sm font-medium text-gray-900">
+          {t.company.phone}
+        </label>
         <input
           type="tel"
           value={form.phone}
@@ -83,7 +86,9 @@ export function CompanySettingsForm({ userId, initial }: Props) {
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-gray-900">Email</label>
+        <label className="block text-sm font-medium text-gray-900">
+          {t.company.email}
+        </label>
         <input
           type="email"
           value={form.email}
@@ -92,7 +97,9 @@ export function CompanySettingsForm({ userId, initial }: Props) {
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-gray-900">Website</label>
+        <label className="block text-sm font-medium text-gray-900">
+          {t.company.website}
+        </label>
         <input
           type="url"
           value={form.website}
@@ -105,7 +112,7 @@ export function CompanySettingsForm({ userId, initial }: Props) {
         disabled={saving}
         className="rounded-lg bg-brand-500 px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-600 disabled:opacity-50"
       >
-        {saving ? "Saving..." : "Save"}
+        {saving ? t.company.saving : t.company.save}
       </button>
     </div>
   );

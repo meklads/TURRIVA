@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Saudi Proposal OS — Professional proposals in minutes",
+  title: "رواق — عروض احترافية في دقائق",
   description:
-    "Create professional proposals for Saudi construction, engineering, and consulting businesses using AI. Arabic + English. Free to try.",
+    "أنشئ عروضاً تجارية احترافية للمقاولات والاستشارات في السعودية بالذكاء الاصطناعي. عربي + إنجليزي.",
 };
 
 export default function RootLayout({
@@ -13,8 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" dir="ltr">
-      <body className="min-h-screen bg-white">{children}</body>
+    <html lang="ar" dir="rtl">
+      <body className="min-h-screen bg-white font-sans">{children}</body>
     </html>
   );
 }

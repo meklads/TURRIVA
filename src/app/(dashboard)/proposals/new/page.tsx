@@ -2,8 +2,12 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { createProposalAction, generateWithAI } from "@/modules/proposal/server/proposal.actions";
+import {
+  createProposalAction,
+  generateWithAI,
+} from "@/modules/proposal/server/proposal.actions";
 import type { PaymentType } from "@/shared/types";
+import { t } from "@/shared/i18n";
 
 type Step = "project" | "scope" | "commercial" | "generating";
 
@@ -27,11 +31,11 @@ export default function NewProposalPage() {
 
   const handleGenerate = async () => {
     if (!form.projectName.trim() || !form.clientName.trim()) {
-      setError("Project name and client name are required.");
+      setError(t.form.errors.projectRequired);
       return;
     }
     if (!form.description.trim()) {
-      setError("Please describe the work briefly.");
+      setError(t.form.errors.descriptionRequired);
       return;
     }
 
@@ -48,28 +52,21 @@ export default function NewProposalPage() {
       });
 
       if (!created.success) {
-        throw new Error(
-          created.error ??
-            "Could not save proposal. Database may not be configured."
-        );
+        throw new Error(created.error ?? t.form.errors.generic);
       }
 
       setProgress(40);
 
       const generated = await generateWithAI(created.id);
       if (!generated.success) {
-        throw new Error(
-          generated.error ?? "AI generation failed. Please try again."
-        );
+        throw new Error(generated.error ?? t.form.errors.generic);
       }
 
       setProgress(100);
       router.push(`/proposals/${created.id}`);
     } catch (err) {
       const message =
-        err instanceof Error
-          ? err.message
-          : "Something went wrong. Please try again.";
+        err instanceof Error ? err.message : t.form.errors.generic;
       setError(message);
       setStep("commercial");
     }
@@ -85,9 +82,7 @@ export default function NewProposalPage() {
           />
         </div>
         <p className="mt-4 text-sm text-gray-600">
-          {progress < 50
-            ? "Analyzing your project..."
-            : "Writing your proposal..."}
+          {progress < 50 ? t.form.generatingAnalyze : t.form.generatingWrite}
         </p>
       </div>
     );
@@ -96,45 +91,25 @@ export default function NewProposalPage() {
   return (
     <div className="mx-auto max-w-xl">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900">
-          Create a professional proposal
-        </h1>
-        <p className="mt-1 text-sm text-gray-500">
-          It takes 2 minutes. AI writes everything for you.
-        </p>
+        <h1 className="text-2xl font-bold text-gray-900">{t.form.title}</h1>
+        <p className="mt-1 text-sm text-gray-500">{t.form.subtitle}</p>
       </div>
 
-      {/* Step indicator */}
       <div className="mb-8 flex items-center gap-2 text-sm">
-        <span
-          className={`rounded-full px-3 py-1 ${
-            step === "project"
-              ? "bg-brand-500 text-white"
-              : "bg-gray-100 text-gray-600"
-          }`}
-        >
-          Project
-        </span>
-        <span className="text-gray-300">→</span>
-        <span
-          className={`rounded-full px-3 py-1 ${
-            step === "scope"
-              ? "bg-brand-500 text-white"
-              : "bg-gray-100 text-gray-600"
-          }`}
-        >
-          Scope
-        </span>
-        <span className="text-gray-300">→</span>
-        <span
-          className={`rounded-full px-3 py-1 ${
-            step === "commercial"
-              ? "bg-brand-500 text-white"
-              : "bg-gray-100 text-gray-600"
-          }`}
-        >
-          Budget
-        </span>
+        {(["project", "scope", "commercial"] as const).map((s, i) => (
+          <span key={s} className="flex items-center gap-2">
+            {i > 0 && <span className="text-gray-300">←</span>}
+            <span
+              className={`rounded-full px-3 py-1 ${
+                step === s
+                  ? "bg-brand-500 text-white"
+                  : "bg-gray-100 text-gray-600"
+              }`}
+            >
+              {t.form.steps[s]}
+            </span>
+          </span>
+        ))}
       </div>
 
       {error && (
@@ -143,31 +118,30 @@ export default function NewProposalPage() {
         </div>
       )}
 
-      {/* Step 1: Project Info */}
       {step === "project" && (
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-900">
-              Project name
+              {t.form.projectName}
             </label>
             <input
               type="text"
               value={form.projectName}
               onChange={(e) => updateField("projectName", e.target.value)}
-              placeholder="e.g., Villa Interior Fit-out — Al Malqa"
+              placeholder={t.form.projectNamePlaceholder}
               className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
               autoFocus
             />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-900">
-              Client name
+              {t.form.clientName}
             </label>
             <input
               type="text"
               value={form.clientName}
               onChange={(e) => updateField("clientName", e.target.value)}
-              placeholder="e.g., Ahmed Al-Otaibi"
+              placeholder={t.form.clientNamePlaceholder}
               className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
             />
           </div>
@@ -177,82 +151,74 @@ export default function NewProposalPage() {
               disabled={!form.projectName.trim() || !form.clientName.trim()}
               className="rounded-lg bg-brand-500 px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-600 disabled:opacity-50"
             >
-              Continue →
+              {t.form.continue} ←
             </button>
           </div>
         </div>
       )}
 
-      {/* Step 2: Scope */}
       {step === "scope" && (
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-900">
-              Describe the work
+              {t.form.description}
             </label>
             <textarea
               value={form.description}
               onChange={(e) => updateField("description", e.target.value)}
-              placeholder="e.g., Interior fit-out of a 300sqm villa in Riyadh. Includes flooring, painting, kitchen cabinets, bathroom fixtures, and lighting installation."
+              placeholder={t.form.descriptionPlaceholder}
               rows={5}
               className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
             />
-            <p className="mt-1 text-xs text-gray-400">
-              Write in Arabic or English. AI understands both.
-            </p>
+            <p className="mt-1 text-xs text-gray-400">{t.form.descriptionHint}</p>
           </div>
           <div className="flex gap-3 pt-4">
             <button
               onClick={() => setStep("project")}
               className="rounded-lg border border-gray-300 px-6 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
             >
-              ← Back
+              → {t.form.back}
             </button>
             <button
               onClick={() => setStep("commercial")}
               disabled={!form.description.trim()}
               className="rounded-lg bg-brand-500 px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-600 disabled:opacity-50"
             >
-              Continue →
+              {t.form.continue} ←
             </button>
           </div>
         </div>
       )}
 
-      {/* Step 3: Commercial */}
       {step === "commercial" && (
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-900">
-              Total project budget (SAR)
+              {t.form.budget}
             </label>
             <input
               type="number"
               value={form.budget || ""}
-              onChange={(e) =>
-                updateField("budget", Number(e.target.value))
-              }
-              placeholder="e.g., 185000"
+              onChange={(e) => updateField("budget", Number(e.target.value))}
+              placeholder={t.form.budgetPlaceholder}
               className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
             />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-900">
-              Payment structure
+              {t.form.paymentStructure}
             </label>
             <select
               value={form.paymentType}
-              onChange={(e) =>
-                updateField("paymentType", e.target.value)
-              }
+              onChange={(e) => updateField("paymentType", e.target.value)}
               className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
             >
               <option value="milestone_30_40_30">
-                30% Down — 40% Delivery — 30% Handover
+                {t.form.paymentOptions.milestone_30_40_30}
               </option>
-              <option value="monthly">Monthly installments</option>
-              <option value="fixed">Fixed on completion</option>
-              <option value="custom">Custom schedule</option>
+              <option value="monthly">{t.form.paymentOptions.monthly}</option>
+              <option value="fixed">{t.form.paymentOptions.fixed}</option>
+              <option value="custom">{t.form.paymentOptions.custom}</option>
             </select>
           </div>
           <div className="flex gap-3 pt-4">
@@ -260,13 +226,13 @@ export default function NewProposalPage() {
               onClick={() => setStep("scope")}
               className="rounded-lg border border-gray-300 px-6 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
             >
-              ← Back
+              → {t.form.back}
             </button>
             <button
               onClick={handleGenerate}
               className="rounded-lg bg-brand-500 px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-600"
             >
-              ✨ Generate Proposal
+              {t.form.generate}
             </button>
           </div>
         </div>
