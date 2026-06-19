@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --border: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-gray-200;
+  }
+
+  body {
+    @apply bg-white text-gray-900 antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .proposal-section {
+    @apply rounded-lg border border-gray-100 bg-white p-6 shadow-sm;
+  }
+
+  .proposal-section-header {
+    @apply mb-4 flex items-center justify-between;
+  }
+
+  .proposal-section-title {
+    @apply text-lg font-semibold text-gray-900;
+  }
+
+  .inline-edit-input {
+    @apply w-full rounded border-0 bg-gray-50 px-2 py-1 text-gray-900 
+           ring-1 ring-inset ring-gray-200 
+           focus:ring-2 focus:ring-inset focus:ring-brand-500;
+  }
+}

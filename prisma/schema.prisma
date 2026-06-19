@@ -1,0 +1,129 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// Required by Auth.js — User model
+model User {
+  id            String    @id @default(cuid())
+  email         String?   @unique
+  emailVerified DateTime?
+  name          String?
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts  Account[]
+  sessions  Session[]
+  proposals Proposal[]
+  company   CompanyProfile?
+}
+
+/// Required by Auth.js
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+/// Required by Auth.js
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+/// Required by Auth.js
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+/// Company branding profile — one per user
+model CompanyProfile {
+  id          String @id @default(cuid())
+  userId      String @unique
+  companyName String @default("")
+  logoUrl     String?
+  crNumber    String?
+  vatNumber   String?
+  phone       String?
+  email       String?
+  website     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+/// The core entity — a proposal document
+model Proposal {
+  id          String   @id @default(cuid())
+  userId      String?
+  status      String   @default("draft") /// draft | generating | review | reviewed | exported
+  version     Int      @default(1)
+
+  /// USER INPUT — Step 1
+  projectName String   @default("")
+  clientName  String   @default("")
+  description String   @default("")
+
+  /// USER INPUT — Step 2
+  budget      Float    @default(0)
+  paymentType String   @default("milestone_30_40_30")
+
+  /// AI GENERATED OUTPUT (JSON)
+  scopeItems      Json? /// ScopeItem[]
+  deliverables    Json? /// Deliverable[]
+  timeline        Json? /// Timeline
+  commercialTerms Json? /// CommercialTerms
+  assumptions     Json? /// string[]
+  exclusions      Json? /// string[]
+
+  /// CONFIDENCE LEVELS
+  confidence Json? /// { scopeItems: "high" | "medium" | "low", ... }
+
+  /// REVIEW STATE
+  reviewedSections Json? @default("[]") /// string[] of reviewed section IDs
+
+  /// METADATA
+  proposalNumber String?
+  exportedAt     DateTime?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  user      User?             @relation(fields: [userId], references: [id], onDelete: SetNull)
+  documents GeneratedDocument[]
+}
+
+/// Immutable export record
+model GeneratedDocument {
+  id         String   @id @default(cuid())
+  proposalId String
+  type       String   /// pdf | share_link
+  fileUrl    String?  /// S3 or local path
+  shareToken String?  @unique
+  createdAt  DateTime @default(now())
+
+  proposal Proposal @relation(fields: [proposalId], references: [id], onDelete: Cascade)
+}
