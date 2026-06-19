@@ -51,6 +51,16 @@ Real estate depth: property type, area, phases (design → execution → handove
 
 ---
 
+## Input Tiers
+
+| Tier | Fields |
+|------|--------|
+| **0 Required** | Client · work description · price or estimate |
+| **1 Optional (collapsed)** | Location · property type · area · duration · specs |
+| **2 Later** | Paste WhatsApp · file upload |
+
+Optional fields enrich AI output — never block generation.
+
 ## Review Gates (Product — Not Optional UX)
 
 Before export, user must confirm:

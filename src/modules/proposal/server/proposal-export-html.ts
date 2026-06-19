@@ -64,6 +64,9 @@ export function buildProposalExportHtml(
     exclusions: string[];
     budget: number;
     commercialMode: CommercialMode;
+    projectLocation?: string;
+    propertyType?: string;
+    areaSqm?: number;
   }
 ): string {
   const labels = getMessages(locale).export;
@@ -71,6 +74,28 @@ export function buildProposalExportHtml(
   const bcp47 = localeToBcp47(locale);
   const currency = locale === "ar" ? "ريال" : "SAR";
   const docTitle = locale === "ar" ? "عرض" : "Proposal";
+
+  const propertyLabels: Record<string, string> = {
+    villa: locale === "ar" ? "فيلا" : "Villa",
+    apartment: locale === "ar" ? "شقة" : "Apartment",
+    office: locale === "ar" ? "مكتب" : "Office",
+    retail: locale === "ar" ? "تجاري" : "Retail",
+    other: locale === "ar" ? "أخرى" : "Other",
+  };
+
+  const projectMeta = [
+    data.projectLocation
+      ? `<div><strong>${escapeHtml(labels.location)}</strong> ${escapeHtml(data.projectLocation)}</div>`
+      : "",
+    data.propertyType
+      ? `<div><strong>${escapeHtml(labels.propertyType)}</strong> ${escapeHtml(propertyLabels[data.propertyType] ?? data.propertyType)}</div>`
+      : "",
+    data.areaSqm && data.areaSqm > 0
+      ? `<div><strong>${escapeHtml(labels.area)}</strong> ${formatAmount(data.areaSqm, locale)} ${locale === "ar" ? "م²" : "sqm"}</div>`
+      : "",
+  ]
+    .filter(Boolean)
+    .join("");
 
   const isEstimate = data.commercialMode === "estimate_only";
   const displayTotal =
@@ -185,6 +210,7 @@ export function buildProposalExportHtml(
     ${data.proposalNumber ? `<div><strong>${escapeHtml(labels.proposalNumber)}</strong> ${escapeHtml(data.proposalNumber)}</div>` : ""}
     <div><strong>${escapeHtml(labels.date)}</strong> ${escapeHtml(data.date)}</div>
     <div><strong>${escapeHtml(labels.validity)}</strong> ${escapeHtml(data.validityDate)}</div>
+    ${projectMeta}
   </div>
   ${
     data.introduction

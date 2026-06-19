@@ -3,7 +3,8 @@ import type { CommercialMode } from "@/shared/types";
 import type { Locale } from "@/shared/i18n/locale";
 import OpenAI from "openai";
 import {
-  commercialContext,
+  buildProjectContext,
+  contextFromProposalRecord,
   realEstateSystemRole,
 } from "./proposal-ai.prompts";
 
@@ -43,19 +44,10 @@ export async function regenerateSection(
   const locale = proposalLocale(proposal.locale);
   const commercialMode = proposalCommercialMode(proposal.commercialMode);
   const lang = languageDirective(locale);
-  const commercial = commercialContext(
-    proposal.budget,
-    proposal.paymentType,
-    commercialMode,
+  const context = buildProjectContext(
+    contextFromProposalRecord(proposal, commercialMode),
     locale
   );
-
-  const context = `
-Project: ${proposal.projectName}
-Client: ${proposal.clientName}
-Description: ${proposal.description}
-${commercial}
-`;
 
   const scopeItems = (proposal.scopeItems ?? []) as any[];
 
@@ -82,7 +74,7 @@ ${commercial}
       locale,
       "commercial",
       realEstateSystemRole(locale, "You are a commercial terms specialist"),
-      `Generate commercial terms:\n\n${commercial}\n\n${lang}\n\nRespond in JSON: { "totalValue": number, "paymentSchedule": [{ "percentage": number, "label": "string" }], "warrantyPeriod": "string", "retention": number | null }`
+      `Generate commercial terms:\n\n${context}\n\n${lang}\n\nRespond in JSON: { "totalValue": number, "paymentSchedule": [{ "percentage": number, "label": "string" }], "warrantyPeriod": "string", "retention": number | null }`
     );
     const commercialTerms = buildCommercialTerms(
       parseJson(commercialResult, {}),
@@ -132,19 +124,8 @@ export async function generateProposalContent(proposalId: string) {
   });
 
   try {
-    const commercial = commercialContext(
-      proposal.budget,
-      proposal.paymentType,
-      commercialMode,
-      locale
-    );
-
-    const context = `
-Project: ${proposal.projectName}
-Client: ${proposal.clientName}
-Description: ${proposal.description}
-${commercial}
-`;
+    const aiCtx = contextFromProposalRecord(proposal, commercialMode);
+    const context = buildProjectContext(aiCtx, locale);
 
     const analysis = await callAI(
       locale,
@@ -176,7 +157,7 @@ ${commercial}
       locale,
       "commercial",
       realEstateSystemRole(locale, "You are a commercial terms specialist"),
-      `Generate commercial terms:\n\n${commercial}\nScope: ${scopeItems.map((s: any) => s.title).join(", ")}\n\n${lang}\n\nRespond in JSON: { "totalValue": number, "paymentSchedule": [{ "percentage": number, "label": "string" }], "warrantyPeriod": "string", "retention": number | null }`
+      `Generate commercial terms:\n\n${context}\nScope: ${scopeItems.map((s: any) => s.title).join(", ")}\n\n${lang}\n\nRespond in JSON: { "totalValue": number, "paymentSchedule": [{ "percentage": number, "label": "string" }], "warrantyPeriod": "string", "retention": number | null }`
     );
 
     const commercialTerms = buildCommercialTerms(
@@ -214,7 +195,9 @@ ${commercial}
       milestones?: { name: string; date: string | null }[];
     }>(timelineResult, {});
     const timeline = {
-      duration: timelineParsed.duration ?? defaults.timeline.duration,
+      duration:
+        timelineParsed.duration ??
+        (proposal.durationHint?.trim() || defaults.timeline.duration),
       startDate: timelineParsed.startDate ?? null,
       endDate: timelineParsed.endDate ?? null,
       milestones: timelineParsed.milestones ?? defaults.timeline.milestones,

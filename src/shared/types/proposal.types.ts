@@ -19,6 +19,22 @@ export type PaymentType =
 
 export type CommercialMode = "fixed_price" | "estimate_only";
 
+export type PropertyType =
+  | ""
+  | "villa"
+  | "apartment"
+  | "office"
+  | "retail"
+  | "other";
+
+export interface ProposalOptionalContext {
+  projectLocation?: string;
+  propertyType?: PropertyType | string;
+  areaSqm?: number;
+  durationHint?: string;
+  specifications?: string;
+}
+
 // --- User Input ---
 
 export interface ProposalInput {
@@ -93,6 +109,12 @@ export interface Proposal {
   locale: "ar" | "en";
   introduction: string | null;
 
+  projectLocation: string | null;
+  propertyType: string | null;
+  areaSqm: number | null;
+  durationHint: string | null;
+  specifications: string | null;
+
   // AI generated
   scopeItems: ScopeItem[];
   deliverables: Deliverable[];
@@ -116,14 +138,10 @@ export interface Proposal {
 
 // --- Server Action Inputs ---
 
-export interface CreateProposalInput {
-  projectName: string;
-  clientName: string;
-  description: string;
-  budget: number;
-  paymentType: PaymentType;
-  commercialMode?: CommercialMode;
-}
+export type CreateProposalInput = Omit<ProposalInput, "commercialMode"> &
+  ProposalOptionalContext & {
+    commercialMode?: CommercialMode;
+  };
 
 export interface UpdateFieldInput {
   proposalId: string;

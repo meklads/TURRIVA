@@ -94,7 +94,14 @@ model Proposal {
   clientName  String   @default("")
   description String   @default("")
 
-  /// USER INPUT — Step 2
+  /// Optional context — enriches AI output (never required)
+  projectLocation String?
+  propertyType    String? /// villa | apartment | office | retail | other
+  areaSqm         Float?
+  durationHint    String?
+  specifications  String? @db.Text
+
+  /// USER INPUT — commercial
   budget         Float   @default(0)
   paymentType    String  @default("milestone_30_40_30")
   /// fixed_price | estimate_only

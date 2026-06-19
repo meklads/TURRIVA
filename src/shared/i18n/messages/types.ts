@@ -10,7 +10,29 @@ export type Messages = {
   form: {
     title: string;
     subtitle: string;
-    steps: { project: string; scope: string; commercial: string };
+    steps: { project: string; details: string };
+    commercialSection: string;
+    optionalDetails: {
+      title: string;
+      hint: string;
+      location: string;
+      locationPlaceholder: string;
+      propertyType: string;
+      propertyTypeNone: string;
+      propertyTypes: {
+        villa: string;
+        apartment: string;
+        office: string;
+        retail: string;
+        other: string;
+      };
+      areaSqm: string;
+      areaSqmPlaceholder: string;
+      duration: string;
+      durationPlaceholder: string;
+      specifications: string;
+      specificationsPlaceholder: string;
+    };
     projectName: string;
     projectNamePlaceholder: string;
     clientName: string;
@@ -164,6 +186,9 @@ export type Messages = {
     proposalNumber: string;
     date: string;
     validity: string;
+    location: string;
+    propertyType: string;
+    area: string;
     scopeOfWork: string;
     deliverables: string;
     timeline: string;

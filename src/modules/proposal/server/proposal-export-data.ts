@@ -59,6 +59,9 @@ export async function buildProposalExportHtmlForId(proposalId: string) {
     exclusions: asStringList(proposal.exclusions),
     budget: proposal.budget,
     commercialMode,
+    projectLocation: proposal.projectLocation ?? undefined,
+    propertyType: proposal.propertyType ?? undefined,
+    areaSqm: proposal.areaSqm ?? undefined,
   });
 
   return { html, projectName: proposal.projectName };

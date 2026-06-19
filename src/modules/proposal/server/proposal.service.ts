@@ -2,6 +2,7 @@ import { db } from "@/shared/lib/db";
 import { getSession } from "@/modules/auth/server/session";
 import { getLocale } from "@/shared/i18n/server";
 import {
+  validateLocaleText,
   validateProposalFields,
   type Locale,
 } from "@/shared/i18n/locale";
@@ -43,6 +44,20 @@ export async function createProposal(
     throw new Error(t.form.errors[localeError]);
   }
 
+  const optionalTexts = [
+    input.projectLocation,
+    input.durationHint,
+    input.specifications,
+  ].filter((v): v is string => !!v?.trim());
+
+  for (const text of optionalTexts) {
+    const optError = validateLocaleText(text, locale);
+    if (optError) {
+      const t = getMessages(locale);
+      throw new Error(t.form.errors[optError]);
+    }
+  }
+
   const proposal = await db.proposal.create({
     data: {
       userId: userId ?? null,
@@ -50,6 +65,11 @@ export async function createProposal(
       projectName: input.projectName,
       clientName: input.clientName,
       description: input.description,
+      projectLocation: input.projectLocation?.trim() || null,
+      propertyType: input.propertyType?.trim() || null,
+      areaSqm: input.areaSqm && input.areaSqm > 0 ? input.areaSqm : null,
+      durationHint: input.durationHint?.trim() || null,
+      specifications: input.specifications?.trim() || null,
       budget: input.budget,
       paymentType: input.paymentType,
       commercialMode: input.commercialMode ?? "fixed_price",
@@ -91,6 +111,11 @@ export async function getProposal(id: string): Promise<Proposal | null> {
       p.commercialMode === "estimate_only" ? "estimate_only" : "fixed_price",
     locale: p.locale === "en" ? "en" : "ar",
     introduction: p.introduction ?? null,
+    projectLocation: p.projectLocation,
+    propertyType: p.propertyType,
+    areaSqm: p.areaSqm,
+    durationHint: p.durationHint,
+    specifications: p.specifications,
     scopeItems: (p.scopeItems ?? []) as unknown as ScopeItem[],
     deliverables: (p.deliverables ?? []) as unknown as Deliverable[],
     timeline: p.timeline as unknown as Timeline | null,
@@ -119,6 +144,11 @@ export async function updateProposalField(
     "projectName",
     "clientName",
     "description",
+    "projectLocation",
+    "propertyType",
+    "areaSqm",
+    "durationHint",
+    "specifications",
     "budget",
     "paymentType",
     "commercialMode",
@@ -379,6 +409,11 @@ export async function duplicateProposal(
           : `${source.projectName} (نسخة)`,
       clientName: source.clientName,
       description: source.description,
+      projectLocation: source.projectLocation,
+      propertyType: source.propertyType,
+      areaSqm: source.areaSqm,
+      durationHint: source.durationHint,
+      specifications: source.specifications,
       budget: source.budget,
       paymentType: source.paymentType,
       commercialMode: source.commercialMode ?? "fixed_price",
