@@ -46,3 +46,4 @@ Expected: `{ "ok": true, "db": true, "tables": true }`
 - **Build Command:** `npm ci && npm run build`
 - **Start Command:** `npm start` (default)
 - **Port:** 3000
+- **Health Check Path:** `/api/health` (recommended)
