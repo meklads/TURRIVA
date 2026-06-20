@@ -198,7 +198,15 @@
   }
 
   .ruwaq-hero-step-illustration {
-    @apply relative w-[9.5rem] sm:w-[10.5rem];
+    @apply relative h-36 w-36 shrink-0 overflow-hidden rounded-full border border-slate-200/90 bg-white shadow-[0_6px_24px_-8px_rgba(15,23,42,0.12)] sm:h-[10.5rem] sm:w-[10.5rem];
+  }
+
+  .ruwaq-hero-step-image {
+    @apply h-full w-full object-cover object-center;
+  }
+
+  html[lang="ar"] .ruwaq-hero-step-label {
+    @apply text-sm leading-snug sm:text-base;
   }
 
   .ruwaq-landing-dark {

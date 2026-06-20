@@ -174,9 +174,9 @@ export const en: Messages = {
     heroSteps: {
       title: "Three steps — your proposal ready",
       items: [
-        { label: "Write", hint: "3 core inputs" },
-        { label: "Ruwaq drafts", hint: "Full AI proposal" },
-        { label: "Export", hint: "PDF under your brand" },
+        { label: "Three inputs only", hint: "" },
+        { label: "Ruwaq writes the proposal", hint: "" },
+        { label: "PDF ready — under your brand", hint: "" },
       ],
     },
     mock: {

@@ -25,19 +25,19 @@ export function HeroStepsStrip({ title, steps }: Props) {
           if (!src) return null;
 
           return (
-            <article key={step.label} className="flex max-w-[11rem] flex-col items-center text-center sm:max-w-[9.5rem]">
+            <article key={step.label} className="flex max-w-[12rem] flex-col items-center text-center sm:max-w-[10.5rem]">
               <div className="ruwaq-hero-step-illustration">
                 <Image
                   src={src}
-                  alt={`${step.label} — ${step.hint}`}
+                  alt={step.label}
                   width={280}
                   height={280}
-                  className="h-auto w-full object-contain"
+                  className="ruwaq-hero-step-image"
                   priority={i === 0}
                 />
               </div>
               <p className="ruwaq-hero-step-label mt-4">{step.label}</p>
-              <p className="ruwaq-hero-step-hint mt-1">{step.hint}</p>
+              {step.hint ? <p className="ruwaq-hero-step-hint mt-1">{step.hint}</p> : null}
             </article>
           );
         })}
