@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { useT } from "@/shared/i18n/context";
@@ -11,12 +12,15 @@ export default function LoginForm() {
   const callbackUrl = searchParams.get("callbackUrl") ?? "/proposals";
 
   return (
-    <div className="relative flex min-h-screen items-center justify-center px-4">
+    <div className="relative flex min-h-screen items-center justify-center px-4 py-12">
       <div className="absolute end-4 top-4">
         <LocaleSwitcher />
       </div>
       <div className="w-full max-w-sm">
-        <h1 className="text-2xl font-bold text-gray-900">{t.login.title}</h1>
+        <span className="inline-block rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700">
+          {t.login.freeBadge}
+        </span>
+        <h1 className="mt-4 text-2xl font-bold text-gray-900">{t.login.title}</h1>
         <p className="mt-1 text-sm text-gray-500">{t.login.subtitle}</p>
 
         <div className="mt-6">
@@ -47,6 +51,19 @@ export default function LoginForm() {
         </div>
 
         <p className="mt-6 text-center text-xs text-gray-400">{t.login.hint}</p>
+
+        <div className="mt-8 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+          <p className="text-sm font-medium text-gray-900">{t.login.servicesTitle}</p>
+          <p className="mt-1 text-xs leading-relaxed text-gray-500">
+            {t.login.servicesBody}
+          </p>
+          <Link
+            href="/services"
+            className="mt-3 inline-block text-sm font-medium text-brand-600 hover:text-brand-700"
+          >
+            {t.login.servicesCta}
+          </Link>
+        </div>
       </div>
     </div>
   );

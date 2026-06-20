@@ -152,7 +152,7 @@ export const en: Messages = {
     feature1: "3 inputs only",
     feature2: "Assumptions & exclusions",
     feature3: "Arabic/EN + CR/VAT",
-    trustLine: "No account · No card · Ready to send in minutes",
+    trustLine: "No account · No card · 6 months free for new subscribers",
   },
   list: {
     title: "My Proposals",
@@ -173,9 +173,37 @@ export const en: Messages = {
   },
   login: {
     title: "Sign in",
-    subtitle: "Save your proposals and add your company branding.",
+    subtitle: "Save proposals and add your company identity — free for now.",
     google: "Sign in with Google",
     hint: "No account needed to create proposals. Sign in only to save them.",
+    freeBadge: "6 months free for new subscribers",
+    servicesTitle: "Strengthen your company identity",
+    servicesBody:
+      "Simple website or no logo? Ruwaq helps with identity, design, and marketing — so your proposals match your ambition.",
+    servicesCta: "Explore Ruwaq services →",
+  },
+  services: {
+    title: "Ruwaq services",
+    subtitle:
+      "Identity, design, and marketing — for real estate professionals who want big-office proposals.",
+    freeNote: "Ruwaq subscription: first 6 months free for new subscribers.",
+    items: {
+      identity: {
+        title: "Visual identity",
+        body: "Logo, colors, and a profile block that appears on every proposal you send.",
+      },
+      design: {
+        title: "Proposal & brand design",
+        body: "Professional PDF templates and marketing materials aligned with your brand.",
+      },
+      marketing: {
+        title: "Web & marketing",
+        body: "A landing page or site that reflects your business — not just a contact form.",
+      },
+    },
+    cta: "Start with a free proposal",
+    ctaSecondary: "Contact the team",
+    back: "← Back to sign in",
   },
   company: {
     title: "Company settings",

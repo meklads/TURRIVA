@@ -156,6 +156,23 @@ export type Messages = {
     subtitle: string;
     google: string;
     hint: string;
+    freeBadge: string;
+    servicesTitle: string;
+    servicesBody: string;
+    servicesCta: string;
+  };
+  services: {
+    title: string;
+    subtitle: string;
+    freeNote: string;
+    items: {
+      identity: { title: string; body: string };
+      design: { title: string; body: string };
+      marketing: { title: string; body: string };
+    };
+    cta: string;
+    ctaSecondary: string;
+    back: string;
   };
   company: {
     title: string;
