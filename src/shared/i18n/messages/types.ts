@@ -2,6 +2,7 @@ export type Messages = {
   app: { name: string; subtitle: string };
   nav: {
     myProposals: string;
+    companyProfile: string;
     settings: string;
     signIn: string;
     signOut: string;
@@ -73,6 +74,8 @@ export type Messages = {
     reviewGatesHint: string;
     exportBlocked: string;
     estimateOnlyBadge: string;
+    profileIncomplete: string;
+    profileIncompleteLink: string;
     guestBanner: string;
     guestLink: string;
     backToNew: string;
@@ -182,12 +185,25 @@ export type Messages = {
   company: {
     title: string;
     subtitle: string;
+    sections: { identity: string; marketing: string };
+    marketingHint: string;
     companyName: string;
+    logoUrl: string;
+    logoUrlPlaceholder: string;
+    logoUrlHint: string;
+    address: string;
+    addressPlaceholder: string;
+    about: string;
+    aboutPlaceholder: string;
     crNumber: string;
     vatNumber: string;
     phone: string;
     email: string;
     website: string;
+    portfolioUrl: string;
+    portfolioUrlPlaceholder: string;
+    catalogUrl: string;
+    catalogUrlPlaceholder: string;
     save: string;
     saving: string;
     saveFailed: string;
@@ -211,6 +227,11 @@ export type Messages = {
     location: string;
     propertyType: string;
     area: string;
+    address: string;
+    aboutUs: string;
+    websiteLink: string;
+    portfolioLink: string;
+    catalogLink: string;
     scopeOfWork: string;
     deliverables: string;
     timeline: string;

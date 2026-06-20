@@ -42,12 +42,35 @@ export function formatAmount(amount: unknown, locale: Locale): string {
   return n.toLocaleString(localeToBcp47(locale));
 }
 
+function safeHttpUrl(value: unknown): string | null {
+  if (typeof value !== "string") return null;
+  const trimmed = value.trim();
+  if (!trimmed) return null;
+  try {
+    const url = new URL(trimmed);
+    if (url.protocol !== "http:" && url.protocol !== "https:") return null;
+    return url.href;
+  } catch {
+    return null;
+  }
+}
+
+function exportLink(href: string, label: string): string {
+  return `<a href="${escapeHtml(href)}" style="color:#1a56db;text-decoration:none;">${escapeHtml(label)}</a>`;
+}
+
 export function buildProposalExportHtml(
   locale: Locale,
   data: {
     projectName: string;
     clientName: string;
     companyName?: string;
+    logoUrl?: string;
+    address?: string;
+    about?: string;
+    website?: string;
+    portfolioUrl?: string;
+    catalogUrl?: string;
     crNumber?: string;
     vatNumber?: string;
     companyPhone?: string;
@@ -107,6 +130,9 @@ export function buildProposalExportHtml(
     data.companyName
       ? `<div><strong>${escapeHtml(labels.preparedBy)}</strong> ${escapeHtml(data.companyName)}</div>`
       : "",
+    data.address
+      ? `<div><strong>${escapeHtml(labels.address)}</strong> ${escapeHtml(data.address)}</div>`
+      : "",
     data.crNumber
       ? `<div><strong>${escapeHtml(labels.crNumber)}</strong> ${escapeHtml(data.crNumber)}</div>`
       : "",
@@ -122,6 +148,31 @@ export function buildProposalExportHtml(
   ]
     .filter(Boolean)
     .join("");
+
+  const safeLogo = safeHttpUrl(data.logoUrl);
+  const logoBlock = safeLogo
+    ? `<img src="${escapeHtml(safeLogo)}" alt="" style="max-height:72px;max-width:140px;object-fit:contain;margin-bottom:12px;">`
+    : "";
+
+  const websiteHref = safeHttpUrl(data.website);
+  const portfolioHref = safeHttpUrl(data.portfolioUrl);
+  const catalogHref = safeHttpUrl(data.catalogUrl);
+
+  const linkItems = [
+    websiteHref ? exportLink(websiteHref, labels.websiteLink) : "",
+    portfolioHref ? exportLink(portfolioHref, labels.portfolioLink) : "",
+    catalogHref ? exportLink(catalogHref, labels.catalogLink) : "",
+  ].filter(Boolean);
+
+  const linksBlock =
+    linkItems.length > 0
+      ? `<div style="margin-top:8px;font-size:13px;">${linkItems.join(" · ")}</div>`
+      : "";
+
+  const aboutBlock =
+    data.about?.trim()
+      ? `<h2>${escapeHtml(labels.aboutUs)}</h2><p style="font-size:14px;color:#374151;line-height:1.7;white-space:pre-wrap;">${escapeHtml(data.about.trim())}</p>`
+      : "";
 
   const paymentSchedule = Array.isArray(data.commercialTerms?.paymentSchedule)
     ? (data.commercialTerms.paymentSchedule as Record<string, unknown>[])
@@ -203,10 +254,12 @@ export function buildProposalExportHtml(
 </head>
 <body>
   <button class="print-btn no-print" onclick="window.print()">${escapeHtml(labels.savePdf)}</button>
+  ${logoBlock}
   <h1>${escapeHtml(data.projectName)}</h1>
   <div class="meta">
     <div><strong>${escapeHtml(labels.preparedFor)}</strong> ${escapeHtml(data.clientName)}</div>
     ${companyMeta}
+    ${linksBlock}
     ${data.proposalNumber ? `<div><strong>${escapeHtml(labels.proposalNumber)}</strong> ${escapeHtml(data.proposalNumber)}</div>` : ""}
     <div><strong>${escapeHtml(labels.date)}</strong> ${escapeHtml(data.date)}</div>
     <div><strong>${escapeHtml(labels.validity)}</strong> ${escapeHtml(data.validityDate)}</div>
@@ -217,6 +270,7 @@ export function buildProposalExportHtml(
       ? `<p class="intro" style="font-size:14px;color:#374151;margin-bottom:24px;line-height:1.7;white-space:pre-wrap;">${escapeHtml(data.introduction)}</p>`
       : ""
   }
+  ${aboutBlock}
   <h2>${escapeHtml(labels.scopeOfWork)}</h2>
   ${data.scopeItems
     .map(

@@ -20,15 +20,19 @@ import {
   buildWhatsAppMessage,
 } from "@/modules/proposal/lib/whatsapp";
 
+import { isCompanyProfileThin } from "@/modules/company/lib/profile-completeness";
+
 interface Props {
   proposal: Proposal;
   companyName?: string | null;
+  profileThin?: boolean;
   isGuest?: boolean;
 }
 
 export function ProposalReviewClient({
   proposal: initial,
   companyName,
+  profileThin,
   isGuest,
 }: Props) {
   const t = useT();
@@ -204,6 +208,17 @@ export function ProposalReviewClient({
         </div>
       )}
       <ClaimProposal proposalId={proposal.id} isGuest={!!isGuest} />
+      {profileThin && !isGuest && (
+        <div className="mb-4 rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-900">
+          {t.review.profileIncomplete}{" "}
+          <Link
+            href="/settings/company"
+            className="font-semibold underline"
+          >
+            {t.review.profileIncompleteLink}
+          </Link>
+        </div>
+      )}
       {exported && isGuest && (
         <div className="mb-4 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800">
           {t.review.postExportGuest}{" "}

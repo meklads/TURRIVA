@@ -67,11 +67,15 @@ model CompanyProfile {
   userId      String @unique
   companyName String @default("")
   logoUrl     String?
+  address     String?
+  about       String? @db.Text
   crNumber    String?
   vatNumber   String?
   phone       String?
   email       String?
   website     String?
+  portfolioUrl String?
+  catalogUrl   String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
