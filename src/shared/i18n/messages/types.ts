@@ -158,6 +158,7 @@ export type Messages = {
     title: string;
     subtitle: string;
     google: string;
+    googleUnavailable: string;
     hint: string;
     perks: {
       profile: string;

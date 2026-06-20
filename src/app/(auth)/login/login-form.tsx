@@ -6,7 +6,11 @@ import { signIn } from "next-auth/react";
 import { useT } from "@/shared/i18n/context";
 import { LocaleSwitcher } from "@/shared/i18n/locale-switcher";
 
-export default function LoginForm() {
+export default function LoginForm({
+  googleAuthEnabled,
+}: {
+  googleAuthEnabled: boolean;
+}) {
   const t = useT();
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl") ?? "/proposals";
@@ -42,8 +46,9 @@ export default function LoginForm() {
 
         <div className="mt-6">
           <button
-            onClick={() => signIn("google", { callbackUrl })}
-            className="flex w-full items-center justify-center gap-3 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50"
+            onClick={() => googleAuthEnabled && signIn("google", { callbackUrl })}
+            disabled={!googleAuthEnabled}
+            className="flex w-full items-center justify-center gap-3 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50"
           >
             <svg className="h-5 w-5 shrink-0" viewBox="0 0 24 24">
               <path
@@ -65,6 +70,11 @@ export default function LoginForm() {
             </svg>
             {t.login.google}
           </button>
+          {!googleAuthEnabled && (
+            <p className="mt-2 text-center text-xs text-amber-700">
+              {t.login.googleUnavailable}
+            </p>
+          )}
         </div>
 
         <p className="mt-6 text-center text-xs text-gray-400">{t.login.hint}</p>

@@ -1,16 +1,20 @@
 import { NextResponse } from "next/server";
 import { db } from "@/shared/lib/db";
+import { isGoogleAuthConfigured } from "@/shared/lib/env";
 
 export const dynamic = "force-dynamic";
 
 /** Liveness probe — always 200 so Coolify does not 502 when DB is misconfigured */
 export async function GET() {
+  const googleAuth = isGoogleAuthConfigured();
+
   if (!process.env.DATABASE_URL) {
     return NextResponse.json({
       ok: true,
       app: true,
       db: false,
       tables: false,
+      googleAuth,
       error: "DATABASE_URL is not set",
       timestamp: new Date().toISOString(),
     });
@@ -29,6 +33,7 @@ export async function GET() {
       app: true,
       db: true,
       tables: hasProposalTable,
+      googleAuth,
       timestamp: new Date().toISOString(),
     });
   } catch (error) {
@@ -40,6 +45,7 @@ export async function GET() {
       app: true,
       db: false,
       tables: false,
+      googleAuth,
       error: message,
       timestamp: new Date().toISOString(),
     });

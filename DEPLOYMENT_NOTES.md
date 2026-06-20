@@ -64,9 +64,21 @@ Expected: `{ "ok": true, "db": true, "tables": true }`
 | `AUTH_SECRET` | ✅ | random 32+ char string |
 | `AUTH_URL` | ✅ | `https://ruwaq.co` |
 | `NEXT_PUBLIC_APP_URL` | ✅ | `https://ruwaq.co` |
+| `AUTH_GOOGLE_ID` | ✅ for login | Google OAuth Client ID |
+| `AUTH_GOOGLE_SECRET` | ✅ for login | Google OAuth Client Secret |
 | `OPENAI_API_KEY` | optional | leave empty for mock AI |
 
-### Fix "Bad Gateway" (502)
+### Google OAuth (required for sign-in)
+1. [Google Cloud Console](https://console.cloud.google.com/) → APIs & Services → Credentials
+2. Create **OAuth 2.0 Client ID** (Web application)
+3. **Authorized JavaScript origins:** `https://ruwaq.co`
+4. **Authorized redirect URIs:** `https://ruwaq.co/api/auth/callback/google`
+5. In Coolify → Environment Variables, add:
+   - `AUTH_GOOGLE_ID` = Client ID
+   - `AUTH_GOOGLE_SECRET` = Client Secret
+6. Redeploy, then verify: `https://ruwaq.co/api/health` → `"googleAuth": true`
+
+If you see **Missing required parameter: client_id**, `AUTH_GOOGLE_ID` is empty or missing in Coolify.
 502 means the container is **not running**. Common causes:
 1. `DATABASE_URL` missing or wrong → container exited on old start script
 2. Port mismatch → set Coolify port to **3000**

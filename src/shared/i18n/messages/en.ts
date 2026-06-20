@@ -179,6 +179,8 @@ export const en: Messages = {
     title: "Sign in",
     subtitle: "Save proposals and build your company profile — on every export.",
     google: "Sign in with Google",
+    googleUnavailable:
+      "Google sign-in is not configured yet — contact the Ruwaq team or try again later.",
     hint: "No account needed to create proposals. Sign in to save and manage your company profile.",
     perks: {
       profile: "Full company profile — logo, CR, VAT, and links",
