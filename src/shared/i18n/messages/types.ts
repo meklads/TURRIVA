@@ -152,8 +152,11 @@ export type Messages = {
     heroSteps: {
       title: string;
       subtitle: string;
+      tapIntro: string;
+      tapHere: string;
       cta: string;
-      items: readonly { label: string; hint: string }[];
+      completeMessage: string;
+      items: readonly { label: string; instruction: string; hint: string }[];
     };
     mock: {
       previewEyebrow: string;

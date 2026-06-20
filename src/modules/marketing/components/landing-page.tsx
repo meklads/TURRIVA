@@ -45,8 +45,11 @@ export function LandingPage({ t, locale }: Props) {
             <HeroStepsStrip
               title={s.heroSteps.title}
               subtitle={s.heroSteps.subtitle}
+              tapIntro={s.heroSteps.tapIntro}
+              tapHere={s.heroSteps.tapHere}
               steps={s.heroSteps.items}
               cta={s.heroSteps.cta}
+              completeMessage={s.heroSteps.completeMessage}
               locale={locale}
             />
           </div>

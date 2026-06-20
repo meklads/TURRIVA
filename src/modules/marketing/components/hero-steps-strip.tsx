@@ -1,40 +1,46 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import type { Locale } from "@/shared/i18n/locale";
 
-type Step = { label: string; hint: string };
+type Step = { label: string; instruction: string; hint: string };
 
 type Props = {
   title: string;
   subtitle: string;
+  tapIntro: string;
+  tapHere: string;
   steps: readonly Step[];
   cta: string;
+  completeMessage: string;
   locale: Locale;
 };
 
 const GOLD = "#C9A063";
+const GOLD_LIGHT = "#E8D5B5";
 const NAVY = "#0F172A";
-const CREAM = "#E6E2DB";
+const CREAM = "#F7F5F2";
 
 function WriteIllustration() {
   return (
-    <svg viewBox="0 0 64 64" fill="none" className="h-14 w-14 sm:h-16 sm:w-16" aria-hidden>
-      <rect x="14" y="10" width="36" height="44" rx="4" fill={CREAM} fillOpacity="0.95" />
-      <rect x="14" y="10" width="36" height="44" rx="4" stroke={GOLD} strokeWidth="1.5" />
-      <path d="M22 22h24M22 28h24M22 34h16" stroke={NAVY} strokeWidth="2" strokeLinecap="round" opacity="0.35" />
-      <path d="M38 38l10 10" stroke={GOLD} strokeWidth="2.5" strokeLinecap="round" />
+    <svg viewBox="0 0 80 80" fill="none" className="h-[4.5rem] w-[4.5rem] sm:h-20 sm:w-20" aria-hidden>
+      <ellipse cx="40" cy="68" rx="22" ry="4" fill="#000" fillOpacity="0.12" />
+      <rect x="22" y="16" width="36" height="46" rx="5" fill={CREAM} />
+      <rect x="22" y="16" width="36" height="46" rx="5" stroke={GOLD} strokeWidth="2" />
+      <rect x="28" y="10" width="24" height="8" rx="2" fill={GOLD} fillOpacity="0.35" />
+      <path d="M30 30h20M30 38h20M30 46h12" stroke={NAVY} strokeWidth="2.2" strokeLinecap="round" opacity="0.25" />
+      <path d="M44 48l12 12" stroke={GOLD} strokeWidth="3" strokeLinecap="round" />
       <path
-        d="M40 36l8 8-4 4-8-8 4-4z"
+        d="M46 46l10 10-5 5-10-10 5-5z"
         fill={GOLD}
-        fillOpacity="0.25"
+        fillOpacity="0.3"
         stroke={GOLD}
         strokeWidth="1.5"
         strokeLinejoin="round"
       />
-      <circle cx="48" cy="18" r="8" fill={GOLD} fillOpacity="0.2" />
-      <text x="48" y="22" textAnchor="middle" fill={GOLD} fontSize="11" fontWeight="700">
+      <circle cx="58" cy="24" r="10" fill={GOLD} />
+      <text x="58" y="28.5" textAnchor="middle" fill={NAVY} fontSize="13" fontWeight="800">
         3
       </text>
     </svg>
@@ -43,145 +49,179 @@ function WriteIllustration() {
 
 function DraftIllustration() {
   return (
-    <svg viewBox="0 0 64 64" fill="none" className="h-14 w-14 sm:h-16 sm:w-16" aria-hidden>
+    <svg viewBox="0 0 80 80" fill="none" className="h-[4.5rem] w-[4.5rem] sm:h-20 sm:w-20" aria-hidden>
+      <ellipse cx="40" cy="68" rx="22" ry="4" fill="#000" fillOpacity="0.12" />
+      <path d="M26 18h30l8 8v38H26V18z" fill={CREAM} stroke={GOLD} strokeWidth="2" strokeLinejoin="round" />
+      <path d="M56 18v8h8" stroke={GOLD} strokeWidth="2" strokeLinejoin="round" />
+      <path d="M34 34h22M34 42h26M34 50h16" stroke={NAVY} strokeWidth="2" strokeLinecap="round" opacity="0.22" />
+      <circle cx="18" cy="36" r="3" fill={GOLD} />
+      <circle cx="18" cy="48" r="3" fill={GOLD_LIGHT} />
       <path
-        d="M18 12h28l6 6v34H18V12z"
-        fill={CREAM}
-        fillOpacity="0.95"
-        stroke={GOLD}
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <path d="M46 12v6h6" stroke={GOLD} strokeWidth="1.5" strokeLinejoin="round" />
-      <path d="M24 26h16M24 32h20M24 38h12" stroke={NAVY} strokeWidth="1.75" strokeLinecap="round" opacity="0.4" />
-      <path
-        d="M12 20l4 8-4 8 4 8"
+        d="M10 28c0 0 4 6 8 6s8-6 8-6M10 44c0 0 4 6 8 6s8-6 8-6"
         stroke={GOLD}
         strokeWidth="2"
         strokeLinecap="round"
-        strokeLinejoin="round"
-        opacity="0.85"
+        opacity="0.75"
       />
-      <circle cx="14" cy="28" r="2" fill={GOLD} />
-      <circle cx="14" cy="36" r="2" fill={GOLD} />
-      <path
-        d="M44 42l6-6 4 4-6 6-4-4z"
-        fill={GOLD}
-        fillOpacity="0.35"
-        stroke={GOLD}
-        strokeWidth="1.25"
-      />
+      <path d="M52 54l8-8 6 6-8 8-6-6z" fill={GOLD} fillOpacity="0.45" stroke={GOLD} strokeWidth="1.5" />
+      <path d="M58 48l2 2M54 52l2 2" stroke={GOLD_LIGHT} strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   );
 }
 
 function ExportIllustration() {
   return (
-    <svg viewBox="0 0 64 64" fill="none" className="h-14 w-14 sm:h-16 sm:w-16" aria-hidden>
+    <svg viewBox="0 0 80 80" fill="none" className="h-[4.5rem] w-[4.5rem] sm:h-20 sm:w-20" aria-hidden>
+      <ellipse cx="40" cy="68" rx="22" ry="4" fill="#000" fillOpacity="0.12" />
+      <rect x="24" y="20" width="32" height="42" rx="3" fill={CREAM} stroke={GOLD} strokeWidth="2" />
+      <path d="M32 32h16M32 40h12M32 48h18" stroke={NAVY} strokeWidth="2" strokeLinecap="round" opacity="0.22" />
+      <path d="M36 12v8M32 16h8" stroke={GOLD} strokeWidth="2.5" strokeLinecap="round" />
+      <circle cx="56" cy="52" r="13" fill={GOLD} />
+      <circle cx="56" cy="52" r="13" stroke={GOLD_LIGHT} strokeWidth="2" opacity="0.5" />
       <path
-        d="M16 14h32v36H16V14z"
-        fill={CREAM}
-        fillOpacity="0.95"
-        stroke={GOLD}
-        strokeWidth="1.5"
-        rx="2"
-      />
-      <path d="M22 24h20M22 30h14M22 36h18" stroke={NAVY} strokeWidth="1.75" strokeLinecap="round" opacity="0.35" />
-      <circle cx="46" cy="44" r="11" fill={GOLD} />
-      <path
-        d="M41 44l3.5 3.5L51 39"
+        d="M50 52l4 4 8-8"
         stroke={NAVY}
-        strokeWidth="2.25"
+        strokeWidth="2.75"
         strokeLinecap="round"
         strokeLinejoin="round"
-      />
-      <path
-        d="M28 8v6M24 11h8"
-        stroke={GOLD}
-        strokeWidth="2"
-        strokeLinecap="round"
-        opacity="0.7"
       />
     </svg>
   );
 }
 
-function FlowConnector({ locale }: { locale: Locale }) {
+const STEP_ICONS = [
+  <WriteIllustration key="w" />,
+  <DraftIllustration key="d" />,
+  <ExportIllustration key="e" />,
+];
+
+function FlowConnector({ locale, lit }: { locale: Locale; lit: boolean }) {
   return (
     <div className="ruwaq-hero-flow-connector hidden sm:flex" aria-hidden>
       <svg
-        className={`h-3 w-12 text-ruwaq-gold/50 lg:w-16 ${locale === "en" ? "rotate-180" : ""}`}
+        className={`h-3 w-12 transition-colors duration-500 lg:w-16 ${lit ? "text-ruwaq-gold" : "text-white/20"} ${locale === "en" ? "rotate-180" : ""}`}
         viewBox="0 0 48 12"
         fill="none"
       >
         <path
           d="M2 6h38M34 2l6 4-6 4"
           stroke="currentColor"
-          strokeWidth="1.5"
+          strokeWidth="1.75"
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeDasharray="3 3"
         />
       </svg>
     </div>
   );
 }
 
-/** Frameless 3-step flow — Agoda-inspired, Ruwaq branded. */
-export function HeroStepsStrip({ title, subtitle, steps, cta, locale }: Props) {
-  const [active, setActive] = useState(0);
+function CheckBadge() {
+  return (
+    <span className="ruwaq-hero-flow-done" aria-hidden>
+      <svg className="h-4 w-4" viewBox="0 0 16 16" fill="none">
+        <path
+          d="M3 8l3.5 3.5L13 5"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </span>
+  );
+}
+
+/** Interactive 3-step discovery — tap each step to advance; CTA appears at the end. */
+export function HeroStepsStrip({
+  title,
+  subtitle,
+  tapIntro,
+  tapHere,
+  steps,
+  cta,
+  completeMessage,
+  locale,
+}: Props) {
+  /** 0 = awaiting step 1 tap, 3 = all done */
+  const [stage, setStage] = useState(0);
   const arrow = locale === "ar" ? "←" : "→";
-  const icons = [
-    <WriteIllustration key="w" />,
-    <DraftIllustration key="d" />,
-    <ExportIllustration key="e" />,
-  ];
+  const done = stage >= steps.length;
+
+  const handleStepClick = useCallback(
+    (index: number) => {
+      if (index !== stage || stage >= steps.length) return;
+      setStage((s) => s + 1);
+    },
+    [stage, steps.length]
+  );
+
+  const progressPct = (stage / steps.length) * 100;
+  const markerIndex = done ? steps.length - 1 : stage;
 
   return (
     <div className="ruwaq-hero-flow">
       <p className="text-center font-display text-lg font-bold leading-snug tracking-tight text-white sm:text-xl lg:text-[1.4rem]">
         {title}
       </p>
-      <p className="mx-auto mt-2.5 max-w-lg text-center text-sm leading-relaxed text-white/50">
-        {subtitle}
+      <p className="mx-auto mt-2 max-w-lg text-center text-sm text-white/50">{subtitle}</p>
+      <p className="ruwaq-hero-flow-intro mx-auto mt-3 text-center text-xs font-semibold text-ruwaq-gold/90 sm:text-sm">
+        {tapIntro}
       </p>
 
       <div className="relative mt-10 sm:mt-12">
-        {/* Soft ambient line — not a box */}
         <div
-          className="pointer-events-none absolute left-[12%] right-[12%] top-[2.75rem] hidden h-px bg-gradient-to-r from-transparent via-ruwaq-gold/25 to-transparent sm:block"
+          className="pointer-events-none absolute left-[10%] right-[10%] top-[3rem] hidden h-px sm:block"
+          style={{
+            background:
+              "linear-gradient(90deg, transparent, rgba(201,160,99,0.2) 20%, rgba(201,160,99,0.2) 80%, transparent)",
+          }}
           aria-hidden
         />
 
-        <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-start sm:justify-center sm:gap-0">
+        <div className="flex flex-col items-center gap-10 sm:flex-row sm:items-start sm:justify-center sm:gap-0">
           {steps.map((step, i) => {
-            const isActive = active === i;
+            const isCurrent = !done && stage === i;
+            const isCompleted = stage > i;
+            const isLocked = stage < i;
 
             return (
-              <div key={step.label} className="flex w-full flex-col items-center sm:contents">
-                <div
-                  role="group"
-                  aria-label={step.label}
-                  className="ruwaq-hero-flow-step group flex flex-col items-center p-0 text-center sm:w-[7.5rem] lg:w-[9rem]"
-                  onMouseEnter={() => setActive(i)}
+              <div key={step.label} className="flex w-full max-w-[11rem] flex-col items-center sm:contents">
+                <button
+                  type="button"
+                  disabled={!isCurrent}
+                  onClick={() => handleStepClick(i)}
+                  className={`ruwaq-hero-flow-step flex w-full flex-col items-center border-0 bg-transparent p-0 text-center sm:w-[8.5rem] lg:w-[10rem] ${isCurrent ? "ruwaq-hero-flow-step-ready cursor-pointer" : isLocked ? "cursor-default opacity-45" : "cursor-default"}`}
+                  aria-current={isCurrent ? "step" : undefined}
+                  aria-label={`${step.label}: ${step.instruction}`}
                 >
                   <div
-                    className={`ruwaq-hero-flow-orbit transition-all duration-300 ${isActive ? "ruwaq-hero-flow-orbit-active" : ""}`}
+                    className={`ruwaq-hero-flow-orbit relative transition-all duration-500 ${isCurrent ? "ruwaq-hero-flow-orbit-active ruwaq-hero-flow-orbit-pulse" : ""} ${isCompleted ? "ruwaq-hero-flow-orbit-done" : ""}`}
                   >
-                    {icons[i]}
+                    {STEP_ICONS[i]}
+                    {isCompleted ? <CheckBadge /> : null}
                   </div>
+
                   <p
-                    className={`mt-4 font-display text-sm font-bold transition-colors duration-300 sm:text-base ${isActive ? "text-ruwaq-gold" : "text-white/90"}`}
+                    className={`mt-4 font-display text-sm font-bold sm:text-base ${isCurrent ? "text-ruwaq-gold" : isCompleted ? "text-white/70" : "text-white/85"}`}
                   >
                     {step.label}
                   </p>
-                  <p className="mt-0.5 text-xs text-white/45">{step.hint}</p>
-                </div>
+                  <p className="mt-1 text-xs leading-relaxed text-white/55">{step.instruction}</p>
+
+                  {isCurrent ? (
+                    <span className="ruwaq-hero-flow-tap mt-2">{tapHere}</span>
+                  ) : (
+                    <p className="mt-2 text-[10px] text-white/30">{step.hint}</p>
+                  )}
+                </button>
 
                 {i < steps.length - 1 ? (
                   <>
-                    <FlowConnector locale={locale} />
-                    <span className="text-ruwaq-gold/40 sm:hidden" aria-hidden>
+                    <FlowConnector locale={locale} lit={stage > i} />
+                    <span
+                      className={`text-lg sm:hidden ${stage > i ? "text-ruwaq-gold" : "text-white/25"}`}
+                      aria-hidden
+                    >
                       ↓
                     </span>
                   </>
@@ -191,19 +231,18 @@ export function HeroStepsStrip({ title, subtitle, steps, cta, locale }: Props) {
           })}
         </div>
 
-        {/* Progress track — open, no frame */}
-        <div className="ruwaq-hero-flow-track mx-auto mt-10 max-w-md sm:mt-12 sm:max-w-xl">
-          <div className="relative h-1 overflow-hidden rounded-full bg-white/10">
+        <div className="ruwaq-hero-flow-track mx-auto mt-10 max-w-md sm:mt-12 sm:max-w-2xl">
+          <div className="relative h-1.5 overflow-hidden rounded-full bg-white/10">
             <div
-              className="absolute inset-y-0 start-0 rounded-full bg-gradient-to-r from-ruwaq-gold to-ruwaq-gold-light transition-all duration-500 ease-out"
-              style={{ width: `${((active + 1) / steps.length) * 100}%` }}
+              className="absolute inset-y-0 start-0 rounded-full bg-gradient-to-r from-ruwaq-gold to-ruwaq-gold-light transition-all duration-700 ease-out"
+              style={{ width: `${progressPct}%` }}
             />
           </div>
           <div className="relative mt-0 grid grid-cols-3">
             {steps.map((step, i) => (
               <div key={step.label} className="flex justify-center">
                 <span
-                  className={`ruwaq-hero-flow-marker transition-all duration-300 ${active === i ? "ruwaq-hero-flow-marker-active" : "opacity-0"}`}
+                  className={`ruwaq-hero-flow-marker transition-all duration-500 ${markerIndex === i ? "ruwaq-hero-flow-marker-active scale-100 opacity-100" : "scale-75 opacity-0"}`}
                   aria-hidden
                 />
               </div>
@@ -212,8 +251,15 @@ export function HeroStepsStrip({ title, subtitle, steps, cta, locale }: Props) {
         </div>
       </div>
 
-      <div className="mt-9 flex justify-center sm:mt-10">
-        <Link href="/proposals/new" className="btn-ruwaq-primary px-8 py-3 text-base shadow-lg shadow-ruwaq-gold/20">
+      <div
+        className={`mt-9 flex flex-col items-center justify-center gap-2 overflow-hidden transition-all duration-700 sm:mt-10 ${done ? "max-h-32 opacity-100" : "max-h-0 opacity-0"}`}
+        aria-hidden={!done}
+      >
+        <p className="text-center text-sm font-medium text-ruwaq-gold/90">{completeMessage}</p>
+        <Link
+          href="/proposals/new"
+          className="btn-ruwaq-primary px-8 py-3 text-base shadow-lg shadow-ruwaq-gold/25"
+        >
           {cta} {arrow}
         </Link>
       </div>

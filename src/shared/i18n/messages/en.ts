@@ -173,12 +173,27 @@ export const en: Messages = {
     },
     heroSteps: {
       title: "Three steps only — your proposal in seconds",
-      subtitle: "Write · Ruwaq drafts · Export — from idea to PDF under your brand",
-      cta: "Try it now — free",
+      subtitle: "From idea to PDF under your brand",
+      tapIntro: "Try it yourself — tap each step",
+      tapHere: "Tap here",
+      cta: "Try for free",
+      completeMessage: "Perfect! You're ready — start your proposal",
       items: [
-        { label: "Write", hint: "3 inputs" },
-        { label: "Ruwaq drafts", hint: "Full proposal" },
-        { label: "Export", hint: "Ready PDF" },
+        {
+          label: "Write",
+          instruction: "Project name · Client name",
+          hint: "3 core inputs",
+        },
+        {
+          label: "Ruwaq drafts",
+          instruction: "Work description · Price or estimate",
+          hint: "Full AI proposal",
+        },
+        {
+          label: "Export",
+          instruction: "Review · Download PDF",
+          hint: "Under your brand",
+        },
       ],
     },
     mock: {
