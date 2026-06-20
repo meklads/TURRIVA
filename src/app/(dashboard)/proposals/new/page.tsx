@@ -14,6 +14,7 @@ import {
   type OptionalDetailsValues,
 } from "@/modules/proposal/components/optional-details-fields";
 import Link from "next/link";
+import { AppPageHero } from "@/shared/components/app-page-hero";
 
 type Step = "project" | "details" | "generating";
 
@@ -127,90 +128,95 @@ export default function NewProposalPage() {
 
   if (step === "generating") {
     return (
-      <div className="flex flex-col items-center justify-center py-24">
-        <div className="h-2 w-full max-w-md overflow-hidden rounded-full bg-gray-100">
-          <div
-            className="h-full rounded-full bg-brand-500 transition-all duration-500"
-            style={{ width: `${progress}%` }}
-          />
+      <>
+        <AppPageHero
+          eyebrow={t.nav.newProposal}
+          title={t.form.title}
+          subtitle={t.form.generatingWrite}
+        />
+        <div className="app-content-area flex flex-col items-center justify-center py-16">
+          <div className="h-2 w-full max-w-md overflow-hidden rounded-full bg-ruwaq-cream">
+            <div
+              className="h-full rounded-full bg-ruwaq-gold transition-all duration-500"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+          <p className="mt-4 text-sm text-ruwaq-navy-soft">
+            {progress < 50 ? t.form.generatingAnalyze : t.form.generatingWrite}
+          </p>
         </div>
-        <p className="mt-4 text-sm text-gray-600">
-          {progress < 50 ? t.form.generatingAnalyze : t.form.generatingWrite}
-        </p>
-      </div>
+      </>
     );
   }
 
   return (
-    <div className="mx-auto max-w-xl">
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900">{t.form.title}</h1>
-        <p className="mt-1 text-sm text-gray-500">{t.form.subtitle}</p>
+    <>
+      <AppPageHero
+        eyebrow={t.nav.newProposal}
+        title={t.form.title}
+        subtitle={t.form.subtitle}
+      >
         <Link
           href="/templates/sample"
-          className="mt-3 inline-block text-sm font-medium text-brand-600 hover:text-brand-700"
+          className="text-sm font-semibold text-ruwaq-gold hover:underline"
         >
-          {t.nav.previewSample} →
+          {t.nav.previewSample} {forward}
         </Link>
-      </div>
+      </AppPageHero>
 
-      <div className="mb-8 flex items-center gap-2 text-sm">
-        {(["project", "details"] as const).map((s, i) => (
-          <span key={s} className="flex items-center gap-2">
-            {i > 0 && <span className="text-gray-300">{stepSep}</span>}
-            <span
-              className={`rounded-full px-3 py-1 ${
-                step === s
-                  ? "bg-brand-500 text-white"
-                  : "bg-gray-100 text-gray-600"
-              }`}
-            >
-              {t.form.steps[s]}
+      <div className="app-content-area max-w-xl">
+        <div className="mb-8 flex items-center gap-2">
+          {(["project", "details"] as const).map((s, i) => (
+            <span key={s} className="flex items-center gap-2">
+              {i > 0 && <span className="text-ruwaq-cream">{stepSep}</span>}
+              <span
+                className={
+                  step === s ? "ruwaq-step-pill-active" : "ruwaq-step-pill-inactive"
+                }
+              >
+                {t.form.steps[s]}
+              </span>
             </span>
-          </span>
-        ))}
-      </div>
+          ))}
+        </div>
 
+        <div className="ruwaq-form-card">
       {error && (
-        <div className="mb-4 rounded-lg bg-red-50 px-4 py-3 text-sm text-red-600">
+        <div className="mb-6 rounded-xl bg-red-50 px-4 py-3 text-sm text-red-600">
           {error}
         </div>
       )}
 
       {step === "project" && (
-        <div className="space-y-4">
+        <div className="space-y-6">
           <div>
-            <label className="block text-sm font-medium text-gray-900">
-              {t.form.projectName}
-            </label>
+            <label className="ruwaq-label">{t.form.projectName}</label>
             <input
               type="text"
               value={form.projectName}
               onChange={(e) => updateField("projectName", e.target.value)}
               placeholder={t.form.projectNamePlaceholder}
               dir={locale === "ar" ? "rtl" : "ltr"}
-              className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+              className="ruwaq-field"
               autoFocus
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-900">
-              {t.form.clientName}
-            </label>
+            <label className="ruwaq-label">{t.form.clientName}</label>
             <input
               type="text"
               value={form.clientName}
               onChange={(e) => updateField("clientName", e.target.value)}
               placeholder={t.form.clientNamePlaceholder}
               dir={locale === "ar" ? "rtl" : "ltr"}
-              className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+              className="ruwaq-field"
             />
           </div>
-          <div className="pt-4">
+          <div className="pt-2">
             <button
               onClick={() => setStep("details")}
               disabled={!form.projectName.trim() || !form.clientName.trim()}
-              className="rounded-lg bg-brand-500 px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-600 disabled:opacity-50"
+              className="btn-ruwaq-primary disabled:opacity-50"
             >
               {t.form.continue} {forward}
             </button>
@@ -219,21 +225,19 @@ export default function NewProposalPage() {
       )}
 
       {step === "details" && (
-        <div className="space-y-4">
+        <div className="space-y-6">
           <div>
-            <label className="block text-sm font-medium text-gray-900">
-              {t.form.description}
-            </label>
+            <label className="ruwaq-label">{t.form.description}</label>
             <textarea
               value={form.description}
               onChange={(e) => updateField("description", e.target.value)}
               placeholder={t.form.descriptionPlaceholder}
               dir={locale === "ar" ? "rtl" : "ltr"}
               rows={5}
-              className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+              className="ruwaq-field"
               autoFocus
             />
-            <p className="mt-1 text-xs text-gray-400">{t.form.descriptionHint}</p>
+            <p className="mt-2 text-xs text-ruwaq-navy-soft/70">{t.form.descriptionHint}</p>
           </div>
 
           <OptionalDetailsFields
@@ -250,17 +254,13 @@ export default function NewProposalPage() {
             locale={locale}
           />
 
-          <div className="border-t border-gray-100 pt-4">
-            <p className="mb-3 text-sm font-medium text-gray-900">
-              {t.form.commercialSection}
-            </p>
+          <div className="border-t border-ruwaq-cream pt-6">
+            <p className="mb-4 font-semibold text-ruwaq-navy">{t.form.commercialSection}</p>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-900">
-                  {t.form.commercialMode}
-                </label>
+                <label className="ruwaq-label">{t.form.commercialMode}</label>
                 <div className="mt-2 space-y-2">
-                  <label className="flex cursor-pointer items-start gap-3 rounded-lg border border-gray-200 p-3 hover:bg-gray-50 has-[:checked]:border-brand-500 has-[:checked]:bg-brand-50/30">
+                  <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-ruwaq-cream p-3 transition hover:bg-ruwaq-cream-bg/50 has-[:checked]:border-ruwaq-gold has-[:checked]:bg-ruwaq-gold/5">
                     <input
                       type="radio"
                       name="commercialMode"
@@ -269,11 +269,11 @@ export default function NewProposalPage() {
                       onChange={() => updateField("commercialMode", "fixed_price")}
                       className="mt-0.5"
                     />
-                    <span className="text-sm text-gray-800">
+                    <span className="text-sm text-ruwaq-navy">
                       {t.form.commercialModeFixed}
                     </span>
                   </label>
-                  <label className="flex cursor-pointer items-start gap-3 rounded-lg border border-gray-200 p-3 hover:bg-gray-50 has-[:checked]:border-brand-500 has-[:checked]:bg-brand-50/30">
+                  <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-ruwaq-cream p-3 transition hover:bg-ruwaq-cream-bg/50 has-[:checked]:border-ruwaq-gold has-[:checked]:bg-ruwaq-gold/5">
                     <input
                       type="radio"
                       name="commercialMode"
@@ -284,38 +284,34 @@ export default function NewProposalPage() {
                       }
                       className="mt-0.5"
                     />
-                    <span className="text-sm text-gray-800">
+                    <span className="text-sm text-ruwaq-navy">
                       {t.form.commercialModeEstimate}
                     </span>
                   </label>
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-900">
-                  {t.form.budget}
-                </label>
+                <label className="ruwaq-label">{t.form.budget}</label>
                 <input
                   type="number"
                   value={form.budget || ""}
                   onChange={(e) => updateField("budget", Number(e.target.value))}
                   placeholder={t.form.budgetPlaceholder}
                   dir="ltr"
-                  className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                  className="ruwaq-field"
                 />
                 {form.commercialMode === "estimate_only" && (
-                  <p className="mt-1 text-xs text-gray-500">
+                  <p className="mt-2 text-xs text-ruwaq-navy-soft/70">
                     {t.form.budgetOptional}
                   </p>
                 )}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-900">
-                  {t.form.paymentStructure}
-                </label>
+                <label className="ruwaq-label">{t.form.paymentStructure}</label>
                 <select
                   value={form.paymentType}
                   onChange={(e) => updateField("paymentType", e.target.value)}
-                  className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                  className="ruwaq-field"
                 >
                   <option value="milestone_30_40_30">
                     {t.form.paymentOptions.milestone_30_40_30}
@@ -328,23 +324,22 @@ export default function NewProposalPage() {
             </div>
           </div>
 
-          <div className="flex gap-3 pt-4">
-            <button
-              onClick={() => setStep("project")}
-              className="rounded-lg border border-gray-300 px-6 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
-            >
+          <div className="flex flex-wrap gap-3 pt-4">
+            <button onClick={() => setStep("project")} className="btn-ruwaq-secondary">
               {backward} {t.form.back}
             </button>
             <button
               onClick={handleGenerate}
               disabled={!form.description.trim()}
-              className="rounded-lg bg-brand-500 px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-600 disabled:opacity-50"
+              className="btn-ruwaq-primary disabled:opacity-50"
             >
               {t.form.generate}
             </button>
           </div>
         </div>
       )}
-    </div>
+        </div>
+      </div>
+    </>
   );
 }

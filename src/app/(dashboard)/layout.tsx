@@ -9,7 +9,9 @@ export default function DashboardLayout({
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader variant="app" />
-      <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-6">{children}</main>
+      <div className="flex-1 bg-gradient-to-b from-white via-ruwaq-cream-bg/20 to-ruwaq-cream-bg/40">
+        {children}
+      </div>
       <SiteFooter />
     </div>
   );

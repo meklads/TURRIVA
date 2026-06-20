@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { CompanySettingsForm } from "@/modules/company/components/company-settings-form";
 import { getMessages } from "@/shared/i18n";
 import { getLocale } from "@/shared/i18n/server";
+import { AppPageHero } from "@/shared/components/app-page-hero";
 
 export const dynamic = "force-dynamic";
 
@@ -19,12 +20,17 @@ export default async function CompanySettingsPage() {
   });
 
   return (
-    <div className="mx-auto max-w-2xl">
-      <h1 className="text-xl font-bold text-gray-900">{t.company.title}</h1>
-      <p className="mt-1 text-sm text-gray-500">{t.company.subtitle}</p>
-      <div className="mt-6">
-        <CompanySettingsForm initial={profile} />
+    <>
+      <AppPageHero
+        eyebrow={t.nav.settings}
+        title={t.company.title}
+        subtitle={t.company.subtitle}
+      />
+      <div className="app-content-area max-w-2xl">
+        <div className="ruwaq-form-card">
+          <CompanySettingsForm initial={profile} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }

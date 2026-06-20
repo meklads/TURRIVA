@@ -3,10 +3,12 @@ import { ProposalReviewClient } from "@/modules/proposal/components/proposal-rev
 import { getSession } from "@/modules/auth/server/session";
 import { db } from "@/shared/lib/db";
 import { notFound } from "next/navigation";
+import { isCompanyProfileThin } from "@/modules/company/lib/profile-completeness";
+import { AppPageHero } from "@/shared/components/app-page-hero";
+import { getMessages } from "@/shared/i18n";
+import { getLocale } from "@/shared/i18n/server";
 
 export const dynamic = "force-dynamic";
-
-import { isCompanyProfileThin } from "@/modules/company/lib/profile-completeness";
 
 export default async function ProposalReviewPage({
   params,
@@ -15,6 +17,9 @@ export default async function ProposalReviewPage({
 }) {
   const proposal = await getProposalQuery(params.id);
   if (!proposal) notFound();
+
+  const locale = await getLocale();
+  const t = getMessages(locale);
 
   const session = await getSession();
   let companyName: string | null = null;
@@ -29,11 +34,20 @@ export default async function ProposalReviewPage({
   }
 
   return (
-    <ProposalReviewClient
-      proposal={proposal}
-      companyName={companyName}
-      profileThin={profileThin}
-      isGuest={!proposal.userId}
-    />
+    <>
+      <AppPageHero
+        eyebrow={t.review.draftBadge}
+        title={proposal.projectName || t.list.untitled}
+        subtitle={t.review.pageSubtitle}
+      />
+      <div className="app-content-area max-w-3xl">
+        <ProposalReviewClient
+          proposal={proposal}
+          companyName={companyName}
+          profileThin={profileThin}
+          isGuest={!proposal.userId}
+        />
+      </div>
+    </>
   );
 }

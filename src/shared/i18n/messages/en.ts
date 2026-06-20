@@ -93,6 +93,7 @@ export const en: Messages = {
     guestLink: "Sign in",
     backToNew: "New proposal",
     draftBadge: "Draft — review before sending",
+    pageSubtitle: "Review required sections, then export a PDF with your company identity.",
     reviewedCount: (n: number, total: number) => `${n}/${total} sections reviewed`,
     allReviewed: "Reviewed",
     exported: "Exported",
@@ -158,6 +159,223 @@ export const en: Messages = {
     feature2: "Assumptions & exclusions",
     feature3: "Arabic/EN + CR/VAT",
     trustLine: "Start without an account · company profile · support & help included",
+  },
+  sales: {
+    hero: {
+      eyebrow: "Saudi real estate — private clients",
+      title: "Professional real estate proposals in minutes —",
+      titleHighlight: "not days",
+      subtitle:
+        "Just 3 inputs: client, work description, and fixed price or preliminary estimate. Ruwaq writes full scope with assumptions, exclusions, and commercial terms — export a PDF under your company name.",
+      cta: "Start a proposal now",
+      ctaSecondary: "View a sample",
+      microcopy: "No account · No card · Ready in under 10 minutes",
+    },
+    mock: {
+      inputLabel: "Your inputs",
+      outputLabel: "Your full proposal",
+      fields: ["Project name", "Client name", "Fit-out / supervision description"],
+      generate: "Generate proposal →",
+      sections: [
+        "Project understanding",
+        "Scope of work",
+        "Deliverables",
+        "Commercial offer",
+        "Assumptions",
+        "Exclusions",
+      ],
+      badge1: "✓ Commercial terms",
+      badge2: "✓ Exclusions",
+    },
+    problem: {
+      eyebrow: "The problem",
+      title: "Stop copying old Word files",
+      body:
+        "Most real estate contractors send proposals from outdated templates — incomplete, inconsistent, and missing clear assumptions. Clients hesitate. You lose time and trust.",
+      traditionalLabel: "The old way",
+      ruwaqLabel: "With Ruwaq",
+      traditional: [
+        "2 hours in Word — copy-paste from an old proposal",
+        "Vague scope that opens disputes later",
+        "No assumptions or exclusions — \"we misunderstood\"",
+        "PDF without your brand — or with someone else's logo",
+      ],
+      ruwaq: [
+        "3 inputs → complete draft in minutes",
+        "11 organized layers: scope, deliverables, payments, timeline",
+        "Mandatory review gates before export",
+        "PDF with your company identity only — Ruwaq stays invisible",
+      ],
+    },
+    features: {
+      eyebrow: "Why Ruwaq",
+      title: "Built for private clients — not government tender uploads",
+      subtitle:
+        "Not ERP. Not a template library. A smart translator that turns what you know into a trust-building document.",
+      items: [
+        {
+          icon: "⚡",
+          title: "3 inputs only",
+          body: "Client, work description, fixed price or preliminary estimate. Extra details are optional — never blocking.",
+        },
+        {
+          icon: "🛡️",
+          title: "Assumptions & exclusions",
+          body: "Before export you confirm what's included and what's not — protection for you and your client.",
+        },
+        {
+          icon: "🏢",
+          title: "PDF under your brand",
+          body: "Your logo, CR, VAT. The client sees your firm — not a third-party platform.",
+        },
+        {
+          icon: "📋",
+          title: "Preliminary estimate mode",
+          body: "\"Estimate only\" for projects that need a site visit before final pricing.",
+        },
+        {
+          icon: "🇸🇦",
+          title: "Arabic & English",
+          body: "Content suited to the Saudi market — CR, VAT, professional tone.",
+        },
+        {
+          icon: "🚀",
+          title: "Start without an account",
+          body: "Try instantly. Save proposals and set up your company profile when ready.",
+        },
+      ],
+    },
+    steps: {
+      eyebrow: "How it works",
+      title: "Three steps from idea to PDF",
+      learnMore: "Full details",
+      items: [
+        {
+          title: "Enter 3 inputs",
+          body: "Project name, client, work description. Location, area, or property type — all optional.",
+        },
+        {
+          title: "Ruwaq writes the proposal",
+          body: "Scope, deliverables, timeline, commercial terms, assumptions, and exclusions — ready to review.",
+        },
+        {
+          title: "Review & export",
+          body: "Confirm terms, assumptions, and exclusions — then download a professional PDF with your brand.",
+        },
+      ],
+    },
+    why: {
+      eyebrow: "Why us",
+      title: "Why clients choose Ruwaq",
+      subtitle:
+        "Not because we're \"an AI platform\" — because we solve a daily problem for Saudi real estate contractors.",
+      table: { need: "Your need", others: "Alternatives", ruwaq: "Ruwaq" },
+      rows: [
+        {
+          need: "Fast reply after a call or WhatsApp",
+          others: "Upload full RFP booklet or complex ERP",
+          ruwaq: "3 fields → proposal in minutes",
+        },
+        {
+          need: "Private client (developer, owner, property manager)",
+          others: "Government tender / Etimad tools",
+          ruwaq: "Built for private real estate sector",
+        },
+        {
+          need: "Protection from disputes",
+          others: "Pretty PDF without clear assumptions",
+          ruwaq: "Mandatory assumptions & exclusions review",
+        },
+        {
+          need: "Look like an established firm",
+          others: "Platform branding on the document",
+          ruwaq: "Your company identity only in client PDF",
+        },
+        {
+          need: "Estimate before site visit",
+          others: "Mandatory price or detailed BOQ",
+          ruwaq: "Built-in \"preliminary estimate\" mode",
+        },
+      ],
+    },
+    audience: {
+      eyebrow: "Built for",
+      title: "Real estate contractors who win with trust",
+      items: [
+        {
+          icon: "🔨",
+          title: "Fit-out & finishing",
+          body: "Villas, offices, retail — clear proposals after site visit or preliminary estimate.",
+        },
+        {
+          icon: "👷",
+          title: "Engineering supervision",
+          body: "Supervision scope, deliverables, and timeline — professionally written.",
+        },
+        {
+          icon: "🔧",
+          title: "Maintenance & FM",
+          body: "Recurring maintenance contracts with clear terms and payment structure.",
+        },
+        {
+          icon: "📐",
+          title: "Real estate consulting",
+          body: "Studies, valuation, PM — without hours of writing.",
+        },
+      ],
+    },
+    sample: {
+      eyebrow: "See for yourself",
+      title: "A real sample proposal — before you start",
+      body:
+        "No empty promises. Open a full PDF sample for a commercial fit-out — the same structure you'll get.",
+      cta: "Open sample",
+      items: [
+        {
+          title: "Office fit-out proposal",
+          body: "Scope, deliverables, 30/40/30 payments, assumptions & exclusions.",
+        },
+        {
+          title: "Engineering supervision",
+          body: "Supervision phases, deliverables, and timeline.",
+        },
+        {
+          title: "Preliminary estimate — villa",
+          body: "Estimate-only mode — confirmed after site visit.",
+        },
+        {
+          title: "Recurring maintenance",
+          body: "Service scope, frequency, and commercial terms.",
+        },
+      ],
+    },
+    document: {
+      eyebrow: "Inside every proposal",
+      title: "11 layers — not a single page",
+      subtitle:
+        "Every Ruwaq proposal is structured like a consulting firm document: from project understanding to acceptance.",
+      layers: [
+        "Company identity",
+        "Proposal metadata",
+        "Project understanding",
+        "Scope of work",
+        "Deliverables",
+        "Commercial offer",
+        "Payment terms",
+        "Timeline",
+        "Assumptions",
+        "Exclusions",
+        "Validity & acceptance",
+      ],
+    },
+    ctaFinal: {
+      title: "Your client is waiting for a professional reply — send it today",
+      subtitle:
+        "3 inputs. Smart review. PDF under your brand. Start now without an account — see the difference on your first proposal.",
+      primary: "Create your first proposal",
+      secondary: "View sample",
+      microcopy: "Free to start · No card · Support available",
+    },
   },
   site: {
     nav: {
@@ -295,6 +513,7 @@ export const en: Messages = {
   },
   list: {
     title: "My Proposals",
+    subtitle: "All your proposals in one place — track status, edit, or export.",
     new: "+ New proposal",
     empty: "No proposals yet.",
     emptyCta: "Create your first proposal",

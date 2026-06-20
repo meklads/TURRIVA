@@ -81,6 +81,7 @@ export type Messages = {
     guestLink: string;
     backToNew: string;
     draftBadge: string;
+    pageSubtitle: string;
     reviewedCount: (n: number, total: number) => string;
     allReviewed: string;
     exported: string;
@@ -138,6 +139,79 @@ export type Messages = {
     feature3: string;
     trustLine: string;
   };
+  sales: {
+    hero: {
+      eyebrow: string;
+      title: string;
+      titleHighlight: string;
+      subtitle: string;
+      cta: string;
+      ctaSecondary: string;
+      microcopy: string;
+    };
+    mock: {
+      inputLabel: string;
+      outputLabel: string;
+      fields: readonly string[];
+      generate: string;
+      sections: readonly string[];
+      badge1: string;
+      badge2: string;
+    };
+    problem: {
+      eyebrow: string;
+      title: string;
+      body: string;
+      traditionalLabel: string;
+      ruwaqLabel: string;
+      traditional: readonly string[];
+      ruwaq: readonly string[];
+    };
+    features: {
+      eyebrow: string;
+      title: string;
+      subtitle: string;
+      items: readonly { icon: string; title: string; body: string }[];
+    };
+    steps: {
+      eyebrow: string;
+      title: string;
+      learnMore: string;
+      items: readonly { title: string; body: string }[];
+    };
+    why: {
+      eyebrow: string;
+      title: string;
+      subtitle: string;
+      table: { need: string; others: string; ruwaq: string };
+      rows: readonly { need: string; others: string; ruwaq: string }[];
+    };
+    audience: {
+      eyebrow: string;
+      title: string;
+      items: readonly { icon: string; title: string; body: string }[];
+    };
+    sample: {
+      eyebrow: string;
+      title: string;
+      body: string;
+      cta: string;
+      items: readonly { title: string; body: string }[];
+    };
+    document: {
+      eyebrow: string;
+      title: string;
+      subtitle: string;
+      layers: readonly string[];
+    };
+    ctaFinal: {
+      title: string;
+      subtitle: string;
+      primary: string;
+      secondary: string;
+      microcopy: string;
+    };
+  };
   site: {
     nav: {
       howItWorks: string;
@@ -194,6 +268,7 @@ export type Messages = {
   };
   list: {
     title: string;
+    subtitle: string;
     new: string;
     empty: string;
     emptyCta: string;
