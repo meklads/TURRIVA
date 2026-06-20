@@ -1,58 +1,72 @@
-/** Light-theme mini illustrations for hero steps */
+import type { ReactNode } from "react";
 
-const G = "#C9A063";
-const GL = "#E8D5B5";
-const N = "#0F172A";
-const SILVER = "#EEF1F5";
-const WHITE = "#FFFFFF";
+/** Soft flat icons — Agoda-style simplicity for hero steps */
 
 type Props = { className?: string };
 
-export function HeroIconWrite({ className = "h-full w-full" }: Props) {
+const palettes = [
+  { bg: "#EEF4FF", accent: "#3B6FD9", stroke: "#94B4E8" },
+  { bg: "#FDF6EC", accent: "#C9A063", stroke: "#E8D5B5" },
+  { bg: "#EDFAF3", accent: "#2D9B6A", stroke: "#9FD4B8" },
+] as const;
+
+function palette(i: number) {
+  return palettes[i] ?? palettes[0];
+}
+
+export function HeroIconWrite({ className = "h-12 w-12" }: Props) {
+  const c = palette(0);
   return (
-    <svg viewBox="0 0 80 80" fill="none" className={className} aria-hidden>
-      <rect width="80" height="80" rx="18" fill={SILVER} />
-      <rect x="20" y="18" width="40" height="48" rx="5" fill={WHITE} stroke="#D1D9E6" strokeWidth="1.5" />
-      <rect x="26" y="12" width="28" height="8" rx="2" fill={G} fillOpacity="0.35" />
-      <rect x="26" y="30" width="28" height="6" rx="2" fill={SILVER} stroke="#D1D9E6" strokeWidth="1" />
-      <rect x="26" y="40" width="28" height="6" rx="2" fill={SILVER} stroke="#D1D9E6" strokeWidth="1" />
-      <rect x="26" y="50" width="18" height="6" rx="2" fill={GL} fillOpacity="0.4" stroke={G} strokeWidth="1.25" />
-      <path d="M52 54l10 10" stroke={G} strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M54 52l8 8-4 4-8-8 4-4z" fill={G} fillOpacity="0.25" stroke={G} strokeWidth="1.25" />
-      <circle cx="62" cy="26" r="9" fill={G} />
-      <text x="62" y="30" textAnchor="middle" fill={WHITE} fontSize="12" fontWeight="800">
+    <svg viewBox="0 0 64 64" fill="none" className={className} aria-hidden>
+      <rect x="16" y="12" width="32" height="40" rx="4" fill="white" stroke={c.stroke} strokeWidth="1.5" />
+      <path d="M22 22h20M22 28h20M22 34h12" stroke={c.accent} strokeWidth="2" strokeLinecap="round" opacity="0.5" />
+      <path d="M38 38l8 8" stroke={c.accent} strokeWidth="2.5" strokeLinecap="round" />
+      <circle cx="48" cy="18" r="8" fill={c.accent} />
+      <text x="48" y="22" textAnchor="middle" fill="white" fontSize="11" fontWeight="800">
         3
       </text>
     </svg>
   );
 }
 
-export function HeroIconDraft({ className = "h-full w-full" }: Props) {
+export function HeroIconDraft({ className = "h-12 w-12" }: Props) {
+  const c = palette(1);
   return (
-    <svg viewBox="0 0 80 80" fill="none" className={className} aria-hidden>
-      <rect width="80" height="80" rx="18" fill={SILVER} />
-      <path d="M24 20h32l8 8v36H24V20z" fill={WHITE} stroke="#D1D9E6" strokeWidth="1.5" strokeLinejoin="round" />
-      <path d="M56 20v8h8" stroke="#D1D9E6" strokeWidth="1.5" />
-      <path d="M32 36h22M32 44h26M32 52h14" stroke={N} strokeWidth="1.75" strokeLinecap="round" opacity="0.18" />
+    <svg viewBox="0 0 64 64" fill="none" className={className} aria-hidden>
+      <path d="M18 14h28l6 6v32H18V14z" fill="white" stroke={c.stroke} strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M46 14v6h6" stroke={c.stroke} strokeWidth="1.5" />
+      <path d="M24 28h18M24 34h22M24 40h10" stroke={c.accent} strokeWidth="1.75" strokeLinecap="round" opacity="0.45" />
       <path
-        d="M14 28l5 3-5 3 2.5 5-5-2.5-5 2.5 2.5-5-5-3 5-3-2.5-5 5 2.5 5-2.5-2.5 5z"
-        fill={G}
-        fillOpacity="0.85"
+        d="M12 24l3 5-3 5 2 4-4-2-4 2 2-4-3-5 3-5-2-4 4 2 4-2-2 4z"
+        fill={c.accent}
+        opacity="0.9"
       />
-      <path d="M54 58l8-8 5 5-8 8-5-5z" fill={GL} fillOpacity="0.5" stroke={G} strokeWidth="1.25" />
     </svg>
   );
 }
 
-export function HeroIconExport({ className = "h-full w-full" }: Props) {
+export function HeroIconExport({ className = "h-12 w-12" }: Props) {
+  const c = palette(2);
   return (
-    <svg viewBox="0 0 80 80" fill="none" className={className} aria-hidden>
-      <rect width="80" height="80" rx="18" fill={SILVER} />
-      <rect x="22" y="22" width="36" height="46" rx="4" fill={WHITE} stroke="#D1D9E6" strokeWidth="1.5" />
-      <path d="M30 34h20M30 42h14M30 50h18" stroke={N} strokeWidth="1.75" strokeLinecap="round" opacity="0.16" />
-      <path d="M38 14v8M34 18h8" stroke={G} strokeWidth="2" strokeLinecap="round" />
-      <circle cx="58" cy="58" r="12" fill={G} />
-      <path d="M53 58l3.5 3.5L63 53" stroke={WHITE} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    <svg viewBox="0 0 64 64" fill="none" className={className} aria-hidden>
+      <rect x="18" y="16" width="28" height="36" rx="3" fill="white" stroke={c.stroke} strokeWidth="1.5" />
+      <path d="M26 28h12M26 34h8M26 40h14" stroke={c.accent} strokeWidth="1.75" strokeLinecap="round" opacity="0.4" />
+      <circle cx="46" cy="46" r="10" fill={c.accent} />
+      <path d="M41 46l3.5 3.5L51 41" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
+  );
+}
+
+export const HERO_STEP_PALETTES = palettes;
+
+export function HeroStepIconWrap({ index, children }: { index: number; children: ReactNode }) {
+  const c = palette(index);
+  return (
+    <div
+      className="ruwaq-hero-step-circle"
+      style={{ backgroundColor: c.bg }}
+    >
+      {children}
+    </div>
   );
 }

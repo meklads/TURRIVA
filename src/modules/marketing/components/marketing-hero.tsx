@@ -9,42 +9,34 @@ type Props = {
   locale: Locale;
 };
 
-/** Light, simple hero — centered copy + horizontal interactive steps. */
+/** Light hero — clear message, visible CTA, static 3 steps. */
 export function MarketingHero({ hero, heroSteps, locale }: Props) {
+  const arrow = locale === "ar" ? "←" : "→";
+
   return (
     <section className="ruwaq-landing-hero">
-      <div className="relative mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16 lg:py-20">
+      <div className="relative mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <p className="ruwaq-eyebrow">{hero.eyebrow}</p>
-          <h1 className="mt-4 font-display text-3xl font-extrabold leading-[1.15] tracking-tight text-ruwaq-navy sm:text-4xl lg:text-[2.75rem]">
+          <h1 className="ruwaq-hero-title mt-3">
             {hero.title}{" "}
             <span className="text-ruwaq-gold">{hero.titleHighlight}</span>
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-ruwaq-navy-soft sm:text-lg">
-            {hero.subtitle}
-          </p>
+          <p className="ruwaq-hero-lead mx-auto mt-4 max-w-2xl">{hero.subtitle}</p>
+
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Link
-              href="/templates/sample"
-              className="btn-ruwaq-secondary px-6"
-            >
+            <Link href="/proposals/new" className="btn-ruwaq-primary px-8 py-3 text-base">
+              {hero.cta} {arrow}
+            </Link>
+            <Link href="/templates/sample" className="btn-ruwaq-secondary px-6">
               {hero.ctaSecondary}
             </Link>
           </div>
-          <p className="mt-4 text-xs text-slate-400">{hero.microcopy}</p>
+          <p className="mt-4 text-sm text-slate-400">{hero.microcopy}</p>
         </div>
 
-        <div className="mx-auto mt-12 max-w-4xl lg:max-w-5xl">
-          <HeroStepsStrip
-            title={heroSteps.title}
-            subtitle={heroSteps.subtitle}
-            tapIntro={heroSteps.tapIntro}
-            tapHere={heroSteps.tapHere}
-            steps={heroSteps.items}
-            cta={heroSteps.cta}
-            completeMessage={heroSteps.completeMessage}
-            locale={locale}
-          />
+        <div className="mx-auto mt-14 max-w-3xl border-t border-slate-200/80 pt-12 lg:max-w-4xl">
+          <HeroStepsStrip title={heroSteps.title} steps={heroSteps.items} />
         </div>
       </div>
     </section>

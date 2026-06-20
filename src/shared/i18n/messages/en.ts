@@ -172,28 +172,11 @@ export const en: Messages = {
       microcopy: "No account · No card · Ready in under 10 minutes",
     },
     heroSteps: {
-      title: "Three steps only — your proposal in seconds",
-      subtitle: "From idea to PDF under your brand",
-      tapIntro: "Try it yourself — tap each step",
-      tapHere: "Tap here",
-      cta: "Try for free",
-      completeMessage: "Perfect! You're ready — start your proposal",
+      title: "Three steps — your proposal ready",
       items: [
-        {
-          label: "Write",
-          instruction: "Project name · Client name",
-          hint: "3 core inputs",
-        },
-        {
-          label: "Ruwaq drafts",
-          instruction: "Work description · Price or estimate",
-          hint: "Full AI proposal",
-        },
-        {
-          label: "Export",
-          instruction: "Review · Download PDF",
-          hint: "Under your brand",
-        },
+        { label: "Write", hint: "3 core inputs" },
+        { label: "Ruwaq drafts", hint: "Full AI proposal" },
+        { label: "Export", hint: "PDF under your brand" },
       ],
     },
     mock: {

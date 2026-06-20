@@ -24,7 +24,7 @@
   }
 
   body {
-    @apply bg-white text-ruwaq-navy antialiased;
+    @apply bg-white text-base leading-relaxed text-ruwaq-navy antialiased;
     font-family: "Almarai", system-ui, sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
@@ -149,70 +149,21 @@
     background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201, 160, 99, 0.06), transparent 70%);
   }
 
-  .ruwaq-hero-flow {
-    @apply relative rounded-2xl border border-slate-200/80 bg-white/70 px-4 py-8 shadow-sm backdrop-blur-sm sm:px-8 sm:py-10;
+  .ruwaq-hero-title {
+    @apply font-display text-[1.75rem] font-extrabold leading-[1.25] tracking-tight text-ruwaq-navy sm:text-4xl lg:text-[2.75rem];
   }
 
-  .ruwaq-hero-flow-orbit {
-    @apply flex h-[5.25rem] w-[5.25rem] items-center justify-center overflow-hidden rounded-2xl sm:h-[5.75rem] sm:w-[5.75rem];
-    box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.08);
+  .ruwaq-hero-lead {
+    @apply text-base leading-[1.7] text-ruwaq-navy-soft sm:text-lg;
   }
 
-  .ruwaq-hero-flow-orbit-active {
-    @apply ring-2 ring-ruwaq-gold/35;
-    box-shadow: 0 8px 32px -6px rgba(201, 160, 99, 0.45);
-    transform: scale(1.05);
+  .ruwaq-hero-steps {
+    @apply px-2 sm:px-0;
   }
 
-  .ruwaq-hero-flow-orbit-done {
-    @apply opacity-75;
-    transform: scale(0.98);
-  }
-
-  .ruwaq-hero-flow-done {
-    @apply absolute -end-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-green-600 text-white shadow-md;
-  }
-
-  .ruwaq-hero-flow-tap {
-    @apply inline-flex animate-pulse items-center rounded-full border border-ruwaq-gold/35 bg-ruwaq-gold/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-ruwaq-gold;
-  }
-
-  .ruwaq-hero-flow-step-ready:hover .ruwaq-hero-flow-orbit {
-    transform: scale(1.08);
-  }
-
-  .ruwaq-hero-flow-intro {
-    animation: ruwaq-orbit-pulse 2.5s ease-in-out infinite;
-  }
-
-  @keyframes ruwaq-orbit-pulse {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.65;
-    }
-  }
-
-  .ruwaq-hero-flow-connector {
-    @apply mt-10 shrink-0 self-start px-1 lg:px-3;
-  }
-
-  .ruwaq-hero-flow-step {
-    @apply cursor-default outline-none;
-  }
-
-  .ruwaq-hero-flow-step:focus-visible .ruwaq-hero-flow-orbit {
-    @apply ring-2 ring-ruwaq-gold/50 ring-offset-2 ring-offset-white;
-  }
-
-  .ruwaq-hero-flow-marker {
-    @apply -mt-px block h-0 w-0 border-x-[7px] border-t-[8px] border-x-transparent border-t-ruwaq-gold;
-  }
-
-  .ruwaq-hero-flow-marker-active {
-    @apply opacity-100;
+  .ruwaq-hero-step-circle {
+    @apply flex h-24 w-24 items-center justify-center rounded-full sm:h-[6.5rem] sm:w-[6.5rem];
+    box-shadow: 0 6px 24px -8px rgba(15, 23, 42, 0.12);
   }
 
   .ruwaq-landing-dark {
@@ -265,6 +216,10 @@
 
   .ruwaq-eyebrow {
     @apply text-xs font-bold uppercase tracking-[0.2em] text-ruwaq-gold;
+  }
+
+  html[lang="ar"] .ruwaq-eyebrow {
+    @apply text-sm normal-case tracking-normal;
   }
 
   .ruwaq-logo-img {
