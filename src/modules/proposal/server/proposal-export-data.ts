@@ -68,6 +68,7 @@ export async function buildProposalExportHtmlForId(proposalId: string) {
     projectLocation: proposal.projectLocation ?? undefined,
     propertyType: proposal.propertyType ?? undefined,
     areaSqm: proposal.areaSqm ?? undefined,
+    templateId: "ruwaq",
   });
 
   return { html, projectName: proposal.projectName };
