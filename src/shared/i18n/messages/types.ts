@@ -149,7 +149,16 @@ export type Messages = {
       ctaSecondary: string;
       microcopy: string;
     };
+    heroSteps: {
+      title: string;
+      subtitle: string;
+      cta: string;
+      items: readonly { label: string; hint: string }[];
+    };
     mock: {
+      previewEyebrow: string;
+      previewTitle: string;
+      previewSubtitle: string;
       inputLabel: string;
       outputLabel: string;
       fields: readonly string[];

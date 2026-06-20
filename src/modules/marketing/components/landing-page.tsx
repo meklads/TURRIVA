@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { HeroStepsStrip } from "@/modules/marketing/components/hero-steps-strip";
+import { ProductMockPreview } from "@/modules/marketing/components/product-mock-preview";
 import type { Messages } from "@/shared/i18n/messages/types";
 import type { Locale } from "@/shared/i18n/locale";
 
@@ -39,56 +41,28 @@ export function LandingPage({ t, locale }: Props) {
             <p className="mt-4 text-xs text-white/50">{s.hero.microcopy}</p>
           </div>
 
-          {/* Product mock */}
-          <div className="mx-auto mt-14 max-w-4xl">
-            <div className="ruwaq-product-mock">
-              <div className="ruwaq-product-mock-bar">
-                <span className="h-2.5 w-2.5 rounded-full bg-red-400/80" />
-                <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/80" />
-                <span className="h-2.5 w-2.5 rounded-full bg-green-400/80" />
-                <span className="ms-auto text-[10px] font-medium text-ruwaq-navy-soft/60">
-                  ruwaq.co
-                </span>
-              </div>
-              <div className="grid gap-0 md:grid-cols-2">
-                <div className="border-b border-ruwaq-cream p-5 md:border-b-0 md:border-e">
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-ruwaq-gold">
-                    {s.mock.inputLabel}
-                  </p>
-                  <div className="mt-3 space-y-2.5">
-                    {s.mock.fields.map((f) => (
-                      <div key={f} className="rounded-lg border border-ruwaq-cream bg-ruwaq-cream-bg/50 px-3 py-2 text-xs text-ruwaq-navy-soft">
-                        {f}
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-4 inline-flex rounded-lg bg-ruwaq-gold px-4 py-1.5 text-xs font-bold text-ruwaq-navy">
-                    {s.mock.generate}
-                  </div>
-                </div>
-                <div className="bg-ruwaq-cream-bg/30 p-5">
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-ruwaq-gold">
-                    {s.mock.outputLabel}
-                  </p>
-                  <div className="mt-3 space-y-2">
-                    {s.mock.sections.map((sec) => (
-                      <div key={sec} className="flex items-center gap-2">
-                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-ruwaq-gold" />
-                        <span className="text-xs font-medium text-ruwaq-navy">{sec}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-4 flex gap-2">
-                    <span className="rounded-full bg-green-100 px-2.5 py-0.5 text-[10px] font-semibold text-green-800">
-                      {s.mock.badge1}
-                    </span>
-                    <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-[10px] font-semibold text-amber-900">
-                      {s.mock.badge2}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="mx-auto mt-12 max-w-3xl">
+            <HeroStepsStrip
+              title={s.heroSteps.title}
+              subtitle={s.heroSteps.subtitle}
+              steps={s.heroSteps.items}
+              cta={s.heroSteps.cta}
+              locale={locale}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── Product mock (moved from hero) ── */}
+      <section className="border-b border-ruwaq-cream bg-white">
+        <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-16">
+          <div className="text-center">
+            <p className="ruwaq-eyebrow">{s.mock.previewEyebrow}</p>
+            <h2 className="ruwaq-section-title mt-2">{s.mock.previewTitle}</h2>
+            <p className="mx-auto mt-3 max-w-xl text-sm text-ruwaq-navy-soft">{s.mock.previewSubtitle}</p>
+          </div>
+          <div className="mx-auto mt-10 max-w-4xl">
+            <ProductMockPreview mock={s.mock} />
           </div>
         </div>
       </section>

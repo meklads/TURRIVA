@@ -167,6 +167,36 @@
     @apply flex items-center gap-1.5 border-b border-ruwaq-cream bg-ruwaq-cream-bg/80 px-4 py-2.5;
   }
 
+  .ruwaq-hero-steps {
+    @apply rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-8 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.45)] backdrop-blur-md sm:px-8 sm:py-10;
+  }
+
+  .ruwaq-hero-step-ring {
+    @apply relative flex h-[4.5rem] w-[4.5rem] items-center justify-center sm:h-20 sm:w-20;
+  }
+
+  .ruwaq-hero-step-ring::before {
+    content: "";
+    @apply absolute inset-0 rounded-full bg-gradient-to-br from-ruwaq-gold/30 via-ruwaq-gold/5 to-transparent;
+  }
+
+  .ruwaq-hero-step-ring::after {
+    content: "";
+    @apply absolute inset-[3px] rounded-full border border-ruwaq-gold/35 bg-ruwaq-navy/80 shadow-inner;
+  }
+
+  .ruwaq-hero-step-icon {
+    @apply relative z-10 flex items-center justify-center;
+  }
+
+  .ruwaq-hero-step-num {
+    @apply absolute -end-0.5 -top-0.5 z-20 flex h-5 w-5 items-center justify-center rounded-full bg-ruwaq-gold text-[10px] font-bold text-ruwaq-navy shadow-sm;
+  }
+
+  .ruwaq-hero-step-arrow {
+    @apply mx-2 lg:mx-4;
+  }
+
   .ruwaq-compare-card {
     @apply rounded-2xl border p-5 sm:p-6;
   }

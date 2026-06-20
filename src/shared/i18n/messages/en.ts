@@ -171,7 +171,20 @@ export const en: Messages = {
       ctaSecondary: "View a sample",
       microcopy: "No account · No card · Ready in under 10 minutes",
     },
+    heroSteps: {
+      title: "Three steps only — your proposal in seconds",
+      subtitle: "Write · Ruwaq drafts · Export — from idea to PDF under your brand",
+      cta: "Try it now — free",
+      items: [
+        { label: "Write", hint: "3 inputs" },
+        { label: "Ruwaq drafts", hint: "Full proposal" },
+        { label: "Export", hint: "Ready PDF" },
+      ],
+    },
     mock: {
+      previewEyebrow: "See the transformation",
+      previewTitle: "From 3 fields to a complete proposal",
+      previewSubtitle: "Simple inputs on one side — an 11-layer professional document on the other.",
       inputLabel: "Your inputs",
       outputLabel: "Your full proposal",
       fields: ["Project name", "Client name", "Fit-out / supervision description"],
