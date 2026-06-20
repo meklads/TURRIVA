@@ -205,6 +205,10 @@
     @apply h-full w-full object-cover object-center;
   }
 
+  .ruwaq-section-visual {
+    @apply overflow-hidden rounded-2xl border border-ruwaq-cream/90 bg-white shadow-ruwaq-lg;
+  }
+
   html[lang="ar"] .ruwaq-hero-step-label {
     @apply text-sm leading-snug sm:text-base;
   }

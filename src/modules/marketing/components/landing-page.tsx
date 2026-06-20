@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { MarketingHero } from "@/modules/marketing/components/marketing-hero";
 import { ProductMockPreview } from "@/modules/marketing/components/product-mock-preview";
+import {
+  LANDING_SECTION_IMAGES,
+  SectionVisual,
+  landingSectionAlts,
+} from "@/modules/marketing/components/section-visual";
 import type { Messages } from "@/shared/i18n/messages/types";
 import type { Locale } from "@/shared/i18n/locale";
 
@@ -12,6 +17,7 @@ type Props = {
 export function LandingPage({ t, locale }: Props) {
   const s = t.sales;
   const arrow = locale === "ar" ? "←" : "→";
+  const sectionAlts = landingSectionAlts(locale);
 
   return (
     <>
@@ -41,8 +47,14 @@ export function LandingPage({ t, locale }: Props) {
               {s.problem.body}
             </p>
           </div>
-          <div className="space-y-4">
-            <div className="ruwaq-compare-card ruwaq-compare-bad">
+          <SectionVisual
+            src={LANDING_SECTION_IMAGES.problem}
+            alt={sectionAlts.problem}
+            priority
+          />
+        </div>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+          <div className="ruwaq-compare-card ruwaq-compare-bad">
               <p className="text-xs font-bold uppercase tracking-wider text-red-600/80">
                 {s.problem.traditionalLabel}
               </p>
@@ -70,8 +82,7 @@ export function LandingPage({ t, locale }: Props) {
                     {item}
                   </li>
                 ))}
-              </ul>
-            </div>
+            </ul>
           </div>
         </div>
       </section>
@@ -85,6 +96,9 @@ export function LandingPage({ t, locale }: Props) {
             <p className="mx-auto mt-3 max-w-2xl text-sm text-ruwaq-navy-soft sm:text-base">
               {s.features.subtitle}
             </p>
+          </div>
+          <div className="mx-auto mt-10 max-w-4xl">
+            <SectionVisual src={LANDING_SECTION_IMAGES.trust} alt={sectionAlts.trust} />
           </div>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {s.features.items.map(({ icon, title, body }) => (
@@ -179,6 +193,9 @@ export function LandingPage({ t, locale }: Props) {
           <p className="ruwaq-eyebrow">{s.audience.eyebrow}</p>
           <h2 className="ruwaq-section-title mt-2">{s.audience.title}</h2>
         </div>
+        <div className="mx-auto mt-10 max-w-4xl">
+          <SectionVisual src={LANDING_SECTION_IMAGES.audience} alt={sectionAlts.audience} />
+        </div>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {s.audience.items.map(({ icon, title, body }) => (
             <article
@@ -209,7 +226,9 @@ export function LandingPage({ t, locale }: Props) {
                 {s.sample.cta} {arrow}
               </Link>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
+            <SectionVisual src={LANDING_SECTION_IMAGES.sample} alt={sectionAlts.sample} />
+          </div>
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {s.sample.items.map((item) => {
                 const card = (
                   <>
@@ -261,7 +280,6 @@ export function LandingPage({ t, locale }: Props) {
                   </div>
                 );
               })}
-            </div>
           </div>
         </div>
       </section>
