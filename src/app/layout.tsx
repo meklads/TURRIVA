@@ -49,7 +49,9 @@ export default async function RootLayout({
       data-lang={locale}
       className={`${almarai.variable} ${montserrat.variable}`}
     >
-      <body className={`min-h-screen bg-white ${locale === "ar" ? "font-ar" : "font-latin"}`}>
+      <body
+        className={`min-h-screen bg-white ${locale === "ar" ? almarai.className : montserrat.className}`}
+      >
         <Providers locale={locale}>{children}</Providers>
       </body>
     </html>

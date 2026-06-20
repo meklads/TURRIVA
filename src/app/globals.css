@@ -11,7 +11,10 @@
     --background: 0 0% 100%;
     --foreground: 222 47% 11%;
     --radius: 0.625rem;
-    /* dotforlife.com Arabic stack */
+    /* dotforlife.com — warm ink palette for Arabic marketing copy */
+    --df-ink: #1a1612;
+    --df-ink-soft: #3d4542;
+    --df-ink-muted: #5c534a;
     --font-ar-fallback: "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
     --font-latin-fallback: system-ui, -apple-system, sans-serif;
   }
@@ -49,6 +52,7 @@
   html[lang="ar"] h4 {
     font-family: var(--font-ar), var(--font-ar-fallback);
     font-weight: 700;
+    color: var(--df-ink);
   }
 
   html[lang="en"] h1,
@@ -57,6 +61,7 @@
   html[lang="en"] h4 {
     font-family: var(--font-latin), var(--font-latin-fallback);
     font-weight: 700;
+    color: var(--ruwaq-navy);
   }
 }
 
@@ -160,11 +165,16 @@
   }
 
   .ruwaq-hero-title {
-    @apply text-ruwaq-navy;
     font-family: inherit;
     font-size: clamp(1.8rem, 3vw, 2.8rem);
     font-weight: 700;
     line-height: 1.25;
+    @apply text-ruwaq-navy;
+  }
+
+  html[lang="ar"] .ruwaq-hero-title {
+    color: var(--df-ink);
+    letter-spacing: 0.02em;
   }
 
   html[lang="en"] .ruwaq-hero-title {
@@ -175,12 +185,12 @@
   .ruwaq-hero-lead {
     font-size: 1.1rem;
     font-weight: 400;
-    line-height: 1.7;
+    line-height: 1.75;
     @apply text-ruwaq-navy-soft;
   }
 
   html[lang="ar"] .ruwaq-hero-lead {
-    font-family: var(--font-ar), var(--font-ar-fallback);
+    color: var(--df-ink-soft);
   }
 
   .ruwaq-hero-steps {
@@ -237,12 +247,18 @@
   }
 
   .ruwaq-section-title {
-    @apply text-2xl font-bold text-ruwaq-navy md:text-3xl;
+    @apply text-2xl font-bold md:text-3xl;
     font-family: inherit;
+    color: inherit;
   }
 
   html[lang="ar"] .ruwaq-section-title {
     font-weight: 700;
+    color: var(--df-ink);
+  }
+
+  html[lang="en"] .ruwaq-section-title {
+    @apply text-ruwaq-navy;
   }
 
   .ruwaq-eyebrow {
@@ -250,10 +266,50 @@
   }
 
   html[lang="ar"] .ruwaq-eyebrow {
-    font-family: var(--font-ar), var(--font-ar-fallback);
     font-size: 0.72rem;
     font-weight: 600;
-    @apply normal-case tracking-normal;
+    letter-spacing: 0.08em;
+    @apply normal-case text-ruwaq-gold;
+  }
+
+  .ruwaq-hero-steps-title {
+    @apply text-center text-lg sm:text-xl;
+    font-weight: 700;
+    color: inherit;
+  }
+
+  html[lang="ar"] .ruwaq-hero-steps-title {
+    color: var(--df-ink);
+  }
+
+  html[lang="en"] .ruwaq-hero-steps-title {
+    @apply text-ruwaq-navy;
+  }
+
+  .ruwaq-hero-step-label {
+    @apply text-base font-bold;
+    color: inherit;
+  }
+
+  html[lang="ar"] .ruwaq-hero-step-label {
+    color: var(--df-ink);
+  }
+
+  html[lang="en"] .ruwaq-hero-step-label {
+    @apply text-ruwaq-navy;
+  }
+
+  .ruwaq-hero-step-hint {
+    @apply text-sm;
+    color: inherit;
+  }
+
+  html[lang="ar"] .ruwaq-hero-step-hint {
+    color: var(--df-ink-muted);
+  }
+
+  html[lang="en"] .ruwaq-hero-step-hint {
+    @apply text-ruwaq-navy-soft;
   }
 
   .ruwaq-logo-img {
