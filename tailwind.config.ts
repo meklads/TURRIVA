@@ -33,8 +33,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["Tajawal", "Cairo", "system-ui", "sans-serif"],
-        display: ["Cairo", "Tajawal", "system-ui", "sans-serif"],
+        sans: ["Almarai", "system-ui", "sans-serif"],
+        display: ["Almarai", "system-ui", "sans-serif"],
         latin: ["Montserrat", "system-ui", "sans-serif"],
       },
       boxShadow: {

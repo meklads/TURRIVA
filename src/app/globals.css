@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Montserrat:wght@400;500;600;700&display=swap");
 
 @layer base {
   :root {
@@ -25,20 +25,20 @@
 
   body {
     @apply bg-white text-ruwaq-navy antialiased;
-    font-family: "Tajawal", "Cairo", system-ui, sans-serif;
+    font-family: "Almarai", system-ui, sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
   html[lang="en"] body {
-    font-family: "Montserrat", "Tajawal", system-ui, sans-serif;
+    font-family: "Montserrat", system-ui, sans-serif;
   }
 
   h1,
   h2,
   h3,
   h4 {
-    font-family: "Cairo", "Tajawal", system-ui, sans-serif;
-    font-weight: 700;
+    font-family: "Almarai", system-ui, sans-serif;
+    font-weight: 800;
   }
 
   html[lang="en"] h1,
@@ -46,6 +46,7 @@
   html[lang="en"] h3,
   html[lang="en"] h4 {
     font-family: "Montserrat", system-ui, sans-serif;
+    font-weight: 700;
   }
 }
 
@@ -138,90 +139,46 @@
   }
 
   .ruwaq-landing-hero {
-    @apply relative overflow-hidden;
-    background: linear-gradient(135deg, #0a101f 0%, #0f172a 42%, #141f33 100%);
+    @apply relative overflow-hidden border-b border-slate-200/70;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 50%, #eef1f5 100%);
   }
 
-  .ruwaq-hero-grid-pattern {
-    @apply pointer-events-none absolute inset-0 opacity-[0.035];
-    background-image:
-      linear-gradient(rgba(201, 160, 99, 0.8) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(201, 160, 99, 0.8) 1px, transparent 1px);
-    background-size: 48px 48px;
-    mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 75%);
-  }
-
-  .ruwaq-hero-glow {
-    @apply pointer-events-none absolute rounded-full blur-3xl;
-  }
-
-  .ruwaq-hero-glow-a {
-    @apply -end-20 -top-24 h-[28rem] w-[28rem];
-    background: radial-gradient(circle, rgba(201, 160, 99, 0.14) 0%, transparent 68%);
-  }
-
-  .ruwaq-hero-glow-b {
-    @apply -bottom-32 -start-20 h-80 w-80;
-    background: radial-gradient(circle, rgba(99, 130, 180, 0.08) 0%, transparent 70%);
-  }
-
-  .ruwaq-hero-panel-hint {
-    animation: ruwaq-orbit-pulse 2.5s ease-in-out infinite;
-  }
-
-  .ruwaq-hero-panel {
-    @apply relative rounded-3xl border border-white/10 bg-gradient-to-br from-white via-ruwaq-cream-bg to-white p-5 shadow-[0_24px_80px_-20px_rgba(0,0,0,0.55)] sm:p-6;
-  }
-
-  .ruwaq-hero-panel::before {
+  .ruwaq-landing-hero::before {
     content: "";
-    @apply pointer-events-none absolute -inset-px rounded-3xl opacity-60;
-    background: linear-gradient(135deg, rgba(201, 160, 99, 0.35), transparent 40%, transparent 60%, rgba(201, 160, 99, 0.12));
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    padding: 1px;
+    @apply pointer-events-none absolute inset-0 opacity-40;
+    background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201, 160, 99, 0.06), transparent 70%);
   }
 
-  .ruwaq-hero-panel-head {
-    @apply relative border-b border-ruwaq-cream/80 pb-4;
+  .ruwaq-hero-flow {
+    @apply relative rounded-2xl border border-slate-200/80 bg-white/70 px-4 py-8 shadow-sm backdrop-blur-sm sm:px-8 sm:py-10;
   }
 
-  .ruwaq-hero-step-card {
-    @apply relative rounded-2xl border border-ruwaq-cream bg-white/80 p-3.5 transition-all duration-300 sm:p-4;
+  .ruwaq-hero-flow-orbit {
+    @apply flex h-[5.25rem] w-[5.25rem] items-center justify-center overflow-hidden rounded-2xl sm:h-[5.75rem] sm:w-[5.75rem];
+    box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.08);
   }
 
-  .ruwaq-hero-step-card-active {
-    @apply cursor-pointer border-ruwaq-gold/60 bg-white shadow-[0_8px_32px_-8px_rgba(201,160,99,0.45)] ring-2 ring-ruwaq-gold/25;
-    transform: translateY(-1px);
+  .ruwaq-hero-flow-orbit-active {
+    @apply ring-2 ring-ruwaq-gold/35;
+    box-shadow: 0 8px 32px -6px rgba(201, 160, 99, 0.45);
+    transform: scale(1.05);
   }
 
-  .ruwaq-hero-step-card-active:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 40px -10px rgba(201, 160, 99, 0.55);
+  .ruwaq-hero-flow-orbit-done {
+    @apply opacity-75;
+    transform: scale(0.98);
   }
 
-  .ruwaq-hero-step-card-done {
-    @apply border-green-200/80 bg-green-50/30 opacity-90;
-  }
-
-  .ruwaq-hero-step-card-locked {
-    @apply cursor-default border-ruwaq-cream/60 bg-ruwaq-cream-bg/40 opacity-50;
-  }
-
-  .ruwaq-hero-step-card-icon {
-    @apply relative h-[4.25rem] w-[4.25rem] overflow-hidden rounded-2xl shadow-sm sm:h-[4.5rem] sm:w-[4.5rem];
-  }
-
-  .ruwaq-hero-step-card-num {
-    @apply absolute -end-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-ruwaq-gold text-[10px] font-bold text-ruwaq-navy shadow;
-  }
-
-  .ruwaq-hero-step-card-check {
-    @apply absolute -end-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-green-600 text-white shadow;
+  .ruwaq-hero-flow-done {
+    @apply absolute -end-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-green-600 text-white shadow-md;
   }
 
   .ruwaq-hero-flow-tap {
-    @apply animate-pulse items-center rounded-full border border-ruwaq-gold/40 bg-ruwaq-gold/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-ruwaq-gold;
+    @apply inline-flex animate-pulse items-center rounded-full border border-ruwaq-gold/35 bg-ruwaq-gold/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-ruwaq-gold;
+  }
+
+  .ruwaq-hero-flow-step-ready:hover .ruwaq-hero-flow-orbit {
+    transform: scale(1.08);
   }
 
   .ruwaq-hero-flow-intro {
@@ -238,8 +195,24 @@
     }
   }
 
-  .ruwaq-hero-flow-step:focus-visible {
-    @apply outline-none ring-2 ring-ruwaq-gold ring-offset-2;
+  .ruwaq-hero-flow-connector {
+    @apply mt-10 shrink-0 self-start px-1 lg:px-3;
+  }
+
+  .ruwaq-hero-flow-step {
+    @apply cursor-default outline-none;
+  }
+
+  .ruwaq-hero-flow-step:focus-visible .ruwaq-hero-flow-orbit {
+    @apply ring-2 ring-ruwaq-gold/50 ring-offset-2 ring-offset-white;
+  }
+
+  .ruwaq-hero-flow-marker {
+    @apply -mt-px block h-0 w-0 border-x-[7px] border-t-[8px] border-x-transparent border-t-ruwaq-gold;
+  }
+
+  .ruwaq-hero-flow-marker-active {
+    @apply opacity-100;
   }
 
   .ruwaq-landing-dark {
@@ -251,7 +224,7 @@
   }
 
   .ruwaq-product-mock {
-    @apply overflow-hidden rounded-2xl border border-white/10 bg-white shadow-ruwaq-lg;
+    @apply overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-ruwaq-lg;
   }
 
   .ruwaq-product-mock-bar {
