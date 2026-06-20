@@ -7,6 +7,7 @@ export type Messages = {
     signIn: string;
     signOut: string;
     newProposal: string;
+    previewSample: string;
   };
   form: {
     title: string;
@@ -137,6 +138,14 @@ export type Messages = {
     feature3: string;
     trustLine: string;
   };
+  templates: {
+    title: string;
+    subtitle: string;
+    openSample: string;
+    openSampleHint: string;
+    note: string;
+    back: string;
+  };
   list: {
     title: string;
     new: string;
@@ -220,6 +229,8 @@ export type Messages = {
   export: {
     savePdf: string;
     footer: string;
+    sampleBadge: string;
+    sampleFooter: string;
     preparedFor: string;
     preparedBy: string;
     proposalNumber: string;

@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { useT } from "@/shared/i18n/context";
 import { LocaleSwitcher } from "@/shared/i18n/locale-switcher";
+import { RuwaqLogo } from "@/shared/components/ruwaq-logo";
 
 export default function LoginForm({
   googleAuthEnabled,
@@ -23,6 +24,9 @@ export default function LoginForm({
 
   return (
     <div className="relative flex min-h-screen items-center justify-center px-4 py-12">
+      <div className="absolute start-4 top-4">
+        <RuwaqLogo href="/" className="h-8 w-auto" />
+      </div>
       <div className="absolute end-4 top-4">
         <LocaleSwitcher />
       </div>

@@ -13,6 +13,7 @@ import {
   OptionalDetailsFields,
   type OptionalDetailsValues,
 } from "@/modules/proposal/components/optional-details-fields";
+import Link from "next/link";
 
 type Step = "project" | "details" | "generating";
 
@@ -145,6 +146,12 @@ export default function NewProposalPage() {
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-gray-900">{t.form.title}</h1>
         <p className="mt-1 text-sm text-gray-500">{t.form.subtitle}</p>
+        <Link
+          href="/templates/sample"
+          className="mt-3 inline-block text-sm font-medium text-brand-600 hover:text-brand-700"
+        >
+          {t.nav.previewSample} →
+        </Link>
       </div>
 
       <div className="mb-8 flex items-center gap-2 text-sm">

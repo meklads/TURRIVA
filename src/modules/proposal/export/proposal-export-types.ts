@@ -32,4 +32,6 @@ export type ProposalExportData = {
   areaSqm?: number;
   appBaseUrl: string;
   templateId?: "ruwaq" | "graphics_house";
+  /** When true, shows Ruwaq platform branding (sample preview only). */
+  platformBranding?: boolean;
 };

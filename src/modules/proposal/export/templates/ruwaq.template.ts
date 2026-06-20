@@ -135,6 +135,45 @@ export function renderRuwaqTemplate(
   const companyLogo = companyLogoHtml(data, true);
   const footerAddress = locale === "ar" ? footer.addressAr : footer.addressEn;
   const footerTagline = locale === "ar" ? footer.taglineAr : footer.taglineEn;
+  const platformBranding = data.platformBranding === true;
+  const sampleBadge = platformBranding
+    ? `<div style="display:inline-block;margin-top:10px;padding:4px 10px;border-radius:6px;background:rgba(201,160,99,0.2);border:1px solid ${colors.gold};font-size:11px;font-weight:600;color:${colors.gold};">${escapeHtml(labels.sampleBadge)}</div>`
+    : "";
+
+  const clientFooterLines = [
+    data.companyName?.trim(),
+    data.address?.trim(),
+    data.companyPhone?.trim(),
+    data.companyEmail?.trim(),
+    data.crNumber ? `${labels.crNumber} ${data.crNumber}` : "",
+    data.vatNumber ? `${labels.vatNumber} ${data.vatNumber}` : "",
+  ].filter(Boolean);
+
+  const clientFooter =
+    clientFooterLines.length > 0
+      ? `<footer class="doc-footer-client">
+          <div style="font-weight:600;color:${colors.navy};margin-bottom:6px;">${escapeHtml(clientFooterLines[0] ?? "")}</div>
+          ${clientFooterLines
+            .slice(1)
+            .map((line) => `<div style="margin-top:3px;">${escapeHtml(line)}</div>`)
+            .join("")}
+          <div style="margin-top:10px;opacity:0.7;font-size:10px;">${escapeHtml(labels.footer)}</div>
+        </footer>`
+      : `<footer class="doc-footer-client doc-footer-minimal">
+          <div>${escapeHtml(labels.footer)}</div>
+        </footer>`;
+
+  const platformFooter = `<footer class="doc-footer">
+      <div>
+        <img src="${escapeHtml(assetUrl(base, assets.logoOnDark))}" alt="Ruwaq">
+        <div class="doc-footer-tagline">${escapeHtml(footerTagline)}</div>
+      </div>
+      <div style="text-align:${dir === "rtl" ? "left" : "right"};">
+        <div>${escapeHtml(footerAddress)}</div>
+        <div style="margin-top:4px;"><a href="https://${footer.website}">${escapeHtml(footer.website)}</a></div>
+        <div style="margin-top:6px;opacity:0.75;">${escapeHtml(labels.sampleFooter)}</div>
+      </div>
+    </footer>`;
 
   const fontLink = `<link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -319,6 +358,18 @@ export function renderRuwaqTemplate(
     .doc-footer img { max-height: 44px; opacity: 0.95; }
     .doc-footer a { color: ${colors.gold}; text-decoration: none; }
     .doc-footer-tagline { color: ${colors.gold}; font-weight: 600; margin-top: 4px; }
+    .doc-footer-client {
+      border-top: 2px solid ${colors.gold};
+      margin-top: 28px;
+      padding: 18px 32px 24px;
+      font-size: 12px;
+      color: ${colors.textMuted};
+      background: ${colors.creamBg};
+    }
+    .doc-footer-minimal {
+      text-align: center;
+      font-size: 11px;
+    }
   </style>
 </head>
 <body>
@@ -330,6 +381,7 @@ export function renderRuwaqTemplate(
           <div class="banner-badge">${escapeHtml(docTitle)}</div>
           <h1 class="banner-title">${escapeHtml(data.projectName)}</h1>
           <div class="banner-client">${escapeHtml(labels.preparedFor)} ${escapeHtml(data.clientName)}</div>
+          ${sampleBadge}
         </div>
         <div style="text-align:${dir === "rtl" ? "left" : "right"};">
           ${companyLogo}
@@ -449,17 +501,7 @@ export function renderRuwaqTemplate(
       </div>
     </main>
 
-    <footer class="doc-footer">
-      <div>
-        <img src="${escapeHtml(assetUrl(base, assets.logoOnDark))}" alt="Ruwaq">
-        <div class="doc-footer-tagline">${escapeHtml(footerTagline)}</div>
-      </div>
-      <div style="text-align:${dir === "rtl" ? "left" : "right"};">
-        <div>${escapeHtml(footerAddress)}</div>
-        <div style="margin-top:4px;"><a href="https://${footer.website}">${escapeHtml(footer.website)}</a></div>
-        <div style="margin-top:6px;opacity:0.75;">${escapeHtml(labels.footer)}</div>
-      </div>
-    </footer>
+    ${platformBranding ? platformFooter : clientFooter}
   </div>
 </body>
 </html>`;

@@ -3,6 +3,7 @@ import { getMessages } from "@/shared/i18n";
 import { getLocale } from "@/shared/i18n/server";
 import { LocaleSwitcher } from "@/shared/i18n/locale-switcher";
 import { UserNav } from "@/modules/auth/components/user-nav";
+import { RuwaqLogo } from "@/shared/components/ruwaq-logo";
 
 export default async function DashboardLayout({
   children,
@@ -15,13 +16,20 @@ export default async function DashboardLayout({
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur">
-        <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4">
-          <Link href="/proposals/new" className="flex flex-col leading-tight">
-            <span className="text-sm font-bold text-brand-600">{t.app.name}</span>
-            <span className="text-[10px] text-gray-400">{t.app.subtitle}</span>
-          </Link>
-          <nav className="flex items-center gap-3 text-sm text-gray-600">
+        <div className="mx-auto flex h-14 max-w-5xl items-center justify-between gap-4 px-4">
+          <RuwaqLogo
+            href="/proposals/new"
+            showSubtitle
+            subtitle={t.app.subtitle}
+          />
+          <nav className="flex flex-wrap items-center justify-end gap-2 text-sm text-gray-600 sm:gap-3">
             <LocaleSwitcher />
+            <Link
+              href="/templates/sample"
+              className="hidden rounded-lg border border-gray-200 px-2.5 py-1 text-xs font-medium hover:bg-gray-50 sm:inline-block"
+            >
+              {t.nav.previewSample}
+            </Link>
             <Link href="/proposals" className="hover:text-gray-900">
               {t.nav.myProposals}
             </Link>

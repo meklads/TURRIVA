@@ -30,5 +30,6 @@ export function buildProposalExportHtml(
     ...data,
     appBaseUrl: data.appBaseUrl ?? appBaseUrlFromEnv(),
     templateId: data.templateId ?? "ruwaq",
+    platformBranding: data.platformBranding ?? false,
   });
 }
