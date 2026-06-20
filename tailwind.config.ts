@@ -33,9 +33,10 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["Almarai", "system-ui", "sans-serif"],
-        display: ["Almarai", "system-ui", "sans-serif"],
-        latin: ["Montserrat", "system-ui", "sans-serif"],
+        ar: ["var(--font-ar)", "Segoe UI", "sans-serif"],
+        latin: ["var(--font-latin)", "system-ui", "sans-serif"],
+        sans: ["var(--font-ar)", "Segoe UI", "sans-serif"],
+        display: ["var(--font-ar)", "Segoe UI", "sans-serif"],
       },
       boxShadow: {
         ruwaq: "0 4px 24px -4px rgba(15, 23, 42, 0.08)",
