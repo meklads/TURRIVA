@@ -6,6 +6,7 @@ type Props = {
   className?: string;
   showSubtitle?: boolean;
   subtitle?: string;
+  variant?: "light" | "dark";
 };
 
 export function RuwaqLogo({
@@ -13,10 +14,16 @@ export function RuwaqLogo({
   className = "h-9 w-auto",
   showSubtitle = false,
   subtitle,
+  variant = "light",
 }: Props) {
+  const src =
+    variant === "dark"
+      ? "/brand/ruwaq/logo-on-dark.png"
+      : "/brand/ruwaq/logo-on-light.png";
+
   const logo = (
     <Image
-      src="/brand/ruwaq/logo-on-light.png"
+      src={src}
       alt="رواق"
       width={140}
       height={44}

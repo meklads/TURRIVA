@@ -138,6 +138,52 @@ export type Messages = {
     feature3: string;
     trustLine: string;
   };
+  site: {
+    nav: {
+      howItWorks: string;
+      about: string;
+      services: string;
+      privacy: string;
+      startProposal: string;
+    };
+    hero: { eyebrow: string };
+    home: {
+      stepsTitle: string;
+      learnMore: string;
+      steps: readonly { title: string; body: string }[];
+    };
+    footer: {
+      tagline: string;
+      address: string;
+      product: string;
+      company: string;
+      legal: string;
+      contact: string;
+      copyright: string;
+    };
+  };
+  pages: {
+    howItWorks: {
+      title: string;
+      intro: string;
+      steps: readonly { title: string; body: string }[];
+      reviewTitle: string;
+      reviewBody: string;
+    };
+    about: {
+      title: string;
+      intro: string;
+      sections: readonly { title: string; body: string }[];
+      values: readonly { title: string; body: string }[];
+    };
+    privacy: {
+      title: string;
+      updated: string;
+      intro: string;
+      sections: readonly { title: string; body: string }[];
+      contact: string;
+    };
+  };
   templates: {
     title: string;
     subtitle: string;

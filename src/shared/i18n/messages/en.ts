@@ -159,6 +159,131 @@ export const en: Messages = {
     feature3: "Arabic/EN + CR/VAT",
     trustLine: "Start without an account · company profile · support & help included",
   },
+  site: {
+    nav: {
+      howItWorks: "How it works",
+      about: "About Ruwaq",
+      services: "Services",
+      privacy: "Privacy policy",
+      startProposal: "Start a proposal",
+    },
+    hero: {
+      eyebrow: "Saudi real estate sector",
+    },
+    home: {
+      stepsTitle: "Three steps only",
+      learnMore: "Learn more",
+      steps: [
+        {
+          title: "Project & client",
+          body: "Project name, client name, and work description — 3 core inputs.",
+        },
+        {
+          title: "Price & details",
+          body: "Fixed price or preliminary estimate, plus optional context fields.",
+        },
+        {
+          title: "Review & export",
+          body: "Confirm terms, assumptions, and exclusions — then download a PDF with your company identity.",
+        },
+      ],
+    },
+    footer: {
+      tagline: "Professionalism builds trust — the easiest, most trusted real estate proposals.",
+      address: "Jeddah — Al-Zahra District, Saudi Arabia",
+      product: "Product",
+      company: "Company",
+      legal: "Legal",
+      contact: "Contact us",
+      copyright: "© Ruwaq. All rights reserved.",
+    },
+  },
+  pages: {
+    howItWorks: {
+      title: "How Ruwaq works",
+      intro:
+        "Ruwaq turns what you know about a project into a professional proposal — without complex forms or hours of writing.",
+      steps: [
+        {
+          title: "Enter 3 core inputs",
+          body: "Project name, client name, and work description. Location, property type, area, and duration are optional.",
+        },
+        {
+          title: "Ruwaq drafts with AI",
+          body: "Scope, deliverables, timeline, commercial terms, assumptions, and exclusions — organized and ready to review.",
+        },
+        {
+          title: "Review what builds trust",
+          body: "Before export, you confirm commercial terms, assumptions, and exclusions — for your protection and client trust.",
+        },
+        {
+          title: "Export a PDF with your brand",
+          body: "Client documents show your company only. Ruwaq stays in the background.",
+        },
+      ],
+      reviewTitle: "Why 3 review steps?",
+      reviewBody:
+        "In real estate, clients trust vendors who clarify assumptions, exclusions, and price. Ruwaq organizes — you confirm before sending.",
+    },
+    about: {
+      title: "About Ruwaq",
+      intro:
+        "Ruwaq is your partner for turning project knowledge into a trust-building proposal — for contractors, engineering offices, and consultants in Saudi Arabia.",
+      sections: [
+        {
+          title: "What we do",
+          body: "We translate user intent into a professional proposal document: scope, terms, assumptions, and exclusions — in language clients can act on.",
+        },
+        {
+          title: "Who we serve",
+          body: "Saudi real estate today: fit-out, supervision, maintenance, and consulting. Broader vision — focused execution now.",
+        },
+        {
+          title: "What we are not",
+          body: "Not a PDF tool alone, not empty form builders, not ERP. Ruwaq is a professional translator — you own the final content.",
+        },
+      ],
+      values: [
+        { title: "Trust first", body: "Assumptions and exclusions are core — not an afterthought." },
+        { title: "Real simplicity", body: "3 inputs to start. Everything else is optional." },
+        { title: "Your identity", body: "Your proposals show your company — Ruwaq works behind the scenes." },
+        { title: "Built for KSA", body: "Arabic/English, CR/VAT, local real estate context." },
+      ],
+    },
+    privacy: {
+      title: "Privacy policy",
+      updated: "Last updated: June 2026",
+      intro:
+        "We respect your privacy. This policy explains how we collect and use your data when you use Ruwaq (ruwaq.co).",
+      sections: [
+        {
+          title: "Data we collect",
+          body: "When you sign in: name and email from Google. When you create proposals: project and client data you enter. Company profile: name, logo, CR, VAT, contact — optional.",
+        },
+        {
+          title: "How we use data",
+          body: "To run the service: save proposals, generate content, and export PDFs. We do not sell your data to third parties.",
+        },
+        {
+          title: "Artificial intelligence",
+          body: "We use AI providers to process your project description and draft proposals. We do not use your data to train public models without consent.",
+        },
+        {
+          title: "Storage & security",
+          body: "Data is stored on secure servers. We apply standard security practices — no system is 100% immune.",
+        },
+        {
+          title: "Your rights",
+          body: "You may request account and data deletion by contacting us. Guests can create proposals without signing in — with save limitations.",
+        },
+        {
+          title: "Cookies",
+          body: "We use essential cookies for session and language. No third-party ads in the current version.",
+        },
+      ],
+      contact: "Questions:",
+    },
+  },
   templates: {
     title: "Ruwaq design sample",
     subtitle:
