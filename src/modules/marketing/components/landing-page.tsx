@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HeroStepsStrip } from "@/modules/marketing/components/hero-steps-strip";
+import { MarketingHero } from "@/modules/marketing/components/marketing-hero";
 import { ProductMockPreview } from "@/modules/marketing/components/product-mock-preview";
 import type { Messages } from "@/shared/i18n/messages/types";
 import type { Locale } from "@/shared/i18n/locale";
@@ -15,46 +15,7 @@ export function LandingPage({ t, locale }: Props) {
 
   return (
     <>
-      {/* ── Hero ── */}
-      <section className="ruwaq-landing-hero">
-        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="ruwaq-eyebrow">{s.hero.eyebrow}</p>
-            <h1 className="mt-4 font-display text-3xl font-extrabold leading-[1.15] tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
-              {s.hero.title}{" "}
-              <span className="text-ruwaq-gold">{s.hero.titleHighlight}</span>
-            </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
-              {s.hero.subtitle}
-            </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <Link href="/proposals/new" className="btn-ruwaq-primary px-8 py-3 text-base">
-                {s.hero.cta} {arrow}
-              </Link>
-              <Link
-                href="/templates/sample"
-                className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:border-ruwaq-gold/50 hover:bg-white/10"
-              >
-                {s.hero.ctaSecondary}
-              </Link>
-            </div>
-            <p className="mt-4 text-xs text-white/50">{s.hero.microcopy}</p>
-          </div>
-
-          <div className="mx-auto mt-12 max-w-4xl lg:max-w-5xl">
-            <HeroStepsStrip
-              title={s.heroSteps.title}
-              subtitle={s.heroSteps.subtitle}
-              tapIntro={s.heroSteps.tapIntro}
-              tapHere={s.heroSteps.tapHere}
-              steps={s.heroSteps.items}
-              cta={s.heroSteps.cta}
-              completeMessage={s.heroSteps.completeMessage}
-              locale={locale}
-            />
-          </div>
-        </div>
-      </section>
+      <MarketingHero hero={s.hero} heroSteps={s.heroSteps} locale={locale} />
 
       {/* ── Product mock (moved from hero) ── */}
       <section className="border-b border-ruwaq-cream bg-white">
