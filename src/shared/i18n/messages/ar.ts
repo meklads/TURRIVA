@@ -173,7 +173,7 @@ export const ar = {
       items: [
         { label: "ثلاث معلومات فقط", hint: "" },
         { label: "رواق يكتب العرض", hint: "" },
-        { label: "PDF جاهز — باسم شركتك", hint: "" },
+        { label: "PDF جاهز باسم شركتك", hint: "" },
       ],
     },
     mock: {

@@ -176,7 +176,7 @@ export const en: Messages = {
       items: [
         { label: "Three inputs only", hint: "" },
         { label: "Ruwaq writes the proposal", hint: "" },
-        { label: "PDF ready — under your brand", hint: "" },
+        { label: "PDF ready under your brand", hint: "" },
       ],
     },
     mock: {
