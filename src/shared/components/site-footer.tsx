@@ -43,6 +43,17 @@ export async function SiteFooter() {
             <p className="mt-3 text-xs font-medium text-ruwaq-gold">
               {t.site.footer.address}
             </p>
+            <p className="mt-4 text-xs leading-relaxed text-gray-500">
+              {t.site.footer.sponsoredBy}{" "}
+              <a
+                href="https://3dgraphicshouse.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-ruwaq-gold transition-colors hover:text-white hover:underline"
+              >
+                {t.site.footer.sponsoredByLink}
+              </a>
+            </p>
           </div>
 
           {columns.map((col) => (

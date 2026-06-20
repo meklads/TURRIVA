@@ -14,15 +14,14 @@ export function RuwaqLogo({
   const src =
     variant === "dark"
       ? "/brand/ruwaq/logo-on-dark.png"
-      : "/brand/ruwaq/logo-on-light.png";
+      : "/brand/ruwaq/logo-transparent.png";
 
   const logo = (
     // eslint-disable-next-line @next/next/no-img-element
     <img
       src={src}
       alt="رواق Ruwaq"
-      className={`ruwaq-logo-img ${className}`}
-      style={{ background: "transparent" }}
+      className={`ruwaq-logo-img block ${className}`}
       decoding="async"
     />
   );
@@ -32,7 +31,7 @@ export function RuwaqLogo({
   return (
     <Link
       href={href}
-      className="inline-flex shrink-0 items-center bg-transparent p-0"
+      className="inline-flex shrink-0 items-center bg-transparent p-0 leading-none"
       aria-label="رواق — الصفحة الرئيسية"
     >
       {logo}

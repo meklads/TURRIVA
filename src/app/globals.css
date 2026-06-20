@@ -204,7 +204,8 @@
   }
 
   .ruwaq-logo-img {
-    @apply block h-auto w-auto max-w-none bg-transparent object-contain;
+    @apply max-w-none bg-transparent object-contain object-left;
+    image-rendering: -webkit-optimize-contrast;
   }
 
   .proposal-section {

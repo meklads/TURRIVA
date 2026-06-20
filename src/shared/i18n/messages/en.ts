@@ -268,7 +268,7 @@ export const en: Messages = {
       eyebrow: "Why us",
       title: "Why clients choose Ruwaq",
       subtitle:
-        "Not because we're \"an AI platform\" — because we solve a daily problem for Saudi real estate contractors.",
+        "Not because we're \"an AI platform\" — because we solve a daily problem for everyone sending proposals in real estate & engineering.",
       table: { need: "Your need", others: "Alternatives", ruwaq: "Ruwaq" },
       rows: [
         {
@@ -300,52 +300,77 @@ export const en: Messages = {
     },
     audience: {
       eyebrow: "Built for",
-      title: "Real estate contractors who win with trust",
+      title: "Real estate & engineering — anyone who sends proposals daily",
       items: [
         {
           icon: "🔨",
-          title: "Fit-out & finishing",
+          title: "Fit-out contractors",
           body: "Villas, offices, retail — clear proposals after site visit or preliminary estimate.",
         },
         {
-          icon: "👷",
-          title: "Engineering supervision",
-          body: "Supervision scope, deliverables, and timeline — professionally written.",
+          icon: "📐",
+          title: "Engineering offices",
+          body: "Design, supervision, consulting — professional scope and deliverables.",
+        },
+        {
+          icon: "🏗️",
+          title: "Property developers",
+          body: "Proposals for your projects or contractors — with clear terms and assumptions.",
         },
         {
           icon: "🔧",
-          title: "Maintenance & FM",
-          body: "Recurring maintenance contracts with clear terms and payment structure.",
+          title: "Maintenance companies",
+          body: "Recurring maintenance and FM contracts with structured payments.",
         },
         {
-          icon: "📐",
-          title: "Real estate consulting",
-          body: "Studies, valuation, PM — without hours of writing.",
+          icon: "🏢",
+          title: "Real estate agencies",
+          body: "Service proposals, property management — documents that match your clients.",
+        },
+        {
+          icon: "📣",
+          title: "Real estate marketing",
+          body: "Campaigns, launches, and media — fast, professional proposals.",
+        },
+        {
+          icon: "🧱",
+          title: "Building material suppliers",
+          body: "Supply and delivery quotes with clear scope and commercial terms.",
+        },
+        {
+          icon: "🌿",
+          title: "Landscape contractors",
+          body: "Site landscaping, gardens, and outdoor maintenance — full proposals.",
         },
       ],
     },
     sample: {
       eyebrow: "See for yourself",
-      title: "A real sample proposal — before you start",
+      title: "Proposal sample gallery",
       body:
-        "No empty promises. Open a full PDF sample for a commercial fit-out — the same structure you'll get.",
-      cta: "Open sample",
+        "One commercial fit-out sample is live now. We're expanding the gallery with stunning brand templates — powered by Graphics House. Send your brand assets later to be featured.",
+      cta: "Open live sample",
+      comingSoon: "Coming soon",
       items: [
         {
           title: "Office fit-out proposal",
           body: "Scope, deliverables, 30/40/30 payments, assumptions & exclusions.",
+          live: true,
         },
         {
           title: "Engineering supervision",
           body: "Supervision phases, deliverables, and timeline.",
+          live: false,
         },
         {
           title: "Preliminary estimate — villa",
           body: "Estimate-only mode — confirmed after site visit.",
+          live: false,
         },
         {
           title: "Recurring maintenance",
           body: "Service scope, frequency, and commercial terms.",
+          live: false,
         },
       ],
     },
@@ -407,13 +432,15 @@ export const en: Messages = {
       ],
     },
     footer: {
-      tagline: "Professionalism builds trust — the easiest, most trusted real estate proposals.",
+      tagline: "Professionalism builds trust — the easiest, most trusted real estate & engineering proposals.",
       address: "Jeddah — Al-Zahra District, Saudi Arabia",
       product: "Product",
       company: "Company",
       legal: "Legal",
       contact: "Contact us",
       copyright: "© Ruwaq. All rights reserved.",
+      sponsoredBy: "Ruwaq is powered by",
+      sponsoredByLink: "Graphics House",
     },
   },
   pages: {
@@ -446,7 +473,7 @@ export const en: Messages = {
     about: {
       title: "About Ruwaq",
       intro:
-        "Ruwaq is your partner for turning project knowledge into a trust-building proposal — for contractors, engineering offices, and consultants in Saudi Arabia.",
+        "Ruwaq is your partner for turning project knowledge into a trust-building proposal — for everyone in Saudi real estate & engineering.",
       sections: [
         {
           title: "What we do",
@@ -454,7 +481,7 @@ export const en: Messages = {
         },
         {
           title: "Who we serve",
-          body: "Saudi real estate today: fit-out, supervision, maintenance, and consulting. Broader vision — focused execution now.",
+          body: "Real estate & engineering: contractors, engineering offices, developers, maintenance, agencies, suppliers, and more.",
         },
         {
           title: "What we are not",
@@ -467,6 +494,10 @@ export const en: Messages = {
         { title: "Your identity", body: "Your proposals show your company — Ruwaq works behind the scenes." },
         { title: "Built for KSA", body: "Arabic/English, CR/VAT, local real estate context." },
       ],
+      sponsoredTitle: "Powered by Graphics House",
+      sponsoredBody:
+        "Ruwaq is built with the design and brand expertise of Graphics House — professional visual identity for proposals that build trust.",
+      sponsoredLink: "3dgraphicshouse.com",
     },
     privacy: {
       title: "Privacy policy",

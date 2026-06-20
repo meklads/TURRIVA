@@ -241,7 +241,7 @@ export function LandingPage({ t, locale }: Props) {
           <p className="ruwaq-eyebrow">{s.audience.eyebrow}</p>
           <h2 className="ruwaq-section-title mt-2">{s.audience.title}</h2>
         </div>
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {s.audience.items.map(({ icon, title, body }) => (
             <article
               key={title}
@@ -272,26 +272,57 @@ export function LandingPage({ t, locale }: Props) {
               </Link>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
-              {s.sample.items.map((item) => (
-                <Link
-                  key={item.title}
-                  href="/templates/sample"
-                  className="ruwaq-sample-card group"
-                >
-                  <div className="ruwaq-sample-doc">
-                    <div className="h-1.5 w-8 rounded bg-ruwaq-gold/40" />
-                    <div className="mt-2 h-1 w-full rounded bg-ruwaq-cream" />
-                    <div className="mt-1.5 h-1 w-4/5 rounded bg-ruwaq-cream" />
-                    <div className="mt-1.5 h-1 w-3/5 rounded bg-ruwaq-cream" />
-                    <div className="mt-3 h-1 w-full rounded bg-ruwaq-cream/70" />
-                    <div className="mt-1 h-1 w-5/6 rounded bg-ruwaq-cream/70" />
+              {s.sample.items.map((item) => {
+                const card = (
+                  <>
+                    <div
+                      className={`ruwaq-sample-doc ${item.live ? "" : "opacity-60 grayscale-[30%]"}`}
+                    >
+                      <div className="h-1.5 w-8 rounded bg-ruwaq-gold/40" />
+                      <div className="mt-2 h-1 w-full rounded bg-ruwaq-cream" />
+                      <div className="mt-1.5 h-1 w-4/5 rounded bg-ruwaq-cream" />
+                      <div className="mt-1.5 h-1 w-3/5 rounded bg-ruwaq-cream" />
+                      <div className="mt-3 h-1 w-full rounded bg-ruwaq-cream/70" />
+                      <div className="mt-1 h-1 w-5/6 rounded bg-ruwaq-cream/70" />
+                    </div>
+                    <div className="mt-3 flex items-start justify-between gap-2">
+                      <h3
+                        className={`text-sm font-bold text-ruwaq-navy ${item.live ? "group-hover:text-ruwaq-gold" : ""}`}
+                      >
+                        {item.title}
+                      </h3>
+                      {!item.live ? (
+                        <span className="shrink-0 rounded-full bg-ruwaq-cream-bg px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-ruwaq-navy-soft">
+                          {s.sample.comingSoon}
+                        </span>
+                      ) : null}
+                    </div>
+                    <p className="mt-1 text-xs text-ruwaq-navy-soft">{item.body}</p>
+                  </>
+                );
+
+                if (item.live) {
+                  return (
+                    <Link
+                      key={item.title}
+                      href="/templates/sample"
+                      className="ruwaq-sample-card group"
+                    >
+                      {card}
+                    </Link>
+                  );
+                }
+
+                return (
+                  <div
+                    key={item.title}
+                    className="ruwaq-sample-card cursor-default opacity-90"
+                    aria-disabled
+                  >
+                    {card}
                   </div>
-                  <h3 className="mt-3 text-sm font-bold text-ruwaq-navy group-hover:text-ruwaq-gold">
-                    {item.title}
-                  </h3>
-                  <p className="mt-1 text-xs text-ruwaq-navy-soft">{item.body}</p>
-                </Link>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>

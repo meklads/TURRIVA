@@ -196,7 +196,8 @@ export type Messages = {
       title: string;
       body: string;
       cta: string;
-      items: readonly { title: string; body: string }[];
+      comingSoon: string;
+      items: readonly { title: string; body: string; live: boolean }[];
     };
     document: {
       eyebrow: string;
@@ -234,6 +235,8 @@ export type Messages = {
       legal: string;
       contact: string;
       copyright: string;
+      sponsoredBy: string;
+      sponsoredByLink: string;
     };
   };
   pages: {
@@ -249,6 +252,9 @@ export type Messages = {
       intro: string;
       sections: readonly { title: string; body: string }[];
       values: readonly { title: string; body: string }[];
+      sponsoredTitle: string;
+      sponsoredBody: string;
+      sponsoredLink: string;
     };
     privacy: {
       title: string;

@@ -36,6 +36,21 @@ export default async function AboutPage() {
         ))}
       </div>
 
+      <div className="mt-10 ruwaq-card-accent border-t-ruwaq-gold bg-ruwaq-cream-bg/30">
+        <h2 className="font-display font-bold text-ruwaq-navy">{t.pages.about.sponsoredTitle}</h2>
+        <p className="mt-2 text-sm leading-relaxed text-ruwaq-navy-soft">
+          {t.pages.about.sponsoredBody}
+        </p>
+        <a
+          href="https://3dgraphicshouse.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 inline-block text-sm font-semibold text-ruwaq-gold hover:underline"
+        >
+          {t.pages.about.sponsoredLink} ↗
+        </a>
+      </div>
+
       <div className="mt-10">
         <Link href="/proposals/new" className="btn-ruwaq-primary">
           {t.site.nav.startProposal}
