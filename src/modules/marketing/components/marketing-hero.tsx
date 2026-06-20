@@ -7,10 +7,12 @@ type Props = {
   hero: Messages["sales"]["hero"];
   heroSteps: Messages["sales"]["heroSteps"];
   locale: Locale;
+  trustPills: readonly string[];
+  learnMore?: { href: string; label: string };
 };
 
 /** Light hero — clear message, visible CTA, static 3 steps. */
-export function MarketingHero({ hero, heroSteps, locale }: Props) {
+export function MarketingHero({ hero, heroSteps, locale, trustPills, learnMore }: Props) {
   const arrow = locale === "ar" ? "←" : "→";
 
   return (
@@ -33,10 +35,23 @@ export function MarketingHero({ hero, heroSteps, locale }: Props) {
             </Link>
           </div>
           <p className="mt-4 text-sm text-slate-400">{hero.microcopy}</p>
+
+          <ul className="ruwaq-trust-pills mt-5">
+            {trustPills.map((pill) => (
+              <li key={pill}>{pill}</li>
+            ))}
+          </ul>
         </div>
 
-        <div className="mx-auto mt-14 max-w-3xl border-t border-slate-200/80 pt-12 lg:max-w-4xl">
+        <div className="mx-auto mt-14 max-w-4xl lg:max-w-5xl">
           <HeroStepsStrip title={heroSteps.title} steps={heroSteps.items} />
+          {learnMore ? (
+            <p className="mt-8 text-center">
+              <Link href={learnMore.href} className="text-sm font-semibold text-ruwaq-gold hover:underline">
+                {learnMore.label} {arrow}
+              </Link>
+            </p>
+          ) : null}
         </div>
       </div>
     </section>

@@ -209,6 +209,72 @@
     @apply overflow-hidden rounded-2xl border border-ruwaq-cream/90 bg-white shadow-ruwaq-lg;
   }
 
+  .ruwaq-section-visual-wide {
+    @apply max-w-4xl;
+  }
+
+  .ruwaq-section-visual-img {
+    @apply aspect-[16/10] h-auto w-full object-cover object-center;
+  }
+
+  .ruwaq-landing-section {
+    @apply relative px-4 py-16 sm:px-6 sm:py-20 lg:py-24;
+  }
+
+  .ruwaq-landing-section-inner {
+    @apply mx-auto max-w-6xl;
+  }
+
+  .ruwaq-section-lead {
+    @apply text-sm leading-relaxed text-ruwaq-navy-soft sm:text-base;
+  }
+
+  html[lang="ar"] .ruwaq-section-lead {
+    color: var(--df-ink-soft);
+  }
+
+  .ruwaq-trust-pills {
+    @apply flex flex-wrap items-center justify-center gap-2;
+  }
+
+  .ruwaq-trust-pills li {
+    @apply rounded-full border border-ruwaq-cream bg-white/80 px-3 py-1 text-xs font-medium text-ruwaq-navy-soft shadow-sm;
+  }
+
+  .ruwaq-eyebrow-dark {
+    @apply text-xs font-bold uppercase tracking-[0.2em] text-ruwaq-gold;
+  }
+
+  html[lang="ar"] .ruwaq-eyebrow-dark {
+    @apply text-sm normal-case tracking-normal;
+  }
+
+  .ruwaq-compare-label {
+    @apply text-xs font-bold uppercase tracking-wider;
+  }
+
+  html[lang="ar"] .ruwaq-compare-label {
+    @apply normal-case tracking-normal;
+  }
+
+  .ruwaq-compare-label-bad {
+    @apply text-red-600/80;
+  }
+
+  .ruwaq-compare-label-good {
+    @apply text-ruwaq-gold;
+  }
+
+  .ruwaq-landing-cta::before {
+    content: "";
+    @apply pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ruwaq-gold/40 to-transparent;
+  }
+
+  .ruwaq-landing-cta::after {
+    content: "";
+    @apply pointer-events-none absolute start-1/2 top-0 h-64 w-96 -translate-x-1/2 rounded-full bg-ruwaq-gold/5 blur-3xl;
+  }
+
   html[lang="ar"] .ruwaq-hero-step-label {
     @apply text-sm leading-snug sm:text-base;
   }
@@ -218,7 +284,7 @@
   }
 
   .ruwaq-landing-cta {
-    @apply border-t border-ruwaq-gold/20 bg-gradient-to-r from-ruwaq-navy via-[#162033] to-ruwaq-navy;
+    @apply relative overflow-hidden border-t border-ruwaq-gold/20 bg-gradient-to-r from-ruwaq-navy via-[#162033] to-ruwaq-navy;
   }
 
   .ruwaq-product-mock {

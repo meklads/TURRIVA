@@ -172,7 +172,7 @@ export const en: Messages = {
       microcopy: "No account · No card · Ready in under 10 minutes",
     },
     heroSteps: {
-      title: "Three steps — your proposal ready",
+      title: "Three steps, your proposal ready",
       items: [
         { label: "Three inputs only", hint: "" },
         { label: "Ruwaq writes the proposal", hint: "" },

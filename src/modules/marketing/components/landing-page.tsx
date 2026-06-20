@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MarketingHero } from "@/modules/marketing/components/marketing-hero";
 import { ProductMockPreview } from "@/modules/marketing/components/product-mock-preview";
+import { SectionHeader } from "@/modules/marketing/components/section-header";
 import {
   LANDING_SECTION_IMAGES,
   SectionVisual,
@@ -18,47 +19,52 @@ export function LandingPage({ t, locale }: Props) {
   const s = t.sales;
   const arrow = locale === "ar" ? "←" : "→";
   const sectionAlts = landingSectionAlts(locale);
+  const trustPills = [t.landing.feature1, t.landing.feature2, t.landing.feature3];
 
   return (
     <>
-      <MarketingHero hero={s.hero} heroSteps={s.heroSteps} locale={locale} />
+      <MarketingHero
+        hero={s.hero}
+        heroSteps={s.heroSteps}
+        locale={locale}
+        trustPills={trustPills}
+        learnMore={{ href: "/how-it-works", label: s.steps.learnMore }}
+      />
 
-      {/* ── Product mock (moved from hero) ── */}
-      <section className="border-b border-ruwaq-cream bg-white">
-        <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-16">
-          <div className="text-center">
-            <p className="ruwaq-eyebrow">{s.mock.previewEyebrow}</p>
-            <h2 className="ruwaq-section-title mt-2">{s.mock.previewTitle}</h2>
-            <p className="mx-auto mt-3 max-w-xl text-sm text-ruwaq-navy-soft">{s.mock.previewSubtitle}</p>
-          </div>
+      <section className="ruwaq-landing-section border-b border-ruwaq-cream bg-white">
+        <div className="ruwaq-landing-section-inner max-w-4xl">
+          <SectionHeader
+            eyebrow={s.mock.previewEyebrow}
+            title={s.mock.previewTitle}
+            subtitle={s.mock.previewSubtitle}
+          />
           <div className="mx-auto mt-10 max-w-4xl">
             <ProductMockPreview mock={s.mock} />
           </div>
         </div>
       </section>
 
-      {/* ── Problem / Solution ── */}
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <p className="ruwaq-eyebrow">{s.problem.eyebrow}</p>
-            <h2 className="ruwaq-section-title mt-2">{s.problem.title}</h2>
-            <p className="mt-4 text-sm leading-relaxed text-ruwaq-navy-soft sm:text-base">
-              {s.problem.body}
-            </p>
+      <section className="ruwaq-landing-section">
+        <div className="ruwaq-landing-section-inner">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <SectionHeader
+                eyebrow={s.problem.eyebrow}
+                title={s.problem.title}
+                subtitle={s.problem.body}
+                align="start"
+              />
+            </div>
+            <SectionVisual
+              src={LANDING_SECTION_IMAGES.problem}
+              alt={sectionAlts.problem}
+              priority
+            />
           </div>
-          <SectionVisual
-            src={LANDING_SECTION_IMAGES.problem}
-            alt={sectionAlts.problem}
-            priority
-          />
-        </div>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2">
-          <div className="ruwaq-compare-card ruwaq-compare-bad">
-              <p className="text-xs font-bold uppercase tracking-wider text-red-600/80">
-                {s.problem.traditionalLabel}
-              </p>
-              <ul className="mt-3 space-y-2">
+          <div className="mt-12 grid gap-4 sm:grid-cols-2">
+            <div className="ruwaq-compare-card ruwaq-compare-bad">
+              <p className="ruwaq-compare-label ruwaq-compare-label-bad">{s.problem.traditionalLabel}</p>
+              <ul className="mt-3 space-y-2.5">
                 {s.problem.traditional.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-ruwaq-navy-soft">
                     <span className="mt-0.5 shrink-0 text-red-500" aria-hidden>
@@ -70,10 +76,8 @@ export function LandingPage({ t, locale }: Props) {
               </ul>
             </div>
             <div className="ruwaq-compare-card ruwaq-compare-good">
-              <p className="text-xs font-bold uppercase tracking-wider text-ruwaq-gold">
-                {s.problem.ruwaqLabel}
-              </p>
-              <ul className="mt-3 space-y-2">
+              <p className="ruwaq-compare-label ruwaq-compare-label-good">{s.problem.ruwaqLabel}</p>
+              <ul className="mt-3 space-y-2.5">
                 {s.problem.ruwaq.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-ruwaq-navy">
                     <span className="mt-0.5 shrink-0 text-green-600" aria-hidden>
@@ -82,23 +86,21 @@ export function LandingPage({ t, locale }: Props) {
                     {item}
                   </li>
                 ))}
-            </ul>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── Features ── */}
-      <section className="border-y border-ruwaq-cream bg-ruwaq-cream-bg/40">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <div className="text-center">
-            <p className="ruwaq-eyebrow">{s.features.eyebrow}</p>
-            <h2 className="ruwaq-section-title mt-2">{s.features.title}</h2>
-            <p className="mx-auto mt-3 max-w-2xl text-sm text-ruwaq-navy-soft sm:text-base">
-              {s.features.subtitle}
-            </p>
-          </div>
+      <section className="ruwaq-landing-section border-y border-ruwaq-cream bg-ruwaq-cream-bg/40">
+        <div className="ruwaq-landing-section-inner">
+          <SectionHeader
+            eyebrow={s.features.eyebrow}
+            title={s.features.title}
+            subtitle={s.features.subtitle}
+          />
           <div className="mx-auto mt-10 max-w-4xl">
-            <SectionVisual src={LANDING_SECTION_IMAGES.trust} alt={sectionAlts.trust} />
+            <SectionVisual src={LANDING_SECTION_IMAGES.trust} alt={sectionAlts.trust} wide />
           </div>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {s.features.items.map(({ icon, title, body }) => (
@@ -109,7 +111,7 @@ export function LandingPage({ t, locale }: Props) {
                 >
                   {icon}
                 </span>
-                <h3 className="mt-4 font-display text-base font-bold text-ruwaq-navy">{title}</h3>
+                <h3 className="mt-4 text-base font-bold text-ruwaq-navy">{title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ruwaq-navy-soft">{body}</p>
               </article>
             ))}
@@ -117,57 +119,22 @@ export function LandingPage({ t, locale }: Props) {
         </div>
       </section>
 
-      {/* ── Three steps ── */}
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <div className="text-center">
-          <p className="ruwaq-eyebrow">{s.steps.eyebrow}</p>
-          <h2 className="ruwaq-section-title mt-2">{s.steps.title}</h2>
-        </div>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {s.steps.items.map((step, i) => (
-            <article key={step.title} className="ruwaq-card-accent relative">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-ruwaq-navy text-sm font-bold text-ruwaq-gold">
-                {i + 1}
-              </span>
-              <h3 className="mt-4 font-display text-lg font-bold text-ruwaq-navy">{step.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ruwaq-navy-soft">{step.body}</p>
-            </article>
-          ))}
-        </div>
-        <div className="mt-10 flex justify-center">
-          <Link href="/how-it-works" className="btn-ruwaq-secondary">
-            {s.steps.learnMore} {arrow}
-          </Link>
-        </div>
-      </section>
-
-      {/* ── Why Ruwaq (differentiation) ── */}
-      <section className="ruwaq-landing-dark">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <div className="text-center">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-ruwaq-gold">
-              {s.why.eyebrow}
-            </p>
-            <h2 className="mt-2 font-display text-2xl font-bold text-white md:text-3xl">
-              {s.why.title}
-            </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-sm text-white/65 sm:text-base">
-              {s.why.subtitle}
-            </p>
-          </div>
-          <div className="mt-12 overflow-hidden rounded-2xl border border-white/10">
+      <section className="ruwaq-landing-dark ruwaq-landing-section">
+        <div className="ruwaq-landing-section-inner">
+          <SectionHeader
+            eyebrow={s.why.eyebrow}
+            title={s.why.title}
+            subtitle={s.why.subtitle}
+            dark
+          />
+          <div className="mt-12 overflow-hidden rounded-2xl border border-white/10 shadow-ruwaq-lg">
             <div className="hidden grid-cols-[1fr_1fr_1fr] bg-white/5 text-xs font-bold uppercase tracking-wider text-white/50 sm:grid">
               <div className="px-5 py-3">{s.why.table.need}</div>
               <div className="border-s border-white/10 px-5 py-3">{s.why.table.others}</div>
-              <div className="border-s border-white/10 px-5 py-3 text-ruwaq-gold">
-                {s.why.table.ruwaq}
-              </div>
+              <div className="border-s border-white/10 px-5 py-3 text-ruwaq-gold">{s.why.table.ruwaq}</div>
             </div>
             {s.why.rows.map((row) => (
-              <div
-                key={row.need}
-                className="grid border-t border-white/10 sm:grid-cols-[1fr_1fr_1fr]"
-              >
+              <div key={row.need} className="grid border-t border-white/10 sm:grid-cols-[1fr_1fr_1fr]">
                 <div className="px-5 py-4 text-sm font-semibold text-white">{row.need}</div>
                 <div className="border-t border-white/10 px-5 py-4 text-sm text-white/45 sm:border-t-0 sm:border-s">
                   <span className="mb-1 block text-[10px] font-bold uppercase text-white/30 sm:hidden">
@@ -187,132 +154,98 @@ export function LandingPage({ t, locale }: Props) {
         </div>
       </section>
 
-      {/* ── Audience ── */}
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <div className="text-center">
-          <p className="ruwaq-eyebrow">{s.audience.eyebrow}</p>
-          <h2 className="ruwaq-section-title mt-2">{s.audience.title}</h2>
-        </div>
-        <div className="mx-auto mt-10 max-w-4xl">
-          <SectionVisual src={LANDING_SECTION_IMAGES.audience} alt={sectionAlts.audience} />
-        </div>
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {s.audience.items.map(({ icon, title, body }) => (
-            <article
-              key={title}
-              className="rounded-2xl border border-ruwaq-cream bg-white p-5 text-center shadow-ruwaq transition-shadow hover:shadow-ruwaq-lg"
-            >
-              <span className="text-3xl" aria-hidden>
-                {icon}
-              </span>
-              <h3 className="mt-3 font-display text-sm font-bold text-ruwaq-navy">{title}</h3>
-              <p className="mt-2 text-xs leading-relaxed text-ruwaq-navy-soft">{body}</p>
-            </article>
-          ))}
+      <section className="ruwaq-landing-section">
+        <div className="ruwaq-landing-section-inner">
+          <SectionHeader eyebrow={s.audience.eyebrow} title={s.audience.title} />
+          <div className="mx-auto mt-10 max-w-4xl">
+            <SectionVisual src={LANDING_SECTION_IMAGES.audience} alt={sectionAlts.audience} wide />
+          </div>
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {s.audience.items.map(({ icon, title, body }) => (
+              <article
+                key={title}
+                className="rounded-2xl border border-ruwaq-cream bg-white p-5 text-center shadow-ruwaq transition-shadow hover:shadow-ruwaq-lg"
+              >
+                <span className="text-3xl" aria-hidden>
+                  {icon}
+                </span>
+                <h3 className="mt-3 text-sm font-bold text-ruwaq-navy">{title}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-ruwaq-navy-soft">{body}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ── Sample preview ── */}
-      <section className="border-y border-ruwaq-cream bg-ruwaq-cream-bg/40">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+      <section className="ruwaq-landing-section border-y border-ruwaq-cream bg-ruwaq-cream-bg/40">
+        <div className="ruwaq-landing-section-inner">
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
-              <p className="ruwaq-eyebrow">{s.sample.eyebrow}</p>
-              <h2 className="ruwaq-section-title mt-2">{s.sample.title}</h2>
-              <p className="mt-4 text-sm leading-relaxed text-ruwaq-navy-soft sm:text-base">
-                {s.sample.body}
-              </p>
+              <SectionHeader
+                eyebrow={s.sample.eyebrow}
+                title={s.sample.title}
+                subtitle={s.sample.body}
+                align="start"
+              />
               <Link href="/templates/sample" className="btn-ruwaq-primary mt-6 inline-flex">
                 {s.sample.cta} {arrow}
               </Link>
+              <ul className="mt-8 flex flex-wrap gap-2">
+                {s.sample.items.map((item) =>
+                  item.live ? (
+                    <li key={item.title}>
+                      <Link
+                        href="/templates/sample"
+                        className="inline-flex rounded-full border border-ruwaq-gold/40 bg-white px-3.5 py-1.5 text-xs font-semibold text-ruwaq-navy shadow-sm transition-colors hover:border-ruwaq-gold hover:text-ruwaq-gold"
+                      >
+                        {item.title}
+                      </Link>
+                    </li>
+                  ) : (
+                    <li key={item.title}>
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-ruwaq-cream bg-white/80 px-3.5 py-1.5 text-xs text-ruwaq-navy-soft">
+                        {item.title}
+                        <span className="rounded-full bg-ruwaq-cream-bg px-1.5 py-0.5 text-[10px] font-bold text-ruwaq-navy-soft">
+                          {s.sample.comingSoon}
+                        </span>
+                      </span>
+                    </li>
+                  ),
+                )}
+              </ul>
             </div>
             <SectionVisual src={LANDING_SECTION_IMAGES.sample} alt={sectionAlts.sample} />
           </div>
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {s.sample.items.map((item) => {
-                const card = (
-                  <>
-                    <div
-                      className={`ruwaq-sample-doc ${item.live ? "" : "opacity-60 grayscale-[30%]"}`}
-                    >
-                      <div className="h-1.5 w-8 rounded bg-ruwaq-gold/40" />
-                      <div className="mt-2 h-1 w-full rounded bg-ruwaq-cream" />
-                      <div className="mt-1.5 h-1 w-4/5 rounded bg-ruwaq-cream" />
-                      <div className="mt-1.5 h-1 w-3/5 rounded bg-ruwaq-cream" />
-                      <div className="mt-3 h-1 w-full rounded bg-ruwaq-cream/70" />
-                      <div className="mt-1 h-1 w-5/6 rounded bg-ruwaq-cream/70" />
-                    </div>
-                    <div className="mt-3 flex items-start justify-between gap-2">
-                      <h3
-                        className={`text-sm font-bold text-ruwaq-navy ${item.live ? "group-hover:text-ruwaq-gold" : ""}`}
-                      >
-                        {item.title}
-                      </h3>
-                      {!item.live ? (
-                        <span className="shrink-0 rounded-full bg-ruwaq-cream-bg px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-ruwaq-navy-soft">
-                          {s.sample.comingSoon}
-                        </span>
-                      ) : null}
-                    </div>
-                    <p className="mt-1 text-xs text-ruwaq-navy-soft">{item.body}</p>
-                  </>
-                );
+        </div>
+      </section>
 
-                if (item.live) {
-                  return (
-                    <Link
-                      key={item.title}
-                      href="/templates/sample"
-                      className="ruwaq-sample-card group"
-                    >
-                      {card}
-                    </Link>
-                  );
-                }
-
-                return (
-                  <div
-                    key={item.title}
-                    className="ruwaq-sample-card cursor-default opacity-90"
-                    aria-disabled
-                  >
-                    {card}
-                  </div>
-                );
-              })}
+      <section className="ruwaq-landing-section">
+        <div className="ruwaq-landing-section-inner max-w-4xl">
+          <SectionHeader
+            eyebrow={s.document.eyebrow}
+            title={s.document.title}
+            subtitle={s.document.subtitle}
+          />
+          <div className="mx-auto mt-10 grid max-w-3xl gap-2 sm:grid-cols-2">
+            {s.document.layers.map((layer, i) => (
+              <div
+                key={layer}
+                className="flex items-center gap-3 rounded-xl border border-ruwaq-cream bg-white px-4 py-3 shadow-sm"
+              >
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-ruwaq-cream-bg text-xs font-bold text-ruwaq-gold">
+                  {i + 1}
+                </span>
+                <span className="text-sm font-medium text-ruwaq-navy">{layer}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── Document structure ── */}
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <div className="text-center">
-          <p className="ruwaq-eyebrow">{s.document.eyebrow}</p>
-          <h2 className="ruwaq-section-title mt-2">{s.document.title}</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm text-ruwaq-navy-soft">{s.document.subtitle}</p>
-        </div>
-        <div className="mx-auto mt-10 flex max-w-3xl flex-wrap justify-center gap-2">
-          {s.document.layers.map((layer, i) => (
-            <span
-              key={layer}
-              className="inline-flex items-center gap-1.5 rounded-full border border-ruwaq-cream bg-white px-3.5 py-1.5 text-xs font-semibold text-ruwaq-navy shadow-sm"
-            >
-              <span className="font-display text-ruwaq-gold">{i + 1}</span>
-              {layer}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      {/* ── Final CTA ── */}
-      <section className="ruwaq-landing-cta">
-        <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6 sm:py-20">
-          <h2 className="font-display text-2xl font-extrabold text-white sm:text-3xl">
-            {s.ctaFinal.title}
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/70 sm:text-base">
-            {s.ctaFinal.subtitle}
-          </p>
+      <section className="ruwaq-landing-cta ruwaq-landing-section">
+        <div className="ruwaq-landing-section-inner max-w-3xl text-center">
+          <h2 className="text-2xl font-extrabold text-white sm:text-3xl">{s.ctaFinal.title}</h2>
+          <p className="ruwaq-section-lead mx-auto mt-4 max-w-xl text-white/70">{s.ctaFinal.subtitle}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link href="/proposals/new" className="btn-ruwaq-primary px-8 py-3 text-base">
               {s.ctaFinal.primary} {arrow}

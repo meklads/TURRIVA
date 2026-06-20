@@ -5,20 +5,21 @@ type Props = {
   alt: string;
   priority?: boolean;
   className?: string;
+  wide?: boolean;
 };
 
 /** Rounded section illustration for landing page blocks. */
-export function SectionVisual({ src, alt, priority, className = "" }: Props) {
+export function SectionVisual({ src, alt, priority, className = "", wide }: Props) {
   return (
-    <div className={`ruwaq-section-visual ${className}`.trim()}>
+    <div className={`ruwaq-section-visual ${wide ? "ruwaq-section-visual-wide" : ""} ${className}`.trim()}>
       <Image
         src={src}
         alt={alt}
         width={1200}
         height={675}
-        className="h-auto w-full object-cover"
+        className="ruwaq-section-visual-img"
         priority={priority}
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1152px"
+        sizes={wide ? "(max-width: 768px) 100vw, 1152px" : "(max-width: 768px) 100vw, 896px"}
       />
     </div>
   );
