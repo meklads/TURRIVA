@@ -147,12 +147,12 @@ export const en: Messages = {
     title: "Easiest, most trusted real estate proposals",
     subtitle:
       "3 inputs → complete professional proposal. Fit-out, supervision, maintenance — with assumptions and exclusions built in.",
-    cta: "Start a proposal — free",
+    cta: "Start a proposal",
     ctaSecondary: "My proposals",
     feature1: "3 inputs only",
     feature2: "Assumptions & exclusions",
     feature3: "Arabic/EN + CR/VAT",
-    trustLine: "No account · No card · 6 months free for new subscribers",
+    trustLine: "Start without an account · company profile · support & help included",
   },
   list: {
     title: "My Proposals",
@@ -173,20 +173,26 @@ export const en: Messages = {
   },
   login: {
     title: "Sign in",
-    subtitle: "Save proposals and add your company identity — free for now.",
+    subtitle: "Save proposals and build your company profile — on every export.",
     google: "Sign in with Google",
-    hint: "No account needed to create proposals. Sign in only to save them.",
-    freeBadge: "6 months free for new subscribers",
-    servicesTitle: "Strengthen your company identity",
+    hint: "No account needed to create proposals. Sign in to save and manage your company profile.",
+    perks: {
+      profile: "Full company profile — logo, CR, VAT, and links",
+      support: "Customer service and help building proposals",
+      maintenance: "Ongoing platform maintenance and updates",
+      help: "Free guidance when you need it",
+    },
+    servicesTitle: "Want a stronger identity?",
     servicesBody:
-      "Simple website or no logo? Ruwaq helps with identity, design, and marketing — so your proposals match your ambition.",
+      "Ruwaq helps with identity, design, and marketing — so your proposals match a big-office standard.",
     servicesCta: "Explore Ruwaq services →",
   },
   services: {
     title: "Ruwaq services",
     subtitle:
       "Identity, design, and marketing — for real estate professionals who want big-office proposals.",
-    freeNote: "Ruwaq subscription: first 6 months free for new subscribers.",
+    supportNote:
+      "We help you build your company profile, set up proposals, and keep things running — support when you need it.",
     items: {
       identity: {
         title: "Visual identity",
@@ -201,7 +207,7 @@ export const en: Messages = {
         body: "A landing page or site that reflects your business — not just a contact form.",
       },
     },
-    cta: "Start with a free proposal",
+    cta: "Start a proposal",
     ctaSecondary: "Contact the team",
     back: "← Back to sign in",
   },

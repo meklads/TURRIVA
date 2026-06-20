@@ -156,7 +156,12 @@ export type Messages = {
     subtitle: string;
     google: string;
     hint: string;
-    freeBadge: string;
+    perks: {
+      profile: string;
+      support: string;
+      maintenance: string;
+      help: string;
+    };
     servicesTitle: string;
     servicesBody: string;
     servicesCta: string;
@@ -164,7 +169,7 @@ export type Messages = {
   services: {
     title: string;
     subtitle: string;
-    freeNote: string;
+    supportNote: string;
     items: {
       identity: { title: string; body: string };
       design: { title: string; body: string };

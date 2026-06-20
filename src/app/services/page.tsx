@@ -35,7 +35,7 @@ export default async function ServicesPage() {
         <p className="mt-3 text-lg text-gray-600">{t.services.subtitle}</p>
 
         <div className="mt-6 rounded-xl border border-brand-100 bg-brand-50/50 px-4 py-3 text-sm text-brand-900">
-          {t.services.freeNote}
+          {t.services.supportNote}
         </div>
 
         <div className="mt-8 space-y-4">

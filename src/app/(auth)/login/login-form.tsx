@@ -10,6 +10,12 @@ export default function LoginForm() {
   const t = useT();
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl") ?? "/proposals";
+  const perks = [
+    t.login.perks.profile,
+    t.login.perks.support,
+    t.login.perks.maintenance,
+    t.login.perks.help,
+  ];
 
   return (
     <div className="relative flex min-h-screen items-center justify-center px-4 py-12">
@@ -17,11 +23,22 @@ export default function LoginForm() {
         <LocaleSwitcher />
       </div>
       <div className="w-full max-w-sm">
-        <span className="inline-block rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700">
-          {t.login.freeBadge}
-        </span>
-        <h1 className="mt-4 text-2xl font-bold text-gray-900">{t.login.title}</h1>
+        <h1 className="text-2xl font-bold text-gray-900">{t.login.title}</h1>
         <p className="mt-1 text-sm text-gray-500">{t.login.subtitle}</p>
+
+        <ul className="mt-5 space-y-2 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+          {perks.map((perk) => (
+            <li
+              key={perk}
+              className="flex items-start gap-2 text-xs leading-relaxed text-gray-600"
+            >
+              <span className="mt-0.5 text-brand-500" aria-hidden>
+                ✓
+              </span>
+              <span>{perk}</span>
+            </li>
+          ))}
+        </ul>
 
         <div className="mt-6">
           <button
@@ -52,7 +69,7 @@ export default function LoginForm() {
 
         <p className="mt-6 text-center text-xs text-gray-400">{t.login.hint}</p>
 
-        <div className="mt-8 rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+        <div className="mt-8 rounded-xl border border-gray-100 bg-gray-50/80 p-4">
           <p className="text-sm font-medium text-gray-900">{t.login.servicesTitle}</p>
           <p className="mt-1 text-xs leading-relaxed text-gray-500">
             {t.login.servicesBody}
