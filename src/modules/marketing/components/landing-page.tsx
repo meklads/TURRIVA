@@ -41,7 +41,7 @@ export function LandingPage({ t, locale }: Props) {
             <p className="mt-4 text-xs text-white/50">{s.hero.microcopy}</p>
           </div>
 
-          <div className="mx-auto mt-12 max-w-3xl">
+          <div className="mx-auto mt-12 max-w-4xl lg:max-w-5xl">
             <HeroStepsStrip
               title={s.heroSteps.title}
               subtitle={s.heroSteps.subtitle}
