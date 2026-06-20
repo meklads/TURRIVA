@@ -12,23 +12,20 @@ export default async function ServicesPage() {
   ];
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
-      <p className="text-sm font-medium text-[#C9A063]">{t.site.nav.services}</p>
-      <h1 className="mt-2 text-3xl font-bold text-gray-900">{t.services.title}</h1>
-      <p className="mt-3 text-lg text-gray-600">{t.services.subtitle}</p>
+    <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14">
+      <p className="ruwaq-eyebrow">{t.site.nav.services}</p>
+      <h1 className="ruwaq-section-title mt-2">{t.services.title}</h1>
+      <p className="mt-3 text-base text-ruwaq-navy-soft">{t.services.subtitle}</p>
 
-      <div className="mt-6 rounded-xl border border-brand-100 bg-brand-50/50 px-4 py-3 text-sm text-brand-900">
+      <div className="mt-6 ruwaq-card-accent bg-ruwaq-cream-bg/40 text-sm text-ruwaq-navy">
         {t.services.supportNote}
       </div>
 
       <div className="mt-8 space-y-4">
         {items.map((item) => (
-          <div
-            key={item.title}
-            className="rounded-xl border border-gray-100 bg-white p-5 shadow-sm"
-          >
-            <h2 className="font-semibold text-gray-900">{item.title}</h2>
-            <p className="mt-1 text-sm leading-relaxed text-gray-600">
+          <div key={item.title} className="ruwaq-card">
+            <h2 className="font-display font-bold text-ruwaq-navy">{item.title}</h2>
+            <p className="mt-1 text-sm leading-relaxed text-ruwaq-navy-soft">
               {item.body}
             </p>
           </div>
@@ -36,16 +33,10 @@ export default async function ServicesPage() {
       </div>
 
       <div className="mt-10 flex flex-wrap gap-3">
-        <Link
-          href="/proposals/new"
-          className="rounded-lg bg-brand-500 px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-600"
-        >
+        <Link href="/proposals/new" className="btn-ruwaq-primary">
           {t.services.cta}
         </Link>
-        <a
-          href="mailto:hello@ruwaq.co"
-          className="rounded-lg border border-gray-200 bg-white px-6 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50"
-        >
+        <a href="mailto:hello@ruwaq.co" className="btn-ruwaq-secondary">
           {t.services.ctaSecondary}
         </a>
       </div>

@@ -1,19 +1,14 @@
-import Image from "next/image";
 import Link from "next/link";
 
 type Props = {
   href?: string;
   className?: string;
-  showSubtitle?: boolean;
-  subtitle?: string;
   variant?: "light" | "dark";
 };
 
 export function RuwaqLogo({
   href = "/",
-  className = "h-9 w-auto",
-  showSubtitle = false,
-  subtitle,
+  className = "h-14 w-auto lg:h-16",
   variant = "light",
 }: Props) {
   const src =
@@ -22,30 +17,25 @@ export function RuwaqLogo({
       : "/brand/ruwaq/logo-on-light.png";
 
   const logo = (
-    <Image
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
       src={src}
-      alt="رواق"
-      width={140}
-      height={44}
-      className={className}
-      priority
+      alt="رواق Ruwaq"
+      className={`ruwaq-logo-img ${className}`}
+      style={{ background: "transparent" }}
+      decoding="async"
     />
   );
 
-  const content = (
-    <div className="flex flex-col gap-0.5">
-      {logo}
-      {showSubtitle && subtitle ? (
-        <span className="text-[10px] leading-tight text-gray-400">{subtitle}</span>
-      ) : null}
-    </div>
-  );
-
-  if (!href) return content;
+  if (!href) return logo;
 
   return (
-    <Link href={href} className="inline-flex shrink-0 items-center">
-      {content}
+    <Link
+      href={href}
+      className="inline-flex shrink-0 items-center bg-transparent p-0"
+      aria-label="رواق — الصفحة الرئيسية"
+    >
+      {logo}
     </Link>
   );
 }

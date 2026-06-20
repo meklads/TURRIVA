@@ -7,22 +7,24 @@ export default async function HowItWorksPage() {
   const t = getMessages(locale);
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
-      <p className="text-sm font-medium text-[#C9A063]">{t.site.nav.howItWorks}</p>
-      <h1 className="mt-2 text-3xl font-bold text-gray-900">
-        {t.pages.howItWorks.title}
-      </h1>
-      <p className="mt-4 text-lg text-gray-600">{t.pages.howItWorks.intro}</p>
+    <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14">
+      <p className="ruwaq-eyebrow">{t.site.nav.howItWorks}</p>
+      <h1 className="ruwaq-section-title mt-2">{t.pages.howItWorks.title}</h1>
+      <p className="mt-4 text-base leading-relaxed text-ruwaq-navy-soft">
+        {t.pages.howItWorks.intro}
+      </p>
 
-      <ol className="mt-10 space-y-8">
+      <ol className="mt-10 space-y-6">
         {t.pages.howItWorks.steps.map((step, i) => (
-          <li key={step.title} className="flex gap-4">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#0F172A] text-sm font-bold text-[#C9A063]">
+          <li key={step.title} className="ruwaq-card flex gap-4">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ruwaq-navy text-sm font-bold text-ruwaq-gold">
               {i + 1}
             </span>
             <div>
-              <h2 className="text-lg font-semibold text-gray-900">{step.title}</h2>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600">
+              <h2 className="font-display text-lg font-bold text-ruwaq-navy">
+                {step.title}
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-ruwaq-navy-soft">
                 {step.body}
               </p>
             </div>
@@ -30,26 +32,20 @@ export default async function HowItWorksPage() {
         ))}
       </ol>
 
-      <div className="mt-12 rounded-2xl border border-brand-100 bg-brand-50/40 p-6">
-        <h2 className="font-semibold text-gray-900">
+      <div className="mt-10 ruwaq-card-accent bg-ruwaq-cream-bg/30">
+        <h2 className="font-display font-bold text-ruwaq-navy">
           {t.pages.howItWorks.reviewTitle}
         </h2>
-        <p className="mt-2 text-sm leading-relaxed text-gray-600">
+        <p className="mt-2 text-sm leading-relaxed text-ruwaq-navy-soft">
           {t.pages.howItWorks.reviewBody}
         </p>
       </div>
 
       <div className="mt-10 flex flex-wrap gap-3">
-        <Link
-          href="/proposals/new"
-          className="rounded-lg bg-brand-500 px-6 py-2.5 text-sm font-semibold text-white hover:bg-brand-600"
-        >
+        <Link href="/proposals/new" className="btn-ruwaq-primary">
           {t.site.nav.startProposal}
         </Link>
-        <Link
-          href="/templates/sample"
-          className="rounded-lg border border-gray-200 px-6 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50"
-        >
+        <Link href="/templates/sample" className="btn-ruwaq-secondary">
           {t.nav.previewSample}
         </Link>
       </div>

@@ -25,52 +25,66 @@ export async function SiteHeader({ variant = "marketing" }: { variant?: Variant 
   ];
 
   const links = variant === "app" ? appLinks : marketingLinks;
+  const homeHref = variant === "app" ? "/proposals/new" : "/";
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        <RuwaqLogo
-          href={variant === "app" ? "/proposals/new" : "/"}
-          className="h-10 w-auto sm:h-11"
-        />
+    <header className="ruwaq-header">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="flex h-[4.5rem] items-center justify-between gap-4 lg:h-20">
+          {/* Logo — larger, transparent PNG */}
+          <div className="shrink-0 lg:min-w-[200px]">
+            <RuwaqLogo href={homeHref} className="h-[3.25rem] w-auto sm:h-14 lg:h-[3.75rem]" />
+          </div>
 
-        <nav className="hidden items-center gap-1 md:flex">
+          {/* Desktop menu — centered */}
+          <nav
+            className="hidden flex-1 items-center justify-center gap-1 lg:flex"
+            aria-label="Main"
+          >
+            {links.map((link) => (
+              <Link key={link.href} href={link.href} className="ruwaq-nav-link">
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Actions */}
+          <div className="flex shrink-0 items-center justify-end gap-2 sm:gap-3 lg:min-w-[200px]">
+            <LocaleSwitcher />
+            {variant === "marketing" && (
+              <Link href="/proposals/new" className="btn-ruwaq-primary hidden sm:inline-flex">
+                {t.site.nav.startProposal}
+              </Link>
+            )}
+            <UserNav />
+          </div>
+        </div>
+
+        {/* Mobile menu */}
+        <nav
+          className="flex gap-2 overflow-x-auto border-t border-ruwaq-cream/60 py-2.5 lg:hidden"
+          aria-label="Mobile"
+        >
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-lg px-3 py-2 text-sm text-gray-600 transition-colors hover:bg-gray-50 hover:text-gray-900"
+              className="shrink-0 rounded-full border border-ruwaq-cream bg-ruwaq-cream-bg/50 px-3.5 py-1.5 text-xs font-semibold text-ruwaq-navy-soft transition-colors hover:border-ruwaq-gold/50 hover:text-ruwaq-navy"
             >
               {link.label}
             </Link>
           ))}
-        </nav>
-
-        <div className="flex items-center gap-2 sm:gap-3">
-          <LocaleSwitcher />
           {variant === "marketing" && (
             <Link
               href="/proposals/new"
-              className="hidden rounded-lg bg-brand-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-600 sm:inline-block"
+              className="btn-ruwaq-primary shrink-0 px-3.5 py-1.5 text-xs sm:hidden"
             >
               {t.site.nav.startProposal}
             </Link>
           )}
-          <UserNav />
-        </div>
+        </nav>
       </div>
-
-      <nav className="flex gap-1 overflow-x-auto border-t border-gray-50 px-4 py-2 md:hidden">
-        {links.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className="shrink-0 rounded-full bg-gray-50 px-3 py-1.5 text-xs text-gray-600"
-          >
-            {link.label}
-          </Link>
-        ))}
-      </nav>
+      <div className="ruwaq-header-accent" aria-hidden />
     </header>
   );
 }

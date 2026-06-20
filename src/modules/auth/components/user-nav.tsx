@@ -9,7 +9,7 @@ export function UserNav() {
   const t = useT();
 
   if (status === "loading") {
-    return <span className="h-8 w-16 animate-pulse rounded bg-gray-100" />;
+    return <span className="h-9 w-16 animate-pulse rounded-lg bg-ruwaq-cream-bg" />;
   }
 
   if (session?.user) {
@@ -20,16 +20,16 @@ export function UserNav() {
           <img
             src={session.user.image}
             alt=""
-            className="h-7 w-7 rounded-full"
+            className="h-8 w-8 rounded-full ring-2 ring-ruwaq-cream"
           />
         ) : null}
-        <span className="hidden max-w-[120px] truncate text-xs text-gray-600 sm:inline">
+        <span className="hidden max-w-[100px] truncate text-xs font-medium text-ruwaq-navy-soft lg:inline">
           {session.user.name ?? session.user.email}
         </span>
         <button
           type="button"
           onClick={() => signOut({ callbackUrl: "/proposals/new" })}
-          className="rounded-lg border border-gray-200 px-3 py-1.5 text-xs hover:bg-gray-50"
+          className="btn-ruwaq-ghost text-xs"
         >
           {t.nav.signOut}
         </button>
@@ -38,10 +38,7 @@ export function UserNav() {
   }
 
   return (
-    <Link
-      href="/login"
-      className="rounded-lg border border-gray-200 px-3 py-1.5 hover:bg-gray-50"
-    >
+    <Link href="/login" className="btn-ruwaq-secondary px-4 py-2 text-xs sm:text-sm">
       {t.nav.signIn}
     </Link>
   );

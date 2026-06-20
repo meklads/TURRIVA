@@ -6,32 +6,32 @@ export default async function PrivacyPage() {
   const t = getMessages(locale);
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
-      <p className="text-sm font-medium text-[#C9A063]">{t.site.nav.privacy}</p>
-      <h1 className="mt-2 text-3xl font-bold text-gray-900">
-        {t.pages.privacy.title}
-      </h1>
-      <p className="mt-2 text-sm text-gray-500">{t.pages.privacy.updated}</p>
-      <p className="mt-6 text-sm leading-relaxed text-gray-600">
+    <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14">
+      <p className="ruwaq-eyebrow">{t.site.nav.privacy}</p>
+      <h1 className="ruwaq-section-title mt-2">{t.pages.privacy.title}</h1>
+      <p className="mt-2 text-sm text-ruwaq-navy-soft/70">{t.pages.privacy.updated}</p>
+      <p className="mt-6 text-sm leading-relaxed text-ruwaq-navy-soft">
         {t.pages.privacy.intro}
       </p>
 
-      <div className="prose prose-sm mt-10 max-w-none space-y-8 text-gray-600">
+      <div className="mt-10 space-y-6">
         {t.pages.privacy.sections.map((section) => (
-          <section key={section.title}>
-            <h2 className="text-base font-semibold text-gray-900">
+          <section key={section.title} className="border-b border-ruwaq-cream pb-6 last:border-0">
+            <h2 className="font-display text-base font-bold text-ruwaq-navy">
               {section.title}
             </h2>
-            <p className="mt-2 text-sm leading-relaxed">{section.body}</p>
+            <p className="mt-2 text-sm leading-relaxed text-ruwaq-navy-soft">
+              {section.body}
+            </p>
           </section>
         ))}
       </div>
 
-      <p className="mt-12 text-sm text-gray-500">
+      <p className="mt-12 text-sm text-ruwaq-navy-soft">
         {t.pages.privacy.contact}{" "}
         <a
           href="mailto:hello@ruwaq.co"
-          className="font-medium text-brand-600 hover:underline"
+          className="font-semibold text-ruwaq-gold hover:underline"
         >
           hello@ruwaq.co
         </a>

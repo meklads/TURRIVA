@@ -21,7 +21,7 @@ export function LocaleSwitcher() {
 
   return (
     <div
-      className="flex rounded-lg border border-gray-200 p-0.5 text-xs font-medium"
+      className="flex rounded-lg border border-ruwaq-cream bg-ruwaq-cream-bg/50 p-0.5 text-xs font-semibold"
       role="group"
       aria-label="Language"
     >
@@ -29,10 +29,10 @@ export function LocaleSwitcher() {
         type="button"
         onClick={() => switchTo("ar")}
         disabled={pending}
-        className={`rounded-md px-2.5 py-1 transition-colors ${
+        className={`rounded-md px-2.5 py-1.5 transition-all ${
           locale === "ar"
-            ? "bg-brand-500 text-white"
-            : "text-gray-600 hover:bg-gray-50"
+            ? "bg-ruwaq-navy text-ruwaq-gold shadow-sm"
+            : "text-ruwaq-navy-soft hover:text-ruwaq-navy"
         }`}
       >
         عربي
@@ -41,10 +41,10 @@ export function LocaleSwitcher() {
         type="button"
         onClick={() => switchTo("en")}
         disabled={pending}
-        className={`rounded-md px-2.5 py-1 transition-colors ${
+        className={`rounded-md px-2.5 py-1.5 transition-all ${
           locale === "en"
-            ? "bg-brand-500 text-white"
-            : "text-gray-600 hover:bg-gray-50"
+            ? "bg-ruwaq-navy text-ruwaq-gold shadow-sm"
+            : "text-ruwaq-navy-soft hover:text-ruwaq-navy"
         }`}
       >
         EN

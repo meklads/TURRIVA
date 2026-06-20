@@ -2,31 +2,120 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Montserrat:wght@400;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap");
 
 @layer base {
   :root {
+    --ruwaq-navy: #0f172a;
+    --ruwaq-gold: #c9a063;
+    --ruwaq-cream: #e6e2db;
+    --ruwaq-cream-bg: #f7f5f2;
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --border: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
+    --foreground: 222 47% 11%;
+    --radius: 0.625rem;
   }
 
   * {
-    @apply border-gray-200;
+    @apply border-ruwaq-cream;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-white text-gray-900 antialiased;
-    font-family: "Tajawal", "Cairo", "Noto Sans Arabic", system-ui, sans-serif;
+    @apply bg-white text-ruwaq-navy antialiased;
+    font-family: "Tajawal", "Cairo", system-ui, sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html[lang="en"] body {
+    font-family: "Montserrat", "Tajawal", system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Cairo", "Tajawal", system-ui, sans-serif;
+    font-weight: 700;
+  }
+
+  html[lang="en"] h1,
+  html[lang="en"] h2,
+  html[lang="en"] h3,
+  html[lang="en"] h4 {
+    font-family: "Montserrat", system-ui, sans-serif;
   }
 }
 
 @layer components {
+  .ruwaq-header {
+    @apply sticky top-0 z-50 border-b border-ruwaq-cream/80 bg-white/90 shadow-ruwaq backdrop-blur-md;
+  }
+
+  .ruwaq-header-accent {
+    @apply h-0.5 w-full bg-gradient-to-r from-transparent via-ruwaq-gold to-transparent;
+  }
+
+  .ruwaq-nav-link {
+    @apply relative px-3 py-2 text-sm font-medium text-ruwaq-navy-soft transition-colors hover:text-ruwaq-navy;
+  }
+
+  .ruwaq-nav-link::after {
+    @apply absolute inset-x-3 -bottom-0.5 h-0.5 origin-center scale-x-0 rounded-full bg-ruwaq-gold transition-transform duration-200 content-[''];
+  }
+
+  .ruwaq-nav-link:hover::after {
+    @apply scale-x-100;
+  }
+
+  .btn-ruwaq-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-ruwaq-gold px-5 py-2.5 text-sm font-bold text-ruwaq-navy shadow-sm transition-all hover:bg-ruwaq-gold-light hover:shadow-md active:scale-[0.98];
+  }
+
+  .btn-ruwaq-secondary {
+    @apply inline-flex items-center justify-center rounded-lg border border-ruwaq-cream bg-white px-5 py-2.5 text-sm font-semibold text-ruwaq-navy transition-all hover:border-ruwaq-gold/40 hover:bg-ruwaq-cream-bg;
+  }
+
+  .btn-ruwaq-ghost {
+    @apply inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-ruwaq-navy-soft transition-colors hover:bg-ruwaq-cream-bg hover:text-ruwaq-navy;
+  }
+
+  .ruwaq-hero-compact {
+    @apply relative overflow-hidden border-b border-ruwaq-cream bg-gradient-to-br from-ruwaq-cream-bg via-white to-white;
+  }
+
+  .ruwaq-hero-compact::before {
+    content: "";
+    @apply pointer-events-none absolute -end-20 -top-20 h-64 w-64 rounded-full bg-ruwaq-gold/5 blur-3xl;
+  }
+
+  .ruwaq-hero-compact::after {
+    content: "";
+    @apply pointer-events-none absolute -bottom-16 -start-16 h-48 w-48 rounded-full bg-ruwaq-navy/5 blur-3xl;
+  }
+
+  .ruwaq-card {
+    @apply rounded-2xl border border-ruwaq-cream/80 bg-white p-6 shadow-ruwaq transition-shadow hover:shadow-ruwaq-lg;
+  }
+
+  .ruwaq-card-accent {
+    @apply ruwaq-card border-t-2 border-t-ruwaq-gold;
+  }
+
+  .ruwaq-section-title {
+    @apply font-display text-2xl font-bold tracking-tight text-ruwaq-navy md:text-3xl;
+  }
+
+  .ruwaq-eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.2em] text-ruwaq-gold;
+  }
+
+  .ruwaq-logo-img {
+    @apply block h-auto w-auto max-w-none bg-transparent object-contain;
+  }
+
   .proposal-section {
     @apply rounded-lg border border-gray-100 bg-white p-6 shadow-sm;
   }
@@ -40,9 +129,7 @@
   }
 
   .inline-edit-input {
-    @apply w-full rounded-md border-0 bg-transparent px-2 py-1 text-gray-900 outline-none
-           ring-1 ring-transparent transition-shadow
-           focus:bg-gray-50 focus:ring-brand-200;
+    @apply w-full rounded-md border-0 bg-transparent px-2 py-1 text-gray-900 outline-none ring-1 ring-transparent transition-shadow focus:bg-ruwaq-cream-bg focus:ring-ruwaq-gold/30;
   }
 
   .inline-edit-area {
