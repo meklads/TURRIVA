@@ -300,7 +300,7 @@
   }
 
   .ruwaq-landing-hero--navy .ruwaq-hero-lead {
-    @apply mx-0 max-w-none text-start;
+    @apply mx-0 max-w-none text-start text-white/75;
   }
 
   .ruwaq-landing-hero--navy .ruwaq-hero-copy .ruwaq-hero-eyebrow {
@@ -315,8 +315,13 @@
     @apply text-white;
   }
 
-  .ruwaq-landing-hero--navy .ruwaq-hero-lead {
-    @apply text-white/75;
+  .ruwaq-hero-lead-highlight {
+    @apply font-semibold text-ruwaq-gold;
+  }
+
+  html[lang="ar"] .ruwaq-hero-lead-highlight,
+  html[data-lang="ar"] .ruwaq-hero-lead-highlight {
+    font-weight: 700;
   }
 
   .ruwaq-hero-tickets-band {

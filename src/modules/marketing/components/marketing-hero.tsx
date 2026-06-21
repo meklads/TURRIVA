@@ -24,7 +24,11 @@ export function MarketingHero({ hero, locale }: Props) {
             {hero.title}
             <span className="text-ruwaq-gold"> {hero.titleHighlight}</span>
           </h1>
-          <p className="ruwaq-hero-lead mt-6 sm:mt-7">{hero.subtitle}</p>
+          <p className="ruwaq-hero-lead mt-6 sm:mt-7">
+            {hero.subtitleBefore}
+            <span className="ruwaq-hero-lead-highlight">{hero.subtitleHighlight}</span>
+            {hero.subtitleAfter}
+          </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-3 sm:mt-12">
             <Link href="/proposals/new" className="btn-ruwaq-hero-gold px-10 py-4 text-base">

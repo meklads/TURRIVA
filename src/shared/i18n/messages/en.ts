@@ -211,8 +211,10 @@ export const en: Messages = {
    eyebrow: "Saudi real estate, private clients",
       title: "Professional real estate proposals in minutes",
    titleHighlight: "not days",
-   subtitle:
-    "Just 3 inputs: client, work description, and price or preliminary estimate. Ruwaq drafts full scope with an approved clause pack that protects you, then exports a PDF under your brand.",
+   subtitleBefore:
+    "Just 3 inputs: client, work description, and price or preliminary estimate. Ruwaq drafts full scope with ",
+   subtitleHighlight: "an approved clause pack that protects you",
+   subtitleAfter: ", then exports a PDF under your brand.",
    cta: "Start a proposal now",
    ctaSecondary: "View a sample",
    microcopy: "No account · No card · Ready in under 10 minutes",
