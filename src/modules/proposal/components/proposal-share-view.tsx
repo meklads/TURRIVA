@@ -254,7 +254,7 @@ export function ProposalShareView({
                               )}
                             </td>
                             <td className="text-center tabular-nums">
-                              {line.percent.toFixed(1)}%
+                              {Number(line.percent ?? 0).toFixed(1)}%
                             </td>
                             <td className="text-end tabular-nums font-semibold">
                               {formatSar(line.amount, locale)} {currency}

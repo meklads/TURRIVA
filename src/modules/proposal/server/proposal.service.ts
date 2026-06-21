@@ -7,6 +7,7 @@ import {
   type Locale,
 } from "@/shared/i18n/locale";
 import { getMessages } from "@/shared/i18n";
+import { setByPath } from "@/shared/lib/json-path";
 import { assertCanMutateProposal, assertCanClaimProposal } from "./proposal-auth";
 import type {
   CreateProposalInput,
@@ -506,69 +507,3 @@ export async function getProposalIdByShareToken(
   return doc?.proposalId ?? null;
 }
 
-// ─── HELPERS ───
-
-function tokenizePath(path: string): (string | number)[] {
-  const tokens: (string | number)[] = [];
-  let i = 0;
-  const s = path.startsWith(".") ? path.slice(1) : path;
-
-  while (i < s.length) {
-    if (s[i] === "[") {
-      const end = s.indexOf("]", i);
-      tokens.push(parseInt(s.slice(i + 1, end), 10));
-      i = end + 1;
-      if (s[i] === ".") i++;
-      continue;
-    }
-
-    const dot = s.indexOf(".", i);
-    const bracket = s.indexOf("[", i);
-    let end = s.length;
-    if (dot !== -1 && (bracket === -1 || dot < bracket)) end = dot;
-    else if (bracket !== -1) end = bracket;
-
-    tokens.push(s.slice(i, end));
-    i = end;
-    if (s[i] === ".") i++;
-  }
-
-  return tokens;
-}
-
-function setByPath(data: unknown, path: string, value: unknown): unknown {
-  const tokens = tokenizePath(path);
-  if (tokens.length === 0) return value;
-  return setByTokens(data, tokens, value);
-}
-
-function setByTokens(
-  data: unknown,
-  tokens: (string | number)[],
-  value: unknown
-): unknown {
-  const [head, ...rest] = tokens;
-  if (head === undefined) return value;
-
-  if (rest.length === 0) {
-    if (typeof head === "number") {
-      const arr = Array.isArray(data) ? [...data] : [];
-      arr[head] = value;
-      return arr;
-    }
-    return { ...(data as Record<string, unknown>), [head]: value };
-  }
-
-  if (typeof head === "number") {
-    const arr = Array.isArray(data) ? [...data] : [];
-    arr[head] = setByTokens(arr[head], rest, value);
-    return arr;
-  }
-
-  const obj =
-    data && typeof data === "object" && !Array.isArray(data)
-      ? { ...(data as Record<string, unknown>) }
-      : {};
-  obj[head] = setByTokens(obj[head], rest, value);
-  return obj;
-}

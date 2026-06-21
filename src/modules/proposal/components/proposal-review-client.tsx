@@ -25,14 +25,42 @@ import { ClaimProposal } from "@/modules/proposal/components/claim-proposal";
 import { SmartBoqPanel } from "@/modules/proposal/components/smart-boq-panel";
 import { ClausePackPanel } from "@/modules/proposal/components/clause-pack-panel";
 import { buildWhatsAppMessage } from "@/modules/proposal/lib/whatsapp";
-
-import { isCompanyProfileThin } from "@/modules/company/lib/profile-completeness";
+import { applyProposalFieldUpdate } from "@/shared/lib/json-path";
 
 interface Props {
   proposal: Proposal;
   companyName?: string | null;
   profileThin?: boolean;
   isGuest?: boolean;
+}
+
+function asStringList(value: unknown): string[] {
+  if (!Array.isArray(value)) return [];
+  return value.map((item) =>
+    typeof item === "string" ? item : String((item as { text?: string })?.text ?? item ?? "")
+  );
+}
+
+function asDeliverables(value: unknown): Proposal["deliverables"] {
+  if (!Array.isArray(value)) return [];
+  return value.map((item, index) => {
+    const row = item && typeof item === "object" ? (item as Record<string, unknown>) : {};
+    return {
+      id: String(row.id ?? `d-${index}`),
+      name: String(row.name ?? ""),
+      description: String(row.description ?? ""),
+    };
+  });
+}
+
+function normalizeProposal(proposal: Proposal): Proposal {
+  return {
+    ...proposal,
+    scopeItems: Array.isArray(proposal.scopeItems) ? proposal.scopeItems : [],
+    deliverables: asDeliverables(proposal.deliverables),
+    assumptions: asStringList(proposal.assumptions),
+    exclusions: asStringList(proposal.exclusions),
+  };
 }
 
 export function ProposalReviewClient({
@@ -46,7 +74,7 @@ export function ProposalReviewClient({
   const contentLocale = initial.locale ?? "ar";
   const canEdit = uiLocale === contentLocale;
 
-  const [proposal, setProposal] = useState(initial);
+  const [proposal, setProposal] = useState(() => normalizeProposal(initial));
   const [boqLines, setBoqLines] = useState<ProposalBoqLineView[]>(
     initial.boqLines ?? []
   );
@@ -81,14 +109,16 @@ export function ProposalReviewClient({
         alert(result.error ?? t.form.errors.generic);
         return;
       }
-      setReviewGates(result.reviewGates);
-      if (
-        canPublishFromGates(result.reviewGates, hasDeliverables)
-      ) {
+      const nextGates = resolveReviewGates({
+        reviewGates: result.reviewGates,
+        reviewedSections: proposal.reviewedSections,
+      });
+      setReviewGates(nextGates);
+      if (canPublishFromGates(nextGates, hasDeliverables)) {
         setProposal((prev) => ({ ...prev, status: "reviewed" }));
       }
     },
-    [proposal.id, hasDeliverables, t.form.errors.generic]
+    [proposal.id, proposal.reviewedSections, hasDeliverables, t.form.errors.generic]
   );
 
   const handleBoqLinesUpdated = useCallback(
@@ -109,16 +139,13 @@ export function ProposalReviewClient({
           return;
         }
       }
-      setProposal((prev) => {
-        const updated = { ...prev };
-        const parts = field.split(".");
-        let obj: any = updated;
-        for (let i = 0; i < parts.length - 1; i++) {
-          obj = obj[parts[i]!];
-        }
-        obj[parts[parts.length - 1]!] = value;
-        return updated;
-      });
+      setProposal((prev) =>
+        applyProposalFieldUpdate(
+          prev as unknown as Record<string, unknown>,
+          field,
+          value
+        ) as unknown as Proposal
+      );
       await updateFieldAction(proposal.id, field, value);
     },
     [proposal.id, canEdit, contentLocale, t.form.errors]
@@ -177,15 +204,21 @@ export function ProposalReviewClient({
       return;
     }
     setExporting(true);
-    const result = await exportPdfAction(proposal.id);
-    if (result.success) {
-      setExported(true);
-      if (result.shareUrl) setShareUrl(result.shareUrl);
-      window.open(result.url, "_blank", "noopener,noreferrer");
-    } else {
-      alert(result.error ?? t.form.errors.generic);
+    try {
+      const result = await exportPdfAction(proposal.id);
+      if (result.success) {
+        setExported(true);
+        if (result.shareUrl) setShareUrl(result.shareUrl);
+        const url = new URL(result.url, window.location.origin).href;
+        window.open(url, "_blank", "noopener,noreferrer");
+      } else {
+        alert(result.error ?? t.form.errors.generic);
+      }
+    } catch {
+      alert(t.form.errors.generic);
+    } finally {
+      setExporting(false);
     }
-    setExporting(false);
   };
 
   const handleRegenerate = async () => {
@@ -205,7 +238,7 @@ export function ProposalReviewClient({
     setSectionRegenerating(section);
     const result = await regenerateSectionAction(proposal.id, section);
     if (result.success && result.proposal) {
-      setProposal(result.proposal);
+      setProposal(normalizeProposal(result.proposal));
     } else if (!result.success) {
       alert(result.error ?? t.review.regenerateFailed);
     }
@@ -568,7 +601,7 @@ export function ProposalReviewClient({
             </p>
             {(proposal.timeline.milestones ?? []).length > 0 && (
               <ul className="mt-3 space-y-2">
-                {proposal.timeline.milestones.map((m, i) => (
+                {(proposal.timeline.milestones ?? []).map((m, i) => (
                   <li key={i} className="flex gap-2 text-sm">
                     <span className="text-gray-400">•</span>
                     <span
@@ -603,7 +636,7 @@ export function ProposalReviewClient({
             canEdit={canEdit}
           >
             <ul className="space-y-2.5">
-              {proposal.deliverables.map((item, i) => (
+              {(proposal.deliverables ?? []).map((item, i) => (
                 <li
                   key={item.id}
                   className="group flex gap-3 rounded-xl border border-ruwaq-cream bg-ruwaq-cream-bg/40 px-4 py-3 transition-colors hover:bg-white"
@@ -683,22 +716,22 @@ export function ProposalReviewClient({
           sectionRegenerating={sectionRegenerating === "assumptions"}
         >
           <p className="mb-3 text-xs text-amber-700">{t.review.aiDraftHint}</p>
-          {proposal.assumptions.length > 0 ? (
+          {(proposal.assumptions ?? []).length > 0 ? (
             <ul className="space-y-2">
-              {proposal.assumptions.map((item: any, i: number) => (
+              {(proposal.assumptions ?? []).map((item: any, i: number) => (
                 <EditableListItem
                   key={i}
                   canEdit={canEdit}
                   value={typeof item === "string" ? item : item.text}
                   onUpdate={(val) => {
-                    const newArr = [...proposal.assumptions];
+                    const newArr = [...(proposal.assumptions ?? [])];
                     newArr[i] = val;
                     handleEdit("assumptions", newArr);
                   }}
                   onRemove={() => {
                     handleEdit(
                       "assumptions",
-                      proposal.assumptions.filter((_, idx) => idx !== i)
+                      (proposal.assumptions ?? []).filter((_, idx) => idx !== i)
                     );
                   }}
                 />
@@ -709,7 +742,9 @@ export function ProposalReviewClient({
           )}
           {canEdit && (
           <button
-            onClick={() => handleEdit("assumptions", [...proposal.assumptions, ""])}
+            onClick={() =>
+              handleEdit("assumptions", [...(proposal.assumptions ?? []), ""])
+            }
             className="mt-2 text-sm font-medium text-brand-600"
           >
             {t.review.addAssumption}
@@ -730,22 +765,22 @@ export function ProposalReviewClient({
           sectionRegenerating={sectionRegenerating === "exclusions"}
         >
           <p className="mb-3 text-xs text-amber-700">{t.review.aiDraftHint}</p>
-          {proposal.exclusions.length > 0 ? (
+          {(proposal.exclusions ?? []).length > 0 ? (
             <ul className="space-y-2">
-              {proposal.exclusions.map((item: any, i: number) => (
+              {(proposal.exclusions ?? []).map((item: any, i: number) => (
                 <EditableListItem
                   key={i}
                   canEdit={canEdit}
                   value={typeof item === "string" ? item : item.text}
                   onUpdate={(val) => {
-                    const newArr = [...proposal.exclusions];
+                    const newArr = [...(proposal.exclusions ?? [])];
                     newArr[i] = val;
                     handleEdit("exclusions", newArr);
                   }}
                   onRemove={() => {
                     handleEdit(
                       "exclusions",
-                      proposal.exclusions.filter((_, idx) => idx !== i)
+                      (proposal.exclusions ?? []).filter((_, idx) => idx !== i)
                     );
                   }}
                 />
@@ -756,7 +791,9 @@ export function ProposalReviewClient({
           )}
           {canEdit && (
           <button
-            onClick={() => handleEdit("exclusions", [...proposal.exclusions, ""])}
+            onClick={() =>
+              handleEdit("exclusions", [...(proposal.exclusions ?? []), ""])
+            }
             className="mt-2 text-sm font-medium text-brand-600"
           >
             {t.review.addExclusion}

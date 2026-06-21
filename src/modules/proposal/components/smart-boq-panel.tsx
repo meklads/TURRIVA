@@ -130,7 +130,7 @@ export function SmartBoqPanel({
                     />
                   </td>
                   <td className="text-center tabular-nums text-ruwaq-navy-soft">
-                    {line.percent.toFixed(1)}%
+                    {Number(line.percent ?? 0).toFixed(1)}%
                   </td>
                   {isEstimateOnly && (
                     <td className="text-center">
