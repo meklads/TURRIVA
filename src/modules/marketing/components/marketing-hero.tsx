@@ -32,7 +32,7 @@ export function MarketingHero({
             <p className="ruwaq-eyebrow">{hero.eyebrow}</p>
             <h1 className="ruwaq-hero-title mt-4 sm:mt-5">
               {hero.title}
-              <span className="text-ruwaq-brown"> {hero.titleHighlight}</span>
+              <span className="text-ruwaq-gold"> {hero.titleHighlight}</span>
             </h1>
             <p className="ruwaq-hero-lead mx-auto mt-5 max-w-xl sm:mt-6 lg:mx-0">{hero.subtitle}</p>
 
@@ -66,7 +66,7 @@ export function MarketingHero({
             <p className="mt-10 text-center">
               <Link
                 href={learnMore.href}
-                className="text-sm font-medium text-ruwaq-brown transition-colors hover:text-ruwaq-brown-light"
+                className="text-sm font-medium text-ruwaq-gold transition-colors hover:text-ruwaq-gold-light"
               >
                 {learnMore.label} {arrow}
               </Link>

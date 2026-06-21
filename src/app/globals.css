@@ -7,18 +7,20 @@
     --ruwaq-ink: #1d1d1f;
     --ruwaq-ink-soft: #6e6e73;
     --ruwaq-ink-muted: #86868b;
-    --ruwaq-brown: #6f5036;
-    --ruwaq-brown-light: #8b6844;
-    --ruwaq-brown-muted: #f0ebe4;
-    --ruwaq-champagne: var(--ruwaq-brown);
-    --ruwaq-champagne-light: var(--ruwaq-brown-light);
-    --ruwaq-champagne-muted: var(--ruwaq-brown-muted);
+    --ruwaq-gold: #d4af37;
+    --ruwaq-gold-light: #e2c76b;
+    --ruwaq-gold-muted: #fbf7eb;
+    --ruwaq-brown: var(--ruwaq-gold);
+    --ruwaq-brown-light: var(--ruwaq-gold-light);
+    --ruwaq-brown-muted: var(--ruwaq-gold-muted);
+    --ruwaq-champagne: var(--ruwaq-gold);
+    --ruwaq-champagne-light: var(--ruwaq-gold-light);
+    --ruwaq-champagne-muted: var(--ruwaq-gold-muted);
     --ruwaq-linen: #f5f5f7;
     --ruwaq-paper: #ffffff;
     --ruwaq-stone: #e8e8ed;
     --ruwaq-stone-mid: #d2d2d7;
     --ruwaq-navy: var(--ruwaq-ink);
-    --ruwaq-gold: var(--ruwaq-champagne);
     --ruwaq-cream: var(--ruwaq-stone);
     --ruwaq-cream-bg: var(--ruwaq-linen);
     --background: 0 0% 100%;
@@ -96,7 +98,7 @@
   }
 
   .btn-ruwaq-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-ruwaq-brown px-7 py-3 text-sm font-semibold tracking-tight text-white shadow-ruwaq transition-all duration-300 ease-apple hover:bg-ruwaq-brown-light hover:shadow-ruwaq-lg active:scale-[0.98];
+    @apply inline-flex items-center justify-center rounded-full bg-ruwaq-gold px-7 py-3 text-sm font-semibold tracking-tight text-ruwaq-ink shadow-ruwaq transition-all duration-300 ease-apple hover:bg-ruwaq-gold-light hover:shadow-ruwaq-lg active:scale-[0.98];
   }
 
   .btn-ruwaq-secondary {
@@ -188,7 +190,7 @@
     @apply pointer-events-none absolute inset-0;
     background: radial-gradient(
       ellipse 70% 50% at 50% 0%,
-      rgba(111, 80, 54, 0.05),
+      rgba(212, 175, 55, 0.06),
       transparent 70%
     );
   }

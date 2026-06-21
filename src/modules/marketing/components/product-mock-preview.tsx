@@ -29,7 +29,7 @@ export function ProductMockPreview({ mock, compact = false }: Props) {
               </div>
             ))}
           </div>
-          <div className="mt-4 inline-flex rounded-full bg-ruwaq-brown px-4 py-1.5 text-xs font-bold text-white">
+          <div className="mt-4 inline-flex rounded-full bg-ruwaq-gold px-4 py-1.5 text-xs font-bold text-ruwaq-ink">
             {mock.generate}
           </div>
         </div>
