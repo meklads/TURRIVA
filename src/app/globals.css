@@ -107,11 +107,11 @@
   }
 
   .btn-ruwaq-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-ruwaq-ink px-7 py-3.5 text-sm font-semibold tracking-tight text-white shadow-ruwaq transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:bg-[#333336] hover:shadow-ruwaq-float active:translate-y-0 active:scale-[0.98];
+    @apply inline-flex items-center justify-center rounded-full bg-ruwaq-ink px-7 py-3.5 text-sm font-semibold tracking-tight text-white shadow-ruwaq transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:bg-[#333336] hover:shadow-ruwaq-float active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ruwaq-gold/45 focus-visible:ring-offset-2;
   }
 
   .btn-ruwaq-accent {
-    @apply inline-flex items-center justify-center rounded-full border border-slate-200/90 bg-white px-7 py-3.5 text-sm font-semibold tracking-tight text-ruwaq-ink shadow-sm transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:border-slate-300 hover:bg-ruwaq-canvas-soft hover:shadow-ruwaq active:translate-y-0 active:scale-[0.98];
+    @apply inline-flex items-center justify-center rounded-full border border-slate-200/90 bg-white px-7 py-3.5 text-sm font-semibold tracking-tight text-ruwaq-ink shadow-sm transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:border-slate-300 hover:bg-ruwaq-canvas-soft hover:shadow-ruwaq active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ruwaq-gold/35 focus-visible:ring-offset-2;
   }
 
   .btn-ruwaq-gold-link {
@@ -127,11 +127,11 @@
   }
 
   .btn-ruwaq-hero-gold {
-    @apply inline-flex items-center justify-center rounded-full bg-ruwaq-gold px-7 py-3.5 text-sm font-semibold tracking-tight text-white shadow-ruwaq transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:bg-ruwaq-gold-light hover:shadow-ruwaq-float active:translate-y-0 active:scale-[0.98];
+    @apply inline-flex items-center justify-center rounded-full bg-ruwaq-gold px-7 py-3.5 text-sm font-semibold tracking-tight text-white shadow-ruwaq transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:bg-ruwaq-gold-light hover:shadow-ruwaq-float active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-ruwaq-navy;
   }
 
   .btn-ruwaq-hero-outline {
-    @apply inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 px-7 py-3.5 text-sm font-semibold tracking-tight text-white backdrop-blur-sm transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/15 active:translate-y-0 active:scale-[0.98];
+    @apply inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 px-7 py-3.5 text-sm font-semibold tracking-tight text-white backdrop-blur-sm transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/15 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-ruwaq-navy;
   }
 
   .btn-ruwaq-secondary {
@@ -444,7 +444,7 @@
   }
 
   .ruwaq-landing-section {
-    @apply relative px-4 py-24 sm:px-6 sm:py-28 lg:py-32;
+    @apply relative scroll-mt-20 px-4 py-24 sm:px-6 sm:py-28 lg:scroll-mt-24 lg:py-32;
   }
 
   .ruwaq-landing-section--soft {
@@ -524,6 +524,25 @@
 
   .ruwaq-light-card--highlight {
     @apply border-ruwaq-gold/25 shadow-ruwaq hover:border-ruwaq-gold/35;
+  }
+
+  .ruwaq-card-title {
+    @apply text-lg font-semibold leading-snug text-ruwaq-ink;
+  }
+
+  html[lang="ar"] .ruwaq-card-title,
+  html[data-lang="ar"] .ruwaq-card-title {
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .ruwaq-footer-col-title {
+    @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-ruwaq-gold;
+  }
+
+  html[lang="ar"] .ruwaq-footer-col-title,
+  html[data-lang="ar"] .ruwaq-footer-col-title {
+    @apply text-sm font-medium normal-case tracking-normal;
   }
 
   .ruwaq-clause-pack-header {
@@ -739,6 +758,7 @@
     .btn-ruwaq-primary:hover,
     .btn-ruwaq-accent:hover,
     .ruwaq-hero-step-illustration:hover,
+    .ruwaq-hero-ticket:hover,
     .ruwaq-section-visual-frame:hover img {
       transform: none;
     }

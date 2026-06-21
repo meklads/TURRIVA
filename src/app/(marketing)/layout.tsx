@@ -9,7 +9,9 @@ export default function MarketingLayout({
   return (
     <div className="flex min-h-screen flex-col bg-white">
       <SiteHeader variant="marketing" />
-      <main className="flex-1">{children}</main>
+      <main id="main" className="flex-1">
+        {children}
+      </main>
       <SiteFooter />
     </div>
   );

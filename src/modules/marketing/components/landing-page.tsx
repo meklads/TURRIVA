@@ -102,7 +102,7 @@ export function LandingPage({ t, locale }: Props) {
                 <span className="ruwaq-feature-icon-wrap mt-4" aria-hidden>
                   {icon}
                 </span>
-                <h3 className="mt-4 text-lg font-semibold text-ruwaq-ink">{title}</h3>
+                <h3 className="ruwaq-card-title mt-4">{title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ruwaq-ink-soft">{body}</p>
               </article>
             ))}
