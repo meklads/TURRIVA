@@ -211,6 +211,8 @@ export const ar = {
    cta: "ابدأ عرضاً الآن",
    ctaSecondary: "استعرض نموذجاً جاهزاً",
    microcopy: "بدون حساب · بدون بطاقة · جاهز في أقل من 10 دقائق",
+   imageBadgeTitle: "شريكك في الميدان",
+   imageBadge: "بنود معتمدة · SBC · ZATCA",
   },
   heroSteps: {
    title: "ثلاث خطوات وعرضك جاهز",

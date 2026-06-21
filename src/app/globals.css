@@ -232,16 +232,80 @@
     @apply py-12 sm:py-14 lg:py-16;
   }
 
+  .ruwaq-hero-split {
+    @apply relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-4 py-10 sm:px-6 sm:py-12 lg:grid-cols-2 lg:gap-12 lg:py-14 xl:gap-16;
+  }
+
+  .ruwaq-hero-visual {
+    @apply relative order-2 mx-auto w-full max-w-sm sm:max-w-md lg:max-w-none;
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  @screen lg {
+    .ruwaq-hero-visual {
+      grid-row: 1;
+    }
+  }
+
+  .ruwaq-hero-copy {
+    @apply order-1 text-start;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  @screen lg {
+    .ruwaq-hero-copy {
+      grid-column: 2;
+    }
+  }
+
+  .ruwaq-hero-circle {
+    @apply relative mx-auto aspect-square w-full max-w-[min(100%,22rem)] overflow-hidden rounded-full border-[3px] border-white/15 shadow-ruwaq-float sm:max-w-[min(100%,26rem)] lg:max-w-[min(100%,28rem)] xl:max-w-[30rem];
+  }
+
+  .ruwaq-hero-float-badge {
+    @apply absolute -bottom-2 end-0 z-10 flex max-w-[14rem] items-center gap-3 rounded-2xl border border-slate-100/90 bg-white px-4 py-3 shadow-ruwaq-premium sm:-bottom-3 sm:end-2 sm:max-w-[15rem] sm:px-5 sm:py-3.5 lg:end-4;
+  }
+
+  .ruwaq-hero-float-badge-icon {
+    @apply flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-ruwaq-gold text-sm font-bold text-white;
+  }
+
+  .ruwaq-hero-float-badge-title {
+    @apply text-[11px] font-medium text-ruwaq-ink-muted;
+  }
+
+  .ruwaq-hero-float-badge-text {
+    @apply mt-0.5 text-xs font-semibold leading-snug text-ruwaq-ink;
+  }
+
+  html[lang="ar"] .ruwaq-hero-float-badge-text {
+    font-weight: 700;
+  }
+
+  .ruwaq-landing-hero--navy .ruwaq-hero-title {
+    @apply text-start;
+  }
+
+  .ruwaq-landing-hero--navy .ruwaq-hero-lead {
+    @apply mx-0 max-w-none text-start;
+  }
+
+  .ruwaq-landing-hero--navy .ruwaq-hero-copy .ruwaq-hero-eyebrow {
+    @apply text-start;
+  }
+
+  .ruwaq-hero-microcopy {
+    @apply text-sm text-white/55;
+  }
+
   .ruwaq-landing-hero--navy .ruwaq-hero-title {
     @apply text-white;
   }
 
   .ruwaq-landing-hero--navy .ruwaq-hero-lead {
     @apply text-white/75;
-  }
-
-  .ruwaq-hero-microcopy {
-    @apply text-sm text-white/55;
   }
 
   .ruwaq-hero-tickets {

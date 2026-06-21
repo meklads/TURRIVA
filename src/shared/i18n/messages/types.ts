@@ -176,6 +176,8 @@ export type Messages = {
       cta: string;
       ctaSecondary: string;
       microcopy: string;
+      imageBadgeTitle: string;
+      imageBadge: string;
     };
     heroSteps: {
       title: string;

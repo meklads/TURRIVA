@@ -216,6 +216,8 @@ export const en: Messages = {
    cta: "Start a proposal now",
    ctaSecondary: "View a sample",
    microcopy: "No account · No card · Ready in under 10 minutes",
+   imageBadgeTitle: "Your partner in the field",
+   imageBadge: "Approved clauses · SBC · ZATCA",
   },
   heroSteps: {
    title: "Three steps, your proposal ready",
