@@ -12,36 +12,15 @@ type Props = {
   locale: Locale;
 };
 
-/** Split navy hero — circular image left, copy and CTAs right. */
+/** Split navy hero — copy left, circular image right (logo on screen visible). */
 export function MarketingHero({ hero, tickets, locale }: Props) {
   const arrow = locale === "ar" ? "←" : "→";
+  const textDir = locale === "ar" ? "rtl" : "ltr";
 
   return (
     <section className="ruwaq-landing-hero ruwaq-landing-hero--navy">
       <div className="ruwaq-hero-split ruwaq-reveal">
-        <div className="ruwaq-hero-visual">
-          <div className="ruwaq-hero-circle">
-            <Image
-              src={HERO_IMAGE}
-              alt={hero.title}
-              fill
-              priority
-              sizes="(max-width: 1024px) 80vw, 420px"
-              className="object-cover"
-            />
-          </div>
-          <div className="ruwaq-hero-float-badge">
-            <span className="ruwaq-hero-float-badge-icon" aria-hidden>
-              ✓
-            </span>
-            <div>
-              <p className="ruwaq-hero-float-badge-title">{hero.imageBadgeTitle}</p>
-              <p className="ruwaq-hero-float-badge-text">{hero.imageBadge}</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="ruwaq-hero-copy">
+        <div className="ruwaq-hero-copy" dir={textDir}>
           <p className="ruwaq-hero-eyebrow">{hero.eyebrow}</p>
           <h1 className="ruwaq-hero-title mt-5 sm:mt-6">
             {hero.title}
@@ -58,6 +37,28 @@ export function MarketingHero({ hero, tickets, locale }: Props) {
             </Link>
           </div>
           <p className="ruwaq-hero-microcopy mt-6">{hero.microcopy}</p>
+        </div>
+
+        <div className="ruwaq-hero-visual">
+          <div className="ruwaq-hero-circle">
+            <Image
+              src={HERO_IMAGE}
+              alt={hero.title}
+              fill
+              priority
+              sizes="(max-width: 1024px) 80vw, 420px"
+              className="ruwaq-hero-circle-image object-cover"
+            />
+          </div>
+          <div className="ruwaq-hero-float-badge">
+            <span className="ruwaq-hero-float-badge-icon" aria-hidden>
+              ✓
+            </span>
+            <div>
+              <p className="ruwaq-hero-float-badge-title">{hero.imageBadgeTitle}</p>
+              <p className="ruwaq-hero-float-badge-text">{hero.imageBadge}</p>
+            </div>
+          </div>
         </div>
       </div>
 

@@ -234,38 +234,45 @@
 
   .ruwaq-hero-split {
     @apply relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-4 py-10 sm:px-6 sm:py-12 lg:grid-cols-2 lg:gap-12 lg:py-14 xl:gap-16;
+    direction: ltr;
   }
 
   .ruwaq-hero-visual {
-    @apply relative order-2 mx-auto w-full max-w-sm sm:max-w-md lg:max-w-none;
+    @apply relative mx-auto w-full max-w-sm sm:max-w-md lg:max-w-none;
     grid-column: 1;
     grid-row: 2;
   }
 
   @screen lg {
     .ruwaq-hero-visual {
+      grid-column: 2;
       grid-row: 1;
     }
   }
 
   .ruwaq-hero-copy {
-    @apply order-1 text-start;
+    @apply text-start;
     grid-column: 1;
     grid-row: 1;
   }
 
   @screen lg {
     .ruwaq-hero-copy {
-      grid-column: 2;
+      grid-column: 1;
+      grid-row: 1;
     }
   }
 
   .ruwaq-hero-circle {
-    @apply relative mx-auto aspect-square w-full max-w-[min(100%,22rem)] overflow-hidden rounded-full border-[3px] border-white/15 shadow-ruwaq-float sm:max-w-[min(100%,26rem)] lg:max-w-[min(100%,28rem)] xl:max-w-[30rem];
+    @apply relative mx-auto aspect-square w-full max-w-[min(100%,22rem)] overflow-hidden rounded-full border-[3px] border-white/15 shadow-ruwaq-float sm:max-w-[min(100%,26rem)] lg:max-w-[min(100%,30rem)] xl:max-w-[32rem];
+  }
+
+  .ruwaq-hero-circle-image {
+    object-position: 70% 24%;
   }
 
   .ruwaq-hero-float-badge {
-    @apply absolute -bottom-2 end-0 z-10 flex max-w-[14rem] items-center gap-3 rounded-2xl border border-slate-100/90 bg-white px-4 py-3 shadow-ruwaq-premium sm:-bottom-3 sm:end-2 sm:max-w-[15rem] sm:px-5 sm:py-3.5 lg:end-4;
+    @apply absolute -bottom-2 start-0 z-10 flex max-w-[14rem] items-center gap-3 rounded-2xl border border-slate-100/90 bg-white px-4 py-3 shadow-ruwaq-premium sm:-bottom-3 sm:start-2 sm:max-w-[15rem] sm:px-5 sm:py-3.5 lg:start-4;
   }
 
   .ruwaq-hero-float-badge-icon {
