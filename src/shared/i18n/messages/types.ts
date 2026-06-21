@@ -181,6 +181,7 @@ export type Messages = {
       title: string;
       items: readonly { label: string; hint: string }[];
     };
+    heroTickets: readonly { icon: string; title: string; body: string }[];
     mock: {
       previewEyebrow: string;
       previewTitle: string;

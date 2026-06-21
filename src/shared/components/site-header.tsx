@@ -53,7 +53,7 @@ export async function SiteHeader({ variant = "marketing" }: { variant?: Variant 
           <div className="flex shrink-0 items-center justify-end gap-2 sm:gap-3 lg:min-w-[200px]">
             <LocaleSwitcher />
             {variant === "marketing" && (
-              <Link href="/proposals/new" className="btn-ruwaq-header-cta hidden sm:inline-flex">
+              <Link href="/proposals/new" className="btn-ruwaq-header-gold hidden sm:inline-flex">
                 {t.site.nav.startProposal}
               </Link>
             )}
@@ -77,7 +77,7 @@ export async function SiteHeader({ variant = "marketing" }: { variant?: Variant 
           {variant === "marketing" && (
             <Link
               href="/proposals/new"
-              className="btn-ruwaq-header-cta shrink-0 px-3.5 py-1.5 text-xs sm:hidden"
+              className="btn-ruwaq-header-gold shrink-0 px-3.5 py-1.5 text-xs sm:hidden"
             >
               {t.site.nav.startProposal}
             </Link>

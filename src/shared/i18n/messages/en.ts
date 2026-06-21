@@ -225,6 +225,28 @@ export const en: Messages = {
     { label: "PDF ready under your brand", hint: "" },
    ],
   },
+  heroTickets: [
+   {
+    icon: "📋",
+    title: "Professional platform",
+    body: "11-layer proposals at consulting-firm level, not a recycled Word page.",
+   },
+   {
+    icon: "🛡️",
+    title: "Approved clauses",
+    body: "SBC · ZATCA · Balady. Clauses that reassure the client and protect you.",
+   },
+   {
+    icon: "⚡",
+    title: "Save time",
+    body: "Just 3 inputs, your proposal ready in minutes instead of hours.",
+   },
+   {
+    icon: "✓",
+    title: "Quality assured",
+    body: "Mandatory review gates before export, PDF under your brand only.",
+   },
+  ],
   mock: {
    previewEyebrow: "See the transformation",
    previewTitle: "From 3 fields to a complete proposal",

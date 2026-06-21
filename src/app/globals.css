@@ -118,6 +118,18 @@
     @apply btn-ruwaq-primary px-5 py-2.5 text-xs sm:text-sm;
   }
 
+  .btn-ruwaq-header-gold {
+    @apply inline-flex items-center justify-center rounded-full bg-ruwaq-gold px-5 py-2.5 text-xs font-semibold tracking-tight text-white shadow-ruwaq transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:bg-ruwaq-gold-light hover:shadow-ruwaq-float active:translate-y-0 active:scale-[0.98] sm:text-sm;
+  }
+
+  .btn-ruwaq-hero-gold {
+    @apply inline-flex items-center justify-center rounded-full bg-ruwaq-gold px-7 py-3.5 text-sm font-semibold tracking-tight text-white shadow-ruwaq transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:bg-ruwaq-gold-light hover:shadow-ruwaq-float active:translate-y-0 active:scale-[0.98];
+  }
+
+  .btn-ruwaq-hero-outline {
+    @apply inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 px-7 py-3.5 text-sm font-semibold tracking-tight text-white backdrop-blur-sm transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/15 active:translate-y-0 active:scale-[0.98];
+  }
+
   .btn-ruwaq-secondary {
     @apply inline-flex items-center justify-center rounded-full border border-ruwaq-stone-mid/80 bg-white px-7 py-3 text-sm font-semibold tracking-tight text-ruwaq-ink transition-all duration-300 ease-apple hover:border-ruwaq-ink-muted hover:bg-ruwaq-linen hover:shadow-ruwaq;
   }
@@ -197,7 +209,84 @@
   }
 
   .ruwaq-landing-hero {
-    @apply relative overflow-hidden bg-white px-4 pb-8 pt-12 sm:px-6 sm:pb-12 sm:pt-16 lg:pb-16 lg:pt-20;
+    @apply relative overflow-visible bg-white px-4 pb-8 pt-12 sm:px-6 sm:pb-12 sm:pt-16 lg:pb-16 lg:pt-20;
+  }
+
+  .ruwaq-landing-hero--navy {
+    @apply overflow-hidden bg-ruwaq-navy pb-0 pt-10 sm:pt-14 lg:pt-16;
+  }
+
+  .ruwaq-landing-hero--navy::before {
+    content: "";
+    @apply pointer-events-none absolute inset-0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201, 160, 99, 0.12), transparent 55%),
+      radial-gradient(ellipse 40% 35% at 100% 80%, rgba(255, 255, 255, 0.04), transparent 50%);
+  }
+
+  .ruwaq-landing-hero--navy::after {
+    @apply hidden;
+  }
+
+  .ruwaq-landing-hero-inner--navy {
+    @apply py-12 sm:py-14 lg:py-16;
+  }
+
+  .ruwaq-landing-hero--navy .ruwaq-hero-title {
+    @apply text-white;
+  }
+
+  .ruwaq-landing-hero--navy .ruwaq-hero-lead {
+    @apply text-white/75;
+  }
+
+  .ruwaq-hero-microcopy {
+    @apply text-sm text-white/55;
+  }
+
+  .ruwaq-hero-tickets {
+    @apply relative z-20 mx-auto grid max-w-6xl gap-4 px-4 pb-0 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:gap-5;
+    margin-bottom: -3.5rem;
+  }
+
+  @screen sm {
+    .ruwaq-hero-tickets {
+      margin-bottom: -4rem;
+    }
+  }
+
+  @screen lg {
+    .ruwaq-hero-tickets {
+      margin-bottom: -4.5rem;
+    }
+  }
+
+  .ruwaq-hero-ticket {
+    @apply rounded-2xl border border-slate-100/90 bg-white p-6 shadow-ruwaq-premium transition-all duration-500 ease-apple hover:-translate-y-1 hover:border-slate-200/90 hover:shadow-ruwaq-float sm:p-7;
+  }
+
+  .ruwaq-hero-ticket-icon {
+    @apply mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-ruwaq-gold/25 bg-ruwaq-gold-muted/60 text-xl;
+  }
+
+  .ruwaq-hero-ticket-title {
+    @apply text-base font-semibold text-ruwaq-ink;
+  }
+
+  html[lang="ar"] .ruwaq-hero-ticket-title {
+    font-weight: 700;
+  }
+
+  .ruwaq-hero-ticket-body {
+    @apply mt-2 text-sm leading-relaxed text-ruwaq-ink-soft;
+  }
+
+  html[lang="ar"] .ruwaq-hero-ticket-body {
+    line-height: 1.8;
+  }
+
+  .ruwaq-landing-section--after-tickets {
+    @apply pt-28 sm:pt-32 lg:pt-36;
   }
 
   .ruwaq-landing-hero::before {

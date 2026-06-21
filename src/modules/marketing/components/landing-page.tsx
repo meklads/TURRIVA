@@ -21,13 +21,11 @@ export function LandingPage({ t, locale }: Props) {
   const s = t.sales;
   const arrow = locale === "ar" ? "←" : "→";
   const sectionAlts = landingSectionAlts(locale);
-  const trustPills = [t.landing.feature1, t.landing.feature2, t.landing.feature3];
-
   return (
     <div className="ruwaq-landing-shell">
-      <MarketingHero hero={s.hero} locale={locale} trustPills={trustPills} />
+      <MarketingHero hero={s.hero} tickets={s.heroTickets} locale={locale} />
 
-      <section className="ruwaq-landing-section ruwaq-landing-section--soft ruwaq-reveal ruwaq-reveal-delay-1">
+      <section className="ruwaq-landing-section ruwaq-landing-section--soft ruwaq-landing-section--after-tickets ruwaq-reveal ruwaq-reveal-delay-1">
         <div className="ruwaq-landing-section-inner max-w-5xl">
           <HeroStepsStrip title={s.heroSteps.title} steps={s.heroSteps.items} />
           <div className="mt-12 text-center">
