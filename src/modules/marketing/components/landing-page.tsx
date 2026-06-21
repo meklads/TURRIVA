@@ -1,5 +1,6 @@
 import { TrustPartnerSection } from "@/modules/marketing/components/trust-partner-section";
 import Link from "next/link";
+import { HeroServiceTickets } from "@/modules/marketing/components/hero-service-tickets";
 import { MarketingHero } from "@/modules/marketing/components/marketing-hero";
 import { HeroStepsStrip } from "@/modules/marketing/components/hero-steps-strip";
 import { SectionHeader } from "@/modules/marketing/components/section-header";
@@ -23,7 +24,9 @@ export function LandingPage({ t, locale }: Props) {
   const sectionAlts = landingSectionAlts(locale);
   return (
     <div className="ruwaq-landing-shell">
-      <MarketingHero hero={s.hero} tickets={s.heroTickets} locale={locale} />
+      <MarketingHero hero={s.hero} locale={locale} />
+
+      <HeroServiceTickets tickets={s.heroTickets} />
 
       <section className="ruwaq-landing-section ruwaq-landing-section--soft ruwaq-landing-section--after-tickets ruwaq-reveal ruwaq-reveal-delay-1">
         <div className="ruwaq-landing-section-inner max-w-5xl">

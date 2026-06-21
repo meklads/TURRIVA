@@ -229,22 +229,22 @@ export const en: Messages = {
   },
   heroTickets: [
    {
-    icon: "🛡️",
+    illustration: "scope",
     title: "Professional scope of work",
     body: "Clear, organized clauses tailored for the Saudi market.",
    },
    {
-    icon: "📅",
+    illustration: "timeline",
     title: "Clear project timeline",
     body: "A realistic schedule your client can understand.",
    },
    {
-    icon: "💰",
+    illustration: "payments",
     title: "Structured payment schedule",
     body: "Advance payment, progress milestones, and payment terms.",
    },
    {
-    icon: "📄",
+    illustration: "pdf",
     title: "PDF ready to send",
     body: "Under your company name and logo in minutes.",
    },

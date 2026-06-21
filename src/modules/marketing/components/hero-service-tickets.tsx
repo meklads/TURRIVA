@@ -1,4 +1,13 @@
-type Ticket = { icon: string; title: string; body: string };
+import {
+  TICKET_ILLUSTRATIONS,
+  type TicketIllustrationId,
+} from "@/modules/marketing/components/hero-ticket-illustrations";
+
+type Ticket = {
+  illustration: TicketIllustrationId;
+  title: string;
+  body: string;
+};
 
 type Props = {
   tickets: readonly Ticket[];
@@ -6,23 +15,26 @@ type Props = {
 
 const TICKET_DELAYS = ["", "ruwaq-reveal-delay-1", "ruwaq-reveal-delay-2", "ruwaq-reveal-delay-3"] as const;
 
-/** Service value cards overlapping hero bottom — mockup-style tickets. */
+/** Proposal component tickets — overlap hero bottom, centered illustration layout. */
 export function HeroServiceTickets({ tickets }: Props) {
   return (
-    <div className="ruwaq-hero-tickets">
-      {tickets.map((ticket, i) => {
-        const delayClass = TICKET_DELAYS[i] ?? "ruwaq-reveal-delay-3";
+    <section className="ruwaq-hero-tickets-band" aria-label="Proposal components">
+      <div className="ruwaq-hero-tickets">
+        {tickets.map((ticket, i) => {
+          const delayClass = TICKET_DELAYS[i] ?? "ruwaq-reveal-delay-3";
+          const Illustration = TICKET_ILLUSTRATIONS[ticket.illustration];
 
-        return (
-          <article key={ticket.title} className={`ruwaq-hero-ticket ruwaq-reveal ${delayClass}`.trim()}>
-            <span className="ruwaq-hero-ticket-icon" aria-hidden>
-              {ticket.icon}
-            </span>
-            <h3 className="ruwaq-hero-ticket-title">{ticket.title}</h3>
-            <p className="ruwaq-hero-ticket-body">{ticket.body}</p>
-          </article>
-        );
-      })}
-    </div>
+          return (
+            <article key={ticket.title} className={`ruwaq-hero-ticket ruwaq-reveal ${delayClass}`.trim()}>
+              <div className="ruwaq-hero-ticket-art">
+                <Illustration className="ruwaq-hero-ticket-svg" />
+              </div>
+              <h3 className="ruwaq-hero-ticket-title">{ticket.title}</h3>
+              <p className="ruwaq-hero-ticket-body">{ticket.body}</p>
+            </article>
+          );
+        })}
+      </div>
+    </section>
   );
 }

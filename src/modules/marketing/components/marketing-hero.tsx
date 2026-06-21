@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { HeroServiceTickets } from "@/modules/marketing/components/hero-service-tickets";
 import type { Messages } from "@/shared/i18n/messages/types";
 import type { Locale } from "@/shared/i18n/locale";
 
@@ -8,12 +7,11 @@ const HERO_IMAGE = "/brand/hero/hero.jpg";
 
 type Props = {
   hero: Messages["sales"]["hero"];
-  tickets: Messages["sales"]["heroTickets"];
   locale: Locale;
 };
 
 /** Split navy hero — copy left, circular image right (logo on screen visible). */
-export function MarketingHero({ hero, tickets, locale }: Props) {
+export function MarketingHero({ hero, locale }: Props) {
   const arrow = locale === "ar" ? "←" : "→";
   const textDir = locale === "ar" ? "rtl" : "ltr";
 
@@ -61,8 +59,6 @@ export function MarketingHero({ hero, tickets, locale }: Props) {
           </div>
         </div>
       </div>
-
-      <HeroServiceTickets tickets={tickets} />
     </section>
   );
 }

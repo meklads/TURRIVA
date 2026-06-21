@@ -224,22 +224,22 @@ export const ar = {
   },
   heroTickets: [
    {
-    icon: "🛡️",
+    illustration: "scope",
     title: "نطاق عمل احترافي",
     body: "بنود واضحة ومنظمة تناسب السوق السعودي.",
    },
    {
-    icon: "📅",
+    illustration: "timeline",
     title: "مدة تنفيذ واضحة",
     body: "جدول زمني واقعي ومفهوم للعميل.",
    },
    {
-    icon: "💰",
+    illustration: "payments",
     title: "جدول دفعات منظم",
     body: "دفعة مقدمة ونسب إنجاز وشروط سداد.",
    },
    {
-    icon: "📄",
+    illustration: "pdf",
     title: "PDF جاهز للإرسال",
     body: "باسم وشعار شركتك خلال دقائق.",
    },
