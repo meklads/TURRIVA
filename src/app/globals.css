@@ -35,12 +35,13 @@
   }
 
   body {
-    @apply bg-ruwaq-linen text-ruwaq-ink antialiased;
-    font-size: 16px;
-    line-height: 1.6;
+    @apply bg-ruwaq-paper text-ruwaq-ink antialiased;
+    font-size: 17px;
+    line-height: 1.55;
     font-feature-settings: "rlig" 1, "calt" 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   html[lang="ar"] body,
@@ -74,31 +75,27 @@
 
 @layer components {
   .ruwaq-header {
-    @apply sticky top-0 z-50 border-b border-ruwaq-stone/50 bg-ruwaq-paper/75 shadow-ruwaq backdrop-blur-xl;
+    @apply sticky top-0 z-50 border-b border-ruwaq-stone/35 bg-ruwaq-paper/70 shadow-none backdrop-blur-2xl backdrop-saturate-150;
   }
 
   .ruwaq-header-accent {
-    @apply h-0.5 w-full bg-gradient-to-r from-transparent via-ruwaq-gold to-transparent;
+    @apply hidden;
   }
 
   .ruwaq-nav-link {
-    @apply relative px-3 py-2 text-sm font-medium text-ruwaq-navy-soft transition-colors hover:text-ruwaq-navy;
+    @apply relative rounded-full px-3.5 py-2 text-sm font-medium text-ruwaq-ink-soft transition-all duration-300 ease-apple hover:bg-ruwaq-linen/80 hover:text-ruwaq-ink;
   }
 
   .ruwaq-nav-link::after {
-    @apply absolute inset-x-3 -bottom-0.5 h-0.5 origin-center scale-x-0 rounded-full bg-ruwaq-gold transition-transform duration-200 content-[''];
-  }
-
-  .ruwaq-nav-link:hover::after {
-    @apply scale-x-100;
+    @apply hidden;
   }
 
   .btn-ruwaq-primary {
-    @apply inline-flex items-center justify-center rounded-2xl bg-ruwaq-champagne px-6 py-3 text-sm font-semibold text-white shadow-ruwaq transition-all hover:bg-ruwaq-champagne-light hover:shadow-ruwaq-lg active:scale-[0.98];
+    @apply inline-flex items-center justify-center rounded-full bg-ruwaq-champagne px-7 py-3 text-sm font-semibold tracking-tight text-white shadow-ruwaq transition-all duration-300 ease-apple hover:bg-ruwaq-champagne-light hover:shadow-ruwaq-lg active:scale-[0.98];
   }
 
   .btn-ruwaq-secondary {
-    @apply inline-flex items-center justify-center rounded-2xl border border-ruwaq-stone bg-ruwaq-paper/80 px-6 py-3 text-sm font-semibold text-ruwaq-ink transition-all hover:border-ruwaq-champagne/40 hover:bg-white hover:shadow-ruwaq;
+    @apply inline-flex items-center justify-center rounded-full border border-ruwaq-stone/70 bg-white/80 px-7 py-3 text-sm font-semibold tracking-tight text-ruwaq-ink backdrop-blur-sm transition-all duration-300 ease-apple hover:border-ruwaq-stone hover:bg-white hover:shadow-ruwaq;
   }
 
   .btn-ruwaq-ghost {
@@ -106,11 +103,11 @@
   }
 
   .btn-ruwaq-ink {
-    @apply inline-flex items-center justify-center rounded-2xl bg-ruwaq-ink px-6 py-3 text-sm font-semibold text-white shadow-ruwaq transition-all hover:bg-ruwaq-ink-soft active:scale-[0.98] disabled:opacity-45;
+    @apply inline-flex items-center justify-center rounded-full bg-ruwaq-ink px-7 py-3 text-sm font-semibold tracking-tight text-white shadow-ruwaq transition-all duration-300 ease-apple hover:bg-ruwaq-ink-soft active:scale-[0.98] disabled:opacity-45;
   }
 
   .btn-ruwaq-soft {
-    @apply inline-flex items-center justify-center rounded-xl border border-ruwaq-stone bg-white px-4 py-2 text-sm font-medium text-ruwaq-ink-soft transition-all hover:border-ruwaq-champagne/35 hover:bg-ruwaq-linen disabled:opacity-45;
+    @apply inline-flex items-center justify-center rounded-full border border-ruwaq-stone/70 bg-white/90 px-4 py-2 text-sm font-medium text-ruwaq-ink-soft transition-all duration-300 ease-apple hover:border-ruwaq-stone hover:bg-white disabled:opacity-45;
   }
 
   .ruwaq-hero-compact {
@@ -118,16 +115,19 @@
   }
 
   .app-page-hero {
-    @apply relative border-b border-ruwaq-stone/40 bg-gradient-to-b from-ruwaq-paper via-ruwaq-linen/30 to-ruwaq-linen;
-  }
-
-  .app-page-hero::before {
-    content: "";
-    @apply pointer-events-none absolute inset-y-0 end-0 w-2/5 bg-gradient-to-l from-ruwaq-champagne/[0.04] to-transparent;
+    @apply relative border-b border-ruwaq-stone/25 bg-ruwaq-paper;
   }
 
   .app-page-hero-inner {
-    @apply relative mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-10;
+    @apply relative mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-12 lg:py-14;
+  }
+
+  .ruwaq-app-title {
+    @apply mt-2 text-2xl font-semibold leading-tight tracking-tight text-ruwaq-ink sm:text-3xl;
+  }
+
+  html[lang="en"] .ruwaq-app-title {
+    @apply tracking-display;
   }
 
   .app-content-area {
@@ -169,12 +169,12 @@
   }
 
   .ruwaq-landing-hero {
-    @apply relative overflow-hidden border-b border-ruwaq-stone/40;
+    @apply relative overflow-hidden border-b border-ruwaq-stone/25;
     background: linear-gradient(
-      165deg,
+      180deg,
       var(--ruwaq-paper) 0%,
-      var(--ruwaq-linen) 45%,
-      #ebe8e1 100%
+      #f8f6f1 55%,
+      var(--ruwaq-linen) 100%
     );
   }
 
@@ -182,39 +182,42 @@
     content: "";
     @apply pointer-events-none absolute inset-0;
     background: radial-gradient(
-      ellipse 80% 55% at 50% -10%,
-      rgba(154, 113, 70, 0.09),
-      transparent 65%
+      ellipse 70% 50% at 50% 0%,
+      rgba(154, 113, 70, 0.06),
+      transparent 70%
     );
   }
 
   .ruwaq-hero-title {
     font-family: inherit;
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-size: clamp(2.1rem, 4.8vw, 3.65rem);
     font-weight: 700;
-    line-height: 1.25;
-    @apply text-ruwaq-navy;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    @apply text-ruwaq-ink;
   }
 
   html[lang="ar"] .ruwaq-hero-title {
     color: var(--df-ink);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
   }
 
   html[lang="en"] .ruwaq-hero-title {
-    @apply font-extrabold tracking-tight;
-    font-size: clamp(1.75rem, 3vw, 2.75rem);
+    @apply font-bold tracking-display;
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
   }
 
   .ruwaq-hero-lead {
-    font-size: 1.1rem;
+    font-size: clamp(1.05rem, 1.8vw, 1.25rem);
     font-weight: 400;
-    line-height: 1.75;
-    @apply text-ruwaq-navy-soft;
+    line-height: 1.65;
+    @apply text-ruwaq-ink-muted;
   }
 
   html[lang="ar"] .ruwaq-hero-lead {
     color: var(--df-ink-soft);
+    line-height: 1.75;
   }
 
   .ruwaq-hero-steps {
@@ -222,7 +225,7 @@
   }
 
   .ruwaq-hero-step-illustration {
-    @apply relative h-36 w-36 shrink-0 overflow-hidden rounded-full border border-slate-200/90 bg-white shadow-[0_6px_24px_-8px_rgba(15,23,42,0.12)] sm:h-[10.5rem] sm:w-[10.5rem];
+    @apply relative h-40 w-40 shrink-0 overflow-hidden rounded-[1.75rem] border border-ruwaq-stone/40 bg-white shadow-ruwaq-glass transition-transform duration-500 ease-apple hover:scale-[1.02] sm:h-44 sm:w-44;
   }
 
   .ruwaq-hero-step-image {
@@ -230,7 +233,7 @@
   }
 
   .ruwaq-section-visual {
-    @apply overflow-hidden rounded-2xl border border-ruwaq-cream/90 bg-white shadow-ruwaq-lg;
+    @apply overflow-hidden rounded-[1.75rem] border border-ruwaq-stone/35 bg-white shadow-ruwaq-glass;
   }
 
   .ruwaq-section-visual-wide {
@@ -242,7 +245,19 @@
   }
 
   .ruwaq-landing-section {
-    @apply relative px-4 py-16 sm:px-6 sm:py-20 lg:py-24;
+    @apply relative px-4 py-20 sm:px-6 sm:py-24 lg:py-28 xl:py-32;
+  }
+
+  .ruwaq-landing-section--paper {
+    @apply bg-ruwaq-paper;
+  }
+
+  .ruwaq-landing-section--linen {
+    @apply bg-ruwaq-linen/45;
+  }
+
+  .ruwaq-landing-section--elevated {
+    @apply border-y border-ruwaq-stone/25 bg-gradient-to-b from-ruwaq-linen/30 to-ruwaq-paper;
   }
 
   .ruwaq-landing-section-inner {
@@ -250,7 +265,7 @@
   }
 
   .ruwaq-section-lead {
-    @apply text-sm leading-relaxed text-ruwaq-navy-soft sm:text-base;
+    @apply text-base leading-relaxed text-ruwaq-ink-muted sm:text-lg sm:leading-relaxed;
   }
 
   html[lang="ar"] .ruwaq-section-lead {
@@ -262,15 +277,18 @@
   }
 
   .ruwaq-trust-pills li {
-    @apply rounded-full border border-ruwaq-stone/60 bg-ruwaq-paper/90 px-4 py-1.5 text-xs font-medium text-ruwaq-ink-soft shadow-sm backdrop-blur-sm;
+    @apply rounded-full border border-ruwaq-stone/45 bg-white/70 px-4 py-2 text-xs font-medium text-ruwaq-ink-soft shadow-sm backdrop-blur-md;
   }
 
-  .ruwaq-eyebrow-dark {
-    @apply text-xs font-bold uppercase tracking-[0.2em] text-ruwaq-gold;
+  .ruwaq-eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-ruwaq-champagne;
   }
 
-  html[lang="ar"] .ruwaq-eyebrow-dark {
-    @apply text-sm normal-case tracking-normal;
+  html[lang="ar"] .ruwaq-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    @apply normal-case text-ruwaq-champagne;
   }
 
   .ruwaq-compare-label {
@@ -312,7 +330,7 @@
   }
 
   .ruwaq-product-mock {
-    @apply overflow-hidden rounded-3xl border border-ruwaq-stone/50 bg-ruwaq-paper shadow-ruwaq-lg;
+    @apply overflow-hidden rounded-[1.75rem] border border-ruwaq-stone/35 bg-white shadow-ruwaq-glass;
   }
 
   .ruwaq-product-mock-bar {
@@ -340,15 +358,35 @@
   }
 
   .ruwaq-card {
-    @apply rounded-3xl border border-ruwaq-stone/50 bg-white p-7 shadow-ruwaq transition-all hover:shadow-ruwaq-lg;
+    @apply rounded-[1.75rem] border border-ruwaq-stone/40 bg-white/90 p-8 shadow-sm backdrop-blur-sm transition-all duration-300 ease-apple hover:border-ruwaq-stone/60 hover:shadow-ruwaq;
   }
 
-  .ruwaq-card-accent {
-    @apply ruwaq-card border-t-2 border-t-ruwaq-champagne/60;
+  .ruwaq-feature-icon {
+    @apply inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-ruwaq-champagne-muted/45 text-xl text-ruwaq-champagne transition-transform duration-300 ease-apple group-hover:scale-105;
+  }
+
+  .ruwaq-mini-card {
+    @apply rounded-[1.35rem] border border-ruwaq-stone/35 bg-white/90 p-6 text-center shadow-sm transition-all duration-300 ease-apple hover:border-ruwaq-stone/55 hover:shadow-ruwaq;
+  }
+
+  .ruwaq-layer-chip {
+    @apply flex items-center gap-3 rounded-2xl border border-ruwaq-stone/35 bg-white/90 px-4 py-3.5 shadow-sm transition-colors hover:border-ruwaq-stone/55;
+  }
+
+  .ruwaq-layer-chip-index {
+    @apply flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-ruwaq-linen text-xs font-bold text-ruwaq-champagne;
+  }
+
+  .ruwaq-comparison-table {
+    @apply overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.03] shadow-ruwaq-glass backdrop-blur-sm;
+  }
+
+  .ruwaq-cta-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-7 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 ease-apple hover:border-white/35 hover:bg-white/10;
   }
 
   .ruwaq-section-title {
-    @apply text-2xl font-bold md:text-3xl;
+    @apply text-3xl font-semibold leading-[1.15] tracking-tight md:text-4xl lg:text-[2.65rem];
     font-family: inherit;
     color: inherit;
   }
@@ -359,23 +397,23 @@
   }
 
   html[lang="en"] .ruwaq-section-title {
-    @apply text-ruwaq-navy;
+    @apply text-ruwaq-ink tracking-display;
   }
 
-  .ruwaq-eyebrow {
-    @apply text-xs font-bold uppercase tracking-[0.2em] text-ruwaq-gold;
+  .ruwaq-eyebrow-dark {
+    @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-ruwaq-champagne-light/90;
   }
 
-  html[lang="ar"] .ruwaq-eyebrow {
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    @apply normal-case text-ruwaq-gold;
+  html[lang="ar"] .ruwaq-eyebrow-dark {
+    @apply text-sm normal-case tracking-normal;
+  }
+
+  .ruwaq-card-accent {
+    @apply ruwaq-card border-t-2 border-t-ruwaq-champagne/40;
   }
 
   .ruwaq-hero-steps-title {
-    @apply text-center text-lg sm:text-xl;
-    font-weight: 700;
+    @apply text-center text-xl font-semibold tracking-tight sm:text-2xl;
     color: inherit;
   }
 

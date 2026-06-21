@@ -52,10 +52,17 @@ const config: Config = {
       },
       boxShadow: {
         ruwaq:
-          "0 1px 2px rgba(28, 25, 23, 0.03), 0 8px 28px rgba(28, 25, 23, 0.06)",
+          "0 1px 2px rgba(28, 25, 23, 0.02), 0 4px 20px rgba(28, 25, 23, 0.04)",
         "ruwaq-lg":
-          "0 2px 6px rgba(28, 25, 23, 0.04), 0 24px 56px rgba(28, 25, 23, 0.08)",
-        "ruwaq-soft": "0 20px 50px -12px rgba(28, 25, 23, 0.12)",
+          "0 2px 8px rgba(28, 25, 23, 0.03), 0 20px 48px rgba(28, 25, 23, 0.07)",
+        "ruwaq-soft": "0 24px 64px -16px rgba(28, 25, 23, 0.1)",
+        "ruwaq-glass": "0 8px 32px rgba(28, 25, 23, 0.06)",
+      },
+      letterSpacing: {
+        display: "-0.025em",
+      },
+      transitionTimingFunction: {
+        apple: "cubic-bezier(0.25, 0.1, 0.25, 1)",
       },
       borderRadius: {
         "4xl": "2rem",

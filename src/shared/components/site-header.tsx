@@ -30,7 +30,7 @@ export async function SiteHeader({ variant = "marketing" }: { variant?: Variant 
   return (
     <header className="ruwaq-header">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="flex h-[4.5rem] items-center justify-between gap-4 lg:h-20">
+        <div className="flex h-16 items-center justify-between gap-4 lg:h-[4.25rem]">
           {/* Logo — larger, transparent PNG */}
           <div className="shrink-0 lg:min-w-[200px]">
             <RuwaqLogo href={homeHref} className="h-[3.25rem] w-auto sm:h-14 lg:h-[3.75rem]" />
@@ -62,7 +62,7 @@ export async function SiteHeader({ variant = "marketing" }: { variant?: Variant 
 
         {/* Mobile menu */}
         <nav
-          className="flex gap-2 overflow-x-auto border-t border-ruwaq-cream/60 py-2.5 lg:hidden"
+          className="flex gap-2 overflow-x-auto border-t border-ruwaq-stone/30 py-3 lg:hidden"
           aria-label="Mobile"
         >
           {links.map((link) => (

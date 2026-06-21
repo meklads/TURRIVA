@@ -20,7 +20,7 @@ export function SectionHeader({
     <header className={alignClass}>
       <p className={dark ? "ruwaq-eyebrow-dark" : "ruwaq-eyebrow"}>{eyebrow}</p>
       <h2
-        className={`ruwaq-section-title mt-2 ${dark ? "text-white" : ""} ${align === "center" ? "max-w-3xl" : ""}`}
+        className={`ruwaq-section-title mt-3 sm:mt-4 ${dark ? "text-white" : ""} ${align === "center" ? "max-w-3xl" : ""}`}
       >
         {title}
       </h2>

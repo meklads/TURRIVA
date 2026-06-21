@@ -15,14 +15,11 @@ export function AppPageHero({ eyebrow, title, subtitle, children }: Props) {
     <section className="app-page-hero" aria-labelledby="app-page-title">
       <div className="app-page-hero-inner">
         {eyebrow ? <p className="ruwaq-eyebrow">{eyebrow}</p> : null}
-        <h1
-          id="app-page-title"
-          className="mt-2 font-display text-2xl font-extrabold leading-tight tracking-tight text-ruwaq-navy sm:text-[1.75rem]"
-        >
+        <h1 id="app-page-title" className="ruwaq-app-title">
           {title}
         </h1>
         {subtitle ? (
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ruwaq-navy-soft sm:text-base">
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-ruwaq-ink-muted">
             {subtitle}
           </p>
         ) : null}

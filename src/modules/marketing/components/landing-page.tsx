@@ -31,7 +31,7 @@ export function LandingPage({ t, locale }: Props) {
         learnMore={{ href: "/how-it-works", label: s.steps.learnMore }}
       />
 
-      <section className="ruwaq-landing-section border-b border-ruwaq-cream bg-white">
+      <section className="ruwaq-landing-section ruwaq-landing-section--paper border-b border-ruwaq-stone/20">
         <div className="ruwaq-landing-section-inner max-w-4xl">
           <SectionHeader
             eyebrow={s.mock.previewEyebrow}
@@ -44,7 +44,7 @@ export function LandingPage({ t, locale }: Props) {
         </div>
       </section>
 
-      <section className="ruwaq-landing-section">
+      <section className="ruwaq-landing-section ruwaq-landing-section--linen">
         <div className="ruwaq-landing-section-inner">
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
@@ -92,27 +92,24 @@ export function LandingPage({ t, locale }: Props) {
         </div>
       </section>
 
-      <section className="ruwaq-landing-section border-y border-ruwaq-cream bg-ruwaq-cream-bg/40">
+      <section className="ruwaq-landing-section ruwaq-landing-section--elevated">
         <div className="ruwaq-landing-section-inner">
           <SectionHeader
             eyebrow={s.features.eyebrow}
             title={s.features.title}
             subtitle={s.features.subtitle}
           />
-          <div className="mx-auto mt-10 max-w-4xl">
+          <div className="mx-auto mt-12 max-w-4xl">
             <SectionVisual src={LANDING_SECTION_IMAGES.trust} alt={sectionAlts.trust} wide />
           </div>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {s.features.items.map(({ icon, title, body }) => (
               <article key={title} className="ruwaq-card group">
-                <span
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-ruwaq-navy text-xl shadow-sm transition-transform group-hover:scale-105"
-                  aria-hidden
-                >
+                <span className="ruwaq-feature-icon" aria-hidden>
                   {icon}
                 </span>
-                <h3 className="mt-4 text-base font-bold text-ruwaq-navy">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ruwaq-navy-soft">{body}</p>
+                <h3 className="mt-5 text-lg font-semibold text-ruwaq-ink">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ruwaq-ink-muted">{body}</p>
               </article>
             ))}
           </div>
@@ -127,7 +124,7 @@ export function LandingPage({ t, locale }: Props) {
             subtitle={s.why.subtitle}
             dark
           />
-          <div className="mt-12 overflow-hidden rounded-2xl border border-white/10 shadow-ruwaq-lg">
+          <div className="ruwaq-comparison-table mt-14">
             <div className="hidden grid-cols-[1fr_1fr_1fr] bg-white/5 text-xs font-bold uppercase tracking-wider text-white/50 sm:grid">
               <div className="px-5 py-3">{s.why.table.need}</div>
               <div className="border-s border-white/10 px-5 py-3">{s.why.table.others}</div>
@@ -154,30 +151,27 @@ export function LandingPage({ t, locale }: Props) {
         </div>
       </section>
 
-      <section className="ruwaq-landing-section">
+      <section className="ruwaq-landing-section ruwaq-landing-section--paper">
         <div className="ruwaq-landing-section-inner">
           <SectionHeader eyebrow={s.audience.eyebrow} title={s.audience.title} />
-          <div className="mx-auto mt-10 max-w-4xl">
+          <div className="mx-auto mt-12 max-w-4xl">
             <SectionVisual src={LANDING_SECTION_IMAGES.audience} alt={sectionAlts.audience} wide />
           </div>
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {s.audience.items.map(({ icon, title, body }) => (
-              <article
-                key={title}
-                className="rounded-2xl border border-ruwaq-cream bg-white p-5 text-center shadow-ruwaq transition-shadow hover:shadow-ruwaq-lg"
-              >
+              <article key={title} className="ruwaq-mini-card">
                 <span className="text-3xl" aria-hidden>
                   {icon}
                 </span>
-                <h3 className="mt-3 text-sm font-bold text-ruwaq-navy">{title}</h3>
-                <p className="mt-2 text-xs leading-relaxed text-ruwaq-navy-soft">{body}</p>
+                <h3 className="mt-4 text-sm font-semibold text-ruwaq-ink">{title}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-ruwaq-ink-muted">{body}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="ruwaq-landing-section border-y border-ruwaq-cream bg-ruwaq-cream-bg/40">
+      <section className="ruwaq-landing-section ruwaq-landing-section--linen border-y border-ruwaq-stone/20">
         <div className="ruwaq-landing-section-inner">
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
@@ -219,23 +213,18 @@ export function LandingPage({ t, locale }: Props) {
         </div>
       </section>
 
-      <section className="ruwaq-landing-section">
+      <section className="ruwaq-landing-section ruwaq-landing-section--paper">
         <div className="ruwaq-landing-section-inner max-w-4xl">
           <SectionHeader
             eyebrow={s.document.eyebrow}
             title={s.document.title}
             subtitle={s.document.subtitle}
           />
-          <div className="mx-auto mt-10 grid max-w-3xl gap-2 sm:grid-cols-2">
+          <div className="mx-auto mt-12 grid max-w-3xl gap-3 sm:grid-cols-2">
             {s.document.layers.map((layer, i) => (
-              <div
-                key={layer}
-                className="flex items-center gap-3 rounded-xl border border-ruwaq-cream bg-white px-4 py-3 shadow-sm"
-              >
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-ruwaq-cream-bg text-xs font-bold text-ruwaq-gold">
-                  {i + 1}
-                </span>
-                <span className="text-sm font-medium text-ruwaq-navy">{layer}</span>
+              <div key={layer} className="ruwaq-layer-chip">
+                <span className="ruwaq-layer-chip-index">{i + 1}</span>
+                <span className="text-sm font-medium text-ruwaq-ink">{layer}</span>
               </div>
             ))}
           </div>
@@ -244,16 +233,15 @@ export function LandingPage({ t, locale }: Props) {
 
       <section className="ruwaq-landing-cta ruwaq-landing-section">
         <div className="ruwaq-landing-section-inner max-w-3xl text-center">
-          <h2 className="text-2xl font-extrabold text-white sm:text-3xl">{s.ctaFinal.title}</h2>
-          <p className="ruwaq-section-lead mx-auto mt-4 max-w-xl text-white/70">{s.ctaFinal.subtitle}</p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Link href="/proposals/new" className="btn-ruwaq-primary px-8 py-3 text-base">
+          <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
+            {s.ctaFinal.title}
+          </h2>
+          <p className="ruwaq-section-lead mx-auto mt-5 max-w-xl text-white/70">{s.ctaFinal.subtitle}</p>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <Link href="/proposals/new" className="btn-ruwaq-primary px-9 py-3.5 text-base">
               {s.ctaFinal.primary} {arrow}
             </Link>
-            <Link
-              href="/templates/sample"
-              className="inline-flex items-center justify-center rounded-lg border border-white/25 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-ruwaq-gold hover:text-ruwaq-gold"
-            >
+            <Link href="/templates/sample" className="ruwaq-cta-secondary">
               {s.ctaFinal.secondary}
             </Link>
           </div>
