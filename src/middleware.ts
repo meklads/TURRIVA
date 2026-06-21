@@ -27,7 +27,9 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  return new NextResponse("Ruwaq preview — team access only.", {
+  return new NextResponse(
+    "Ruwaq — Pre-launch access only.\n\nرواق — الوصول للمعاينة قبل الإطلاق فقط.",
+    {
     status: 401,
     headers: {
       "WWW-Authenticate": `Basic realm="${APP_GATE_REALM}", charset="UTF-8"`,
