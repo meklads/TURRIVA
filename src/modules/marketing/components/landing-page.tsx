@@ -1,3 +1,4 @@
+import { TrustPartnerSection } from "@/modules/marketing/components/trust-partner-section";
 import Link from "next/link";
 import { MarketingHero } from "@/modules/marketing/components/marketing-hero";
 import { HeroStepsStrip } from "@/modules/marketing/components/hero-steps-strip";
@@ -107,6 +108,8 @@ export function LandingPage({ t, locale }: Props) {
           </div>
         </div>
       </section>
+
+      <TrustPartnerSection trust={s.trustPartner} locale={locale} />
 
       <section className="ruwaq-landing-section">
         <div className="ruwaq-landing-section-inner">

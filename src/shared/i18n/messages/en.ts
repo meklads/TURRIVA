@@ -202,7 +202,7 @@ export const en: Messages = {
   cta: "Start a proposal",
   ctaSecondary: "My proposals",
   feature1: "3 inputs only",
-  feature2: "Assumptions & exclusions",
+  feature2: "Approved SBC · ZATCA clauses",
   feature3: "Arabic/EN + CR/VAT",
   trustLine: "Start without an account · company profile · support & help included",
  },
@@ -212,7 +212,7 @@ export const en: Messages = {
       title: "Professional real estate proposals in minutes",
    titleHighlight: "not days",
    subtitle:
-    "Just 3 inputs: client, work description, and fixed price or preliminary estimate. Ruwaq writes full scope with assumptions, exclusions, and commercial terms, export a PDF under your company name.",
+    "Just 3 inputs: client, work description, and price or preliminary estimate. Ruwaq drafts full scope with an approved clause pack that protects you, then exports a PDF under your brand.",
    cta: "Start a proposal now",
    ctaSecondary: "View a sample",
    microcopy: "No account · No card · Ready in under 10 minutes",
@@ -449,6 +449,90 @@ export const en: Messages = {
     "Exclusions",
     "Validity & acceptance",
    ],
+  },
+  trustPartner: {
+   eyebrow: "Your partner in the field",
+   title: "Ruwaq stands with you, protecting your interest before the client signs",
+   subtitle:
+    "We don't just write a beautiful proposal. We embed pre-vetted clauses grounded in SBC, ZATCA, and Balady, so the client trusts you and you are protected before work begins.",
+   pillars: [
+    {
+     icon: "🤝",
+     title: "Partner, not competitor",
+     body: "Ruwaq is your ally: assistant, companion, and backer. The goal is for the contractor to win and the client to trust, not to leave you alone with Word.",
+    },
+    {
+     icon: "🛡️",
+     title: "Protection before dispute",
+     body: "Assumptions, exclusions, and mandatory clauses reviewed before export. What is clear today prevents \"we misunderstood\" tomorrow.",
+    },
+    {
+     icon: "📜",
+     title: "Updated regulations",
+     body: "Clauses tied to official references: building code, VAT, municipal permits, and more, kept current.",
+    },
+    {
+     icon: "✓",
+     title: "Documented references",
+     body: "Every clause carries a clear source. The client sees professionalism; you rely on approved templates, not improvisation.",
+    },
+   ],
+   packTitle: "Approved clause pack",
+   packMeta: "Interior fit-out pack · v1.0 · 9 approved clauses",
+   clauses: [
+    {
+     category: "SBC Building Code",
+     title: "Compliance with SBC 1101 for residential buildings",
+     excerpt:
+      "The client ensures works comply with Saudi Building Code. The contractor is not liable for violations from client requests that breach the code.",
+     source: "SBC 1101 — Residential Buildings",
+    },
+    {
+     category: "Permits & municipality",
+     title: "Balady permits are the client's responsibility",
+     excerpt:
+      "Building and renovation permits sit with the client unless explicitly stated otherwise. Municipal delay is not contractor delay.",
+     source: "Balady — Municipal Permits",
+    },
+    {
+     category: "Waste management",
+     title: "Construction debris and municipal delays",
+     excerpt:
+      "Debris removal is on the client unless explicitly in scope. Municipal stops extend the schedule without penalties on the contractor.",
+     source: "Balady — Waste Management",
+    },
+    {
+     category: "Soil & geotechnical",
+     title: "Rock and unforeseen ground conditions excluded",
+     excerpt:
+      "Excavation assumes normal soil. Rock or groundwater discovery requires a change order and new pricing agreement.",
+     source: "Industry Standard — Geotechnical",
+    },
+    {
+     category: "Materials",
+     title: "Material standards and supply",
+     excerpt:
+      "Materials per agreed specifications. Upgrades or substitutions require written approval and price adjustment.",
+     source: "SASO / Project Spec",
+    },
+    {
+     category: "VAT (ZATCA)",
+     title: "VAT per Zakat, Tax and Customs Authority rules",
+     excerpt:
+      "Prices subject to VAT where applicable. Contractor issues tax invoices per ZATCA requirements.",
+     source: "ZATCA — VAT Regulations",
+    },
+    {
+     category: "Change order",
+     title: "Every change goes through a formal change order",
+     excerpt:
+      "No out-of-scope work without a written change order defining cost and time. Verbal extras are not binding.",
+     source: "FIDIC-inspired — Change Order",
+    },
+   ],
+   disclaimer:
+    "Pre-vetted templates to protect contractors. Ruwaq does not provide legal advice; review with your advisor when needed.",
+   cta: "Start a protected proposal",
   },
   ctaFinal: {
    title: "Your client is waiting for a professional reply, send it today",

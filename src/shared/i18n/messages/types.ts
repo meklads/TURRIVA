@@ -240,6 +240,22 @@ export type Messages = {
       subtitle: string;
       layers: readonly string[];
     };
+    trustPartner: {
+      eyebrow: string;
+      title: string;
+      subtitle: string;
+      pillars: readonly { icon: string; title: string; body: string }[];
+      packTitle: string;
+      packMeta: string;
+      clauses: readonly {
+        category: string;
+        title: string;
+        excerpt: string;
+        source: string;
+      }[];
+      disclaimer: string;
+      cta: string;
+    };
     ctaFinal: {
       title: string;
       subtitle: string;
