@@ -13,19 +13,25 @@ const STEP_IMAGES = [
   "/brand/hero/step-happy.webp",
 ] as const;
 
-/** Three-step flow — clean, no chat UI. */
+const STEP_DELAYS = ["", "ruwaq-reveal-delay-1", "ruwaq-reveal-delay-2", "ruwaq-reveal-delay-3"] as const;
+
+/** Three-step flow with soft connectors. */
 export function HeroStepsStrip({ title, steps }: Props) {
   return (
     <div className="ruwaq-hero-steps">
       <p className="ruwaq-hero-steps-title">{title}</p>
 
-      <div className="relative mt-14 grid gap-12 sm:grid-cols-3 sm:gap-8 lg:gap-12">
+      <div className="ruwaq-hero-steps-grid">
         {steps.map((step, i) => {
           const src = STEP_IMAGES[i];
           if (!src) return null;
+          const delayClass = STEP_DELAYS[i + 1] ?? "";
 
           return (
-            <article key={step.label} className="flex flex-col items-center text-center">
+            <article
+              key={step.label}
+              className={`flex flex-col items-center text-center ruwaq-reveal ${delayClass}`.trim()}
+            >
               <div className="ruwaq-hero-step-illustration">
                 <Image
                   src={src}

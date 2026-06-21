@@ -70,6 +70,10 @@ const config: Config = {
           "0 2px 8px rgba(0, 0, 0, 0.03), 0 20px 48px rgba(0, 0, 0, 0.07)",
         "ruwaq-soft": "0 24px 64px -16px rgba(0, 0, 0, 0.1)",
         "ruwaq-glass": "0 8px 32px rgba(0, 0, 0, 0.06)",
+        "ruwaq-premium":
+          "0 1px 1px rgba(0, 0, 0, 0.02), 0 8px 32px -8px rgba(0, 0, 0, 0.06), 0 24px 48px -24px rgba(0, 0, 0, 0.04)",
+        "ruwaq-float":
+          "0 4px 14px rgba(0, 0, 0, 0.04), 0 12px 32px rgba(0, 0, 0, 0.06)",
       },
       letterSpacing: {
         display: "-0.025em",

@@ -87,7 +87,7 @@
 
 @layer components {
   .ruwaq-header {
-    @apply sticky top-0 z-50 border-b border-slate-100/80 bg-white/80 shadow-none backdrop-blur-xl backdrop-saturate-150;
+    @apply sticky top-0 z-50 border-b border-slate-100/80 bg-white/85 shadow-none backdrop-blur-2xl backdrop-saturate-150;
   }
 
   .ruwaq-header-accent {
@@ -103,11 +103,11 @@
   }
 
   .btn-ruwaq-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-ruwaq-ink px-7 py-3.5 text-sm font-semibold tracking-tight text-white shadow-sm transition-all duration-300 ease-apple hover:bg-[#333336] active:scale-[0.98];
+    @apply inline-flex items-center justify-center rounded-full bg-ruwaq-ink px-7 py-3.5 text-sm font-semibold tracking-tight text-white shadow-ruwaq transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:bg-[#333336] hover:shadow-ruwaq-float active:translate-y-0 active:scale-[0.98];
   }
 
   .btn-ruwaq-accent {
-    @apply inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-7 py-3.5 text-sm font-semibold tracking-tight text-ruwaq-ink transition-all duration-300 ease-apple hover:border-slate-300 hover:bg-ruwaq-canvas-soft active:scale-[0.98];
+    @apply inline-flex items-center justify-center rounded-full border border-slate-200/90 bg-white px-7 py-3.5 text-sm font-semibold tracking-tight text-ruwaq-ink shadow-sm transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:border-slate-300 hover:bg-ruwaq-canvas-soft hover:shadow-ruwaq active:translate-y-0 active:scale-[0.98];
   }
 
   .btn-ruwaq-gold-link {
@@ -200,16 +200,21 @@
     @apply relative overflow-hidden bg-white px-4 pb-8 pt-12 sm:px-6 sm:pb-12 sm:pt-16 lg:pb-16 lg:pt-20;
   }
 
+  .ruwaq-landing-hero::before {
+    content: "";
+    @apply pointer-events-none absolute inset-0;
+    background:
+      radial-gradient(ellipse 75% 55% at 50% -15%, rgba(201, 160, 99, 0.07), transparent 58%),
+      radial-gradient(ellipse 45% 35% at 100% 100%, rgba(15, 23, 42, 0.03), transparent 50%);
+  }
+
+  .ruwaq-landing-hero::after {
+    content: "";
+    @apply pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-slate-200/70 to-transparent;
+  }
+
   .ruwaq-landing-hero-inner {
-    @apply relative z-10 mx-auto w-full max-w-4xl py-16 text-center sm:py-20 lg:py-24;
-  }
-
-  .ruwaq-hero-eyebrow {
-    @apply text-[11px] font-semibold uppercase tracking-[0.2em] text-ruwaq-gold;
-  }
-
-  html[lang="ar"] .ruwaq-hero-eyebrow {
-    @apply normal-case text-sm tracking-normal;
+    @apply ruwaq-reveal relative z-10 mx-auto w-full max-w-4xl py-16 text-center sm:py-20 lg:py-24;
   }
 
   .ruwaq-hero-title {
@@ -217,6 +222,7 @@
     font-weight: 700;
     line-height: 1.08;
     letter-spacing: -0.02em;
+    text-wrap: balance;
     @apply text-ruwaq-ink;
   }
 
@@ -232,6 +238,7 @@
   .ruwaq-hero-lead {
     font-size: clamp(1.05rem, 1.8vw, 1.25rem);
     line-height: 1.65;
+    text-wrap: pretty;
     @apply mx-auto max-w-2xl text-ruwaq-ink-soft;
   }
 
@@ -239,8 +246,16 @@
     line-height: 1.85;
   }
 
+  .ruwaq-hero-eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.2em] text-ruwaq-gold;
+  }
+
+  html[lang="ar"] .ruwaq-hero-eyebrow {
+    @apply normal-case text-sm tracking-normal;
+  }
+
   .ruwaq-trust-pills li {
-    @apply rounded-full border border-slate-100 bg-ruwaq-canvas-soft px-4 py-2 text-xs font-medium text-ruwaq-ink-soft;
+    @apply rounded-full border border-slate-100/90 bg-white/80 px-4 py-2 text-xs font-medium text-ruwaq-ink-soft shadow-sm backdrop-blur-sm transition-all duration-300 ease-apple hover:border-slate-200 hover:shadow-ruwaq;
   }
 
   .ruwaq-landing-section {
@@ -251,8 +266,27 @@
     @apply bg-ruwaq-canvas-soft;
   }
 
+  .ruwaq-landing-section--soft::before {
+    content: "";
+    @apply pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-200/60 to-transparent;
+  }
+
   .ruwaq-landing-section--warm {
     @apply bg-ruwaq-canvas-warm;
+  }
+
+  .ruwaq-landing-section--warm::before,
+  .ruwaq-landing-section--warm::after {
+    content: "";
+    @apply pointer-events-none absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-200/50 to-transparent;
+  }
+
+  .ruwaq-landing-section--warm::before {
+    @apply top-0;
+  }
+
+  .ruwaq-landing-section--warm::after {
+    @apply bottom-0;
   }
 
   .ruwaq-landing-section-inner {
@@ -277,6 +311,7 @@
 
   .ruwaq-section-title {
     @apply text-3xl font-semibold leading-[1.12] tracking-tight text-ruwaq-ink md:text-4xl lg:text-[2.75rem];
+    text-wrap: balance;
   }
 
   html[lang="ar"] .ruwaq-section-title {
@@ -288,23 +323,36 @@
   }
 
   .ruwaq-light-card {
-    @apply rounded-2xl border border-slate-100 bg-white p-8 shadow-sm sm:p-9;
+    @apply rounded-2xl border border-slate-100/90 bg-white p-8 shadow-sm transition-all duration-500 ease-apple hover:-translate-y-1 hover:border-slate-200/90 hover:shadow-ruwaq-premium sm:p-9;
   }
 
   .ruwaq-light-card--highlight {
-    @apply border-ruwaq-gold/20 shadow-ruwaq;
+    @apply border-ruwaq-gold/25 shadow-ruwaq hover:border-ruwaq-gold/35;
+  }
+
+  .ruwaq-feature-icon-wrap {
+    @apply inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-ruwaq-gold-muted/70 text-xl transition-transform duration-500 ease-apple group-hover:scale-105;
   }
 
   .ruwaq-section-visual-frame {
-    @apply overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm;
+    @apply overflow-hidden rounded-2xl border border-slate-100/90 bg-white shadow-ruwaq-premium transition-all duration-500 ease-apple hover:shadow-ruwaq-float;
+  }
+
+  .ruwaq-section-visual-frame img {
+    @apply transition-transform duration-700 ease-apple;
+  }
+
+  .ruwaq-section-visual-frame:hover img {
+    @apply scale-[1.02];
   }
 
   .ruwaq-landing-cta {
-    @apply relative border-t border-slate-100 bg-ruwaq-canvas-soft px-4 py-24 sm:px-6 sm:py-28 lg:py-32;
+    @apply relative border-t border-slate-100 bg-gradient-to-b from-ruwaq-canvas-soft to-white px-4 py-24 sm:px-6 sm:py-28 lg:py-32;
   }
 
   .ruwaq-cta-title {
     @apply text-3xl font-semibold leading-tight tracking-tight text-ruwaq-ink sm:text-4xl lg:text-[2.65rem];
+    text-wrap: balance;
   }
 
   html[lang="en"] .ruwaq-cta-title {
@@ -332,35 +380,93 @@
   }
 
   .ruwaq-hero-step-illustration {
-    @apply relative h-36 w-36 shrink-0 overflow-hidden rounded-2xl border border-slate-100 bg-ruwaq-canvas-soft shadow-sm transition-transform duration-500 ease-apple hover:scale-[1.02] sm:h-40 sm:w-40;
+    @apply relative h-36 w-36 shrink-0 overflow-hidden rounded-2xl border border-slate-100/90 bg-white shadow-ruwaq-premium transition-all duration-500 ease-apple hover:-translate-y-1 hover:shadow-ruwaq-float sm:h-40 sm:w-40;
   }
 
-  .ruwaq-service-num {
-    @apply mb-2 block text-xs font-semibold uppercase tracking-widest text-ruwaq-gold;
+  .ruwaq-hero-steps-grid {
+    @apply relative mt-14 grid gap-12 sm:grid-cols-3 sm:gap-8 lg:gap-12;
+  }
+
+  .ruwaq-hero-steps-grid::before {
+    content: "";
+    @apply pointer-events-none absolute top-[4.75rem] hidden h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent sm:block ltr:left-[18%] ltr:w-[64%] rtl:right-[18%] rtl:w-[64%];
   }
 
   .ruwaq-comparison-table {
-    @apply overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm;
+    @apply overflow-hidden rounded-2xl border border-slate-100/90 bg-white shadow-ruwaq-premium;
   }
 
   .ruwaq-comparison-table .ruwaq-row-highlight {
-    @apply bg-ruwaq-gold-muted/50 font-medium text-ruwaq-ink;
+    @apply bg-ruwaq-gold-muted/40 font-medium text-ruwaq-ink transition-colors duration-300 hover:bg-ruwaq-gold-muted/55;
+  }
+
+  .ruwaq-comparison-table > div:not(:first-child) {
+    @apply transition-colors duration-300 hover:bg-ruwaq-canvas-soft/50;
   }
 
   .ruwaq-footer-light {
-    @apply relative border-t border-slate-100 bg-ruwaq-canvas-soft text-ruwaq-ink-soft;
+    @apply relative border-t border-slate-100 bg-gradient-to-b from-white to-ruwaq-canvas-soft text-ruwaq-ink-soft;
   }
 
   .ruwaq-footer-cta-title {
     @apply text-3xl font-semibold leading-tight tracking-tight text-ruwaq-ink sm:text-4xl;
+    text-wrap: balance;
   }
 
   html[lang="en"] .ruwaq-footer-cta-title {
     @apply tracking-display;
   }
 
+  .ruwaq-service-num {
+    @apply mb-2 block text-xs font-semibold uppercase tracking-widest text-ruwaq-gold;
+  }
+
   .ruwaq-link-gold {
-    @apply font-medium text-ruwaq-gold transition-colors hover:text-ruwaq-gold-light;
+    @apply font-medium text-ruwaq-gold transition-colors duration-300 hover:text-ruwaq-gold-light;
+  }
+
+  @keyframes ruwaq-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .ruwaq-reveal {
+    animation: ruwaq-fade-up 0.85s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+  }
+
+  .ruwaq-reveal-delay-1 {
+    animation-delay: 0.08s;
+  }
+
+  .ruwaq-reveal-delay-2 {
+    animation-delay: 0.16s;
+  }
+
+  .ruwaq-reveal-delay-3 {
+    animation-delay: 0.24s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ruwaq-reveal,
+    .ruwaq-reveal-delay-1,
+    .ruwaq-reveal-delay-2,
+    .ruwaq-reveal-delay-3 {
+      animation: none;
+    }
+
+    .ruwaq-light-card:hover,
+    .btn-ruwaq-primary:hover,
+    .btn-ruwaq-accent:hover,
+    .ruwaq-hero-step-illustration:hover,
+    .ruwaq-section-visual-frame:hover img {
+      transform: none;
+    }
   }
 
   .ruwaq-hero-steps {
@@ -433,14 +539,6 @@
 
   .ruwaq-service-row {
     @apply border-b border-ruwaq-stone/50 py-8 first:pt-0 last:border-b-0;
-  }
-
-  .ruwaq-service-num {
-    @apply mb-3 block font-display text-sm font-normal text-ruwaq-gold;
-  }
-
-  html[lang="en"] .ruwaq-service-num {
-    font-family: var(--font-latin-display), Georgia, serif;
   }
 
   .ruwaq-editorial-stagger {

@@ -26,7 +26,7 @@ export function LandingPage({ t, locale }: Props) {
     <div className="ruwaq-landing-shell">
       <MarketingHero hero={s.hero} locale={locale} trustPills={trustPills} />
 
-      <section className="ruwaq-landing-section ruwaq-landing-section--soft">
+      <section className="ruwaq-landing-section ruwaq-landing-section--soft ruwaq-reveal ruwaq-reveal-delay-1">
         <div className="ruwaq-landing-section-inner max-w-5xl">
           <HeroStepsStrip title={s.heroSteps.title} steps={s.heroSteps.items} />
           <div className="mt-12 text-center">
@@ -37,7 +37,7 @@ export function LandingPage({ t, locale }: Props) {
         </div>
       </section>
 
-      <section className="ruwaq-landing-section">
+      <section className="ruwaq-landing-section ruwaq-reveal ruwaq-reveal-delay-2">
         <div className="ruwaq-landing-section-inner">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <div>
@@ -86,7 +86,7 @@ export function LandingPage({ t, locale }: Props) {
         </div>
       </section>
 
-      <section className="ruwaq-landing-section ruwaq-landing-section--warm">
+      <section className="ruwaq-landing-section ruwaq-landing-section--warm ruwaq-reveal">
         <div className="ruwaq-landing-section-inner">
           <SectionHeader
             eyebrow={s.features.eyebrow}
@@ -95,9 +95,9 @@ export function LandingPage({ t, locale }: Props) {
           />
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
             {s.features.items.map(({ icon, title, body }, i) => (
-              <article key={title} className="ruwaq-light-card">
+              <article key={title} className="ruwaq-light-card group">
                 <span className="ruwaq-service-num">{String(i + 1).padStart(2, "0")}</span>
-                <span className="block text-2xl" aria-hidden>
+                <span className="ruwaq-feature-icon-wrap mt-4" aria-hidden>
                   {icon}
                 </span>
                 <h3 className="mt-4 text-lg font-semibold text-ruwaq-ink">{title}</h3>
