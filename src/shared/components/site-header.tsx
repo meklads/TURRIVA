@@ -30,10 +30,14 @@ export async function SiteHeader({ variant = "marketing" }: { variant?: Variant 
   return (
     <header className="ruwaq-header">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="flex h-16 items-center justify-between gap-4 lg:h-[4.25rem]">
-          {/* Logo — larger, transparent PNG */}
-          <div className="shrink-0 lg:min-w-[200px]">
-            <RuwaqLogo href={homeHref} className="h-[3.25rem] w-auto sm:h-14 lg:h-[3.75rem]" />
+        <div className="flex h-[4.25rem] items-center justify-between gap-4 sm:h-[4.5rem] lg:h-[4.75rem]">
+          {/* Logo — high-res PNG via Next Image */}
+          <div className="shrink-0 lg:min-w-[220px]">
+            <RuwaqLogo
+              href={homeHref}
+              priority
+              className="h-[3.5rem] w-auto sm:h-[3.75rem] lg:h-[4.25rem] xl:h-[4.5rem]"
+            />
           </div>
 
           {/* Desktop menu — centered */}
@@ -69,7 +73,7 @@ export async function SiteHeader({ variant = "marketing" }: { variant?: Variant 
             <Link
               key={link.href}
               href={link.href}
-              className="flex shrink-0 rounded-full border border-ruwaq-stone/60 bg-ruwaq-linen/60 px-3.5 py-1.5 text-xs font-semibold text-ruwaq-ink-soft transition-colors hover:border-ruwaq-champagne/40 hover:text-ruwaq-ink"
+              className="flex shrink-0 rounded-full border border-ruwaq-stone/60 bg-ruwaq-linen/60 px-3.5 py-1.5 text-xs font-semibold text-ruwaq-ink-soft transition-colors hover:border-ruwaq-brown/40 hover:text-ruwaq-ink"
             >
               {link.label}
             </Link>

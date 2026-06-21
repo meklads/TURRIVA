@@ -232,7 +232,7 @@ export function renderRuwaqTemplate(
   const footerAddress = locale === "ar" ? footer.addressAr : footer.addressEn;
   const footerTagline = locale === "ar" ? footer.taglineAr : footer.taglineEn;
   const sampleBadge = platformBranding
-    ? `<div style="display:inline-block;margin-top:10px;padding:4px 10px;border-radius:6px;background:rgba(201,160,99,0.2);border:1px solid ${colors.gold};font-size:11px;font-weight:600;color:${colors.gold};">${escapeHtml(labels.sampleBadge)}</div>`
+    ? `<div style="display:inline-block;margin-top:10px;padding:4px 10px;border-radius:6px;background:rgba(111,80,54,0.15);border:1px solid ${colors.gold};font-size:11px;font-weight:600;color:${colors.gold};">${escapeHtml(labels.sampleBadge)}</div>`
     : "";
 
   const clientFooterLines = [

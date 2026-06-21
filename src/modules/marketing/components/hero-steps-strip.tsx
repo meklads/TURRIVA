@@ -45,7 +45,7 @@ export function HeroStepsStrip({ title, steps }: Props) {
                   priority={i === 0}
                 />
               </div>
-              <p className="mt-1 text-[11px] font-semibold uppercase tracking-widest text-ruwaq-champagne/80">
+              <p className="mt-1 text-[11px] font-semibold uppercase tracking-widest text-ruwaq-brown/80">
                 {String(i + 1).padStart(2, "0")}
               </p>
               <p className="ruwaq-hero-step-label mt-2">{step.label}</p>

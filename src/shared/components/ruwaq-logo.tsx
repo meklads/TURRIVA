@@ -1,28 +1,38 @@
+import Image from "next/image";
 import Link from "next/link";
 
 type Props = {
   href?: string;
   className?: string;
   variant?: "light" | "dark";
+  priority?: boolean;
 };
+
+const LOGO_SRC = {
+  light: "/brand/ruwaq/logo-on-light.png",
+  dark: "/brand/ruwaq/logo-on-dark.png",
+} as const;
+
+/** Intrinsic dimensions — PNG source is 1774×887 for crisp retina scaling. */
+const LOGO_WIDTH = 1774;
+const LOGO_HEIGHT = 887;
 
 export function RuwaqLogo({
   href = "/",
-  className = "h-14 w-auto lg:h-16",
+  className = "h-14 w-auto sm:h-16 lg:h-[4.25rem]",
   variant = "light",
+  priority = false,
 }: Props) {
-  const src =
-    variant === "dark"
-      ? "/brand/ruwaq/logo-on-dark.png"
-      : "/brand/ruwaq/logo-transparent.png";
-
   const logo = (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={src}
+    <Image
+      src={LOGO_SRC[variant]}
       alt="رواق Ruwaq"
-      className={`ruwaq-logo-img block ${className}`}
-      decoding="async"
+      width={LOGO_WIDTH}
+      height={LOGO_HEIGHT}
+      className={`ruwaq-logo-img block w-auto ${className}`}
+      priority={priority}
+      quality={100}
+      sizes="(max-width: 640px) 180px, (max-width: 1024px) 220px, 260px"
     />
   );
 

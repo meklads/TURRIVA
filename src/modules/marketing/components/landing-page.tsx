@@ -29,6 +29,7 @@ export function LandingPage({ t, locale }: Props) {
         locale={locale}
         trustPills={trustPills}
         learnMore={{ href: "/how-it-works", label: s.steps.learnMore }}
+        productPreview={<ProductMockPreview mock={s.mock} compact />}
       />
 
       <section className="ruwaq-landing-section ruwaq-landing-section--paper border-b border-ruwaq-stone/20">
@@ -128,7 +129,7 @@ export function LandingPage({ t, locale }: Props) {
             <div className="hidden grid-cols-[1fr_1fr_1fr] bg-white/5 text-xs font-bold uppercase tracking-wider text-white/50 sm:grid">
               <div className="px-5 py-3">{s.why.table.need}</div>
               <div className="border-s border-white/10 px-5 py-3">{s.why.table.others}</div>
-              <div className="border-s border-white/10 px-5 py-3 text-ruwaq-gold">{s.why.table.ruwaq}</div>
+              <div className="border-s border-white/10 px-5 py-3 text-ruwaq-brown">{s.why.table.ruwaq}</div>
             </div>
             {s.why.rows.map((row) => (
               <div key={row.need} className="grid border-t border-white/10 sm:grid-cols-[1fr_1fr_1fr]">
@@ -139,8 +140,8 @@ export function LandingPage({ t, locale }: Props) {
                   </span>
                   {row.others}
                 </div>
-                <div className="border-t border-white/10 bg-ruwaq-gold/5 px-5 py-4 text-sm font-medium text-ruwaq-gold sm:border-s sm:border-t-0">
-                  <span className="mb-1 block text-[10px] font-bold uppercase text-ruwaq-gold/60 sm:hidden">
+                <div className="border-t border-white/10 bg-ruwaq-brown/5 px-5 py-4 text-sm font-medium text-ruwaq-brown sm:border-s sm:border-t-0">
+                  <span className="mb-1 block text-[10px] font-bold uppercase text-ruwaq-brown/60 sm:hidden">
                     {s.why.table.ruwaq}
                   </span>
                   {row.ruwaq}
@@ -190,7 +191,7 @@ export function LandingPage({ t, locale }: Props) {
                     <li key={item.title}>
                       <Link
                         href="/templates/sample"
-                        className="inline-flex rounded-full border border-ruwaq-gold/40 bg-white px-3.5 py-1.5 text-xs font-semibold text-ruwaq-navy shadow-sm transition-colors hover:border-ruwaq-gold hover:text-ruwaq-gold"
+                        className="inline-flex rounded-full border border-ruwaq-brown/40 bg-white px-3.5 py-1.5 text-xs font-semibold text-ruwaq-navy shadow-sm transition-colors hover:border-ruwaq-brown hover:text-ruwaq-brown"
                       >
                         {item.title}
                       </Link>

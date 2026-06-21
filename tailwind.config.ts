@@ -12,7 +12,7 @@ const config: Config = {
     extend: {
       colors: {
         ruwaq: {
-          /* Apple-neutral surfaces + Ruwaq logo gold accent */
+          /* Apple-neutral surfaces + Ruwaq logo brown accent */
           ink: "#1D1D1F",
           "ink-soft": "#6E6E73",
           "ink-muted": "#86868B",
@@ -21,15 +21,18 @@ const config: Config = {
           linen: "#F5F5F7",
           stone: "#E8E8ED",
           "stone-mid": "#D2D2D7",
-          champagne: "#9A7146",
-          "champagne-light": "#C4A574",
-          "champagne-muted": "#F5F0E8",
+          brown: "#6F5036",
+          "brown-light": "#8B6844",
+          "brown-muted": "#F0EBE4",
+          champagne: "#6F5036",
+          "champagne-light": "#8B6844",
+          "champagne-muted": "#F0EBE4",
           sage: "#6B7F62",
           /* Aliases — existing class names keep working */
           navy: "#1D1D1F",
           "navy-soft": "#6E6E73",
-          gold: "#9A7146",
-          "gold-light": "#C4A574",
+          gold: "#6F5036",
+          "gold-light": "#8B6844",
           cream: "#E8E8ED",
           "cream-bg": "#F5F5F7",
         },
@@ -38,9 +41,9 @@ const config: Config = {
           100: "#E8E8ED",
           200: "#D2D2D7",
           300: "#AEAEB2",
-          400: "#C4A574",
-          500: "#9A7146",
-          600: "#85633D",
+          400: "#8B6844",
+          500: "#6F5036",
+          600: "#5C422C",
           700: "#6E6E73",
           800: "#1D1D1F",
           900: "#141210",
