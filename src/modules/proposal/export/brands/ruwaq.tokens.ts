@@ -24,8 +24,8 @@ export const ruwaqBrand = {
     latin: "'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif",
   },
   footer: {
-    addressAr: "جدة — حي الزهراء، المملكة العربية السعودية",
-    addressEn: "Jeddah — Al-Zahra District, Saudi Arabia",
+    addressAr: "جدة، حي الزهراء، المملكة العربية السعودية",
+    addressEn: "Jeddah, Al-Zahra District, Saudi Arabia",
     website: "ruwaq.co",
     taglineAr: "احترافية تبني الثقة",
     taglineEn: "Professionalism builds trust",

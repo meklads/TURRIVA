@@ -25,8 +25,8 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title:
       locale === "ar"
-        ? "رواق — عروض احترافية في دقائق"
-        : "Ruwaq — Professional proposals in minutes",
+        ? "رواق · عروض احترافية في دقائق"
+        : "Ruwaq · Professional proposals in minutes",
     description:
       locale === "ar"
         ? "أنشئ عروضاً تجارية احترافية للمقاولات والاستشارات في السعودية بالذكاء الاصطناعي."

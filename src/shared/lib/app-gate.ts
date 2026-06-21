@@ -7,7 +7,7 @@
  * gate dashboard/API routes (marketing stays public).
  */
 
-export const APP_GATE_REALM = "Ruwaq — Pre-launch";
+export const APP_GATE_REALM = "Ruwaq · Pre-launch";
 
 /** Static assets — never gated */
 function isStaticAssetPath(pathname: string): boolean {

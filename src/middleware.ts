@@ -28,7 +28,7 @@ export function middleware(request: NextRequest) {
   }
 
   return new NextResponse(
-    "Ruwaq — Pre-launch access only.\n\nرواق — الوصول للمعاينة قبل الإطلاق فقط.",
+    "Ruwaq · Pre-launch access only.\n\nرواق · الوصول للمعاينة قبل الإطلاق فقط.",
     {
     status: 401,
     headers: {

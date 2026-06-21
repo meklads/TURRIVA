@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props) {
   return {
     title:
       data.locale === "ar"
-        ? `${data.projectName} — عرض سعر`
-        : `${data.projectName} — Proposal`,
+        ? `${data.projectName} · عرض سعر`
+        : `${data.projectName} · Proposal`,
   };
 }

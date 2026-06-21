@@ -21,8 +21,8 @@ export function MarketingHero({ hero, heroSteps, locale, trustPills, learnMore }
         <div className="mx-auto max-w-3xl text-center">
           <p className="ruwaq-eyebrow">{hero.eyebrow}</p>
           <h1 className="ruwaq-hero-title mt-3">
-            {hero.title}{" "}
-            <span className="text-ruwaq-champagne">{hero.titleHighlight}</span>
+            {hero.title}
+            <span className="text-ruwaq-champagne"> {hero.titleHighlight}</span>
           </h1>
           <p className="ruwaq-hero-lead mx-auto mt-4 max-w-2xl">{hero.subtitle}</p>
 
