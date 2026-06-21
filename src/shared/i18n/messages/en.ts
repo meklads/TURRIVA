@@ -498,6 +498,9 @@ export const en: Messages = {
    copyright: "© Ruwaq. All rights reserved.",
    sponsoredBy: "Ruwaq is powered by",
    sponsoredByLink: "Graphics House",
+   ctaTitle: "Let's talk",
+   ctaSubtitle: "Send your first professional proposal today, no account or card required.",
+   ctaButton: "Start a proposal",
   },
  },
  pages: {

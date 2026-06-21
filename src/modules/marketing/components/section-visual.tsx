@@ -6,20 +6,45 @@ type Props = {
   priority?: boolean;
   className?: string;
   wide?: boolean;
+  variant?: "default" | "tall" | "landscape";
+  offset?: boolean;
 };
 
-/** Rounded section illustration for landing page blocks. */
-export function SectionVisual({ src, alt, priority, className = "", wide }: Props) {
+/** Editorial section image — minimal frame, premium crop. */
+export function SectionVisual({
+  src,
+  alt,
+  priority,
+  className = "",
+  wide,
+  variant = "default",
+  offset = false,
+}: Props) {
+  const imgClass =
+    variant === "landscape"
+      ? "ruwaq-section-visual-img ruwaq-section-visual-img--landscape"
+      : "ruwaq-section-visual-img";
+
+  const wrapClass = [
+    "ruwaq-section-visual",
+    wide ? "ruwaq-section-visual-wide" : "",
+    offset ? "ruwaq-section-visual--offset" : "",
+    variant === "tall" ? "ruwaq-section-visual--tall" : "",
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <div className={`ruwaq-section-visual ${wide ? "ruwaq-section-visual-wide" : ""} ${className}`.trim()}>
+    <div className={wrapClass}>
       <Image
         src={src}
         alt={alt}
         width={1200}
-        height={675}
-        className="ruwaq-section-visual-img"
+        height={variant === "landscape" ? 675 : 900}
+        className={imgClass}
         priority={priority}
-        sizes={wide ? "(max-width: 768px) 100vw, 1152px" : "(max-width: 768px) 100vw, 896px"}
+        sizes={wide ? "(max-width: 768px) 100vw, 1152px" : "(max-width: 768px) 100vw, 560px"}
       />
     </div>
   );

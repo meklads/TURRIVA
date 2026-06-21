@@ -36,6 +36,8 @@ const config: Config = {
           cream: "#E8E8ED",
           "cream-bg": "#F5F5F7",
         },
+        warm: "#F9F9F9",
+        charcoal: "#0A0A0A",
         brand: {
           50: "#F5F5F7",
           100: "#E8E8ED",
@@ -53,7 +55,8 @@ const config: Config = {
         ar: ["var(--font-ar)", "Segoe UI", "sans-serif"],
         latin: ["var(--font-latin)", "system-ui", "sans-serif"],
         sans: ["var(--font-ar)", "Segoe UI", "sans-serif"],
-        display: ["var(--font-ar)", "Segoe UI", "sans-serif"],
+        display: ["var(--font-ar-display)", "var(--font-ar)", "serif"],
+        "display-en": ["var(--font-latin-display)", "Georgia", "serif"],
       },
       boxShadow: {
         ruwaq:

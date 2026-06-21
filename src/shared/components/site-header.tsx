@@ -7,7 +7,13 @@ import { UserNav } from "@/modules/auth/components/user-nav";
 
 type Variant = "marketing" | "app";
 
-export async function SiteHeader({ variant = "marketing" }: { variant?: Variant }) {
+export async function SiteHeader({
+  variant = "marketing",
+  overHero = false,
+}: {
+  variant?: Variant;
+  overHero?: boolean;
+}) {
   const locale = await getLocale();
   const t = getMessages(locale);
 
@@ -27,20 +33,21 @@ export async function SiteHeader({ variant = "marketing" }: { variant?: Variant 
   const links = variant === "app" ? appLinks : marketingLinks;
   const homeHref = variant === "app" ? "/proposals/new" : "/";
 
+  const headerClass = overHero ? "ruwaq-header ruwaq-header--hero" : "ruwaq-header";
+
   return (
-    <header className="ruwaq-header">
+    <header className={headerClass}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex h-[4.25rem] items-center justify-between gap-4 sm:h-[4.5rem] lg:h-[4.75rem]">
-          {/* Logo — high-res PNG via Next Image */}
           <div className="shrink-0 lg:min-w-[220px]">
             <RuwaqLogo
               href={homeHref}
               priority
+              variant={overHero ? "dark" : "light"}
               className="h-[3.5rem] w-auto sm:h-[3.75rem] lg:h-[4.25rem] xl:h-[4.5rem]"
             />
           </div>
 
-          {/* Desktop menu — centered */}
           <nav
             className="hidden flex-1 items-center justify-center gap-1 lg:flex"
             aria-label="Main"
@@ -52,11 +59,10 @@ export async function SiteHeader({ variant = "marketing" }: { variant?: Variant 
             ))}
           </nav>
 
-          {/* Actions */}
           <div className="flex shrink-0 items-center justify-end gap-2 sm:gap-3 lg:min-w-[200px]">
-            <LocaleSwitcher />
+            <LocaleSwitcher inverted={overHero} />
             {variant === "marketing" && (
-              <Link href="/proposals/new" className="btn-ruwaq-primary hidden sm:inline-flex">
+              <Link href="/proposals/new" className="btn-ruwaq-header-cta hidden sm:inline-flex">
                 {t.site.nav.startProposal}
               </Link>
             )}
@@ -64,16 +70,19 @@ export async function SiteHeader({ variant = "marketing" }: { variant?: Variant 
           </div>
         </div>
 
-        {/* Mobile menu */}
         <nav
-          className="flex gap-2 overflow-x-auto border-t border-ruwaq-stone/30 py-3 lg:hidden"
+          className={`flex gap-2 overflow-x-auto py-3 lg:hidden ${overHero ? "border-t border-white/10" : "border-t border-ruwaq-stone/30"}`}
           aria-label="Mobile"
         >
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="flex shrink-0 rounded-full border border-ruwaq-stone/60 bg-ruwaq-linen/60 px-3.5 py-1.5 text-xs font-semibold text-ruwaq-ink-soft transition-colors hover:border-ruwaq-brown/40 hover:text-ruwaq-ink"
+              className={
+                overHero
+                  ? "flex shrink-0 rounded-full border border-white/25 bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-white/85 backdrop-blur-sm transition-colors hover:bg-white/15"
+                  : "flex shrink-0 rounded-full border border-ruwaq-stone/60 bg-ruwaq-linen/60 px-3.5 py-1.5 text-xs font-semibold text-ruwaq-ink-soft transition-colors hover:border-ruwaq-gold/40 hover:text-ruwaq-ink"
+              }
             >
               {link.label}
             </Link>
@@ -81,7 +90,7 @@ export async function SiteHeader({ variant = "marketing" }: { variant?: Variant 
           {variant === "marketing" && (
             <Link
               href="/proposals/new"
-              className="btn-ruwaq-primary shrink-0 px-3.5 py-1.5 text-xs sm:hidden"
+              className="btn-ruwaq-header-cta shrink-0 px-3.5 py-1.5 text-xs sm:hidden"
             >
               {t.site.nav.startProposal}
             </Link>

@@ -493,6 +493,9 @@ export const ar = {
    copyright: "© رواق. جميع الحقوق محفوظة.",
    sponsoredBy: "رواق برعاية",
    sponsoredByLink: "Graphics House",
+   ctaTitle: "لنبدأ معاً",
+   ctaSubtitle: "أرسل أول عرض احترافي اليوم، بدون حساب وبدون بطاقة.",
+   ctaButton: "ابدأ عرضاً الآن",
   },
  },
  pages: {

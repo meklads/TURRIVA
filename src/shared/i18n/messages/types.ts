@@ -272,6 +272,9 @@ export type Messages = {
       copyright: string;
       sponsoredBy: string;
       sponsoredByLink: string;
+      ctaTitle: string;
+      ctaSubtitle: string;
+      ctaButton: string;
     };
   };
   pages: {
