@@ -621,6 +621,8 @@ export const en: Messages = {
     },
     gatesProgress: (confirmed: number, total: number) =>
       `${confirmed}/${total} Gates Confirmed`,
+    proposalCount: (n: number) =>
+      n === 1 ? "1 proposal" : `${n} proposals`,
     status: {
       draft: "Draft",
       generating: "Generating",
@@ -752,5 +754,14 @@ export const en: Messages = {
       "By accepting this proposal, both parties agree to the scope and terms above. This proposal is valid for 30 days from the issue date.",
     clientSignature: "Client signature",
     providerSignature: "Service provider signature",
+  },
+  share: {
+    downloadOfficialPdf: "Download Official PDF",
+    confidentialNotice: "Confidential — client copy",
+    notFoundTitle: "Proposal not found",
+    notFoundMessage:
+      "This link may have expired or is no longer valid. Contact the sender for an updated link.",
+    goHome: "Go to Ruwaq",
+    poweredBy: "Delivered via Ruwaq — professional proposals for Saudi contractors.",
   },
 };

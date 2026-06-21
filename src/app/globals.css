@@ -547,4 +547,38 @@
   .ruwaq-trust-toast {
     @apply mb-4 rounded-xl border border-emerald-200/80 bg-emerald-50/90 px-4 py-2.5 text-xs font-medium text-emerald-800;
   }
+
+  /* Public share view — client-facing proposal room */
+  .ruwaq-share-root {
+    @apply relative min-h-screen;
+  }
+
+  .ruwaq-share-watermark-layer {
+    @apply pointer-events-none fixed inset-0 z-0 overflow-hidden;
+  }
+
+  .ruwaq-share-watermark-grid {
+    @apply absolute grid h-[150%] w-[150%] -translate-x-[12%] -translate-y-[12%] rotate-[-28deg] grid-cols-3 grid-rows-6 items-center justify-items-center opacity-[0.045];
+  }
+
+  .ruwaq-share-watermark-tile {
+    @apply select-none whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.12em] text-ruwaq-navy;
+  }
+
+  .ruwaq-share-watermark-band {
+    @apply pointer-events-none fixed inset-x-0 top-0 z-30 border-b-2 border-ruwaq-gold bg-ruwaq-cream-bg/95 py-1.5 text-center backdrop-blur-sm;
+  }
+
+  .ruwaq-share-watermark-band span {
+    @apply text-[10px] font-bold uppercase tracking-[0.14em] text-ruwaq-navy;
+  }
+
+  .ruwaq-share-header {
+    @apply border-b border-ruwaq-cream bg-white/95 backdrop-blur-md;
+  }
+
+  html[lang="ar"] .ruwaq-share-watermark-tile,
+  html[lang="ar"] .ruwaq-share-watermark-band span {
+    @apply normal-case tracking-wide;
+  }
 }

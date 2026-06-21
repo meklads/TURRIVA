@@ -328,6 +328,7 @@ export type Messages = {
       published: string;
     };
     gatesProgress: (confirmed: number, total: number) => string;
+    proposalCount: (n: number) => string;
     status: {
       draft: string;
       generating: string;
@@ -440,5 +441,13 @@ export type Messages = {
     acceptanceText: string;
     clientSignature: string;
     providerSignature: string;
+  };
+  share: {
+    downloadOfficialPdf: string;
+    confidentialNotice: string;
+    notFoundTitle: string;
+    notFoundMessage: string;
+    goHome: string;
+    poweredBy: string;
   };
 };

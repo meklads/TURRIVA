@@ -55,7 +55,7 @@ export async function exportProposalAsPdf(proposalId: string) {
     url: `/api/proposals/${proposalId}/export/pdf`,
     filename: `${fileBase}_Proposal.html`,
     proposalNumber,
-    shareUrl: `${base}/api/share/${shareToken}/export/pdf`,
+    shareUrl: `${base}/share/${shareToken}`,
   };
 }
 
@@ -68,5 +68,5 @@ export async function getShareUrlForProposal(
     select: { shareToken: true },
   });
   if (!doc?.shareToken) return null;
-  return `${appBaseUrl()}/api/share/${doc.shareToken}/export/pdf`;
+  return `${appBaseUrl()}/share/${doc.shareToken}`;
 }

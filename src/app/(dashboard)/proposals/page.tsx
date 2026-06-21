@@ -13,17 +13,18 @@ import { AppPageHero } from "@/shared/components/app-page-hero";
 export const dynamic = "force-dynamic";
 
 function statusBadgeClass(status: string): string {
-  if (status === "exported") return "bg-green-50 text-green-700";
+  if (status === "exported") return "bg-emerald-50 text-emerald-800 ring-1 ring-emerald-200/80";
   if (status === "review" || status === "reviewed") {
-    return "bg-amber-50 text-amber-900";
+    return "bg-amber-50 text-amber-900 ring-1 ring-amber-200/80";
   }
-  if (status === "generating") return "bg-blue-50 text-blue-700";
-  return "bg-gray-50 text-gray-600";
+  if (status === "generating") return "bg-blue-50 text-blue-800 ring-1 ring-blue-200/80";
+  return "bg-ruwaq-cream-bg text-ruwaq-navy-soft ring-1 ring-ruwaq-cream";
 }
 
 export default async function ProposalsListPage() {
   const locale = await getLocale();
   const t = getMessages(locale);
+  const isAr = locale === "ar";
   const proposals = await listProposalsQuery();
 
   const statusLabels: Record<string, string> = {
@@ -61,7 +62,7 @@ export default async function ProposalsListPage() {
         title={t.list.title}
         subtitle={t.list.subtitle}
       >
-        <Link href="/proposals/new" className="btn-ruwaq-primary">
+        <Link href="/proposals/new" className="btn-ruwaq-primary w-full sm:w-auto">
           {t.list.new}
         </Link>
       </AppPageHero>
@@ -82,18 +83,25 @@ export default async function ProposalsListPage() {
             {PROPOSAL_LIST_GROUP_ORDER.map((group) => {
               const items = grouped[group];
               return (
-                <section key={group}>
-                  <div className="mb-3 flex items-baseline justify-between gap-3">
-                    <h2 className="text-sm font-bold uppercase tracking-wide text-ruwaq-navy">
+                <section key={group} aria-labelledby={`group-${group}`}>
+                  <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
+                    <h2
+                      id={`group-${group}`}
+                      className={`text-sm font-bold text-ruwaq-navy ${
+                        isAr
+                          ? "tracking-normal"
+                          : "uppercase tracking-wide"
+                      }`}
+                    >
                       {groupLabels[group]}
                     </h2>
-                    <span className="text-xs text-ruwaq-navy-soft">
-                      {items.length}
+                    <span className="text-xs font-medium text-ruwaq-navy-soft">
+                      {t.list.proposalCount(items.length)}
                     </span>
                   </div>
 
                   {items.length === 0 ? (
-                    <p className="rounded-2xl border border-dashed border-ruwaq-cream bg-ruwaq-cream-bg/50 px-5 py-4 text-sm text-ruwaq-navy-soft">
+                    <p className="rounded-2xl border border-dashed border-ruwaq-cream bg-ruwaq-cream-bg/50 px-5 py-4 text-sm leading-relaxed text-ruwaq-navy-soft">
                       {groupEmpty[group]}
                     </p>
                   ) : (
@@ -107,40 +115,49 @@ export default async function ProposalsListPage() {
                         return (
                           <div
                             key={p.id}
-                            className="flex items-center justify-between gap-3 rounded-2xl border border-ruwaq-cream bg-white px-5 py-4 shadow-ruwaq transition-shadow hover:shadow-ruwaq-lg"
+                            className="rounded-2xl border border-ruwaq-cream bg-white p-4 shadow-ruwaq transition-shadow hover:shadow-ruwaq-lg sm:p-5"
                           >
-                            <Link
-                              href={`/proposals/${p.id}`}
-                              className="min-w-0 flex-1"
-                            >
-                              <p className="font-semibold text-ruwaq-navy">
-                                {p.projectName || t.list.untitled}
-                              </p>
-                              <p className="mt-0.5 text-xs text-ruwaq-navy-soft">
-                                {p.clientName} ·{" "}
-                                {formatDate(p.createdAt.toISOString(), locale)}
-                              </p>
-                              {showGateProgress ? (
-                                <p
-                                  className={`mt-1.5 text-xs font-semibold ${
-                                    gatesComplete
-                                      ? "text-green-700"
-                                      : "text-amber-800"
-                                  }`}
-                                >
-                                  {t.list.gatesProgress(
-                                    p.gateProgress.confirmed,
-                                    p.gateProgress.total
+                            <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                              <Link
+                                href={`/proposals/${p.id}`}
+                                className="min-w-0 flex-1"
+                              >
+                                <p className="font-semibold leading-snug text-ruwaq-navy">
+                                  {p.projectName || t.list.untitled}
+                                </p>
+                                <p className="mt-1 text-xs text-ruwaq-navy-soft">
+                                  {p.clientName}
+                                  <span className="mx-1.5 opacity-40">·</span>
+                                  {formatDate(
+                                    p.updatedAt.toISOString(),
+                                    locale
                                   )}
                                 </p>
-                              ) : null}
-                            </Link>
-                            <ProposalListActions proposalId={p.id} />
-                            <span
-                              className={`shrink-0 rounded-full px-3 py-1 text-xs font-semibold ${statusBadgeClass(p.status)}`}
-                            >
-                              {statusLabels[p.status] ?? p.status}
-                            </span>
+                                {showGateProgress ? (
+                                  <p
+                                    className={`mt-2 inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${
+                                      gatesComplete
+                                        ? "bg-emerald-50 text-emerald-800 ring-1 ring-emerald-200/80"
+                                        : "bg-amber-50 text-amber-900 ring-1 ring-amber-200/80"
+                                    }`}
+                                  >
+                                    {t.list.gatesProgress(
+                                      p.gateProgress.confirmed,
+                                      p.gateProgress.total
+                                    )}
+                                  </p>
+                                ) : null}
+                              </Link>
+
+                              <div className="flex shrink-0 items-center gap-2 self-start sm:flex-col sm:items-end lg:flex-row lg:items-center">
+                                <ProposalListActions proposalId={p.id} />
+                                <span
+                                  className={`rounded-full px-3 py-1 text-xs font-semibold ${statusBadgeClass(p.status)}`}
+                                >
+                                  {statusLabels[p.status] ?? p.status}
+                                </span>
+                              </div>
+                            </div>
                           </div>
                         );
                       })}

@@ -15,6 +15,7 @@ export function isPublicAppPath(pathname: string): boolean {
     "/privacy",
     "/services",
     "/templates/sample",
+    "/share",
   ];
 
   if (publicPrefixes.some((p) => pathname === p || pathname.startsWith(`${p}/`))) {
@@ -32,6 +33,7 @@ export function isPublicAppPath(pathname: string): boolean {
 export function isPublicApiPath(pathname: string): boolean {
   if (pathname === "/api/health") return true;
   if (pathname.startsWith("/api/templates/ruwaq/sample")) return true;
+  if (pathname.startsWith("/api/share/")) return true;
   return false;
 }
 

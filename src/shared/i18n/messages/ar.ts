@@ -628,6 +628,8 @@ export const ar = {
     },
     gatesProgress: (confirmed: number, total: number) =>
       `${confirmed}/${total} بوابات مؤكدة`,
+    proposalCount: (n: number) =>
+      n === 1 ? "عرض واحد" : n === 2 ? "عرضان" : `${n} عروض`,
     status: {
       draft: "مسودة",
       generating: "جاري التوليد",
@@ -757,6 +759,15 @@ export const ar = {
       "بقبول هذا العرض، يوافق الطرفان على النطاق والشروط الواردة أعلاه. هذا العرض ساري لمدة 30 يوماً من تاريخ الإصدار.",
     clientSignature: "توقيع العميل",
     providerSignature: "توقيع مقدم الخدمة",
+  },
+  share: {
+    downloadOfficialPdf: "تحميل PDF الرسمي",
+    confidentialNotice: "سري — نسخة العميل",
+    notFoundTitle: "العرض غير متاح",
+    notFoundMessage:
+      "قد يكون الرابط منتهياً أو غير صالح. تواصل مع المرسل للحصول على رابط محدّث.",
+    goHome: "العودة إلى رواق",
+    poweredBy: "مُرسَل عبر رواق — عروض احترافية للمقاولين في السعودية.",
   },
 } as const;
 
