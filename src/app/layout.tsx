@@ -5,10 +5,10 @@ import { Providers } from "./providers";
 import { getLocale } from "@/shared/i18n/server";
 import { localeDir } from "@/shared/i18n/locale";
 
-/** Same Arabic stack as dotforlife.com — Almarai 300/400/700/800 */
+/** Same Arabic stack as dotforlife.com — Almarai 300/400/700 */
 const almarai = Almarai({
   subsets: ["arabic"],
-  weight: ["300", "400", "700", "800"],
+  weight: ["300", "400", "700"],
   variable: "--font-ar",
   display: "swap",
 });

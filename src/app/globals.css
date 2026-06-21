@@ -75,7 +75,7 @@
   html[data-lang="ar"] h3,
   html[data-lang="ar"] h4 {
     font-family: var(--font-ar), var(--font-ar-fallback);
-    font-weight: 800;
+    font-weight: 700;
     color: var(--df-ink);
   }
 
@@ -353,13 +353,13 @@
   }
 
   .ruwaq-hero-ticket-title {
-    @apply text-base font-bold leading-normal text-ruwaq-ink sm:text-[1.0625rem];
+    @apply text-base font-semibold leading-normal text-ruwaq-ink sm:text-[1.0625rem];
   }
 
   html[lang="ar"] .ruwaq-hero-ticket-title,
   html[data-lang="ar"] .ruwaq-hero-ticket-title {
     font-family: var(--font-ar), var(--font-ar-fallback);
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.55;
   }
 
@@ -403,7 +403,7 @@
   html[lang="ar"] .ruwaq-hero-title,
   html[data-lang="ar"] .ruwaq-hero-title {
     font-family: var(--font-ar), var(--font-ar-fallback);
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 0;
     line-height: 1.48;
   }
@@ -503,7 +503,7 @@
   html[lang="ar"] .ruwaq-section-title,
   html[data-lang="ar"] .ruwaq-section-title {
     font-family: var(--font-ar), var(--font-ar-fallback);
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 0;
     line-height: 1.52;
   }
@@ -527,7 +527,7 @@
 
   .ruwaq-clause-pack-title {
     font-size: clamp(1.75rem, 3.5vw, 2.125rem);
-    @apply font-bold text-ruwaq-ink;
+    @apply font-semibold text-ruwaq-ink;
     line-height: 1.48;
     text-wrap: balance;
   }
@@ -535,7 +535,7 @@
   html[lang="ar"] .ruwaq-clause-pack-title,
   html[data-lang="ar"] .ruwaq-clause-pack-title {
     font-family: var(--font-ar), var(--font-ar-fallback);
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.55;
   }
 
@@ -610,7 +610,7 @@
   html[lang="ar"] .ruwaq-cta-title,
   html[data-lang="ar"] .ruwaq-cta-title {
     font-family: var(--font-ar), var(--font-ar-fallback);
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.52;
   }
 
@@ -625,7 +625,7 @@
 
   .ruwaq-hero-steps-title {
     font-size: clamp(1.625rem, 3.5vw, 2rem);
-    @apply font-bold text-ruwaq-ink;
+    @apply font-semibold text-ruwaq-ink;
     line-height: 1.45;
     text-wrap: balance;
   }
@@ -633,7 +633,7 @@
   html[lang="ar"] .ruwaq-hero-steps-title,
   html[data-lang="ar"] .ruwaq-hero-steps-title {
     font-family: var(--font-ar), var(--font-ar-fallback);
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.55;
   }
 
