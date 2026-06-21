@@ -137,6 +137,63 @@ export async function markReviewedAction(
   }
 }
 
+export async function confirmReviewGateAction(
+  proposalId: string,
+  gateKey: string
+) {
+  try {
+    await assertCanMutate(proposalId);
+    const { confirmReviewGate } = await import("./review-gates.service");
+    const reviewGates = await confirmReviewGate(
+      proposalId,
+      gateKey as import("@/shared/types/trust-layer.types").ReviewGateKey
+    );
+    return { success: true as const, reviewGates };
+  } catch (error) {
+    return actionError(error, "Failed to confirm review gate");
+  }
+}
+
+export async function updateBoqLineAction(
+  proposalId: string,
+  lineId: string,
+  newAmount: number
+) {
+  try {
+    await assertCanMutate(proposalId);
+    const { updateBoqLineAmount } = await import("./boq/boq.service");
+    const result = await updateBoqLineAmount(proposalId, lineId, newAmount);
+    const { resolveReviewGates } = await import("./review-gates.service");
+    const proposal = await getProposal(proposalId);
+    const reviewGates = proposal
+      ? resolveReviewGates({
+          reviewGates: proposal.reviewGates,
+          reviewedSections: proposal.reviewedSections,
+        })
+      : null;
+    return {
+      success: true as const,
+      lines: result.lines.map((line) => ({
+        id: line.id,
+        sortOrder: line.sortOrder,
+        labelAr: line.labelAr,
+        labelEn: line.labelEn,
+        amount: line.amount,
+        percent: line.percent,
+        category: line.category,
+        isEstimated: line.isEstimated,
+        source: line.source,
+        note: line.note ?? null,
+      })),
+      sum: result.sum,
+      sumValid: result.sumValid,
+      reviewGates,
+    };
+  } catch (error) {
+    return actionError(error, "Failed to update BOQ line");
+  }
+}
+
 // SA8
 export async function exportPdfAction(proposalId: string) {
   try {

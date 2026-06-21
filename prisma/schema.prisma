@@ -122,8 +122,18 @@ model Proposal {
   /// CONFIDENCE LEVELS
   confidence Json? /// { scopeItems: "high" | "medium" | "low", ... }
 
-  /// REVIEW STATE
+  /// REVIEW STATE — legacy string[]; prefer reviewGates for new flow
   reviewedSections Json? @default("[]") /// string[] of reviewed section IDs
+
+  /// Trust Layer v1 — classification & packs
+  projectArchetype   String? /// fit_out | supervision | maintenance | other
+  clausePackId       String?
+  clausePackVersion  String? /// snapshot e.g. "1.0.0"
+  estimateVariancePercent Float @default(15) /// for estimate_only BOQ disclaimer
+
+  /// Structured gate confirmations (see ARCHITECTURE_TRUST_LAYER.md)
+  reviewGates Json?
+  publishedAt DateTime?
 
   /// METADATA
   proposalNumber String?
@@ -132,7 +142,12 @@ model Proposal {
   updatedAt      DateTime @updatedAt
 
   user      User?             @relation(fields: [userId], references: [id], onDelete: SetNull)
+  clausePack ClausePack?      @relation(fields: [clausePackId], references: [id], onDelete: SetNull)
   documents GeneratedDocument[]
+  boqLines  ProposalBoqLine[]
+  clauseSelections ProposalClauseSelection[]
+  shareLinks ProposalShareLink[]
+  amendmentRequests AmendmentRequest[]
 }
 
 /// Immutable export record
@@ -145,4 +160,189 @@ model GeneratedDocument {
   createdAt  DateTime @default(now())
 
   proposal Proposal @relation(fields: [proposalId], references: [id], onDelete: Cascade)
+}
+
+// ============================================================
+// Trust Layer v1 — Clause Library (global, seeded)
+// ============================================================
+
+/// Pre-vetted clause pack — fit_out_v1, supervision_v1, maintenance_v1
+model ClausePack {
+  id        String   @id @default(cuid())
+  slug      String   @unique /// fit_out_v1
+  nameAr    String
+  nameEn    String
+  archetype String   /// fit_out | supervision | maintenance
+  version   String   /// semver snapshot e.g. 1.0.0
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  clauses   ClauseTemplate[]
+  proposals Proposal[]
+}
+
+/// Single pre-vetted clause — AI may select/fill placeholders only
+model ClauseTemplate {
+  id               String  @id @default(cuid())
+  packId           String
+  clauseKey        String  /// SA-FITOUT-MAT-SUPPLY-A
+  category         String  /// materials | permits | payment | warranty | scope_change | delay | vat | other
+  riskSide         String  @default("protects_contractor") /// protects_contractor | balanced
+  textAr           String  @db.Text
+  textEn           String  @db.Text
+  placeholders     Json    @default("[]") /// string[] allowed keys
+  sortOrder        Int     @default(0)
+  isMandatory      Boolean @default(false)
+  /// Clauses sharing a group are mutually exclusive (pick one)
+  alternativeGroup String?
+  /// Auto-enable when conditions met, e.g. {"minDurationDays": 90}
+  autoTriggerRules Json?
+  sourceRef        String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  pack        ClausePack                @relation(fields: [packId], references: [id], onDelete: Cascade)
+  selections  ProposalClauseSelection[]
+
+  @@unique([packId, clauseKey])
+  @@index([packId, sortOrder])
+}
+
+// ============================================================
+// Trust Layer v1 — Smart BOQ (8–15 lines per proposal)
+// ============================================================
+
+model ProposalBoqLine {
+  id         String  @id @default(cuid())
+  proposalId String
+  sortOrder  Int
+  labelAr    String
+  labelEn    String
+  amount     Float
+  percent    Float   /// display-only; derived from amount / total
+  category   String  /// materials | labor | equipment | phase | management | other
+  note       String?
+  source     String  @default("ai_suggested") /// ai_suggested | user_edited | user_added
+  isEstimated Boolean @default(false)
+  aiReason   String? /// why AI suggested this bucket (UX tooltip)
+
+  proposal Proposal @relation(fields: [proposalId], references: [id], onDelete: Cascade)
+
+  @@index([proposalId, sortOrder])
+}
+
+/// Selected clauses for a proposal — rendered from ClauseTemplate only
+model ProposalClauseSelection {
+  id                 String  @id @default(cuid())
+  proposalId         String
+  clauseTemplateId   String
+  enabled            Boolean @default(true)
+  sortOrder          Int     @default(0)
+  filledPlaceholders Json?   /// { "warranty_months": "12" }
+  source             String  @default("ai_suggested") /// ai_suggested | user_toggled | user_alternative
+  renderedTextAr     String? @db.Text
+  renderedTextEn     String? @db.Text
+  disabledReason     String? /// audit if user turned off mandatory clause
+
+  proposal       Proposal       @relation(fields: [proposalId], references: [id], onDelete: Cascade)
+  clauseTemplate ClauseTemplate @relation(fields: [clauseTemplateId], references: [id], onDelete: Restrict)
+
+  @@unique([proposalId, clauseTemplateId])
+  @@index([proposalId, sortOrder])
+}
+
+// ============================================================
+// Trust Layer v1 — Live Proposal Room
+// ============================================================
+
+/// Primary client-facing share link (web view first, PDF secondary)
+model ProposalShareLink {
+  id                  String    @id @default(cuid())
+  proposalId          String
+  token               String    @unique
+  passwordHash        String?
+  expiresAt           DateTime?
+  status              String    @default("active") /// active | expired | revoked
+  watermarkClientName String?
+  publishedAt         DateTime  @default(now())
+  revokedAt           DateTime?
+  createdAt           DateTime  @default(now())
+
+  proposal          Proposal              @relation(fields: [proposalId], references: [id], onDelete: Cascade)
+  viewSessions      ProposalViewSession[]
+  clientActions     ClientAction[]
+  amendmentRequests AmendmentRequest[]
+
+  @@index([proposalId])
+}
+
+model ProposalViewSession {
+  id          String    @id @default(cuid())
+  shareLinkId String
+  openedAt    DateTime  @default(now())
+  closedAt    DateTime?
+  durationSec Int?
+  userAgent   String?   @db.Text
+  ipHash      String?
+  geoApprox   String?
+
+  shareLink     ProposalShareLink     @relation(fields: [shareLinkId], references: [id], onDelete: Cascade)
+  sectionViews  ProposalSectionView[]
+  clientActions ClientAction[]
+
+  @@index([shareLinkId, openedAt])
+}
+
+model ProposalSectionView {
+  id         String @id @default(cuid())
+  sessionId  String
+  sectionKey String /// understanding | scope | deliverables | commercial | boq | payment | timeline | clauses | acceptance
+  dwellMs    Int    @default(0)
+  viewCount  Int    @default(1)
+
+  session ProposalViewSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@unique([sessionId, sectionKey])
+}
+
+model ClientAction {
+  id           String   @id @default(cuid())
+  shareLinkId  String
+  sessionId    String?
+  type         String   /// link_open | section_view | download_pdf | soft_approve | request_amendment | ask_question
+  payload      Json?
+  clientName   String?
+  clientIpHash String?
+  createdAt    DateTime @default(now())
+
+  shareLink        ProposalShareLink  @relation(fields: [shareLinkId], references: [id], onDelete: Cascade)
+  session          ProposalViewSession? @relation(fields: [sessionId], references: [id], onDelete: SetNull)
+  amendmentRequest AmendmentRequest?
+
+  @@index([shareLinkId, createdAt])
+}
+
+model AmendmentRequest {
+  id                        String    @id @default(cuid())
+  shareLinkId               String
+  proposalId                String
+  clientActionId            String?   @unique
+  sectionKey                String
+  note                      String    @db.Text
+  status                    String    @default("open") /// open | in_progress | resolved | declined
+  clientName                String
+  clientIpHash              String?
+  contractorNote            String?   @db.Text
+  resolvedAt                DateTime?
+  resolvedInProposalVersion Int?
+  createdAt                 DateTime  @default(now())
+  updatedAt                 DateTime  @updatedAt
+
+  shareLink    ProposalShareLink @relation(fields: [shareLinkId], references: [id], onDelete: Cascade)
+  proposal     Proposal          @relation(fields: [proposalId], references: [id], onDelete: Cascade)
+  clientAction ClientAction?     @relation(fields: [clientActionId], references: [id], onDelete: SetNull)
+
+  @@index([proposalId, status])
+  @@index([shareLinkId, createdAt])
 }

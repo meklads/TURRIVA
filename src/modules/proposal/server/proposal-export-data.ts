@@ -2,14 +2,36 @@ import { db } from "@/shared/lib/db";
 import type { CommercialMode } from "@/shared/types";
 import type { Locale } from "@/shared/i18n/locale";
 import { localeToBcp47 } from "@/shared/i18n/locale";
+import { getMessages } from "@/shared/i18n";
 import {
   asObjectList,
   asStringList,
   buildProposalExportHtml,
 } from "./proposal-export-html";
 
-export async function buildProposalExportHtmlForId(proposalId: string) {
-  const proposal = await db.proposal.findUnique({ where: { id: proposalId } });
+export type BuildProposalExportOptions = {
+  /** Default true — client name + date watermark on PDF/share exports. */
+  watermarked?: boolean;
+};
+
+export async function buildProposalExportHtmlForId(
+  proposalId: string,
+  options: BuildProposalExportOptions = {}
+) {
+  const watermarked = options.watermarked !== false;
+
+  const proposal = await db.proposal.findUnique({
+    where: { id: proposalId },
+    include: {
+      boqLines: { orderBy: { sortOrder: "asc" } },
+      clauseSelections: {
+        where: { enabled: true },
+        include: { clauseTemplate: true },
+        orderBy: { sortOrder: "asc" },
+      },
+      clausePack: true,
+    },
+  });
   if (!proposal) return null;
 
   const company = proposal.userId
@@ -19,11 +41,48 @@ export async function buildProposalExportHtmlForId(proposalId: string) {
     : null;
 
   const locale: Locale = proposal.locale === "en" ? "en" : "ar";
+  const messages = getMessages(locale);
   const commercialMode: CommercialMode =
     proposal.commercialMode === "estimate_only" ? "estimate_only" : "fixed_price";
 
   const validityDate = new Date();
   validityDate.setDate(validityDate.getDate() + 30);
+
+  const issueDate = new Date().toLocaleDateString(localeToBcp47(locale), {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
+  const boqLines = proposal.boqLines.map((line) => ({
+    label: locale === "ar" ? line.labelAr : line.labelEn,
+    amount: line.amount,
+    percent: line.percent,
+    category: line.category,
+    isEstimated: line.isEstimated,
+  }));
+
+  const clauseItems = proposal.clauseSelections.map((sel) => {
+    const category = sel.clauseTemplate.category;
+    const categoryLabel =
+      messages.review.clauses.categories[category] ?? category;
+    const text =
+      locale === "ar"
+        ? sel.renderedTextAr ?? sel.clauseTemplate.textAr
+        : sel.renderedTextEn ?? sel.clauseTemplate.textEn;
+
+    return {
+      category,
+      categoryLabel,
+      text,
+      sourceRef: sel.clauseTemplate.sourceRef,
+    };
+  });
+
+  const clausePackName =
+    locale === "ar"
+      ? proposal.clausePack?.nameAr ?? messages.review.clauses.defaultPackName
+      : proposal.clausePack?.nameEn ?? messages.review.clauses.defaultPackName;
 
   const html = buildProposalExportHtml(locale, {
     projectName: proposal.projectName,
@@ -41,11 +100,7 @@ export async function buildProposalExportHtmlForId(proposalId: string) {
     companyEmail: company?.email ?? undefined,
     proposalNumber: proposal.proposalNumber,
     introduction: proposal.introduction,
-    date: new Date().toLocaleDateString(localeToBcp47(locale), {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    }),
+    date: issueDate,
     validityDate: validityDate.toLocaleDateString(localeToBcp47(locale), {
       year: "numeric",
       month: "long",
@@ -68,6 +123,13 @@ export async function buildProposalExportHtmlForId(proposalId: string) {
     projectLocation: proposal.projectLocation ?? undefined,
     propertyType: proposal.propertyType ?? undefined,
     areaSqm: proposal.areaSqm ?? undefined,
+    boqLines,
+    clauseItems,
+    clausePackName,
+    clausePackVersion: proposal.clausePackVersion,
+    estimateVariancePercent: proposal.estimateVariancePercent,
+    watermarkClientName: watermarked ? proposal.clientName : undefined,
+    watermarkDate: watermarked ? issueDate : undefined,
     templateId: "ruwaq",
   });
 

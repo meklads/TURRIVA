@@ -82,9 +82,9 @@ export const en: Messages = {
   review: {
     trustBanner:
       "Ruwaq organizes the proposal — you confirm assumptions, exclusions, and price before sending.",
-    reviewGatesTitle: "3 steps before sending",
-    reviewGatesHint: "Review commercial terms, assumptions, and exclusions, then download PDF.",
-    exportBlocked: "Review the 3 sections above before exporting.",
+    reviewGatesTitle: "Review gates before sending",
+    reviewGatesHint: "Confirm BOQ breakdown, clause pack, and commercial terms before export.",
+    exportBlocked: "Complete all required review gates before exporting.",
     estimateOnlyBadge: "Preliminary estimate",
     profileIncomplete:
       "Complete your company profile — it appears on every PDF and builds client trust.",
@@ -148,6 +148,50 @@ export const en: Messages = {
     sectionRegenerating: "Regenerating...",
     introduction: "Introduction",
     removeItem: "Remove",
+    gatesProgress: (confirmed: number, total: number) =>
+      `${confirmed}/${total} gates confirmed`,
+    confirmUnderstanding:
+      "I confirm the project understanding and client details are accurate",
+    boq: {
+      title: "Financial breakdown (Smart BOQ)",
+      lineItem: "Line item",
+      empty: "No BOQ lines yet. Regenerate the proposal to create a breakdown.",
+      budgetLockMatch: "Matches your total",
+      budgetLockMismatch: "Sum mismatch — check amounts",
+      estimateBadge: "Estimated",
+      estimateDisclaimerTop: (pct: number) =>
+        `Preliminary non-binding budget — subject to ±${pct}% variation depending on final material selection and site conditions.`,
+      estimateDisclaimerBottom: (pct: number) =>
+        `All figures above are preliminary estimates (±${pct}%) and not a binding contract until final written acceptance.`,
+      confirmCommercial: "I confirm the commercial terms and payment schedule",
+      confirmBoq: "I confirm the financial breakdown (Smart BOQ)",
+      redistributeToast: "Amounts redistributed — total unchanged",
+    },
+    clauses: {
+      title: "Approved clause pack",
+      empty: "No clauses loaded. Regenerate the proposal to apply the Saudi clause pack.",
+      defaultPackName: "Saudi clause pack",
+      approvedCount: (n: number) => `${n} approved clauses`,
+      mandatory: "Mandatory",
+      recommended: "Recommended",
+      source: "Reference",
+      confirmClauses: "I confirm the approved clauses in this pack",
+      legalDisclaimer:
+        "I understand Ruwaq does not provide legal advice — clauses are pre-vetted templates only",
+      categories: {
+        materials: "Materials",
+        permits: "Permits & municipality",
+        payment: "Payment",
+        warranty: "Warranty & SLA",
+        scope_change: "Scope change",
+        delay: "Delay",
+        vat: "VAT (ZATCA)",
+        compliance: "SBC compliance",
+        escalation: "Price escalation",
+        soil: "Soil & ground conditions",
+        other: "Other",
+      },
+    },
   },
   landing: {
     title: "Easiest, most trusted real estate proposals",
@@ -563,6 +607,18 @@ export const en: Messages = {
     delete: "Delete",
     duplicate: "Duplicate",
     deleteConfirm: "Delete this proposal? This cannot be undone.",
+    groups: {
+      review: "In review",
+      draft: "Drafts",
+      published: "Published",
+    },
+    groupEmpty: {
+      review: "No proposals awaiting review.",
+      draft: "No drafts.",
+      published: "No published proposals yet.",
+    },
+    gatesProgress: (confirmed: number, total: number) =>
+      `${confirmed}/${total} Gates Confirmed`,
     status: {
       draft: "Draft",
       generating: "Generating",

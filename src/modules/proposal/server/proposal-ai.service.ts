@@ -7,6 +7,7 @@ import {
   contextFromProposalRecord,
   realEstateSystemRole,
 } from "./proposal-ai.prompts";
+import { runPostGenerationTrustLayer } from "./trust-layer.pipeline";
 
 const openai = process.env.OPENAI_API_KEY
   ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
@@ -227,7 +228,6 @@ export async function generateProposalContent(proposalId: string) {
     await db.proposal.update({
       where: { id: proposalId },
       data: {
-        status: "review",
         introduction,
         scopeItems: scopeItems as any,
         deliverables: deliverables as any,
@@ -240,14 +240,19 @@ export async function generateProposalContent(proposalId: string) {
           deliverables: deliverables.length > 0 ? "medium" : "low",
           timeline: timeline.milestones?.length > 1 ? "medium" : "low",
           commercialTerms:
-            commercialMode === "estimate_only" ? "always_warn" : commercialTerms?.paymentSchedule?.length
-              ? "high"
-              : "medium",
+            commercialMode === "estimate_only"
+              ? "always_warn"
+              : commercialTerms?.paymentSchedule?.length
+                ? "high"
+                : "medium",
           assumptions: "always_warn",
           exclusions: "always_warn",
         } as any,
+        status: "generating",
       },
     });
+
+    await runPostGenerationTrustLayer(proposalId);
 
     return { success: true, id: proposalId };
   } catch (error) {

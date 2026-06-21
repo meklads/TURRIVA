@@ -128,6 +128,33 @@ export type Messages = {
     sectionRegenerating: string;
     introduction: string;
     removeItem: string;
+    gatesProgress: (confirmed: number, total: number) => string;
+    confirmUnderstanding: string;
+    boq: {
+      title: string;
+      lineItem: string;
+      empty: string;
+      budgetLockMatch: string;
+      budgetLockMismatch: string;
+      estimateBadge: string;
+      estimateDisclaimerTop: (pct: number) => string;
+      estimateDisclaimerBottom: (pct: number) => string;
+      confirmCommercial: string;
+      confirmBoq: string;
+      redistributeToast: string;
+    };
+    clauses: {
+      title: string;
+      empty: string;
+      defaultPackName: string;
+      approvedCount: (n: number) => string;
+      mandatory: string;
+      recommended: string;
+      source: string;
+      confirmClauses: string;
+      legalDisclaimer: string;
+      categories: Record<string, string>;
+    };
   };
   landing: {
     title: string;
@@ -289,6 +316,17 @@ export type Messages = {
     delete: string;
     duplicate: string;
     deleteConfirm: string;
+    groups: {
+      review: string;
+      draft: string;
+      published: string;
+    };
+    groupEmpty: {
+      review: string;
+      draft: string;
+      published: string;
+    };
+    gatesProgress: (confirmed: number, total: number) => string;
     status: {
       draft: string;
       generating: string;

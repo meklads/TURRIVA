@@ -91,6 +91,37 @@ export interface ConfidenceMap {
   exclusions: ConfidenceLevel;
 }
 
+// --- Trust Layer (Review UI) ---
+
+export interface ProposalBoqLineView {
+  id: string;
+  sortOrder: number;
+  labelAr: string;
+  labelEn: string;
+  amount: number;
+  percent: number;
+  category: string;
+  isEstimated: boolean;
+  source: string;
+  note: string | null;
+}
+
+export interface ProposalClauseSelectionView {
+  id: string;
+  clauseTemplateId: string;
+  clauseKey: string;
+  category: string;
+  isMandatory: boolean;
+  alternativeGroup: string | null;
+  enabled: boolean;
+  renderedTextAr: string | null;
+  renderedTextEn: string | null;
+  sourceRef: string | null;
+  sortOrder: number;
+}
+
+export type { ReviewGates, ReviewGateKey } from "./trust-layer.types";
+
 // --- Full Proposal ---
 
 export interface Proposal {
@@ -128,6 +159,14 @@ export interface Proposal {
 
   // Review
   reviewedSections: string[];
+  reviewGates: import("./trust-layer.types").ReviewGates | null;
+  estimateVariancePercent: number;
+  projectArchetype: string | null;
+  clausePackNameAr: string | null;
+  clausePackNameEn: string | null;
+  clausePackVersion: string | null;
+  boqLines: ProposalBoqLineView[];
+  clauseSelections: ProposalClauseSelectionView[];
 
   // Metadata
   proposalNumber: string | null;

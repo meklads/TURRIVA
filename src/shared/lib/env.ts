@@ -17,6 +17,9 @@ const envSchema = z.object({
   STRIPE_WEBHOOK_SECRET: z.string().optional(),
   NEXT_PUBLIC_APP_URL: z.string().optional().default("http://localhost:3000"),
   NEXT_PUBLIC_APP_NAME: z.string().default("Saudi Proposal OS"),
+  /** When set, HTTP Basic Auth protects dashboard/API (marketing stays public) */
+  APP_GATE_PASSWORD: z.string().optional(),
+  APP_GATE_USER: z.string().optional(),
 });
 
 type Env = z.infer<typeof envSchema>;

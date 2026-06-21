@@ -51,6 +51,7 @@ export function renderRuwaqTemplate(
   data: ProposalExportData
 ): string {
   const labels = getMessages(locale).export;
+  const review = getMessages(locale).review;
   const dir = localeDir(locale);
   const bcp47 = localeToBcp47(locale);
   const { colors, fonts, footer, assets } = ruwaqBrand;
@@ -125,17 +126,105 @@ export function renderRuwaqTemplate(
     })
     .join("");
 
+  const sectionTitle = (title: string) =>
+    `<h2 style="font-size:17px;font-weight:700;color:${colors.navy};margin:36px 0 14px;padding-bottom:8px;border-bottom:2px solid ${colors.gold};">${escapeHtml(title)}</h2>`;
+
+  const platformBranding = data.platformBranding === true;
+  const showWatermark = Boolean(data.watermarkClientName && data.watermarkDate);
+  const watermarkText = showWatermark
+    ? `${data.watermarkClientName} · ${data.watermarkDate}`
+    : "";
+  const variancePct = data.estimateVariancePercent ?? 15;
+  const boqLines = data.boqLines ?? [];
+  const clauseItems = data.clauseItems ?? [];
+  const useClausePack = clauseItems.length > 0;
+
+  const boqRows = boqLines
+    .map((line) => {
+      const amount =
+        isEstimate && line.isEstimated && line.amount <= 0
+          ? labels.tbd
+          : `${formatAmount(line.amount, locale)} ${currency}`;
+      const estimateTag = line.isEstimated
+        ? `<span style="display:inline-block;margin-${dir === "rtl" ? "right" : "left"}:6px;padding:2px 7px;border-radius:4px;background:${colors.estimateBg};border:1px solid ${colors.estimateBorder};font-size:10px;font-weight:600;color:${colors.estimateText};">${escapeHtml(review.boq.estimateBadge)}</span>`
+        : "";
+      return `<tr>
+        <td style="padding:10px 14px;border-bottom:1px solid ${colors.cream};">${escapeHtml(line.label)}${estimateTag}</td>
+        <td style="padding:10px 14px;border-bottom:1px solid ${colors.cream};text-align:center;">${escapeHtml(String(Math.round(line.percent * 10) / 10))}%</td>
+        <td style="padding:10px 14px;border-bottom:1px solid ${colors.cream};text-align:${dir === "rtl" ? "left" : "right"};font-weight:600;">${escapeHtml(amount)}</td>
+      </tr>`;
+    })
+    .join("");
+
+  const boqSection =
+    boqLines.length > 0
+      ? `${sectionTitle(review.boq.title)}
+      ${
+        isEstimate
+          ? `<div class="estimate-banner">${escapeHtml(review.boq.estimateDisclaimerTop(variancePct))}</div>`
+          : ""
+      }
+      <table>
+        <thead><tr>
+          <th>${escapeHtml(review.boq.lineItem)}</th>
+          <th>${escapeHtml(labels.percentage)}</th>
+          <th>${escapeHtml(labels.amount)}</th>
+        </tr></thead>
+        <tbody>${boqRows}</tbody>
+      </table>
+      ${
+        isEstimate
+          ? `<p style="font-size:12px;color:${colors.textMuted};margin:0 0 20px;line-height:1.6;">${escapeHtml(review.boq.estimateDisclaimerBottom(variancePct))}</p>`
+          : ""
+      }`
+      : "";
+
+  const clauseBlocks = clauseItems
+    .map(
+      (clause, i) => `<div class="clause-item">
+        <div class="clause-head">
+          <span class="clause-num">${i + 1}</span>
+          <span class="clause-cat">${escapeHtml(clause.categoryLabel)}</span>
+        </div>
+        <p class="clause-text">${escapeHtml(clause.text)}</p>
+        ${
+          clause.sourceRef
+            ? `<div class="clause-ref">${escapeHtml(review.clauses.source)}: ${escapeHtml(clause.sourceRef)}</div>`
+            : ""
+        }
+      </div>`
+    )
+    .join("");
+
+  const clausePackMeta = [
+    data.clausePackName,
+    data.clausePackVersion ? `v${data.clausePackVersion}` : null,
+    review.clauses.approvedCount(clauseItems.length),
+  ]
+    .filter(Boolean)
+    .join(" · ");
+
+  const clauseSection = useClausePack
+    ? `${sectionTitle(review.clauses.title)}
+      <p style="font-size:13px;color:${colors.textMuted};margin:-6px 0 16px;">${escapeHtml(clausePackMeta)}</p>
+      ${clauseBlocks}
+      <p style="font-size:11px;color:${colors.textMuted};margin:16px 0 0;padding:12px 14px;background:${colors.creamBg};border-radius:8px;border:1px solid ${colors.cream};line-height:1.6;">${escapeHtml(review.clauses.legalDisclaimer)}</p>`
+    : "";
+
+  const watermarkOverlay = showWatermark
+    ? `<div class="watermark-overlay" aria-hidden="true">${Array.from({ length: 24 })
+        .map(() => `<span class="watermark-tile">${escapeHtml(watermarkText)}</span>`)
+        .join("")}</div>
+      <div class="watermark-band" aria-hidden="true">${escapeHtml(watermarkText)}</div>`
+    : "";
+
   const milestones = Array.isArray(data.timeline?.milestones)
     ? (data.timeline!.milestones as Record<string, unknown>[])
     : [];
 
-  const sectionTitle = (title: string) =>
-    `<h2 style="font-size:17px;font-weight:700;color:${colors.navy};margin:36px 0 14px;padding-bottom:8px;border-bottom:2px solid ${colors.gold};">${escapeHtml(title)}</h2>`;
-
   const companyLogo = companyLogoHtml(data, true);
   const footerAddress = locale === "ar" ? footer.addressAr : footer.addressEn;
   const footerTagline = locale === "ar" ? footer.taglineAr : footer.taglineEn;
-  const platformBranding = data.platformBranding === true;
   const sampleBadge = platformBranding
     ? `<div style="display:inline-block;margin-top:10px;padding:4px 10px;border-radius:6px;background:rgba(201,160,99,0.2);border:1px solid ${colors.gold};font-size:11px;font-weight:600;color:${colors.gold};">${escapeHtml(labels.sampleBadge)}</div>`
     : "";
@@ -370,9 +459,100 @@ export function renderRuwaqTemplate(
       text-align: center;
       font-size: 11px;
     }
+    .clause-item {
+      margin: 0 0 14px;
+      padding: 14px 16px;
+      background: ${colors.creamBg};
+      border: 1px solid ${colors.cream};
+      border-radius: 10px;
+      page-break-inside: avoid;
+    }
+    .clause-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .clause-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: ${colors.navy};
+      color: ${colors.cream};
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .clause-cat {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: ${colors.gold};
+    }
+    .clause-text {
+      font-size: 13px;
+      color: ${colors.text};
+      line-height: 1.85;
+      margin: 0;
+      white-space: pre-wrap;
+      text-align: justify;
+    }
+    .clause-ref {
+      margin-top: 8px;
+      font-size: 10px;
+      color: ${colors.textMuted};
+    }
+    .watermark-overlay {
+      position: fixed;
+      inset: -20%;
+      z-index: 9998;
+      pointer-events: none;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-around;
+      justify-content: space-around;
+      overflow: hidden;
+      opacity: 0.06;
+    }
+    .watermark-tile {
+      font-size: 15px;
+      font-weight: 700;
+      color: ${colors.navy};
+      transform: rotate(-32deg);
+      white-space: nowrap;
+      padding: 36px 48px;
+      user-select: none;
+      font-family: ${fontFamily};
+    }
+    .watermark-band {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      pointer-events: none;
+      text-align: center;
+      padding: 6px 12px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: ${colors.navy};
+      background: rgba(230, 226, 219, 0.92);
+      border-bottom: 1px solid ${colors.gold};
+      opacity: 0.85;
+    }
+    @media print {
+      .watermark-overlay { opacity: 0.08; }
+      .watermark-band { opacity: 0.9; }
+    }
   </style>
 </head>
 <body>
+  ${watermarkOverlay}
   <button class="print-btn no-print" onclick="window.print()">${escapeHtml(labels.savePdf)}</button>
   <div class="page-wrap">
     <header class="banner">
@@ -482,13 +662,17 @@ export function renderRuwaqTemplate(
         <tbody>${paymentRows}</tbody>
       </table>
 
+      ${boqSection}
+
+      ${clauseSection}
+
       ${
-        data.assumptions.length
+        !useClausePack && data.assumptions.length
           ? `${sectionTitle(labels.assumptions)}<ul>${data.assumptions.map((a) => `<li>${escapeHtml(a)}</li>`).join("")}</ul>`
           : ""
       }
       ${
-        data.exclusions.length
+        !useClausePack && data.exclusions.length
           ? `${sectionTitle(labels.exclusions)}<ul>${data.exclusions.map((e) => `<li>${escapeHtml(e)}</li>`).join("")}</ul>`
           : ""
       }

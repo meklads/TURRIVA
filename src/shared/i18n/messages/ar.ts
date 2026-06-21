@@ -80,9 +80,9 @@ export const ar = {
   review: {
     trustBanner:
       "رواق ينظّم العرض — أنت تؤكّد الافتراضات والاستثناءات والسعر قبل الإرسال.",
-    reviewGatesTitle: "3 خطوات قبل الإرسال",
-    reviewGatesHint: "راجع الشروط التجارية، الافتراضات، والاستثناءات ثم حمّل PDF.",
-    exportBlocked: "راجع الأقسام الثلاثة أعلاه قبل التصدير.",
+    reviewGatesTitle: "بوابات المراجعة قبل الإرسال",
+    reviewGatesHint: "أكّد التفصيل المالي وحزمة البنود والشروط التجارية قبل التصدير.",
+    exportBlocked: "أكمل بوابات المراجعة المطلوبة قبل التصدير.",
     estimateOnlyBadge: "تقدير أولي",
     profileIncomplete: "أكمل ملف شركتك — يظهر في كل PDF ويعزّز ثقة العميل.",
     profileIncompleteLink: "إكمال ملف الشركة",
@@ -145,6 +145,49 @@ export const ar = {
     sectionRegenerating: "جاري التوليد...",
     introduction: "المقدمة",
     removeItem: "حذف",
+    gatesProgress: (confirmed: number, total: number) =>
+      `${confirmed}/${total} بوابات مؤكدة`,
+    confirmUnderstanding: "أؤكد أن فهم المشروع وبيانات العميل دقيقة",
+    boq: {
+      title: "جدول التفصيل المالي (Smart BOQ)",
+      lineItem: "البند",
+      empty: "لا يوجد تفصيل مالي بعد. أعد توليد العرض لإنشاء الجدول.",
+      budgetLockMatch: "يطابق إجماليك",
+      budgetLockMismatch: "مجموع غير متطابق — راجع المبالغ",
+      estimateBadge: "تقديري",
+      estimateDisclaimerTop: (pct: number) =>
+        `ميزانية أولية غير ملزمة — قابلة للتغيير بنسبة ±${pct}% حسب اختيار المواد النهائي وظروف الموقع.`,
+      estimateDisclaimerBottom: (pct: number) =>
+        `جميع الأرقام أعلاه تقديرية (±${pct}%) ولا تُعد عقداً ملزماً حتى الاعتماد الخطي النهائي.`,
+      confirmCommercial: "أكّدت الشروط التجارية وجدول الدفعات",
+      confirmBoq: "أكّدت جدول التفصيل المالي (Smart BOQ)",
+      redistributeToast: "تم تعديل التوزيع — الإجمالي ثابت",
+    },
+    clauses: {
+      title: "حزمة البنود المعتمدة",
+      empty: "لم تُحمَّل البنود بعد. أعد توليد العرض لتطبيق حزمة البنود السعودية.",
+      defaultPackName: "حزمة بنود سعودية",
+      approvedCount: (n: number) => `${n} بند معتمد`,
+      mandatory: "إلزامي",
+      recommended: "موصى",
+      source: "مرجع",
+      confirmClauses: "أكّدت البنود المعتمدة في هذه الحزمة",
+      legalDisclaimer:
+        "أفهم أن رواق لا يقدم استشارة قانونية — البنود قوالب معتمدة مسبقاً فقط",
+      categories: {
+        materials: "المواد",
+        permits: "التراخيص والبلدية",
+        payment: "الدفع",
+        warranty: "الضمان وSLA",
+        scope_change: "أمر التغيير",
+        delay: "التأخير",
+        vat: "ضريبة القيمة المضافة (ZATCA)",
+        compliance: "كود البناء SBC",
+        escalation: "تذبذب الأسعار",
+        soil: "التربة والظروف الجيولوجية",
+        other: "أخرى",
+      },
+    },
   },
   landing: {
     title: "أسهل وأوثق عروض قطاع العقار",
@@ -572,6 +615,18 @@ export const ar = {
     delete: "حذف",
     duplicate: "نسخ",
     deleteConfirm: "حذف هذا العرض؟ لا يمكن التراجع.",
+    groups: {
+      review: "قيد المراجعة",
+      draft: "مسودات",
+      published: "منشورة",
+    },
+    groupEmpty: {
+      review: "لا توجد عروض بانتظار المراجعة.",
+      draft: "لا توجد مسودات.",
+      published: "لا توجد عروض منشورة بعد.",
+    },
+    gatesProgress: (confirmed: number, total: number) =>
+      `${confirmed}/${total} بوابات مؤكدة`,
     status: {
       draft: "مسودة",
       generating: "جاري التوليد",

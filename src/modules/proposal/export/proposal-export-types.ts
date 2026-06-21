@@ -34,4 +34,29 @@ export type ProposalExportData = {
   templateId?: "ruwaq" | "graphics_house";
   /** When true, shows Ruwaq platform branding (sample preview only). */
   platformBranding?: boolean;
+  /** Smart BOQ lines for export (Trust Layer). */
+  boqLines?: ProposalExportBoqLine[];
+  /** Rendered clause pack items (Trust Layer). */
+  clauseItems?: ProposalExportClause[];
+  clausePackName?: string | null;
+  clausePackVersion?: string | null;
+  estimateVariancePercent?: number;
+  /** Hard watermark — client name + issue date on every page. */
+  watermarkClientName?: string;
+  watermarkDate?: string;
+};
+
+export type ProposalExportBoqLine = {
+  label: string;
+  amount: number;
+  percent: number;
+  category: string;
+  isEstimated: boolean;
+};
+
+export type ProposalExportClause = {
+  category: string;
+  categoryLabel: string;
+  text: string;
+  sourceRef?: string | null;
 };

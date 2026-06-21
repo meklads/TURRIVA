@@ -16,6 +16,10 @@ import type {
   CommercialTerms,
   Timeline,
 } from "@/shared/types";
+import {
+  gateProgressForProposal,
+  proposalListGroup,
+} from "@/modules/proposal/lib/proposal-list.utils";
 
 // ─── CREATE ───
 
@@ -92,7 +96,18 @@ export async function createProposal(
 // ─── GET ───
 
 export async function getProposal(id: string): Promise<Proposal | null> {
-  const p = await db.proposal.findUnique({ where: { id } });
+  const p = await db.proposal.findUnique({
+    where: { id },
+    include: {
+      boqLines: { orderBy: { sortOrder: "asc" } },
+      clauseSelections: {
+        where: { enabled: true },
+        include: { clauseTemplate: true },
+        orderBy: { sortOrder: "asc" },
+      },
+      clausePack: true,
+    },
+  });
   if (!p) return null;
 
   const confidence = p.confidence as unknown as Proposal["confidence"];
@@ -124,6 +139,37 @@ export async function getProposal(id: string): Promise<Proposal | null> {
     exclusions: (p.exclusions ?? []) as unknown as string[],
     confidence,
     reviewedSections: (p.reviewedSections ?? []) as unknown as string[],
+    reviewGates: (p.reviewGates as Proposal["reviewGates"]) ?? null,
+    estimateVariancePercent: p.estimateVariancePercent,
+    projectArchetype: p.projectArchetype,
+    clausePackNameAr: p.clausePack?.nameAr ?? null,
+    clausePackNameEn: p.clausePack?.nameEn ?? null,
+    clausePackVersion: p.clausePackVersion,
+    boqLines: p.boqLines.map((line) => ({
+      id: line.id,
+      sortOrder: line.sortOrder,
+      labelAr: line.labelAr,
+      labelEn: line.labelEn,
+      amount: line.amount,
+      percent: line.percent,
+      category: line.category,
+      isEstimated: line.isEstimated,
+      source: line.source,
+      note: line.note,
+    })),
+    clauseSelections: p.clauseSelections.map((sel) => ({
+      id: sel.id,
+      clauseTemplateId: sel.clauseTemplateId,
+      clauseKey: sel.clauseTemplate.clauseKey,
+      category: sel.clauseTemplate.category,
+      isMandatory: sel.clauseTemplate.isMandatory,
+      alternativeGroup: sel.clauseTemplate.alternativeGroup,
+      enabled: sel.enabled,
+      renderedTextAr: sel.renderedTextAr,
+      renderedTextEn: sel.renderedTextEn,
+      sourceRef: sel.clauseTemplate.sourceRef,
+      sortOrder: sel.sortOrder,
+    })),
     proposalNumber: p.proposalNumber,
     exportedAt: p.exportedAt?.toISOString() ?? null,
     createdAt: p.createdAt.toISOString(),
@@ -351,7 +397,7 @@ export async function markSectionReviewed(
 // ─── LIST PROPOSALS ───
 
 export async function listUserProposals(userId: string) {
-  return db.proposal.findMany({
+  const rows = await db.proposal.findMany({
     where: { userId },
     orderBy: { updatedAt: "desc" },
     select: {
@@ -362,7 +408,25 @@ export async function listUserProposals(userId: string) {
       createdAt: true,
       updatedAt: true,
       proposalNumber: true,
+      reviewGates: true,
+      reviewedSections: true,
+      deliverables: true,
+      publishedAt: true,
     },
+  });
+
+  return rows.map((p) => {
+    const gateProgress = gateProgressForProposal({
+      reviewGates: p.reviewGates,
+      reviewedSections: p.reviewedSections,
+      deliverables: p.deliverables,
+    });
+
+    return {
+      ...p,
+      group: proposalListGroup(p.status),
+      gateProgress,
+    };
   });
 }
 

@@ -6,7 +6,7 @@ import { getProposalIdByShareToken } from "@/modules/proposal/server/proposal.se
 export const dynamic = "force-dynamic";
 
 async function buildExportResponse(proposalId: string) {
-  return buildProposalExportHtmlForId(proposalId);
+  return buildProposalExportHtmlForId(proposalId, { watermarked: true });
 }
 
 export async function GET(

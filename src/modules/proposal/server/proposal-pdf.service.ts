@@ -2,6 +2,7 @@ import { db } from "@/shared/lib/db";
 import { randomBytes } from "crypto";
 import { asciiFilename } from "./proposal-export-html";
 import { assertCanMutateProposal } from "./proposal-auth";
+import { assertCanPublishProposal } from "./review-gates.service";
 
 function appBaseUrl(): string {
   return (
@@ -16,6 +17,8 @@ export async function exportProposalAsPdf(proposalId: string) {
 
   const proposal = await db.proposal.findUnique({ where: { id: proposalId } });
   if (!proposal) throw new Error("Proposal not found");
+
+  await assertCanPublishProposal(proposalId);
 
   const proposalNumber =
     proposal.proposalNumber ??

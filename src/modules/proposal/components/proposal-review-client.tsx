@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, useCallback } from "react";
-import type { Proposal } from "@/shared/types";
+import { useState, useCallback, useMemo } from "react";
+import type { Proposal, ProposalBoqLineView, ReviewGateKey, ReviewGates } from "@/shared/types";
 import {
   updateFieldAction,
   addItemAction,
   removeItemAction,
   markReviewedAction,
+  confirmReviewGateAction,
   exportPdfAction,
   generateWithAI,
   regenerateSectionAction,
@@ -15,10 +16,15 @@ import Link from "next/link";
 import { useLocale, useT } from "@/shared/i18n/context";
 import { validateLocaleText } from "@/shared/i18n/locale";
 import { formatDate, formatSar } from "@/shared/lib/format";
-import { ClaimProposal } from "@/modules/proposal/components/claim-proposal";
 import {
-  buildWhatsAppMessage,
-} from "@/modules/proposal/lib/whatsapp";
+  canPublishFromGates,
+  countRequiredGateProgress,
+  resolveReviewGates,
+} from "@/shared/lib/review-gates.utils";
+import { ClaimProposal } from "@/modules/proposal/components/claim-proposal";
+import { SmartBoqPanel } from "@/modules/proposal/components/smart-boq-panel";
+import { ClausePackPanel } from "@/modules/proposal/components/clause-pack-panel";
+import { buildWhatsAppMessage } from "@/modules/proposal/lib/whatsapp";
 
 import { isCompanyProfileThin } from "@/modules/company/lib/profile-completeness";
 
@@ -41,6 +47,15 @@ export function ProposalReviewClient({
   const canEdit = uiLocale === contentLocale;
 
   const [proposal, setProposal] = useState(initial);
+  const [boqLines, setBoqLines] = useState<ProposalBoqLineView[]>(
+    initial.boqLines ?? []
+  );
+  const [reviewGates, setReviewGates] = useState<ReviewGates>(() =>
+    resolveReviewGates({
+      reviewGates: initial.reviewGates,
+      reviewedSections: initial.reviewedSections,
+    })
+  );
   const [exporting, setExporting] = useState(false);
   const [exported, setExported] = useState(!!initial.exportedAt);
   const [regenerating, setRegenerating] = useState(false);
@@ -50,16 +65,39 @@ export function ProposalReviewClient({
   const [shareUrl, setShareUrl] = useState<string | null>(null);
   const [toast, setToast] = useState<string | null>(null);
 
-  const REVIEW_GATES = [
-    { id: "commercialTerms", label: t.review.sections.commercialTerms },
-    { id: "assumptions", label: t.review.sections.assumptions },
-    { id: "exclusions", label: t.review.sections.exclusions },
-  ] as const;
-
-  const reviewed = (proposal.reviewedSections ?? []) as string[];
-  const gatesComplete = REVIEW_GATES.every((s) => reviewed.includes(s.id));
+  const hasDeliverables = (proposal.deliverables ?? []).length > 0;
+  const gateProgress = useMemo(
+    () => countRequiredGateProgress(reviewGates, hasDeliverables),
+    [reviewGates, hasDeliverables]
+  );
+  const gatesComplete = canPublishFromGates(reviewGates, hasDeliverables);
   const confidence = proposal.confidence as unknown as Record<string, string> | null;
   const isEstimateOnly = proposal.commercialMode === "estimate_only";
+
+  const handleConfirmGate = useCallback(
+    async (gateKey: ReviewGateKey) => {
+      const result = await confirmReviewGateAction(proposal.id, gateKey);
+      if (!result.success) {
+        alert(result.error ?? t.form.errors.generic);
+        return;
+      }
+      setReviewGates(result.reviewGates);
+      if (
+        canPublishFromGates(result.reviewGates, hasDeliverables)
+      ) {
+        setProposal((prev) => ({ ...prev, status: "reviewed" }));
+      }
+    },
+    [proposal.id, hasDeliverables, t.form.errors.generic]
+  );
+
+  const handleBoqLinesUpdated = useCallback(
+    (lines: ProposalBoqLineView[], gates: ReviewGates | null) => {
+      setBoqLines(lines);
+      if (gates) setReviewGates(gates);
+    },
+    []
+  );
 
   const handleEdit = useCallback(
     async (field: string, value: unknown) => {
@@ -119,14 +157,17 @@ export function ProposalReviewClient({
       alert(result.error ?? t.form.errors.generic);
       return;
     }
+    const gateMap: Record<string, ReviewGateKey> = {
+      scopeItems: "scope",
+      deliverables: "deliverables",
+    };
+    const gateKey = gateMap[section];
+    if (gateKey) {
+      await handleConfirmGate(gateKey);
+    }
     setProposal((prev) => ({
       ...prev,
       reviewedSections: result.reviewedSections,
-      status:
-        result.reviewedSections.length >= REVIEW_GATES.length &&
-        REVIEW_GATES.every((g) => result.reviewedSections.includes(g.id))
-          ? "reviewed"
-          : "review",
     }));
   };
 
@@ -190,10 +231,7 @@ export function ProposalReviewClient({
     ? t.review.exported
     : gatesComplete
       ? t.review.allReviewed
-      : t.review.reviewedCount(
-          REVIEW_GATES.filter((s) => reviewed.includes(s.id)).length,
-          REVIEW_GATES.length
-        );
+      : t.review.gatesProgress(gateProgress.confirmed, gateProgress.total);
 
   return (
     <div className="mx-auto max-w-3xl pb-8">
@@ -278,6 +316,20 @@ export function ProposalReviewClient({
       <div className="mb-6 rounded-xl border border-brand-100 bg-brand-50/40 px-4 py-3 text-sm text-brand-900">
         <p className="font-medium">{t.review.reviewGatesTitle}</p>
         <p className="mt-1 text-brand-800/90">{t.review.trustBanner}</p>
+        <label className="mt-3 flex cursor-pointer items-start gap-2 text-sm text-gray-800">
+          <input
+            type="checkbox"
+            checked={reviewGates.projectUnderstanding?.confirmed ?? false}
+            disabled={!canEdit || reviewGates.projectUnderstanding?.confirmed}
+            onChange={() => {
+              if (!reviewGates.projectUnderstanding?.confirmed) {
+                void handleConfirmGate("projectUnderstanding");
+              }
+            }}
+            className="mt-0.5 h-4 w-4 rounded border-gray-300 text-brand-600"
+          />
+          <span>{t.review.confirmUnderstanding}</span>
+        </label>
       </div>
 
       {/* Title */}
@@ -334,7 +386,7 @@ export function ProposalReviewClient({
         <SectionWrapper
           label={t.review.sections.scopeItems}
           confidence={confidence?.scopeItems}
-          reviewed={reviewed.includes("scopeItems")}
+          reviewed={reviewGates.scope?.confirmed ?? false}
           onMarkReviewed={() => handleMarkReviewed("scopeItems")}
           canEdit={canEdit}
           sectionId="scopeItems"
@@ -367,8 +419,9 @@ export function ProposalReviewClient({
         <SectionWrapper
           label={t.review.sections.commercialTerms}
           confidence={confidence?.commercialTerms}
-          reviewed={reviewed.includes("commercialTerms")}
-          onMarkReviewed={() => handleMarkReviewed("commercialTerms")}
+          reviewed={reviewGates.commercialTerms?.confirmed ?? false}
+          onMarkReviewed={() => handleConfirmGate("commercialTerms")}
+          hideReview
           canEdit={canEdit}
           sectionId="commercialTerms"
           onSectionRegenerate={handleSectionRegenerate}
@@ -460,9 +513,34 @@ export function ProposalReviewClient({
                   </tbody>
                 </table>
               </div>
+              <SmartBoqPanel
+                proposalId={proposal.id}
+                budget={proposal.budget}
+                commercialMode={proposal.commercialMode}
+                variancePercent={proposal.estimateVariancePercent ?? 15}
+                lines={boqLines}
+                contentLocale={contentLocale}
+                canEdit={canEdit}
+                commercialGateConfirmed={reviewGates.commercialTerms?.confirmed ?? false}
+                boqGateConfirmed={reviewGates.boqBreakdown?.confirmed ?? false}
+                onLinesUpdated={handleBoqLinesUpdated}
+                onConfirmGate={handleConfirmGate}
+              />
             </div>
           )}
         </SectionWrapper>
+
+        <ClausePackPanel
+          contentLocale={contentLocale}
+          canEdit={canEdit}
+          packNameAr={proposal.clausePackNameAr}
+          packNameEn={proposal.clausePackNameEn}
+          packVersion={proposal.clausePackVersion}
+          selections={proposal.clauseSelections ?? []}
+          clauseGateConfirmed={reviewGates.clausePack?.confirmed ?? false}
+          legalGateConfirmed={reviewGates.legalDisclaimer?.confirmed ?? false}
+          onConfirmGate={handleConfirmGate}
+        />
 
         {/* Timeline */}
         {proposal.timeline && (
@@ -568,8 +646,9 @@ export function ProposalReviewClient({
         <SectionWrapper
           label={t.review.sections.assumptions}
           confidence={confidence?.assumptions}
-          reviewed={reviewed.includes("assumptions")}
-          onMarkReviewed={() => handleMarkReviewed("assumptions")}
+          reviewed={reviewGates.clausePack?.confirmed ?? false}
+          onMarkReviewed={() => handleConfirmGate("clausePack")}
+          hideReview
           canEdit={canEdit}
           sectionId="assumptions"
           onSectionRegenerate={handleSectionRegenerate}
@@ -614,8 +693,9 @@ export function ProposalReviewClient({
         <SectionWrapper
           label={t.review.sections.exclusions}
           confidence={confidence?.exclusions}
-          reviewed={reviewed.includes("exclusions")}
-          onMarkReviewed={() => handleMarkReviewed("exclusions")}
+          reviewed={reviewGates.clausePack?.confirmed ?? false}
+          onMarkReviewed={() => handleConfirmGate("clausePack")}
+          hideReview
           canEdit={canEdit}
           sectionId="exclusions"
           onSectionRegenerate={handleSectionRegenerate}
@@ -661,10 +741,7 @@ export function ProposalReviewClient({
       <div className="sticky bottom-0 -mx-4 mt-8 border-t border-gray-100 bg-white/95 px-4 py-4 backdrop-blur">
         <div className="flex items-center justify-between">
           <span className="text-sm text-gray-500">
-            {t.review.reviewedCount(
-              REVIEW_GATES.filter((s) => reviewed.includes(s.id)).length,
-              REVIEW_GATES.length
-            )}
+            {t.review.gatesProgress(gateProgress.confirmed, gateProgress.total)}
           </span>
           <button
             onClick={handleExport}
