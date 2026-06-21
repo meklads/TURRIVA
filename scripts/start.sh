@@ -7,10 +7,16 @@ echo " PORT=$PORT"
 echo "=========================================="
 
 # Sync once before accepting traffic (adds new columns e.g. Proposal.locale)
-if [ -n "$DATABASE_URL" ]; then
+  if [ -n "$DATABASE_URL" ]; then
   echo "→ Database schema setup..."
   if ./node_modules/.bin/prisma db push --skip-generate 2>&1; then
     echo "→ Database schema ready ✓"
+    echo "→ Seeding clause packs (fit_out_v1, supervision_v1, maintenance_v1)..."
+    if node --experimental-strip-types prisma/seed.ts 2>&1; then
+      echo "→ Clause packs seeded ✓"
+    else
+      echo "⚠ Clause pack seed failed — will auto-seed on first proposal"
+    fi
   else
     echo "→ DB push failed — retrying in background..."
     (

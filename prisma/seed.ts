@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import { CLAUSE_PACKS, PLACEHOLDER_DEFAULTS } from "./seed/clause-data.ts";
+import { CLAUSE_PACKS, PLACEHOLDER_DEFAULTS } from "../../src/shared/constants/clause-pack-seed.ts";
 
 const prisma = new PrismaClient();
 

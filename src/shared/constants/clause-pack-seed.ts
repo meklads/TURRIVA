@@ -6,7 +6,7 @@
 import {
   PLACEHOLDER_DEFAULTS,
   type PlaceholderKey,
-} from "../../src/shared/constants/clause-placeholder-defaults";
+} from "./clause-placeholder-defaults";
 
 export { PLACEHOLDER_DEFAULTS };
 

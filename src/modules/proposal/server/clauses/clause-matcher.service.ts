@@ -37,6 +37,7 @@ import {
   isPriceEscalationClause,
 } from "./clause.types";
 import { TrustLayerValidationError } from "@/shared/types/trust-layer.types";
+import { ensureClausePacksSeeded } from "./clause-pack-seed.service";
 
 function proposalCommercialMode(raw: string | null | undefined): CommercialMode {
   return raw === "estimate_only" ? "estimate_only" : "fixed_price";
@@ -269,6 +270,7 @@ export async function matchClausesForProposal(
     });
 
   const packSlug = packSlugForArchetype(archetype);
+  await ensureClausePacksSeeded();
   const pack = await loadClausePackBySlug(packSlug);
 
   if (!pack) {

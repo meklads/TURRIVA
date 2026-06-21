@@ -31,6 +31,12 @@ function actionError(error: unknown, fallback: string) {
   } else if (message.includes("Can't reach database server")) {
     message =
       "Cannot reach the database server. Check DATABASE_URL and that PostgreSQL is running.";
+  } else if (
+    message.includes("Clause pack not found") ||
+    message.includes("CLAUSE_PACK_NOT_FOUND")
+  ) {
+    message =
+      "Legal clause library is still initializing. Wait a moment and try again — if this persists, redeploy or run: npm run db:seed";
   }
 
   console.error(`[proposal.action] ${fallback}:`, error);
