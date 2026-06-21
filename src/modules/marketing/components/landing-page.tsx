@@ -15,7 +15,7 @@ type Props = {
   locale: Locale;
 };
 
-/** Root landing — premium Navy/Gold gateway. No chat widgets or mock UIs. */
+/** Root landing — Apple minimalist light canvas. */
 export function LandingPage({ t, locale }: Props) {
   const s = t.sales;
   const arrow = locale === "ar" ? "←" : "→";
@@ -26,11 +26,11 @@ export function LandingPage({ t, locale }: Props) {
     <div className="ruwaq-landing-shell">
       <MarketingHero hero={s.hero} locale={locale} trustPills={trustPills} />
 
-      <section className="ruwaq-landing-section ruwaq-landing-section--elevated">
+      <section className="ruwaq-landing-section ruwaq-landing-section--soft">
         <div className="ruwaq-landing-section-inner max-w-5xl">
           <HeroStepsStrip title={s.heroSteps.title} steps={s.heroSteps.items} />
           <div className="mt-12 text-center">
-            <Link href="/proposals/new" className="btn-ruwaq-luxury inline-flex px-9 py-3.5">
+            <Link href="/proposals/new" className="btn-ruwaq-primary inline-flex px-9 py-3.5">
               {s.hero.cta} {arrow}
             </Link>
           </div>
@@ -39,22 +39,21 @@ export function LandingPage({ t, locale }: Props) {
 
       <section className="ruwaq-landing-section">
         <div className="ruwaq-landing-section-inner">
-          <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <div>
               <SectionHeader
                 eyebrow={s.problem.eyebrow}
                 title={s.problem.title}
                 subtitle={s.problem.body}
                 align="start"
-                dark
               />
               <div className="mt-10 grid gap-4 sm:grid-cols-2">
-                <div className="ruwaq-luxury-card ruwaq-luxury-card--muted">
-                  <p className="ruwaq-compare-label text-red-400/90">{s.problem.traditionalLabel}</p>
+                <div className="ruwaq-light-card">
+                  <p className="ruwaq-compare-label text-red-500/80">{s.problem.traditionalLabel}</p>
                   <ul className="mt-4 space-y-2.5">
                     {s.problem.traditional.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-white/55">
-                        <span className="mt-0.5 shrink-0 text-red-400/80" aria-hidden>
+                      <li key={item} className="flex items-start gap-2 text-sm text-ruwaq-ink-soft">
+                        <span className="mt-0.5 shrink-0 text-red-400" aria-hidden>
                           ✕
                         </span>
                         {item}
@@ -62,11 +61,11 @@ export function LandingPage({ t, locale }: Props) {
                     ))}
                   </ul>
                 </div>
-                <div className="ruwaq-luxury-card ruwaq-luxury-card--gold">
+                <div className="ruwaq-light-card ruwaq-light-card--highlight">
                   <p className="ruwaq-compare-label text-ruwaq-gold">{s.problem.ruwaqLabel}</p>
                   <ul className="mt-4 space-y-2.5">
                     {s.problem.ruwaq.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-white/85">
+                      <li key={item} className="flex items-start gap-2 text-sm text-ruwaq-ink">
                         <span className="mt-0.5 shrink-0 text-ruwaq-gold" aria-hidden>
                           ✓
                         </span>
@@ -82,29 +81,27 @@ export function LandingPage({ t, locale }: Props) {
               alt={sectionAlts.problem}
               priority
               variant="tall"
-              luxury
             />
           </div>
         </div>
       </section>
 
-      <section className="ruwaq-landing-section ruwaq-landing-section--elevated">
+      <section className="ruwaq-landing-section ruwaq-landing-section--warm">
         <div className="ruwaq-landing-section-inner">
           <SectionHeader
             eyebrow={s.features.eyebrow}
             title={s.features.title}
             subtitle={s.features.subtitle}
-            dark
           />
-          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
+          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
             {s.features.items.map(({ icon, title, body }, i) => (
-              <article key={title} className="ruwaq-luxury-card">
+              <article key={title} className="ruwaq-light-card">
                 <span className="ruwaq-service-num">{String(i + 1).padStart(2, "0")}</span>
-                <span className="mt-4 block text-2xl" aria-hidden>
+                <span className="block text-2xl" aria-hidden>
                   {icon}
                 </span>
-                <h3 className="mt-4 text-lg font-semibold text-white">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/55">{body}</p>
+                <h3 className="mt-4 text-lg font-semibold text-ruwaq-ink">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ruwaq-ink-soft">{body}</p>
               </article>
             ))}
           </div>
@@ -117,25 +114,24 @@ export function LandingPage({ t, locale }: Props) {
             eyebrow={s.why.eyebrow}
             title={s.why.title}
             subtitle={s.why.subtitle}
-            dark
           />
           <div className="ruwaq-comparison-table mt-14 lg:mt-16">
-            <div className="hidden grid-cols-[1fr_1fr_1fr] border-b border-white/10 text-xs font-semibold uppercase tracking-wider text-white/40 sm:grid">
+            <div className="hidden grid-cols-[1fr_1fr_1fr] border-b border-slate-100 bg-ruwaq-canvas-soft text-xs font-semibold uppercase tracking-wider text-ruwaq-ink-muted sm:grid">
               <div className="px-6 py-4">{s.why.table.need}</div>
-              <div className="border-s border-white/10 px-6 py-4">{s.why.table.others}</div>
-              <div className="border-s border-white/10 px-6 py-4 text-ruwaq-gold">{s.why.table.ruwaq}</div>
+              <div className="border-s border-slate-100 px-6 py-4">{s.why.table.others}</div>
+              <div className="border-s border-slate-100 px-6 py-4 text-ruwaq-gold">{s.why.table.ruwaq}</div>
             </div>
             {s.why.rows.map((row) => (
-              <div key={row.need} className="grid border-t border-white/10 sm:grid-cols-[1fr_1fr_1fr]">
-                <div className="px-6 py-5 text-sm font-medium text-white">{row.need}</div>
-                <div className="border-t border-white/10 px-6 py-5 text-sm text-white/45 sm:border-t-0 sm:border-s">
-                  <span className="mb-1 block text-[10px] font-bold uppercase text-white/25 sm:hidden">
+              <div key={row.need} className="grid border-t border-slate-100 sm:grid-cols-[1fr_1fr_1fr]">
+                <div className="px-6 py-5 text-sm font-medium text-ruwaq-ink">{row.need}</div>
+                <div className="border-t border-slate-100 px-6 py-5 text-sm text-ruwaq-ink-soft sm:border-t-0 sm:border-s">
+                  <span className="mb-1 block text-[10px] font-bold uppercase text-ruwaq-ink-muted sm:hidden">
                     {s.why.table.others}
                   </span>
                   {row.others}
                 </div>
-                <div className="border-t border-white/10 bg-ruwaq-gold/10 px-6 py-5 text-sm font-medium text-ruwaq-gold sm:border-s sm:border-t-0">
-                  <span className="mb-1 block text-[10px] font-bold uppercase text-ruwaq-gold/60 sm:hidden">
+                <div className="ruwaq-row-highlight border-t border-slate-100 px-6 py-5 text-sm font-medium sm:border-s sm:border-t-0">
+                  <span className="mb-1 block text-[10px] font-bold uppercase text-ruwaq-gold/70 sm:hidden">
                     {s.why.table.ruwaq}
                   </span>
                   {row.ruwaq}
@@ -146,24 +142,23 @@ export function LandingPage({ t, locale }: Props) {
         </div>
       </section>
 
-      <section className="ruwaq-landing-section ruwaq-landing-section--elevated">
+      <section className="ruwaq-landing-section ruwaq-landing-section--soft">
         <div className="ruwaq-landing-section-inner">
-          <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
-            <SectionVisual src={LANDING_SECTION_IMAGES.trust} alt={sectionAlts.trust} variant="landscape" luxury />
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            <SectionVisual src={LANDING_SECTION_IMAGES.trust} alt={sectionAlts.trust} variant="landscape" />
             <div>
               <SectionHeader
                 eyebrow={s.sample.eyebrow}
                 title={s.sample.title}
                 subtitle={s.sample.body}
                 align="start"
-                dark
               />
-              <Link href="/proposals/new" className="btn-ruwaq-luxury mt-8 inline-flex px-9 py-3.5">
+              <Link href="/proposals/new" className="btn-ruwaq-primary mt-8 inline-flex px-9 py-3.5">
                 {s.hero.cta} {arrow}
               </Link>
               <Link
                 href="/templates/sample"
-                className="btn-ruwaq-outline-gold mt-4 inline-flex px-8 py-3 sm:ms-3 sm:mt-8"
+                className="btn-ruwaq-accent mt-4 inline-flex px-8 py-3 sm:ms-3 sm:mt-8"
               >
                 {s.sample.cta}
               </Link>
@@ -177,14 +172,14 @@ export function LandingPage({ t, locale }: Props) {
           <h2 className="ruwaq-cta-title">{s.ctaFinal.title}</h2>
           <p className="ruwaq-cta-lead mx-auto mt-5 max-w-xl">{s.ctaFinal.subtitle}</p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <Link href="/proposals/new" className="btn-ruwaq-luxury px-10 py-4 text-base">
+            <Link href="/proposals/new" className="btn-ruwaq-primary px-10 py-4 text-base">
               {s.ctaFinal.primary} {arrow}
             </Link>
-            <Link href="/templates/sample" className="btn-ruwaq-outline-gold px-8 py-3.5">
+            <Link href="/templates/sample" className="btn-ruwaq-accent px-8 py-3.5">
               {s.ctaFinal.secondary}
             </Link>
           </div>
-          <p className="mt-5 text-xs text-white/35">{s.ctaFinal.microcopy}</p>
+          <p className="mt-5 text-xs text-ruwaq-ink-muted">{s.ctaFinal.microcopy}</p>
         </div>
       </section>
     </div>

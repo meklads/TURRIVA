@@ -8,10 +8,9 @@ type Props = {
   wide?: boolean;
   variant?: "default" | "tall" | "landscape";
   offset?: boolean;
-  luxury?: boolean;
 };
 
-/** Editorial section image — premium frame on Navy landing. */
+/** Section image — minimal border on light canvas. */
 export function SectionVisual({
   src,
   alt,
@@ -20,7 +19,6 @@ export function SectionVisual({
   wide,
   variant = "default",
   offset = false,
-  luxury = false,
 }: Props) {
   const imgClass =
     variant === "landscape"
@@ -28,7 +26,7 @@ export function SectionVisual({
       : "ruwaq-section-visual-img";
 
   const wrapClass = [
-    luxury ? "ruwaq-section-visual-luxury" : "ruwaq-section-visual",
+    "ruwaq-section-visual-frame",
     wide ? "ruwaq-section-visual-wide" : "",
     offset ? "ruwaq-section-visual--offset" : "",
     variant === "tall" ? "ruwaq-section-visual--tall" : "",
@@ -52,7 +50,6 @@ export function SectionVisual({
   );
 }
 
-/** Landing section images — public/brand/body/ */
 export const LANDING_SECTION_IMAGES = {
   problem: "/brand/body/1.webp",
   sample: "/brand/body/2.webp",

@@ -3,30 +3,21 @@ type Props = {
   title: string;
   subtitle?: string;
   align?: "center" | "start";
-  dark?: boolean;
 };
 
-/** Shared landing section heading — Navy/Gold luxury rhythm. */
-export function SectionHeader({
-  eyebrow,
-  title,
-  subtitle,
-  align = "center",
-  dark = false,
-}: Props) {
+/** Shared landing section heading — light Apple rhythm. */
+export function SectionHeader({ eyebrow, title, subtitle, align = "center" }: Props) {
   const alignClass = align === "center" ? "text-center mx-auto" : "text-start";
 
   return (
     <header className={alignClass}>
-      <p className={dark ? "ruwaq-eyebrow-dark" : "ruwaq-eyebrow"}>{eyebrow}</p>
-      <h2
-        className={`ruwaq-section-title mt-3 sm:mt-4 ${dark ? "text-white" : ""} ${align === "center" ? "max-w-3xl" : ""}`}
-      >
+      <p className="ruwaq-eyebrow">{eyebrow}</p>
+      <h2 className={`ruwaq-section-title mt-3 sm:mt-4 ${align === "center" ? "max-w-3xl" : ""}`}>
         {title}
       </h2>
       {subtitle ? (
         <p
-          className={`ruwaq-section-lead mt-3 ${align === "center" ? "mx-auto max-w-2xl" : "max-w-xl"} ${dark ? "text-white/55" : ""}`}
+          className={`ruwaq-section-lead mt-3 ${align === "center" ? "mx-auto max-w-2xl" : "max-w-xl"}`}
         >
           {subtitle}
         </p>

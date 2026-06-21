@@ -9,7 +9,10 @@
     --ruwaq-ink-muted: #86868b;
     --ruwaq-gold: #c9a063;
     --ruwaq-gold-light: #d4b47a;
-    --ruwaq-gold-muted: rgba(201, 160, 99, 0.12);
+    --ruwaq-gold-muted: #f5f0e6;
+    --ruwaq-canvas: #ffffff;
+    --ruwaq-canvas-soft: #fbfbfd;
+    --ruwaq-canvas-warm: #fafafa;
     --ruwaq-brown: var(--ruwaq-gold);
     --ruwaq-brown-light: var(--ruwaq-gold-light);
     --ruwaq-brown-muted: var(--ruwaq-gold-muted);
@@ -84,19 +87,7 @@
 
 @layer components {
   .ruwaq-header {
-    @apply sticky top-0 z-50 border-b border-transparent bg-white/70 shadow-none backdrop-blur-xl backdrop-saturate-150 transition-colors duration-500 ease-apple;
-  }
-
-  .ruwaq-header--hero {
-    @apply fixed inset-x-0 top-0 border-b border-white/10 bg-ruwaq-navy/80 backdrop-blur-xl;
-  }
-
-  .ruwaq-header--hero .ruwaq-nav-link {
-    @apply text-white/70 hover:bg-white/10 hover:text-white;
-  }
-
-  .ruwaq-header--hero .btn-ruwaq-header-cta {
-    @apply btn-ruwaq-luxury px-5 py-2.5 text-xs sm:text-sm;
+    @apply sticky top-0 z-50 border-b border-slate-100/80 bg-white/80 shadow-none backdrop-blur-xl backdrop-saturate-150;
   }
 
   .ruwaq-header-accent {
@@ -104,35 +95,27 @@
   }
 
   .ruwaq-nav-link {
-    @apply relative rounded-full px-3.5 py-2 text-sm font-medium text-ruwaq-ink-soft transition-all duration-300 ease-apple hover:bg-ruwaq-linen hover:text-ruwaq-ink;
+    @apply relative rounded-full px-3.5 py-2 text-sm font-medium text-ruwaq-ink-soft transition-all duration-300 ease-apple hover:bg-ruwaq-canvas-soft hover:text-ruwaq-ink;
   }
 
   .ruwaq-nav-link::after {
     @apply hidden;
   }
 
-  .btn-ruwaq-luxury {
-    @apply inline-flex items-center justify-center rounded-full bg-ruwaq-gold px-7 py-3 text-sm font-bold tracking-tight text-ruwaq-navy shadow-lg shadow-ruwaq-gold/20 transition-all duration-300 ease-apple hover:bg-ruwaq-gold-light hover:shadow-ruwaq-gold/30 active:scale-[0.98];
-  }
-
-  .btn-ruwaq-outline-gold {
-    @apply inline-flex items-center justify-center rounded-full border border-ruwaq-gold/45 bg-transparent px-7 py-3 text-sm font-semibold tracking-tight text-ruwaq-gold transition-all duration-300 ease-apple hover:border-ruwaq-gold hover:bg-ruwaq-gold/10;
-  }
-
   .btn-ruwaq-primary {
-    @apply btn-ruwaq-luxury;
+    @apply inline-flex items-center justify-center rounded-full bg-ruwaq-ink px-7 py-3.5 text-sm font-semibold tracking-tight text-white shadow-sm transition-all duration-300 ease-apple hover:bg-[#333336] active:scale-[0.98];
   }
 
-  .btn-ruwaq-white {
-    @apply inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold tracking-tight text-charcoal shadow-ruwaq transition-all duration-300 ease-apple hover:bg-white/90 active:scale-[0.98];
+  .btn-ruwaq-accent {
+    @apply inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-7 py-3.5 text-sm font-semibold tracking-tight text-ruwaq-ink transition-all duration-300 ease-apple hover:border-slate-300 hover:bg-ruwaq-canvas-soft active:scale-[0.98];
   }
 
-  .btn-ruwaq-outline-light {
-    @apply inline-flex items-center justify-center rounded-full border border-white/35 bg-white/5 px-7 py-3 text-sm font-semibold tracking-tight text-white backdrop-blur-sm transition-all duration-300 ease-apple hover:border-white/55 hover:bg-white/10;
+  .btn-ruwaq-gold-link {
+    @apply inline-flex items-center justify-center rounded-full border border-ruwaq-gold/35 bg-transparent px-7 py-3 text-sm font-semibold text-ruwaq-gold transition-all duration-300 ease-apple hover:border-ruwaq-gold/60 hover:bg-ruwaq-gold-muted/40;
   }
 
   .btn-ruwaq-header-cta {
-    @apply btn-ruwaq-primary;
+    @apply btn-ruwaq-primary px-5 py-2.5 text-xs sm:text-sm;
   }
 
   .btn-ruwaq-secondary {
@@ -210,26 +193,19 @@
   }
 
   .ruwaq-landing-shell {
-    @apply bg-ruwaq-navy text-white;
+    @apply bg-white text-ruwaq-ink;
   }
 
   .ruwaq-landing-hero {
-    @apply relative flex min-h-[92vh] items-center justify-center overflow-hidden bg-ruwaq-navy pt-24;
-  }
-
-  .ruwaq-landing-hero-glow {
-    @apply pointer-events-none absolute inset-0;
-    background:
-      radial-gradient(ellipse 80% 60% at 50% -10%, rgba(201, 160, 99, 0.14), transparent 55%),
-      radial-gradient(ellipse 50% 40% at 80% 80%, rgba(201, 160, 99, 0.06), transparent 50%);
+    @apply relative overflow-hidden bg-white px-4 pb-8 pt-12 sm:px-6 sm:pb-12 sm:pt-16 lg:pb-16 lg:pt-20;
   }
 
   .ruwaq-landing-hero-inner {
-    @apply relative z-10 mx-auto w-full max-w-4xl px-4 py-20 text-center sm:px-6 sm:py-28 lg:py-32;
+    @apply relative z-10 mx-auto w-full max-w-4xl py-16 text-center sm:py-20 lg:py-24;
   }
 
   .ruwaq-hero-eyebrow {
-    @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-ruwaq-gold;
+    @apply text-[11px] font-semibold uppercase tracking-[0.2em] text-ruwaq-gold;
   }
 
   html[lang="ar"] .ruwaq-hero-eyebrow {
@@ -237,44 +213,46 @@
   }
 
   .ruwaq-hero-title {
-    font-family: var(--font-ar-display), var(--font-ar), serif;
-    font-size: clamp(2.35rem, 5.5vw, 4rem);
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
     font-weight: 700;
-    line-height: 1.1;
-    @apply text-white;
-  }
-
-  html[lang="en"] .ruwaq-hero-title {
-    font-family: var(--font-latin-display), Georgia, serif;
-    font-weight: 600;
+    line-height: 1.08;
     letter-spacing: -0.02em;
+    @apply text-ruwaq-ink;
   }
 
   html[lang="ar"] .ruwaq-hero-title {
-    line-height: 1.22;
     letter-spacing: 0.01em;
+    line-height: 1.18;
+  }
+
+  html[lang="en"] .ruwaq-hero-title {
+    @apply font-bold tracking-display;
   }
 
   .ruwaq-hero-lead {
-    font-size: clamp(1.05rem, 1.8vw, 1.2rem);
-    line-height: 1.75;
-    @apply mx-auto max-w-2xl text-white/60;
+    font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+    line-height: 1.65;
+    @apply mx-auto max-w-2xl text-ruwaq-ink-soft;
   }
 
   html[lang="ar"] .ruwaq-hero-lead {
-    line-height: 1.9;
+    line-height: 1.85;
   }
 
-  .ruwaq-trust-pills--luxury li {
-    @apply rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-medium text-white/70 backdrop-blur-sm;
+  .ruwaq-trust-pills li {
+    @apply rounded-full border border-slate-100 bg-ruwaq-canvas-soft px-4 py-2 text-xs font-medium text-ruwaq-ink-soft;
   }
 
   .ruwaq-landing-section {
-    @apply relative px-4 py-20 sm:px-6 sm:py-28 lg:py-32;
+    @apply relative px-4 py-24 sm:px-6 sm:py-28 lg:py-32;
   }
 
-  .ruwaq-landing-section--elevated {
-    @apply bg-ruwaq-navy-light;
+  .ruwaq-landing-section--soft {
+    @apply bg-ruwaq-canvas-soft;
+  }
+
+  .ruwaq-landing-section--warm {
+    @apply bg-ruwaq-canvas-warm;
   }
 
   .ruwaq-landing-section-inner {
@@ -282,142 +260,115 @@
   }
 
   .ruwaq-section-lead {
-    @apply text-base leading-relaxed sm:text-lg;
+    @apply text-base leading-relaxed text-ruwaq-ink-soft sm:text-lg;
   }
 
   html[lang="ar"] .ruwaq-section-lead {
     line-height: 1.85;
   }
 
-  .ruwaq-eyebrow-dark {
-    @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-ruwaq-gold;
+  .ruwaq-eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.2em] text-ruwaq-gold;
   }
 
-  html[lang="ar"] .ruwaq-eyebrow-dark {
+  html[lang="ar"] .ruwaq-eyebrow {
     @apply normal-case text-sm tracking-normal;
   }
 
   .ruwaq-section-title {
-    font-family: var(--font-ar-display), var(--font-ar), serif;
-    @apply text-3xl font-normal leading-[1.12] tracking-tight md:text-4xl lg:text-[2.75rem];
-  }
-
-  html[lang="en"] .ruwaq-section-title {
-    font-family: var(--font-latin-display), Georgia, serif;
-    font-weight: 500;
+    @apply text-3xl font-semibold leading-[1.12] tracking-tight text-ruwaq-ink md:text-4xl lg:text-[2.75rem];
   }
 
   html[lang="ar"] .ruwaq-section-title {
     font-weight: 700;
   }
 
-  .ruwaq-luxury-card {
-    @apply rounded-lg border border-white/10 bg-white/[0.03] p-6 sm:p-7;
+  html[lang="en"] .ruwaq-section-title {
+    @apply tracking-display;
   }
 
-  .ruwaq-luxury-card--muted {
-    @apply border-white/10 bg-white/[0.02];
+  .ruwaq-light-card {
+    @apply rounded-2xl border border-slate-100 bg-white p-8 shadow-sm sm:p-9;
   }
 
-  .ruwaq-luxury-card--gold {
-    @apply border-ruwaq-gold/25 bg-ruwaq-gold/5;
+  .ruwaq-light-card--highlight {
+    @apply border-ruwaq-gold/20 shadow-ruwaq;
   }
 
-  .ruwaq-section-visual-luxury {
-    @apply overflow-hidden rounded-lg border border-white/10 shadow-2xl shadow-black/30;
+  .ruwaq-section-visual-frame {
+    @apply overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm;
   }
 
   .ruwaq-landing-cta {
-    @apply relative border-t border-white/10 bg-ruwaq-navy px-4 py-24 sm:px-6 sm:py-32;
+    @apply relative border-t border-slate-100 bg-ruwaq-canvas-soft px-4 py-24 sm:px-6 sm:py-28 lg:py-32;
   }
 
   .ruwaq-cta-title {
-    font-family: var(--font-ar-display), var(--font-ar), serif;
-    @apply text-3xl font-normal leading-tight text-white sm:text-4xl lg:text-[2.75rem];
+    @apply text-3xl font-semibold leading-tight tracking-tight text-ruwaq-ink sm:text-4xl lg:text-[2.65rem];
   }
 
   html[lang="en"] .ruwaq-cta-title {
-    font-family: var(--font-latin-display), Georgia, serif;
-    font-weight: 500;
-  }
-
-  html[lang="ar"] .ruwaq-cta-title {
-    font-weight: 700;
+    @apply tracking-display;
   }
 
   .ruwaq-cta-lead {
-    @apply text-base leading-relaxed text-white/55 sm:text-lg;
+    @apply text-base leading-relaxed text-ruwaq-ink-soft sm:text-lg;
   }
 
   .ruwaq-hero-steps-title {
-    @apply text-center text-2xl font-normal tracking-tight text-white sm:text-3xl;
-    font-family: var(--font-ar-display), var(--font-ar), serif;
+    @apply text-center text-2xl font-semibold tracking-tight text-ruwaq-ink sm:text-3xl;
   }
 
   html[lang="en"] .ruwaq-hero-steps-title {
-    font-family: var(--font-latin-display), Georgia, serif;
-    font-weight: 500;
-  }
-
-  html[lang="ar"] .ruwaq-hero-steps-title {
-    font-weight: 700;
+    @apply tracking-display;
   }
 
   .ruwaq-hero-step-label {
-    @apply text-base font-bold text-white;
+    @apply text-base font-semibold text-ruwaq-ink;
   }
 
   .ruwaq-hero-step-hint {
-    @apply text-sm text-white/45;
+    @apply text-sm text-ruwaq-ink-muted;
   }
 
   .ruwaq-hero-step-illustration {
-    @apply relative h-36 w-36 shrink-0 overflow-hidden rounded-lg border border-white/10 bg-ruwaq-navy-light transition-transform duration-500 ease-apple hover:scale-[1.02] sm:h-40 sm:w-40;
+    @apply relative h-36 w-36 shrink-0 overflow-hidden rounded-2xl border border-slate-100 bg-ruwaq-canvas-soft shadow-sm transition-transform duration-500 ease-apple hover:scale-[1.02] sm:h-40 sm:w-40;
   }
 
   .ruwaq-service-num {
-    @apply block text-sm font-normal text-ruwaq-gold;
-    font-family: var(--font-ar-display), var(--font-ar), serif;
-  }
-
-  html[lang="en"] .ruwaq-service-num {
-    font-family: var(--font-latin-display), Georgia, serif;
+    @apply mb-2 block text-xs font-semibold uppercase tracking-widest text-ruwaq-gold;
   }
 
   .ruwaq-comparison-table {
-    @apply overflow-hidden rounded-lg border border-white/10 bg-white/[0.02];
+    @apply overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm;
   }
 
-  .ruwaq-footer-luxury {
-    @apply relative overflow-hidden border-t border-white/10 bg-ruwaq-navy text-white/75;
+  .ruwaq-comparison-table .ruwaq-row-highlight {
+    @apply bg-ruwaq-gold-muted/50 font-medium text-ruwaq-ink;
+  }
+
+  .ruwaq-footer-light {
+    @apply relative border-t border-slate-100 bg-ruwaq-canvas-soft text-ruwaq-ink-soft;
+  }
+
+  .ruwaq-footer-cta-title {
+    @apply text-3xl font-semibold leading-tight tracking-tight text-ruwaq-ink sm:text-4xl;
+  }
+
+  html[lang="en"] .ruwaq-footer-cta-title {
+    @apply tracking-display;
+  }
+
+  .ruwaq-link-gold {
+    @apply font-medium text-ruwaq-gold transition-colors hover:text-ruwaq-gold-light;
   }
 
   .ruwaq-hero-steps {
     @apply px-2 sm:px-0;
   }
 
-  .ruwaq-hero-step-illustration {
-    @apply relative h-36 w-36 shrink-0 overflow-hidden rounded-sm bg-warm transition-transform duration-500 ease-apple hover:scale-[1.02] sm:h-40 sm:w-40;
-  }
-
-  .ruwaq-hero-steps-title {
-    @apply text-center text-2xl font-normal tracking-tight sm:text-3xl;
-    font-family: var(--font-ar-display), var(--font-ar), serif;
-    color: var(--df-ink);
-  }
-
-  html[lang="en"] .ruwaq-hero-steps-title {
-    font-family: var(--font-latin-display), Georgia, serif;
-    font-weight: 500;
-    @apply text-charcoal;
-  }
-
   .ruwaq-hero-step-image {
     @apply h-full w-full object-cover object-center;
-  }
-
-  .ruwaq-section-visual {
-    @apply overflow-hidden rounded-sm bg-warm;
   }
 
   .ruwaq-section-visual--offset {
@@ -444,21 +395,6 @@
     @apply flex flex-wrap items-center justify-center gap-2;
   }
 
-  .ruwaq-trust-pills li {
-    @apply rounded-full border border-ruwaq-stone/80 bg-white px-4 py-2 text-xs font-medium text-ruwaq-ink-soft shadow-sm;
-  }
-
-  .ruwaq-eyebrow {
-    @apply text-[11px] font-semibold uppercase tracking-[0.2em] text-ruwaq-gold;
-  }
-
-  html[lang="ar"] .ruwaq-eyebrow {
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    @apply normal-case text-ruwaq-gold;
-  }
-
   .ruwaq-compare-label {
     @apply text-xs font-bold uppercase tracking-wider;
   }
@@ -473,10 +409,6 @@
 
   .ruwaq-compare-label-good {
     @apply text-ruwaq-gold;
-  }
-
-  .ruwaq-landing-dark {
-    @apply bg-ruwaq-navy;
   }
 
   .ruwaq-card {
@@ -543,106 +475,12 @@
     @apply rounded-sm border border-ruwaq-stone/40 bg-warm p-5;
   }
 
-  .ruwaq-comparison-table {
-    @apply overflow-hidden rounded-sm border border-white/10 bg-white/[0.03];
-  }
-
   .ruwaq-cta-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-7 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 ease-apple hover:border-white/35 hover:bg-white/10;
-  }
-
-  .ruwaq-section-title {
-    font-family: var(--font-ar-display), var(--font-ar), serif;
-    @apply text-3xl font-normal leading-[1.12] tracking-tight md:text-4xl lg:text-[2.85rem];
-    color: inherit;
-  }
-
-  html[lang="ar"] .ruwaq-section-title {
-    font-weight: 700;
-    color: var(--df-ink);
-  }
-
-  html[lang="en"] .ruwaq-section-title {
-    font-family: var(--font-latin-display), Georgia, serif;
-    font-weight: 500;
-    @apply text-charcoal;
-  }
-
-  .ruwaq-eyebrow-dark {
-    @apply text-[11px] font-semibold uppercase tracking-[0.2em] text-ruwaq-gold-light/90;
-  }
-
-  html[lang="ar"] .ruwaq-eyebrow-dark {
-    @apply text-sm normal-case tracking-normal;
+    @apply btn-ruwaq-accent;
   }
 
   .ruwaq-card-accent {
-    @apply ruwaq-card border-t-2 border-t-ruwaq-brown/40;
-  }
-
-  .ruwaq-product-mock--hero {
-    @apply shadow-ruwaq-soft lg:translate-y-1 lg:rotate-[0.5deg];
-  }
-
-  .ruwaq-hero-mock-wrap {
-    @apply relative;
-  }
-
-  .ruwaq-hero-mock-wrap::before {
-    content: "";
-    @apply pointer-events-none absolute -inset-4 rounded-[2rem] bg-ruwaq-gold/5 blur-2xl;
-  }
-
-  .ruwaq-hero-step-label {
-    @apply text-base font-bold;
-    color: inherit;
-  }
-
-  html[lang="ar"] .ruwaq-hero-step-label {
-    color: var(--df-ink);
-  }
-
-  html[lang="en"] .ruwaq-hero-step-label {
-    @apply text-ruwaq-navy;
-  }
-
-  .ruwaq-hero-step-hint {
-    @apply text-sm;
-    color: inherit;
-  }
-
-  html[lang="ar"] .ruwaq-hero-step-hint {
-    color: var(--df-ink-muted);
-  }
-
-  html[lang="en"] .ruwaq-hero-step-hint {
-    @apply text-ruwaq-navy-soft;
-  }
-
-  .ruwaq-trust-pills--light li {
-    @apply border-white/20 bg-white/10 text-white/80 backdrop-blur-sm;
-  }
-
-  .ruwaq-hero-steps-section {
-    @apply border-b border-white/10 bg-ruwaq-navy-light;
-  }
-
-  .ruwaq-footer-cta-title {
-    font-family: var(--font-ar-display), var(--font-ar), serif;
-    @apply text-4xl font-normal leading-tight text-white sm:text-5xl lg:text-[3.5rem];
-  }
-
-  html[lang="en"] .ruwaq-footer-cta-title {
-    font-family: var(--font-latin-display), Georgia, serif;
-    font-weight: 500;
-  }
-
-  .ruwaq-footer-watermark {
-    @apply pointer-events-none absolute inset-x-0 bottom-0 select-none text-center text-[clamp(4rem,18vw,12rem)] font-bold leading-none tracking-tight text-white/[0.03];
-  }
-
-  html[lang="en"] .ruwaq-footer-watermark {
-    font-family: var(--font-latin-display), Georgia, serif;
+    @apply ruwaq-card border-t-2 border-t-ruwaq-gold/30;
   }
 
   .ruwaq-logo-img {
