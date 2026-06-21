@@ -31,7 +31,7 @@ export async function SiteFooter() {
   ];
 
   return (
-    <footer className="relative bg-ruwaq-ink text-ruwaq-stone/90">
+    <footer className="relative bg-[#1d1d1f] text-ruwaq-stone/90">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ruwaq-champagne/50 to-transparent" />
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">

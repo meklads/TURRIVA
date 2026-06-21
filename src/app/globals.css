@@ -4,24 +4,26 @@
 
 @layer base {
   :root {
-    --ruwaq-ink: #1c1917;
-    --ruwaq-ink-soft: #5c564e;
-    --ruwaq-ink-muted: #8a8278;
+    --ruwaq-ink: #1d1d1f;
+    --ruwaq-ink-soft: #6e6e73;
+    --ruwaq-ink-muted: #86868b;
     --ruwaq-champagne: #9a7146;
     --ruwaq-champagne-light: #c4a574;
-    --ruwaq-linen: #f3f0e9;
-    --ruwaq-paper: #fcfcfa;
-    --ruwaq-stone: #e6e2d8;
+    --ruwaq-champagne-muted: #f5f0e8;
+    --ruwaq-linen: #f5f5f7;
+    --ruwaq-paper: #ffffff;
+    --ruwaq-stone: #e8e8ed;
+    --ruwaq-stone-mid: #d2d2d7;
     --ruwaq-navy: var(--ruwaq-ink);
     --ruwaq-gold: var(--ruwaq-champagne);
     --ruwaq-cream: var(--ruwaq-stone);
     --ruwaq-cream-bg: var(--ruwaq-linen);
-    --background: 0 0% 99%;
-    --foreground: 30 8% 10%;
+    --background: 0 0% 100%;
+    --foreground: 240 3% 12%;
     --radius: 1rem;
-    --df-ink: #1c1917;
-    --df-ink-soft: #5c564e;
-    --df-ink-muted: #8a8278;
+    --df-ink: #1d1d1f;
+    --df-ink-soft: #6e6e73;
+    --df-ink-muted: #86868b;
     --font-ar-fallback: "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
     --font-latin-fallback: system-ui, -apple-system, sans-serif;
   }
@@ -35,7 +37,7 @@
   }
 
   body {
-    @apply bg-ruwaq-paper text-ruwaq-ink antialiased;
+    @apply bg-white text-ruwaq-ink antialiased;
     font-size: 17px;
     line-height: 1.55;
     font-feature-settings: "rlig" 1, "calt" 1;
@@ -75,7 +77,7 @@
 
 @layer components {
   .ruwaq-header {
-    @apply sticky top-0 z-50 border-b border-ruwaq-stone/35 bg-ruwaq-paper/70 shadow-none backdrop-blur-2xl backdrop-saturate-150;
+    @apply sticky top-0 z-50 border-b border-ruwaq-stone/80 bg-ruwaq-paper/80 shadow-none backdrop-blur-2xl backdrop-saturate-150;
   }
 
   .ruwaq-header-accent {
@@ -83,7 +85,7 @@
   }
 
   .ruwaq-nav-link {
-    @apply relative rounded-full px-3.5 py-2 text-sm font-medium text-ruwaq-ink-soft transition-all duration-300 ease-apple hover:bg-ruwaq-linen/80 hover:text-ruwaq-ink;
+    @apply relative rounded-full px-3.5 py-2 text-sm font-medium text-ruwaq-ink-soft transition-all duration-300 ease-apple hover:bg-ruwaq-linen hover:text-ruwaq-ink;
   }
 
   .ruwaq-nav-link::after {
@@ -95,7 +97,7 @@
   }
 
   .btn-ruwaq-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-ruwaq-stone/70 bg-white/80 px-7 py-3 text-sm font-semibold tracking-tight text-ruwaq-ink backdrop-blur-sm transition-all duration-300 ease-apple hover:border-ruwaq-stone hover:bg-white hover:shadow-ruwaq;
+    @apply inline-flex items-center justify-center rounded-full border border-ruwaq-stone-mid/80 bg-white px-7 py-3 text-sm font-semibold tracking-tight text-ruwaq-ink transition-all duration-300 ease-apple hover:border-ruwaq-ink-muted hover:bg-ruwaq-linen hover:shadow-ruwaq;
   }
 
   .btn-ruwaq-ghost {
@@ -103,11 +105,11 @@
   }
 
   .btn-ruwaq-ink {
-    @apply inline-flex items-center justify-center rounded-full bg-ruwaq-ink px-7 py-3 text-sm font-semibold tracking-tight text-white shadow-ruwaq transition-all duration-300 ease-apple hover:bg-ruwaq-ink-soft active:scale-[0.98] disabled:opacity-45;
+    @apply inline-flex items-center justify-center rounded-full bg-ruwaq-ink px-7 py-3 text-sm font-semibold tracking-tight text-white shadow-ruwaq transition-all duration-300 ease-apple hover:bg-[#333336] active:scale-[0.98] disabled:opacity-45;
   }
 
   .btn-ruwaq-soft {
-    @apply inline-flex items-center justify-center rounded-full border border-ruwaq-stone/70 bg-white/90 px-4 py-2 text-sm font-medium text-ruwaq-ink-soft transition-all duration-300 ease-apple hover:border-ruwaq-stone hover:bg-white disabled:opacity-45;
+    @apply inline-flex items-center justify-center rounded-full border border-ruwaq-stone-mid/70 bg-white px-4 py-2 text-sm font-medium text-ruwaq-ink-soft transition-all duration-300 ease-apple hover:border-ruwaq-stone-mid hover:bg-ruwaq-linen disabled:opacity-45;
   }
 
   .ruwaq-hero-compact {
@@ -115,7 +117,7 @@
   }
 
   .app-page-hero {
-    @apply relative border-b border-ruwaq-stone/25 bg-ruwaq-paper;
+    @apply relative border-b border-ruwaq-stone/70 bg-white;
   }
 
   .app-page-hero-inner {
@@ -169,11 +171,11 @@
   }
 
   .ruwaq-landing-hero {
-    @apply relative overflow-hidden border-b border-ruwaq-stone/25;
+    @apply relative overflow-hidden border-b border-ruwaq-stone/60 bg-white;
     background: linear-gradient(
       180deg,
-      var(--ruwaq-paper) 0%,
-      #f8f6f1 55%,
+      #ffffff 0%,
+      #ffffff 40%,
       var(--ruwaq-linen) 100%
     );
   }
@@ -183,7 +185,7 @@
     @apply pointer-events-none absolute inset-0;
     background: radial-gradient(
       ellipse 70% 50% at 50% 0%,
-      rgba(154, 113, 70, 0.06),
+      rgba(154, 113, 70, 0.04),
       transparent 70%
     );
   }
@@ -249,15 +251,15 @@
   }
 
   .ruwaq-landing-section--paper {
-    @apply bg-ruwaq-paper;
+    @apply bg-white;
   }
 
   .ruwaq-landing-section--linen {
-    @apply bg-ruwaq-linen/45;
+    @apply bg-ruwaq-linen;
   }
 
   .ruwaq-landing-section--elevated {
-    @apply border-y border-ruwaq-stone/25 bg-gradient-to-b from-ruwaq-linen/30 to-ruwaq-paper;
+    @apply border-y border-ruwaq-stone/70 bg-ruwaq-linen;
   }
 
   .ruwaq-landing-section-inner {
@@ -277,7 +279,7 @@
   }
 
   .ruwaq-trust-pills li {
-    @apply rounded-full border border-ruwaq-stone/45 bg-white/70 px-4 py-2 text-xs font-medium text-ruwaq-ink-soft shadow-sm backdrop-blur-md;
+    @apply rounded-full border border-ruwaq-stone/80 bg-white px-4 py-2 text-xs font-medium text-ruwaq-ink-soft shadow-sm;
   }
 
   .ruwaq-eyebrow {
@@ -322,11 +324,11 @@
   }
 
   .ruwaq-landing-dark {
-    @apply bg-gradient-to-br from-ruwaq-ink via-[#2A2622] to-ruwaq-ink;
+    @apply bg-[#1d1d1f];
   }
 
   .ruwaq-landing-cta {
-    @apply relative overflow-hidden border-t border-ruwaq-champagne/15 bg-gradient-to-br from-ruwaq-ink via-[#252220] to-[#1a1816];
+    @apply relative overflow-hidden border-t border-ruwaq-stone-mid/30 bg-[#1d1d1f];
   }
 
   .ruwaq-product-mock {
@@ -334,7 +336,7 @@
   }
 
   .ruwaq-product-mock-bar {
-    @apply flex items-center gap-1.5 border-b border-ruwaq-stone/50 bg-ruwaq-linen/80 px-5 py-3;
+    @apply flex items-center gap-1.5 border-b border-ruwaq-stone/80 bg-ruwaq-linen px-5 py-3;
   }
 
   .ruwaq-compare-card {
@@ -346,7 +348,7 @@
   }
 
   .ruwaq-compare-good {
-    @apply border-ruwaq-champagne/25 bg-gradient-to-br from-ruwaq-champagne-muted/40 via-white to-ruwaq-linen/50 shadow-ruwaq;
+    @apply border-ruwaq-champagne/30 bg-gradient-to-br from-ruwaq-champagne-muted/50 via-white to-ruwaq-linen shadow-ruwaq;
   }
 
   .ruwaq-sample-card {
@@ -362,7 +364,7 @@
   }
 
   .ruwaq-feature-icon {
-    @apply inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-ruwaq-champagne-muted/45 text-xl text-ruwaq-champagne transition-transform duration-300 ease-apple group-hover:scale-105;
+    @apply inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-ruwaq-champagne-muted text-xl text-ruwaq-champagne transition-transform duration-300 ease-apple group-hover:scale-105;
   }
 
   .ruwaq-mini-card {
@@ -704,7 +706,7 @@
   }
 
   .ruwaq-share-hero {
-    @apply bg-gradient-to-br from-ruwaq-ink via-[#2d2925] to-[#1c1917] px-6 py-10 sm:px-10 sm:py-12;
+    @apply bg-[#1d1d1f] px-6 py-10 sm:px-10 sm:py-12;
   }
 
   .ruwaq-share-article {

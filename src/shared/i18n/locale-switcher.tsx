@@ -21,7 +21,7 @@ export function LocaleSwitcher() {
 
   return (
     <div
-      className="flex rounded-full border border-ruwaq-stone/50 bg-white/70 p-0.5 text-xs font-semibold shadow-sm backdrop-blur-md"
+      className="flex rounded-full border border-ruwaq-stone/80 bg-ruwaq-linen p-0.5 text-xs font-semibold"
       role="group"
       aria-label="Language"
     >
