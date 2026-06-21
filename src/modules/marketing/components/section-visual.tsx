@@ -8,9 +8,10 @@ type Props = {
   wide?: boolean;
   variant?: "default" | "tall" | "landscape";
   offset?: boolean;
+  luxury?: boolean;
 };
 
-/** Editorial section image — minimal frame, premium crop. */
+/** Editorial section image — premium frame on Navy landing. */
 export function SectionVisual({
   src,
   alt,
@@ -19,6 +20,7 @@ export function SectionVisual({
   wide,
   variant = "default",
   offset = false,
+  luxury = false,
 }: Props) {
   const imgClass =
     variant === "landscape"
@@ -26,7 +28,7 @@ export function SectionVisual({
       : "ruwaq-section-visual-img";
 
   const wrapClass = [
-    "ruwaq-section-visual",
+    luxury ? "ruwaq-section-visual-luxury" : "ruwaq-section-visual",
     wide ? "ruwaq-section-visual-wide" : "",
     offset ? "ruwaq-section-visual--offset" : "",
     variant === "tall" ? "ruwaq-section-visual--tall" : "",

@@ -6,7 +6,7 @@ type Props = {
   dark?: boolean;
 };
 
-/** Shared landing section heading — consistent rhythm. */
+/** Shared landing section heading — Navy/Gold luxury rhythm. */
 export function SectionHeader({
   eyebrow,
   title,
@@ -26,7 +26,7 @@ export function SectionHeader({
       </h2>
       {subtitle ? (
         <p
-          className={`ruwaq-section-lead mt-3 ${align === "center" ? "mx-auto max-w-2xl" : "max-w-xl"} ${dark ? "text-white/65" : ""}`}
+          className={`ruwaq-section-lead mt-3 ${align === "center" ? "mx-auto max-w-2xl" : "max-w-xl"} ${dark ? "text-white/55" : ""}`}
         >
           {subtitle}
         </p>

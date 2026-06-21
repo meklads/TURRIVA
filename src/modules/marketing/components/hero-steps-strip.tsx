@@ -13,7 +13,7 @@ const STEP_IMAGES = [
   "/brand/hero/step-happy.webp",
 ] as const;
 
-/** Minimal editorial steps row. */
+/** Three-step flow — clean, no chat UI. */
 export function HeroStepsStrip({ title, steps }: Props) {
   return (
     <div className="ruwaq-hero-steps">
