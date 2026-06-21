@@ -69,9 +69,13 @@
   html[lang="ar"] h1,
   html[lang="ar"] h2,
   html[lang="ar"] h3,
-  html[lang="ar"] h4 {
+  html[lang="ar"] h4,
+  html[data-lang="ar"] h1,
+  html[data-lang="ar"] h2,
+  html[data-lang="ar"] h3,
+  html[data-lang="ar"] h4 {
     font-family: var(--font-ar), var(--font-ar-fallback);
-    font-weight: 700;
+    font-weight: 800;
     color: var(--df-ink);
   }
 
@@ -349,11 +353,14 @@
   }
 
   .ruwaq-hero-ticket-title {
-    @apply text-base font-semibold leading-snug text-ruwaq-ink;
+    @apply text-base font-bold leading-normal text-ruwaq-ink sm:text-[1.0625rem];
   }
 
-  html[lang="ar"] .ruwaq-hero-ticket-title {
-    font-weight: 700;
+  html[lang="ar"] .ruwaq-hero-ticket-title,
+  html[data-lang="ar"] .ruwaq-hero-ticket-title {
+    font-family: var(--font-ar), var(--font-ar-fallback);
+    font-weight: 800;
+    line-height: 1.55;
   }
 
   .ruwaq-hero-ticket-body {
@@ -386,21 +393,25 @@
   }
 
   .ruwaq-hero-title {
-    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    font-size: clamp(2rem, 4.8vw, 3.5rem);
     font-weight: 700;
-    line-height: 1.08;
-    letter-spacing: -0.02em;
+    line-height: 1.22;
     text-wrap: balance;
     @apply text-ruwaq-ink;
   }
 
-  html[lang="ar"] .ruwaq-hero-title {
-    letter-spacing: 0.01em;
-    line-height: 1.18;
+  html[lang="ar"] .ruwaq-hero-title,
+  html[data-lang="ar"] .ruwaq-hero-title {
+    font-family: var(--font-ar), var(--font-ar-fallback);
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.48;
   }
 
   html[lang="en"] .ruwaq-hero-title {
-    @apply font-bold tracking-display;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    @apply font-bold;
   }
 
   .ruwaq-hero-lead {
@@ -418,8 +429,9 @@
     @apply text-[11px] font-semibold uppercase tracking-[0.2em] text-ruwaq-gold;
   }
 
-  html[lang="ar"] .ruwaq-hero-eyebrow {
-    @apply normal-case text-sm tracking-normal;
+  html[lang="ar"] .ruwaq-hero-eyebrow,
+  html[data-lang="ar"] .ruwaq-hero-eyebrow {
+    @apply text-sm font-medium tracking-normal;
   }
 
   .ruwaq-trust-pills li {
@@ -462,32 +474,43 @@
   }
 
   .ruwaq-section-lead {
-    @apply text-base leading-relaxed text-ruwaq-ink-soft sm:text-lg;
+    @apply text-[1.0625rem] leading-relaxed text-ruwaq-ink-soft sm:text-lg;
   }
 
-  html[lang="ar"] .ruwaq-section-lead {
-    line-height: 1.85;
+  html[lang="ar"] .ruwaq-section-lead,
+  html[data-lang="ar"] .ruwaq-section-lead {
+    line-height: 1.9;
+    font-weight: 400;
   }
 
   .ruwaq-eyebrow {
     @apply text-[11px] font-semibold uppercase tracking-[0.2em] text-ruwaq-gold;
   }
 
-  html[lang="ar"] .ruwaq-eyebrow {
-    @apply normal-case text-sm tracking-normal;
+  html[lang="ar"] .ruwaq-eyebrow,
+  html[data-lang="ar"] .ruwaq-eyebrow {
+    @apply text-sm font-medium tracking-normal;
   }
 
   .ruwaq-section-title {
-    @apply text-3xl font-semibold leading-[1.12] tracking-tight text-ruwaq-ink md:text-4xl lg:text-[2.75rem];
+    font-size: clamp(1.875rem, 4.2vw, 2.375rem);
+    font-weight: 700;
+    line-height: 1.28;
     text-wrap: balance;
+    @apply text-ruwaq-ink;
   }
 
-  html[lang="ar"] .ruwaq-section-title {
-    font-weight: 700;
+  html[lang="ar"] .ruwaq-section-title,
+  html[data-lang="ar"] .ruwaq-section-title {
+    font-family: var(--font-ar), var(--font-ar-fallback);
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.52;
   }
 
   html[lang="en"] .ruwaq-section-title {
-    @apply tracking-display;
+    letter-spacing: -0.025em;
+    line-height: 1.22;
   }
 
   .ruwaq-light-card {
@@ -503,12 +526,17 @@
   }
 
   .ruwaq-clause-pack-title {
-    @apply text-2xl font-semibold text-ruwaq-ink sm:text-3xl;
+    font-size: clamp(1.75rem, 3.5vw, 2.125rem);
+    @apply font-bold text-ruwaq-ink;
+    line-height: 1.48;
     text-wrap: balance;
   }
 
-  html[lang="ar"] .ruwaq-clause-pack-title {
-    font-weight: 700;
+  html[lang="ar"] .ruwaq-clause-pack-title,
+  html[data-lang="ar"] .ruwaq-clause-pack-title {
+    font-family: var(--font-ar), var(--font-ar-fallback);
+    font-weight: 800;
+    line-height: 1.55;
   }
 
   .ruwaq-clause-pack-meta {
@@ -572,12 +600,23 @@
   }
 
   .ruwaq-cta-title {
-    @apply text-3xl font-semibold leading-tight tracking-tight text-ruwaq-ink sm:text-4xl lg:text-[2.65rem];
+    font-size: clamp(1.875rem, 4vw, 2.375rem);
+    font-weight: 700;
+    line-height: 1.28;
     text-wrap: balance;
+    @apply text-ruwaq-ink;
+  }
+
+  html[lang="ar"] .ruwaq-cta-title,
+  html[data-lang="ar"] .ruwaq-cta-title {
+    font-family: var(--font-ar), var(--font-ar-fallback);
+    font-weight: 800;
+    line-height: 1.52;
   }
 
   html[lang="en"] .ruwaq-cta-title {
-    @apply tracking-display;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
   }
 
   .ruwaq-cta-lead {
@@ -585,11 +624,21 @@
   }
 
   .ruwaq-hero-steps-title {
-    @apply text-center text-2xl font-semibold tracking-tight text-ruwaq-ink sm:text-3xl;
+    font-size: clamp(1.625rem, 3.5vw, 2rem);
+    @apply font-bold text-ruwaq-ink;
+    line-height: 1.45;
+    text-wrap: balance;
+  }
+
+  html[lang="ar"] .ruwaq-hero-steps-title,
+  html[data-lang="ar"] .ruwaq-hero-steps-title {
+    font-family: var(--font-ar), var(--font-ar-fallback);
+    font-weight: 800;
+    line-height: 1.55;
   }
 
   html[lang="en"] .ruwaq-hero-steps-title {
-    @apply tracking-display;
+    letter-spacing: -0.025em;
   }
 
   .ruwaq-hero-step-label {
