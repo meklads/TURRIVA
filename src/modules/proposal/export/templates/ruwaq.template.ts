@@ -146,12 +146,12 @@ export function renderRuwaqTemplate(
           ? labels.tbd
           : `${formatAmount(line.amount, locale)} ${currency}`;
       const estimateTag = line.isEstimated
-        ? `<span style="display:inline-block;margin-${dir === "rtl" ? "right" : "left"}:6px;padding:2px 7px;border-radius:4px;background:${colors.estimateBg};border:1px solid ${colors.estimateBorder};font-size:10px;font-weight:600;color:${colors.estimateText};">${escapeHtml(review.boq.estimateBadge)}</span>`
+        ? `<span class="estimate-badge">${escapeHtml(review.boq.estimateBadge)}</span>`
         : "";
       return `<tr>
-        <td style="padding:10px 14px;border-bottom:1px solid ${colors.cream};">${escapeHtml(line.label)}${estimateTag}</td>
-        <td style="padding:10px 14px;border-bottom:1px solid ${colors.cream};text-align:center;">${escapeHtml(String(Math.round(line.percent * 10) / 10))}%</td>
-        <td style="padding:10px 14px;border-bottom:1px solid ${colors.cream};text-align:${dir === "rtl" ? "left" : "right"};font-weight:600;">${escapeHtml(amount)}</td>
+        <td class="boq-line-label">${escapeHtml(line.label)}${estimateTag}</td>
+        <td class="col-center tabular">${escapeHtml(String(Math.round(line.percent * 10) / 10))}%</td>
+        <td class="col-end tabular amount-cell">${escapeHtml(amount)}</td>
       </tr>`;
     })
     .join("");
@@ -161,20 +161,20 @@ export function renderRuwaqTemplate(
       ? `${sectionTitle(review.boq.title)}
       ${
         isEstimate
-          ? `<div class="estimate-banner">${escapeHtml(review.boq.estimateDisclaimerTop(variancePct))}</div>`
+          ? `<div class="estimate-banner"><span class="estimate-banner-label">${escapeHtml(review.boq.estimateBadge)}</span>${escapeHtml(review.boq.estimateDisclaimerTop(variancePct))}</div>`
           : ""
       }
-      <table>
+      <table class="boq-table">
         <thead><tr>
           <th>${escapeHtml(review.boq.lineItem)}</th>
-          <th>${escapeHtml(labels.percentage)}</th>
-          <th>${escapeHtml(labels.amount)}</th>
+          <th class="col-center">${escapeHtml(labels.percentage)}</th>
+          <th class="col-end">${escapeHtml(labels.amount)}</th>
         </tr></thead>
         <tbody>${boqRows}</tbody>
       </table>
       ${
         isEstimate
-          ? `<p style="font-size:12px;color:${colors.textMuted};margin:0 0 20px;line-height:1.6;">${escapeHtml(review.boq.estimateDisclaimerBottom(variancePct))}</p>`
+          ? `<p class="estimate-footnote">${escapeHtml(review.boq.estimateDisclaimerBottom(variancePct))}</p>`
           : ""
       }`
       : "";
@@ -212,11 +212,17 @@ export function renderRuwaqTemplate(
     : "";
 
   const watermarkOverlay = showWatermark
-    ? `<div class="watermark-overlay" aria-hidden="true">${Array.from({ length: 24 })
-        .map(() => `<span class="watermark-tile">${escapeHtml(watermarkText)}</span>`)
-        .join("")}</div>
-      <div class="watermark-band" aria-hidden="true">${escapeHtml(watermarkText)}</div>`
+    ? `<div class="watermark-layer" aria-hidden="true">
+        <div class="watermark-grid">${Array.from({ length: 18 })
+          .map(() => `<span class="watermark-tile">${escapeHtml(watermarkText)}</span>`)
+          .join("")}</div>
+      </div>
+      <div class="watermark-band" aria-hidden="true">
+        <span class="watermark-band-inner">${escapeHtml(watermarkText)}</span>
+      </div>`
     : "";
+
+  const bodyClass = showWatermark ? "has-watermark" : "";
 
   const milestones = Array.isArray(data.timeline?.milestones)
     ? (data.timeline!.milestones as Record<string, unknown>[])
@@ -266,7 +272,7 @@ export function renderRuwaqTemplate(
 
   const fontLink = `<link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Montserrat:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">`;
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@400;600;700&family=Montserrat:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">`;
 
   return `<!DOCTYPE html>
 <html dir="${dir}" lang="${locale}">
@@ -409,14 +415,89 @@ export function renderRuwaqTemplate(
       margin: 8px 0 16px;
     }
     .estimate-banner {
-      background: ${colors.estimateBg};
+      background: linear-gradient(135deg, ${colors.estimateBg} 0%, ${colors.creamBg} 100%);
       border: 1px solid ${colors.estimateBorder};
+      border-${dir === "rtl" ? "right" : "left"}: 3px solid ${colors.gold};
       border-radius: 10px;
-      padding: 12px 16px;
+      padding: 14px 18px;
       font-size: 13px;
       color: ${colors.estimateText};
-      margin: 12px 0;
+      line-height: 1.7;
+      margin: 12px 0 18px;
     }
+    .estimate-banner-label {
+      display: inline-block;
+      margin-${dir === "rtl" ? "left" : "right"}: 8px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(201, 160, 99, 0.15);
+      border: 1px solid rgba(201, 160, 99, 0.35);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: ${colors.estimateText};
+      vertical-align: middle;
+    }
+    .estimate-footnote {
+      font-size: 11px;
+      color: ${colors.estimateText};
+      margin: 0 0 22px;
+      line-height: 1.65;
+      padding: 10px 14px;
+      background: ${colors.creamBg};
+      border-radius: 8px;
+      border: 1px solid ${colors.cream};
+    }
+    .estimate-badge {
+      display: inline-block;
+      margin-${dir === "rtl" ? "right" : "left"}: 8px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: ${colors.estimateBg};
+      border: 1px solid ${colors.estimateBorder};
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: ${colors.estimateText};
+      vertical-align: middle;
+    }
+    .boq-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 22px;
+      border: 1px solid ${colors.navy};
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .boq-table th {
+      background: ${colors.navy};
+      color: ${colors.cream};
+      padding: 11px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      border-bottom: 2px solid ${colors.gold};
+    }
+    .boq-table td {
+      padding: 11px 14px;
+      font-size: 13px;
+      color: ${colors.text};
+      border-bottom: 1px solid ${colors.cream};
+    }
+    .boq-table tbody tr:nth-child(even) {
+      background: ${colors.creamBg};
+    }
+    .boq-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .boq-line-label {
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    .col-center { text-align: center; }
+    .col-end { text-align: ${dir === "rtl" ? "left" : "right"}; }
+    .tabular { font-variant-numeric: tabular-nums; }
+    .amount-cell { font-weight: 700; color: ${colors.navy}; }
     ul { padding-inline-start: 20px; margin: 8px 0; }
     li { margin: 8px 0; font-size: 13px; color: ${colors.text}; }
     .signature {
@@ -460,11 +541,12 @@ export function renderRuwaqTemplate(
       font-size: 11px;
     }
     .clause-item {
-      margin: 0 0 14px;
-      padding: 14px 16px;
-      background: ${colors.creamBg};
-      border: 1px solid ${colors.cream};
-      border-radius: 10px;
+      margin: 0 0 12px;
+      padding: 16px 18px;
+      background: ${colors.white};
+      border: 1px solid ${colors.navy};
+      border-${dir === "rtl" ? "right" : "left"}: 3px solid ${colors.gold};
+      border-radius: 8px;
       page-break-inside: avoid;
     }
     .clause-head {
@@ -506,27 +588,33 @@ export function renderRuwaqTemplate(
       font-size: 10px;
       color: ${colors.textMuted};
     }
-    .watermark-overlay {
+    .watermark-layer {
       position: fixed;
-      inset: -20%;
+      inset: 0;
       z-index: 9998;
       pointer-events: none;
-      display: flex;
-      flex-wrap: wrap;
-      align-content: space-around;
-      justify-content: space-around;
       overflow: hidden;
-      opacity: 0.06;
+    }
+    .watermark-grid {
+      position: absolute;
+      inset: -25%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      align-items: center;
+      justify-items: center;
+      transform: rotate(-28deg);
+      opacity: 0.055;
     }
     .watermark-tile {
-      font-size: 15px;
-      font-weight: 700;
+      font-size: 13px;
+      font-weight: 600;
       color: ${colors.navy};
-      transform: rotate(-32deg);
       white-space: nowrap;
-      padding: 36px 48px;
+      letter-spacing: 0.14em;
       user-select: none;
       font-family: ${fontFamily};
+      text-transform: uppercase;
     }
     .watermark-band {
       position: fixed;
@@ -535,23 +623,33 @@ export function renderRuwaqTemplate(
       right: 0;
       z-index: 9999;
       pointer-events: none;
+      padding: 0;
+      background: linear-gradient(180deg, rgba(247,245,242,0.97) 0%, rgba(247,245,242,0.88) 100%);
+      border-bottom: 2px solid ${colors.gold};
+      box-shadow: 0 1px 0 rgba(15,23,42,0.06);
+    }
+    .watermark-band-inner {
+      display: block;
       text-align: center;
-      padding: 6px 12px;
+      padding: 7px 16px;
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
       color: ${colors.navy};
-      background: rgba(230, 226, 219, 0.92);
-      border-bottom: 1px solid ${colors.gold};
-      opacity: 0.85;
+      font-family: ${fontFamily};
+    }
+    body.has-watermark .page-wrap {
+      margin-top: 36px;
     }
     @media print {
-      .watermark-overlay { opacity: 0.08; }
-      .watermark-band { opacity: 0.9; }
+      .watermark-grid { opacity: 0.07; }
+      .watermark-band { opacity: 1; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      body.has-watermark .page-wrap { margin-top: 32px; }
     }
   </style>
 </head>
-<body>
+<body class="${bodyClass}">
   ${watermarkOverlay}
   <button class="print-btn no-print" onclick="window.print()">${escapeHtml(labels.savePdf)}</button>
   <div class="page-wrap">

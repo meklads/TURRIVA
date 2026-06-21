@@ -68,43 +68,48 @@ export function SmartBoqPanel({
   };
 
   if (lines.length === 0) {
-    return <p className="text-sm text-gray-400">{t.review.boq.empty}</p>;
+    return <p className="text-sm text-ruwaq-navy-soft">{t.review.boq.empty}</p>;
   }
 
   return (
-    <div className="mt-6 border-t border-gray-100 pt-5">
-      {toast && (
-        <p className="mb-3 rounded-lg bg-green-50 px-3 py-2 text-xs text-green-800">
-          {toast}
-        </p>
-      )}
+    <div className="ruwaq-trust-panel">
+      {toast && <p className="ruwaq-trust-toast">{toast}</p>}
 
       {isEstimateOnly && (
-        <div className="mb-4 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs leading-relaxed text-amber-900">
+        <div className="ruwaq-estimate-callout">
           {t.review.boq.estimateDisclaimerTop(variancePercent)}
         </div>
       )}
 
-      <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-        <h3 className="text-sm font-bold text-gray-900">{t.review.boq.title}</h3>
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <h3 className="ruwaq-trust-panel-title">{t.review.boq.title}</h3>
         <span
-          className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
-            sumValid ? "bg-green-50 text-green-800" : "bg-red-50 text-red-800"
-          }`}
+          className={
+            sumValid ? "ruwaq-badge-budget-match" : "ruwaq-badge-budget-mismatch"
+          }
         >
-          {sumValid ? t.review.boq.budgetLockMatch : t.review.boq.budgetLockMismatch}
+          {sumValid ? (
+            <>
+              <span aria-hidden className="text-emerald-600">
+                ✓
+              </span>
+              {t.review.boq.budgetLockMatch}
+            </>
+          ) : (
+            t.review.boq.budgetLockMismatch
+          )}
         </span>
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="w-full min-w-[320px] text-sm">
+      <div className="ruwaq-trust-table-wrap">
+        <table className="ruwaq-trust-table">
           <thead>
-            <tr className="border-b text-gray-500">
-              <th className="pb-2 text-start font-medium">{t.review.boq.lineItem}</th>
-              <th className="pb-2 text-end font-medium">{t.review.amount}</th>
-              <th className="pb-2 text-center font-medium">{t.review.percentage}</th>
+            <tr>
+              <th className="text-start">{t.review.boq.lineItem}</th>
+              <th className="text-end">{t.review.amount}</th>
+              <th className="text-center">{t.review.percentage}</th>
               {isEstimateOnly && (
-                <th className="pb-2 text-center font-medium">{t.review.boq.estimateBadge}</th>
+                <th className="text-center">{t.review.boq.estimateBadge}</th>
               )}
             </tr>
           </thead>
@@ -112,26 +117,28 @@ export function SmartBoqPanel({
             {lines.map((line) => {
               const label = contentLocale === "ar" ? line.labelAr : line.labelEn;
               return (
-                <tr key={line.id} className="border-b border-gray-50">
-                  <td className="py-2 pe-2 text-gray-800">{label}</td>
-                  <td className="py-2 text-end tabular-nums">
+                <tr key={line.id}>
+                  <td className="pe-3 font-medium">{label}</td>
+                  <td className="text-end tabular-nums">
                     <input
                       type="text"
                       defaultValue={String(Math.round(line.amount))}
                       readOnly={!canEdit}
                       disabled={savingLineId === line.id}
                       onBlur={(e) => handleAmountBlur(line.id, e.target.value)}
-                      className="w-24 rounded border border-gray-200 px-2 py-1 text-end outline-none focus:border-brand-400 disabled:opacity-50"
+                      className="ruwaq-trust-input"
                     />
                   </td>
-                  <td className="py-2 text-center tabular-nums text-gray-600">
+                  <td className="text-center tabular-nums text-ruwaq-navy-soft">
                     {line.percent.toFixed(1)}%
                   </td>
                   {isEstimateOnly && (
-                    <td className="py-2 text-center">
-                      <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-medium text-amber-900">
-                        {t.review.boq.estimateBadge}
-                      </span>
+                    <td className="text-center">
+                      {(line.isEstimated || isEstimateOnly) && (
+                        <span className="ruwaq-badge-estimate">
+                          {t.review.boq.estimateBadge}
+                        </span>
+                      )}
                     </td>
                   )}
                 </tr>
@@ -139,12 +146,12 @@ export function SmartBoqPanel({
             })}
           </tbody>
           <tfoot>
-            <tr className="font-semibold text-gray-900">
-              <td className="pt-3">{t.review.total}</td>
-              <td className="pt-3 text-end tabular-nums">
+            <tr>
+              <td>{t.review.total}</td>
+              <td className="text-end tabular-nums">
                 {formatSar(sum, contentLocale)} {t.review.currency}
               </td>
-              <td className="pt-3 text-center tabular-nums">100%</td>
+              <td className="text-center tabular-nums">100%</td>
               {isEstimateOnly && <td />}
             </tr>
           </tfoot>
@@ -152,12 +159,12 @@ export function SmartBoqPanel({
       </div>
 
       {isEstimateOnly && (
-        <p className="mt-3 text-xs leading-relaxed text-amber-800">
+        <p className="ruwaq-estimate-footnote">
           {t.review.boq.estimateDisclaimerBottom(variancePercent)}
         </p>
       )}
 
-      <div className="mt-5 space-y-3 rounded-lg border border-gray-100 bg-gray-50/60 p-4">
+      <div className="ruwaq-gate-panel">
         <GateCheckbox
           id="gate-commercial"
           label={t.review.boq.confirmCommercial}
@@ -193,8 +200,8 @@ function GateCheckbox({
   return (
     <label
       htmlFor={id}
-      className={`flex cursor-pointer items-start gap-2 text-sm ${
-        disabled && !checked ? "opacity-60" : ""
+      className={`ruwaq-gate-checkbox ${checked ? "ruwaq-gate-checkbox--confirmed" : ""} ${
+        disabled && !checked ? "cursor-not-allowed opacity-60" : ""
       }`}
     >
       <input
@@ -205,9 +212,9 @@ function GateCheckbox({
         onChange={() => {
           if (!checked && !disabled) onConfirm();
         }}
-        className="mt-0.5 h-4 w-4 rounded border-gray-300 text-brand-600 focus:ring-brand-500"
+        className="mt-0.5 h-4 w-4 rounded border-ruwaq-cream text-ruwaq-gold focus:ring-ruwaq-gold/30"
       />
-      <span className={checked ? "text-green-800" : "text-gray-700"}>{label}</span>
+      <span>{label}</span>
     </label>
   );
 }

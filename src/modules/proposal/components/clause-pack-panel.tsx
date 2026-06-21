@@ -41,27 +41,26 @@ export function ClausePackPanel({
 
   if (selections.length === 0) {
     return (
-      <section className="section-card">
-        <h2 className="text-base font-bold text-gray-900">{t.review.clauses.title}</h2>
-        <p className="mt-2 text-sm text-gray-400">{t.review.clauses.empty}</p>
+      <section className="section-card border-ruwaq-cream">
+        <p className="ruwaq-eyebrow mb-2">{t.review.clauses.title}</p>
+        <p className="text-sm text-ruwaq-navy-soft">{t.review.clauses.empty}</p>
       </section>
     );
   }
 
   return (
-    <section className="section-card">
-      <div className="mb-4">
-        <h2 className="text-base font-bold text-gray-900">{t.review.clauses.title}</h2>
-        <p className="mt-1 text-xs text-gray-500">
-          {packName}
-          {packVersion ? ` · v${packVersion}` : ""}
-          {" · "}
+    <section className="section-card border-ruwaq-cream shadow-ruwaq">
+      <header className="mb-5 border-b border-ruwaq-cream pb-4">
+        <p className="ruwaq-eyebrow mb-1.5">{t.review.clauses.title}</p>
+        <h2 className="text-base font-bold text-ruwaq-navy">{packName}</h2>
+        <p className="ruwaq-trust-panel-meta">
+          {packVersion ? `v${packVersion} · ` : ""}
           {t.review.clauses.approvedCount(selections.length)}
         </p>
-      </div>
+      </header>
 
-      <div className="space-y-2">
-        {selections.map((clause) => {
+      <div className="space-y-2.5">
+        {selections.map((clause, index) => {
           const text =
             contentLocale === "ar" ? clause.renderedTextAr : clause.renderedTextEn;
           const isOpen = expanded[clause.id] ?? clause.isMandatory;
@@ -69,35 +68,46 @@ export function ClausePackPanel({
           return (
             <div
               key={clause.id}
-              className="rounded-lg border border-gray-100 bg-gray-50/40"
+              className={`ruwaq-clause-card ${
+                clause.isMandatory ? "ruwaq-clause-card--mandatory" : ""
+              }`}
             >
               <button
                 type="button"
                 onClick={() => toggleExpand(clause.id)}
-                className="flex w-full items-center justify-between gap-2 px-3 py-2.5 text-start"
+                className="ruwaq-clause-card-toggle"
+                aria-expanded={isOpen}
               >
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="text-sm font-medium text-gray-900">
+                <div className="flex flex-wrap items-center gap-2.5">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-ruwaq-navy text-[11px] font-bold text-white">
+                    {index + 1}
+                  </span>
+                  <span className="ruwaq-clause-category">
                     {categoryLabel(clause.category, t)}
                   </span>
                   {clause.isMandatory ? (
-                    <span className="rounded-full bg-brand-50 px-2 py-0.5 text-[10px] font-semibold text-brand-800">
+                    <span className="ruwaq-badge-mandatory">
                       {t.review.clauses.mandatory}
                     </span>
                   ) : (
-                    <span className="rounded-full bg-gray-100 px-2 py-0.5 text-[10px] text-gray-600">
+                    <span className="ruwaq-badge-recommended">
                       {t.review.clauses.recommended}
                     </span>
                   )}
                 </div>
-                <span className="text-xs text-gray-400">{isOpen ? "▲" : "▼"}</span>
+                <span
+                  className="shrink-0 text-xs font-medium text-ruwaq-gold"
+                  aria-hidden
+                >
+                  {isOpen ? "−" : "+"}
+                </span>
               </button>
 
               {isOpen && text && (
-                <div className="border-t border-gray-100 px-3 pb-3 pt-2">
-                  <p className="text-sm leading-relaxed text-gray-700">{text}</p>
+                <div className="ruwaq-clause-body">
+                  <p className="ruwaq-clause-text">{text}</p>
                   {clause.sourceRef && (
-                    <p className="mt-2 text-[10px] text-gray-400">
+                    <p className="mt-3 text-[10px] font-medium uppercase tracking-wide text-ruwaq-navy-soft/70">
                       {t.review.clauses.source}: {clause.sourceRef}
                     </p>
                   )}
@@ -108,38 +118,52 @@ export function ClausePackPanel({
         })}
       </div>
 
-      <div className="mt-5 space-y-3 rounded-lg border border-amber-100 bg-amber-50/50 p-4">
-        <label className="flex cursor-pointer items-start gap-2 text-sm">
-          <input
-            type="checkbox"
-            checked={clauseGateConfirmed}
-            disabled={!canEdit || clauseGateConfirmed}
-            onChange={() => {
-              if (!clauseGateConfirmed) void onConfirmGate("clausePack");
-            }}
-            className="mt-0.5 h-4 w-4 rounded border-gray-300 text-brand-600"
-          />
-          <span className={clauseGateConfirmed ? "text-green-800" : "text-gray-800"}>
-            {t.review.clauses.confirmClauses}
-          </span>
-        </label>
-
-        <label className="flex cursor-pointer items-start gap-2 text-sm">
-          <input
-            type="checkbox"
-            checked={legalGateConfirmed}
-            disabled={!canEdit || legalGateConfirmed}
-            onChange={() => {
-              if (!legalGateConfirmed) void onConfirmGate("legalDisclaimer");
-            }}
-            className="mt-0.5 h-4 w-4 rounded border-gray-300 text-brand-600"
-          />
-          <span className={legalGateConfirmed ? "text-green-800" : "text-gray-800"}>
-            {t.review.clauses.legalDisclaimer}
-          </span>
-        </label>
+      <div className="ruwaq-clause-gates">
+        <GateCheckbox
+          checked={clauseGateConfirmed}
+          disabled={!canEdit || clauseGateConfirmed}
+          onConfirm={() => onConfirmGate("clausePack")}
+          label={t.review.clauses.confirmClauses}
+        />
+        <GateCheckbox
+          checked={legalGateConfirmed}
+          disabled={!canEdit || legalGateConfirmed}
+          onConfirm={() => onConfirmGate("legalDisclaimer")}
+          label={t.review.clauses.legalDisclaimer}
+        />
       </div>
     </section>
+  );
+}
+
+function GateCheckbox({
+  checked,
+  disabled,
+  onConfirm,
+  label,
+}: {
+  checked: boolean;
+  disabled?: boolean;
+  onConfirm: () => void;
+  label: string;
+}) {
+  return (
+    <label
+      className={`ruwaq-gate-checkbox ${checked ? "ruwaq-gate-checkbox--confirmed" : ""} ${
+        disabled && !checked ? "cursor-not-allowed opacity-60" : ""
+      }`}
+    >
+      <input
+        type="checkbox"
+        checked={checked}
+        disabled={disabled}
+        onChange={() => {
+          if (!checked && !disabled) onConfirm();
+        }}
+        className="mt-0.5 h-4 w-4 rounded border-ruwaq-cream text-ruwaq-gold focus:ring-ruwaq-gold/30"
+      />
+      <span className="leading-relaxed">{label}</span>
+    </label>
   );
 }
 

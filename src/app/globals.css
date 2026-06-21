@@ -421,4 +421,130 @@
   .section-card-reviewed {
     @apply border-green-200 bg-green-50/40;
   }
+
+  /* Trust Layer — review panels (Smart BOQ + Clause Pack) */
+  .ruwaq-trust-panel {
+    @apply mt-8 border-t border-ruwaq-cream pt-6;
+  }
+
+  .ruwaq-trust-panel-title {
+    @apply text-sm font-bold tracking-tight text-ruwaq-navy;
+  }
+
+  .ruwaq-trust-panel-meta {
+    @apply mt-1 text-xs leading-relaxed text-ruwaq-navy-soft;
+  }
+
+  .ruwaq-badge-budget-match {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-emerald-200/80 bg-emerald-50/90 px-3 py-1 text-xs font-semibold text-emerald-800 shadow-sm;
+  }
+
+  .ruwaq-badge-budget-mismatch {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-red-200/80 bg-red-50/90 px-3 py-1 text-xs font-semibold text-red-800;
+  }
+
+  .ruwaq-badge-estimate {
+    @apply inline-flex items-center rounded-full border border-ruwaq-gold/35 bg-brand-50 px-2.5 py-0.5 text-[10px] font-semibold tracking-wide text-brand-700;
+  }
+
+  .ruwaq-estimate-callout {
+    @apply mb-5 rounded-xl border border-ruwaq-gold/25 bg-gradient-to-br from-brand-50/90 to-ruwaq-cream-bg/80 px-4 py-3 text-xs leading-relaxed text-brand-800;
+    border-inline-start-width: 3px;
+    border-inline-start-color: theme("colors.ruwaq.gold");
+  }
+
+  .ruwaq-estimate-footnote {
+    @apply mt-4 text-xs leading-relaxed text-brand-700/90;
+  }
+
+  .ruwaq-trust-table-wrap {
+    @apply overflow-x-auto rounded-xl border border-ruwaq-navy/10 bg-white shadow-sm;
+  }
+
+  .ruwaq-trust-table {
+    @apply w-full min-w-[320px] border-collapse text-sm;
+  }
+
+  .ruwaq-trust-table thead tr {
+    @apply border-b-2 border-ruwaq-navy/15 bg-ruwaq-cream-bg/80;
+  }
+
+  .ruwaq-trust-table th {
+    @apply px-4 py-3 text-xs font-bold uppercase tracking-wide text-ruwaq-navy-soft;
+  }
+
+  .ruwaq-trust-table tbody tr {
+    @apply border-b border-ruwaq-cream transition-colors hover:bg-ruwaq-cream-bg/40;
+  }
+
+  .ruwaq-trust-table td {
+    @apply px-4 py-3 text-ruwaq-navy;
+  }
+
+  .ruwaq-trust-table tfoot tr {
+    @apply border-t-2 border-ruwaq-navy/10 bg-ruwaq-cream-bg/50 font-semibold text-ruwaq-navy;
+  }
+
+  .ruwaq-trust-table tfoot td {
+    @apply px-4 py-3;
+  }
+
+  .ruwaq-trust-input {
+    @apply w-28 rounded-lg border border-ruwaq-cream bg-white px-2.5 py-1.5 text-end tabular-nums text-ruwaq-navy outline-none transition-shadow focus:border-ruwaq-gold/50 focus:ring-2 focus:ring-ruwaq-gold/20 disabled:opacity-50;
+  }
+
+  .ruwaq-gate-panel {
+    @apply mt-6 space-y-3 rounded-xl border border-ruwaq-cream bg-gradient-to-br from-ruwaq-cream-bg/70 to-white p-4 shadow-sm;
+    border-top: 2px solid theme("colors.ruwaq.gold");
+  }
+
+  .ruwaq-gate-checkbox {
+    @apply flex cursor-pointer items-start gap-3 rounded-lg px-2 py-1.5 text-sm transition-colors hover:bg-white/60;
+  }
+
+  .ruwaq-gate-checkbox--confirmed span {
+    @apply text-emerald-800;
+  }
+
+  .ruwaq-clause-card {
+    @apply overflow-hidden rounded-xl border border-ruwaq-cream bg-white shadow-sm transition-shadow hover:shadow-ruwaq;
+  }
+
+  .ruwaq-clause-card--mandatory {
+    @apply border-ruwaq-gold/20;
+    border-inline-start-width: 3px;
+    border-inline-start-color: theme("colors.ruwaq.gold");
+  }
+
+  .ruwaq-clause-card-toggle {
+    @apply flex w-full items-center justify-between gap-3 px-4 py-3.5 text-start transition-colors hover:bg-ruwaq-cream-bg/50;
+  }
+
+  .ruwaq-clause-category {
+    @apply text-sm font-semibold text-ruwaq-navy;
+  }
+
+  .ruwaq-clause-body {
+    @apply border-t border-ruwaq-cream bg-ruwaq-cream-bg/30 px-4 pb-4 pt-3;
+  }
+
+  .ruwaq-clause-text {
+    @apply text-sm leading-[1.85] text-ruwaq-navy-soft;
+  }
+
+  .ruwaq-badge-mandatory {
+    @apply rounded-full border border-ruwaq-gold/30 bg-brand-50 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-brand-800;
+  }
+
+  .ruwaq-badge-recommended {
+    @apply rounded-full border border-ruwaq-cream bg-ruwaq-cream-bg px-2.5 py-0.5 text-[10px] font-medium text-ruwaq-navy-soft;
+  }
+
+  .ruwaq-clause-gates {
+    @apply ruwaq-gate-panel border-amber-100/80 bg-gradient-to-br from-brand-50/40 to-ruwaq-cream-bg/60;
+  }
+
+  .ruwaq-trust-toast {
+    @apply mb-4 rounded-xl border border-emerald-200/80 bg-emerald-50/90 px-4 py-2.5 text-xs font-medium text-emerald-800;
+  }
 }
