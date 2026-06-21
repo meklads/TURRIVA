@@ -597,23 +597,26 @@ export function ProposalReviewClient({
           <SectionWrapper
             label={t.review.sections.deliverables}
             confidence={confidence?.deliverables}
-            reviewed={false}
-            onMarkReviewed={() => {}}
+            reviewed={reviewGates.deliverables?.confirmed ?? false}
+            onMarkReviewed={() => handleConfirmGate("deliverables")}
             hideReview
             canEdit={canEdit}
           >
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {proposal.deliverables.map((item, i) => (
-                <li key={item.id} className="group flex gap-2">
-                  <span className="mt-2 text-gray-400">•</span>
-                  <div className="flex-1">
+                <li
+                  key={item.id}
+                  className="group flex gap-3 rounded-xl border border-ruwaq-cream bg-ruwaq-cream-bg/40 px-4 py-3 transition-colors hover:bg-white"
+                >
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-ruwaq-gold" />
+                  <div className="min-w-0 flex-1">
                     <input
                       defaultValue={item.name}
                       onBlur={(e) =>
                         handleEdit(`deliverables[${i}].name`, e.target.value)
                       }
                       readOnly={!canEdit}
-                      className="inline-edit-input text-sm font-medium"
+                      className="inline-edit-input text-sm font-semibold text-ruwaq-navy"
                     />
                     <input
                       defaultValue={item.description}
@@ -624,21 +627,46 @@ export function ProposalReviewClient({
                         )
                       }
                       readOnly={!canEdit}
-                      className="inline-edit-input mt-1 text-xs text-gray-600"
+                      className="inline-edit-input mt-1 text-xs text-ruwaq-navy-soft"
                     />
                   </div>
                   {canEdit && (
-                  <button
-                    onClick={() => handleRemoveItem("deliverables", item.id)}
-                    className="opacity-0 transition-opacity group-hover:opacity-100"
-                    aria-label={t.review.removeItem}
-                  >
-                    <span className="text-xs text-gray-400 hover:text-red-500">✕</span>
-                  </button>
+                    <button
+                      onClick={() => handleRemoveItem("deliverables", item.id)}
+                      className="opacity-0 transition-opacity group-hover:opacity-100"
+                      aria-label={t.review.removeItem}
+                    >
+                      <span className="text-xs text-ruwaq-navy-soft hover:text-red-500">
+                        ✕
+                      </span>
+                    </button>
                   )}
                 </li>
               ))}
             </ul>
+
+            <div className="ruwaq-gate-panel mt-5">
+              <label
+                className={`ruwaq-gate-checkbox ${
+                  reviewGates.deliverables?.confirmed
+                    ? "ruwaq-gate-checkbox--confirmed"
+                    : ""
+                } ${!canEdit && !reviewGates.deliverables?.confirmed ? "cursor-not-allowed opacity-60" : ""}`}
+              >
+                <input
+                  type="checkbox"
+                  checked={reviewGates.deliverables?.confirmed ?? false}
+                  disabled={!canEdit || reviewGates.deliverables?.confirmed}
+                  onChange={() => {
+                    if (!reviewGates.deliverables?.confirmed) {
+                      void handleConfirmGate("deliverables");
+                    }
+                  }}
+                  className="mt-0.5 h-4 w-4 rounded border-ruwaq-cream text-ruwaq-gold focus:ring-ruwaq-gold/30"
+                />
+                <span className="leading-relaxed">{t.review.confirmDeliverables}</span>
+              </label>
+            </div>
           </SectionWrapper>
         )}
 

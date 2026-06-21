@@ -148,6 +148,7 @@ export const ar = {
     gatesProgress: (confirmed: number, total: number) =>
       `${confirmed}/${total} بوابات مؤكدة`,
     confirmUnderstanding: "أؤكد أن فهم المشروع وبيانات العميل دقيقة",
+    confirmDeliverables: "أؤكد أن المخرجات المذكورة أعلاه دقيقة وكاملة",
     boq: {
       title: "جدول التفصيل المالي (Smart BOQ)",
       lineItem: "البند",

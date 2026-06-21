@@ -130,6 +130,7 @@ export type Messages = {
     removeItem: string;
     gatesProgress: (confirmed: number, total: number) => string;
     confirmUnderstanding: string;
+    confirmDeliverables: string;
     boq: {
       title: string;
       lineItem: string;

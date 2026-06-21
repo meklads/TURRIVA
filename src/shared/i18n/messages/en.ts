@@ -152,6 +152,8 @@ export const en: Messages = {
       `${confirmed}/${total} gates confirmed`,
     confirmUnderstanding:
       "I confirm the project understanding and client details are accurate",
+    confirmDeliverables:
+      "I confirm the deliverables listed above are accurate and complete",
     boq: {
       title: "Financial breakdown (Smart BOQ)",
       lineItem: "Line item",
