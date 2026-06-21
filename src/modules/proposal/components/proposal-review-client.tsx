@@ -267,20 +267,14 @@ export function ProposalReviewClient({
       : t.review.gatesProgress(gateProgress.confirmed, gateProgress.total);
 
   return (
-    <div className="mx-auto max-w-3xl pb-8">
-      {toast && (
-        <div className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2 rounded-lg bg-gray-900 px-4 py-2 text-sm text-white shadow-lg">
-          {toast}
-        </div>
-      )}
+    <div className="ruwaq-review-shell">
+      {toast && <div className="ruwaq-toast">{toast}</div>}
       {!canEdit && (
-        <div className="mb-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-          {t.review.localeMismatch}
-        </div>
+        <div className="ruwaq-notice-warn">{t.review.localeMismatch}</div>
       )}
       <ClaimProposal proposalId={proposal.id} isGuest={!!isGuest} />
       {profileThin && !isGuest && (
-        <div className="mb-4 rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-900">
+        <div className="ruwaq-notice-info">
           {t.review.profileIncomplete}{" "}
           <Link
             href="/settings/company"
@@ -291,7 +285,7 @@ export function ProposalReviewClient({
         </div>
       )}
       {exported && isGuest && (
-        <div className="mb-4 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800">
+        <div className="ruwaq-notice-success">
           {t.review.postExportGuest}{" "}
           <Link
             href={`/login?callbackUrl=${encodeURIComponent(`/proposals/${proposal.id}?claim=1`)}`}
@@ -303,30 +297,30 @@ export function ProposalReviewClient({
       )}
 
       {/* Top bar */}
-      <div className="sticky top-14 z-40 -mx-4 mb-6 border-b border-gray-100 bg-white/95 px-4 py-3 backdrop-blur">
+      <div className="ruwaq-review-toolbar">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <Link
               href="/proposals/new"
-              className="text-sm text-gray-500 hover:text-gray-900"
+              className="text-sm text-ruwaq-ink-muted transition-colors hover:text-ruwaq-ink"
             >
               {t.review.backToNew}
             </Link>
-            <span className="rounded-full bg-amber-50 px-2.5 py-0.5 text-xs text-amber-800">
+            <span className="ruwaq-gate-progress-pending">
               {t.review.draftBadge}
             </span>
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={handleCopyWhatsApp}
-              className="rounded-lg border border-gray-200 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+              className="btn-ruwaq-soft"
             >
               {t.review.copyWhatsApp}
             </button>
             <button
               onClick={handleRegenerate}
               disabled={regenerating || !canEdit}
-              className="rounded-lg border border-gray-200 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50"
+              className="btn-ruwaq-soft disabled:opacity-50"
             >
               {regenerating ? t.review.regenerating : t.review.regenerate}
             </button>
@@ -334,22 +328,22 @@ export function ProposalReviewClient({
               onClick={handleExport}
               disabled={exporting || !gatesComplete}
               title={!gatesComplete ? t.review.exportBlocked : undefined}
-              className="rounded-lg bg-brand-500 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-600 disabled:opacity-50"
+              className="btn-ruwaq-primary px-4 py-2 disabled:opacity-50"
             >
               {exporting ? t.review.exporting : t.review.downloadPdf}
             </button>
           </div>
         </div>
-        <p className="mt-2 text-xs text-gray-500">{statusLabel}</p>
+        <p className="mt-2 text-xs text-ruwaq-ink-muted">{statusLabel}</p>
         {!gatesComplete && (
           <p className="mt-1 text-xs text-amber-700">{t.review.reviewGatesHint}</p>
         )}
       </div>
 
-      <div className="mb-6 rounded-xl border border-brand-100 bg-brand-50/40 px-4 py-3 text-sm text-brand-900">
+      <div className="ruwaq-review-trust-band text-sm text-ruwaq-ink">
         <p className="font-medium">{t.review.reviewGatesTitle}</p>
-        <p className="mt-1 text-brand-800/90">{t.review.trustBanner}</p>
-        <label className="mt-3 flex cursor-pointer items-start gap-2 text-sm text-gray-800">
+        <p className="mt-1 text-ruwaq-ink-soft">{t.review.trustBanner}</p>
+        <label className="mt-3 flex cursor-pointer items-start gap-2 text-sm text-ruwaq-ink-soft">
           <input
             type="checkbox"
             checked={reviewGates.projectUnderstanding?.confirmed ?? false}
@@ -359,26 +353,26 @@ export function ProposalReviewClient({
                 void handleConfirmGate("projectUnderstanding");
               }
             }}
-            className="mt-0.5 h-4 w-4 rounded border-gray-300 text-brand-600"
+            className="mt-0.5 h-4 w-4 rounded border-ruwaq-stone text-ruwaq-champagne focus:ring-ruwaq-champagne/30"
           />
           <span>{t.review.confirmUnderstanding}</span>
         </label>
       </div>
 
       {/* Title */}
-      <div className="mb-8 rounded-xl border border-gray-100 bg-gray-50/50 p-6">
+      <div className="ruwaq-review-title-card">
         <h1
-          className="text-2xl font-bold text-gray-900 outline-none"
+          className="text-2xl font-bold text-ruwaq-ink outline-none"
           contentEditable={canEdit}
           suppressContentEditableWarning
           onBlur={(e) => handleEdit("projectName", e.currentTarget.textContent)}
         >
           {proposal.projectName}
         </h1>
-        <p className="mt-2 text-sm text-gray-500">
+        <p className="mt-2 text-sm text-ruwaq-ink-muted">
           {t.review.preparedFor}{" "}
           <span
-            className="font-medium text-gray-800 outline-none"
+            className="font-medium text-ruwaq-ink-soft outline-none"
             contentEditable={canEdit}
             suppressContentEditableWarning
             onBlur={(e) => handleEdit("clientName", e.currentTarget.textContent)}
@@ -387,12 +381,12 @@ export function ProposalReviewClient({
           </span>
         </p>
         {proposal.introduction && (
-          <div className="mt-4 border-t border-gray-100 pt-4">
-            <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">
+          <div className="mt-4 border-t border-ruwaq-stone/50 pt-4">
+            <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-ruwaq-ink-muted">
               {t.review.introduction}
             </p>
             <p
-              className="text-sm leading-relaxed text-gray-700 outline-none"
+              className="text-sm leading-relaxed text-ruwaq-ink-soft outline-none"
               contentEditable={canEdit}
               suppressContentEditableWarning
               onBlur={(e) =>
@@ -404,12 +398,12 @@ export function ProposalReviewClient({
           </div>
         )}
         {companyName && (
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm text-ruwaq-ink-muted">
             {t.review.preparedBy}{" "}
-            <span className="font-medium text-gray-800">{companyName}</span>
+            <span className="font-medium text-ruwaq-ink-soft">{companyName}</span>
           </p>
         )}
-        <p className="mt-1 text-xs text-gray-400">
+        <p className="mt-1 text-xs text-ruwaq-ink-muted/80">
           {t.review.date} {formatDate(proposal.createdAt, contentLocale)}
         </p>
       </div>
@@ -441,7 +435,7 @@ export function ProposalReviewClient({
           {canEdit && (
           <button
             onClick={() => handleAddItem("scopeItems")}
-            className="mt-2 text-sm font-medium text-brand-600 hover:text-brand-700"
+            className="ruwaq-link-action mt-2"
           >
             {t.review.addItem}
           </button>
@@ -488,7 +482,7 @@ export function ProposalReviewClient({
               <div className="overflow-x-auto">
                 <table className="w-full min-w-[280px] text-sm">
                   <thead>
-                    <tr className="border-b text-gray-500">
+                    <tr className="border-b border-ruwaq-stone/40 text-ruwaq-ink-muted">
                       <th className="pb-2 text-start font-medium">
                         {t.review.milestone}
                       </th>
@@ -503,7 +497,7 @@ export function ProposalReviewClient({
                   <tbody>
                     {(proposal.commercialTerms as any)?.paymentSchedule?.map(
                       (m: any, i: number) => (
-                        <tr key={i} className="border-b border-gray-50">
+                        <tr key={i} className="border-b border-ruwaq-stone/30">
                           <td className="py-2">
                             <span
                               contentEditable={canEdit}
@@ -524,7 +518,7 @@ export function ProposalReviewClient({
                             <span
                               contentEditable={canEdit}
                               suppressContentEditableWarning
-                              className="inline-block w-10 text-center outline-none focus:bg-gray-50"
+                              className="inline-block w-10 text-center outline-none focus:bg-ruwaq-linen"
                               onBlur={(e) => {
                                 if (!canEdit) return;
                                 handleEdit(
@@ -537,7 +531,7 @@ export function ProposalReviewClient({
                             </span>
                             %
                           </td>
-                          <td className="py-2 text-end tabular-nums text-gray-700">
+                          <td className="py-2 text-end tabular-nums text-ruwaq-ink-soft">
                             {formatSar(m.amount, contentLocale)} {t.review.currency}
                           </td>
                         </tr>
@@ -585,7 +579,7 @@ export function ProposalReviewClient({
             hideReview
             canEdit={canEdit}
           >
-            <p className="text-sm text-gray-700">
+            <p className="text-sm text-ruwaq-ink-soft">
               {t.review.duration}{" "}
               <span
                 contentEditable={canEdit}
@@ -603,7 +597,7 @@ export function ProposalReviewClient({
               <ul className="mt-3 space-y-2">
                 {(proposal.timeline.milestones ?? []).map((m, i) => (
                   <li key={i} className="flex gap-2 text-sm">
-                    <span className="text-gray-400">•</span>
+                    <span className="text-ruwaq-ink-muted/70">•</span>
                     <span
                       contentEditable={canEdit}
                       suppressContentEditableWarning
@@ -738,14 +732,14 @@ export function ProposalReviewClient({
               ))}
             </ul>
           ) : (
-            <p className="text-sm text-gray-400">{t.review.noAssumptions}</p>
+            <p className="text-sm text-ruwaq-ink-muted">{t.review.noAssumptions}</p>
           )}
           {canEdit && (
           <button
             onClick={() =>
               handleEdit("assumptions", [...(proposal.assumptions ?? []), ""])
             }
-            className="mt-2 text-sm font-medium text-brand-600"
+            className="ruwaq-link-action mt-2"
           >
             {t.review.addAssumption}
           </button>
@@ -787,14 +781,14 @@ export function ProposalReviewClient({
               ))}
             </ul>
           ) : (
-            <p className="text-sm text-gray-400">{t.review.noExclusions}</p>
+            <p className="text-sm text-ruwaq-ink-muted">{t.review.noExclusions}</p>
           )}
           {canEdit && (
           <button
             onClick={() =>
               handleEdit("exclusions", [...(proposal.exclusions ?? []), ""])
             }
-            className="mt-2 text-sm font-medium text-brand-600"
+            className="ruwaq-link-action mt-2"
           >
             {t.review.addExclusion}
           </button>
@@ -803,15 +797,15 @@ export function ProposalReviewClient({
       </div>
 
       {/* Bottom bar */}
-      <div className="sticky bottom-0 -mx-4 mt-8 border-t border-gray-100 bg-white/95 px-4 py-4 backdrop-blur">
+      <div className="ruwaq-review-bottom-bar">
         <div className="flex items-center justify-between">
-          <span className="text-sm text-gray-500">
+          <span className="text-sm text-ruwaq-ink-muted">
             {t.review.gatesProgress(gateProgress.confirmed, gateProgress.total)}
           </span>
           <button
             onClick={handleExport}
             disabled={exporting || !gatesComplete}
-            className="rounded-lg bg-brand-500 px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-600 disabled:opacity-50"
+            className="btn-ruwaq-primary px-6 py-2.5 disabled:opacity-50"
           >
             {exporting ? t.review.exporting : t.review.downloadPdf}
           </button>
@@ -852,10 +846,10 @@ function SectionWrapper({
     >
       <div className="mb-4 flex items-center justify-between gap-2">
         <div className="flex flex-wrap items-center gap-2">
-          <h2 className="text-base font-bold text-gray-900">{label}</h2>
+          <h2 className="text-base font-bold text-ruwaq-ink">{label}</h2>
           {(confidence === "always_warn" || confidence === "medium") &&
             !reviewed && (
-              <span className="rounded-full bg-gray-100 px-2 py-0.5 text-xs text-gray-600">
+              <span className="rounded-full bg-ruwaq-linen px-2 py-0.5 text-xs text-ruwaq-ink-muted">
                 {t.review.badges.review}
               </span>
             )}
@@ -871,7 +865,7 @@ function SectionWrapper({
               type="button"
               onClick={() => onSectionRegenerate(sectionId)}
               disabled={sectionRegenerating}
-              className="rounded-lg border border-gray-200 px-2 py-1 text-xs font-medium text-gray-600 hover:bg-gray-50 disabled:opacity-50"
+              className="btn-ruwaq-soft px-2 py-1 text-xs disabled:opacity-50"
             >
               {sectionRegenerating
                 ? t.review.sectionRegenerating
@@ -887,7 +881,7 @@ function SectionWrapper({
             ) : (
               <button
                 onClick={onMarkReviewed}
-                className="rounded-lg border border-gray-200 px-3 py-1 text-xs font-medium text-gray-600 hover:bg-gray-50"
+                className="btn-ruwaq-soft px-3 py-1 text-xs"
               >
                 {t.review.markReviewed}
               </button>
@@ -914,9 +908,9 @@ function ScopeItemCard({
 }) {
   const t = useT();
   return (
-    <div className="group mb-3 rounded-lg border border-gray-100 bg-gray-50/30 p-3 transition-colors hover:border-brand-100 hover:bg-white">
+    <div className="group ruwaq-scope-item">
       <div className="flex items-start gap-2">
-        <span className="mt-2 text-xs font-bold text-brand-500">{index + 1}</span>
+        <span className="ruwaq-scope-index">{index + 1}</span>
         <div className="flex-1">
           <input
             defaultValue={item.title}
@@ -929,7 +923,7 @@ function ScopeItemCard({
             defaultValue={item.description}
             onBlur={(e) => onUpdate("description", e.target.value)}
             readOnly={!canEdit}
-            className="inline-edit-area text-xs text-gray-600"
+            className="inline-edit-area text-xs text-ruwaq-ink-muted"
             placeholder={t.review.placeholders.itemDescription}
             rows={2}
           />
@@ -940,7 +934,7 @@ function ScopeItemCard({
           className="opacity-0 transition-opacity group-hover:opacity-100"
           aria-label={t.review.removeItem}
         >
-          <span className="text-xs text-gray-400 hover:text-red-500">✕</span>
+          <span className="text-xs text-ruwaq-ink-muted hover:text-red-500">✕</span>
         </button>
         )}
       </div>
@@ -962,7 +956,7 @@ function EditableListItem({
   const t = useT();
   return (
     <li className="group flex items-start gap-2">
-      <span className="mt-2 text-gray-400">•</span>
+      <span className="mt-2 text-ruwaq-ink-muted/70">•</span>
       <input
         defaultValue={value}
         onBlur={(e) => onUpdate(e.target.value)}
@@ -975,7 +969,7 @@ function EditableListItem({
         className="opacity-0 transition-opacity group-hover:opacity-100"
         aria-label={t.review.removeItem}
       >
-        <span className="text-xs text-gray-400 hover:text-red-500">✕</span>
+        <span className="text-xs text-ruwaq-ink-muted hover:text-red-500">✕</span>
       </button>
       )}
     </li>

@@ -7,7 +7,7 @@ export default function AuthLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen flex-col bg-gray-50">
+    <div className="flex min-h-screen flex-col bg-ruwaq-linen">
       <SiteHeader variant="marketing" />
       <div className="flex-1">{children}</div>
       <SiteFooter />

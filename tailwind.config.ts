@@ -12,24 +12,36 @@ const config: Config = {
     extend: {
       colors: {
         ruwaq: {
-          navy: "#0F172A",
-          "navy-soft": "#1F2937",
-          gold: "#C9A063",
-          "gold-light": "#D4B87A",
-          cream: "#E6E2DB",
-          "cream-bg": "#F7F5F2",
+          /* Luxury v2 — warm ink + champagne (fonts unchanged: Almarai / Montserrat) */
+          ink: "#1C1917",
+          "ink-soft": "#5C564E",
+          "ink-muted": "#8A8278",
+          champagne: "#9A7146",
+          "champagne-light": "#C4A574",
+          "champagne-muted": "#E8DFC8",
+          linen: "#F3F0E9",
+          paper: "#FCFCFA",
+          stone: "#E6E2D8",
+          sage: "#6B7F62",
+          /* Aliases — existing class names keep working */
+          navy: "#1C1917",
+          "navy-soft": "#5C564E",
+          gold: "#9A7146",
+          "gold-light": "#C4A574",
+          cream: "#E6E2D8",
+          "cream-bg": "#F3F0E9",
         },
         brand: {
-          50: "#FBF8F3",
+          50: "#FAF7F2",
           100: "#F3EDE3",
-          200: "#E6D9C4",
-          300: "#D4B87A",
-          400: "#C9A063",
-          500: "#C9A063",
-          600: "#B8924F",
-          700: "#9A7940",
-          800: "#1F2937",
-          900: "#0F172A",
+          200: "#E8DFC8",
+          300: "#D4BC96",
+          400: "#C4A574",
+          500: "#9A7146",
+          600: "#85633D",
+          700: "#6B5032",
+          800: "#1C1917",
+          900: "#141210",
         },
       },
       fontFamily: {
@@ -39,8 +51,14 @@ const config: Config = {
         display: ["var(--font-ar)", "Segoe UI", "sans-serif"],
       },
       boxShadow: {
-        ruwaq: "0 4px 24px -4px rgba(15, 23, 42, 0.08)",
-        "ruwaq-lg": "0 12px 40px -8px rgba(15, 23, 42, 0.12)",
+        ruwaq:
+          "0 1px 2px rgba(28, 25, 23, 0.03), 0 8px 28px rgba(28, 25, 23, 0.06)",
+        "ruwaq-lg":
+          "0 2px 6px rgba(28, 25, 23, 0.04), 0 24px 56px rgba(28, 25, 23, 0.08)",
+        "ruwaq-soft": "0 20px 50px -12px rgba(28, 25, 23, 0.12)",
+      },
+      borderRadius: {
+        "4xl": "2rem",
       },
     },
   },

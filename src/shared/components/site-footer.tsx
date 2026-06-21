@@ -31,25 +31,25 @@ export async function SiteFooter() {
   ];
 
   return (
-    <footer className="relative bg-ruwaq-navy text-gray-300">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ruwaq-gold/60 to-transparent" />
+    <footer className="relative bg-ruwaq-ink text-ruwaq-stone/90">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ruwaq-champagne/50 to-transparent" />
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
             <RuwaqLogo href="/" variant="dark" className="h-12 w-auto lg:h-14" />
-            <p className="mt-5 text-sm leading-relaxed text-gray-400">
+            <p className="mt-5 text-sm leading-relaxed text-ruwaq-stone/80">
               {t.site.footer.tagline}
             </p>
-            <p className="mt-3 text-xs font-medium text-ruwaq-gold">
+            <p className="mt-3 text-xs font-medium text-ruwaq-champagne-light">
               {t.site.footer.address}
             </p>
-            <p className="mt-4 text-xs leading-relaxed text-gray-500">
+            <p className="mt-4 text-xs leading-relaxed text-ruwaq-ink-muted/90">
               {t.site.footer.sponsoredBy}{" "}
               <a
                 href="https://3dgraphicshouse.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold text-ruwaq-gold transition-colors hover:text-white hover:underline"
+                className="font-semibold text-ruwaq-champagne-light transition-colors hover:text-ruwaq-paper hover:underline"
               >
                 {t.site.footer.sponsoredByLink}
               </a>
@@ -58,7 +58,7 @@ export async function SiteFooter() {
 
           {columns.map((col) => (
             <div key={col.title}>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-ruwaq-gold">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-ruwaq-champagne-light">
                 {col.title}
               </h3>
               <ul className="mt-4 space-y-2.5">
@@ -66,7 +66,7 @@ export async function SiteFooter() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-gray-400 transition-colors hover:text-white"
+                      className="text-sm text-ruwaq-stone/80 transition-colors hover:text-ruwaq-paper"
                     >
                       {link.label}
                     </Link>
@@ -77,9 +77,9 @@ export async function SiteFooter() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-8 text-xs text-gray-500 sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-8 text-xs text-ruwaq-ink-muted/90 sm:flex-row">
           <p>{t.site.footer.copyright}</p>
-          <a href="https://ruwaq.co" className="font-semibold text-ruwaq-gold hover:underline">
+          <a href="https://ruwaq.co" className="font-semibold text-ruwaq-champagne-light hover:underline">
             ruwaq.co
           </a>
         </div>

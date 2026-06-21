@@ -18,7 +18,7 @@ function statusBadgeClass(status: string): string {
     return "bg-amber-50 text-amber-900 ring-1 ring-amber-200/80";
   }
   if (status === "generating") return "bg-blue-50 text-blue-800 ring-1 ring-blue-200/80";
-  return "bg-ruwaq-cream-bg text-ruwaq-navy-soft ring-1 ring-ruwaq-cream";
+  return "bg-ruwaq-linen text-ruwaq-ink-muted ring-1 ring-ruwaq-stone/60";
 }
 
 export default async function ProposalsListPage() {
@@ -70,7 +70,7 @@ export default async function ProposalsListPage() {
       <div className="app-content-area max-w-3xl">
         {proposals.length === 0 ? (
           <div className="ruwaq-form-card border-dashed text-center">
-            <p className="text-ruwaq-navy-soft">{t.list.empty}</p>
+            <p className="text-ruwaq-ink-muted">{t.list.empty}</p>
             <Link
               href="/proposals/new"
               className="btn-ruwaq-secondary mt-4 inline-flex"
@@ -87,7 +87,7 @@ export default async function ProposalsListPage() {
                   <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
                     <h2
                       id={`group-${group}`}
-                      className={`text-sm font-bold text-ruwaq-navy ${
+                      className={`text-sm font-bold text-ruwaq-ink ${
                         isAr
                           ? "tracking-normal"
                           : "uppercase tracking-wide"
@@ -95,13 +95,13 @@ export default async function ProposalsListPage() {
                     >
                       {groupLabels[group]}
                     </h2>
-                    <span className="text-xs font-medium text-ruwaq-navy-soft">
+                    <span className="text-xs font-medium text-ruwaq-ink-muted">
                       {t.list.proposalCount(items.length)}
                     </span>
                   </div>
 
                   {items.length === 0 ? (
-                    <p className="rounded-2xl border border-dashed border-ruwaq-cream bg-ruwaq-cream-bg/50 px-5 py-4 text-sm leading-relaxed text-ruwaq-navy-soft">
+                    <p className="rounded-2xl border border-dashed border-ruwaq-stone/60 bg-ruwaq-linen/50 px-5 py-4 text-sm leading-relaxed text-ruwaq-navy-soft">
                       {groupEmpty[group]}
                     </p>
                   ) : (
@@ -115,14 +115,14 @@ export default async function ProposalsListPage() {
                         return (
                           <div
                             key={p.id}
-                            className="rounded-2xl border border-ruwaq-cream bg-white p-4 shadow-ruwaq transition-shadow hover:shadow-ruwaq-lg sm:p-5"
+                            className="rounded-3xl border border-ruwaq-stone/50 bg-white/90 p-5 shadow-ruwaq transition-all hover:border-ruwaq-champagne/20 hover:shadow-ruwaq-lg sm:p-6"
                           >
                             <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                               <Link
                                 href={`/proposals/${p.id}`}
                                 className="min-w-0 flex-1"
                               >
-                                <p className="font-semibold leading-snug text-ruwaq-navy">
+                                <p className="font-semibold leading-snug text-ruwaq-ink">
                                   {p.projectName || t.list.untitled}
                                 </p>
                                 <p className="mt-1 text-xs text-ruwaq-navy-soft">

@@ -22,7 +22,7 @@ export function MarketingHero({ hero, heroSteps, locale, trustPills, learnMore }
           <p className="ruwaq-eyebrow">{hero.eyebrow}</p>
           <h1 className="ruwaq-hero-title mt-3">
             {hero.title}{" "}
-            <span className="text-ruwaq-gold">{hero.titleHighlight}</span>
+            <span className="text-ruwaq-champagne">{hero.titleHighlight}</span>
           </h1>
           <p className="ruwaq-hero-lead mx-auto mt-4 max-w-2xl">{hero.subtitle}</p>
 
@@ -34,7 +34,7 @@ export function MarketingHero({ hero, heroSteps, locale, trustPills, learnMore }
               {hero.ctaSecondary}
             </Link>
           </div>
-          <p className="mt-4 text-sm text-slate-400">{hero.microcopy}</p>
+          <p className="mt-4 text-sm text-ruwaq-ink-muted">{hero.microcopy}</p>
 
           <ul className="ruwaq-trust-pills mt-5">
             {trustPills.map((pill) => (
@@ -47,7 +47,7 @@ export function MarketingHero({ hero, heroSteps, locale, trustPills, learnMore }
           <HeroStepsStrip title={heroSteps.title} steps={heroSteps.items} />
           {learnMore ? (
             <p className="mt-8 text-center">
-              <Link href={learnMore.href} className="text-sm font-semibold text-ruwaq-gold hover:underline">
+              <Link href={learnMore.href} className="text-sm font-semibold text-ruwaq-champagne hover:underline">
                 {learnMore.label} {arrow}
               </Link>
             </p>

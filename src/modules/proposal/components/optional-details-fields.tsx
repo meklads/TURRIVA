@@ -30,22 +30,22 @@ export function OptionalDetailsFields({
   const dir = locale === "ar" ? "rtl" : "ltr";
 
   return (
-    <div className="rounded-lg border border-gray-200 bg-gray-50/50">
+    <div className="rounded-2xl border border-ruwaq-stone/50 bg-ruwaq-linen/40">
       <button
         type="button"
         onClick={onToggle}
-        className="flex w-full items-center justify-between px-4 py-3 text-start text-sm font-medium text-gray-800"
+        className="flex w-full items-center justify-between px-4 py-3 text-start text-sm font-medium text-ruwaq-ink-soft"
       >
         <span>{t.form.optionalDetails.title}</span>
-        <span className="text-gray-400">{open ? "−" : "+"}</span>
+        <span className="text-ruwaq-ink-muted">{open ? "−" : "+"}</span>
       </button>
 
       {open && (
-        <div className="space-y-3 border-t border-gray-200 px-4 pb-4 pt-3">
-          <p className="text-xs text-gray-500">{t.form.optionalDetails.hint}</p>
+        <div className="space-y-3 border-t border-ruwaq-stone/50 px-4 pb-4 pt-3">
+          <p className="text-xs text-ruwaq-ink-muted">{t.form.optionalDetails.hint}</p>
 
           <div>
-            <label className="block text-xs font-medium text-gray-700">
+            <label className="block text-xs font-medium text-ruwaq-ink-soft">
               {t.form.optionalDetails.location}
             </label>
             <input
@@ -54,13 +54,13 @@ export function OptionalDetailsFields({
               onChange={(e) => onChange("projectLocation", e.target.value)}
               placeholder={t.form.optionalDetails.locationPlaceholder}
               dir={dir}
-              className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+              className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-ruwaq-ink-muted focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
             />
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
             <div>
-              <label className="block text-xs font-medium text-gray-700">
+              <label className="block text-xs font-medium text-ruwaq-ink-soft">
                 {t.form.optionalDetails.propertyType}
               </label>
               <select
@@ -81,7 +81,7 @@ export function OptionalDetailsFields({
               </select>
             </div>
             <div>
-              <label className="block text-xs font-medium text-gray-700">
+              <label className="block text-xs font-medium text-ruwaq-ink-soft">
                 {t.form.optionalDetails.areaSqm}
               </label>
               <input
@@ -90,13 +90,13 @@ export function OptionalDetailsFields({
                 onChange={(e) => onChange("areaSqm", Number(e.target.value))}
                 placeholder={t.form.optionalDetails.areaSqmPlaceholder}
                 dir="ltr"
-                className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-ruwaq-ink-muted focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-medium text-gray-700">
+            <label className="block text-xs font-medium text-ruwaq-ink-soft">
               {t.form.optionalDetails.duration}
             </label>
             <input
@@ -105,12 +105,12 @@ export function OptionalDetailsFields({
               onChange={(e) => onChange("durationHint", e.target.value)}
               placeholder={t.form.optionalDetails.durationPlaceholder}
               dir={dir}
-              className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+              className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-ruwaq-ink-muted focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-medium text-gray-700">
+            <label className="block text-xs font-medium text-ruwaq-ink-soft">
               {t.form.optionalDetails.specifications}
             </label>
             <textarea
@@ -119,7 +119,7 @@ export function OptionalDetailsFields({
               placeholder={t.form.optionalDetails.specificationsPlaceholder}
               dir={dir}
               rows={3}
-              className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-gray-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+              className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-ruwaq-ink-muted focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
             />
           </div>
         </div>

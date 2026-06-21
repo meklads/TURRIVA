@@ -61,14 +61,14 @@ export function ClaimProposal({ proposalId, isGuest }: Props) {
 
   if (status === "authenticated") {
     return (
-      <div className="mb-4 rounded-xl border border-brand-100 bg-brand-50 px-4 py-3 text-sm text-brand-800">
+      <div className="mb-4 ruwaq-notice-info">
         {t.review.claiming}
       </div>
     );
   }
 
   return (
-    <div className="mb-4 rounded-xl border border-brand-100 bg-brand-50 px-4 py-3 text-sm text-brand-800">
+    <div className="mb-4 ruwaq-notice-info">
       <Link
         href={`/login?callbackUrl=${encodeURIComponent(`/proposals/${proposalId}?claim=1`)}`}
         className="font-semibold underline"

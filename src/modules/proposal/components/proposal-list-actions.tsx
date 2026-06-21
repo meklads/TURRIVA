@@ -40,7 +40,7 @@ export function ProposalListActions({ proposalId }: Props) {
       <button
         type="button"
         onClick={handleDuplicate}
-        className="rounded px-2 py-1 text-xs text-gray-500 hover:bg-gray-100 hover:text-gray-800"
+        className="rounded px-2 py-1 text-xs text-ruwaq-ink-muted hover:bg-ruwaq-linen hover:text-ruwaq-ink"
       >
         {t.list.duplicate}
       </button>

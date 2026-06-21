@@ -4,17 +4,24 @@
 
 @layer base {
   :root {
-    --ruwaq-navy: #0f172a;
-    --ruwaq-gold: #c9a063;
-    --ruwaq-cream: #e6e2db;
-    --ruwaq-cream-bg: #f7f5f2;
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
-    --radius: 0.625rem;
-    /* dotforlife.com — warm ink palette for Arabic marketing copy */
-    --df-ink: #1a1612;
-    --df-ink-soft: #3d4542;
-    --df-ink-muted: #5c534a;
+    --ruwaq-ink: #1c1917;
+    --ruwaq-ink-soft: #5c564e;
+    --ruwaq-ink-muted: #8a8278;
+    --ruwaq-champagne: #9a7146;
+    --ruwaq-champagne-light: #c4a574;
+    --ruwaq-linen: #f3f0e9;
+    --ruwaq-paper: #fcfcfa;
+    --ruwaq-stone: #e6e2d8;
+    --ruwaq-navy: var(--ruwaq-ink);
+    --ruwaq-gold: var(--ruwaq-champagne);
+    --ruwaq-cream: var(--ruwaq-stone);
+    --ruwaq-cream-bg: var(--ruwaq-linen);
+    --background: 0 0% 99%;
+    --foreground: 30 8% 10%;
+    --radius: 1rem;
+    --df-ink: #1c1917;
+    --df-ink-soft: #5c564e;
+    --df-ink-muted: #8a8278;
     --font-ar-fallback: "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
     --font-latin-fallback: system-ui, -apple-system, sans-serif;
   }
@@ -28,7 +35,7 @@
   }
 
   body {
-    @apply bg-white text-ruwaq-navy antialiased;
+    @apply bg-ruwaq-linen text-ruwaq-ink antialiased;
     font-size: 16px;
     line-height: 1.6;
     font-feature-settings: "rlig" 1, "calt" 1;
@@ -67,7 +74,7 @@
 
 @layer components {
   .ruwaq-header {
-    @apply sticky top-0 z-50 border-b border-ruwaq-cream/80 bg-white/90 shadow-ruwaq backdrop-blur-md;
+    @apply sticky top-0 z-50 border-b border-ruwaq-stone/50 bg-ruwaq-paper/75 shadow-ruwaq backdrop-blur-xl;
   }
 
   .ruwaq-header-accent {
@@ -87,15 +94,23 @@
   }
 
   .btn-ruwaq-primary {
-    @apply inline-flex items-center justify-center rounded-lg bg-ruwaq-gold px-5 py-2.5 text-sm font-bold text-ruwaq-navy shadow-sm transition-all hover:bg-ruwaq-gold-light hover:shadow-md active:scale-[0.98];
+    @apply inline-flex items-center justify-center rounded-2xl bg-ruwaq-champagne px-6 py-3 text-sm font-semibold text-white shadow-ruwaq transition-all hover:bg-ruwaq-champagne-light hover:shadow-ruwaq-lg active:scale-[0.98];
   }
 
   .btn-ruwaq-secondary {
-    @apply inline-flex items-center justify-center rounded-lg border border-ruwaq-cream bg-white px-5 py-2.5 text-sm font-semibold text-ruwaq-navy transition-all hover:border-ruwaq-gold/40 hover:bg-ruwaq-cream-bg;
+    @apply inline-flex items-center justify-center rounded-2xl border border-ruwaq-stone bg-ruwaq-paper/80 px-6 py-3 text-sm font-semibold text-ruwaq-ink transition-all hover:border-ruwaq-champagne/40 hover:bg-white hover:shadow-ruwaq;
   }
 
   .btn-ruwaq-ghost {
-    @apply inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-ruwaq-navy-soft transition-colors hover:bg-ruwaq-cream-bg hover:text-ruwaq-navy;
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium text-ruwaq-ink-muted transition-colors hover:bg-ruwaq-linen hover:text-ruwaq-ink;
+  }
+
+  .btn-ruwaq-ink {
+    @apply inline-flex items-center justify-center rounded-2xl bg-ruwaq-ink px-6 py-3 text-sm font-semibold text-white shadow-ruwaq transition-all hover:bg-ruwaq-ink-soft active:scale-[0.98] disabled:opacity-45;
+  }
+
+  .btn-ruwaq-soft {
+    @apply inline-flex items-center justify-center rounded-xl border border-ruwaq-stone bg-white px-4 py-2 text-sm font-medium text-ruwaq-ink-soft transition-all hover:border-ruwaq-champagne/35 hover:bg-ruwaq-linen disabled:opacity-45;
   }
 
   .ruwaq-hero-compact {
@@ -103,12 +118,12 @@
   }
 
   .app-page-hero {
-    @apply relative border-b border-ruwaq-cream/80 bg-gradient-to-br from-ruwaq-cream-bg/90 via-white to-ruwaq-cream-bg/40;
+    @apply relative border-b border-ruwaq-stone/40 bg-gradient-to-b from-ruwaq-paper via-ruwaq-linen/30 to-ruwaq-linen;
   }
 
   .app-page-hero::before {
     content: "";
-    @apply pointer-events-none absolute inset-y-0 end-0 w-1/3 bg-gradient-to-l from-ruwaq-gold/5 to-transparent;
+    @apply pointer-events-none absolute inset-y-0 end-0 w-2/5 bg-gradient-to-l from-ruwaq-champagne/[0.04] to-transparent;
   }
 
   .app-page-hero-inner {
@@ -120,7 +135,7 @@
   }
 
   .ruwaq-form-card {
-    @apply rounded-2xl border border-ruwaq-cream/90 bg-white p-6 shadow-ruwaq sm:p-8;
+    @apply rounded-3xl border border-ruwaq-stone/50 bg-ruwaq-paper p-6 shadow-ruwaq sm:p-8 md:p-10;
   }
 
   .ruwaq-step-pill {
@@ -128,19 +143,19 @@
   }
 
   .ruwaq-step-pill-active {
-    @apply ruwaq-step-pill bg-ruwaq-navy text-ruwaq-gold shadow-sm;
+    @apply ruwaq-step-pill bg-ruwaq-ink text-ruwaq-champagne-light shadow-ruwaq;
   }
 
   .ruwaq-step-pill-inactive {
-    @apply ruwaq-step-pill bg-ruwaq-cream-bg text-ruwaq-navy-soft;
+    @apply ruwaq-step-pill bg-ruwaq-linen text-ruwaq-ink-muted;
   }
 
   .ruwaq-field {
-    @apply mt-2 block w-full rounded-xl border border-ruwaq-cream bg-white px-4 py-2.5 text-sm text-ruwaq-navy shadow-sm placeholder:text-ruwaq-navy-soft/50 transition-colors focus:border-ruwaq-gold focus:outline-none focus:ring-2 focus:ring-ruwaq-gold/20;
+    @apply mt-2 block w-full rounded-2xl border border-ruwaq-stone/80 bg-white px-4 py-3 text-sm text-ruwaq-ink shadow-sm placeholder:text-ruwaq-ink-muted/60 transition-all focus:border-ruwaq-champagne/50 focus:outline-none focus:ring-4 focus:ring-ruwaq-champagne/10;
   }
 
   .ruwaq-label {
-    @apply block text-sm font-semibold text-ruwaq-navy;
+    @apply block text-sm font-semibold text-ruwaq-ink;
   }
 
   .ruwaq-hero-compact::before {
@@ -154,14 +169,23 @@
   }
 
   .ruwaq-landing-hero {
-    @apply relative overflow-hidden border-b border-slate-200/70;
-    background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 50%, #eef1f5 100%);
+    @apply relative overflow-hidden border-b border-ruwaq-stone/40;
+    background: linear-gradient(
+      165deg,
+      var(--ruwaq-paper) 0%,
+      var(--ruwaq-linen) 45%,
+      #ebe8e1 100%
+    );
   }
 
   .ruwaq-landing-hero::before {
     content: "";
-    @apply pointer-events-none absolute inset-0 opacity-40;
-    background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201, 160, 99, 0.06), transparent 70%);
+    @apply pointer-events-none absolute inset-0;
+    background: radial-gradient(
+      ellipse 80% 55% at 50% -10%,
+      rgba(154, 113, 70, 0.09),
+      transparent 65%
+    );
   }
 
   .ruwaq-hero-title {
@@ -238,7 +262,7 @@
   }
 
   .ruwaq-trust-pills li {
-    @apply rounded-full border border-ruwaq-cream bg-white/80 px-3 py-1 text-xs font-medium text-ruwaq-navy-soft shadow-sm;
+    @apply rounded-full border border-ruwaq-stone/60 bg-ruwaq-paper/90 px-4 py-1.5 text-xs font-medium text-ruwaq-ink-soft shadow-sm backdrop-blur-sm;
   }
 
   .ruwaq-eyebrow-dark {
@@ -280,47 +304,47 @@
   }
 
   .ruwaq-landing-dark {
-    @apply bg-gradient-to-br from-ruwaq-navy via-[#131f35] to-ruwaq-navy;
+    @apply bg-gradient-to-br from-ruwaq-ink via-[#2A2622] to-ruwaq-ink;
   }
 
   .ruwaq-landing-cta {
-    @apply relative overflow-hidden border-t border-ruwaq-gold/20 bg-gradient-to-r from-ruwaq-navy via-[#162033] to-ruwaq-navy;
+    @apply relative overflow-hidden border-t border-ruwaq-champagne/15 bg-gradient-to-br from-ruwaq-ink via-[#252220] to-[#1a1816];
   }
 
   .ruwaq-product-mock {
-    @apply overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-ruwaq-lg;
+    @apply overflow-hidden rounded-3xl border border-ruwaq-stone/50 bg-ruwaq-paper shadow-ruwaq-lg;
   }
 
   .ruwaq-product-mock-bar {
-    @apply flex items-center gap-1.5 border-b border-ruwaq-cream bg-ruwaq-cream-bg/80 px-4 py-2.5;
+    @apply flex items-center gap-1.5 border-b border-ruwaq-stone/50 bg-ruwaq-linen/80 px-5 py-3;
   }
 
   .ruwaq-compare-card {
-    @apply rounded-2xl border p-5 sm:p-6;
+    @apply rounded-3xl border p-6 sm:p-7;
   }
 
   .ruwaq-compare-bad {
-    @apply border-red-100 bg-red-50/40;
+    @apply border-red-100/80 bg-red-50/30;
   }
 
   .ruwaq-compare-good {
-    @apply border-ruwaq-gold/30 bg-ruwaq-cream-bg/60 shadow-ruwaq;
+    @apply border-ruwaq-champagne/25 bg-gradient-to-br from-ruwaq-champagne-muted/40 via-white to-ruwaq-linen/50 shadow-ruwaq;
   }
 
   .ruwaq-sample-card {
-    @apply block rounded-xl border border-ruwaq-cream bg-white p-4 shadow-ruwaq transition-all hover:border-ruwaq-gold/40 hover:shadow-ruwaq-lg;
+    @apply block rounded-2xl border border-ruwaq-stone/50 bg-white p-5 shadow-ruwaq transition-all hover:border-ruwaq-champagne/35 hover:shadow-ruwaq-lg;
   }
 
   .ruwaq-sample-doc {
-    @apply rounded-lg border border-ruwaq-cream/80 bg-ruwaq-cream-bg/50 p-4;
+    @apply rounded-xl border border-ruwaq-stone/40 bg-ruwaq-linen/50 p-5;
   }
 
   .ruwaq-card {
-    @apply rounded-2xl border border-ruwaq-cream/80 bg-white p-6 shadow-ruwaq transition-shadow hover:shadow-ruwaq-lg;
+    @apply rounded-3xl border border-ruwaq-stone/50 bg-white p-7 shadow-ruwaq transition-all hover:shadow-ruwaq-lg;
   }
 
   .ruwaq-card-accent {
-    @apply ruwaq-card border-t-2 border-t-ruwaq-gold;
+    @apply ruwaq-card border-t-2 border-t-ruwaq-champagne/60;
   }
 
   .ruwaq-section-title {
@@ -395,7 +419,7 @@
   }
 
   .proposal-section {
-    @apply rounded-lg border border-gray-100 bg-white p-6 shadow-sm;
+    @apply rounded-3xl border border-ruwaq-stone/50 bg-white p-6 shadow-ruwaq;
   }
 
   .proposal-section-header {
@@ -403,11 +427,11 @@
   }
 
   .proposal-section-title {
-    @apply text-lg font-semibold text-gray-900;
+    @apply text-lg font-semibold text-ruwaq-ink;
   }
 
   .inline-edit-input {
-    @apply w-full rounded-md border-0 bg-transparent px-2 py-1 text-gray-900 outline-none ring-1 ring-transparent transition-shadow focus:bg-ruwaq-cream-bg focus:ring-ruwaq-gold/30;
+    @apply w-full rounded-xl border-0 bg-transparent px-2 py-1.5 text-ruwaq-ink outline-none ring-1 ring-transparent transition-all focus:bg-ruwaq-linen focus:ring-ruwaq-champagne/25;
   }
 
   .inline-edit-area {
@@ -415,11 +439,75 @@
   }
 
   .section-card {
-    @apply rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-colors;
+    @apply rounded-3xl border border-ruwaq-stone/50 bg-white/90 p-6 shadow-ruwaq backdrop-blur-sm transition-all sm:p-7;
   }
 
   .section-card-reviewed {
-    @apply border-green-200 bg-green-50/40;
+    @apply border-emerald-200/60 bg-gradient-to-br from-emerald-50/40 via-white to-white;
+  }
+
+  /* Scope item card in review */
+  .ruwaq-scope-item {
+    @apply mb-3 rounded-2xl border border-ruwaq-stone/40 bg-ruwaq-linen/40 p-4 transition-all hover:border-ruwaq-champagne/25 hover:bg-white hover:shadow-ruwaq;
+  }
+
+  .ruwaq-scope-index {
+    @apply mt-1.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-ruwaq-champagne-muted/60 text-xs font-bold text-ruwaq-champagne;
+  }
+
+  .ruwaq-link-action {
+    @apply text-sm font-semibold text-ruwaq-champagne transition-colors hover:text-ruwaq-champagne-light;
+  }
+  .ruwaq-review-shell {
+    @apply mx-auto max-w-3xl pb-28;
+  }
+
+  .ruwaq-review-toolbar {
+    @apply sticky top-[4.25rem] z-40 -mx-4 mb-8 rounded-b-3xl border border-ruwaq-stone/40 bg-ruwaq-paper/90 px-4 py-4 shadow-ruwaq backdrop-blur-xl sm:px-5;
+  }
+
+  .ruwaq-review-trust-band {
+    @apply mb-8 overflow-hidden rounded-3xl border border-ruwaq-stone/50 bg-gradient-to-br from-ruwaq-champagne-muted/50 via-white to-ruwaq-linen p-5 shadow-ruwaq sm:p-6;
+  }
+
+  .ruwaq-review-title-card {
+    @apply mb-8 rounded-3xl border border-ruwaq-stone/50 bg-white p-6 shadow-ruwaq sm:p-8;
+  }
+
+  .ruwaq-review-bottom-bar {
+    @apply sticky bottom-0 -mx-4 mt-10 border-t border-ruwaq-stone/50 bg-ruwaq-paper/95 px-4 py-4 shadow-ruwaq-soft backdrop-blur-xl;
+  }
+
+  .ruwaq-notice {
+    @apply mb-5 rounded-2xl border px-4 py-3 text-sm leading-relaxed;
+  }
+
+  .ruwaq-notice-warn {
+    @apply ruwaq-notice border-amber-200/70 bg-amber-50/80 text-amber-950;
+  }
+
+  .ruwaq-notice-info {
+    @apply ruwaq-notice border-sky-200/70 bg-sky-50/80 text-sky-950;
+  }
+
+  .ruwaq-notice-success {
+    @apply ruwaq-notice border-emerald-200/70 bg-emerald-50/80 text-emerald-900;
+  }
+
+  .ruwaq-toast {
+    @apply fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-2xl bg-ruwaq-ink px-5 py-3 text-sm text-white shadow-ruwaq-lg;
+  }
+
+  .ruwaq-gate-progress {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold;
+  }
+
+  .ruwaq-gate-progress-pending {
+    @apply ruwaq-gate-progress bg-amber-50 text-amber-900 ring-1 ring-amber-200/70;
+  }
+
+  .ruwaq-gate-progress-done {
+    @apply ruwaq-gate-progress bg-emerald-50 text-emerald-800 ring-1 ring-emerald-200/70;
   }
 
   /* Trust Layer — review panels (Smart BOQ + Clause Pack) */
@@ -444,17 +532,17 @@
   }
 
   .ruwaq-badge-estimate {
-    @apply inline-flex items-center rounded-full border border-ruwaq-gold/35 bg-brand-50 px-2.5 py-0.5 text-[10px] font-semibold tracking-wide text-brand-700;
+    @apply inline-flex items-center rounded-full border border-ruwaq-gold/35 bg-ruwaq-champagne-muted/40 px-2.5 py-0.5 text-[10px] font-semibold tracking-wide text-ruwaq-champagne;
   }
 
   .ruwaq-estimate-callout {
-    @apply mb-5 rounded-xl border border-ruwaq-gold/25 bg-gradient-to-br from-brand-50/90 to-ruwaq-cream-bg/80 px-4 py-3 text-xs leading-relaxed text-brand-800;
+    @apply mb-5 rounded-xl border border-ruwaq-champagne/25 bg-gradient-to-br from-ruwaq-champagne-muted/90 to-ruwaq-linen/80 px-4 py-3 text-xs leading-relaxed text-ruwaq-ink-soft;
     border-inline-start-width: 3px;
-    border-inline-start-color: theme("colors.ruwaq.gold");
+    border-inline-start-color: theme("colors.ruwaq.champagne");
   }
 
   .ruwaq-estimate-footnote {
-    @apply mt-4 text-xs leading-relaxed text-brand-700/90;
+    @apply mt-4 text-xs leading-relaxed text-ruwaq-champagne/90;
   }
 
   .ruwaq-trust-table-wrap {
@@ -533,7 +621,7 @@
   }
 
   .ruwaq-badge-mandatory {
-    @apply rounded-full border border-ruwaq-gold/30 bg-brand-50 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-brand-800;
+    @apply rounded-full border border-ruwaq-gold/30 bg-ruwaq-champagne-muted/40 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-ruwaq-ink-soft;
   }
 
   .ruwaq-badge-recommended {
@@ -541,7 +629,7 @@
   }
 
   .ruwaq-clause-gates {
-    @apply ruwaq-gate-panel border-amber-100/80 bg-gradient-to-br from-brand-50/40 to-ruwaq-cream-bg/60;
+    @apply ruwaq-gate-panel border-amber-100/80 bg-gradient-to-br from-ruwaq-champagne-muted/40 to-ruwaq-linen/60;
   }
 
   .ruwaq-trust-toast {
@@ -562,19 +650,27 @@
   }
 
   .ruwaq-share-watermark-tile {
-    @apply select-none whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.12em] text-ruwaq-navy;
+    @apply select-none whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.12em] text-ruwaq-ink;
   }
 
   .ruwaq-share-watermark-band {
-    @apply pointer-events-none fixed inset-x-0 top-0 z-30 border-b-2 border-ruwaq-gold bg-ruwaq-cream-bg/95 py-1.5 text-center backdrop-blur-sm;
+    @apply pointer-events-none fixed inset-x-0 top-0 z-30 border-b border-ruwaq-champagne/30 bg-ruwaq-linen/95 py-2 text-center backdrop-blur-md;
   }
 
   .ruwaq-share-watermark-band span {
-    @apply text-[10px] font-bold uppercase tracking-[0.14em] text-ruwaq-navy;
+    @apply text-[10px] font-bold uppercase tracking-[0.14em] text-ruwaq-ink-soft;
   }
 
   .ruwaq-share-header {
-    @apply border-b border-ruwaq-cream bg-white/95 backdrop-blur-md;
+    @apply border-b border-ruwaq-stone/50 bg-ruwaq-paper/90 backdrop-blur-xl;
+  }
+
+  .ruwaq-share-hero {
+    @apply bg-gradient-to-br from-ruwaq-ink via-[#2d2925] to-[#1c1917] px-6 py-10 sm:px-10 sm:py-12;
+  }
+
+  .ruwaq-share-article {
+    @apply overflow-hidden rounded-3xl border border-ruwaq-stone/50 bg-white shadow-ruwaq-lg;
   }
 
   html[lang="ar"] .ruwaq-share-watermark-tile,

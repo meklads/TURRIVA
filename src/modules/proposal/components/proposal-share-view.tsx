@@ -53,10 +53,10 @@ export function ProposalShareView({
       <header className="ruwaq-share-header sticky top-0 z-40">
         <div className="mx-auto flex max-w-4xl flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <div className="min-w-0">
-            <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-ruwaq-gold">
+            <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-ruwaq-champagne-light">
               {labels.confidentialNotice}
             </p>
-            <p className="truncate text-sm font-semibold text-ruwaq-navy">
+            <p className="truncate text-sm font-semibold text-ruwaq-ink">
               {data.projectName}
             </p>
           </div>
@@ -72,12 +72,12 @@ export function ProposalShareView({
       </header>
 
       <main className="relative mx-auto max-w-4xl px-4 pb-16 pt-6 sm:px-6 sm:pt-8">
-        <article className="overflow-hidden rounded-2xl border border-ruwaq-cream bg-white shadow-ruwaq-lg">
+        <article className="ruwaq-share-article">
           {/* Hero banner */}
-          <div className="bg-gradient-to-br from-ruwaq-navy via-ruwaq-navy-soft to-ruwaq-navy px-6 py-8 sm:px-8 sm:py-10">
+          <div className="ruwaq-share-hero">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
               <div className="min-w-0 flex-1">
-                <p className="text-xs font-bold uppercase tracking-[0.12em] text-ruwaq-gold">
+                <p className="text-xs font-bold uppercase tracking-[0.12em] text-ruwaq-champagne-light">
                   {locale === "ar" ? "عرض سعر" : "Proposal"}
                 </p>
                 <h1 className="mt-2 text-2xl font-bold leading-snug text-white sm:text-3xl">
@@ -117,15 +117,15 @@ export function ProposalShareView({
             {/* Meta strip */}
             <div className="grid gap-3 rounded-xl border border-ruwaq-cream bg-ruwaq-cream-bg/60 p-4 text-sm sm:grid-cols-2">
               <div>
-                <span className="text-ruwaq-navy-soft">{exportLabels.date}</span>{" "}
-                <strong className="text-ruwaq-navy">{watermarkDate}</strong>
+                <span className="text-ruwaq-ink-soft">{exportLabels.date}</span>{" "}
+                <strong className="text-ruwaq-ink">{watermarkDate}</strong>
               </div>
               {data.company?.companyName && (
                 <div>
-                  <span className="text-ruwaq-navy-soft">
+                  <span className="text-ruwaq-ink-soft">
                     {exportLabels.preparedBy}
                   </span>{" "}
-                  <strong className="text-ruwaq-navy">
+                  <strong className="text-ruwaq-ink">
                     {data.company.companyName}
                   </strong>
                 </div>
@@ -134,7 +134,7 @@ export function ProposalShareView({
 
             {data.introduction && (
               <section>
-                <p className="rounded-xl border border-ruwaq-cream bg-ruwaq-cream-bg/50 px-4 py-4 text-sm leading-relaxed text-ruwaq-navy-soft">
+                <p className="rounded-xl border border-ruwaq-cream bg-ruwaq-cream-bg/50 px-4 py-4 text-sm leading-relaxed text-ruwaq-ink-soft">
                   {data.introduction}
                 </p>
               </section>
@@ -149,10 +149,10 @@ export function ProposalShareView({
                       key={item.id}
                       className="rounded-xl border border-ruwaq-cream bg-ruwaq-cream-bg/40 px-4 py-3"
                     >
-                      <h3 className="text-sm font-bold text-ruwaq-navy">
+                      <h3 className="text-sm font-bold text-ruwaq-ink">
                         {i + 1}. {item.title}
                       </h3>
-                      <p className="mt-1 text-sm leading-relaxed text-ruwaq-navy-soft">
+                      <p className="mt-1 text-sm leading-relaxed text-ruwaq-ink-soft">
                         {item.description}
                       </p>
                     </div>
@@ -172,10 +172,10 @@ export function ProposalShareView({
                     >
                       <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-ruwaq-gold" />
                       <div>
-                        <p className="text-sm font-semibold text-ruwaq-navy">
+                        <p className="text-sm font-semibold text-ruwaq-ink">
                           {d.name}
                         </p>
-                        <p className="mt-0.5 text-xs text-ruwaq-navy-soft">
+                        <p className="mt-0.5 text-xs text-ruwaq-ink-soft">
                           {d.description}
                         </p>
                       </div>
@@ -226,7 +226,7 @@ export function ProposalShareView({
 
               {data.boqLines.length > 0 && (
                 <div className="mt-6">
-                  <h3 className="mb-3 text-sm font-bold text-ruwaq-navy">
+                  <h3 className="mb-3 text-sm font-bold text-ruwaq-ink">
                     {reviewLabels.boq.title}
                   </h3>
                   <div className="ruwaq-trust-table-wrap">
@@ -276,7 +276,7 @@ export function ProposalShareView({
             {/* Timeline */}
             {data.timeline && (
               <ShareSection title={exportLabels.timeline}>
-                <p className="text-sm text-ruwaq-navy">
+                <p className="text-sm text-ruwaq-ink">
                   {exportLabels.duration}{" "}
                   <strong>{data.timeline.duration}</strong>
                 </p>
@@ -286,7 +286,7 @@ export function ProposalShareView({
             {/* Clause pack */}
             {data.clauseItems.length > 0 && (
               <ShareSection title={reviewLabels.clauses.title}>
-                <p className="mb-4 text-xs text-ruwaq-navy-soft">
+                <p className="mb-4 text-xs text-ruwaq-ink-soft">
                   {data.clausePackName}
                   {data.clausePackVersion
                     ? ` · v${data.clausePackVersion}`
@@ -305,13 +305,13 @@ export function ProposalShareView({
                           <span className="flex h-6 w-6 items-center justify-center rounded-full bg-ruwaq-navy text-[11px] font-bold text-white">
                             {i + 1}
                           </span>
-                          <span className="text-xs font-bold uppercase tracking-wide text-ruwaq-gold">
+                          <span className="text-xs font-bold uppercase tracking-wide text-ruwaq-champagne-light">
                             {clause.categoryLabel}
                           </span>
                         </div>
                         <p className="ruwaq-clause-text mt-3">{clause.text}</p>
                         {clause.sourceRef && (
-                          <p className="mt-2 text-[10px] font-medium text-ruwaq-navy-soft/70">
+                          <p className="mt-2 text-[10px] font-medium text-ruwaq-ink-soft/70">
                             {reviewLabels.clauses.source}: {clause.sourceRef}
                           </p>
                         )}
@@ -319,7 +319,7 @@ export function ProposalShareView({
                     </div>
                   ))}
                 </div>
-                <p className="mt-4 rounded-lg border border-ruwaq-cream bg-ruwaq-cream-bg/50 px-4 py-3 text-[11px] leading-relaxed text-ruwaq-navy-soft">
+                <p className="mt-4 rounded-lg border border-ruwaq-cream bg-ruwaq-cream-bg/50 px-4 py-3 text-[11px] leading-relaxed text-ruwaq-ink-soft">
                   {reviewLabels.clauses.legalDisclaimer}
                 </p>
               </ShareSection>
@@ -329,9 +329,9 @@ export function ProposalShareView({
           {/* Footer */}
           <footer className="border-t border-ruwaq-cream bg-ruwaq-cream-bg/50 px-6 py-6 sm:px-8">
             {data.company && (
-              <div className="text-sm text-ruwaq-navy-soft">
+              <div className="text-sm text-ruwaq-ink-soft">
                 {data.company.companyName && (
-                  <p className="font-semibold text-ruwaq-navy">
+                  <p className="font-semibold text-ruwaq-ink">
                     {data.company.companyName}
                   </p>
                 )}
@@ -354,7 +354,7 @@ export function ProposalShareView({
                 </div>
               </div>
             )}
-            <p className="mt-4 text-[10px] text-ruwaq-navy-soft/60">
+            <p className="mt-4 text-[10px] text-ruwaq-ink-soft/60">
               {labels.poweredBy}
             </p>
           </footer>
@@ -384,7 +384,7 @@ function ShareSection({
 }) {
   return (
     <section>
-      <h2 className="mb-4 border-b-2 border-ruwaq-gold pb-2 text-base font-bold text-ruwaq-navy">
+      <h2 className="mb-4 border-b-2 border-ruwaq-gold pb-2 text-base font-bold text-ruwaq-ink">
         {title}
       </h2>
       {children}

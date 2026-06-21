@@ -48,16 +48,16 @@ export function CompanySettingsForm({ initial }: Props) {
   };
 
   const inputClass =
-    "mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500";
+    "mt-1 block w-full rounded-lg border border-ruwaq-stone/80 px-3 py-2.5 text-sm shadow-sm focus:border-ruwaq-champagne/50 focus:outline-none focus:ring-4 focus:ring-ruwaq-champagne/10";
 
   return (
     <div className="space-y-8">
       <section className="space-y-4">
-        <h2 className="text-sm font-semibold text-gray-900">
+        <h2 className="text-sm font-semibold text-ruwaq-ink">
           {t.company.sections.identity}
         </h2>
         <div>
-          <label className="block text-sm font-medium text-gray-900">
+          <label className="block text-sm font-medium text-ruwaq-ink">
             {t.company.companyName}
           </label>
           <input
@@ -68,7 +68,7 @@ export function CompanySettingsForm({ initial }: Props) {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-900">
+          <label className="block text-sm font-medium text-ruwaq-ink">
             {t.company.logoUrl}
           </label>
           <input
@@ -79,10 +79,10 @@ export function CompanySettingsForm({ initial }: Props) {
             dir="ltr"
             className={inputClass}
           />
-          <p className="mt-1 text-xs text-gray-400">{t.company.logoUrlHint}</p>
+          <p className="mt-1 text-xs text-ruwaq-ink-muted">{t.company.logoUrlHint}</p>
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-900">
+          <label className="block text-sm font-medium text-ruwaq-ink">
             {t.company.address}
           </label>
           <input
@@ -95,7 +95,7 @@ export function CompanySettingsForm({ initial }: Props) {
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-900">
+            <label className="block text-sm font-medium text-ruwaq-ink">
               {t.company.crNumber}
             </label>
             <input
@@ -106,7 +106,7 @@ export function CompanySettingsForm({ initial }: Props) {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-900">
+            <label className="block text-sm font-medium text-ruwaq-ink">
               {t.company.vatNumber}
             </label>
             <input
@@ -118,7 +118,7 @@ export function CompanySettingsForm({ initial }: Props) {
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-900">
+          <label className="block text-sm font-medium text-ruwaq-ink">
             {t.company.phone}
           </label>
           <input
@@ -129,7 +129,7 @@ export function CompanySettingsForm({ initial }: Props) {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-900">
+          <label className="block text-sm font-medium text-ruwaq-ink">
             {t.company.email}
           </label>
           <input
@@ -141,13 +141,13 @@ export function CompanySettingsForm({ initial }: Props) {
         </div>
       </section>
 
-      <section className="space-y-4 border-t border-gray-100 pt-6">
-        <h2 className="text-sm font-semibold text-gray-900">
+      <section className="space-y-4 border-t border-ruwaq-stone/50 pt-6">
+        <h2 className="text-sm font-semibold text-ruwaq-ink">
           {t.company.sections.marketing}
         </h2>
-        <p className="text-xs text-gray-500">{t.company.marketingHint}</p>
+        <p className="text-xs text-ruwaq-ink-muted">{t.company.marketingHint}</p>
         <div>
-          <label className="block text-sm font-medium text-gray-900">
+          <label className="block text-sm font-medium text-ruwaq-ink">
             {t.company.about}
           </label>
           <textarea
@@ -159,7 +159,7 @@ export function CompanySettingsForm({ initial }: Props) {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-900">
+          <label className="block text-sm font-medium text-ruwaq-ink">
             {t.company.website}
           </label>
           <input
@@ -172,7 +172,7 @@ export function CompanySettingsForm({ initial }: Props) {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-900">
+          <label className="block text-sm font-medium text-ruwaq-ink">
             {t.company.portfolioUrl}
           </label>
           <input
@@ -185,7 +185,7 @@ export function CompanySettingsForm({ initial }: Props) {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-900">
+          <label className="block text-sm font-medium text-ruwaq-ink">
             {t.company.catalogUrl}
           </label>
           <input
@@ -202,7 +202,7 @@ export function CompanySettingsForm({ initial }: Props) {
       <button
         onClick={handleSave}
         disabled={saving}
-        className="rounded-lg bg-brand-500 px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-600 disabled:opacity-50"
+        className="btn-ruwaq-primary px-6 py-2 disabled:opacity-50"
       >
         {saving ? t.company.saving : t.company.save}
       </button>

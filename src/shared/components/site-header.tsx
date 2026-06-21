@@ -69,7 +69,7 @@ export async function SiteHeader({ variant = "marketing" }: { variant?: Variant 
             <Link
               key={link.href}
               href={link.href}
-              className="shrink-0 rounded-full border border-ruwaq-cream bg-ruwaq-cream-bg/50 px-3.5 py-1.5 text-xs font-semibold text-ruwaq-navy-soft transition-colors hover:border-ruwaq-gold/50 hover:text-ruwaq-navy"
+              className="flex shrink-0 rounded-full border border-ruwaq-stone/60 bg-ruwaq-linen/60 px-3.5 py-1.5 text-xs font-semibold text-ruwaq-ink-soft transition-colors hover:border-ruwaq-champagne/40 hover:text-ruwaq-ink"
             >
               {link.label}
             </Link>
