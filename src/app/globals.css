@@ -217,15 +217,36 @@
   }
 
   .ruwaq-landing-hero--navy {
-    @apply overflow-visible bg-ruwaq-navy pb-20 pt-10 sm:pb-24 sm:pt-14 lg:pb-28 lg:pt-16;
+    @apply overflow-visible pb-20 pt-10 sm:pb-24 sm:pt-14 lg:pb-28 lg:pt-16;
+    background: linear-gradient(
+      180deg,
+      #0f172a 0%,
+      #0f172a 5%,
+      #111c2e 9%,
+      #152238 13%,
+      #1a2a42 17%,
+      #22324c 21%,
+      #2b3d56 25%,
+      #354862 29%,
+      #455a70 33%,
+      #5a6d82 37%,
+      #758599 41%,
+      #9aa8b5 44%,
+      #c5cdd6 46%,
+      #e8ecef 47%,
+      #ffffff 48%,
+      #ffffff 100%
+    );
   }
 
   .ruwaq-landing-hero--navy::before {
     content: "";
     @apply pointer-events-none absolute inset-0;
-    background:
-      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201, 160, 99, 0.12), transparent 55%),
-      radial-gradient(ellipse 40% 35% at 100% 80%, rgba(255, 255, 255, 0.04), transparent 50%);
+    background: radial-gradient(
+      ellipse 70% 45% at 50% 0%,
+      rgba(201, 160, 99, 0.07),
+      transparent 65%
+    );
   }
 
   .ruwaq-landing-hero--navy::after {
@@ -237,7 +258,7 @@
   }
 
   .ruwaq-hero-split {
-    @apply relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-4 py-10 sm:px-6 sm:py-12 lg:grid-cols-2 lg:gap-12 lg:py-14 xl:gap-16;
+    @apply relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-4 py-10 sm:px-6 sm:py-12 lg:grid-cols-2 lg:items-start lg:gap-12 lg:py-14 xl:gap-16;
     direction: ltr;
   }
 
@@ -268,7 +289,7 @@
   }
 
   .ruwaq-hero-circle {
-    @apply relative mx-auto aspect-square w-full max-w-[min(100%,22rem)] overflow-hidden rounded-full border-[3px] border-white/15 shadow-ruwaq-float sm:max-w-[min(100%,26rem)] lg:max-w-[min(100%,30rem)] xl:max-w-[32rem];
+    @apply relative mx-auto aspect-square w-full max-w-[min(100%,22rem)] overflow-hidden rounded-full border-[3px] border-white/25 shadow-ruwaq-float sm:max-w-[min(100%,26rem)] lg:mx-0 lg:max-w-[min(100%,30rem)] xl:max-w-[32rem];
   }
 
   .ruwaq-hero-circle-image {
