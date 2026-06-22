@@ -343,7 +343,15 @@ export type Messages = {
     openSample: string;
     openSampleHint: string;
     note: string;
+    previewLabel: string;
     back: string;
+    gallery: readonly {
+      slug: "ruwaq-classic" | "ruwaq-executive" | "graphics-house";
+      brand: string;
+      title: string;
+      body: string;
+      badge: string;
+    }[];
   };
   list: {
     title: string;

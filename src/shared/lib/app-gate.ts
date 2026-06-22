@@ -48,7 +48,7 @@ export function isPublicAppPath(pathname: string): boolean {
 /** Public API — health checks + marketing sample + client share exports */
 export function isPublicApiPath(pathname: string): boolean {
   if (pathname === "/api/health") return true;
-  if (pathname.startsWith("/api/templates/ruwaq/sample")) return true;
+  if (pathname.startsWith("/api/templates/")) return true;
   if (pathname.startsWith("/api/share/")) return true;
   return false;
 }

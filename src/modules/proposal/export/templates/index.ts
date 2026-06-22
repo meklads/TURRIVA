@@ -1,6 +1,7 @@
 import type { Locale } from "@/shared/i18n/locale";
 import type { ProposalExportData } from "../proposal-export-types";
 import { renderRuwaqTemplate } from "./ruwaq.template";
+import { renderGraphicsHouseTemplate } from "./graphics-house.template";
 
 export function renderProposalExportHtml(
   locale: Locale,
@@ -10,10 +11,10 @@ export function renderProposalExportHtml(
 
   switch (templateId) {
     case "ruwaq":
+    case "ruwaq_executive":
       return renderRuwaqTemplate(locale, data);
     case "graphics_house":
-      // Second brand template — coming soon; fall back to Ruwaq for now
-      return renderRuwaqTemplate(locale, data);
+      return renderGraphicsHouseTemplate(locale, data);
     default:
       return renderRuwaqTemplate(locale, data);
   }

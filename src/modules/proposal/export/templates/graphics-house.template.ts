@@ -2,7 +2,7 @@ import type { Locale } from "@/shared/i18n/locale";
 import { getMessages } from "@/shared/i18n";
 import { localeDir, localeToBcp47 } from "@/shared/i18n/locale";
 import type { ProposalExportData } from "../proposal-export-types";
-import { ruwaqBrand } from "../brands/ruwaq.tokens";
+import { graphicsHouseBrand } from "../brands/graphics-house.tokens";
 import {
   escapeHtml,
   formatAmount,
@@ -29,25 +29,22 @@ function exportLink(href: string, label: string, color: string): string {
   return `<a href="${escapeHtml(href)}" style="color:${color};text-decoration:none;">${escapeHtml(label)}</a>`;
 }
 
-function headerLogoHtml(
+function headerBrandHtml(
   data: ProposalExportData,
   labels: ReturnType<typeof getMessages>["export"],
-  usePlaceholder: boolean
+  base: string,
+  assets: (typeof graphicsHouseBrand)["assets"]
 ): string {
-  const logo = usePlaceholder ? null : safeHttpUrl(data.logoUrl);
+  const logo = safeHttpUrl(data.logoUrl) ?? assetUrl(base, assets.logoMark);
   const companyName = data.companyName?.trim();
 
-  const circleInner = logo
-    ? `<img src="${escapeHtml(logo)}" alt="">`
-    : `<span class="logo-placeholder-text">${escapeHtml(labels.logoPlaceholder)}</span>`;
-
-  return `<div class="header-logo-col" aria-label="${escapeHtml(labels.preparedBy)}">
-      <div class="logo-circle">${circleInner}</div>
+  return `<div class="header-brand-col" aria-label="${escapeHtml(labels.preparedBy)}">
+      <img class="gh-logo" src="${escapeHtml(logo)}" alt="${escapeHtml(companyName ?? "Graphics House")}">
       ${companyName ? `<p class="header-company-name">${escapeHtml(companyName)}</p>` : ""}
     </div>`;
 }
 
-export function renderRuwaqTemplate(
+export function renderGraphicsHouseTemplate(
   locale: Locale,
   data: ProposalExportData
 ): string {
@@ -55,7 +52,7 @@ export function renderRuwaqTemplate(
   const review = getMessages(locale).review;
   const dir = localeDir(locale);
   const bcp47 = localeToBcp47(locale);
-  const { colors, fonts, footer, assets } = ruwaqBrand;
+  const { colors, fonts, footer, assets } = graphicsHouseBrand;
   const isExecutive = data.templateId === "ruwaq_executive";
   const currency = locale === "ar" ? "ريال" : "SAR";
   const docTitle = locale === "ar" ? "عرض سعر" : "Proposal";
@@ -100,7 +97,6 @@ export function renderRuwaqTemplate(
   ].filter(Boolean) as [string, string][];
 
   const showBrandPanel = Boolean(data.companyName?.trim() || safeHttpUrl(data.logoUrl) || data.platformBranding);
-  const useLogoPlaceholder = data.platformBranding === true || !safeHttpUrl(data.logoUrl);
 
   const websiteHref = safeHttpUrl(data.website);
   const portfolioHref = safeHttpUrl(data.portfolioUrl);
@@ -134,8 +130,8 @@ export function renderRuwaqTemplate(
   const sectionTitle = (title: string) =>
     `<h2 class="section-title">${escapeHtml(title)}</h2>`;
 
-  const printSurface = "#F3F4F6";
-  const printBorder = "#E5E7EB";
+  const printSurface = colors.printSurface;
+  const printBorder = colors.printBorder;
 
   const platformBranding = data.platformBranding === true;
   const showWatermark = Boolean(data.watermarkClientName && data.watermarkDate);
@@ -230,15 +226,15 @@ export function renderRuwaqTemplate(
       </div>`
     : "";
 
-  const bodyClass = `${showWatermark ? "has-watermark" : ""}${isExecutive ? " variant-executive" : ""}`.trim();
+  const bodyClass = `${showWatermark ? "has-watermark" : ""} gh-template`.trim();
 
   const milestones = Array.isArray(data.timeline?.milestones)
     ? (data.timeline!.milestones as Record<string, unknown>[])
     : [];
 
-  const headerLogo = headerLogoHtml(data, labels, useLogoPlaceholder);
-  const footerAddress = locale === "ar" ? footer.addressAr : footer.addressEn;
+  const headerLogo = headerBrandHtml(data, labels, base, assets);
   const footerTagline = locale === "ar" ? footer.taglineAr : footer.taglineEn;
+  const footerAddress = locale === "ar" ? footer.addressAr : footer.addressEn;
   const sampleBadge = platformBranding
     ? `<div style="display:inline-block;margin-top:10px;padding:4px 10px;border-radius:6px;background:rgba(212,175,55,0.18);border:1px solid ${colors.gold};font-size:11px;font-weight:600;color:${colors.gold};">${escapeHtml(labels.sampleBadge)}</div>`
     : "";
@@ -268,7 +264,7 @@ export function renderRuwaqTemplate(
 
   const platformFooter = `<footer class="doc-footer">
       <div>
-        <img src="${escapeHtml(assetUrl(base, assets.logoOnLight))}" alt="Ruwaq">
+        <img src="${escapeHtml(assetUrl(base, assets.logoMark))}" alt="Graphics House" class="gh-footer-logo">
         <div class="doc-footer-tagline">${escapeHtml(footerTagline)}</div>
       </div>
       <div class="doc-footer-meta">
@@ -321,10 +317,15 @@ export function renderRuwaqTemplate(
       font-weight: 700; z-index: 10; font-family: inherit;
     }
     .banner {
-      background: ${colors.creamBg};
-      padding: 18px 32px 20px;
+      background: ${colors.white};
+      padding: 0 0 18px;
       color: ${colors.text};
       border-bottom: 1px solid ${printBorder};
+    }
+    .banner-teal-bar {
+      height: 6px;
+      background: linear-gradient(90deg, ${colors.navy}, ${colors.gold});
+      margin-bottom: 18px;
     }
     .banner-top {
       display: flex;
@@ -332,45 +333,28 @@ export function renderRuwaqTemplate(
       align-items: center;
       gap: 20px;
       flex-wrap: wrap;
+      padding: 0 32px;
     }
-    .header-logo-col {
+    .header-brand-col {
       flex-shrink: 0;
       text-align: center;
-      min-width: 80px;
+      min-width: 120px;
     }
-    .logo-circle {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: ${colors.white};
-      border: 1.5px dashed #D1D5DB;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      margin: 0 auto 6px;
-    }
-    .logo-circle img {
-      width: 100%;
-      height: 100%;
+    .gh-logo {
+      max-width: 140px;
+      max-height: 52px;
+      width: auto;
+      height: auto;
+      display: block;
+      margin: 0 auto 4px;
       object-fit: contain;
-      padding: 8px;
-    }
-    .logo-placeholder-text {
-      font-size: 9px;
-      font-weight: 600;
-      color: #9CA3AF;
-      line-height: 1.35;
-      text-align: center;
-      padding: 6px;
     }
     .header-company-name {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       color: ${colors.navy};
       margin: 0;
       line-height: 1.4;
-      max-width: 92px;
     }
     .banner-main {
       flex: 1;
@@ -392,16 +376,19 @@ export function renderRuwaqTemplate(
       line-height: 1.38;
       word-break: break-word;
     }
-    .banner-client {
-      font-size: 13px;
-      color: ${colors.textMuted};
-    }
     .section-title {
       font-size: 16px;
       font-weight: 700;
       color: ${colors.navy};
       margin: 28px 0 12px;
       padding: 0;
+    }
+    body.gh-template .clause-cat { color: ${colors.gold}; }
+    body.gh-template .doc-footer-tagline { color: ${colors.navy}; }
+    .gh-footer-logo { max-height: 36px; }
+    .banner-client {
+      font-size: 13px;
+      color: ${colors.textMuted};
     }
     .content { padding: 24px 32px 12px; }
     .meta-grid {
@@ -700,37 +687,6 @@ export function renderRuwaqTemplate(
     body.has-watermark .page-wrap {
       margin-top: 36px;
     }
-    body.variant-executive .banner {
-      background: ${colors.white};
-      border-bottom: 3px solid ${colors.navy};
-      padding: 22px 32px 24px;
-    }
-    body.variant-executive .banner-title {
-      font-size: 26px;
-      letter-spacing: -0.01em;
-    }
-    body.variant-executive .meta-grid {
-      border-radius: 0;
-      border: 1px solid ${printBorder};
-      border-${dir === "rtl" ? "right" : "left"}: 4px solid ${colors.gold};
-      background: ${colors.white};
-    }
-    body.variant-executive .scope-item {
-      background: ${colors.white};
-      border-radius: 0;
-      border: 1px solid ${printBorder};
-      border-${dir === "rtl" ? "right" : "left"}: 3px solid ${colors.navy};
-    }
-    body.variant-executive .section-title::before {
-      content: "";
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      background: ${colors.gold};
-      border-radius: 1px;
-      margin-${dir === "rtl" ? "left" : "right"}: 10px;
-      vertical-align: middle;
-    }
     @media print {
       .watermark-grid { opacity: 0.07; }
       .watermark-band { opacity: 1; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -743,6 +699,7 @@ export function renderRuwaqTemplate(
   <button class="print-btn no-print" onclick="window.print()">${escapeHtml(labels.savePdf)}</button>
   <div class="page-wrap">
     <header class="banner">
+      <div class="banner-teal-bar"></div>
       <div class="banner-top">
         <div class="banner-main">
           <div class="banner-badge">${escapeHtml(docTitle)}</div>

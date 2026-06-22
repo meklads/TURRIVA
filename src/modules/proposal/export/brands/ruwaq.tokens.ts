@@ -37,4 +37,4 @@ export const ruwaqBrand = {
   },
 } as const;
 
-export type ExportTemplateId = "ruwaq" | "graphics_house";
+export type ExportTemplateId = "ruwaq" | "ruwaq_executive" | "graphics_house";

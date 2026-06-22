@@ -31,7 +31,7 @@ export type ProposalExportData = {
   propertyType?: string;
   areaSqm?: number;
   appBaseUrl: string;
-  templateId?: "ruwaq" | "graphics_house";
+  templateId?: "ruwaq" | "ruwaq_executive" | "graphics_house";
   /** When true, shows Ruwaq platform branding (sample preview only). */
   platformBranding?: boolean;
   /** Smart BOQ lines for export (Trust Layer). */

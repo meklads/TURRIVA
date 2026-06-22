@@ -432,24 +432,24 @@ export const en: Messages = {
    eyebrow: "See for yourself",
    title: "Proposal sample gallery",
    body:
-    "One commercial fit-out sample is live now. We're expanding the gallery with stunning brand templates, powered by Graphics House. Send your brand assets later to be featured.",
-   cta: "Open live sample",
+    "Three live samples: villa fit-out, engineering supervision, and 3D visualization — Ruwaq and Graphics House designs.",
+   cta: "Browse all three samples",
    comingSoon: "Coming soon",
    items: [
     {
-     title: "Office fit-out proposal",
-     body: "Scope, deliverables, 30/40/30 payments, assumptions & exclusions.",
+     title: "Villa fit-out — Ruwaq",
+     body: "Scope, BOQ, payments, and approved clause pack.",
      live: true,
     },
     {
-     title: "Engineering supervision",
-     body: "Supervision phases, deliverables, and timeline.",
-     live: false,
+     title: "Engineering supervision — Ruwaq executive",
+     body: "Formal layout for engineering firms and site supervision.",
+     live: true,
     },
     {
-     title: "Preliminary estimate, villa",
-     body: "Estimate-only mode, confirmed after site visit.",
-     live: false,
+     title: "3D visualization — Graphics House",
+     body: "Design studio identity for architectural visualization.",
+     live: true,
     },
     {
      title: "Recurring maintenance",
@@ -705,13 +705,37 @@ export const en: Messages = {
   },
  },
  templates: {
-  title: "Ruwaq design sample",
+  title: "Proposal sample gallery",
   subtitle:
-   "See how your exported proposal looks, professional layout without Ruwaq branding in real client documents.",
-  openSample: "Open sample",
-  openSampleHint: "Opens in a new tab, demo data for preview only.",
-  note: "Your real proposals show your company identity only. Ruwaq appears here as a design preview.",
+   "Three samples to explore: villa fit-out (Ruwaq classic), engineering supervision (Ruwaq executive), and 3D visualization (Graphics House).",
+  openSample: "Open in new tab",
+  openSampleHint: "Demo data for preview only, not for client delivery.",
+  note: "Your real proposals show your company identity only.",
+  previewLabel: "Preview",
   back: "Back",
+  gallery: [
+   {
+    slug: "ruwaq-classic",
+    brand: "Ruwaq",
+    title: "Residential villa fit-out",
+    body: "Fit-out scope, BOQ, 30/40/30 payments, and approved clause pack.",
+    badge: "Primary sample",
+   },
+   {
+    slug: "ruwaq-executive",
+    brand: "Ruwaq — Executive",
+    title: "Engineering supervision — office tower",
+    body: "A more formal layout for engineering firms: supervision, reports, timeline.",
+    badge: "Ruwaq sample 2",
+   },
+   {
+    slug: "graphics-house",
+    brand: "Graphics House",
+    title: "3D visualization package",
+    body: "Graphics House identity for design and architectural visualization proposals.",
+    badge: "GH sample",
+   },
+  ],
  },
  list: {
   title: "My Proposals",
