@@ -20,6 +20,7 @@ Do not regress these decisions without explicit user approval.
 - Hero title: `line-height: 1.48`, weight 700
 - Eyebrows: `text-sm`, gold, no uppercase in AR
 - Hero subtitle highlight: `ruwaq-hero-lead-highlight` — gold, bold phrase only (e.g. حزمة بنود معتمدة تحميك)
+- Hero inputs: `subtitleIntro` + 3 horizontal pills (`ruwaq-hero-input-pill`) + outcome line below
 
 ## Hero layout
 - Split: copy **left**, circular `hero.jpg` **right** (`direction: ltr` on grid)

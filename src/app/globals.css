@@ -315,6 +315,45 @@
     @apply text-white;
   }
 
+  .ruwaq-hero-subtitle {
+    @apply max-w-xl;
+  }
+
+  .ruwaq-hero-lead-intro {
+    @apply text-base font-medium text-white/85 sm:text-lg;
+  }
+
+  html[lang="ar"] .ruwaq-hero-lead-intro,
+  html[data-lang="ar"] .ruwaq-hero-lead-intro {
+    line-height: 1.7;
+  }
+
+  .ruwaq-hero-inputs {
+    @apply mt-3 flex list-none flex-wrap gap-2 p-0 sm:mt-4 sm:gap-2.5;
+  }
+
+  .ruwaq-hero-input-pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-2 text-sm text-white/90 backdrop-blur-sm transition-colors duration-300 hover:border-white/25 hover:bg-white/15 sm:px-4 sm:py-2.5;
+  }
+
+  html[lang="ar"] .ruwaq-hero-input-pill,
+  html[data-lang="ar"] .ruwaq-hero-input-pill {
+    line-height: 1.4;
+  }
+
+  .ruwaq-hero-input-num {
+    @apply flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-ruwaq-gold text-xs font-bold text-white;
+  }
+
+  .ruwaq-hero-lead-outcome {
+    @apply mt-4 text-base leading-relaxed text-white/75 sm:mt-5 sm:text-lg;
+  }
+
+  html[lang="ar"] .ruwaq-hero-lead-outcome,
+  html[data-lang="ar"] .ruwaq-hero-lead-outcome {
+    line-height: 1.85;
+  }
+
   .ruwaq-hero-lead-highlight {
     @apply font-semibold text-ruwaq-gold;
   }

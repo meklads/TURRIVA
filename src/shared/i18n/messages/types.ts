@@ -172,9 +172,11 @@ export type Messages = {
       eyebrow: string;
       title: string;
       titleHighlight: string;
-      subtitleBefore: string;
+      subtitleIntro: string;
+      subtitleInputs: readonly string[];
+      subtitleOutcomeBefore: string;
       subtitleHighlight: string;
-      subtitleAfter: string;
+      subtitleOutcomeAfter: string;
       cta: string;
       ctaSecondary: string;
       microcopy: string;

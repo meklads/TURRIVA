@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
       ? `${t.sales.hero.title} ${t.sales.hero.titleHighlight} · رواق`
       : `${t.sales.hero.title} ${t.sales.hero.titleHighlight} · Ruwaq`;
 
-  const description = `${t.sales.hero.subtitleBefore}${t.sales.hero.subtitleHighlight}${t.sales.hero.subtitleAfter}`;
+  const description = `${t.sales.hero.subtitleIntro} ${t.sales.hero.subtitleInputs.join(", ")}. ${t.sales.hero.subtitleOutcomeBefore}${t.sales.hero.subtitleHighlight}${t.sales.hero.subtitleOutcomeAfter}`;
 
   return {
     title,
