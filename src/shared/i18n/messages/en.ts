@@ -831,6 +831,7 @@ export const en: Messages = {
   footer: "Please review this proposal before final acceptance.",
   sampleBadge: "Design sample, preview only",
   sampleFooter: "Ruwaq design sample, not for client delivery.",
+  logoPlaceholder: "Your logo here",
   preparedFor: "Prepared for:",
   preparedBy: "Prepared by:",
   proposalNumber: "Proposal #:",

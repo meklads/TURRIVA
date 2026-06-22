@@ -29,43 +29,22 @@ function exportLink(href: string, label: string, color: string): string {
   return `<a href="${escapeHtml(href)}" style="color:${color};text-decoration:none;">${escapeHtml(label)}</a>`;
 }
 
-function brandPanelHtml(
+function headerLogoHtml(
   data: ProposalExportData,
-  labels: ReturnType<typeof getMessages>["export"]
+  labels: ReturnType<typeof getMessages>["export"],
+  usePlaceholder: boolean
 ): string {
-  const logo = safeHttpUrl(data.logoUrl);
+  const logo = usePlaceholder ? null : safeHttpUrl(data.logoUrl);
   const companyName = data.companyName?.trim();
 
-  if (!logo && !companyName) return "";
+  const circleInner = logo
+    ? `<img src="${escapeHtml(logo)}" alt="">`
+    : `<span class="logo-placeholder-text">${escapeHtml(labels.logoPlaceholder)}</span>`;
 
-  const logoSlot = logo
-    ? `<div class="brand-logo-slot"><img src="${escapeHtml(logo)}" alt=""></div>`
-    : companyName
-      ? `<div class="brand-logo-slot brand-logo-monogram" aria-hidden="true">${escapeHtml(companyName.charAt(0))}</div>`
-      : "";
-
-  const metaLines = [
-    data.crNumber ? `${labels.crNumber} ${data.crNumber}` : "",
-    data.vatNumber ? `${labels.vatNumber} ${data.vatNumber}` : "",
-    data.companyPhone ? `${labels.phone} ${data.companyPhone}` : "",
-    data.companyEmail ? `${labels.email} ${data.companyEmail}` : "",
-    data.address?.trim() ?? "",
-  ]
-    .filter(Boolean)
-    .map((line) => `<div class="brand-meta-line">${escapeHtml(line)}</div>`)
-    .join("");
-
-  return `<aside class="banner-brand" aria-label="${escapeHtml(labels.preparedBy)}">
-      <div class="brand-label">${escapeHtml(labels.preparedBy)}</div>
-      ${logoSlot}
-      ${companyName ? `<div class="brand-company-name">${escapeHtml(companyName)}</div>` : ""}
-      ${metaLines ? `<div class="brand-meta">${metaLines}</div>` : ""}
-      ${
-        data.website && safeHttpUrl(data.website)
-          ? `<div class="brand-website"><a href="${escapeHtml(safeHttpUrl(data.website)!)}">${escapeHtml(labels.websiteLink)}</a></div>`
-          : ""
-      }
-    </aside>`;
+  return `<div class="header-logo-col" aria-label="${escapeHtml(labels.preparedBy)}">
+      <div class="logo-circle">${circleInner}</div>
+      ${companyName ? `<p class="header-company-name">${escapeHtml(companyName)}</p>` : ""}
+    </div>`;
 }
 
 export function renderRuwaqTemplate(
@@ -119,7 +98,8 @@ export function renderRuwaqTemplate(
     data.address ? [labels.address, data.address] : null,
   ].filter(Boolean) as [string, string][];
 
-  const showBrandPanel = Boolean(data.companyName?.trim() || safeHttpUrl(data.logoUrl));
+  const showBrandPanel = Boolean(data.companyName?.trim() || safeHttpUrl(data.logoUrl) || data.platformBranding);
+  const useLogoPlaceholder = data.platformBranding === true || !safeHttpUrl(data.logoUrl);
 
   const websiteHref = safeHttpUrl(data.website);
   const portfolioHref = safeHttpUrl(data.portfolioUrl);
@@ -151,7 +131,10 @@ export function renderRuwaqTemplate(
     .join("");
 
   const sectionTitle = (title: string) =>
-    `<h2 style="font-size:17px;font-weight:700;color:${colors.navy};margin:36px 0 14px;padding-bottom:8px;border-bottom:2px solid ${colors.gold};">${escapeHtml(title)}</h2>`;
+    `<h2 class="section-title">${escapeHtml(title)}</h2>`;
+
+  const printSurface = "#F3F4F6";
+  const printBorder = "#E5E7EB";
 
   const platformBranding = data.platformBranding === true;
   const showWatermark = Boolean(data.watermarkClientName && data.watermarkDate);
@@ -252,7 +235,7 @@ export function renderRuwaqTemplate(
     ? (data.timeline!.milestones as Record<string, unknown>[])
     : [];
 
-  const companyBrand = brandPanelHtml(data, labels);
+  const headerLogo = headerLogoHtml(data, labels, useLogoPlaceholder);
   const footerAddress = locale === "ar" ? footer.addressAr : footer.addressEn;
   const footerTagline = locale === "ar" ? footer.taglineAr : footer.taglineEn;
   const sampleBadge = platformBranding
@@ -284,13 +267,13 @@ export function renderRuwaqTemplate(
 
   const platformFooter = `<footer class="doc-footer">
       <div>
-        <img src="${escapeHtml(assetUrl(base, assets.logoOnDark))}" alt="Ruwaq">
+        <img src="${escapeHtml(assetUrl(base, assets.logoOnLight))}" alt="Ruwaq">
         <div class="doc-footer-tagline">${escapeHtml(footerTagline)}</div>
       </div>
-      <div style="text-align:${dir === "rtl" ? "left" : "right"};">
+      <div class="doc-footer-meta">
         <div>${escapeHtml(footerAddress)}</div>
-        <div style="margin-top:4px;"><a href="https://${footer.website}">${escapeHtml(footer.website)}</a></div>
-        <div style="margin-top:6px;opacity:0.75;">${escapeHtml(labels.sampleFooter)}</div>
+        <div class="doc-footer-link"><a href="https://${footer.website}">${escapeHtml(footer.website)}</a></div>
+        <div class="doc-footer-note">${escapeHtml(labels.sampleFooter)}</div>
       </div>
     </footer>`;
 
@@ -337,117 +320,89 @@ export function renderRuwaqTemplate(
       font-weight: 700; z-index: 10; font-family: inherit;
     }
     .banner {
-      background: linear-gradient(145deg, ${colors.navy} 0%, #1a2744 55%, ${colors.navy} 100%);
-      padding: 32px 36px 28px;
-      color: ${colors.cream};
+      background: ${colors.creamBg};
+      padding: 18px 32px 20px;
+      color: ${colors.text};
+      border-bottom: 1px solid ${printBorder};
     }
     .banner-top {
       display: flex;
       justify-content: space-between;
-      align-items: stretch;
-      gap: 28px;
+      align-items: center;
+      gap: 20px;
       flex-wrap: wrap;
     }
-    .banner-brand {
+    .header-logo-col {
       flex-shrink: 0;
-      width: min(100%, 240px);
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(201, 160, 99, 0.28);
-      border-radius: 16px;
-      padding: 18px 18px 16px;
       text-align: center;
+      min-width: 80px;
     }
-    .brand-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: ${colors.gold};
-      margin-bottom: 12px;
-    }
-    .brand-logo-slot {
+    .logo-circle {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
       background: ${colors.white};
-      border-radius: 12px;
-      padding: 14px 16px;
-      margin-bottom: 12px;
+      border: 1.5px dashed #D1D5DB;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 92px;
-      box-shadow: 0 4px 18px rgba(15, 23, 42, 0.12);
+      overflow: hidden;
+      margin: 0 auto 6px;
     }
-    .brand-logo-slot img {
-      max-height: 76px;
-      max-width: 100%;
-      width: auto;
+    .logo-circle img {
+      width: 100%;
+      height: 100%;
       object-fit: contain;
-      display: block;
+      padding: 8px;
     }
-    .brand-logo-monogram {
-      font-size: 36px;
-      font-weight: 800;
-      color: ${colors.navy};
-      line-height: 1;
-    }
-    .brand-company-name {
-      font-size: 14px;
-      font-weight: 700;
-      color: ${colors.white};
-      line-height: 1.5;
-      margin-bottom: 8px;
-    }
-    .brand-meta-line {
-      font-size: 10px;
-      color: ${colors.cream};
-      opacity: 0.9;
-      line-height: 1.65;
-      margin-top: 2px;
-    }
-    .brand-website {
-      margin-top: 10px;
-      padding-top: 10px;
-      border-top: 1px solid rgba(201, 160, 99, 0.22);
-      font-size: 11px;
-    }
-    .brand-website a {
-      color: ${colors.gold};
-      text-decoration: none;
+    .logo-placeholder-text {
+      font-size: 9px;
       font-weight: 600;
+      color: #9CA3AF;
+      line-height: 1.35;
+      text-align: center;
+      padding: 6px;
+    }
+    .header-company-name {
+      font-size: 11px;
+      font-weight: 700;
+      color: ${colors.navy};
+      margin: 0;
+      line-height: 1.4;
+      max-width: 92px;
     }
     .banner-main {
       flex: 1;
-      min-width: min(100%, 280px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      min-width: min(100%, 240px);
     }
     .banner-badge {
-      font-size: 11px;
-      letter-spacing: 0.12em;
+      font-size: 10px;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: ${colors.gold};
       font-weight: 700;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
     .banner-title {
-      font-size: 28px;
+      font-size: 22px;
       font-weight: 700;
-      color: ${colors.white};
-      margin: 0 0 8px;
-      line-height: 1.35;
+      color: ${colors.navy};
+      margin: 0 0 4px;
+      line-height: 1.38;
       word-break: break-word;
     }
     .banner-client {
-      font-size: 14px;
-      color: ${colors.cream};
-      opacity: 0.92;
+      font-size: 13px;
+      color: ${colors.textMuted};
     }
-    .banner-accent {
-      height: 3px;
-      background: linear-gradient(90deg, ${colors.gold}, ${colors.goldLight}, ${colors.gold});
-      margin-top: 20px;
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: ${colors.navy};
+      margin: 28px 0 12px;
+      padding: 0;
     }
-    .content { padding: 32px 36px 16px; }
+    .content { padding: 24px 32px 12px; }
     .meta-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -467,10 +422,9 @@ export function renderRuwaqTemplate(
       line-height: 1.75;
       white-space: pre-wrap;
       margin-bottom: 8px;
-      padding: 16px 18px;
+      padding: 14px 16px;
       background: ${colors.creamBg};
       border-radius: 10px;
-      border-${dir === "rtl" ? "right" : "left"}: 3px solid ${colors.gold};
     }
     .scope-item {
       margin: 14px 0;
@@ -493,28 +447,29 @@ export function renderRuwaqTemplate(
     }
     table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; }
     th {
-      background: ${colors.navy};
-      color: ${colors.cream};
+      background: ${printSurface};
+      color: ${colors.navy};
       padding: 10px 14px;
       font-size: 12px;
       font-weight: 600;
       text-align: start;
+      border-bottom: 1px solid ${printBorder};
     }
     td { font-size: 13px; color: ${colors.text}; }
     .total-box {
       display: inline-block;
-      background: ${colors.navy};
-      color: ${colors.white};
-      padding: 12px 20px;
+      background: ${printSurface};
+      color: ${colors.navy};
+      padding: 10px 18px;
       border-radius: 10px;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       margin: 8px 0 16px;
+      border: 1px solid ${printBorder};
     }
     .estimate-banner {
-      background: linear-gradient(135deg, ${colors.estimateBg} 0%, ${colors.creamBg} 100%);
+      background: ${colors.estimateBg};
       border: 1px solid ${colors.estimateBorder};
-      border-${dir === "rtl" ? "right" : "left"}: 3px solid ${colors.gold};
       border-radius: 10px;
       padding: 14px 18px;
       font-size: 13px;
@@ -562,18 +517,17 @@ export function renderRuwaqTemplate(
       width: 100%;
       border-collapse: collapse;
       margin: 14px 0 22px;
-      border: 1px solid ${colors.navy};
+      border: 1px solid ${printBorder};
       border-radius: 8px;
       overflow: hidden;
     }
     .boq-table th {
-      background: ${colors.navy};
-      color: ${colors.cream};
-      padding: 11px 14px;
+      background: ${printSurface};
+      color: ${colors.navy};
+      padding: 10px 14px;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.04em;
-      border-bottom: 2px solid ${colors.gold};
+      letter-spacing: 0.03em;
     }
     .boq-table td {
       padding: 11px 14px;
@@ -604,34 +558,40 @@ export function renderRuwaqTemplate(
       gap: 28px;
     }
     .signature-box {
-      border-top: 2px solid ${colors.gold};
+      border-top: 1px solid ${printBorder};
       padding-top: 10px;
       font-size: 13px;
       color: ${colors.textMuted};
       min-height: 72px;
     }
     .doc-footer {
-      background: ${colors.navy};
-      color: ${colors.cream};
-      padding: 20px 32px;
-      margin-top: 24px;
+      background: ${printSurface};
+      color: ${colors.text};
+      padding: 18px 32px;
+      margin-top: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 20px;
       flex-wrap: wrap;
       font-size: 11px;
+      border-top: 1px solid ${printBorder};
     }
-    .doc-footer img { max-height: 44px; opacity: 0.95; }
-    .doc-footer a { color: ${colors.gold}; text-decoration: none; }
+    .doc-footer img { max-height: 40px; }
+    .doc-footer a { color: ${colors.navy}; text-decoration: none; font-weight: 600; }
     .doc-footer-tagline { color: ${colors.gold}; font-weight: 600; margin-top: 4px; }
+    .doc-footer-meta {
+      text-align: ${dir === "rtl" ? "left" : "right"};
+      color: ${colors.textMuted};
+    }
+    .doc-footer-note { margin-top: 6px; font-size: 10px; opacity: 0.85; }
     .doc-footer-client {
-      border-top: 2px solid ${colors.gold};
-      margin-top: 28px;
-      padding: 18px 32px 24px;
+      border-top: 1px solid ${printBorder};
+      margin-top: 24px;
+      padding: 16px 32px 20px;
       font-size: 12px;
       color: ${colors.textMuted};
-      background: ${colors.creamBg};
+      background: ${printSurface};
     }
     .doc-footer-minimal {
       text-align: center;
@@ -639,10 +599,9 @@ export function renderRuwaqTemplate(
     }
     .clause-item {
       margin: 0 0 12px;
-      padding: 16px 18px;
+      padding: 14px 16px;
       background: ${colors.white};
-      border: 1px solid ${colors.navy};
-      border-${dir === "rtl" ? "right" : "left"}: 3px solid ${colors.gold};
+      border: 1px solid ${printBorder};
       border-radius: 8px;
       page-break-inside: avoid;
     }
@@ -660,10 +619,11 @@ export function renderRuwaqTemplate(
       min-width: 26px;
       height: 26px;
       border-radius: 50%;
-      background: ${colors.navy};
-      color: ${colors.cream};
+      background: ${printSurface};
+      color: ${colors.navy};
       font-size: 12px;
       font-weight: 700;
+      border: 1px solid ${printBorder};
     }
     .clause-cat {
       font-size: 11px;
@@ -752,15 +712,14 @@ export function renderRuwaqTemplate(
   <div class="page-wrap">
     <header class="banner">
       <div class="banner-top">
-        ${showBrandPanel ? companyBrand : ""}
         <div class="banner-main">
           <div class="banner-badge">${escapeHtml(docTitle)}</div>
           <h1 class="banner-title">${escapeHtml(data.projectName)}</h1>
           <div class="banner-client">${escapeHtml(labels.preparedFor)} ${escapeHtml(data.clientName)}</div>
           ${sampleBadge}
         </div>
+        ${showBrandPanel ? headerLogo : ""}
       </div>
-      <div class="banner-accent"></div>
     </header>
 
     <main class="content">
@@ -772,7 +731,7 @@ export function renderRuwaqTemplate(
           )
           .join("")}
         ${
-          !showBrandPanel && identityRows.length
+          identityRows.length
             ? identityRows
                 .map(
                   ([label, value]) =>

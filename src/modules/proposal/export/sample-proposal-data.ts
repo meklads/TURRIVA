@@ -59,7 +59,6 @@ export function buildRuwaqSampleExportData(
     projectName: isAr ? "تشطيب فيلا سكنية — حي الملقا" : "Residential villa fit-out — Al Malqa",
     clientName: isAr ? "أ. محمد العتيبي" : "Mr. Mohammed Al-Otaibi",
     companyName: isAr ? "شركة النخيل للتشطيب" : "Al Nakheel Fit-out Co.",
-    logoUrl: `${base}/brand/sample/company-logo.svg`,
     address: isAr ? "الرياض — حي العليا" : "Riyadh — Al Olaya",
     about: isAr
       ? "مكتب تشطيب عقاري متخصص في المشاريع السكنية والتجارية منذ 2012."

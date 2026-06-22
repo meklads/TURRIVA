@@ -443,6 +443,7 @@ export type Messages = {
     footer: string;
     sampleBadge: string;
     sampleFooter: string;
+    logoPlaceholder: string;
     preparedFor: string;
     preparedBy: string;
     proposalNumber: string;

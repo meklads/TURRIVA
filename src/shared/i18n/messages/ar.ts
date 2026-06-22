@@ -836,6 +836,7 @@ export const ar = {
   footer: "يرجى مراجعة هذا العرض قبل القبول النهائي.",
   sampleBadge: "نموذج تصميم، للاستعراض فقط",
   sampleFooter: "نموذج تصميم رواق، لا يُرسل للعميل.",
+  logoPlaceholder: "شعارك هنا",
   preparedFor: "مُعد لـ:",
   preparedBy: "مُعد بواسطة:",
   proposalNumber: "رقم العرض:",
