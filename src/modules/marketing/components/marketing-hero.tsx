@@ -10,19 +10,33 @@ type Props = {
   locale: Locale;
 };
 
-/** Split navy hero — image left, copy right on desktop. */
+function HeroSkyBackdrop() {
+  return (
+    <div className="ruwaq-hero-sky-media" aria-hidden>
+      <div className="ruwaq-hero-clouds">
+        <span className="ruwaq-hero-cloud ruwaq-hero-cloud--a" />
+        <span className="ruwaq-hero-cloud ruwaq-hero-cloud--b" />
+        <span className="ruwaq-hero-cloud ruwaq-hero-cloud--c" />
+        <span className="ruwaq-hero-cloud ruwaq-hero-cloud--d" />
+      </div>
+    </div>
+  );
+}
+
+/** Optimistic sky hero — image left, copy right, animated clouds. */
 export function MarketingHero({ hero, locale }: Props) {
   const arrow = locale === "ar" ? "←" : "→";
   const textDir = locale === "ar" ? "rtl" : "ltr";
 
   return (
-    <section className="ruwaq-landing-hero ruwaq-landing-hero--navy">
+    <section className="ruwaq-landing-hero ruwaq-landing-hero--sky">
+      <HeroSkyBackdrop />
       <div className="ruwaq-hero-split ruwaq-reveal">
         <div className="ruwaq-hero-copy" dir={textDir}>
           <p className="ruwaq-hero-eyebrow">{hero.eyebrow}</p>
           <h1 className="ruwaq-hero-title mt-5 sm:mt-6">
             {hero.title}
-            <span className="text-ruwaq-gold"> {hero.titleHighlight}</span>
+            <span className="ruwaq-hero-title-highlight"> {hero.titleHighlight}</span>
           </h1>
           <div className="ruwaq-hero-subtitle mt-6 sm:mt-7">
             <p className="ruwaq-hero-lead-intro">{hero.subtitleIntro}</p>
@@ -44,7 +58,7 @@ export function MarketingHero({ hero, locale }: Props) {
           </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-3 sm:mt-12">
-            <Link href="/proposals/new" className="btn-ruwaq-hero-gold px-10 py-4 text-base">
+            <Link href="/proposals/new" className="btn-ruwaq-hero-orange px-10 py-4 text-base">
               {hero.cta} {arrow}
             </Link>
             <Link href="/templates/sample" className="btn-ruwaq-hero-outline px-8 py-3.5">
