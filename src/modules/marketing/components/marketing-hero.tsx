@@ -58,7 +58,7 @@ export function MarketingHero({ hero, locale }: Props) {
           </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-3 sm:mt-12">
-            <Link href="/proposals/new" className="btn-ruwaq-hero-orange px-10 py-4 text-base">
+            <Link href="/proposals/new" className="btn-ruwaq-hero-gold px-10 py-4 text-base">
               {hero.cta} {arrow}
             </Link>
             <Link href="/templates/sample" className="btn-ruwaq-hero-outline px-8 py-3.5">

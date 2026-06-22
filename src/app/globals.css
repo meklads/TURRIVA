@@ -126,12 +126,8 @@
     @apply inline-flex items-center justify-center rounded-full bg-ruwaq-gold px-5 py-2.5 text-xs font-semibold tracking-tight text-white shadow-ruwaq transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:bg-ruwaq-gold-light hover:shadow-ruwaq-float active:translate-y-0 active:scale-[0.98] sm:text-sm;
   }
 
-  .btn-ruwaq-hero-orange {
-    @apply inline-flex items-center justify-center rounded-full bg-[#F97316] px-7 py-3.5 text-sm font-semibold tracking-tight text-white shadow-[0_4px_16px_rgba(249,115,22,0.38)] transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:bg-[#EA580C] hover:shadow-[0_6px_22px_rgba(234,88,12,0.42)] active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F97316]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white;
-  }
-
   .btn-ruwaq-hero-gold {
-    @apply inline-flex items-center justify-center rounded-full bg-ruwaq-gold px-7 py-3.5 text-sm font-semibold tracking-tight text-white shadow-ruwaq transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:bg-ruwaq-gold-light hover:shadow-ruwaq-float active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-ruwaq-navy;
+    @apply inline-flex items-center justify-center rounded-full bg-ruwaq-gold px-7 py-3.5 text-sm font-semibold tracking-tight text-white shadow-[0_4px_16px_rgba(201,160,99,0.42)] transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:bg-ruwaq-gold-light hover:shadow-[0_6px_22px_rgba(201,160,99,0.48)] active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ruwaq-gold/55 focus-visible:ring-offset-2 focus-visible:ring-offset-white;
   }
 
   .btn-ruwaq-hero-outline {
@@ -394,7 +390,7 @@
   }
 
   .ruwaq-landing-hero--sky .ruwaq-hero-input-num {
-    @apply bg-[#F97316];
+    @apply bg-ruwaq-gold;
   }
 
   .ruwaq-landing-hero--sky .ruwaq-hero-lead-outcome {
@@ -402,8 +398,8 @@
   }
 
   .ruwaq-landing-hero--sky .ruwaq-hero-lead-highlight {
-    @apply font-semibold;
-    color: #c2410c;
+    @apply font-semibold text-ruwaq-gold;
+    color: #9a7a42;
   }
 
   .ruwaq-landing-hero--sky .ruwaq-hero-microcopy {
