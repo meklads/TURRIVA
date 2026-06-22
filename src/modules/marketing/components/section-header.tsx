@@ -12,7 +12,7 @@ export function SectionHeader({ eyebrow, title, subtitle, align = "center" }: Pr
   return (
     <header className={alignClass}>
       <p className="ruwaq-eyebrow">{eyebrow}</p>
-      <h2 className={`ruwaq-section-title mt-4 sm:mt-5 ${align === "center" ? "max-w-4xl" : "max-w-2xl"}`}>
+      <h2 className={`ruwaq-section-title mt-4 sm:mt-5 ${align === "center" ? "mx-auto max-w-4xl" : "max-w-2xl"}`}>
         {title}
       </h2>
       {subtitle ? (

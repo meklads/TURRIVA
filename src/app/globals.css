@@ -517,6 +517,53 @@
     @apply mx-auto max-w-6xl;
   }
 
+  .ruwaq-landing-section-inner--narrow {
+    @apply mx-auto max-w-5xl;
+  }
+
+  .ruwaq-illustration-grid {
+    @apply grid gap-6 sm:gap-8;
+  }
+
+  .ruwaq-illustration-grid--features {
+    @apply sm:grid-cols-2 lg:grid-cols-3 lg:gap-10;
+  }
+
+  .ruwaq-illustration-grid--pillars {
+    @apply sm:grid-cols-2 lg:gap-10;
+  }
+
+  .ruwaq-illustration-card {
+    @apply flex flex-col items-center rounded-3xl border border-slate-100/90 bg-white px-6 pb-9 pt-7 text-center shadow-sm transition-all duration-500 ease-apple hover:-translate-y-1 hover:border-slate-200/90 hover:shadow-ruwaq-premium sm:px-7 sm:pb-10 sm:pt-8;
+  }
+
+  .ruwaq-illustration-card-art {
+    @apply mb-5 flex h-[5.5rem] w-[5.5rem] items-center justify-center rounded-2xl bg-gradient-to-br from-ruwaq-gold-muted/80 to-white sm:h-24 sm:w-24;
+  }
+
+  .ruwaq-illustration-card-svg {
+    @apply h-[4.25rem] w-[4.25rem] sm:h-[4.75rem] sm:w-[4.75rem];
+  }
+
+  .ruwaq-illustration-card-title {
+    @apply text-base font-semibold leading-snug text-ruwaq-ink sm:text-[1.0625rem];
+  }
+
+  html[lang="ar"] .ruwaq-illustration-card-title,
+  html[data-lang="ar"] .ruwaq-illustration-card-title {
+    font-weight: 700;
+    line-height: 1.55;
+  }
+
+  .ruwaq-illustration-card-body {
+    @apply mt-2.5 max-w-[16rem] text-sm leading-relaxed text-ruwaq-ink-soft;
+  }
+
+  html[lang="ar"] .ruwaq-illustration-card-body,
+  html[data-lang="ar"] .ruwaq-illustration-card-body {
+    line-height: 1.85;
+  }
+
   .ruwaq-section-lead {
     @apply text-[1.0625rem] leading-relaxed text-ruwaq-ink-soft sm:text-lg;
   }
@@ -726,7 +773,7 @@
   }
 
   .ruwaq-comparison-table {
-    @apply overflow-hidden rounded-2xl border border-slate-100/90 bg-white shadow-ruwaq-premium;
+    @apply overflow-hidden rounded-3xl border border-slate-100/90 bg-white shadow-ruwaq-premium;
   }
 
   .ruwaq-comparison-table .ruwaq-row-highlight {
@@ -798,6 +845,7 @@
     .btn-ruwaq-accent:hover,
     .ruwaq-hero-step-illustration:hover,
     .ruwaq-hero-ticket:hover,
+    .ruwaq-illustration-card:hover,
     .ruwaq-section-visual-frame:hover img {
       transform: none;
     }

@@ -217,7 +217,11 @@ export type Messages = {
       eyebrow: string;
       title: string;
       subtitle: string;
-      items: readonly { icon: string; title: string; body: string }[];
+      items: readonly {
+        illustration: "inputs" | "shield" | "brand" | "estimate" | "bilingual" | "instant";
+        title: string;
+        body: string;
+      }[];
     };
     steps: {
       eyebrow: string;
@@ -255,7 +259,11 @@ export type Messages = {
       eyebrow: string;
       title: string;
       subtitle: string;
-      pillars: readonly { icon: string; title: string; body: string }[];
+      pillars: readonly {
+        illustration: "partner" | "protection" | "regulations" | "verified";
+        title: string;
+        body: string;
+      }[];
       packTitle: string;
       packMeta: string;
       clauses: readonly {

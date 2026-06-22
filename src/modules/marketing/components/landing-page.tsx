@@ -1,3 +1,4 @@
+import { SectionIllustrationCard } from "@/modules/marketing/components/section-illustration-card";
 import { TrustPartnerSection } from "@/modules/marketing/components/trust-partner-section";
 import Link from "next/link";
 import { HeroServiceTickets } from "@/modules/marketing/components/hero-service-tickets";
@@ -89,22 +90,21 @@ export function LandingPage({ t, locale }: Props) {
       </section>
 
       <section className="ruwaq-landing-section ruwaq-landing-section--warm ruwaq-reveal">
-        <div className="ruwaq-landing-section-inner">
+        <div className="ruwaq-landing-section-inner ruwaq-landing-section-inner--narrow">
           <SectionHeader
             eyebrow={s.features.eyebrow}
             title={s.features.title}
             subtitle={s.features.subtitle}
+            align="center"
           />
-          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
-            {s.features.items.map(({ icon, title, body }, i) => (
-              <article key={title} className="ruwaq-light-card group">
-                <span className="ruwaq-service-num">{String(i + 1).padStart(2, "0")}</span>
-                <span className="ruwaq-feature-icon-wrap mt-4" aria-hidden>
-                  {icon}
-                </span>
-                <h3 className="ruwaq-card-title mt-4">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ruwaq-ink-soft">{body}</p>
-              </article>
+          <div className="ruwaq-illustration-grid ruwaq-illustration-grid--features mt-14 lg:mt-16">
+            {s.features.items.map((item) => (
+              <SectionIllustrationCard
+                key={item.title}
+                illustration={item.illustration}
+                title={item.title}
+                body={item.body}
+              />
             ))}
           </div>
         </div>
@@ -112,12 +112,13 @@ export function LandingPage({ t, locale }: Props) {
 
       <TrustPartnerSection trust={s.trustPartner} locale={locale} />
 
-      <section className="ruwaq-landing-section">
-        <div className="ruwaq-landing-section-inner">
+      <section className="ruwaq-landing-section ruwaq-reveal">
+        <div className="ruwaq-landing-section-inner ruwaq-landing-section-inner--narrow">
           <SectionHeader
             eyebrow={s.why.eyebrow}
             title={s.why.title}
             subtitle={s.why.subtitle}
+            align="center"
           />
           <div className="ruwaq-comparison-table mt-14 lg:mt-16">
             <div className="hidden grid-cols-[1fr_1fr_1fr] border-b border-slate-100 bg-ruwaq-canvas-soft text-xs font-semibold uppercase tracking-wider text-ruwaq-ink-muted sm:grid">

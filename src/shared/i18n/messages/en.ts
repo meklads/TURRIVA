@@ -298,32 +298,32 @@ export const en: Messages = {
     "Not ERP. Not a template library. A smart translator that turns what you know into a trust-building document.",
    items: [
     {
-     icon: "⚡",
+     illustration: "inputs",
      title: "3 inputs only",
      body: "Client, work description, fixed price or preliminary estimate. Extra details are optional, never blocking.",
     },
     {
-     icon: "🛡️",
+     illustration: "shield",
      title: "Assumptions & exclusions",
      body: "Before export you confirm what's included and what's not, protection for you and your client.",
     },
     {
-     icon: "🏢",
+     illustration: "brand",
      title: "PDF under your brand",
      body: "Your logo, CR, VAT. The client sees your firm, not a third-party platform.",
     },
     {
-     icon: "📋",
+     illustration: "estimate",
      title: "Preliminary estimate mode",
      body: "\"Estimate only\" for projects that need a site visit before final pricing.",
     },
     {
-     icon: "🇸🇦",
+     illustration: "bilingual",
      title: "Arabic & English",
      body: "Content suited to the Saudi market, CR, VAT, professional tone.",
     },
     {
-     icon: "🚀",
+     illustration: "instant",
      title: "Start without an account",
      body: "Try instantly. Save proposals and set up your company profile when ready.",
     },
@@ -484,22 +484,22 @@ export const en: Messages = {
     "We don't just write a beautiful proposal. We embed pre-vetted clauses grounded in SBC, ZATCA, and Balady, so the client trusts you and you are protected before work begins.",
    pillars: [
     {
-     icon: "🤝",
+     illustration: "partner",
      title: "Partner, not competitor",
      body: "Ruwaq is your ally: assistant, companion, and backer. The goal is for the contractor to win and the client to trust, not to leave you alone with Word.",
     },
     {
-     icon: "🛡️",
+     illustration: "protection",
      title: "Protection before dispute",
      body: "Assumptions, exclusions, and mandatory clauses reviewed before export. What is clear today prevents \"we misunderstood\" tomorrow.",
     },
     {
-     icon: "📜",
+     illustration: "regulations",
      title: "Updated regulations",
      body: "Clauses tied to official references: building code, VAT, municipal permits, and more, kept current.",
     },
     {
-     icon: "✓",
+     illustration: "verified",
      title: "Documented references",
      body: "Every clause carries a clear source. The client sees professionalism; you rely on approved templates, not improvisation.",
     },

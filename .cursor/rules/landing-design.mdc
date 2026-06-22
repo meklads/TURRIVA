@@ -32,6 +32,7 @@ Do not regress these decisions without explicit user approval.
 - Section **after** hero, `margin-top` negative (~3rem) — top sliver overlaps navy, rest on white
 - Centered: SVG illustration → title → body
 - Content = proposal components: scope, timeline, payments, PDF (not generic platform benefits)
+- Features & trust pillars: centered `ruwaq-illustration-card` with SVG icons (no emoji)
 
 ## Sections order
 Hero → tickets → steps → problem → features → trustPartner (clause pack) → why table → sample → final CTA
