@@ -17,9 +17,12 @@ const LOGO_SRC = {
 const LOGO_WIDTH = 1774;
 const LOGO_HEIGHT = 887;
 
+/** Shared site chrome logo — header & footer match. */
+export const SITE_LOGO_SIZE_CLASS = "h-16 w-auto sm:h-[4.5rem] lg:h-20 xl:h-[5.25rem]";
+
 export function RuwaqLogo({
   href = "/",
-  className = "h-14 w-auto sm:h-16 lg:h-[4.25rem]",
+  className = SITE_LOGO_SIZE_CLASS,
   variant = "light",
   priority = false,
 }: Props) {
@@ -32,7 +35,7 @@ export function RuwaqLogo({
       className={`ruwaq-logo-img block w-auto ${className}`}
       priority={priority}
       quality={100}
-      sizes="(max-width: 640px) 180px, (max-width: 1024px) 220px, 260px"
+      sizes="(max-width: 640px) 200px, (max-width: 1024px) 260px, 300px"
     />
   );
 

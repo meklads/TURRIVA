@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getMessages } from "@/shared/i18n";
 import { getLocale } from "@/shared/i18n/server";
-import { RuwaqLogo } from "@/shared/components/ruwaq-logo";
+import { RuwaqLogo, SITE_LOGO_SIZE_CLASS } from "@/shared/components/ruwaq-logo";
 
 export async function SiteFooter() {
   const locale = await getLocale();
@@ -68,7 +68,7 @@ export async function SiteFooter() {
 
         <div className="grid gap-10 py-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16 lg:py-14">
           <div>
-            <RuwaqLogo href="/" className="h-14 w-auto lg:h-16" />
+            <RuwaqLogo href="/" className={SITE_LOGO_SIZE_CLASS} />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-ruwaq-ink-soft">
               {t.site.footer.tagline}
             </p>
