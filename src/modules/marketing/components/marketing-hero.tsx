@@ -10,7 +10,7 @@ type Props = {
   locale: Locale;
 };
 
-/** Split navy hero — copy left, circular image right on desktop. */
+/** Split navy hero — image left, copy right on desktop. */
 export function MarketingHero({ hero, locale }: Props) {
   const arrow = locale === "ar" ? "←" : "→";
   const textDir = locale === "ar" ? "rtl" : "ltr";
