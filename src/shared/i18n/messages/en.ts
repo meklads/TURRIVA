@@ -212,7 +212,7 @@ export const en: Messages = {
       title: "Professional real estate proposals in minutes",
    titleHighlight: "not days",
    subtitleIntro: "Just 3 inputs:",
-   subtitleInputs: ["Client", "Work description", "Price or estimate"],
+   subtitleInputs: ["Client name", "Work description", "Price or estimate"],
    subtitleOutcomeBefore: "Ruwaq drafts full scope with ",
    subtitleHighlight: "an approved clause pack that protects you",
    subtitleOutcomeAfter: ", then exports a PDF under your brand.",

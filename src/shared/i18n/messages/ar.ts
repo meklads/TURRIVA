@@ -207,7 +207,7 @@ export const ar = {
       title: "عرض عقاري احترافي في دقائق",
    titleHighlight: "لا أيام",
    subtitleIntro: "ثلاث معلومات فقط:",
-   subtitleInputs: ["العميل", "وصف العمل", "السعر أو تقدير أولي"],
+   subtitleInputs: ["إسم العميل", "وصف العمل", "السعر أو تقدير أولي"],
    subtitleOutcomeBefore: "رواق يكتب نطاقاً كاملاً مع ",
    subtitleHighlight: "حزمة بنود معتمدة تحميك",
    subtitleOutcomeAfter: "، وتصدّر PDF باسم شركتك.",
