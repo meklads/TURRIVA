@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getMessages } from "@/shared/i18n";
 import { getLocale } from "@/shared/i18n/server";
+import { GraphicsHouseLogo } from "@/shared/components/graphics-house-logo";
 
 export default async function AboutPage() {
   const locale = await getLocale();
@@ -37,8 +38,11 @@ export default async function AboutPage() {
       </div>
 
       <div className="mt-10 ruwaq-card-accent border-t-ruwaq-gold bg-ruwaq-cream-bg/30">
-        <h2 className="font-display font-bold text-ruwaq-navy">{t.pages.about.sponsoredTitle}</h2>
-        <p className="mt-2 text-sm leading-relaxed text-ruwaq-navy-soft">
+        <div className="flex flex-wrap items-center gap-4">
+          <GraphicsHouseLogo variant="light" className="h-10 w-auto sm:h-12" />
+          <h2 className="font-display font-bold text-ruwaq-navy">{t.pages.about.sponsoredTitle}</h2>
+        </div>
+        <p className="mt-3 text-sm leading-relaxed text-ruwaq-navy-soft">
           {t.pages.about.sponsoredBody}
         </p>
         <a

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getMessages } from "@/shared/i18n";
 import { getLocale } from "@/shared/i18n/server";
 import { RuwaqLogo, SITE_LOGO_SIZE_CLASS } from "@/shared/components/ruwaq-logo";
+import { GraphicsHouseLogo } from "@/shared/components/graphics-house-logo";
 
 export async function SiteFooter() {
   const locale = await getLocale();
@@ -73,16 +74,9 @@ export async function SiteFooter() {
               {t.site.footer.tagline}
             </p>
             <p className="mt-4 text-xs text-ruwaq-ink-muted">{t.site.footer.address}</p>
-            <p className="mt-4 text-xs leading-relaxed text-ruwaq-ink-muted">
-              {t.site.footer.sponsoredBy}{" "}
-              <a
-                href="https://3dgraphicshouse.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ruwaq-link-gold hover:underline"
-              >
-                {t.site.footer.sponsoredByLink}
-              </a>
+            <p className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-2 text-xs text-ruwaq-ink-muted">
+              <span>{t.site.footer.sponsoredBy}</span>
+              <GraphicsHouseLogo variant="mark" className="h-7 w-auto sm:h-8" />
             </p>
           </div>
         </div>
