@@ -134,6 +134,10 @@
     @apply inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 px-7 py-3.5 text-sm font-semibold tracking-tight text-white backdrop-blur-sm transition-all duration-300 ease-apple hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/15 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-ruwaq-navy;
   }
 
+  .ruwaq-landing-hero--navy .btn-ruwaq-hero-outline {
+    @apply border-slate-200/90 bg-white text-ruwaq-ink shadow-sm hover:border-slate-300 hover:bg-ruwaq-canvas-soft hover:shadow-md focus-visible:ring-ruwaq-gold/35 focus-visible:ring-offset-white;
+  }
+
   .btn-ruwaq-secondary {
     @apply inline-flex items-center justify-center rounded-full border border-ruwaq-stone-mid/80 bg-white px-7 py-3 text-sm font-semibold tracking-tight text-ruwaq-ink transition-all duration-300 ease-apple hover:border-ruwaq-ink-muted hover:bg-ruwaq-linen hover:shadow-ruwaq;
   }
@@ -321,16 +325,26 @@
     @apply text-start;
   }
 
+  .ruwaq-landing-hero--navy .ruwaq-hero-microcopy {
+    @apply text-sm text-ruwaq-ink-muted;
+  }
+
   .ruwaq-hero-microcopy {
     @apply text-sm text-white/55;
   }
 
   .ruwaq-landing-hero--navy .ruwaq-hero-title {
     @apply text-white;
+    text-shadow: 0 2px 24px rgba(15, 23, 42, 0.35);
   }
 
   .ruwaq-hero-subtitle {
     @apply max-w-xl;
+  }
+
+  .ruwaq-landing-hero--navy .ruwaq-hero-lead-intro {
+    @apply text-base font-medium text-white/90 sm:text-lg;
+    text-shadow: 0 1px 18px rgba(15, 23, 42, 0.32);
   }
 
   .ruwaq-hero-lead-intro {
@@ -346,6 +360,10 @@
     @apply mt-3 flex list-none flex-wrap gap-2 p-0 sm:mt-4 sm:gap-2.5;
   }
 
+  .ruwaq-landing-hero--navy .ruwaq-hero-input-pill {
+    @apply border-slate-200/80 bg-white/90 text-ruwaq-ink shadow-sm backdrop-blur-md hover:border-slate-300 hover:bg-white;
+  }
+
   .ruwaq-hero-input-pill {
     @apply inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-2 text-sm text-white/90 backdrop-blur-sm transition-colors duration-300 hover:border-white/25 hover:bg-white/15 sm:px-4 sm:py-2.5;
   }
@@ -359,6 +377,10 @@
     @apply flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-ruwaq-gold text-xs font-bold text-white;
   }
 
+  .ruwaq-landing-hero--navy .ruwaq-hero-lead-outcome {
+    @apply mt-4 text-base leading-relaxed text-ruwaq-ink-soft sm:mt-5 sm:text-lg;
+  }
+
   .ruwaq-hero-lead-outcome {
     @apply mt-4 text-base leading-relaxed text-white/75 sm:mt-5 sm:text-lg;
   }
@@ -366,6 +388,11 @@
   html[lang="ar"] .ruwaq-hero-lead-outcome,
   html[data-lang="ar"] .ruwaq-hero-lead-outcome {
     line-height: 1.85;
+  }
+
+  .ruwaq-landing-hero--navy .ruwaq-hero-lead-highlight {
+    @apply font-semibold text-ruwaq-gold;
+    color: #9a7a42;
   }
 
   .ruwaq-hero-lead-highlight {
@@ -399,7 +426,7 @@
   }
 
   .ruwaq-hero-ticket {
-    @apply flex flex-col items-center rounded-3xl border border-slate-100/90 bg-white px-5 pb-9 pt-7 text-center shadow-ruwaq-premium transition-all duration-500 ease-apple hover:-translate-y-1.5 hover:border-slate-200/90 hover:shadow-ruwaq-float sm:px-6 sm:pb-10 sm:pt-8;
+    @apply flex flex-col items-center rounded-3xl border border-slate-200/90 bg-white px-5 pb-9 pt-7 text-center shadow-[0_2px_8px_rgba(15,23,42,0.04),0_10px_28px_rgba(15,23,42,0.09)] transition-all duration-500 ease-apple hover:-translate-y-1.5 hover:border-slate-300/90 hover:shadow-[0_4px_12px_rgba(15,23,42,0.06),0_16px_36px_rgba(15,23,42,0.12)] sm:px-6 sm:pb-10 sm:pt-8;
   }
 
   .ruwaq-hero-ticket-art {
