@@ -217,7 +217,7 @@
   }
 
   .ruwaq-landing-hero--navy {
-    @apply overflow-visible bg-ruwaq-navy pb-16 pt-10 sm:pb-[4.5rem] sm:pt-14 lg:pb-20 lg:pt-16;
+    @apply overflow-visible bg-ruwaq-navy pb-20 pt-10 sm:pb-24 sm:pt-14 lg:pb-28 lg:pt-16;
   }
 
   .ruwaq-landing-hero--navy::before {
@@ -364,28 +364,28 @@
   }
 
   .ruwaq-hero-tickets-band {
-    @apply relative z-30 px-4 sm:px-6;
-    margin-top: -2.75rem;
+    @apply relative z-30 px-4 pb-10 sm:px-6 sm:pb-12 lg:pb-14;
+    margin-top: -1.5rem;
   }
 
   @screen sm {
     .ruwaq-hero-tickets-band {
-      margin-top: -3.25rem;
+      margin-top: -2rem;
     }
   }
 
   @screen lg {
     .ruwaq-hero-tickets-band {
-      margin-top: -3.75rem;
+      margin-top: -2.25rem;
     }
   }
 
   .ruwaq-hero-tickets {
-    @apply mx-auto grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5;
+    @apply mx-auto grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6;
   }
 
   .ruwaq-hero-ticket {
-    @apply flex flex-col items-center rounded-3xl border border-slate-100/90 bg-white px-5 pb-8 pt-6 text-center shadow-ruwaq-premium transition-all duration-500 ease-apple hover:-translate-y-1.5 hover:border-slate-200/90 hover:shadow-ruwaq-float sm:px-6 sm:pb-9 sm:pt-7;
+    @apply flex flex-col items-center rounded-3xl border border-slate-100/90 bg-white px-5 pb-9 pt-7 text-center shadow-ruwaq-premium transition-all duration-500 ease-apple hover:-translate-y-1.5 hover:border-slate-200/90 hover:shadow-ruwaq-float sm:px-6 sm:pb-10 sm:pt-8;
   }
 
   .ruwaq-hero-ticket-art {
@@ -416,7 +416,7 @@
   }
 
   .ruwaq-landing-section--after-tickets {
-    @apply pt-16 sm:pt-20 lg:pt-24;
+    @apply pt-12 sm:pt-14 lg:pt-16;
   }
 
   .ruwaq-landing-hero::before {
