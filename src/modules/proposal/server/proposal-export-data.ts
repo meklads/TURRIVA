@@ -3,6 +3,7 @@ import type { CommercialMode } from "@/shared/types";
 import type { Locale } from "@/shared/i18n/locale";
 import { localeToBcp47 } from "@/shared/i18n/locale";
 import { getMessages } from "@/shared/i18n";
+import { parseExportTemplateId } from "@/modules/company/lib/export-template-ids";
 import {
   asObjectList,
   asStringList,
@@ -130,7 +131,7 @@ export async function buildProposalExportHtmlForId(
     estimateVariancePercent: proposal.estimateVariancePercent,
     watermarkClientName: watermarked ? proposal.clientName : undefined,
     watermarkDate: watermarked ? issueDate : undefined,
-    templateId: "ruwaq",
+    templateId: parseExportTemplateId(company?.exportTemplateId),
   });
 
   return { html, projectName: proposal.projectName };

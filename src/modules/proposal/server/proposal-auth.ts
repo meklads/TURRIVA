@@ -1,5 +1,5 @@
 import { db } from "@/shared/lib/db";
-import { getSession } from "@/modules/auth/server/session";
+import { hasProposalEditAccess } from "./proposal-edit-access";
 
 export class ProposalAccessError extends Error {
   constructor(message: string) {
@@ -8,25 +8,28 @@ export class ProposalAccessError extends Error {
   }
 }
 
-/** Guest proposals (userId null) are editable by anyone with the link. Owned proposals require the owner. */
+/** Owned proposals require the owner; guests need a valid edit cookie (from ?key=). */
 export async function assertCanMutateProposal(proposalId: string) {
   const proposal = await db.proposal.findUnique({
     where: { id: proposalId },
-    select: { userId: true },
+    select: { id: true, userId: true },
   });
   if (!proposal) {
     throw new ProposalAccessError("Proposal not found");
   }
-  if (!proposal.userId) return proposal;
 
-  const session = await getSession();
-  if (!session?.user?.id || session.user.id !== proposal.userId) {
+  const allowed = await hasProposalEditAccess(proposalId);
+  if (!allowed) {
     throw new ProposalAccessError("Unauthorized");
   }
+
   return proposal;
 }
 
-export async function assertCanClaimProposal(proposalId: string, userId: string) {
+export async function assertCanClaimProposal(
+  proposalId: string,
+  userId: string
+) {
   const proposal = await db.proposal.findUnique({
     where: { id: proposalId },
     select: { userId: true },
@@ -36,6 +39,12 @@ export async function assertCanClaimProposal(proposalId: string, userId: string)
   }
   if (proposal.userId && proposal.userId !== userId) {
     throw new ProposalAccessError("This proposal belongs to another account");
+  }
+  if (!proposal.userId) {
+    const allowed = await hasProposalEditAccess(proposalId);
+    if (!allowed) {
+      throw new ProposalAccessError("Unauthorized");
+    }
   }
   return proposal;
 }

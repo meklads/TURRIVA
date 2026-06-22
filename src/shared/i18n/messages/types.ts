@@ -90,6 +90,7 @@ export type Messages = {
     regenerateConfirm: string;
     regenerateFailed: string;
     downloadPdf: string;
+    printHint: string;
     exporting: string;
     preparedFor: string;
     preparedBy: string;
@@ -289,6 +290,7 @@ export type Messages = {
       about: string;
       services: string;
       privacy: string;
+      terms: string;
       startProposal: string;
     };
     hero: { eyebrow: string };
@@ -330,6 +332,13 @@ export type Messages = {
       sponsoredLink: string;
     };
     privacy: {
+      title: string;
+      updated: string;
+      intro: string;
+      sections: readonly { title: string; body: string }[];
+      contact: string;
+    };
+    terms: {
       title: string;
       updated: string;
       intro: string;
@@ -415,12 +424,22 @@ export type Messages = {
   company: {
     title: string;
     subtitle: string;
-    sections: { identity: string; marketing: string };
+    sections: { identity: string; marketing: string; export: string };
     marketingHint: string;
     companyName: string;
     logoUrl: string;
     logoUrlPlaceholder: string;
     logoUrlHint: string;
+    logoUpload: string;
+    logoUploading: string;
+    logoUploadFailed: string;
+    exportTemplate: string;
+    exportTemplateHint: string;
+    exportTemplateOptions: {
+      ruwaq: string;
+      ruwaq_executive: string;
+      graphics_house: string;
+    };
     address: string;
     addressPlaceholder: string;
     about: string;

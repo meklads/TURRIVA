@@ -47,7 +47,15 @@ function actionError(error: unknown, fallback: string) {
 export async function createProposalAction(input: CreateProposalInput) {
   try {
     const result = await createProposalSvc(input);
-    return { success: true as const, id: result.id };
+    if (result.editKey) {
+      const { setProposalEditCookie } = await import("./proposal-edit-access");
+      await setProposalEditCookie(result.id, result.editKey);
+    }
+    return {
+      success: true as const,
+      id: result.id,
+      editKey: result.editKey,
+    };
   } catch (error) {
     return actionError(error, "Failed to create proposal");
   }

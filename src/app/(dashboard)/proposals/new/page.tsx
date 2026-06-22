@@ -117,7 +117,10 @@ export default function NewProposalPage() {
       }
 
       setProgress(100);
-      router.push(`/proposals/${created.id}`);
+      const keyQuery = created.editKey
+        ? `?key=${encodeURIComponent(created.editKey)}`
+        : "";
+      router.push(`/proposals/${created.id}${keyQuery}`);
     } catch (err) {
       const message =
         err instanceof Error ? err.message : t.form.errors.generic;

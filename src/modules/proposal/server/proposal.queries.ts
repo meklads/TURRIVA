@@ -1,8 +1,17 @@
 import { getProposal, listUserProposals } from "./proposal.service";
 import { getSession } from "@/modules/auth/server/session";
+import { hasProposalEditAccess } from "./proposal-edit-access";
 
 export async function getProposalQuery(id: string) {
-  return getProposal(id);
+  const proposal = await getProposal(id);
+  if (!proposal) return null;
+
+  if (!proposal.userId) {
+    const allowed = await hasProposalEditAccess(id);
+    if (!allowed) return null;
+  }
+
+  return proposal;
 }
 
 export async function listProposalsQuery() {

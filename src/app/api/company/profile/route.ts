@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/shared/lib/db";
 import { getSession } from "@/modules/auth/server/session";
+import { parseExportTemplateId } from "@/modules/company/lib/export-template-ids";
 
 function str(value: unknown): string | null {
   if (typeof value !== "string") return null;
@@ -28,6 +29,7 @@ export async function PUT(req: NextRequest) {
       website: str(body.website),
       portfolioUrl: str(body.portfolioUrl),
       catalogUrl: str(body.catalogUrl),
+      exportTemplateId: parseExportTemplateId(body.exportTemplateId),
     };
 
     const profile = await db.companyProfile.upsert({

@@ -338,6 +338,7 @@ export function ProposalReviewClient({
         {!gatesComplete && (
           <p className="mt-1 text-xs text-amber-700">{t.review.reviewGatesHint}</p>
         )}
+        <p className="mt-1 text-xs text-ruwaq-ink-muted">{t.review.printHint}</p>
       </div>
 
       <div className="ruwaq-review-trust-band text-sm text-ruwaq-ink">

@@ -2,9 +2,8 @@
  * Preview / pre-launch gate — HTTP Basic Auth.
  * Set APP_GATE_PASSWORD in env; when unset, gate is disabled (local dev).
  *
- * APP_GATE_FULL_SITE (default true): when password is set, protect the entire
- * site except client share links and health checks. Set to "false" to only
- * gate dashboard/API routes (marketing stays public).
+ * APP_GATE_FULL_SITE (default false): when password is set, only dashboard/API
+ * routes are gated — marketing stays public. Set to "true" to lock the entire site.
  */
 
 export const APP_GATE_REALM = "Ruwaq · Pre-launch";
@@ -13,6 +12,7 @@ export const APP_GATE_REALM = "Ruwaq · Pre-launch";
 function isStaticAssetPath(pathname: string): boolean {
   if (pathname.startsWith("/_next")) return true;
   if (pathname.startsWith("/brand")) return true;
+  if (pathname.startsWith("/uploads")) return true;
   if (pathname.startsWith("/favicon")) return true;
   return false;
 }
@@ -32,6 +32,7 @@ export function isPublicAppPath(pathname: string): boolean {
     "/about",
     "/how-it-works",
     "/privacy",
+    "/terms",
     "/services",
     "/templates/sample",
   ];
@@ -57,9 +58,9 @@ export function isGateEnabled(): boolean {
   return Boolean(process.env.APP_GATE_PASSWORD?.trim());
 }
 
-/** Default true — entire site locked when password is set (pre-launch). */
+/** Default false — marketing public; only app routes gated when password is set. */
 export function isFullSiteGate(): boolean {
-  return process.env.APP_GATE_FULL_SITE?.trim().toLowerCase() !== "false";
+  return process.env.APP_GATE_FULL_SITE?.trim().toLowerCase() === "true";
 }
 
 export function getGateCredentials(): { user: string; password: string } | null {

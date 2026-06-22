@@ -102,8 +102,10 @@ export const en: Messages = {
   regenerateConfirm:
    "Regenerate the entire proposal? Your current edits will be replaced.",
   regenerateFailed: "Regeneration failed. Please try again.",
-  downloadPdf: "Download PDF",
-  exporting: "Exporting...",
+  downloadPdf: "Open printable document",
+  printHint:
+   "Opens a print-ready HTML page. Use your browser Print → Save as PDF.",
+  exporting: "Opening document...",
   preparedFor: "Prepared for:",
   preparedBy: "Prepared by:",
   date: "Date:",
@@ -576,6 +578,7 @@ export const en: Messages = {
    about: "About Ruwaq",
    services: "Services",
    privacy: "Privacy policy",
+   terms: "Terms of service",
    startProposal: "Start a proposal",
   },
   hero: {
@@ -703,6 +706,39 @@ export const en: Messages = {
    ],
    contact: "Questions:",
   },
+  terms: {
+   title: "Terms of service",
+   updated: "Last updated: June 2026",
+   intro:
+    "By using Ruwaq (ruwaq.co) you agree to these terms. Please read them before creating or sending proposals.",
+   sections: [
+    {
+     title: "Service description",
+     body: "Ruwaq helps contractors and firms draft, review, and export professional proposals. AI-generated content is a starting point — you are responsible for reviewing accuracy before client delivery.",
+    },
+    {
+     title: "Accounts & guest access",
+     body: "You may start without an account. Guest proposals are protected by a private edit link; keep it safe. Signing in lets you save proposals to your company profile.",
+    },
+    {
+     title: "Acceptable use",
+     body: "Do not use Ruwaq for unlawful content, impersonation, or spam. Do not attempt to bypass security or access other users' data.",
+    },
+    {
+     title: "Intellectual property",
+     body: "You retain ownership of your project data and exported documents. Ruwaq retains rights to the platform, templates, and branding.",
+    },
+    {
+     title: "Disclaimer",
+     body: "Proposals and clauses are not legal advice. Consult qualified counsel for binding contracts. Ruwaq is provided as-is without warranties of uninterrupted service.",
+    },
+    {
+     title: "Changes",
+     body: "We may update these terms or the service. Continued use after updates constitutes acceptance. Material changes will be reflected on this page.",
+    },
+   ],
+   contact: "Questions:",
+  },
  },
  templates: {
   title: "Proposal sample gallery",
@@ -817,13 +853,25 @@ export const en: Messages = {
   sections: {
    identity: "Identity & contact",
    marketing: "About & links",
+   export: "Export design",
   },
   marketingHint:
    "Optional links enrich your proposal and market your business, no ads inside client documents.",
   companyName: "Company name",
   logoUrl: "Logo URL",
   logoUrlPlaceholder: "https://example.com/logo.png",
-  logoUrlHint: "Direct image link, or add after your brand design is ready.",
+  logoUrlHint: "Upload a file below or paste a direct image link.",
+  logoUpload: "Upload logo",
+  logoUploading: "Uploading...",
+  logoUploadFailed: "Logo upload failed. Use PNG, JPEG, WebP, or SVG under 2 MB.",
+  exportTemplate: "Proposal template",
+  exportTemplateHint:
+   "Choose the layout used when you export proposals. Preview samples in the template gallery.",
+  exportTemplateOptions: {
+   ruwaq: "Ruwaq Classic — fit-out & general contracting",
+   ruwaq_executive: "Ruwaq Executive — engineering & supervision",
+   graphics_house: "Graphics House — visualization & creative",
+  },
   address: "Address",
   addressPlaceholder: "e.g. Riyadh, Al Malqa",
   about: "About your company",
@@ -851,7 +899,7 @@ export const en: Messages = {
   notFoundMessage: "We couldn't find the page you're looking for.",
  },
  export: {
-  savePdf: "Save as PDF",
+  savePdf: "Print or save as PDF",
   footer: "Please review this proposal before final acceptance.",
   sampleBadge: "Design sample, preview only",
   sampleFooter: "Ruwaq design sample, not for client delivery.",

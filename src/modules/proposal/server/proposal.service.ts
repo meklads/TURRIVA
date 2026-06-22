@@ -9,6 +9,7 @@ import {
 import { getMessages } from "@/shared/i18n";
 import { setByPath } from "@/shared/lib/json-path";
 import { assertCanMutateProposal, assertCanClaimProposal } from "./proposal-auth";
+import { createEditToken } from "./proposal-edit-access";
 import type {
   CreateProposalInput,
   Proposal,
@@ -26,7 +27,7 @@ import {
 
 export async function createProposal(
   input: CreateProposalInput
-): Promise<{ id: string }> {
+): Promise<{ id: string; editKey?: string }> {
   let userId: string | null = null;
   try {
     const session = await getSession();
@@ -63,9 +64,12 @@ export async function createProposal(
     }
   }
 
+  const editToken = userId ? null : createEditToken();
+
   const proposal = await db.proposal.create({
     data: {
       userId: userId ?? null,
+      editToken,
       locale,
       projectName: input.projectName,
       clientName: input.clientName,
@@ -91,7 +95,7 @@ export async function createProposal(
     },
   });
 
-  return { id: proposal.id };
+  return { id: proposal.id, editKey: editToken ?? undefined };
 }
 
 // ─── GET ───
@@ -443,7 +447,7 @@ export async function claimProposal(
 
   await db.proposal.update({
     where: { id: proposalId },
-    data: { userId },
+    data: { userId, editToken: null },
   });
   return { success: true };
 }

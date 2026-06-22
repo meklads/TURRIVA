@@ -28,7 +28,10 @@ export async function SiteFooter() {
     },
     {
       title: t.site.footer.legal,
-      links: [{ href: "/privacy", label: t.site.nav.privacy }],
+      links: [
+        { href: "/privacy", label: t.site.nav.privacy },
+        { href: "/terms", label: t.site.nav.terms },
+      ],
     },
   ];
 

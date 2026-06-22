@@ -76,6 +76,8 @@ model CompanyProfile {
   website     String?
   portfolioUrl String?
   catalogUrl   String?
+  /// ruwaq | ruwaq_executive | graphics_house
+  exportTemplateId String @default("ruwaq")
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
@@ -134,6 +136,9 @@ model Proposal {
   /// Structured gate confirmations (see ARCHITECTURE_TRUST_LAYER.md)
   reviewGates Json?
   publishedAt DateTime?
+
+  /// Guest edit secret — required with httpOnly cookie when userId is null
+  editToken      String?
 
   /// METADATA
   proposalNumber String?

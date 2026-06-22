@@ -1,9 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { CompanyProfile } from "@prisma/client";
 import { useT } from "@/shared/i18n/context";
+import {
+  EXPORT_TEMPLATE_IDS,
+  type ExportTemplateId,
+} from "@/modules/company/lib/export-template-ids";
 
 interface Props {
   initial: CompanyProfile | null;
@@ -12,7 +16,9 @@ interface Props {
 export function CompanySettingsForm({ initial }: Props) {
   const t = useT();
   const router = useRouter();
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [saving, setSaving] = useState(false);
+  const [uploading, setUploading] = useState(false);
   const [form, setForm] = useState({
     companyName: initial?.companyName ?? "",
     logoUrl: initial?.logoUrl ?? "",
@@ -25,10 +31,27 @@ export function CompanySettingsForm({ initial }: Props) {
     website: initial?.website ?? "",
     portfolioUrl: initial?.portfolioUrl ?? "",
     catalogUrl: initial?.catalogUrl ?? "",
+    exportTemplateId: (initial?.exportTemplateId ?? "ruwaq") as ExportTemplateId,
   });
 
   const update = (field: string, value: string) => {
     setForm((f) => ({ ...f, [field]: value }));
+  };
+
+  const handleLogoUpload = async (file: File) => {
+    setUploading(true);
+    try {
+      const body = new FormData();
+      body.append("logo", file);
+      const res = await fetch("/api/company/logo", { method: "POST", body });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error ?? "upload failed");
+      update("logoUrl", data.url);
+      router.refresh();
+    } catch {
+      alert(t.company.logoUploadFailed);
+    }
+    setUploading(false);
   };
 
   const handleSave = async () => {
@@ -71,6 +94,14 @@ export function CompanySettingsForm({ initial }: Props) {
           <label className="block text-sm font-medium text-ruwaq-ink">
             {t.company.logoUrl}
           </label>
+          {form.logoUrl && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={form.logoUrl}
+              alt=""
+              className="mb-2 h-14 w-auto max-w-[200px] object-contain"
+            />
+          )}
           <input
             type="url"
             value={form.logoUrl}
@@ -80,6 +111,25 @@ export function CompanySettingsForm({ initial }: Props) {
             className={inputClass}
           />
           <p className="mt-1 text-xs text-ruwaq-ink-muted">{t.company.logoUrlHint}</p>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/png,image/jpeg,image/webp,image/svg+xml"
+            className="hidden"
+            onChange={(e) => {
+              const file = e.target.files?.[0];
+              if (file) void handleLogoUpload(file);
+              e.target.value = "";
+            }}
+          />
+          <button
+            type="button"
+            onClick={() => fileInputRef.current?.click()}
+            disabled={uploading}
+            className="btn-ruwaq-secondary mt-3 px-4 py-2 text-sm disabled:opacity-50"
+          >
+            {uploading ? t.company.logoUploading : t.company.logoUpload}
+          </button>
         </div>
         <div>
           <label className="block text-sm font-medium text-ruwaq-ink">
@@ -138,6 +188,29 @@ export function CompanySettingsForm({ initial }: Props) {
             onChange={(e) => update("email", e.target.value)}
             className={inputClass}
           />
+        </div>
+      </section>
+
+      <section className="space-y-4 border-t border-ruwaq-stone/50 pt-6">
+        <h2 className="text-sm font-semibold text-ruwaq-ink">
+          {t.company.sections.export}
+        </h2>
+        <p className="text-xs text-ruwaq-ink-muted">{t.company.exportTemplateHint}</p>
+        <div>
+          <label className="block text-sm font-medium text-ruwaq-ink">
+            {t.company.exportTemplate}
+          </label>
+          <select
+            value={form.exportTemplateId}
+            onChange={(e) => update("exportTemplateId", e.target.value)}
+            className={inputClass}
+          >
+            {EXPORT_TEMPLATE_IDS.map((id) => (
+              <option key={id} value={id}>
+                {t.company.exportTemplateOptions[id]}
+              </option>
+            ))}
+          </select>
         </div>
       </section>
 
