@@ -3,14 +3,14 @@ import Link from "next/link";
 import type { Messages } from "@/shared/i18n/messages/types";
 import type { Locale } from "@/shared/i18n/locale";
 
-const HERO_IMAGE = "/brand/hero/hero.jpg";
+const HERO_IMAGE = "/brand/hero/hero.webp";
 
 type Props = {
   hero: Messages["sales"]["hero"];
   locale: Locale;
 };
 
-/** Split navy hero — copy left, circular image right (logo on screen visible). */
+/** Split navy hero — copy left, circular image right on desktop. */
 export function MarketingHero({ hero, locale }: Props) {
   const arrow = locale === "ar" ? "←" : "→";
   const textDir = locale === "ar" ? "rtl" : "ltr";
@@ -61,7 +61,8 @@ export function MarketingHero({ hero, locale }: Props) {
               alt={hero.title}
               fill
               priority
-              sizes="(max-width: 1024px) 80vw, 420px"
+              quality={85}
+              sizes="(max-width: 640px) 320px, (max-width: 1024px) 384px, 512px"
               className="ruwaq-hero-circle-image object-cover"
             />
           </div>
