@@ -29,21 +29,43 @@ function exportLink(href: string, label: string, color: string): string {
   return `<a href="${escapeHtml(href)}" style="color:${color};text-decoration:none;">${escapeHtml(label)}</a>`;
 }
 
-function companyLogoHtml(data: ProposalExportData, bannerDark: boolean): string {
+function brandPanelHtml(
+  data: ProposalExportData,
+  labels: ReturnType<typeof getMessages>["export"]
+): string {
   const logo = safeHttpUrl(data.logoUrl);
-  const { colors } = ruwaqBrand;
+  const companyName = data.companyName?.trim();
 
-  if (logo) {
-    return `<div style="display:inline-flex;align-items:center;justify-content:center;background:${colors.white};border-radius:10px;padding:8px 12px;max-width:180px;">
-      <img src="${escapeHtml(logo)}" alt="" style="max-height:52px;max-width:160px;object-fit:contain;display:block;">
-    </div>`;
-  }
+  if (!logo && !companyName) return "";
 
-  if (data.companyName?.trim()) {
-    return `<div style="font-size:18px;font-weight:700;color:${bannerDark ? colors.cream : colors.navy};letter-spacing:0.02em;">${escapeHtml(data.companyName.trim())}</div>`;
-  }
+  const logoSlot = logo
+    ? `<div class="brand-logo-slot"><img src="${escapeHtml(logo)}" alt=""></div>`
+    : companyName
+      ? `<div class="brand-logo-slot brand-logo-monogram" aria-hidden="true">${escapeHtml(companyName.charAt(0))}</div>`
+      : "";
 
-  return "";
+  const metaLines = [
+    data.crNumber ? `${labels.crNumber} ${data.crNumber}` : "",
+    data.vatNumber ? `${labels.vatNumber} ${data.vatNumber}` : "",
+    data.companyPhone ? `${labels.phone} ${data.companyPhone}` : "",
+    data.companyEmail ? `${labels.email} ${data.companyEmail}` : "",
+    data.address?.trim() ?? "",
+  ]
+    .filter(Boolean)
+    .map((line) => `<div class="brand-meta-line">${escapeHtml(line)}</div>`)
+    .join("");
+
+  return `<aside class="banner-brand" aria-label="${escapeHtml(labels.preparedBy)}">
+      <div class="brand-label">${escapeHtml(labels.preparedBy)}</div>
+      ${logoSlot}
+      ${companyName ? `<div class="brand-company-name">${escapeHtml(companyName)}</div>` : ""}
+      ${metaLines ? `<div class="brand-meta">${metaLines}</div>` : ""}
+      ${
+        data.website && safeHttpUrl(data.website)
+          ? `<div class="brand-website"><a href="${escapeHtml(safeHttpUrl(data.website)!)}">${escapeHtml(labels.websiteLink)}</a></div>`
+          : ""
+      }
+    </aside>`;
 }
 
 export function renderRuwaqTemplate(
@@ -96,6 +118,8 @@ export function renderRuwaqTemplate(
     data.companyEmail ? [labels.email, data.companyEmail] : null,
     data.address ? [labels.address, data.address] : null,
   ].filter(Boolean) as [string, string][];
+
+  const showBrandPanel = Boolean(data.companyName?.trim() || safeHttpUrl(data.logoUrl));
 
   const websiteHref = safeHttpUrl(data.website);
   const portfolioHref = safeHttpUrl(data.portfolioUrl);
@@ -228,7 +252,7 @@ export function renderRuwaqTemplate(
     ? (data.timeline!.milestones as Record<string, unknown>[])
     : [];
 
-  const companyLogo = companyLogoHtml(data, true);
+  const companyBrand = brandPanelHtml(data, labels);
   const footerAddress = locale === "ar" ? footer.addressAr : footer.addressEn;
   const footerTagline = locale === "ar" ? footer.taglineAr : footer.taglineEn;
   const sampleBadge = platformBranding
@@ -313,16 +337,89 @@ export function renderRuwaqTemplate(
       font-weight: 700; z-index: 10; font-family: inherit;
     }
     .banner {
-      background: linear-gradient(135deg, ${colors.navy} 0%, ${colors.navySoft} 100%);
-      padding: 28px 32px 24px;
+      background: linear-gradient(145deg, ${colors.navy} 0%, #1a2744 55%, ${colors.navy} 100%);
+      padding: 32px 36px 28px;
       color: ${colors.cream};
     }
     .banner-top {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      gap: 20px;
+      align-items: stretch;
+      gap: 28px;
       flex-wrap: wrap;
+    }
+    .banner-brand {
+      flex-shrink: 0;
+      width: min(100%, 240px);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(201, 160, 99, 0.28);
+      border-radius: 16px;
+      padding: 18px 18px 16px;
+      text-align: center;
+    }
+    .brand-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: ${colors.gold};
+      margin-bottom: 12px;
+    }
+    .brand-logo-slot {
+      background: ${colors.white};
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 92px;
+      box-shadow: 0 4px 18px rgba(15, 23, 42, 0.12);
+    }
+    .brand-logo-slot img {
+      max-height: 76px;
+      max-width: 100%;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .brand-logo-monogram {
+      font-size: 36px;
+      font-weight: 800;
+      color: ${colors.navy};
+      line-height: 1;
+    }
+    .brand-company-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: ${colors.white};
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+    .brand-meta-line {
+      font-size: 10px;
+      color: ${colors.cream};
+      opacity: 0.9;
+      line-height: 1.65;
+      margin-top: 2px;
+    }
+    .brand-website {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(201, 160, 99, 0.22);
+      font-size: 11px;
+    }
+    .brand-website a {
+      color: ${colors.gold};
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .banner-main {
+      flex: 1;
+      min-width: min(100%, 280px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     .banner-badge {
       font-size: 11px;
@@ -333,11 +430,11 @@ export function renderRuwaqTemplate(
       margin-bottom: 8px;
     }
     .banner-title {
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 700;
       color: ${colors.white};
-      margin: 0 0 6px;
-      line-height: 1.3;
+      margin: 0 0 8px;
+      line-height: 1.35;
       word-break: break-word;
     }
     .banner-client {
@@ -350,16 +447,16 @@ export function renderRuwaqTemplate(
       background: linear-gradient(90deg, ${colors.gold}, ${colors.goldLight}, ${colors.gold});
       margin-top: 20px;
     }
-    .content { padding: 28px 32px 12px; }
+    .content { padding: 32px 36px 16px; }
     .meta-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px 24px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 28px;
       background: ${colors.creamBg};
       border: 1px solid ${colors.cream};
-      border-radius: 12px;
-      padding: 16px 18px;
-      margin-bottom: 24px;
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin-bottom: 28px;
       font-size: 13px;
     }
     .meta-grid div { color: ${colors.textMuted}; }
@@ -655,19 +752,12 @@ export function renderRuwaqTemplate(
   <div class="page-wrap">
     <header class="banner">
       <div class="banner-top">
-        <div style="flex:1;min-width:200px;">
+        ${showBrandPanel ? companyBrand : ""}
+        <div class="banner-main">
           <div class="banner-badge">${escapeHtml(docTitle)}</div>
           <h1 class="banner-title">${escapeHtml(data.projectName)}</h1>
           <div class="banner-client">${escapeHtml(labels.preparedFor)} ${escapeHtml(data.clientName)}</div>
           ${sampleBadge}
-        </div>
-        <div style="text-align:${dir === "rtl" ? "left" : "right"};">
-          ${companyLogo}
-          ${
-            data.companyName && data.logoUrl
-              ? `<div style="margin-top:8px;font-size:12px;color:${colors.cream};opacity:0.85;">${escapeHtml(data.companyName)}</div>`
-              : ""
-          }
         </div>
       </div>
       <div class="banner-accent"></div>
@@ -682,7 +772,7 @@ export function renderRuwaqTemplate(
           )
           .join("")}
         ${
-          identityRows.length
+          !showBrandPanel && identityRows.length
             ? identityRows
                 .map(
                   ([label, value]) =>
