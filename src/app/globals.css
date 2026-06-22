@@ -218,35 +218,28 @@
 
   .ruwaq-landing-hero--navy {
     @apply overflow-visible pb-20 pt-10 sm:pb-24 sm:pt-14 lg:pb-28 lg:pt-16;
-    background: linear-gradient(
+    background-color: #ffffff;
+    background-image: linear-gradient(
       180deg,
       #0f172a 0%,
-      #0f172a 5%,
-      #111c2e 9%,
-      #152238 13%,
-      #1a2a42 17%,
-      #22324c 21%,
-      #2b3d56 25%,
-      #354862 29%,
-      #455a70 33%,
-      #5a6d82 37%,
-      #758599 41%,
-      #9aa8b5 44%,
-      #c5cdd6 46%,
-      #e8ecef 47%,
-      #ffffff 48%,
+      #162436 10%,
+      #223348 20%,
+      #334a60 30%,
+      #4a6278 38%,
+      #6a8094 46%,
+      #8f9fad 52%,
+      #b4bec8 58%,
+      #d5dbe0 64%,
+      #ebeef1 70%,
+      #f5f6f8 76%,
+      #fafbfc 82%,
+      #ffffff 88%,
       #ffffff 100%
     );
   }
 
   .ruwaq-landing-hero--navy::before {
-    content: "";
-    @apply pointer-events-none absolute inset-0;
-    background: radial-gradient(
-      ellipse 70% 45% at 50% 0%,
-      rgba(201, 160, 99, 0.07),
-      transparent 65%
-    );
+    @apply hidden;
   }
 
   .ruwaq-landing-hero--navy::after {
