@@ -3,12 +3,11 @@ import { ProposalReviewClient } from "@/modules/proposal/components/proposal-rev
 import { ProposalGenerateRunner } from "@/modules/proposal/components/proposal-generate-runner";
 import { getSession } from "@/modules/auth/server/session";
 import { db } from "@/shared/lib/db";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { isCompanyProfileThin } from "@/modules/company/lib/profile-completeness";
 import { AppPageHero } from "@/shared/components/app-page-hero";
 import { getMessages } from "@/shared/i18n";
 import { getLocale } from "@/shared/i18n/server";
-import { bindProposalEditKey } from "@/modules/proposal/server/proposal-edit-access";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 300;
@@ -23,8 +22,9 @@ export default async function ProposalReviewPage({
   const editKey = searchParams?.key;
 
   if (editKey) {
-    const bound = await bindProposalEditKey(params.id, editKey);
-    if (!bound) notFound();
+    redirect(
+      `/api/proposals/${params.id}/edit-key?key=${encodeURIComponent(editKey)}`
+    );
   }
 
   const proposal = await getProposalQuery(params.id);
