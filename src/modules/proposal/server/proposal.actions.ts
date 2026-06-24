@@ -44,6 +44,14 @@ function actionError(error: unknown, fallback: string) {
   ) {
     message =
       "قاعدة البيانات تحتاج تحديث. في Coolify اضغط Redeploy — أو شغّل: npx prisma db push";
+  } else if (
+    message.includes("fetch failed") ||
+    message.includes("ETIMEDOUT") ||
+    message.includes("ECONNRESET") ||
+    message.includes("socket hang up")
+  ) {
+    message =
+      "انتهت مهلة التوليد أو انقطع الاتصال. انتظر قليلاً ثم أعد المحاولة — التوليد قد يستغرق دقيقة أو دقيقتين.";
   }
 
   console.error(`[proposal.action] ${fallback}:`, error);

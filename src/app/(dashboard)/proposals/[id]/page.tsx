@@ -1,5 +1,6 @@
 import { getProposalQuery } from "@/modules/proposal/server/proposal.queries";
 import { ProposalReviewClient } from "@/modules/proposal/components/proposal-review-client";
+import { ProposalGenerateRunner } from "@/modules/proposal/components/proposal-generate-runner";
 import { getSession } from "@/modules/auth/server/session";
 import { db } from "@/shared/lib/db";
 import { notFound, redirect } from "next/navigation";
@@ -10,6 +11,7 @@ import { getLocale } from "@/shared/i18n/server";
 import { bindProposalEditKey } from "@/modules/proposal/server/proposal-edit-access";
 
 export const dynamic = "force-dynamic";
+export const maxDuration = 300;
 
 export default async function ProposalReviewPage({
   params,
@@ -18,8 +20,10 @@ export default async function ProposalReviewPage({
   params: { id: string };
   searchParams: { key?: string; claim?: string };
 }) {
-  if (searchParams?.key) {
-    const bound = await bindProposalEditKey(params.id, searchParams.key);
+  const editKey = searchParams?.key;
+
+  if (editKey) {
+    const bound = await bindProposalEditKey(params.id, editKey);
     if (bound) {
       const claim = searchParams.claim ? "?claim=1" : "";
       redirect(`/proposals/${params.id}${claim}`);
@@ -32,6 +36,30 @@ export default async function ProposalReviewPage({
 
   const locale = await getLocale();
   const t = getMessages(locale);
+  const isGenerating =
+    proposal.status === "draft" || proposal.status === "generating";
+
+  return (
+    <>
+      <AppPageHero
+        eyebrow={t.review.draftBadge}
+        title={proposal.projectName || t.list.untitled}
+        subtitle={
+          isGenerating ? t.form.generatingWrite : t.review.pageSubtitle
+        }
+      />
+      {isGenerating ? (
+        <ProposalGenerateRunner proposalId={proposal.id} />
+      ) : (
+        <ProposalReviewContent proposalId={proposal.id} />
+      )}
+    </>
+  );
+}
+
+async function ProposalReviewContent({ proposalId }: { proposalId: string }) {
+  const proposal = await getProposalQuery(proposalId);
+  if (!proposal) notFound();
 
   const session = await getSession();
   let companyName: string | null = null;
@@ -46,20 +74,13 @@ export default async function ProposalReviewPage({
   }
 
   return (
-    <>
-      <AppPageHero
-        eyebrow={t.review.draftBadge}
-        title={proposal.projectName || t.list.untitled}
-        subtitle={t.review.pageSubtitle}
+    <div className="app-content-area max-w-3xl">
+      <ProposalReviewClient
+        proposal={proposal}
+        companyName={companyName}
+        profileThin={profileThin}
+        isGuest={!proposal.userId}
       />
-      <div className="app-content-area max-w-3xl">
-        <ProposalReviewClient
-          proposal={proposal}
-          companyName={companyName}
-          profileThin={profileThin}
-          isGuest={!proposal.userId}
-        />
-      </div>
-    </>
+    </div>
   );
 }

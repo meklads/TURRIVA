@@ -154,12 +154,28 @@ export async function generateProposalContent(proposalId: string) {
       scopeItems = [{ id: "1", ...defaults.fallbackScopeItem(proposal.description) }];
     }
 
-    const commercialResult = await callAI(
-      locale,
-      "commercial",
-      realEstateSystemRole(locale, "You are a commercial terms specialist"),
-      `Generate commercial terms:\n\n${context}\nScope: ${scopeItems.map((s: any) => s.title).join(", ")}\n\n${lang}\n\nRespond in JSON: { "totalValue": number, "paymentSchedule": [{ "percentage": number, "label": "string" }], "warrantyPeriod": "string", "retention": number | null }`
-    );
+    const scopeTitles = scopeItems.map((s: any) => s.title).join(", ");
+
+    const [commercialResult, assumptionsResult, timelineResult] = await Promise.all([
+      callAI(
+        locale,
+        "commercial",
+        realEstateSystemRole(locale, "You are a commercial terms specialist"),
+        `Generate commercial terms:\n\n${context}\nScope: ${scopeTitles}\n\n${lang}\n\nRespond in JSON: { "totalValue": number, "paymentSchedule": [{ "percentage": number, "label": "string" }], "warrantyPeriod": "string", "retention": number | null }`
+      ),
+      callAI(
+        locale,
+        "assumptions",
+        realEstateSystemRole(locale, "You are a commercial terms specialist"),
+        `Generate assumptions and exclusions for a real estate project:\n\nScope: ${scopeTitles}\n\n${lang}\n\nRespond in JSON: { "assumptions": ["string"], "exclusions": ["string"] }`
+      ),
+      callAI(
+        locale,
+        "timeline",
+        realEstateSystemRole(locale, "You are a project scheduler"),
+        `Estimate timeline for a real estate project:\n\n${context}\nScope: ${scopeTitles}\n\n${lang}\n\nRespond in JSON: { "duration": "string", "startDate": null, "endDate": null, "milestones": [{ "name": "string", "date": null }] }`
+      ),
+    ]);
 
     const commercialTerms = buildCommercialTerms(
       parseJson(commercialResult, {}),
@@ -168,26 +184,12 @@ export async function generateProposalContent(proposalId: string) {
       commercialMode
     );
 
-    const assumptionsResult = await callAI(
-      locale,
-      "assumptions",
-      realEstateSystemRole(locale, "You are a commercial terms specialist"),
-      `Generate assumptions and exclusions for a real estate project:\n\nScope: ${scopeItems.map((s: any) => s.title).join(", ")}\n\n${lang}\n\nRespond in JSON: { "assumptions": ["string"], "exclusions": ["string"] }`
-    );
-
     const legalParsed = parseJson<{ assumptions?: string[]; exclusions?: string[] }>(
       assumptionsResult,
       {}
     );
     const assumptions: string[] = legalParsed.assumptions ?? defaults.assumptions;
     const exclusions: string[] = legalParsed.exclusions ?? defaults.exclusions;
-
-    const timelineResult = await callAI(
-      locale,
-      "timeline",
-      realEstateSystemRole(locale, "You are a project scheduler"),
-      `Estimate timeline for a real estate project:\n\n${context}\nScope: ${scopeItems.map((s: any) => s.title).join(", ")}\n\n${lang}\n\nRespond in JSON: { "duration": "string", "startDate": null, "endDate": null, "milestones": [{ "name": "string", "date": null }] }`
-    );
 
     const timelineParsed = parseJson<{
       duration?: string;
