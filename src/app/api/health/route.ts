@@ -28,11 +28,24 @@ export async function GET() {
     );
     const hasProposalTable = tables.length > 0;
 
+    const columns = await db.$queryRawUnsafe<{ column_name: string }[]>(
+      `SELECT column_name FROM information_schema.columns
+       WHERE table_schema = 'public'
+         AND (
+           (table_name = 'Proposal' AND column_name = 'editToken')
+           OR (table_name = 'CompanyProfile' AND column_name = 'exportTemplateId')
+         )`
+    );
+    const columnNames = new Set(columns.map((c) => c.column_name));
+    const schemaReady =
+      columnNames.has("editToken") && columnNames.has("exportTemplateId");
+
     return NextResponse.json({
       ok: true,
       app: true,
       db: true,
       tables: hasProposalTable,
+      schemaReady,
       googleAuth,
       timestamp: new Date().toISOString(),
     });

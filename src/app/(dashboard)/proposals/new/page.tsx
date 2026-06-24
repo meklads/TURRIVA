@@ -2,10 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import {
-  createProposalAction,
-  generateWithAI,
-} from "@/modules/proposal/server/proposal.actions";
+import { createAndGenerateProposalAction } from "@/modules/proposal/server/proposal.actions";
 import type { CommercialMode, PaymentType, PropertyType } from "@/shared/types";
 import { useLocale, useT } from "@/shared/i18n/context";
 import { validateProposalFields } from "@/shared/i18n/locale";
@@ -91,7 +88,9 @@ export default function NewProposalPage() {
     setProgress(10);
 
     try {
-      const created = await createProposalAction({
+      setProgress(30);
+
+      const result = await createAndGenerateProposalAction({
         projectName: form.projectName,
         clientName: form.clientName,
         description: form.description,
@@ -105,22 +104,15 @@ export default function NewProposalPage() {
         specifications: form.specifications || undefined,
       });
 
-      if (!created.success) {
-        throw new Error(created.error ?? t.form.errors.generic);
-      }
-
-      setProgress(40);
-
-      const generated = await generateWithAI(created.id);
-      if (!generated.success) {
-        throw new Error(generated.error ?? t.form.errors.generic);
+      if (!result.success) {
+        throw new Error(result.error ?? t.form.errors.generic);
       }
 
       setProgress(100);
-      const keyQuery = created.editKey
-        ? `?key=${encodeURIComponent(created.editKey)}`
+      const keyQuery = result.editKey
+        ? `?key=${encodeURIComponent(result.editKey)}`
         : "";
-      router.push(`/proposals/${created.id}${keyQuery}`);
+      router.push(`/proposals/${result.id}${keyQuery}`);
     } catch (err) {
       const message =
         err instanceof Error ? err.message : t.form.errors.generic;

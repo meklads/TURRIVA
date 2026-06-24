@@ -37,6 +37,13 @@ function actionError(error: unknown, fallback: string) {
   ) {
     message =
       "Legal clause library is still initializing. Wait a moment and try again — if this persists, redeploy or run: npm run db:seed";
+  } else if (
+    message.includes("editToken") ||
+    message.includes("exportTemplateId") ||
+    message.includes("does not exist in the current database")
+  ) {
+    message =
+      "قاعدة البيانات تحتاج تحديث. في Coolify اضغط Redeploy — أو شغّل: npx prisma db push";
   }
 
   console.error(`[proposal.action] ${fallback}:`, error);
@@ -61,9 +68,38 @@ export async function createProposalAction(input: CreateProposalInput) {
   }
 }
 
-// SA2
-export async function generateWithAI(proposalId: string) {
+// SA1b — create + AI in one request (guest cookie + DB stay in sync)
+export async function createAndGenerateProposalAction(
+  input: CreateProposalInput
+) {
   try {
+    const result = await createProposalSvc(input);
+    if (result.editKey) {
+      const { setProposalEditCookie } = await import("./proposal-edit-access");
+      await setProposalEditCookie(result.id, result.editKey);
+    }
+    const { generateProposalContent } = await import("./proposal-ai.service");
+    await generateProposalContent(result.id);
+    return {
+      success: true as const,
+      id: result.id,
+      editKey: result.editKey,
+    };
+  } catch (error) {
+    return actionError(error, "Failed to create and generate proposal");
+  }
+}
+
+// SA2
+export async function generateWithAI(proposalId: string, editKey?: string) {
+  try {
+    if (editKey) {
+      const { bindProposalEditKey } = await import("./proposal-edit-access");
+      const bound = await bindProposalEditKey(proposalId, editKey);
+      if (!bound) {
+        return { success: false as const, error: "Unauthorized" };
+      }
+    }
     await assertCanMutate(proposalId);
     const { generateProposalContent } = await import("./proposal-ai.service");
     await generateProposalContent(proposalId);
