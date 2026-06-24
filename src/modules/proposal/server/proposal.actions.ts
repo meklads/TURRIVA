@@ -52,6 +52,13 @@ function actionError(error: unknown, fallback: string) {
   ) {
     message =
       "انتهت مهلة التوليد أو انقطع الاتصال. انتظر قليلاً ثم أعد المحاولة — التوليد قد يستغرق دقيقة أو دقيقتين.";
+  } else if (
+    message.includes("Incorrect API key") ||
+    message.includes("invalid_api_key") ||
+    message.includes("OPENAI")
+  ) {
+    message =
+      "خدمة الذكاء الاصطناعي غير متاحة حالياً. تواصل مع فريق رواق أو حاول لاحقاً.";
   }
 
   console.error(`[proposal.action] ${fallback}:`, error);

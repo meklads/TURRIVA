@@ -3,7 +3,7 @@ import { ProposalReviewClient } from "@/modules/proposal/components/proposal-rev
 import { ProposalGenerateRunner } from "@/modules/proposal/components/proposal-generate-runner";
 import { getSession } from "@/modules/auth/server/session";
 import { db } from "@/shared/lib/db";
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import { isCompanyProfileThin } from "@/modules/company/lib/profile-completeness";
 import { AppPageHero } from "@/shared/components/app-page-hero";
 import { getMessages } from "@/shared/i18n";
@@ -24,11 +24,7 @@ export default async function ProposalReviewPage({
 
   if (editKey) {
     const bound = await bindProposalEditKey(params.id, editKey);
-    if (bound) {
-      const claim = searchParams.claim ? "?claim=1" : "";
-      redirect(`/proposals/${params.id}${claim}`);
-    }
-    notFound();
+    if (!bound) notFound();
   }
 
   const proposal = await getProposalQuery(params.id);
@@ -49,7 +45,7 @@ export default async function ProposalReviewPage({
         }
       />
       {isGenerating ? (
-        <ProposalGenerateRunner proposalId={proposal.id} />
+        <ProposalGenerateRunner proposalId={proposal.id} editKey={editKey} />
       ) : (
         <ProposalReviewContent proposalId={proposal.id} />
       )}

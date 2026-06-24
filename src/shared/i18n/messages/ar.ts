@@ -68,6 +68,7 @@ export const ar = {
   generate: "✨ توليد العرض",
   generatingAnalyze: "جاري تحليل مشروعك...",
   generatingWrite: "جاري كتابة العرض...",
+  generatingWaitHint: "قد يستغرق دقيقة أو دقيقتين. أبقِ هذه الصفحة مفتوحة.",
   errors: {
    projectRequired: "اسم المشروع واسم العميل مطلوبان.",
    descriptionRequired: "يرجى وصف العمل باختصار.",

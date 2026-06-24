@@ -70,6 +70,7 @@ export const en: Messages = {
   generate: "Generate proposal",
   generatingAnalyze: "Analyzing your project...",
   generatingWrite: "Writing your proposal...",
+  generatingWaitHint: "This usually takes 1–2 minutes. Please keep this tab open.",
   errors: {
    projectRequired: "Project name and client name are required.",
    descriptionRequired: "Please describe the work briefly.",

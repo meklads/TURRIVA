@@ -60,6 +60,7 @@ export type Messages = {
     generate: string;
     generatingAnalyze: string;
     generatingWrite: string;
+    generatingWaitHint: string;
     errors: {
       projectRequired: string;
       descriptionRequired: string;
