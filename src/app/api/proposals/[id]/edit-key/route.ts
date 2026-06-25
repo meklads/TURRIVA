@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { bindProposalEditKey } from "@/modules/proposal/server/proposal-edit-access";
+import { redirectUrl } from "@/shared/lib/request-url";
 
 export const dynamic = "force-dynamic";
 
@@ -9,13 +10,13 @@ export async function GET(
 ) {
   const key = req.nextUrl.searchParams.get("key");
   if (!key) {
-    return NextResponse.redirect(new URL("/proposals/new", req.url));
+    return NextResponse.redirect(redirectUrl(req, "/proposals/new"));
   }
 
   const bound = await bindProposalEditKey(params.id, key);
   if (!bound) {
-    return NextResponse.redirect(new URL("/proposals/new", req.url));
+    return NextResponse.redirect(redirectUrl(req, "/proposals/new"));
   }
 
-  return NextResponse.redirect(new URL(`/proposals/${params.id}`, req.url));
+  return NextResponse.redirect(redirectUrl(req, `/proposals/${params.id}`));
 }

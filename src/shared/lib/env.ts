@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { normalizeAppUrl } from "./request-url";
 
 const envSchema = z.object({
   DATABASE_URL: z.string().min(1).optional(),
@@ -24,25 +25,19 @@ const envSchema = z.object({
 
 type Env = z.infer<typeof envSchema>;
 
-function withHttps(url: string | undefined, fallback: string): string {
-  if (!url?.trim()) return fallback;
-  if (url.startsWith("http://") || url.startsWith("https://")) return url;
-  return `https://${url}`;
-}
-
 function parseEnv(): Env {
   const isBuildTime =
     process.env.NEXT_PHASE === "phase-production-build" ||
     process.env.npm_lifecycle_event === "build";
 
-  const appUrl = withHttps(
+  const appUrl = normalizeAppUrl(
     process.env.NEXT_PUBLIC_APP_URL ?? process.env.AUTH_URL,
     isBuildTime ? "http://localhost:3000" : "https://ruwaq.co"
   );
 
   const normalized = {
     ...process.env,
-    AUTH_URL: withHttps(process.env.AUTH_URL, appUrl),
+    AUTH_URL: normalizeAppUrl(process.env.AUTH_URL, appUrl),
     NEXT_PUBLIC_APP_URL: appUrl,
   };
 
@@ -58,7 +53,7 @@ function parseEnv(): Env {
   return {
     DATABASE_URL: process.env.DATABASE_URL,
     AUTH_SECRET: process.env.AUTH_SECRET ?? "runtime-placeholder-change-me",
-    AUTH_URL: withHttps(process.env.AUTH_URL, appUrl),
+    AUTH_URL: normalizeAppUrl(process.env.AUTH_URL, appUrl),
     AUTH_GOOGLE_ID: process.env.AUTH_GOOGLE_ID,
     AUTH_GOOGLE_SECRET: process.env.AUTH_GOOGLE_SECRET,
     OPENAI_API_KEY: process.env.OPENAI_API_KEY ?? "",

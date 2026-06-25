@@ -40,10 +40,11 @@ export function asObjectList(value: unknown): Record<string, unknown>[] {
   >[];
 }
 
+import { normalizeAppUrl } from "@/shared/lib/request-url";
+
 export function appBaseUrlFromEnv(): string {
-  return (
-    process.env.NEXT_PUBLIC_APP_URL ??
-    process.env.AUTH_URL ??
+  return normalizeAppUrl(
+    process.env.NEXT_PUBLIC_APP_URL ?? process.env.AUTH_URL,
     "https://ruwaq.co"
-  ).replace(/\/$/, "");
+  );
 }
