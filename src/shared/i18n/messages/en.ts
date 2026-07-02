@@ -864,6 +864,10 @@ export const en: Messages = {
     badge: "GH sample",
    },
   ],
+  headerFooterShowcase: {
+   title: "Customize your proposal look — 10 ready-made color styles",
+   subtitle: "Once you sign up, pick any of these for your proposal header and footer — with a live preview using your real details as you type.",
+  },
  },
  list: {
   title: "My Proposals",

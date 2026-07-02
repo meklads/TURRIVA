@@ -49,13 +49,13 @@ export async function SiteHeader({ variant = "marketing" }: { variant?: Variant 
           </nav>
 
           <div className="flex shrink-0 items-center justify-end gap-2 sm:gap-3 lg:min-w-[200px]">
-            <LocaleSwitcher />
             {variant === "marketing" && (
               <Link href="/proposals/new" className="btn-ruwaq-header-gold hidden sm:inline-flex">
                 {t.site.nav.startProposal}
               </Link>
             )}
             <UserNav />
+            <LocaleSwitcher />
           </div>
         </div>
 

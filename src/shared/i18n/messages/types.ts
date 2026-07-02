@@ -380,6 +380,10 @@ export type Messages = {
       body: string;
       badge: string;
     }[];
+    headerFooterShowcase: {
+      title: string;
+      subtitle: string;
+    };
   };
   list: {
     title: string;

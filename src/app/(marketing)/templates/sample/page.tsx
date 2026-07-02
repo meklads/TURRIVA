@@ -1,6 +1,7 @@
 import { getMessages } from "@/shared/i18n";
 import { getLocale } from "@/shared/i18n/server";
 import { TemplateSampleGallery } from "@/modules/marketing/components/template-sample-gallery";
+import { HeaderFooterShowcase } from "@/modules/marketing/components/header-footer-showcase";
 
 export const dynamic = "force-dynamic";
 
@@ -29,6 +30,14 @@ export default async function TemplateSamplePage() {
           startCta={t.site.nav.startProposal}
         />
       </div>
+
+      <HeaderFooterShowcase
+        locale={locale}
+        title={t.templates.headerFooterShowcase.title}
+        subtitle={t.templates.headerFooterShowcase.subtitle}
+        badgeLabel={t.company.headerFooter.previewBadge}
+        companyFallback={t.company.headerFooter.previewCompanyFallback}
+      />
     </div>
   );
 }
