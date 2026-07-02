@@ -85,6 +85,12 @@ model CompanyProfile {
   isPaid Boolean   @default(false)
   paidAt DateTime?
 
+  /// Monthly proposal-count plan: free | starter | professional | business
+  /// (see src/modules/billing/lib/plans.ts). Only enforced when the
+  /// BILLING_ENABLED env switch is on.
+  planId          String    @default("free")
+  planActivatedAt DateTime?
+
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 

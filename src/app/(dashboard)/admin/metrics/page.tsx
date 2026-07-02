@@ -12,6 +12,8 @@ const EVENT_TYPES: { type: UsageEventType; label: string }[] = [
   { type: "proposal_generated", label: "عروض ولّدها الذكاء الاصطناعي" },
   { type: "pdf_exported", label: "ملفات PDF صُدّرت" },
   { type: "guest_claimed", label: "زوار سجّلوا حساباً بعد عرض ضيف" },
+  { type: "server_error", label: "أخطاء سيرفر" },
+  { type: "quota_blocked", label: "طلبات مرفوضة (تجاوز الباقة)" },
 ];
 
 const WINDOWS = [
@@ -42,7 +44,7 @@ export default async function AdminMetricsPage() {
   if (!session?.user?.id) redirect("/login?callbackUrl=/admin/metrics");
   if (!isAdminEmail(session.user.email)) redirect("/proposals");
 
-  const [rows, distinctUsers7d, last14Days] = await Promise.all([
+  const [rows, distinctUsers7d, last14Days, recentErrors] = await Promise.all([
     Promise.all(
       EVENT_TYPES.map(async ({ type, label }) => ({
         type,
@@ -66,6 +68,12 @@ export default async function AdminMetricsPage() {
       GROUP BY day
       ORDER BY day DESC
     `.catch(() => [] as { day: Date; count: bigint }[]),
+    db.usageEvent.findMany({
+      where: { type: "server_error" },
+      orderBy: { createdAt: "desc" },
+      take: 15,
+      select: { id: true, createdAt: true, metadata: true, proposalId: true },
+    }),
   ]);
 
   const created = rows.find((r) => r.type === "proposal_created");
@@ -169,6 +177,41 @@ export default async function AdminMetricsPage() {
                       </td>
                     </tr>
                   ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </section>
+
+        <section>
+          <h2 className="mb-3 text-sm font-semibold text-ruwaq-ink">
+            آخر أخطاء السيرفر
+          </h2>
+          {recentErrors.length === 0 ? (
+            <p className="text-sm text-ruwaq-ink-muted">لا أخطاء مسجّلة — تمام.</p>
+          ) : (
+            <div className="overflow-hidden rounded-2xl border border-ruwaq-stone/50">
+              <table className="w-full text-sm">
+                <tbody>
+                  {recentErrors.map((e) => {
+                    const meta = (e.metadata ?? {}) as {
+                      context?: string;
+                      message?: string;
+                    };
+                    return (
+                      <tr key={e.id} className="border-t border-ruwaq-stone/50 first:border-t-0">
+                        <td className="px-4 py-3 align-top text-xs text-ruwaq-ink-muted whitespace-nowrap">
+                          {e.createdAt.toLocaleString("ar-SA")}
+                        </td>
+                        <td className="px-4 py-3 align-top text-xs font-semibold text-ruwaq-ink whitespace-nowrap">
+                          {meta.context ?? "—"}
+                        </td>
+                        <td className="px-4 py-3 align-top text-xs text-red-600">
+                          {meta.message ?? "—"}
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>

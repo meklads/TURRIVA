@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { asciiFilename } from "@/modules/proposal/server/proposal-export-html";
 import { buildProposalExportHtmlForId } from "@/modules/proposal/server/proposal-export-data";
 import { hasProposalEditAccess } from "@/modules/proposal/server/proposal-edit-access";
+import { logServerError } from "@/shared/lib/usage-events";
 
 export const dynamic = "force-dynamic";
 
@@ -33,7 +34,7 @@ export async function GET(
     });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unknown error";
-    console.error("PDF export error:", error);
+    logServerError("pdf export", error, { proposalId: params.id });
     return NextResponse.json(
       { error: "Failed to generate PDF", detail: message },
       { status: 500 }

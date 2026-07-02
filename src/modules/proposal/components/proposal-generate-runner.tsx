@@ -27,15 +27,19 @@ function mapGenerateError(message: string, fallback: string): string {
   return message || fallback;
 }
 
+type GateCode = "SIGN_IN_REQUIRED" | "PROFILE_INCOMPLETE" | "QUOTA_EXCEEDED";
+
 export function ProposalGenerateRunner({ proposalId, editKey }: Props) {
   const t = useT();
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
+  const [gate, setGate] = useState<GateCode | null>(null);
   const [progress, setProgress] = useState(15);
   const started = useRef(false);
 
   const runGenerate = useCallback(async () => {
     setError(null);
+    setGate(null);
     setProgress(25);
 
     const timer = window.setInterval(() => {
@@ -53,9 +57,19 @@ export function ProposalGenerateRunner({ proposalId, editKey }: Props) {
       const data = (await res.json().catch(() => ({}))) as {
         success?: boolean;
         error?: string;
+        code?: GateCode;
       };
 
       if (!res.ok || !data.success) {
+        if (
+          data.code === "SIGN_IN_REQUIRED" ||
+          data.code === "PROFILE_INCOMPLETE" ||
+          data.code === "QUOTA_EXCEEDED"
+        ) {
+          setGate(data.code);
+          setProgress(0);
+          return;
+        }
         throw new Error(data.error ?? `HTTP ${res.status}`);
       }
 
@@ -79,6 +93,42 @@ export function ProposalGenerateRunner({ proposalId, editKey }: Props) {
     started.current = true;
     void runGenerate();
   }, [runGenerate]);
+
+  if (gate) {
+    const gateContent: Record<
+      GateCode,
+      { message: string; ctaLabel: string; href: string }
+    > = {
+      SIGN_IN_REQUIRED: {
+        message: t.gates.signInRequired,
+        ctaLabel: t.gates.signInCta,
+        href: `/login?callbackUrl=${encodeURIComponent(
+          typeof window !== "undefined" ? window.location.pathname : "/"
+        )}`,
+      },
+      PROFILE_INCOMPLETE: {
+        message: t.gates.profileIncomplete,
+        ctaLabel: t.gates.profileIncompleteCta,
+        href: "/settings/company",
+      },
+      QUOTA_EXCEEDED: {
+        message: t.gates.quotaExceeded,
+        ctaLabel: t.gates.quotaExceededCta,
+        href: "/pricing",
+      },
+    };
+    const content = gateContent[gate];
+    return (
+      <div className="app-content-area max-w-xl">
+        <div className="ruwaq-form-card">
+          <p className="text-sm leading-relaxed text-ruwaq-ink">{content.message}</p>
+          <a href={content.href} className="btn-ruwaq-primary mt-4 inline-block">
+            {content.ctaLabel}
+          </a>
+        </div>
+      </div>
+    );
+  }
 
   if (error) {
     return (

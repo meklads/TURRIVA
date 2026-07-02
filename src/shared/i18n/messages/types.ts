@@ -290,6 +290,7 @@ export type Messages = {
       howItWorks: string;
       about: string;
       services: string;
+      pricing: string;
       privacy: string;
       terms: string;
       startProposal: string;
@@ -477,6 +478,27 @@ export type Messages = {
     title: string;
     body: string;
     cta: string;
+  };
+  gates: {
+    signInRequired: string;
+    signInCta: string;
+    profileIncomplete: string;
+    profileIncompleteCta: string;
+    quotaExceeded: string;
+    quotaExceededCta: string;
+  };
+  pricing: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    perMonth: string;
+    freeLabel: string;
+    unlimitedLabel: string;
+    proposalsPerMonth: string;
+    currentPlanNote: string;
+    trialActiveNote: string;
+    contactCta: string;
+    mostPopular: string;
   };
   errors: {
     title: string;

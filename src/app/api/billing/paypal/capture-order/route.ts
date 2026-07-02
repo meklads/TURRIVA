@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSession } from "@/modules/auth/server/session";
 import { capturePremiumTemplatesOrder } from "@/modules/billing/server/paypal.service";
+import { logServerError } from "@/shared/lib/usage-events";
 
 export async function POST(req: NextRequest) {
   try {
@@ -18,7 +19,7 @@ export async function POST(req: NextRequest) {
     const result = await capturePremiumTemplatesOrder(session.user.id, orderId);
     return NextResponse.json({ success: true, ...result });
   } catch (error) {
-    console.error("[paypal] capture-order error:", error);
+    logServerError("paypal capture-order", error);
     return NextResponse.json(
       { error: "Payment could not be confirmed. If you were charged, contact hello@ruwaq.co." },
       { status: 500 }

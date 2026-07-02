@@ -11,7 +11,9 @@ export type UsageEventType =
   | "proposal_created"
   | "proposal_generated"
   | "pdf_exported"
-  | "guest_claimed";
+  | "guest_claimed"
+  | "server_error"
+  | "quota_blocked";
 
 export function logUsageEvent(
   type: UsageEventType,
@@ -35,4 +37,24 @@ export function logUsageEvent(
     .catch((error) => {
       console.warn(`[usage-events] failed to log "${type}":`, error);
     });
+}
+
+/**
+ * In-house error tracking — no Sentry account needed. Logs a "server_error"
+ * UsageEvent (visible in /admin/metrics) AND still prints to console so
+ * platform logs (Coolify) keep the full stack trace. Fire-and-forget, same
+ * as logUsageEvent: a logging failure must never break the real response.
+ */
+export function logServerError(
+  context: string,
+  error: unknown,
+  data: { userId?: string | null; proposalId?: string | null } = {}
+): void {
+  console.error(`[error] ${context}:`, error);
+  const message = error instanceof Error ? error.message : String(error);
+  logUsageEvent("server_error", {
+    userId: data.userId,
+    proposalId: data.proposalId,
+    metadata: { context, message: message.slice(0, 500) },
+  });
 }

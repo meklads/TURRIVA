@@ -16,6 +16,7 @@ export async function SiteHeader({ variant = "marketing" }: { variant?: Variant 
     { href: "/about", label: t.site.nav.about },
     { href: "/templates/sample", label: t.nav.previewSample },
     { href: "/services", label: t.site.nav.services },
+    { href: "/pricing", label: t.site.nav.pricing },
   ];
 
   const appLinks = [
