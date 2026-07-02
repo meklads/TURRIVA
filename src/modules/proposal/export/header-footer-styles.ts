@@ -315,6 +315,39 @@ export function getHeaderFooterStyle(id: string | null | undefined): HeaderFoote
   return HEADER_FOOTER_STYLES.gold_classic;
 }
 
+/** Free forever — 3 of the 10 looks, enough variety for the free trial. */
+export const FREE_HEADER_FOOTER_STYLE_IDS: readonly HeaderFooterStyleId[] = [
+  "gold_classic",
+  "desert_sand",
+  "steel_blue",
+];
+
+/** The other 7 are a paid-plan perk (see modules/billing). */
+export function isPremiumHeaderFooterStyle(id: string): boolean {
+  return !(FREE_HEADER_FOOTER_STYLE_IDS as readonly string[]).includes(id);
+}
+
+export function parseHeaderFooterStyleId(value: unknown): HeaderFooterStyleId {
+  if (typeof value === "string" && value in HEADER_FOOTER_STYLES) {
+    return value as HeaderFooterStyleId;
+  }
+  return "gold_classic";
+}
+
+/** Resolves the style a user is actually entitled to save/export with —
+ * mirrors resolveEntitledExportTemplateId. Free users requesting a premium
+ * look are quietly dropped back to the default rather than blocked. */
+export function resolveEntitledHeaderFooterStyleId(
+  requestedId: unknown,
+  isPaid: boolean
+): HeaderFooterStyleId {
+  const requested = parseHeaderFooterStyleId(requestedId);
+  if (!isPaid && isPremiumHeaderFooterStyle(requested)) {
+    return "gold_classic";
+  }
+  return requested;
+}
+
 /**
  * Builds a small self-contained HTML doc reusing the EXACT same CSS class
  * names and skin CSS as the real export template (ruwaq.template.ts) —

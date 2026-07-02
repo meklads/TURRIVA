@@ -394,19 +394,25 @@ function buildGraphicsHouseSample(locale: Locale, base: string): ProposalExportD
 export function buildSampleExportData(
   locale: Locale,
   slug: SampleTemplateSlug,
-  baseUrl?: string
+  baseUrl?: string,
+  headerFooterStyleId?: string
 ): ProposalExportData {
   const base = (baseUrl ?? appBaseUrlFromEnv()).replace(/\/$/, "");
   sampleSlugToTemplateId(slug);
 
-  switch (slug) {
-    case "ruwaq-classic":
-      return buildRuwaqClassicSample(locale, base);
-    case "ruwaq-executive":
-      return buildRuwaqExecutiveSample(locale, base);
-    case "graphics-house":
-      return buildGraphicsHouseSample(locale, base);
-  }
+  const data = (() => {
+    switch (slug) {
+      case "ruwaq-classic":
+        return buildRuwaqClassicSample(locale, base);
+      case "ruwaq-executive":
+        return buildRuwaqExecutiveSample(locale, base);
+      case "graphics-house":
+        return buildGraphicsHouseSample(locale, base);
+    }
+  })();
+
+  // Only the free "ruwaq" classic template honors header/footer skins.
+  return headerFooterStyleId ? { ...data, headerFooterStyleId } : data;
 }
 
 /** @deprecated Use buildSampleExportData(locale, "ruwaq-classic", baseUrl) */

@@ -21,8 +21,9 @@ export async function GET(req: NextRequest, { params }: RouteParams) {
 
   const localeParam = req.nextUrl.searchParams.get("locale");
   const locale: Locale = localeParam === "en" ? "en" : "ar";
+  const hfStyleId = req.nextUrl.searchParams.get("hf") ?? undefined;
   const base = appBaseUrlFromEnv();
-  const data = buildSampleExportData(locale, slug as SampleTemplateSlug, base);
+  const data = buildSampleExportData(locale, slug as SampleTemplateSlug, base, hfStyleId);
   const html = renderProposalExportHtml(locale, data);
 
   return new NextResponse(html, {

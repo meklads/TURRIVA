@@ -10,7 +10,7 @@ export default async function TemplateSamplePage() {
   const t = getMessages(locale);
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14">
+    <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
       <p className="ruwaq-eyebrow">{t.nav.previewSample}</p>
       <h1 className="ruwaq-section-title mx-auto mt-4 max-w-3xl text-center">{t.templates.title}</h1>
       <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-relaxed text-ruwaq-ink-soft sm:text-base">
@@ -35,8 +35,10 @@ export default async function TemplateSamplePage() {
         locale={locale}
         title={t.templates.headerFooterShowcase.title}
         subtitle={t.templates.headerFooterShowcase.subtitle}
-        badgeLabel={t.company.headerFooter.previewBadge}
-        companyFallback={t.company.headerFooter.previewCompanyFallback}
+        selectCta={t.templates.headerFooterShowcase.selectCta}
+        premiumBadge={t.templates.headerFooterShowcase.premiumBadge}
+        premiumNote={t.templates.headerFooterShowcase.premiumNote}
+        openInNewTab={t.templates.headerFooterShowcase.openInNewTab}
       />
     </div>
   );

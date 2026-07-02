@@ -6,6 +6,7 @@ import {
   HEADER_FOOTER_STYLE_ORDER,
   HEADER_FOOTER_STYLES,
   buildHeaderFooterPreviewHtml,
+  isPremiumHeaderFooterStyle,
   type HeaderFooterStyleId,
 } from "@/modules/proposal/export/header-footer-styles";
 
@@ -14,9 +15,19 @@ interface Props {
   onChange: (id: HeaderFooterStyleId) => void;
   companyName: string;
   logoUrl: string;
+  /** During the free trial (billingEnabled=false) everything is unlocked. */
+  isPaid: boolean;
+  onRequestUpgrade: () => void;
 }
 
-export function HeaderFooterStylePicker({ value, onChange, companyName, logoUrl }: Props) {
+export function HeaderFooterStylePicker({
+  value,
+  onChange,
+  companyName,
+  logoUrl,
+  isPaid,
+  onRequestUpgrade,
+}: Props) {
   const t = useT();
   const locale = useLocale();
   const dir = locale === "ar" ? "rtl" : "ltr";
@@ -57,20 +68,32 @@ export function HeaderFooterStylePicker({ value, onChange, companyName, logoUrl 
         {HEADER_FOOTER_STYLE_ORDER.map((id) => {
           const style = HEADER_FOOTER_STYLES[id];
           const selected = value === id;
+          const locked = !isPaid && isPremiumHeaderFooterStyle(id);
           const name = locale === "ar" ? style.nameAr : style.nameEn;
           return (
             <button
               key={id}
               type="button"
-              onClick={() => onChange(id)}
-              className={`group flex flex-col items-center gap-1.5 rounded-lg border p-2 text-center transition-colors ${
+              onClick={() => (locked ? onRequestUpgrade() : onChange(id))}
+              className={`group relative flex flex-col items-center gap-1.5 rounded-lg border p-2 text-center transition-colors ${
                 selected
                   ? "border-ruwaq-gold ring-2 ring-ruwaq-gold/30"
                   : "border-ruwaq-stone/60 hover:border-ruwaq-stone"
               }`}
             >
+              {locked && (
+                <span className="absolute end-1 top-1 rounded-full bg-ruwaq-navy/85 p-1 text-white">
+                  <svg viewBox="0 0 20 20" fill="currentColor" className="h-2.5 w-2.5">
+                    <path
+                      fillRule="evenodd"
+                      d="M10 1a4 4 0 00-4 4v2H5a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V8a1 1 0 00-1-1h-1V5a4 4 0 00-4-4zm2 6V5a2 2 0 10-4 0v2h4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </span>
+              )}
               <span
-                className="block h-8 w-full rounded-md"
+                className={`block h-8 w-full rounded-md ${locked ? "opacity-60" : ""}`}
                 style={{
                   background: `linear-gradient(135deg, ${style.swatch[0]} 55%, ${style.swatch[1]} 55%)`,
                 }}

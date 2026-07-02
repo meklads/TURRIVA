@@ -6,12 +6,7 @@ import {
   parseExportTemplateId,
   resolveEntitledExportTemplateId,
 } from "@/modules/company/lib/export-template-ids";
-import { HEADER_FOOTER_STYLES } from "@/modules/proposal/export/header-footer-styles";
-
-function parseHeaderFooterStyleId(value: unknown): string {
-  if (typeof value === "string" && value in HEADER_FOOTER_STYLES) return value;
-  return "gold_classic";
-}
+import { resolveEntitledHeaderFooterStyleId } from "@/modules/proposal/export/header-footer-styles";
 
 function str(value: unknown): string | null {
   if (typeof value !== "string") return null;
@@ -40,6 +35,10 @@ export async function PUT(req: NextRequest) {
       requestedTemplateId,
       isPaid
     );
+    const entitledStyleId = resolveEntitledHeaderFooterStyleId(
+      body.headerFooterStyleId,
+      isPaid
+    );
 
     const data = {
       companyName: typeof body.companyName === "string" ? body.companyName : "",
@@ -54,7 +53,7 @@ export async function PUT(req: NextRequest) {
       portfolioUrl: str(body.portfolioUrl),
       catalogUrl: str(body.catalogUrl),
       exportTemplateId: entitledTemplateId,
-      headerFooterStyleId: parseHeaderFooterStyleId(body.headerFooterStyleId),
+      headerFooterStyleId: entitledStyleId,
     };
 
     const profile = await db.companyProfile.upsert({

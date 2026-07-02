@@ -17,9 +17,11 @@ interface Props {
   initial: CompanyProfile | null;
   /** Master switch (env BILLING_ENABLED). false = free trial, nothing locked. */
   billingEnabled: boolean;
+  /** Style chosen on the public showcase before sign-up (cookie-carried). */
+  preferredStyleId?: HeaderFooterStyleId;
 }
 
-export function CompanySettingsForm({ initial, billingEnabled }: Props) {
+export function CompanySettingsForm({ initial, billingEnabled, preferredStyleId }: Props) {
   const t = useT();
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -43,7 +45,9 @@ export function CompanySettingsForm({ initial, billingEnabled }: Props) {
     portfolioUrl: initial?.portfolioUrl ?? "",
     catalogUrl: initial?.catalogUrl ?? "",
     exportTemplateId: (initial?.exportTemplateId ?? "ruwaq") as ExportTemplateId,
-    headerFooterStyleId: (initial?.headerFooterStyleId ?? "gold_classic") as HeaderFooterStyleId,
+    headerFooterStyleId: (initial?.headerFooterStyleId ??
+      preferredStyleId ??
+      "gold_classic") as HeaderFooterStyleId,
   });
 
   const update = (field: string, value: string) => {
@@ -261,12 +265,21 @@ export function CompanySettingsForm({ initial, billingEnabled }: Props) {
         </div>
 
         {form.exportTemplateId === "ruwaq" && (
-          <HeaderFooterStylePicker
-            value={form.headerFooterStyleId}
-            onChange={(id) => update("headerFooterStyleId", id)}
-            companyName={form.companyName}
-            logoUrl={form.logoUrl}
-          />
+          <>
+            {!initial && preferredStyleId && (
+              <p className="rounded-lg bg-ruwaq-champagne/10 px-3 py-2 text-xs font-medium text-ruwaq-ink">
+                {t.company.headerFooter.prefilledNotice}
+              </p>
+            )}
+            <HeaderFooterStylePicker
+              value={form.headerFooterStyleId}
+              onChange={(id) => update("headerFooterStyleId", id)}
+              companyName={form.companyName}
+              logoUrl={form.logoUrl}
+              isPaid={isPaid}
+              onRequestUpgrade={() => setUpgradeOpen(true)}
+            />
+          </>
         )}
       </section>
 

@@ -383,6 +383,10 @@ export type Messages = {
     headerFooterShowcase: {
       title: string;
       subtitle: string;
+      selectCta: string;
+      premiumBadge: string;
+      premiumNote: string;
+      openInNewTab: string;
     };
   };
   list: {
@@ -462,6 +466,7 @@ export type Messages = {
       hint: string;
       previewBadge: string;
       previewCompanyFallback: string;
+      prefilledNotice: string;
     };
     exportTemplate: string;
     exportTemplateHint: string;

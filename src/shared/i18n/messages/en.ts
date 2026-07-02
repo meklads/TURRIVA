@@ -866,7 +866,11 @@ export const en: Messages = {
   ],
   headerFooterShowcase: {
    title: "Customize your proposal look — 10 ready-made color styles",
-   subtitle: "Once you sign up, pick any of these for your proposal header and footer — with a live preview using your real details as you type.",
+   subtitle: "Pick a style from the list and see a full real proposal in it — header, body, and footer.",
+   selectCta: "Start my proposal in this style",
+   premiumBadge: "Subscription",
+   premiumNote: "3 styles are free for everyone; the other 7 unlock automatically with any paid plan.",
+   openInNewTab: "Open in a new tab",
   },
  },
  list: {
@@ -966,6 +970,7 @@ export const en: Messages = {
    hint: "Pick the color scheme shown at the top and bottom of your proposal — the preview updates live with your real details.",
    previewBadge: "Proposal",
    previewCompanyFallback: "Your company name",
+   prefilledNotice: "This is the style you picked on the template gallery — adjust it or save as-is.",
   },
   exportTemplate: "Proposal template",
   exportTemplateHint:

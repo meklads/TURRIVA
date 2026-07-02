@@ -47,13 +47,13 @@ export const PLANS: Record<PlanId, Plan> = {
     featuresAr: [
       "15 عرضاً شهرياً",
       "هوية الشركة الكاملة (شعار وألوان)",
-      "كل القوالب",
+      "كل القوالب و10 تناسقات هيدر/فوتر",
       "مشاركة عبر واتساب والبريد",
     ],
     featuresEn: [
       "15 proposals / month",
       "Full company branding",
-      "All templates",
+      "All templates & 10 header/footer styles",
       "WhatsApp & email sharing",
     ],
   },
