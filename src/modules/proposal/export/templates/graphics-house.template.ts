@@ -3,6 +3,7 @@ import { getMessages } from "@/shared/i18n";
 import { localeDir, localeToBcp47 } from "@/shared/i18n/locale";
 import type { ProposalExportData } from "../proposal-export-types";
 import { graphicsHouseBrand } from "../brands/graphics-house.tokens";
+import { PAGED_JS_SCRIPT_TAG, buildPrintPaginationCss } from "../print-pagination";
 import {
   escapeHtml,
   formatAmount,
@@ -692,7 +693,9 @@ export function renderGraphicsHouseTemplate(
       .watermark-band { opacity: 1; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       body.has-watermark .page-wrap { margin-top: 32px; }
     }
+    ${buildPrintPaginationCss(colors.white)}
   </style>
+  ${PAGED_JS_SCRIPT_TAG}
 </head>
 <body class="${bodyClass}">
   ${watermarkOverlay}

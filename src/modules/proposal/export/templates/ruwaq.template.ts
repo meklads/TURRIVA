@@ -4,6 +4,7 @@ import { localeDir, localeToBcp47 } from "@/shared/i18n/locale";
 import type { ProposalExportData } from "../proposal-export-types";
 import { ruwaqBrand } from "../brands/ruwaq.tokens";
 import { getHeaderFooterStyle } from "../header-footer-styles";
+import { PAGED_JS_SCRIPT_TAG, buildPrintPaginationCss } from "../print-pagination";
 import {
   escapeHtml,
   formatAmount,
@@ -873,7 +874,9 @@ export function renderRuwaqTemplate(
       body.has-watermark .page-wrap { margin-top: 32px; }
     }
     ${hfStyle ? hfStyle.css(dir) : ""}
+    ${buildPrintPaginationCss(colors.white)}
   </style>
+  ${PAGED_JS_SCRIPT_TAG}
 </head>
 <body class="${bodyClass}">
   ${watermarkOverlay}
