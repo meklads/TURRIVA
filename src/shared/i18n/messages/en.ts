@@ -956,6 +956,7 @@ export const en: Messages = {
   logoUpload: "Upload logo",
   logoUploading: "Uploading...",
   logoUploadFailed: "Logo upload failed. Use PNG, JPEG, WebP, or SVG under 2 MB.",
+  logoStorageWarning: "Heads up: cloud storage isn't enabled yet — this logo is saved temporarily and may be lost on the next deploy.",
   exportTemplate: "Proposal template",
   exportTemplateHint:
    "Choose the layout used when you export proposals. Preview samples in the template gallery.",

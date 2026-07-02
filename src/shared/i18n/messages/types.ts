@@ -452,6 +452,7 @@ export type Messages = {
     logoUpload: string;
     logoUploading: string;
     logoUploadFailed: string;
+    logoStorageWarning: string;
     exportTemplate: string;
     exportTemplateHint: string;
     exportTemplateOptions: {

@@ -961,6 +961,7 @@ export const ar = {
   logoUpload: "رفع الشعار",
   logoUploading: "جاري الرفع...",
   logoUploadFailed: "فشل رفع الشعار. استخدم PNG أو JPEG أو WebP أو SVG أقل من 2 ميجا.",
+  logoStorageWarning: "تنبيه: التخزين السحابي غير مفعّل بعد — الشعار محفوظ مؤقتاً وقد يُفقد عند التحديث القادم للموقع.",
   exportTemplate: "قالب العرض",
   exportTemplateHint:
    "اختر التصميم عند تصدير العروض. عاين النماذج في معرض القوالب.",

@@ -25,6 +25,7 @@ export function CompanySettingsForm({ initial, billingEnabled }: Props) {
   const [uploading, setUploading] = useState(false);
   const [upgradeOpen, setUpgradeOpen] = useState(false);
   const [saveStatus, setSaveStatus] = useState<"idle" | "success" | "error">("idle");
+  const [logoWarning, setLogoWarning] = useState<string | null>(null);
   // During the free trial every template is unlocked for everyone.
   const isPaid = !billingEnabled || (initial?.isPaid ?? false);
   const [form, setForm] = useState({
@@ -48,6 +49,7 @@ export function CompanySettingsForm({ initial, billingEnabled }: Props) {
 
   const handleLogoUpload = async (file: File) => {
     setUploading(true);
+    setLogoWarning(null);
     try {
       const body = new FormData();
       body.append("logo", file);
@@ -55,6 +57,7 @@ export function CompanySettingsForm({ initial, billingEnabled }: Props) {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "upload failed");
       update("logoUrl", data.url);
+      if (data.warning) setLogoWarning(t.company.logoStorageWarning);
       router.refresh();
     } catch {
       alert(t.company.logoUploadFailed);
@@ -142,6 +145,9 @@ export function CompanySettingsForm({ initial, billingEnabled }: Props) {
           >
             {uploading ? t.company.logoUploading : t.company.logoUpload}
           </button>
+          {logoWarning && (
+            <p className="mt-2 text-xs font-medium text-amber-600">{logoWarning}</p>
+          )}
         </div>
         <div>
           <label className="block text-sm font-medium text-ruwaq-ink">
