@@ -88,6 +88,24 @@ model CompanyProfile {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
+/// Lightweight product-usage log — no external analytics account needed.
+/// Deliberately has NO foreign-key relation to User: analytics rows should
+/// never block or cascade with account changes, and guest events (no
+/// userId) are common and expected here.
+model UsageEvent {
+  id         String   @id @default(cuid())
+  /// proposal_created | proposal_generated | pdf_exported | guest_claimed
+  type       String
+  userId     String?
+  proposalId String?
+  /// Free-form context, e.g. { locale, commercialMode, isGuest }
+  metadata   Json?
+  createdAt  DateTime @default(now())
+
+  @@index([type, createdAt])
+  @@index([createdAt])
+}
+
 /// One-time payments — starts with PayPal; provider column keeps the
 /// door open for Moyasar / Tap (Mada support) without a shape change.
 model Payment {

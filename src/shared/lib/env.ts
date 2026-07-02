@@ -35,6 +35,8 @@ const envSchema = z.object({
   /** When set, HTTP Basic Auth protects dashboard/API (marketing stays public) */
   APP_GATE_PASSWORD: z.string().optional(),
   APP_GATE_USER: z.string().optional(),
+  /** Comma-separated emails allowed to view /admin/metrics. */
+  ADMIN_EMAILS: z.string().optional().default("radwan3@gmail.com"),
 });
 
 type Env = z.infer<typeof envSchema>;
@@ -100,3 +102,13 @@ export const isGoogleAuthConfigured = () => getGoogleOAuthCredentials() !== null
 /** Premium-templates paywall master switch. Defaults to OFF (free trial). */
 export const isBillingEnabled = () =>
   (process.env.BILLING_ENABLED ?? "false").trim().toLowerCase() === "true";
+
+/** Who can view /admin/metrics. */
+export function isAdminEmail(email?: string | null): boolean {
+  if (!email) return false;
+  const allowed = (process.env.ADMIN_EMAILS ?? "radwan3@gmail.com")
+    .split(",")
+    .map((e) => e.trim().toLowerCase())
+    .filter(Boolean);
+  return allowed.includes(email.trim().toLowerCase());
+}

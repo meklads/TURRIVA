@@ -8,6 +8,7 @@ import {
   realEstateSystemRole,
 } from "./proposal-ai.prompts";
 import { runPostGenerationTrustLayer } from "./trust-layer.pipeline";
+import { logUsageEvent } from "@/shared/lib/usage-events";
 
 const openai = process.env.OPENAI_API_KEY
   ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
@@ -255,6 +256,12 @@ export async function generateProposalContent(proposalId: string) {
     });
 
     await runPostGenerationTrustLayer(proposalId);
+
+    logUsageEvent("proposal_generated", {
+      userId: proposal.userId,
+      proposalId,
+      metadata: { locale, commercialMode },
+    });
 
     return { success: true, id: proposalId };
   } catch (error) {

@@ -10,6 +10,7 @@ import { getMessages } from "@/shared/i18n";
 import { setByPath } from "@/shared/lib/json-path";
 import { assertCanMutateProposal, assertCanClaimProposal } from "./proposal-auth";
 import { createEditToken } from "./proposal-edit-access";
+import { logUsageEvent } from "@/shared/lib/usage-events";
 import type {
   CreateProposalInput,
   Proposal,
@@ -93,6 +94,12 @@ export async function createProposal(
       },
       reviewedSections: [],
     },
+  });
+
+  logUsageEvent("proposal_created", {
+    userId,
+    proposalId: proposal.id,
+    metadata: { locale, commercialMode: input.commercialMode ?? "fixed_price", isGuest: !userId },
   });
 
   return { id: proposal.id, editKey: editToken ?? undefined };
@@ -449,6 +456,7 @@ export async function claimProposal(
     where: { id: proposalId },
     data: { userId, editToken: null },
   });
+  logUsageEvent("guest_claimed", { userId, proposalId });
   return { success: true };
 }
 

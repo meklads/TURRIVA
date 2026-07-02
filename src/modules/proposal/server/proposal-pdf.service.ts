@@ -3,6 +3,7 @@ import { randomBytes } from "crypto";
 import { asciiFilename } from "./proposal-export-html";
 import { assertCanMutateProposal } from "./proposal-auth";
 import { assertCanPublishProposal } from "./review-gates.service";
+import { logUsageEvent } from "@/shared/lib/usage-events";
 
 function appBaseUrl(): string {
   return (
@@ -50,6 +51,12 @@ export async function exportProposalAsPdf(proposalId: string) {
 
   const fileBase = asciiFilename(proposal.projectName, "proposal");
   const base = appBaseUrl();
+
+  logUsageEvent("pdf_exported", {
+    userId: proposal.userId,
+    proposalId,
+    metadata: { commercialMode: proposal.commercialMode },
+  });
 
   return {
     url: `/api/proposals/${proposalId}/export/pdf`,
