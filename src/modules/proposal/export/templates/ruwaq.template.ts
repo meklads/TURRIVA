@@ -131,9 +131,6 @@ export function renderRuwaqTemplate(
     })
     .join("");
 
-  const sectionTitle = (title: string) =>
-    `<h2 class="section-title">${escapeHtml(title)}</h2>`;
-
   const printSurface = "#F3F4F6";
   const printBorder = "#E5E7EB";
 
@@ -146,6 +143,43 @@ export function renderRuwaqTemplate(
   const boqLines = data.boqLines ?? [];
   const clauseItems = data.clauseItems ?? [];
   const useClausePack = clauseItems.length > 0;
+
+  // Executive variant: numbered section badges (01, 02, ...) in true visual
+  // order — computed up front so boq/clauses (built as standalone strings
+  // before the final template literal) still get the right number even
+  // though they're generated out of on-page order.
+  const sectionIndexByKey = new Map<string, number>();
+  if (isExecutive) {
+    const visualOrder: Array<{ key: string; visible: boolean }> = [
+      { key: "about", visible: Boolean(data.about?.trim()) },
+      { key: "scope", visible: true },
+      { key: "deliverables", visible: data.deliverables.length > 0 },
+      { key: "timeline", visible: Boolean(data.timeline) },
+      { key: "commercial", visible: true },
+      { key: "boq", visible: boqLines.length > 0 },
+      { key: "clauses", visible: useClausePack },
+      { key: "assumptions", visible: !useClausePack && data.assumptions.length > 0 },
+      { key: "exclusions", visible: !useClausePack && data.exclusions.length > 0 },
+      { key: "acceptance", visible: true },
+    ];
+    let counter = 0;
+    for (const section of visualOrder) {
+      if (!section.visible) continue;
+      counter += 1;
+      sectionIndexByKey.set(section.key, counter);
+    }
+  }
+
+  const sectionTitle = (title: string, key?: string) => {
+    if (isExecutive) {
+      const idx = key ? sectionIndexByKey.get(key) : undefined;
+      const badge = idx
+        ? `<span class="exec-index">${String(idx).padStart(2, "0")}</span>`
+        : "";
+      return `<h2 class="section-title exec-section-title">${badge}${escapeHtml(title)}</h2>`;
+    }
+    return `<h2 class="section-title">${escapeHtml(title)}</h2>`;
+  };
 
   const boqRows = boqLines
     .map((line) => {
@@ -166,7 +200,7 @@ export function renderRuwaqTemplate(
 
   const boqSection =
     boqLines.length > 0
-      ? `${sectionTitle(review.boq.title)}
+      ? `${sectionTitle(review.boq.title, "boq")}
       ${
         isEstimate
           ? `<div class="estimate-banner"><span class="estimate-banner-label">${escapeHtml(review.boq.estimateBadge)}</span>${escapeHtml(review.boq.estimateDisclaimerTop(variancePct))}</div>`
@@ -213,7 +247,7 @@ export function renderRuwaqTemplate(
     .join(" · ");
 
   const clauseSection = useClausePack
-    ? `${sectionTitle(review.clauses.title)}
+    ? `${sectionTitle(review.clauses.title, "clauses")}
       <p style="font-size:13px;color:${colors.textMuted};margin:-6px 0 16px;">${escapeHtml(clausePackMeta)}</p>
       ${clauseBlocks}
       <p style="font-size:11px;color:${colors.textMuted};margin:16px 0 0;padding:12px 14px;background:${colors.creamBg};border-radius:8px;border:1px solid ${colors.cream};line-height:1.6;">${escapeHtml(review.clauses.legalDisclaimer)}</p>`
@@ -700,36 +734,133 @@ export function renderRuwaqTemplate(
     body.has-watermark .page-wrap {
       margin-top: 36px;
     }
+    /* ===== Executive variant — formal "engineering office letterhead" identity =====
+       Distinct from the warm cream/gold classic: deep navy header + footer,
+       squared (not rounded) panels, numbered section index badges, dark
+       table headers. Same content/data, deliberately different mood. */
+    body.variant-executive {
+      letter-spacing: 0.002em;
+    }
     body.variant-executive .banner {
-      background: ${colors.white};
-      border-bottom: 3px solid ${colors.navy};
-      padding: 22px 32px 24px;
+      background: linear-gradient(135deg, ${colors.navy} 0%, #1E293B 100%);
+      border-bottom: 4px solid ${colors.gold};
+      padding: 30px 32px 28px;
+    }
+    body.variant-executive .banner-badge {
+      color: ${colors.goldLight};
     }
     body.variant-executive .banner-title {
-      font-size: 26px;
-      letter-spacing: -0.01em;
+      color: ${colors.white};
+      font-size: 27px;
+      letter-spacing: -0.005em;
+    }
+    body.variant-executive .banner-client {
+      color: rgba(255,255,255,0.72);
+    }
+    body.variant-executive .header-company-name {
+      color: ${colors.white};
+    }
+    body.variant-executive .logo-circle {
+      background: rgba(255,255,255,0.06);
+      border: 1.5px solid rgba(255,255,255,0.3);
+    }
+    body.variant-executive .logo-placeholder-text {
+      color: rgba(255,255,255,0.55);
     }
     body.variant-executive .meta-grid {
-      border-radius: 0;
+      border-radius: 2px;
       border: 1px solid ${printBorder};
-      border-${dir === "rtl" ? "right" : "left"}: 4px solid ${colors.gold};
+      border-${dir === "rtl" ? "right" : "left"}: 4px solid ${colors.navy};
       background: ${colors.white};
+    }
+    body.variant-executive .meta-grid strong {
+      display: block;
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 0.05em;
+      color: ${colors.textMuted};
+      margin-bottom: 2px;
+      font-weight: 700;
+    }
+    body.variant-executive .intro {
+      background: ${colors.white};
+      border: 1px solid ${printBorder};
+      border-radius: 2px;
     }
     body.variant-executive .scope-item {
       background: ${colors.white};
-      border-radius: 0;
+      border-radius: 2px;
       border: 1px solid ${printBorder};
       border-${dir === "rtl" ? "right" : "left"}: 3px solid ${colors.navy};
     }
-    body.variant-executive .section-title::before {
-      content: "";
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      background: ${colors.gold};
-      border-radius: 1px;
+    body.variant-executive .section-title {
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      padding-bottom: 10px;
+      border-bottom: 1px solid ${printBorder};
+      display: flex;
+      align-items: center;
+    }
+    .exec-index {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 22px;
+      height: 22px;
       margin-${dir === "rtl" ? "left" : "right"}: 10px;
-      vertical-align: middle;
+      background: ${colors.navy};
+      color: ${colors.white};
+      font-size: 10px;
+      font-weight: 700;
+      border-radius: 3px;
+      letter-spacing: 0;
+      text-transform: none;
+      flex-shrink: 0;
+    }
+    body.variant-executive th,
+    body.variant-executive .boq-table th {
+      background: ${colors.navy};
+      color: ${colors.white};
+      letter-spacing: 0.04em;
+    }
+    body.variant-executive .boq-table {
+      border-radius: 2px;
+      border-color: ${colors.navy};
+    }
+    body.variant-executive .total-box {
+      background: ${colors.white};
+      color: ${colors.navy};
+      border: 2px solid ${colors.navy};
+      border-radius: 2px;
+    }
+    body.variant-executive .clause-item {
+      border-radius: 2px;
+      border-${dir === "rtl" ? "right" : "left"}: 3px solid ${colors.navy};
+    }
+    body.variant-executive .clause-cat {
+      color: ${colors.navy};
+    }
+    body.variant-executive .signature-box {
+      border-top: 2px solid ${colors.navy};
+    }
+    body.variant-executive .doc-footer,
+    body.variant-executive .doc-footer-client {
+      background: ${colors.navy};
+      color: rgba(255,255,255,0.78);
+      border-top: none;
+    }
+    body.variant-executive .doc-footer a {
+      color: ${colors.goldLight};
+    }
+    body.variant-executive .doc-footer-tagline {
+      color: ${colors.goldLight};
+    }
+    body.variant-executive .doc-footer-meta {
+      color: rgba(255,255,255,0.65);
+    }
+    body.variant-executive footer.doc-footer-client > div:first-child {
+      color: ${colors.white} !important;
     }
     @media print {
       .watermark-grid { opacity: 0.07; }
@@ -785,11 +916,11 @@ export function renderRuwaqTemplate(
       }
       ${
         data.about?.trim()
-          ? `${sectionTitle(labels.aboutUs)}<p style="font-size:14px;color:${colors.textMuted};line-height:1.75;white-space:pre-wrap;margin:0 0 8px;">${escapeHtml(data.about.trim())}</p>`
+          ? `${sectionTitle(labels.aboutUs, "about")}<p style="font-size:14px;color:${colors.textMuted};line-height:1.75;white-space:pre-wrap;margin:0 0 8px;">${escapeHtml(data.about.trim())}</p>`
           : ""
       }
 
-      ${sectionTitle(labels.scopeOfWork)}
+      ${sectionTitle(labels.scopeOfWork, "scope")}
       ${data.scopeItems
         .map(
           (item, i) => `<div class="scope-item">
@@ -801,7 +932,7 @@ export function renderRuwaqTemplate(
 
       ${
         data.deliverables.length
-          ? `${sectionTitle(labels.deliverables)}<ul>${data.deliverables
+          ? `${sectionTitle(labels.deliverables, "deliverables")}<ul>${data.deliverables
               .map(
                 (d) =>
                   `<li><strong>${escapeHtml(d.name)}</strong> — ${escapeHtml(d.description)}</li>`
@@ -812,7 +943,7 @@ export function renderRuwaqTemplate(
 
       ${
         data.timeline
-          ? `${sectionTitle(labels.timeline)}
+          ? `${sectionTitle(labels.timeline, "timeline")}
              <p style="font-size:14px;">${escapeHtml(labels.duration)} <strong>${escapeHtml(String(data.timeline.duration ?? "TBD"))}</strong></p>
              ${
                milestones.length
@@ -822,7 +953,7 @@ export function renderRuwaqTemplate(
           : ""
       }
 
-      ${sectionTitle(labels.commercialTerms)}
+      ${sectionTitle(labels.commercialTerms, "commercial")}
       ${isEstimate ? `<div class="estimate-banner">${escapeHtml(labels.estimateOnly)}</div>` : ""}
       <div class="total-box">
         ${escapeHtml(labels.total)} ${escapeHtml(displayTotal)}
@@ -847,16 +978,16 @@ export function renderRuwaqTemplate(
 
       ${
         !useClausePack && data.assumptions.length
-          ? `${sectionTitle(labels.assumptions)}<ul>${data.assumptions.map((a) => `<li>${escapeHtml(a)}</li>`).join("")}</ul>`
+          ? `${sectionTitle(labels.assumptions, "assumptions")}<ul>${data.assumptions.map((a) => `<li>${escapeHtml(a)}</li>`).join("")}</ul>`
           : ""
       }
       ${
         !useClausePack && data.exclusions.length
-          ? `${sectionTitle(labels.exclusions)}<ul>${data.exclusions.map((e) => `<li>${escapeHtml(e)}</li>`).join("")}</ul>`
+          ? `${sectionTitle(labels.exclusions, "exclusions")}<ul>${data.exclusions.map((e) => `<li>${escapeHtml(e)}</li>`).join("")}</ul>`
           : ""
       }
 
-      ${sectionTitle(labels.acceptance)}
+      ${sectionTitle(labels.acceptance, "acceptance")}
       <p style="font-size:13px;color:${colors.textMuted};margin-bottom:8px;">${escapeHtml(labels.acceptanceText)}</p>
       <div class="signature">
         <div class="signature-box"><strong style="color:${colors.navy};">${escapeHtml(labels.clientSignature)}</strong><br>${escapeHtml(data.clientName)}</div>

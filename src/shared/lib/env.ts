@@ -12,6 +12,11 @@ const envSchema = z.object({
   STORAGE_SECRET_KEY: z.string().optional(),
   STORAGE_BUCKET: z.string().optional(),
   STORAGE_ENDPOINT: z.string().optional(),
+  /** "auto" works for Cloudflare R2; set a real AWS region for S3. */
+  STORAGE_REGION: z.string().optional().default("auto"),
+  /** Public base URL for uploaded objects (R2 custom domain / r2.dev / CDN).
+   *  Falls back to "{STORAGE_ENDPOINT}/{STORAGE_BUCKET}" when unset. */
+  STORAGE_PUBLIC_URL: z.string().optional(),
   RESEND_API_KEY: z.string().optional(),
   STRIPE_SECRET_KEY: z.string().optional(),
   NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: z.string().optional(),
