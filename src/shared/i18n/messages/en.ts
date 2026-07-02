@@ -957,6 +957,11 @@ export const en: Messages = {
   },
   marketingHint:
    "Optional links enrich your proposal and market your business, no ads inside client documents.",
+  errors: {
+   invalidPhone: "Invalid phone number — digits only, with or without a country code (e.g. 0501234567).",
+   invalidEmail: "Invalid email address.",
+   invalidUrl: "Invalid link — must start with https:// or http://.",
+  },
   companyName: "Company name",
   logoUrl: "Logo URL",
   logoUrlPlaceholder: "https://example.com/logo.png",

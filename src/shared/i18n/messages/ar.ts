@@ -962,6 +962,11 @@ export const ar = {
    export: "تصميم التصدير",
   },
   marketingHint: "روابط اختيارية تُثري العرض وتسوّق لشركتك، بدون إعلانات داخل العرض.",
+  errors: {
+   invalidPhone: "رقم هاتف غير صحيح — أرقام فقط، مع أو بدون مفتاح الدولة (مثال: 0501234567).",
+   invalidEmail: "بريد إلكتروني غير صحيح.",
+   invalidUrl: "رابط غير صحيح — لازم يبدأ بـ https:// أو http://.",
+  },
   companyName: "اسم الشركة",
   logoUrl: "رابط الشعار",
   logoUrlPlaceholder: "https://example.com/logo.png",

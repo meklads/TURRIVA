@@ -453,6 +453,11 @@ export type Messages = {
     subtitle: string;
     sections: { identity: string; marketing: string; export: string };
     marketingHint: string;
+    errors: {
+      invalidPhone: string;
+      invalidEmail: string;
+      invalidUrl: string;
+    };
     companyName: string;
     logoUrl: string;
     logoUrlPlaceholder: string;

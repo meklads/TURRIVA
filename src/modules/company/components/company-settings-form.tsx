@@ -12,6 +12,11 @@ import {
 import { UpgradeModal } from "@/modules/billing/components/upgrade-modal";
 import { HeaderFooterStylePicker } from "./header-footer-style-picker";
 import type { HeaderFooterStyleId } from "@/modules/proposal/export/header-footer-styles";
+import {
+  isValidEmail,
+  isValidHttpUrl,
+  isValidPhone,
+} from "@/modules/company/lib/field-validators";
 
 interface Props {
   initial: CompanyProfile | null;
@@ -30,6 +35,7 @@ export function CompanySettingsForm({ initial, billingEnabled, preferredStyleId 
   const [upgradeOpen, setUpgradeOpen] = useState(false);
   const [saveStatus, setSaveStatus] = useState<"idle" | "success" | "error">("idle");
   const [logoWarning, setLogoWarning] = useState<string | null>(null);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   // During the free trial every template is unlocked for everyone.
   const isPaid = !billingEnabled || (initial?.isPaid ?? false);
   const [form, setForm] = useState({
@@ -52,6 +58,13 @@ export function CompanySettingsForm({ initial, billingEnabled, preferredStyleId 
 
   const update = (field: string, value: string) => {
     setForm((f) => ({ ...f, [field]: value }));
+    if (fieldErrors[field]) {
+      setFieldErrors((errs) => {
+        const next = { ...errs };
+        delete next[field];
+        return next;
+      });
+    }
   };
 
   const handleLogoUpload = async (file: File) => {
@@ -72,7 +85,24 @@ export function CompanySettingsForm({ initial, billingEnabled, preferredStyleId 
     setUploading(false);
   };
 
+  const validate = (): Record<string, string> => {
+    const errors: Record<string, string> = {};
+    if (form.phone && !isValidPhone(form.phone)) errors.phone = "invalid_phone";
+    if (form.email && !isValidEmail(form.email)) errors.email = "invalid_email";
+    if (form.website && !isValidHttpUrl(form.website)) errors.website = "invalid_url";
+    if (form.portfolioUrl && !isValidHttpUrl(form.portfolioUrl)) errors.portfolioUrl = "invalid_url";
+    if (form.catalogUrl && !isValidHttpUrl(form.catalogUrl)) errors.catalogUrl = "invalid_url";
+    return errors;
+  };
+
   const handleSave = async () => {
+    const errors = validate();
+    setFieldErrors(errors);
+    if (Object.keys(errors).length > 0) {
+      setSaveStatus("error");
+      return;
+    }
+
     setSaving(true);
     setSaveStatus("idle");
     try {
@@ -81,7 +111,12 @@ export function CompanySettingsForm({ initial, billingEnabled, preferredStyleId 
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      if (!res.ok) throw new Error("save failed");
+      const data = await res.json().catch(() => null);
+      if (!res.ok) {
+        if (data?.fieldErrors) setFieldErrors(data.fieldErrors);
+        throw new Error("save failed");
+      }
+      setFieldErrors({});
       router.refresh();
       setSaveStatus("success");
       setTimeout(() => setSaveStatus((s) => (s === "success" ? "idle" : s)), 3000);
@@ -91,6 +126,17 @@ export function CompanySettingsForm({ initial, billingEnabled, preferredStyleId 
     }
     setSaving(false);
   };
+
+  const errorText = (field: string) => {
+    const code = fieldErrors[field];
+    if (!code) return null;
+    if (code === "invalid_phone") return t.company.errors.invalidPhone;
+    if (code === "invalid_email") return t.company.errors.invalidEmail;
+    return t.company.errors.invalidUrl;
+  };
+
+  const errorInputClass = (field: string) =>
+    fieldErrors[field] ? "border-red-400 focus:border-red-400 focus:ring-red-100" : "";
 
   const inputClass =
     "mt-1 block w-full rounded-lg border border-ruwaq-stone/80 px-3 py-2.5 text-sm shadow-sm focus:border-ruwaq-champagne/50 focus:outline-none focus:ring-4 focus:ring-ruwaq-champagne/10";
@@ -200,8 +246,12 @@ export function CompanySettingsForm({ initial, billingEnabled, preferredStyleId 
             type="tel"
             value={form.phone}
             onChange={(e) => update("phone", e.target.value)}
-            className={inputClass}
+            dir="ltr"
+            className={`${inputClass} ${errorInputClass("phone")}`}
           />
+          {errorText("phone") && (
+            <p className="mt-1 text-xs font-medium text-red-600">{errorText("phone")}</p>
+          )}
         </div>
         <div>
           <label className="block text-sm font-medium text-ruwaq-ink">
@@ -211,8 +261,12 @@ export function CompanySettingsForm({ initial, billingEnabled, preferredStyleId 
             type="email"
             value={form.email}
             onChange={(e) => update("email", e.target.value)}
-            className={inputClass}
+            dir="ltr"
+            className={`${inputClass} ${errorInputClass("email")}`}
           />
+          {errorText("email") && (
+            <p className="mt-1 text-xs font-medium text-red-600">{errorText("email")}</p>
+          )}
         </div>
       </section>
 
@@ -316,8 +370,11 @@ export function CompanySettingsForm({ initial, billingEnabled, preferredStyleId 
             onChange={(e) => update("website", e.target.value)}
             placeholder="https://"
             dir="ltr"
-            className={inputClass}
+            className={`${inputClass} ${errorInputClass("website")}`}
           />
+          {errorText("website") && (
+            <p className="mt-1 text-xs font-medium text-red-600">{errorText("website")}</p>
+          )}
         </div>
         <div>
           <label className="block text-sm font-medium text-ruwaq-ink">
@@ -329,8 +386,11 @@ export function CompanySettingsForm({ initial, billingEnabled, preferredStyleId 
             onChange={(e) => update("portfolioUrl", e.target.value)}
             placeholder={t.company.portfolioUrlPlaceholder}
             dir="ltr"
-            className={inputClass}
+            className={`${inputClass} ${errorInputClass("portfolioUrl")}`}
           />
+          {errorText("portfolioUrl") && (
+            <p className="mt-1 text-xs font-medium text-red-600">{errorText("portfolioUrl")}</p>
+          )}
         </div>
         <div>
           <label className="block text-sm font-medium text-ruwaq-ink">
@@ -342,8 +402,11 @@ export function CompanySettingsForm({ initial, billingEnabled, preferredStyleId 
             onChange={(e) => update("catalogUrl", e.target.value)}
             placeholder={t.company.catalogUrlPlaceholder}
             dir="ltr"
-            className={inputClass}
+            className={`${inputClass} ${errorInputClass("catalogUrl")}`}
           />
+          {errorText("catalogUrl") && (
+            <p className="mt-1 text-xs font-medium text-red-600">{errorText("catalogUrl")}</p>
+          )}
         </div>
       </section>
 

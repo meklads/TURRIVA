@@ -4,6 +4,7 @@ import {
   HEADER_FOOTER_STYLES,
   type HeaderFooterStyleId,
 } from "@/modules/proposal/export/header-footer-styles";
+import { redirectUrl } from "@/shared/lib/request-url";
 
 /**
  * Bridges the public, read-only header/footer showcase to the real,
@@ -12,12 +13,16 @@ import {
  * so we remember it in a cookie and send them straight to Settings — where
  * it's already pre-selected the moment they sign in.
  */
-export async function GET(_req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const isValid = Object.prototype.hasOwnProperty.call(HEADER_FOOTER_STYLES, id);
   const target = isValid ? (id as HeaderFooterStyleId) : "gold_classic";
 
-  const res = NextResponse.redirect(new URL("/settings/company", _req.url));
+  // Plain `new URL(path, req.url)` picks up the container's internal
+  // 0.0.0.0:3000 bind address behind Coolify's reverse proxy — redirectUrl()
+  // reads X-Forwarded-Host/Proto instead (same fix already used by the
+  // proposal edit-key route).
+  const res = NextResponse.redirect(redirectUrl(req, "/settings/company"));
   res.cookies.set(HEADER_FOOTER_PREF_COOKIE, target, {
     maxAge: 60 * 60 * 24 * 30,
     path: "/",
