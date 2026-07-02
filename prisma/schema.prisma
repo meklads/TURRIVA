@@ -21,6 +21,7 @@ model User {
   sessions  Session[]
   proposals Proposal[]
   company   CompanyProfile?
+  payments  Payment[]
 }
 
 /// Required by Auth.js
@@ -79,7 +80,31 @@ model CompanyProfile {
   /// ruwaq | ruwaq_executive | graphics_house
   exportTemplateId String @default("ruwaq")
 
+  /// True once a one-time payment unlocks premium export templates
+  /// (ruwaq_executive, graphics_house). Free tier always keeps "ruwaq".
+  isPaid Boolean   @default(false)
+  paidAt DateTime?
+
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+/// One-time payments — starts with PayPal; provider column keeps the
+/// door open for Moyasar / Tap (Mada support) without a shape change.
+model Payment {
+  id              String   @id @default(cuid())
+  userId          String
+  provider        String   /// paypal | moyasar | tap
+  providerOrderId String   @unique
+  amount          Float
+  currency        String   @default("USD")
+  status          String   @default("pending") /// pending | completed | failed
+  purpose         String   @default("premium_templates")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
 }
 
 /// The core entity — a proposal document

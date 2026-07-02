@@ -5,6 +5,7 @@ import { CompanySettingsForm } from "@/modules/company/components/company-settin
 import { getMessages } from "@/shared/i18n";
 import { getLocale } from "@/shared/i18n/server";
 import { AppPageHero } from "@/shared/components/app-page-hero";
+import { isBillingEnabled } from "@/shared/lib/env";
 
 export const dynamic = "force-dynamic";
 
@@ -28,7 +29,7 @@ export default async function CompanySettingsPage() {
       />
       <div className="app-content-area max-w-2xl">
         <div className="ruwaq-form-card">
-          <CompanySettingsForm initial={profile} />
+          <CompanySettingsForm initial={profile} billingEnabled={isBillingEnabled()} />
         </div>
       </div>
     </>

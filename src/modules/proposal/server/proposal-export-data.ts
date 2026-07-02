@@ -3,7 +3,8 @@ import type { CommercialMode } from "@/shared/types";
 import type { Locale } from "@/shared/i18n/locale";
 import { localeToBcp47 } from "@/shared/i18n/locale";
 import { getMessages } from "@/shared/i18n";
-import { parseExportTemplateId } from "@/modules/company/lib/export-template-ids";
+import { isBillingEnabled } from "@/shared/lib/env";
+import { resolveEntitledExportTemplateId } from "@/modules/company/lib/export-template-ids";
 import {
   asObjectList,
   asStringList,
@@ -131,7 +132,14 @@ export async function buildProposalExportHtmlForId(
     estimateVariancePercent: proposal.estimateVariancePercent,
     watermarkClientName: watermarked ? proposal.clientName : undefined,
     watermarkDate: watermarked ? issueDate : undefined,
-    templateId: parseExportTemplateId(company?.exportTemplateId),
+    // Defense-in-depth: even if a stale/tampered profile row carries a
+    // premium templateId, never render it unless isPaid is true — except
+    // during the free trial (BILLING_ENABLED=false), when everyone is
+    // entitled to every template.
+    templateId: resolveEntitledExportTemplateId(
+      company?.exportTemplateId,
+      (company?.isPaid ?? false) || !isBillingEnabled()
+    ),
   });
 
   return { html, projectName: proposal.projectName };

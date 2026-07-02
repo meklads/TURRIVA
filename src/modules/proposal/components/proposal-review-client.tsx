@@ -295,6 +295,21 @@ export function ProposalReviewClient({
           </Link>
         </div>
       )}
+      {exported && (
+        <div className="ruwaq-upsell-card flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold text-ruwaq-ink">
+              {t.graphicsHouseUpsell.title}
+            </p>
+            <p className="mt-1 text-xs text-ruwaq-ink-muted">
+              {t.graphicsHouseUpsell.body}
+            </p>
+          </div>
+          <Link href="/services" className="btn-ruwaq-secondary shrink-0 px-4 py-2 text-sm">
+            {t.graphicsHouseUpsell.cta}
+          </Link>
+        </div>
+      )}
 
       {/* Top bar */}
       <div className="ruwaq-review-toolbar">

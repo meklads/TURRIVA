@@ -6,19 +6,26 @@ import type { CompanyProfile } from "@prisma/client";
 import { useT } from "@/shared/i18n/context";
 import {
   EXPORT_TEMPLATE_IDS,
+  isPremiumExportTemplate,
   type ExportTemplateId,
 } from "@/modules/company/lib/export-template-ids";
+import { UpgradeModal } from "@/modules/billing/components/upgrade-modal";
 
 interface Props {
   initial: CompanyProfile | null;
+  /** Master switch (env BILLING_ENABLED). false = free trial, nothing locked. */
+  billingEnabled: boolean;
 }
 
-export function CompanySettingsForm({ initial }: Props) {
+export function CompanySettingsForm({ initial, billingEnabled }: Props) {
   const t = useT();
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
+  const [upgradeOpen, setUpgradeOpen] = useState(false);
+  // During the free trial every template is unlocked for everyone.
+  const isPaid = !billingEnabled || (initial?.isPaid ?? false);
   const [form, setForm] = useState({
     companyName: initial?.companyName ?? "",
     logoUrl: initial?.logoUrl ?? "",
@@ -205,14 +212,46 @@ export function CompanySettingsForm({ initial }: Props) {
             onChange={(e) => update("exportTemplateId", e.target.value)}
             className={inputClass}
           >
-            {EXPORT_TEMPLATE_IDS.map((id) => (
-              <option key={id} value={id}>
-                {t.company.exportTemplateOptions[id]}
-              </option>
-            ))}
+            {EXPORT_TEMPLATE_IDS.map((id) => {
+              const locked = !isPaid && isPremiumExportTemplate(id);
+              return (
+                <option key={id} value={id} disabled={locked}>
+                  {t.company.exportTemplateOptions[id]}
+                  {locked ? ` — ${t.upgrade.lockedSuffix}` : ""}
+                </option>
+              );
+            })}
           </select>
+          {!billingEnabled && (
+            <p className="mt-2 text-xs font-medium text-ruwaq-gold">
+              {t.upgrade.trialNotice}
+            </p>
+          )}
+          {billingEnabled && !isPaid && (
+            <div className="ruwaq-upsell-card mt-3">
+              <p className="text-sm font-semibold text-ruwaq-ink">
+                {t.upgrade.inlineTitle}
+              </p>
+              <p className="mt-1 text-xs text-ruwaq-ink-muted">
+                {t.upgrade.inlineBody}
+              </p>
+              <button
+                type="button"
+                onClick={() => setUpgradeOpen(true)}
+                className="btn-ruwaq-primary mt-3 px-4 py-2 text-sm"
+              >
+                {t.upgrade.cta}
+              </button>
+            </div>
+          )}
         </div>
       </section>
+
+      <UpgradeModal
+        open={upgradeOpen}
+        onClose={() => setUpgradeOpen(false)}
+        onSuccess={() => setUpgradeOpen(false)}
+      />
 
       <section className="space-y-4 border-t border-ruwaq-stone/50 pt-6">
         <h2 className="text-sm font-semibold text-ruwaq-ink">

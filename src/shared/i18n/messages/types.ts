@@ -458,6 +458,25 @@ export type Messages = {
     saving: string;
     saveFailed: string;
   };
+  upgrade: {
+    title: string;
+    subtitle: string;
+    price: string;
+    priceNote: string;
+    cta: string;
+    inlineTitle: string;
+    inlineBody: string;
+    lockedSuffix: string;
+    notConfigured: string;
+    close: string;
+    error: string;
+    trialNotice: string;
+  };
+  graphicsHouseUpsell: {
+    title: string;
+    body: string;
+    cta: string;
+  };
   errors: {
     title: string;
     message: string;
