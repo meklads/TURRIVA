@@ -1,7 +1,9 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { HEADER_FOOTER_STYLES, type HeaderFooterStyleId } from "@/modules/proposal/export/header-footer-styles";
-
-export const HEADER_FOOTER_PREF_COOKIE = "ruwaq_hf_pref";
+import {
+  HEADER_FOOTER_PREF_COOKIE,
+  HEADER_FOOTER_STYLES,
+  type HeaderFooterStyleId,
+} from "@/modules/proposal/export/header-footer-styles";
 
 /**
  * Bridges the public, read-only header/footer showcase to the real,

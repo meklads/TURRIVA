@@ -13,6 +13,12 @@
  * looks untouched.
  */
 
+/** Carries a public showcase pick through sign-up (see /style/[id]/route.ts).
+ * Lives here, not in the route file, because Next.js route.ts files may
+ * only export HTTP method handlers + reserved config — any other export
+ * (like a plain constant) fails the build. */
+export const HEADER_FOOTER_PREF_COOKIE = "ruwaq_hf_pref";
+
 export type HeaderFooterStyleId =
   | "gold_classic"
   | "charcoal_copper"

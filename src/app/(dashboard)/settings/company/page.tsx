@@ -7,8 +7,11 @@ import { getMessages } from "@/shared/i18n";
 import { getLocale } from "@/shared/i18n/server";
 import { AppPageHero } from "@/shared/components/app-page-hero";
 import { isBillingEnabled } from "@/shared/lib/env";
-import { HEADER_FOOTER_PREF_COOKIE } from "@/app/style/[id]/route";
-import { HEADER_FOOTER_STYLES, type HeaderFooterStyleId } from "@/modules/proposal/export/header-footer-styles";
+import {
+  HEADER_FOOTER_PREF_COOKIE,
+  HEADER_FOOTER_STYLES,
+  type HeaderFooterStyleId,
+} from "@/modules/proposal/export/header-footer-styles";
 
 export const dynamic = "force-dynamic";
 
