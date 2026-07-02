@@ -894,6 +894,14 @@ export function renderRuwaqTemplate(
       </div>
     </header>
 
+    <!-- Rendered here (not at the end of the document) so Paged.js's
+         `position: running(pageFooter)` captures it before laying out
+         page 1 — a running element only repeats on pages generated AFTER
+         its source appears in the DOM, so this must sit near the top,
+         right alongside the header, even though it visually renders in
+         the page's bottom margin box on every page. -->
+    ${platformBranding ? platformFooter : clientFooter}
+
     <main class="content">
       <div class="meta-grid">
         ${metaRows
@@ -1003,8 +1011,6 @@ export function renderRuwaqTemplate(
         <div class="signature-box"><strong style="color:${colors.navy};">${escapeHtml(labels.providerSignature)}</strong><br>${escapeHtml(data.companyName ?? "—")}</div>
       </div>
     </main>
-
-    ${platformBranding ? platformFooter : clientFooter}
   </div>
 </body>
 </html>`;
