@@ -715,7 +715,7 @@ export function renderGraphicsHouseTemplate(
     </header>
 
     <!-- Rendered here (not at the end of the document) so Paged.js's
-         `position: running(pageFooter)` captures it before laying out
+         position: running(pageFooter) captures it before laying out
          page 1 — a running element only repeats on pages generated AFTER
          its source appears in the DOM, so this must sit near the top,
          right alongside the header, even though it visually renders in
