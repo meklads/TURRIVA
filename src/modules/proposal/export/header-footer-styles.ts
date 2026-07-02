@@ -1,0 +1,316 @@
+/**
+ * Header/footer "skins" for the free "ruwaq" classic export template.
+ *
+ * Deliberately code-only (no generated images): research on professional
+ * letterhead design (2026) consistently favors restraint — 2-3 brand
+ * colors max, a single accent, subtle geometric texture rather than busy
+ * imagery. CSS gradients + hairline patterns give print-sharp results at
+ * any size and let the logo/company name sit on a guaranteed-readable
+ * surface, which a raster background image can never fully guarantee.
+ *
+ * Only applies when exportTemplateId === "ruwaq" — the executive and
+ * Graphics House templates keep their own fixed, premium-differentiated
+ * looks untouched.
+ */
+
+export type HeaderFooterStyleId =
+  | "gold_classic"
+  | "charcoal_copper"
+  | "desert_sand"
+  | "emerald_prestige"
+  | "ivory_contemporary"
+  | "steel_blue"
+  | "royal_burgundy"
+  | "coastal_teal"
+  | "blueprint_grid"
+  | "obsidian_gold";
+
+export type HeaderFooterStyle = {
+  id: HeaderFooterStyleId;
+  nameAr: string;
+  nameEn: string;
+  /** Two swatch colors for the picker UI (bg, accent). */
+  swatch: [string, string];
+  /** Raw CSS injected after the base stylesheet; scoped under body.hf-{id}. */
+  css: (dir: "rtl" | "ltr") => string;
+};
+
+const borderSide = (dir: "rtl" | "ltr") => (dir === "rtl" ? "right" : "left");
+
+export const HEADER_FOOTER_STYLES: Record<HeaderFooterStyleId, HeaderFooterStyle> = {
+  gold_classic: {
+    id: "gold_classic",
+    nameAr: "الأصيل الذهبي",
+    nameEn: "Gold Classic",
+    swatch: ["#F5F5F7", "#C9A063"],
+    // This IS the template's default look — no overrides needed.
+    css: () => "",
+  },
+
+  charcoal_copper: {
+    id: "charcoal_copper",
+    nameAr: "الحداثة",
+    nameEn: "Modern Charcoal",
+    swatch: ["#292524", "#B87333"],
+    css: (dir) => `
+      body.hf-charcoal_copper .banner {
+        background: #292524;
+        background-image: repeating-linear-gradient(115deg, rgba(184,115,51,0.10) 0 2px, transparent 2px 22px);
+        border-bottom: 3px solid #B87333;
+      }
+      body.hf-charcoal_copper .banner-badge { color: #D89B5C; }
+      body.hf-charcoal_copper .banner-title { color: #FFFFFF; }
+      body.hf-charcoal_copper .banner-client { color: rgba(255,255,255,0.7); }
+      body.hf-charcoal_copper .header-company-name { color: #FFFFFF; }
+      body.hf-charcoal_copper .logo-circle { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.28); }
+      body.hf-charcoal_copper .doc-footer,
+      body.hf-charcoal_copper .doc-footer-client {
+        background: #292524;
+        color: rgba(255,255,255,0.75);
+        border-top: none;
+      }
+      body.hf-charcoal_copper .doc-footer a,
+      body.hf-charcoal_copper .doc-footer-tagline { color: #D89B5C; }
+      body.hf-charcoal_copper footer.doc-footer-client > div:first-child { color: #FFFFFF !important; }
+    `,
+  },
+
+  desert_sand: {
+    id: "desert_sand",
+    nameAr: "الصحراء",
+    nameEn: "Desert Sand",
+    swatch: ["#E8DCC8", "#8B5A2B"],
+    css: () => `
+      body.hf-desert_sand .banner {
+        background: linear-gradient(120deg, #EFE6D6 0%, #DCC7A3 100%);
+        border-bottom: 3px solid #8B5A2B;
+      }
+      body.hf-desert_sand .banner-badge { color: #8B5A2B; }
+      body.hf-desert_sand .banner-title { color: #5A3A1B; }
+      body.hf-desert_sand .banner-client { color: #7A5C3A; }
+      body.hf-desert_sand .header-company-name { color: #5A3A1B; }
+      body.hf-desert_sand .logo-circle { background: #FBF7EF; border-color: #C9A876; }
+      body.hf-desert_sand .doc-footer,
+      body.hf-desert_sand .doc-footer-client {
+        background: #F5EEDF;
+        color: #7A5C3A;
+        border-top: 1px solid #DCC7A3;
+      }
+      body.hf-desert_sand .doc-footer a,
+      body.hf-desert_sand .doc-footer-tagline { color: #8B5A2B; }
+      body.hf-desert_sand footer.doc-footer-client > div:first-child { color: #5A3A1B !important; }
+    `,
+  },
+
+  emerald_prestige: {
+    id: "emerald_prestige",
+    nameAr: "الزمرد",
+    nameEn: "Emerald Prestige",
+    swatch: ["#0B3D2E", "#C9A063"],
+    css: () => `
+      body.hf-emerald_prestige .banner {
+        background: linear-gradient(135deg, #0B3D2E 0%, #114A38 100%);
+        border-bottom: 3px solid #C9A063;
+      }
+      body.hf-emerald_prestige .banner-badge { color: #D4B47A; }
+      body.hf-emerald_prestige .banner-title { color: #FFFFFF; }
+      body.hf-emerald_prestige .banner-client { color: rgba(255,255,255,0.72); }
+      body.hf-emerald_prestige .header-company-name { color: #FFFFFF; }
+      body.hf-emerald_prestige .logo-circle { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.3); }
+      body.hf-emerald_prestige .doc-footer,
+      body.hf-emerald_prestige .doc-footer-client {
+        background: #0B3D2E;
+        color: rgba(255,255,255,0.78);
+        border-top: none;
+      }
+      body.hf-emerald_prestige .doc-footer a,
+      body.hf-emerald_prestige .doc-footer-tagline { color: #D4B47A; }
+      body.hf-emerald_prestige footer.doc-footer-client > div:first-child { color: #FFFFFF !important; }
+    `,
+  },
+
+  ivory_contemporary: {
+    id: "ivory_contemporary",
+    nameAr: "الأبيض العصري",
+    nameEn: "Ivory Contemporary",
+    swatch: ["#FAF9F6", "#0F172A"],
+    css: (dir) => `
+      body.hf-ivory_contemporary .banner {
+        background: #FAF9F6;
+        border-bottom: 1px solid #E5E1D8;
+        border-${borderSide(dir)}: 4px solid #0F172A;
+      }
+      body.hf-ivory_contemporary .banner-badge { color: #0F172A; }
+      body.hf-ivory_contemporary .banner-title { color: #0F172A; }
+      body.hf-ivory_contemporary .banner-client { color: #6E6E73; }
+      body.hf-ivory_contemporary .header-company-name { color: #0F172A; }
+      body.hf-ivory_contemporary .logo-circle { background: #FFFFFF; border: 1.5px solid #E5E1D8; }
+      body.hf-ivory_contemporary .doc-footer,
+      body.hf-ivory_contemporary .doc-footer-client {
+        background: #FAF9F6;
+        color: #6E6E73;
+        border-top: 1px solid #E5E1D8;
+      }
+      body.hf-ivory_contemporary .doc-footer a,
+      body.hf-ivory_contemporary .doc-footer-tagline { color: #0F172A; }
+    `,
+  },
+
+  steel_blue: {
+    id: "steel_blue",
+    nameAr: "الفولاذ",
+    nameEn: "Steel Blue",
+    swatch: ["#3B4A5A", "#9FB4C7"],
+    css: () => `
+      body.hf-steel_blue .banner {
+        background: #3B4A5A;
+        background-image: repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 14px);
+        border-bottom: 3px solid #9FB4C7;
+      }
+      body.hf-steel_blue .banner-badge { color: #C8D6E0; }
+      body.hf-steel_blue .banner-title { color: #FFFFFF; }
+      body.hf-steel_blue .banner-client { color: rgba(255,255,255,0.72); }
+      body.hf-steel_blue .header-company-name { color: #FFFFFF; }
+      body.hf-steel_blue .logo-circle { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.3); }
+      body.hf-steel_blue .doc-footer,
+      body.hf-steel_blue .doc-footer-client {
+        background: #3B4A5A;
+        color: rgba(255,255,255,0.78);
+        border-top: none;
+      }
+      body.hf-steel_blue .doc-footer a,
+      body.hf-steel_blue .doc-footer-tagline { color: #C8D6E0; }
+      body.hf-steel_blue footer.doc-footer-client > div:first-child { color: #FFFFFF !important; }
+    `,
+  },
+
+  royal_burgundy: {
+    id: "royal_burgundy",
+    nameAr: "الملكي",
+    nameEn: "Royal Burgundy",
+    swatch: ["#5C1A2B", "#C9A063"],
+    css: () => `
+      body.hf-royal_burgundy .banner {
+        background: linear-gradient(135deg, #5C1A2B 0%, #6E2035 100%);
+        border-bottom: 3px solid #C9A063;
+      }
+      body.hf-royal_burgundy .banner-badge { color: #D4B47A; }
+      body.hf-royal_burgundy .banner-title { color: #FFFFFF; }
+      body.hf-royal_burgundy .banner-client { color: rgba(255,255,255,0.72); }
+      body.hf-royal_burgundy .header-company-name { color: #FFFFFF; }
+      body.hf-royal_burgundy .logo-circle { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.3); }
+      body.hf-royal_burgundy .doc-footer,
+      body.hf-royal_burgundy .doc-footer-client {
+        background: #5C1A2B;
+        color: rgba(255,255,255,0.78);
+        border-top: none;
+      }
+      body.hf-royal_burgundy .doc-footer a,
+      body.hf-royal_burgundy .doc-footer-tagline { color: #D4B47A; }
+      body.hf-royal_burgundy footer.doc-footer-client > div:first-child { color: #FFFFFF !important; }
+    `,
+  },
+
+  coastal_teal: {
+    id: "coastal_teal",
+    nameAr: "الساحلي",
+    nameEn: "Coastal Teal",
+    swatch: ["#0E5C63", "#E8DCC8"],
+    css: () => `
+      body.hf-coastal_teal .banner {
+        background: linear-gradient(120deg, #0E5C63 0%, #12707A 100%);
+        border-bottom: 3px solid #E8DCC8;
+      }
+      body.hf-coastal_teal .banner-badge { color: #E8DCC8; }
+      body.hf-coastal_teal .banner-title { color: #FFFFFF; }
+      body.hf-coastal_teal .banner-client { color: rgba(255,255,255,0.72); }
+      body.hf-coastal_teal .header-company-name { color: #FFFFFF; }
+      body.hf-coastal_teal .logo-circle { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.3); }
+      body.hf-coastal_teal .doc-footer,
+      body.hf-coastal_teal .doc-footer-client {
+        background: #0E5C63;
+        color: rgba(255,255,255,0.8);
+        border-top: none;
+      }
+      body.hf-coastal_teal .doc-footer a,
+      body.hf-coastal_teal .doc-footer-tagline { color: #E8DCC8; }
+      body.hf-coastal_teal footer.doc-footer-client > div:first-child { color: #FFFFFF !important; }
+    `,
+  },
+
+  blueprint_grid: {
+    id: "blueprint_grid",
+    nameAr: "المخطط المعماري",
+    nameEn: "Architectural Blueprint",
+    swatch: ["#1B3A5C", "#7FA8D9"],
+    css: () => `
+      body.hf-blueprint_grid .banner {
+        background:
+          repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 24px),
+          repeating-linear-gradient(0deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 24px),
+          #1B3A5C;
+        border-bottom: 3px solid #7FA8D9;
+      }
+      body.hf-blueprint_grid .banner-badge { color: #A9C6E8; }
+      body.hf-blueprint_grid .banner-title { color: #FFFFFF; }
+      body.hf-blueprint_grid .banner-client { color: rgba(255,255,255,0.72); }
+      body.hf-blueprint_grid .header-company-name { color: #FFFFFF; }
+      body.hf-blueprint_grid .logo-circle { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.35); }
+      body.hf-blueprint_grid .doc-footer,
+      body.hf-blueprint_grid .doc-footer-client {
+        background: #1B3A5C;
+        color: rgba(255,255,255,0.78);
+        border-top: none;
+      }
+      body.hf-blueprint_grid .doc-footer a,
+      body.hf-blueprint_grid .doc-footer-tagline { color: #A9C6E8; }
+      body.hf-blueprint_grid footer.doc-footer-client > div:first-child { color: #FFFFFF !important; }
+    `,
+  },
+
+  obsidian_gold: {
+    id: "obsidian_gold",
+    nameAr: "الأبنوس الفاخر",
+    nameEn: "Obsidian Gold",
+    swatch: ["#161616", "#C9A063"],
+    css: () => `
+      body.hf-obsidian_gold .banner {
+        background: #161616;
+        background-image: linear-gradient(180deg, rgba(201,160,99,0.08) 0%, transparent 60%);
+        border-bottom: 3px solid #C9A063;
+      }
+      body.hf-obsidian_gold .banner-badge { color: #C9A063; letter-spacing: 0.14em; }
+      body.hf-obsidian_gold .banner-title { color: #FFFFFF; }
+      body.hf-obsidian_gold .banner-client { color: rgba(255,255,255,0.65); }
+      body.hf-obsidian_gold .header-company-name { color: #FFFFFF; }
+      body.hf-obsidian_gold .logo-circle { background: rgba(201,160,99,0.08); border-color: rgba(201,160,99,0.4); }
+      body.hf-obsidian_gold .doc-footer,
+      body.hf-obsidian_gold .doc-footer-client {
+        background: #161616;
+        color: rgba(255,255,255,0.7);
+        border-top: none;
+      }
+      body.hf-obsidian_gold .doc-footer a,
+      body.hf-obsidian_gold .doc-footer-tagline { color: #C9A063; }
+      body.hf-obsidian_gold footer.doc-footer-client > div:first-child { color: #FFFFFF !important; }
+    `,
+  },
+};
+
+export const HEADER_FOOTER_STYLE_ORDER: HeaderFooterStyleId[] = [
+  "gold_classic",
+  "charcoal_copper",
+  "desert_sand",
+  "emerald_prestige",
+  "ivory_contemporary",
+  "steel_blue",
+  "royal_burgundy",
+  "coastal_teal",
+  "blueprint_grid",
+  "obsidian_gold",
+];
+
+export function getHeaderFooterStyle(id: string | null | undefined): HeaderFooterStyle {
+  if (id && id in HEADER_FOOTER_STYLES) return HEADER_FOOTER_STYLES[id as HeaderFooterStyleId];
+  return HEADER_FOOTER_STYLES.gold_classic;
+}

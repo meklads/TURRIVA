@@ -3,6 +3,7 @@ import { getMessages } from "@/shared/i18n";
 import { localeDir, localeToBcp47 } from "@/shared/i18n/locale";
 import type { ProposalExportData } from "../proposal-export-types";
 import { ruwaqBrand } from "../brands/ruwaq.tokens";
+import { getHeaderFooterStyle } from "../header-footer-styles";
 import {
   escapeHtml,
   formatAmount,
@@ -264,7 +265,11 @@ export function renderRuwaqTemplate(
       </div>`
     : "";
 
-  const bodyClass = `${showWatermark ? "has-watermark" : ""}${isExecutive ? " variant-executive" : ""}`.trim();
+  // Header/footer color skin — a free-tier customization layer independent
+  // of exportTemplateId. Only meaningful on the classic "ruwaq" template;
+  // executive/Graphics House keep their own fixed, premium-differentiated look.
+  const hfStyle = !isExecutive ? getHeaderFooterStyle(data.headerFooterStyleId) : null;
+  const bodyClass = `${showWatermark ? "has-watermark" : ""}${isExecutive ? " variant-executive" : ""}${hfStyle ? ` hf-${hfStyle.id}` : ""}`.trim();
 
   const milestones = Array.isArray(data.timeline?.milestones)
     ? (data.timeline!.milestones as Record<string, unknown>[])
@@ -867,6 +872,7 @@ export function renderRuwaqTemplate(
       .watermark-band { opacity: 1; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       body.has-watermark .page-wrap { margin-top: 32px; }
     }
+    ${hfStyle ? hfStyle.css(dir) : ""}
   </style>
 </head>
 <body class="${bodyClass}">

@@ -962,6 +962,12 @@ export const ar = {
   logoUploading: "جاري الرفع...",
   logoUploadFailed: "فشل رفع الشعار. استخدم PNG أو JPEG أو WebP أو SVG أقل من 2 ميجا.",
   logoStorageWarning: "تنبيه: التخزين السحابي غير مفعّل بعد — الشعار محفوظ مؤقتاً وقد يُفقد عند التحديث القادم للموقع.",
+  headerFooter: {
+   title: "شكل الهيدر والفوتر",
+   hint: "اختر تناسق الألوان اللي يظهر أعلى وأسفل عرضك — يتحدث معاينة مباشرة ببياناتك الحقيقية.",
+   previewBadge: "عرض سعر",
+   previewCompanyFallback: "اسم شركتك هنا",
+  },
   exportTemplate: "قالب العرض",
   exportTemplateHint:
    "اختر التصميم عند تصدير العروض. عاين النماذج في معرض القوالب.",

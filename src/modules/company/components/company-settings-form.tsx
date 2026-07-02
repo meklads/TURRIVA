@@ -10,6 +10,8 @@ import {
   type ExportTemplateId,
 } from "@/modules/company/lib/export-template-ids";
 import { UpgradeModal } from "@/modules/billing/components/upgrade-modal";
+import { HeaderFooterStylePicker } from "./header-footer-style-picker";
+import type { HeaderFooterStyleId } from "@/modules/proposal/export/header-footer-styles";
 
 interface Props {
   initial: CompanyProfile | null;
@@ -41,6 +43,7 @@ export function CompanySettingsForm({ initial, billingEnabled }: Props) {
     portfolioUrl: initial?.portfolioUrl ?? "",
     catalogUrl: initial?.catalogUrl ?? "",
     exportTemplateId: (initial?.exportTemplateId ?? "ruwaq") as ExportTemplateId,
+    headerFooterStyleId: (initial?.headerFooterStyleId ?? "gold_classic") as HeaderFooterStyleId,
   });
 
   const update = (field: string, value: string) => {
@@ -256,6 +259,15 @@ export function CompanySettingsForm({ initial, billingEnabled }: Props) {
             </div>
           )}
         </div>
+
+        {form.exportTemplateId === "ruwaq" && (
+          <HeaderFooterStylePicker
+            value={form.headerFooterStyleId}
+            onChange={(id) => update("headerFooterStyleId", id)}
+            companyName={form.companyName}
+            logoUrl={form.logoUrl}
+          />
+        )}
       </section>
 
       <UpgradeModal

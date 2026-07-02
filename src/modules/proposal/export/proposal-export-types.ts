@@ -32,6 +32,8 @@ export type ProposalExportData = {
   areaSqm?: number;
   appBaseUrl: string;
   templateId?: "ruwaq" | "ruwaq_executive" | "graphics_house";
+  /** Header/footer color skin — only applied when templateId is "ruwaq". */
+  headerFooterStyleId?: string;
   /** When true, shows Ruwaq platform branding (sample preview only). */
   platformBranding?: boolean;
   /** Smart BOQ lines for export (Trust Layer). */

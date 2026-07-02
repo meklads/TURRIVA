@@ -140,6 +140,7 @@ export async function buildProposalExportHtmlForId(
       company?.exportTemplateId,
       (company?.isPaid ?? false) || !isBillingEnabled()
     ),
+    headerFooterStyleId: company?.headerFooterStyleId ?? undefined,
   });
 
   return { html, projectName: proposal.projectName };

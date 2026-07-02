@@ -957,6 +957,12 @@ export const en: Messages = {
   logoUploading: "Uploading...",
   logoUploadFailed: "Logo upload failed. Use PNG, JPEG, WebP, or SVG under 2 MB.",
   logoStorageWarning: "Heads up: cloud storage isn't enabled yet — this logo is saved temporarily and may be lost on the next deploy.",
+  headerFooter: {
+   title: "Header & footer style",
+   hint: "Pick the color scheme shown at the top and bottom of your proposal — the preview updates live with your real details.",
+   previewBadge: "Proposal",
+   previewCompanyFallback: "Your company name",
+  },
   exportTemplate: "Proposal template",
   exportTemplateHint:
    "Choose the layout used when you export proposals. Preview samples in the template gallery.",

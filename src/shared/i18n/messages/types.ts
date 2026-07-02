@@ -453,6 +453,12 @@ export type Messages = {
     logoUploading: string;
     logoUploadFailed: string;
     logoStorageWarning: string;
+    headerFooter: {
+      title: string;
+      hint: string;
+      previewBadge: string;
+      previewCompanyFallback: string;
+    };
     exportTemplate: string;
     exportTemplateHint: string;
     exportTemplateOptions: {

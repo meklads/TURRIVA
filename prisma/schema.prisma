@@ -80,6 +80,10 @@ model CompanyProfile {
   /// ruwaq | ruwaq_executive | graphics_house
   exportTemplateId String @default("ruwaq")
 
+  /// Header/footer color skin — only applies when exportTemplateId is
+  /// "ruwaq". See src/modules/proposal/export/header-footer-styles.ts.
+  headerFooterStyleId String @default("gold_classic")
+
   /// True once a one-time payment unlocks premium export templates
   /// (ruwaq_executive, graphics_house). Free tier always keeps "ruwaq".
   isPaid Boolean   @default(false)
