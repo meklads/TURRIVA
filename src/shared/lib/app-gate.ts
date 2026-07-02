@@ -35,6 +35,7 @@ export function isPublicAppPath(pathname: string): boolean {
     "/terms",
     "/services",
     "/pricing",
+    "/faq",
     "/templates/sample",
   ];
 

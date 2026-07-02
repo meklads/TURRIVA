@@ -291,6 +291,7 @@ export type Messages = {
       about: string;
       services: string;
       pricing: string;
+      faq: string;
       privacy: string;
       terms: string;
       startProposal: string;
@@ -346,6 +347,22 @@ export type Messages = {
       intro: string;
       sections: readonly { title: string; body: string }[];
       contact: string;
+    };
+    faq: {
+      eyebrow: string;
+      title: string;
+      intro: string;
+      differentiatorsTitle: string;
+      differentiators: readonly { title: string; body: string }[];
+      subscriptionTitle: string;
+      subscriptionIntro: string;
+      subscriptionSteps: readonly { title: string; body: string }[];
+      questionsTitle: string;
+      questions: readonly { q: string; a: string }[];
+      ctaTitle: string;
+      ctaSubtitle: string;
+      ctaButton: string;
+      ctaSecondary: string;
     };
   };
   templates: {

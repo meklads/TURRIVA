@@ -16,6 +16,7 @@ export async function SiteFooter() {
         { href: "/how-it-works", label: t.site.nav.howItWorks },
         { href: "/templates/sample", label: t.nav.previewSample },
         { href: "/pricing", label: t.site.nav.pricing },
+        { href: "/faq", label: t.site.nav.faq },
         { href: "/proposals/new", label: t.site.nav.startProposal },
       ],
     },

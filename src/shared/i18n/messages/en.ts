@@ -579,6 +579,7 @@ export const en: Messages = {
    about: "About Ruwaq",
    services: "Services",
    pricing: "Pricing",
+   faq: "FAQ",
    privacy: "Privacy policy",
    terms: "Terms of service",
    startProposal: "Start a proposal",
@@ -740,6 +741,95 @@ export const en: Messages = {
     },
    ],
    contact: "Questions:",
+  },
+  faq: {
+   eyebrow: "Ruwaq guide",
+   title: "Everything you need to know before you start",
+   intro:
+    "Why Ruwaq is different, and exactly how the free trial and subscription work — no ambiguity, no surprises later.",
+   differentiatorsTitle: "Why Ruwaq?",
+   differentiators: [
+    {
+     title: "From idea to a ready proposal in minutes, not hours",
+     body: "Instead of drafting scope, commercial terms, and a timeline from scratch every time, AI writes a full draft in minutes — you review and edit before sending.",
+    },
+    {
+     title: "Built specifically for Saudi real estate & contracting",
+     body: "Not a generic translated tool. The clause library, timelines, and payment terms are grounded in real fit-out, supervision, and maintenance practice in Saudi Arabia.",
+    },
+    {
+     title: "Your full company identity on every proposal",
+     body: "Your logo, details, and commercial registration appear automatically on every exported document — giving even a solo operator the look of a large consultancy.",
+    },
+    {
+     title: "A live link your client can actually interact with",
+     body: "Your client opens a link, reviews the proposal section by section, and can approve or request a change directly — not a static PDF that gets lost in an inbox.",
+    },
+   ],
+   subscriptionTitle: "How the trial and subscription work",
+   subscriptionIntro:
+    "The platform is currently in a launch trial: everything is free and unlimited for now, while we confirm it genuinely serves you. Here's the permanent structure once the trial period ends:",
+   subscriptionSteps: [
+    {
+     title: "Try it with no sign-up",
+     body: "Create your first proposal instantly, no account or card required. You get one free AI-generated proposal as a guest to see the output quality yourself.",
+    },
+    {
+     title: "Sign in with Google (one step)",
+     body: "To create more proposals, sign in with Google — no new password to remember, just seconds.",
+    },
+    {
+     title: "Complete your company profile once",
+     body: "Your company name, logo, and contact details — filled in once, then applied automatically to every proposal after that.",
+    },
+    {
+     title: "Stay free or upgrade as you grow",
+     body: "The free plan covers occasional use. If your monthly volume grows, pick a plan that fits from the pricing page — no annual lock-in required.",
+    },
+   ],
+   questionsTitle: "Frequently asked questions",
+   questions: [
+    {
+     q: "Is Ruwaq really free?",
+     a: "Yes. The platform is currently in a fully free launch trial with no limits. Even after that trial ends, a permanent free plan covers a limited number of proposals per month — no card needed to start.",
+    },
+    {
+     q: "Do I need a credit card to sign up?",
+     a: "No. Sign-in is via Google only. A payment method is only needed if you later choose to upgrade to a paid plan for higher monthly volume.",
+    },
+    {
+     q: "Can I use my own company logo and details?",
+     a: "Absolutely — that's the whole point. Fill in your logo, company name, and commercial registration once in Company Profile, and they appear automatically on every proposal you export.",
+    },
+    {
+     q: "Are the generated proposals legally binding contracts?",
+     a: "Proposals and clauses are a strong starting point that save you drafting time, but they are not legal advice. Always review them, and for high-value contracts consult qualified counsel before signing.",
+    },
+    {
+     q: "How is this different from writing it myself in Word or using ChatGPT directly?",
+     a: "ChatGPT gives you generic text you have to format yourself from scratch every time. Ruwaq builds a structured, export-ready proposal — scope, timeline, payment terms, and your branding — with no manual formatting or copy-pasting.",
+    },
+    {
+     q: "Is there a limit on how many proposals I can create?",
+     a: "During the current launch trial: no limit at all. Afterward, the free plan includes a set number per month, and paid plans offer higher or unlimited volume — see the pricing page for details.",
+    },
+    {
+     q: "How does my client view the final proposal?",
+     a: "You send them a direct link (or an exported PDF) — they open it on any device without needing to sign in, and can approve or request changes from the same page.",
+    },
+    {
+     q: "Is my data or my clients' data shared or sold?",
+     a: "No. Your data is used only to generate your proposals. Full details are on the Privacy Policy page.",
+    },
+    {
+     q: "Does the platform support both Arabic and English?",
+     a: "Yes, fully — you choose the language for each proposal when creating it, and the platform interface itself is available in both Arabic and English.",
+    },
+   ],
+   ctaTitle: "Ready to try it yourself?",
+   ctaSubtitle: "Your first professional proposal is ready in minutes — no sign-up, no credit card.",
+   ctaButton: "Start a free proposal",
+   ctaSecondary: "View pricing",
   },
  },
  templates: {
