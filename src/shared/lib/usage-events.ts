@@ -1,3 +1,4 @@
+import { Prisma } from "@prisma/client";
 import { db } from "@/shared/lib/db";
 
 /**
@@ -28,7 +29,7 @@ export function logUsageEvent(
         type,
         userId: data.userId ?? null,
         proposalId: data.proposalId ?? null,
-        metadata: data.metadata ?? undefined,
+        metadata: (data.metadata as Prisma.InputJsonValue | undefined) ?? undefined,
       },
     })
     .catch((error) => {
