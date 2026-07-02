@@ -3,6 +3,7 @@ import { mkdir, writeFile } from "fs/promises";
 import path from "path";
 import { getSession } from "@/modules/auth/server/session";
 import { isCloudStorageConfigured, uploadPublicObject } from "@/shared/lib/storage";
+import { logServerError } from "@/shared/lib/usage-events";
 
 const MAX_BYTES = 2 * 1024 * 1024;
 const ALLOWED_TYPES = new Map([
@@ -57,7 +58,7 @@ export async function POST(req: NextRequest) {
         "STORAGE_* env vars not set — logo saved to local disk and may be lost on the next deploy.",
     });
   } catch (error) {
-    console.error("Logo upload error:", error);
+    logServerError("logo upload", error);
     return NextResponse.json({ error: "Upload failed" }, { status: 500 });
   }
 }
