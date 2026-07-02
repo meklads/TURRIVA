@@ -895,6 +895,7 @@ export const ar = {
   save: "حفظ الملف",
   saving: "جاري الحفظ...",
   saveFailed: "فشل الحفظ. حاول مرة أخرى.",
+  saveSuccess: "تم الحفظ بنجاح.",
  },
  upgrade: {
   title: "افتح القوالب المميزة",

@@ -24,6 +24,7 @@ export function CompanySettingsForm({ initial, billingEnabled }: Props) {
   const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [upgradeOpen, setUpgradeOpen] = useState(false);
+  const [saveStatus, setSaveStatus] = useState<"idle" | "success" | "error">("idle");
   // During the free trial every template is unlocked for everyone.
   const isPaid = !billingEnabled || (initial?.isPaid ?? false);
   const [form, setForm] = useState({
@@ -63,6 +64,7 @@ export function CompanySettingsForm({ initial, billingEnabled }: Props) {
 
   const handleSave = async () => {
     setSaving(true);
+    setSaveStatus("idle");
     try {
       const res = await fetch("/api/company/profile", {
         method: "PUT",
@@ -71,7 +73,10 @@ export function CompanySettingsForm({ initial, billingEnabled }: Props) {
       });
       if (!res.ok) throw new Error("save failed");
       router.refresh();
+      setSaveStatus("success");
+      setTimeout(() => setSaveStatus((s) => (s === "success" ? "idle" : s)), 3000);
     } catch {
+      setSaveStatus("error");
       alert(t.company.saveFailed);
     }
     setSaving(false);
@@ -311,13 +316,32 @@ export function CompanySettingsForm({ initial, billingEnabled }: Props) {
         </div>
       </section>
 
-      <button
-        onClick={handleSave}
-        disabled={saving}
-        className="btn-ruwaq-primary px-6 py-2 disabled:opacity-50"
-      >
-        {saving ? t.company.saving : t.company.save}
-      </button>
+      <div className="flex items-center gap-3">
+        <button
+          onClick={handleSave}
+          disabled={saving}
+          className="btn-ruwaq-primary px-6 py-2 disabled:opacity-50"
+        >
+          {saving ? t.company.saving : t.company.save}
+        </button>
+        {saveStatus === "success" && (
+          <span className="flex items-center gap-1.5 text-sm font-medium text-emerald-700">
+            <svg
+              className="h-4 w-4"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fillRule="evenodd"
+                d="M16.704 5.29a1 1 0 010 1.415l-7.5 7.5a1 1 0 01-1.415 0l-3.5-3.5a1 1 0 111.415-1.414l2.792 2.792 6.793-6.793a1 1 0 011.415 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+            {t.company.saveSuccess}
+          </span>
+        )}
+      </div>
     </div>
   );
 }

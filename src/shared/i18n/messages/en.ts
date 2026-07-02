@@ -890,6 +890,7 @@ export const en: Messages = {
   save: "Save profile",
   saving: "Saving...",
   saveFailed: "Failed to save. Please try again.",
+  saveSuccess: "Saved successfully.",
  },
  upgrade: {
   title: "Unlock premium templates",

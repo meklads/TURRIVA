@@ -457,6 +457,7 @@ export type Messages = {
     save: string;
     saving: string;
     saveFailed: string;
+    saveSuccess: string;
   };
   upgrade: {
     title: string;
