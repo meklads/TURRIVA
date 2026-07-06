@@ -320,230 +320,86 @@
   }
 }
 
-/* Workspace promo — featured banner before footer */
-.lux-promos {
-  border-top: 1px solid color-mix(in srgb, var(--lux-sand) 70%, transparent);
-  background: var(--lux-ivory);
-}
-
-.lux-promo-banner {
+/* Footer workspace promo — compact column card */
+.lux-footer-promo {
   position: relative;
-  display: grid;
+  display: block;
   overflow: hidden;
-  border-radius: 1.125rem;
-  border: 1px solid color-mix(in srgb, var(--lux-gold) 30%, #e8dcc8);
+  border-radius: 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--lux-gold) 28%, #e8dcc8);
   background:
     radial-gradient(
-      ellipse 90% 70% at 0% 50%,
-      color-mix(in srgb, var(--lux-gold) 14%, #fff9f0) 0%,
+      ellipse 120% 80% at 100% 0%,
+      color-mix(in srgb, var(--lux-gold) 16%, #fff9f0) 0%,
       transparent 55%
     ),
-    linear-gradient(128deg, #fffefb 0%, #faf4ea 42%, #f3e8d8 100%);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.85) inset,
-    0 16px 48px rgba(184, 148, 104, 0.14);
+    linear-gradient(155deg, #fffefb 0%, #f8f0e4 100%);
+  padding: 0.9rem 1rem 1rem;
+  box-shadow: 0 6px 20px rgba(184, 148, 104, 0.1);
   transition:
-    transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
-    box-shadow 0.3s ease;
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
-.lux-promo-banner:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 22px 56px rgba(184, 148, 104, 0.2);
+.lux-footer-promo:hover {
+  border-color: color-mix(in srgb, var(--lux-gold) 45%, #e8dcc8);
+  box-shadow: 0 10px 28px rgba(184, 148, 104, 0.16);
+  transform: translateY(-1px);
 }
 
-@media (min-width: 1024px) {
-  .lux-promo-banner {
-    grid-template-columns: 1fr minmax(14rem, 22rem);
-    min-height: 18rem;
-  }
-}
-
-.lux-promo-banner__shine {
+.lux-footer-promo__icon {
   position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23b89468' fill-opacity='0.045'%3E%3Cpath d='M24 0L26 22H48L28 32L32 48L24 36L16 48L20 32L0 22H22Z'/%3E%3C/g%3E%3C/svg%3E");
-  pointer-events: none;
-}
-
-.lux-promo-banner__content {
-  position: relative;
-  z-index: 1;
+  top: 0.75rem;
+  inset-inline-end: 0.75rem;
   display: flex;
-  flex-direction: column;
-  padding: 1.75rem 1.5rem 1.85rem;
-}
-
-@media (min-width: 1024px) {
-  .lux-promo-banner__content {
-    padding: 2.25rem 2.5rem;
-  }
-}
-
-.lux-promo-badge {
-  display: inline-flex;
-  width: fit-content;
-  border-radius: 999px;
+  height: 1.75rem;
+  width: 1.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
   border: 1px solid color-mix(in srgb, var(--lux-gold) 35%, transparent);
-  background: color-mix(in srgb, var(--lux-gold) 12%, white);
-  padding: 0.32rem 0.8rem;
-  font-size: 0.625rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #8a6a42;
+  background: color-mix(in srgb, white 80%, #f5ebe0);
+  color: var(--lux-gold);
 }
 
-[dir="rtl"] .lux-promo-badge {
-  letter-spacing: 0.04em;
-  text-transform: none;
-  font-size: 0.6875rem;
-}
-
-.lux-promo-banner__logo {
-  height: 2.15rem;
+.lux-footer-promo__logo {
+  height: 1.35rem;
   width: auto;
-  margin-top: 1.15rem;
 }
 
-.lux-promo-banner__title {
-  margin-top: 1rem;
-  max-width: 34rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 1.35;
-  color: #3d3024;
-}
-
-[dir="rtl"] .lux-promo-banner__title {
-  font-size: 1.3125rem;
-}
-
-.lux-promo-banner__subtitle {
+.lux-footer-promo__desc {
   margin-top: 0.55rem;
-  max-width: 36rem;
-  font-size: 0.875rem;
-  line-height: 1.7;
+  max-width: 14rem;
+  font-size: 0.75rem;
+  line-height: 1.55;
   color: #6b5c4a;
 }
 
-[dir="rtl"] .lux-promo-banner__subtitle {
-  font-size: 0.9375rem;
-  line-height: 1.75;
+[dir="rtl"] .lux-footer-promo__desc {
+  font-size: 0.8125rem;
+  line-height: 1.65;
 }
 
-.lux-promo-banner__features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1.15rem;
-  padding: 0;
-  list-style: none;
-}
-
-.lux-promo-banner__features li {
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--lux-gold) 28%, #e8dcc8);
-  background: color-mix(in srgb, white 72%, #f8f0e4);
-  padding: 0.35rem 0.75rem;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  color: #7a6348;
-}
-
-[dir="rtl"] .lux-promo-banner__features li {
-  font-size: 0.75rem;
-}
-
-.lux-promo-banner__cta {
-  margin-top: 1.35rem;
+.lux-footer-promo__cta {
+  margin-top: 0.7rem;
   display: inline-flex;
-  width: fit-content;
   align-items: center;
-  gap: 0.45rem;
-  border-radius: 0.375rem;
-  background: linear-gradient(180deg, #c9a87a 0%, var(--lux-gold) 100%);
-  padding: 0.75rem 1.25rem;
-  font-size: 0.6875rem;
+  gap: 0.3rem;
+  font-size: 0.625rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: white;
-  box-shadow: 0 4px 16px rgba(184, 148, 104, 0.35);
-  transition: filter 0.2s ease;
+  color: var(--lux-gold);
 }
 
-.lux-promo-banner:hover .lux-promo-banner__cta {
-  filter: brightness(1.05);
-}
-
-[dir="rtl"] .lux-promo-banner__cta {
+[dir="rtl"] .lux-footer-promo__cta {
   letter-spacing: 0.02em;
   text-transform: none;
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
 }
 
-.lux-promo-banner__visual {
-  position: relative;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-inline-start: 1px solid color-mix(in srgb, var(--lux-gold) 18%, transparent);
-  background:
-    radial-gradient(
-      circle at 50% 50%,
-      color-mix(in srgb, var(--lux-gold) 16%, #fff7eb) 0%,
-      transparent 68%
-    );
-}
-
-@media (min-width: 1024px) {
-  .lux-promo-banner__visual {
-    display: flex;
-  }
-}
-
-.lux-promo-banner__orb {
-  position: absolute;
-  width: 9rem;
-  height: 9rem;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(201, 168, 122, 0.22) 0%, transparent 70%);
-}
-
-.lux-promo-banner__ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--lux-gold) 35%, transparent);
-}
-
-.lux-promo-banner__ring--outer {
-  width: 11rem;
-  height: 11rem;
-  opacity: 0.45;
-}
-
-.lux-promo-banner__ring--inner {
-  width: 7.5rem;
-  height: 7.5rem;
-  opacity: 0.65;
-}
-
-.lux-promo-banner__icon {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  height: 4.5rem;
-  width: 4.5rem;
-  align-items: center;
-  justify-content: center;
-  border-radius: 1rem;
-  border: 1px solid color-mix(in srgb, var(--lux-gold) 42%, transparent);
-  background: linear-gradient(145deg, #fff 0%, #f5ebe0 100%);
-  color: var(--lux-gold);
-  box-shadow: 0 8px 24px rgba(184, 148, 104, 0.2);
+.lux-footer-promo:hover .lux-footer-promo__cta {
+  color: #9a7848;
 }
 

@@ -1,6 +1,5 @@
 import "@/app/luxury.css";
 import { LuxuryHeader } from "@/modules/luxury/components/luxury-header";
-import { LuxuryPartnerPromos } from "@/modules/luxury/components/luxury-partner-promos";
 import { LuxuryFooter } from "@/modules/luxury/components/luxury-footer";
 
 export default function MarketingLayout({
@@ -14,7 +13,6 @@ export default function MarketingLayout({
       <main id="main" className="flex-1">
         {children}
       </main>
-      <LuxuryPartnerPromos />
       <LuxuryFooter />
     </div>
   );

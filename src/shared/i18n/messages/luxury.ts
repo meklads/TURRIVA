@@ -52,14 +52,9 @@ export type LuxuryMessages = {
     subtitle: string;
     button: string;
   };
-  promos: {
-    eyebrow: string;
-    workspace: { title: string; subtitle: string; cta: string; features: string[] };
-  };
   footer: {
     about: string;
     quickLinks: string;
-    services: string;
     contact: string;
     workspace: string;
     workspaceDesc: string;
@@ -173,25 +168,14 @@ const en: LuxuryMessages = {
     subtitle: "Share your vision with our team and begin your luxury project journey.",
     button: "GET IN TOUCH",
   },
-  promos: {
-    eyebrow: "Digital platform",
-    workspace: {
-      title: "Ruwaq workspace for quotes & projects",
-      subtitle:
-        "Create polished client proposals, organize your projects, and manage relationships — all in one professional hub.",
-      cta: "Enter workspace",
-      features: ["Professional PDF quotes", "Project tracking", "Client management"],
-    },
-  },
   footer: {
     about:
       "Ruwaq is a premium Saudi decor and contracting company specializing in luxury villas, palaces, and high-end residential projects.",
     quickLinks: "Quick Links",
-    services: "Services",
     contact: "Contact Us",
-    workspace: "WORKSPACE",
-    workspaceDesc: "Access your projects, quotes, and client management platform.",
-    workspaceCta: "GO TO WORKSPACE",
+    workspace: "Platform",
+    workspaceDesc: "Professional quotes and project management for your team.",
+    workspaceCta: "Open workspace",
     copyright: "© Ruwaq. All rights reserved.",
     privacy: "Privacy Policy",
     terms: "Terms of Use",
@@ -320,25 +304,14 @@ const ar: LuxuryMessages = {
     subtitle: "شاركنا رؤيتك وابدأ رحلة مشروعك الفاخر مع فريقنا.",
     button: "تواصل معنا",
   },
-  promos: {
-    eyebrow: "منصة رقمية",
-    workspace: {
-      title: "منصة رواق للعروض والمشاريع",
-      subtitle:
-        "أنشئ عروض أسعار احترافية، نظّم مشاريعك، وأدر علاقات عملائك — في مساحة عمل واحدة متكاملة.",
-      cta: "الدخول إلى المنصة",
-      features: ["عروض PDF احترافية", "متابعة المشاريع", "إدارة العملاء"],
-    },
-  },
   footer: {
     about:
       "رواق شركة سعودية فاخرة للديكور والمقاولات، متخصصة في الفلل والقصور والمشاريع السكنية الراقية.",
     quickLinks: "روابط سريعة",
-    services: "الخدمات",
     contact: "تواصل معنا",
-    workspace: "مساحة العمل",
-    workspaceDesc: "ادخل إلى مشاريعك وعروضك ومنصة إدارة العملاء.",
-    workspaceCta: "الدخول إلى مساحة العمل",
+    workspace: "المنصة",
+    workspaceDesc: "عروض احترافية وإدارة مشاريعك في مكان واحد.",
+    workspaceCta: "الدخول إلى المنصة",
     copyright: "© رواق. جميع الحقوق محفوظة.",
     privacy: "سياسة الخصوصية",
     terms: "شروط الاستخدام",
