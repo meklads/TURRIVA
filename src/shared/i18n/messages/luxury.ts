@@ -171,7 +171,7 @@ const en: LuxuryMessages = {
   },
   footer: {
     about:
-      "Ruwaq is a premium Saudi interior design and construction studio specializing in luxury villas, palaces, and high-end residential projects.",
+      "Ruwaq is a premium Saudi decor and contracting company specializing in luxury villas, palaces, and high-end residential projects.",
     quickLinks: "Quick Links",
     services: "Services",
     contact: "Contact Us",
@@ -216,7 +216,7 @@ const en: LuxuryMessages = {
 };
 
 const ar: LuxuryMessages = {
-  brand: { name: "رواق", tagline: "تصميم داخلي · إنشاءات فاخرة" },
+  brand: { name: "رواق", tagline: "ديكور · مقاولات" },
   nav: {
     home: "الرئيسية",
     interiorDesign: "التصميم الداخلي",
@@ -229,7 +229,7 @@ const ar: LuxuryMessages = {
   hero: {
     title: "نصمّم الأناقة.\nونبني التميّز.",
     subtitle:
-      "رواق شركة سعودية رائدة في التصميم الداخلي والإنشاءات والتشطيب، نصنع مساحات فاخرة تجمع بين الحرفية العريقة والابتكار المعاصر — للفلل والقصور والمشاريع السكنية الراقية.",
+      "رواق شركة سعودية فاخرة للديكور والمقاولات، نصنع مساحات استثنائية تجمع بين الحرفية العريقة والابتكار المعاصر — للفلل والقصور والمشاريع السكنية الراقية.",
     ctaPrimary: "استكشف خدماتنا",
     ctaSecondary: "شاهد أعمالنا",
   },
@@ -308,7 +308,7 @@ const ar: LuxuryMessages = {
   },
   footer: {
     about:
-      "رواق استوديو سعودي فاخر للتصميم الداخلي والإنشاءات، متخصص في الفلل والقصور والمشاريع السكنية الراقية.",
+      "رواق شركة سعودية فاخرة للديكور والمقاولات، متخصصة في الفلل والقصور والمشاريع السكنية الراقية.",
     quickLinks: "روابط سريعة",
     services: "الخدمات",
     contact: "تواصل معنا",
@@ -343,7 +343,7 @@ const ar: LuxuryMessages = {
     about: {
       title: "عن رواق",
       intro:
-        "رواق استوديو سعودي للتصميم الداخلي والإنشاءات يجمع بين الحرفية والأناقة والثقة الهادئة.",
+        "رواق شركة سعودية للديكور والمقاولات تجمع بين الحرفية والأناقة والثقة الهادئة.",
     },
     contact: {
       title: "تواصل معنا",

@@ -39,12 +39,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title:
       locale === "ar"
-        ? "رواق · تصميم داخلي وإنشاءات فاخرة في السعودية"
-        : "Ruwaq · Luxury Interior Design & Construction Saudi Arabia",
+        ? "رواق · شركة ديكور ومقاولات فاخرة في السعودية"
+        : "Ruwaq · Luxury Decor & Contracting Saudi Arabia",
     description:
       locale === "ar"
-        ? "رواق شركة سعودية فاخرة للتصميم الداخلي والإنشاءات — فلل، قصور، ومشاريع سكنية راقية."
-        : "Ruwaq is a premium Saudi interior design and construction company for luxury villas, palaces, and high-end residential projects.",
+        ? "رواق شركة سعودية فاخرة للديكور والمقاولات — فلل، قصور، ومشاريع سكنية راقية."
+        : "Ruwaq is a premium Saudi decor and contracting company for luxury villas, palaces, and high-end residential projects.",
   };
 }
 

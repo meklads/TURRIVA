@@ -7,13 +7,13 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
 
   const title =
     locale === "ar"
-      ? `${t.brand.name} · تصميم داخلي وإنشاءات فاخرة في السعودية`
-      : `${t.brand.name} · Luxury Interior Design & Construction Saudi Arabia`;
+      ? `${t.brand.name} · شركة ديكور ومقاولات فاخرة في السعودية`
+      : `${t.brand.name} · Luxury Decor & Contracting Saudi Arabia`;
 
   const description =
     locale === "ar"
-      ? "رواق شركة سعودية فاخرة للتصميم الداخلي والإنشاءات والتشطيب — فلل، قصور، ومشاريع سكنية راقية في الرياض وجميع أنحاء المملكة."
-      : "Ruwaq is a premium Saudi interior design and construction company — luxury villas, palaces, and high-end residential projects across Riyadh and the Kingdom.";
+      ? "رواق شركة سعودية فاخرة للديكور والمقاولات — فلل، قصور، ومشاريع سكنية راقية في الرياض وجميع أنحاء المملكة."
+      : "Ruwaq is a premium Saudi decor and contracting company — luxury villas, palaces, and high-end residential projects across Riyadh and the Kingdom.";
 
   return {
     title,
@@ -21,18 +21,18 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
     keywords:
       locale === "ar"
         ? [
-            "تصميم داخلي فاخر",
-            "إنشاءات فلل",
+            "ديكور فاخر",
+            "مقاولات فلل",
             "تشطيب فاخر",
-            "تصميم داخلي السعودية",
-            "مقاول فلل فاخرة",
+            "شركة ديكور السعودية",
+            "مقاولات فلل فاخرة",
             "رواق",
           ]
         : [
-            "luxury interior design Saudi Arabia",
-            "premium construction Riyadh",
+            "luxury decor Saudi Arabia",
+            "premium contracting Riyadh",
             "villa fit-out",
-            "high-end interior design",
+            "high-end decor",
             "Ruwaq",
           ],
     openGraph: {
