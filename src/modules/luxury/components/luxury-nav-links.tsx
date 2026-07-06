@@ -28,14 +28,14 @@ export function LuxuryDesktopNav({ links }: { links: readonly NavLink[] }) {
         <Link
           key={link.href}
           href={link.href}
-          className={`lux-nav-link relative pb-1 ${
+          className={`lux-nav-link ${
             isActive(link.href) ? "text-lux-gold" : ""
           }`}
         >
           {link.label}
           {isActive(link.href) && (
             <span
-              className="absolute inset-x-0 -bottom-0.5 mx-auto h-px w-full max-w-[2.5rem] bg-lux-gold"
+              className="absolute inset-x-0 -bottom-px mx-auto h-px w-6 bg-lux-gold"
               aria-hidden
             />
           )}

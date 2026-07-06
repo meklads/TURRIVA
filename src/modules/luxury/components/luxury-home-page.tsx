@@ -5,6 +5,7 @@ import {
   LUXURY_IMAGES,
 } from "@/shared/i18n/messages/luxury";
 import type { Locale } from "@/shared/i18n/locale";
+import { LuxuryHomeHero } from "./luxury-home-hero";
 import {
   Compass,
   Gem,
@@ -40,47 +41,7 @@ export function LuxuryHomePage({ locale }: Props) {
 
   return (
     <>
-      {/* Hero */}
-      <section className="lux-hero">
-        <div className="lux-hero-watermark" aria-hidden />
-        <div className="lux-hero-grid">
-          <div className="lux-hero-content">
-            <div className="max-w-xl lux-reveal">
-              <h1 className="lux-display whitespace-pre-line text-[2rem] leading-[1.12] sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">
-                {t.hero.title}
-              </h1>
-              <div className="lux-flourish" aria-hidden>
-                <span className="lux-flourish-line" />
-                <span className="lux-flourish-gem" />
-                <span className="lux-flourish-line lux-flourish-line--short" />
-              </div>
-              <p className="lux-body max-w-md text-[15px] leading-relaxed sm:text-base">
-                {t.hero.subtitle}
-              </p>
-              <div className="mt-9 flex flex-wrap gap-3 sm:gap-4">
-                <Link href="#services" className="lux-btn-primary">
-                  {t.hero.ctaPrimary}
-                </Link>
-                <Link href="/our-work" className="lux-btn-outline-gold">
-                  {t.hero.ctaSecondary}
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <div className="lux-hero-visual">
-            <Image
-              src={LUXURY_IMAGES.hero}
-              alt=""
-              fill
-              priority
-              className="object-cover object-center"
-              sizes="(max-width: 1024px) 100vw, 55vw"
-            />
-            <div className="lux-hero-visual-fade" aria-hidden />
-          </div>
-        </div>
-      </section>
+      <LuxuryHomeHero locale={locale} />
 
       {/* Services */}
       <section id="services" className="lux-section lux-section--cream scroll-mt-24">

@@ -1,8 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
 import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import { getLocale } from "@/shared/i18n/server";
+import { LocaleSwitcher } from "@/shared/i18n/locale-switcher";
 import { LayoutGrid } from "lucide-react";
+import { LuxuryBrandLogo } from "./luxury-brand-logo";
 
 export async function LuxuryFooter() {
   const locale = await getLocale();
@@ -25,13 +26,7 @@ export async function LuxuryFooter() {
       <div className="lux-container py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <Image
-              src="/brand/ruwaq/logo-on-light.png"
-              alt="Ruwaq"
-              width={140}
-              height={70}
-              className="h-12 w-auto"
-            />
+            <LuxuryBrandLogo href="/" className="h-12 w-auto" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-lux-ink-soft">
               {t.footer.about}
             </p>
@@ -124,7 +119,8 @@ export async function LuxuryFooter() {
       <div className="border-t border-lux-sand">
         <div className="lux-container flex flex-col items-center justify-between gap-4 py-6 text-xs text-lux-ink-muted sm:flex-row">
           <p>{t.footer.copyright}</p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+            <LocaleSwitcher />
             <Link href="/privacy" className="hover:text-lux-gold">
               {t.footer.privacy}
             </Link>

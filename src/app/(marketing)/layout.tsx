@@ -1,5 +1,6 @@
 import "@/app/luxury.css";
 import { LuxuryHeader } from "@/modules/luxury/components/luxury-header";
+import { LuxuryHeaderShell } from "@/modules/luxury/components/luxury-header-shell";
 import { LuxuryFooter } from "@/modules/luxury/components/luxury-footer";
 
 export default function MarketingLayout({
@@ -9,7 +10,9 @@ export default function MarketingLayout({
 }) {
   return (
     <div className="lux-shell flex min-h-screen flex-col">
-      <LuxuryHeader />
+      <LuxuryHeaderShell>
+        <LuxuryHeader />
+      </LuxuryHeaderShell>
       <main id="main" className="flex-1">
         {children}
       </main>

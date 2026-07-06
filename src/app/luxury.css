@@ -1,30 +1,36 @@
 /* Luxury public website — isolated from workspace software styles */
 
 .lux-shell {
-  --lux-ivory: #fdfbf7;
+  --lux-ivory: #fdfcf8;
   --lux-cream: #f5f1eb;
   --lux-sand: #ebe4d8;
   --lux-stone: #d9d0c3;
-  --lux-gold: #b89466;
+  --lux-gold: #b89468;
   --lux-gold-light: #c9a87a;
-  --lux-ink: #333333;
-  --lux-ink-soft: #5c554e;
-  --lux-ink-muted: #9a928a;
+  --lux-ink: #2f2f2f;
+  --lux-ink-soft: #5a534c;
+  --lux-ink-muted: #8a827a;
   background: var(--lux-ivory);
   color: var(--lux-ink);
+  font-family: var(--font-latin), system-ui, sans-serif;
+}
+
+[dir="rtl"] .lux-shell {
+  font-family: var(--font-ar), "Segoe UI", sans-serif;
 }
 
 .lux-container {
-  @apply mx-auto max-w-7xl px-5 sm:px-8 lg:px-12;
+  @apply mx-auto max-w-[82rem] px-5 sm:px-8 lg:px-10;
 }
 
 .lux-eyebrow {
   @apply text-xs font-medium uppercase tracking-[0.28em] text-lux-gold;
+  font-family: var(--font-latin), system-ui, sans-serif;
 }
 
 .lux-display {
   font-family: var(--font-latin-display), Georgia, "Times New Roman", serif;
-  @apply font-normal tracking-tight text-lux-ink;
+  @apply font-normal tracking-[-0.01em] text-lux-ink;
 }
 
 [dir="rtl"] .lux-display {
@@ -33,22 +39,30 @@
 
 .lux-body {
   @apply text-base leading-relaxed text-lux-ink-soft;
+  font-family: var(--font-latin), system-ui, sans-serif;
+}
+
+[dir="rtl"] .lux-body {
+  font-family: var(--font-ar), "Segoe UI", sans-serif;
 }
 
 .lux-btn-primary {
-  @apply inline-flex items-center justify-center rounded-full bg-lux-gold px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-lux-gold-light hover:shadow-lux-soft;
+  @apply inline-flex min-w-[11rem] items-center justify-center rounded-[3px] bg-lux-gold px-7 py-3.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:bg-lux-gold-light;
+  font-family: var(--font-latin), system-ui, sans-serif;
 }
 
 .lux-btn-outline {
-  @apply inline-flex items-center justify-center rounded-full border border-lux-stone bg-white/60 px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.18em] text-lux-ink backdrop-blur-sm transition-all duration-300 hover:border-lux-gold hover:text-lux-gold;
+  @apply inline-flex items-center justify-center rounded-[3px] border border-lux-stone bg-white/60 px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.18em] text-lux-ink backdrop-blur-sm transition-all duration-300 hover:border-lux-gold hover:text-lux-gold;
 }
 
 .lux-btn-outline-gold {
-  @apply inline-flex items-center justify-center rounded-full border border-lux-gold bg-transparent px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.16em] text-lux-gold transition-all duration-300 hover:bg-lux-gold/5;
+  @apply inline-flex min-w-[11rem] items-center justify-center rounded-[3px] border border-lux-gold bg-transparent px-7 py-3.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-lux-gold transition-all duration-300 hover:bg-lux-gold/5;
+  font-family: var(--font-latin), system-ui, sans-serif;
 }
 
 .lux-btn-workspace {
-  @apply inline-flex items-center gap-2 rounded-full border border-lux-gold bg-transparent px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-lux-gold transition-all duration-300 hover:bg-lux-gold/5 sm:px-5 sm:py-2.5 sm:text-xs;
+  @apply inline-flex items-center gap-2 rounded-[3px] border border-lux-gold bg-transparent px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-lux-gold transition-all duration-300 hover:bg-lux-gold/5 sm:px-5 sm:py-2.5 sm:text-[11px] sm:tracking-[0.14em];
+  font-family: var(--font-latin), system-ui, sans-serif;
 }
 
 .lux-card {
@@ -69,7 +83,7 @@
 
 .lux-pattern-bg {
   background-color: var(--lux-cream);
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b8956b' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b89468' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 .lux-icon-wrap {
@@ -77,15 +91,33 @@
 }
 
 .lux-nav-link {
-  @apply text-[11px] font-medium uppercase tracking-[0.14em] text-lux-ink-soft transition-colors duration-200 hover:text-lux-gold xl:text-xs xl:tracking-[0.16em];
+  @apply relative pb-2 text-[10px] font-medium uppercase tracking-[0.12em] text-lux-ink transition-colors duration-200 hover:text-lux-gold xl:text-[11px] xl:tracking-[0.14em];
+  font-family: var(--font-latin), system-ui, sans-serif;
 }
 
-/* Header — seamless with hero cream background */
+/* Header */
 .lux-header {
   background: var(--lux-ivory);
 }
 
-/* Hero — split layout matching reference mockup */
+.lux-hero-header-inner {
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .lux-hero-header-inner {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lux-hero-header-inner {
+    padding-inline-start: max(1.25rem, calc((100vw - 82rem) / 2 + 2.5rem));
+    padding-inline-end: 2rem;
+  }
+}
+
+/* Hero — unified header + split layout from mockup */
 .lux-hero {
   position: relative;
   overflow: hidden;
@@ -95,32 +127,46 @@
 .lux-hero-watermark {
   position: absolute;
   inset-block: 0;
-  inset-inline-start: -8%;
-  width: min(42vw, 28rem);
-  opacity: 0.045;
-  background: url("/brand/ruwaq/logo-transparent.png") no-repeat center / contain;
+  inset-inline-start: 0;
+  width: min(38vw, 22rem);
+  opacity: 0.55;
+  background: url("/brand/luxury/watermark-pattern.png") no-repeat left center / cover;
+  mask-image: linear-gradient(to right, black 0%, black 55%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 0%, black 55%, transparent 100%);
   pointer-events: none;
   z-index: 0;
+}
+
+[dir="rtl"] .lux-hero-watermark {
+  inset-inline-start: auto;
+  inset-inline-end: 0;
+  transform: scaleX(-1);
 }
 
 .lux-hero-grid {
   position: relative;
   z-index: 1;
   display: grid;
-  min-height: min(88vh, 52rem);
+  min-height: min(90vh, 54rem);
   grid-template-columns: 1fr;
 }
 
 @media (min-width: 1024px) {
   .lux-hero-grid {
-    grid-template-columns: minmax(0, 46%) minmax(0, 54%);
+    grid-template-columns: minmax(0, 44%) minmax(0, 56%);
   }
+}
+
+.lux-hero-left {
+  display: flex;
+  flex-direction: column;
 }
 
 .lux-hero-content {
   display: flex;
+  flex: 1;
   align-items: center;
-  padding: 2.5rem 1.25rem 3rem;
+  padding: 1.5rem 1.25rem 3rem;
 }
 
 @media (min-width: 640px) {
@@ -131,20 +177,27 @@
 
 @media (min-width: 1024px) {
   .lux-hero-content {
-    padding-inline-start: max(1.25rem, calc((100vw - 80rem) / 2 + 3rem));
-    padding-inline-end: 3rem;
-    padding-block: 4rem;
+    padding-inline-start: max(1.25rem, calc((100vw - 82rem) / 2 + 2.5rem));
+    padding-inline-end: 2.5rem;
+    padding-block: 2rem 4.5rem;
   }
 }
 
 .lux-hero-visual {
   position: relative;
-  min-height: 20rem;
+  min-height: 18rem;
+  order: -1;
 }
 
 @media (min-width: 1024px) {
   .lux-hero-visual {
+    order: 0;
     min-height: auto;
+    grid-row: 1 / span 1;
+  }
+
+  .lux-hero-left {
+    grid-row: 1;
   }
 }
 
@@ -154,9 +207,10 @@
   background: linear-gradient(
     to right,
     var(--lux-ivory) 0%,
-    color-mix(in srgb, var(--lux-ivory) 92%, transparent) 18%,
-    color-mix(in srgb, var(--lux-ivory) 55%, transparent) 38%,
-    transparent 62%
+    color-mix(in srgb, var(--lux-ivory) 96%, transparent) 14%,
+    color-mix(in srgb, var(--lux-ivory) 72%, transparent) 28%,
+    color-mix(in srgb, var(--lux-ivory) 28%, transparent) 48%,
+    transparent 68%
   );
   pointer-events: none;
 }
@@ -165,28 +219,26 @@
   background: linear-gradient(
     to left,
     var(--lux-ivory) 0%,
-    color-mix(in srgb, var(--lux-ivory) 92%, transparent) 18%,
-    color-mix(in srgb, var(--lux-ivory) 55%, transparent) 38%,
-    transparent 62%
+    color-mix(in srgb, var(--lux-ivory) 96%, transparent) 14%,
+    color-mix(in srgb, var(--lux-ivory) 72%, transparent) 28%,
+    color-mix(in srgb, var(--lux-ivory) 28%, transparent) 48%,
+    transparent 68%
   );
 }
 
 .lux-flourish {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-block: 1.25rem 1.5rem;
+  justify-content: flex-start;
+  gap: 0.625rem;
+  margin-block: 1.35rem 1.5rem;
 }
 
 .lux-flourish-line {
   display: block;
   height: 1px;
-  width: 2.75rem;
+  width: 2.5rem;
   background: var(--lux-gold);
-}
-
-.lux-flourish-line--short {
-  width: 1.25rem;
 }
 
 .lux-flourish-gem {
