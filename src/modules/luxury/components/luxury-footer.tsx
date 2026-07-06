@@ -3,6 +3,9 @@ import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import { getLocale } from "@/shared/i18n/server";
 import { LayoutGrid } from "lucide-react";
 import { LuxuryBrandLogo } from "./luxury-brand-logo";
+import { GraphicsHouseLogo } from "@/shared/components/graphics-house-logo";
+
+const GRAPHICS_HOUSE_URL = "https://3dgraphicshouse.com/";
 
 export async function LuxuryFooter() {
   const locale = await getLocale();
@@ -112,6 +115,27 @@ export async function LuxuryFooter() {
           <Link href="/workspace" className="lux-btn-primary mt-6 lg:mt-0">
             {t.footer.workspaceCta}
           </Link>
+        </div>
+      </div>
+
+      <div className="border-t border-lux-sand bg-white/50">
+        <div className="lux-container flex flex-col items-center justify-center gap-3 py-8 text-center sm:flex-row sm:gap-4">
+          <p className="lux-powered-by text-sm text-lux-ink-soft">
+            {t.footer.poweredByPrefix}{" "}
+            <a
+              href={GRAPHICS_HOUSE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-lux-gold underline-offset-4 transition-colors hover:text-lux-gold-light hover:underline"
+            >
+              {t.footer.poweredByLink}
+            </a>
+          </p>
+          <GraphicsHouseLogo
+            href={GRAPHICS_HOUSE_URL}
+            variant="mark"
+            className="h-7 w-auto opacity-90"
+          />
         </div>
       </div>
 

@@ -178,6 +178,15 @@
   letter-spacing: 0;
 }
 
+.lux-powered-by {
+  font-family: var(--font-latin), system-ui, sans-serif;
+}
+
+[dir="rtl"] .lux-powered-by {
+  font-family: var(--font-ar), "Segoe UI", sans-serif;
+  font-size: 0.9375rem;
+}
+
 .lux-header-bar > nav {
   flex: 1;
   min-width: 0;

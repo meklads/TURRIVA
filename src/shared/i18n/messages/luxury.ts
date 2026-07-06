@@ -66,6 +66,8 @@ export type LuxuryMessages = {
     address: string;
     email: string;
     phone: string;
+    poweredByPrefix: string;
+    poweredByLink: string;
   };
   pages: {
     interiorDesign: { title: string; intro: string };
@@ -182,6 +184,8 @@ const en: LuxuryMessages = {
     address: "Riyadh, Saudi Arabia",
     email: "hello@ruwaq.co",
     phone: "+966 11 000 0000",
+    poweredByPrefix: "Ruwaq by",
+    poweredByLink: "Graphics House",
   },
   pages: {
     interiorDesign: {
@@ -317,6 +321,8 @@ const ar: LuxuryMessages = {
     address: "الرياض، المملكة العربية السعودية",
     email: "hello@ruwaq.co",
     phone: "+966 11 000 0000",
+    poweredByPrefix: "رواق بواسطة",
+    poweredByLink: "جرافيكس هاوس",
   },
   pages: {
     interiorDesign: {
