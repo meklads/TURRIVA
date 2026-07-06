@@ -100,6 +100,62 @@
   background: var(--lux-ivory);
 }
 
+/* Brand lockup — icon + coded typography */
+.lux-brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.lux-brand-mark {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.lux-brand-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+  padding-top: 0.1rem;
+}
+
+.lux-brand-name {
+  font-family: var(--font-latin-display), Georgia, "Times New Roman", serif;
+  font-size: 1.3125rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  color: var(--lux-ink);
+  text-transform: uppercase;
+}
+
+[dir="rtl"] .lux-brand-name {
+  font-family: var(--font-ar-display), var(--font-ar), serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.lux-brand-tagline {
+  font-family: var(--font-latin), system-ui, sans-serif;
+  font-size: 0.5rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.28em;
+  color: var(--lux-ink);
+  text-transform: uppercase;
+}
+
+[dir="rtl"] .lux-brand-tagline {
+  font-family: var(--font-ar), "Segoe UI", sans-serif;
+  font-size: 0.5625rem;
+  letter-spacing: 0.08em;
+  text-transform: none;
+}
+
 .lux-hero-header-inner {
   padding-inline: 1.25rem;
 }
@@ -131,7 +187,7 @@
   width: 11rem;
   height: 11rem;
   opacity: 0.05;
-  background: url("/brand/luxury/mandala-mark.png") no-repeat center / contain;
+  background: url("/brand/luxury/ruwaq-mandala-hq.png") no-repeat center / contain;
   pointer-events: none;
   z-index: 0;
 }

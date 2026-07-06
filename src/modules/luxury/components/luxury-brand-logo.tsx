@@ -1,42 +1,59 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
+import { getLocale } from "@/shared/i18n/server";
 
-const LOGO_SRC = "/brand/luxury/logo-mark-mockup.png";
+const MARK_SRC = "/brand/luxury/ruwaq-mandala-hq.png";
 
 type Props = {
   href?: string;
-  className?: string;
+  markClassName?: string;
   priority?: boolean;
 };
 
-/** Logo extracted from the luxury mockup — mandala mark + RUWAQ + tagline. */
-export function LuxuryBrandLogo({
+/** Coded luxury lockup — HQ mandala mark + serif wordmark (no bitmap header crop). */
+export async function LuxuryBrandLogo({
   href = "/",
-  className = "h-[3.25rem] w-auto sm:h-14 lg:h-[3.75rem]",
+  markClassName = "h-[3.1rem] w-[3.1rem] sm:h-[3.35rem] sm:w-[3.35rem]",
   priority = false,
 }: Props) {
-  const logo = (
-    <Image
-      src={LOGO_SRC}
-      alt="Ruwaq — Interior • Construction"
-      width={490}
-      height={122}
-      className={`block w-auto ${className}`}
-      priority={priority}
-      quality={100}
-      sizes="(max-width: 640px) 180px, 240px"
-    />
+  const locale = await getLocale();
+  const t = getLuxuryMessages(locale);
+
+  const lockup = (
+    <span className="lux-brand-lockup">
+      <span className={`lux-brand-mark ${markClassName}`}>
+        <Image
+          src={MARK_SRC}
+          alt=""
+          width={512}
+          height={512}
+          className="h-full w-full object-contain"
+          priority={priority}
+          quality={100}
+          sizes="54px"
+        />
+      </span>
+      <span className="lux-brand-type">
+        <span className="lux-brand-name">{t.brand.name}</span>
+        <span className="lux-brand-tagline">{t.brand.tagline}</span>
+      </span>
+    </span>
   );
 
-  if (!href) return logo;
+  if (!href) return lockup;
 
   return (
     <Link
       href={href}
       className="inline-flex shrink-0 items-center bg-transparent p-0 leading-none"
-      aria-label="Ruwaq — Home"
+      aria-label={
+        locale === "ar"
+          ? "رواق — الصفحة الرئيسية"
+          : "Ruwaq — Home"
+      }
     >
-      {logo}
+      {lockup}
     </Link>
   );
 }

@@ -21,8 +21,8 @@ export async function LuxuryHeader() {
   return (
     <header className="lux-header">
       <div className="lux-container">
-        <div className="flex h-[4.25rem] items-center justify-between gap-4 sm:h-[4.75rem] lg:h-20">
-          <div className="shrink-0 lg:min-w-[210px]">
+        <div className="flex h-[4.25rem] items-center justify-between gap-3 sm:h-[4.75rem] lg:h-20 lg:gap-4">
+          <div className="shrink-0 lg:min-w-[15.5rem]">
             <LuxuryBrandLogo href="/" priority />
           </div>
 

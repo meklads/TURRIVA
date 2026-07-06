@@ -26,7 +26,10 @@ export async function LuxuryFooter() {
       <div className="lux-container py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <LuxuryBrandLogo href="/" className="h-12 w-auto" />
+            <LuxuryBrandLogo
+              href="/"
+              markClassName="h-11 w-11 sm:h-12 sm:w-12"
+            />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-lux-ink-soft">
               {t.footer.about}
             </p>
