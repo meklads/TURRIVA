@@ -52,6 +52,11 @@ export type LuxuryMessages = {
     subtitle: string;
     button: string;
   };
+  promos: {
+    eyebrow: string;
+    workspace: { title: string; subtitle: string; cta: string };
+    graphicsHouse: { title: string; subtitle: string; cta: string };
+  };
   footer: {
     about: string;
     quickLinks: string;
@@ -168,6 +173,19 @@ const en: LuxuryMessages = {
     title: "Let's Build Something Extraordinary",
     subtitle: "Share your vision with our team and begin your luxury project journey.",
     button: "GET IN TOUCH",
+  },
+  promos: {
+    eyebrow: "Related Services",
+    workspace: {
+      title: "Ruwaq Proposals",
+      subtitle: "Create professional client quotes for contractors and firms.",
+      cta: "Open platform",
+    },
+    graphicsHouse: {
+      title: "Graphics House",
+      subtitle: "Architectural visualization, CGI, and immersive sales experiences.",
+      cta: "Visit website",
+    },
   },
   footer: {
     about:
@@ -305,6 +323,19 @@ const ar: LuxuryMessages = {
     title: "لنبني شيئاً استثنائياً",
     subtitle: "شاركنا رؤيتك وابدأ رحلة مشروعك الفاخر مع فريقنا.",
     button: "تواصل معنا",
+  },
+  promos: {
+    eyebrow: "خدمات مرتبطة",
+    workspace: {
+      title: "منصة رواق للعروض",
+      subtitle: "أنشئ عروضاً احترافية لعملائك — للمقاولين والمكاتب.",
+      cta: "افتح المنصة",
+    },
+    graphicsHouse: {
+      title: "جرافيكس هاوس",
+      subtitle: "تصوير معماري، سينمائي ثلاثي الأبعاد، وتجارب مبيعات تفاعلية.",
+      cta: "زيارة الموقع",
+    },
   },
   footer: {
     about:

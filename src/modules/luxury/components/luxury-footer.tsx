@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import { getLocale } from "@/shared/i18n/server";
-import { LayoutGrid } from "lucide-react";
 import { LuxuryBrandLogo } from "./luxury-brand-logo";
-import { GraphicsHouseLogo } from "@/shared/components/graphics-house-logo";
 
 const GRAPHICS_HOUSE_URL = "https://3dgraphicshouse.com/";
 
@@ -101,47 +99,25 @@ export async function LuxuryFooter() {
             </div>
           </div>
         </div>
-
-        <div className="mt-14 rounded-2xl border border-lux-sand bg-white p-8 shadow-lux-card lg:flex lg:items-center lg:justify-between">
-          <div>
-            <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-lux-gold">
-              <LayoutGrid className="h-4 w-4" />
-              {t.footer.workspace}
-            </p>
-            <p className="mt-2 max-w-md text-sm text-lux-ink-soft">
-              {t.footer.workspaceDesc}
-            </p>
-          </div>
-          <Link href="/workspace" className="lux-btn-primary mt-6 lg:mt-0">
-            {t.footer.workspaceCta}
-          </Link>
-        </div>
-      </div>
-
-      <div className="border-t border-lux-sand bg-white/50">
-        <div className="lux-container flex flex-col items-center justify-center gap-3 py-8 text-center sm:flex-row sm:gap-4">
-          <p className="lux-powered-by text-sm text-lux-ink-soft">
-            {t.footer.poweredByPrefix}{" "}
-            <a
-              href={GRAPHICS_HOUSE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-lux-gold underline-offset-4 transition-colors hover:text-lux-gold-light hover:underline"
-            >
-              {t.footer.poweredByLink}
-            </a>
-          </p>
-          <GraphicsHouseLogo
-            href={GRAPHICS_HOUSE_URL}
-            variant="mark"
-            className="h-7 w-auto opacity-90"
-          />
-        </div>
       </div>
 
       <div className="border-t border-lux-sand">
         <div className="lux-container flex flex-col items-center justify-between gap-4 py-6 text-xs text-lux-ink-muted sm:flex-row">
-          <p>{t.footer.copyright}</p>
+          <p>
+            {t.footer.copyright}{" "}
+            <span className="text-lux-ink-muted/80">·</span>{" "}
+            <span className="lux-powered-by">
+              {t.footer.poweredByPrefix}{" "}
+              <a
+                href={GRAPHICS_HOUSE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lux-gold hover:underline"
+              >
+                {t.footer.poweredByLink}
+              </a>
+            </span>
+          </p>
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             <Link href="/privacy" className="hover:text-lux-gold">
               {t.footer.privacy}
