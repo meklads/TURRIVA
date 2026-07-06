@@ -97,7 +97,39 @@
 
 /* Header */
 .lux-header {
+  position: relative;
+  z-index: 50;
   background: var(--lux-ivory);
+  border-bottom: 1px solid color-mix(in srgb, var(--lux-sand) 45%, transparent);
+}
+
+.lux-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 4.75rem;
+}
+
+@media (min-width: 1024px) {
+  .lux-header-bar {
+    min-height: 5rem;
+    gap: 1.5rem;
+  }
+}
+
+.lux-header-logo {
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.lux-header-actions {
+  flex-shrink: 0;
+}
+
+.lux-header-bar > nav {
+  flex: 1;
+  min-width: 0;
 }
 
 /* Brand lockup — icon + coded typography */
@@ -156,40 +188,51 @@
   text-transform: none;
 }
 
-.lux-hero-header-inner {
-  padding-inline: 1.25rem;
-}
-
-@media (min-width: 640px) {
-  .lux-hero-header-inner {
-    padding-inline: 2rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .lux-hero-header-inner {
-    padding-inline-start: max(1.25rem, calc((100vw - 82rem) / 2 + 2.5rem));
-    padding-inline-end: 2rem;
-  }
-}
-
-/* Hero — unified header + split layout from mockup */
+/* Hero — header separate; image starts below header only */
 .lux-hero {
   position: relative;
   overflow: hidden;
   background: var(--lux-ivory);
 }
 
+.lux-hero-inner {
+  display: grid;
+  min-height: min(76vh, 42rem);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .lux-hero-inner {
+    grid-template-columns: minmax(0, 47%) minmax(0, 53%);
+    min-height: min(82vh, 46rem);
+  }
+}
+
+.lux-hero-copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  padding-block: 2.5rem 3.5rem;
+  background: var(--lux-ivory);
+}
+
+.lux-hero-copy-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 34rem;
+}
+
 .lux-hero-watermark {
   position: absolute;
-  inset-block: 8%;
   inset-inline-start: -1.5rem;
-  width: 11rem;
-  height: 11rem;
-  opacity: 0.05;
+  top: 50%;
+  width: 9rem;
+  height: 9rem;
+  opacity: 0.04;
+  transform: translateY(-50%);
   background: url("/brand/luxury/ruwaq-mandala-hq.png") no-repeat center / contain;
   pointer-events: none;
-  z-index: 0;
 }
 
 [dir="rtl"] .lux-hero-watermark {
@@ -197,86 +240,40 @@
   inset-inline-end: -1.5rem;
 }
 
-.lux-hero-grid {
+.lux-hero-media {
   position: relative;
-  z-index: 1;
-  display: grid;
-  min-height: min(90vh, 54rem);
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 1024px) {
-  .lux-hero-grid {
-    grid-template-columns: minmax(0, 44%) minmax(0, 56%);
-  }
-}
-
-.lux-hero-left {
-  display: flex;
-  flex-direction: column;
-}
-
-.lux-hero-content {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  padding: 1.5rem 1.25rem 3rem;
-}
-
-@media (min-width: 640px) {
-  .lux-hero-content {
-    padding-inline: 2rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .lux-hero-content {
-    padding-inline-start: max(1.25rem, calc((100vw - 82rem) / 2 + 2.5rem));
-    padding-inline-end: 2.5rem;
-    padding-block: 2rem 4.5rem;
-  }
-}
-
-.lux-hero-visual {
-  position: relative;
-  min-height: 18rem;
+  min-height: 17rem;
   order: -1;
+  background: var(--lux-ivory);
 }
 
 @media (min-width: 1024px) {
-  .lux-hero-visual {
+  .lux-hero-media {
     order: 0;
     min-height: auto;
-    grid-row: 1 / span 1;
-  }
-
-  .lux-hero-left {
-    grid-row: 1;
   }
 }
 
-.lux-hero-visual-fade {
+.lux-hero-media-fade {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to right,
     var(--lux-ivory) 0%,
-    color-mix(in srgb, var(--lux-ivory) 96%, transparent) 14%,
-    color-mix(in srgb, var(--lux-ivory) 72%, transparent) 28%,
-    color-mix(in srgb, var(--lux-ivory) 28%, transparent) 48%,
-    transparent 68%
+    color-mix(in srgb, var(--lux-ivory) 90%, transparent) 12%,
+    color-mix(in srgb, var(--lux-ivory) 50%, transparent) 26%,
+    transparent 52%
   );
   pointer-events: none;
 }
 
-[dir="rtl"] .lux-hero-visual-fade {
+[dir="rtl"] .lux-hero-media-fade {
   background: linear-gradient(
     to left,
     var(--lux-ivory) 0%,
-    color-mix(in srgb, var(--lux-ivory) 96%, transparent) 14%,
-    color-mix(in srgb, var(--lux-ivory) 72%, transparent) 28%,
-    color-mix(in srgb, var(--lux-ivory) 28%, transparent) 48%,
-    transparent 68%
+    color-mix(in srgb, var(--lux-ivory) 90%, transparent) 12%,
+    color-mix(in srgb, var(--lux-ivory) 50%, transparent) 26%,
+    transparent 52%
   );
 }
 

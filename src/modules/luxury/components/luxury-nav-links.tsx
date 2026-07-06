@@ -21,7 +21,7 @@ export function LuxuryDesktopNav({ links }: { links: readonly NavLink[] }) {
 
   return (
     <nav
-      className="hidden min-w-0 flex-1 items-center justify-center gap-3 lg:flex xl:gap-5 2xl:gap-6"
+      className="hidden min-w-0 items-center justify-center gap-4 xl:flex 2xl:gap-6"
       aria-label="Main"
     >
       {links.map((link) => (
@@ -50,7 +50,7 @@ export function LuxuryMobileNav({ links }: { links: readonly NavLink[] }) {
 
   return (
     <nav
-      className="flex gap-2 overflow-x-auto border-t border-lux-sand/40 py-3 lg:hidden"
+      className="flex gap-2 overflow-x-auto border-t border-lux-sand/40 py-3 xl:hidden"
       aria-label="Mobile"
     >
       {links.map((link) => (

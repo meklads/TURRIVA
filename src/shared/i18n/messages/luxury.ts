@@ -352,7 +352,7 @@ export function getLuxuryMessages(locale: Locale): LuxuryMessages {
 
 /** Luxury interior photography — Unsplash (replace with owned assets in production). */
 export const LUXURY_IMAGES = {
-  hero: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2400&q=80",
+  hero: "/brand/luxury/hero-villa.jpg",
   interior: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
   construction: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
   fitout: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
