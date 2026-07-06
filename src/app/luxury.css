@@ -126,21 +126,19 @@
 
 .lux-hero-watermark {
   position: absolute;
-  inset-block: 0;
-  inset-inline-start: 0;
-  width: min(38vw, 22rem);
-  opacity: 0.55;
-  background: url("/brand/luxury/watermark-pattern.png") no-repeat left center / cover;
-  mask-image: linear-gradient(to right, black 0%, black 55%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, black 0%, black 55%, transparent 100%);
+  inset-block: 8%;
+  inset-inline-start: -1.5rem;
+  width: 11rem;
+  height: 11rem;
+  opacity: 0.05;
+  background: url("/brand/luxury/mandala-mark.png") no-repeat center / contain;
   pointer-events: none;
   z-index: 0;
 }
 
 [dir="rtl"] .lux-hero-watermark {
   inset-inline-start: auto;
-  inset-inline-end: 0;
-  transform: scaleX(-1);
+  inset-inline-end: -1.5rem;
 }
 
 .lux-hero-grid {

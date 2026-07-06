@@ -21,14 +21,14 @@ export function LuxuryDesktopNav({ links }: { links: readonly NavLink[] }) {
 
   return (
     <nav
-      className="hidden flex-1 items-center justify-center gap-5 xl:gap-7 lg:flex"
+      className="hidden min-w-0 flex-1 items-center justify-center gap-3 lg:flex xl:gap-5 2xl:gap-6"
       aria-label="Main"
     >
       {links.map((link) => (
         <Link
           key={link.href}
           href={link.href}
-          className={`lux-nav-link ${
+          className={`lux-nav-link relative shrink-0 whitespace-nowrap ${
             isActive(link.href) ? "text-lux-gold" : ""
           }`}
         >

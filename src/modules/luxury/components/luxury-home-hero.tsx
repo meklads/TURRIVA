@@ -6,37 +6,6 @@ import { LayoutGrid } from "lucide-react";
 import { LuxuryBrandLogo } from "./luxury-brand-logo";
 import { LuxuryDesktopNav, LuxuryMobileNav } from "./luxury-nav-links";
 
-async function LuxuryHeroHeader() {
-  const t = getLuxuryMessages(await import("@/shared/i18n/server").then((m) => m.getLocale()));
-
-  const links = [
-    { href: "/", label: t.nav.home },
-    { href: "/interior-design", label: t.nav.interiorDesign },
-    { href: "/construction", label: t.nav.construction },
-    { href: "/our-work", label: t.nav.ourWork },
-    { href: "/about", label: t.nav.about },
-    { href: "/contact", label: t.nav.contact },
-  ];
-
-  return (
-    <div className="lux-hero-header-inner">
-      <div className="flex h-[4.25rem] items-center justify-between gap-4 sm:h-[4.75rem] lg:h-20">
-        <div className="shrink-0 lg:min-w-[210px]">
-          <LuxuryBrandLogo href="/" priority />
-        </div>
-        <LuxuryDesktopNav links={links} />
-        <div className="flex shrink-0 items-center justify-end lg:min-w-[160px]">
-          <Link href="/workspace" className="lux-btn-workspace">
-            <LayoutGrid className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden />
-            {t.nav.workspace}
-          </Link>
-        </div>
-      </div>
-      <LuxuryMobileNav links={links} />
-    </div>
-  );
-}
-
 type Props = {
   locale: Locale;
 };
