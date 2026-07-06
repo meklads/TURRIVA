@@ -6,10 +6,10 @@ import { getLocale } from "@/shared/i18n/server";
 export async function generateMetadata() {
   const locale = await getLocale();
   const t = getLuxuryMessages(locale);
-  return luxuryPageMetadata(locale, t.pages.about.title, t.pages.about.intro);
+  return luxuryPageMetadata(locale, t.pages.contact.title, t.pages.contact.intro);
 }
 
-export default async function AboutPage() {
+export default async function ContactPage() {
   const locale = await getLocale();
-  return <LuxuryInnerPage locale={locale} page="about" />;
+  return <LuxuryInnerPage locale={locale} page="contact" />;
 }

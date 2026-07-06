@@ -1,5 +1,6 @@
-import { SiteHeader } from "@/shared/components/site-header";
-import { SiteFooter } from "@/shared/components/site-footer";
+import "@/app/luxury.css";
+import { LuxuryHeader } from "@/modules/luxury/components/luxury-header";
+import { LuxuryFooter } from "@/modules/luxury/components/luxury-footer";
 
 export default function MarketingLayout({
   children,
@@ -7,12 +8,12 @@ export default function MarketingLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen flex-col bg-white">
-      <SiteHeader variant="marketing" />
+    <div className="lux-shell flex min-h-screen flex-col">
+      <LuxuryHeader />
       <main id="main" className="flex-1">
         {children}
       </main>
-      <SiteFooter />
+      <LuxuryFooter />
     </div>
   );
 }

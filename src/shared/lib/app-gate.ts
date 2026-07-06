@@ -30,6 +30,10 @@ export function isPublicAppPath(pathname: string): boolean {
 
   const publicPrefixes = [
     "/about",
+    "/contact",
+    "/construction",
+    "/interior-design",
+    "/our-work",
     "/how-it-works",
     "/privacy",
     "/terms",

@@ -1,0 +1,92 @@
+/* Luxury public website — isolated from workspace software styles */
+
+.lux-shell {
+  --lux-ivory: #faf8f5;
+  --lux-cream: #f5f1eb;
+  --lux-sand: #ebe4d8;
+  --lux-stone: #d9d0c3;
+  --lux-gold: #b8956b;
+  --lux-gold-light: #d4b896;
+  --lux-ink: #3d3632;
+  --lux-ink-soft: #6b635c;
+  --lux-ink-muted: #9a928a;
+  background: var(--lux-ivory);
+  color: var(--lux-ink);
+}
+
+.lux-container {
+  @apply mx-auto max-w-7xl px-5 sm:px-8 lg:px-12;
+}
+
+.lux-eyebrow {
+  @apply text-xs font-medium uppercase tracking-[0.28em] text-lux-gold;
+}
+
+.lux-display {
+  font-family: var(--font-latin-display), Georgia, "Times New Roman", serif;
+  @apply font-normal tracking-tight text-lux-ink;
+}
+
+[dir="rtl"] .lux-display {
+  font-family: var(--font-ar-display), var(--font-ar), serif;
+}
+
+.lux-body {
+  @apply text-base leading-relaxed text-lux-ink-soft;
+}
+
+.lux-btn-primary {
+  @apply inline-flex items-center justify-center rounded-full bg-lux-gold px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-lux-gold-light hover:shadow-lux-soft;
+}
+
+.lux-btn-outline {
+  @apply inline-flex items-center justify-center rounded-full border border-lux-stone bg-white/60 px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.18em] text-lux-ink backdrop-blur-sm transition-all duration-300 hover:border-lux-gold hover:text-lux-gold;
+}
+
+.lux-btn-workspace {
+  @apply inline-flex items-center gap-2 rounded-full border border-lux-sand bg-lux-cream px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-lux-ink transition-all duration-300 hover:border-lux-gold hover:text-lux-gold;
+}
+
+.lux-card {
+  @apply overflow-hidden rounded-2xl bg-white shadow-lux-card transition-shadow duration-300 hover:shadow-lux-soft;
+}
+
+.lux-section {
+  @apply py-20 sm:py-24 lg:py-28;
+}
+
+.lux-section--cream {
+  background: var(--lux-cream);
+}
+
+.lux-divider-gold {
+  @apply mx-auto mt-4 h-px w-12 bg-lux-gold;
+}
+
+.lux-pattern-bg {
+  background-color: var(--lux-cream);
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b8956b' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.lux-icon-wrap {
+  @apply mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-lux-sand text-lux-gold;
+}
+
+.lux-nav-link {
+  @apply text-xs font-medium uppercase tracking-[0.16em] text-lux-ink-soft transition-colors duration-200 hover:text-lux-gold;
+}
+
+.lux-reveal {
+  animation: luxFadeUp 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+
+@keyframes luxFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

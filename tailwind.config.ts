@@ -43,6 +43,17 @@ const config: Config = {
         },
         warm: "#F9F9F9",
         charcoal: "#0A0A0A",
+        lux: {
+          ivory: "#FAF8F5",
+          cream: "#F5F1EB",
+          sand: "#EBE4D8",
+          stone: "#D9D0C3",
+          gold: "#B8956B",
+          "gold-light": "#D4B896",
+          ink: "#3D3632",
+          "ink-soft": "#6B635C",
+          "ink-muted": "#9A928A",
+        },
         brand: {
           50: "#F5F5F7",
           100: "#E8E8ED",
@@ -74,6 +85,8 @@ const config: Config = {
           "0 1px 1px rgba(0, 0, 0, 0.02), 0 8px 32px -8px rgba(0, 0, 0, 0.06), 0 24px 48px -24px rgba(0, 0, 0, 0.04)",
         "ruwaq-float":
           "0 4px 14px rgba(0, 0, 0, 0.04), 0 12px 32px rgba(0, 0, 0, 0.06)",
+        "lux-soft": "0 8px 40px rgba(61, 54, 50, 0.08)",
+        "lux-card": "0 2px 12px rgba(61, 54, 50, 0.06), 0 12px 32px rgba(61, 54, 50, 0.04)",
       },
       letterSpacing: {
         display: "-0.025em",
