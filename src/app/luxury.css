@@ -320,14 +320,10 @@
   }
 }
 
-/* Partner promos — before footer, separate from decor brand */
+/* Partner promos — distinctive ad cards before footer */
 .lux-promos {
   border-top: 1px solid color-mix(in srgb, var(--lux-sand) 70%, transparent);
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--lux-stone) 18%, var(--lux-ivory)) 0%,
-    color-mix(in srgb, var(--lux-sand) 35%, var(--lux-cream)) 100%
-  );
+  background: var(--lux-ivory);
 }
 
 .lux-promos-eyebrow {
@@ -348,101 +344,266 @@
 }
 
 .lux-promo-card {
+  position: relative;
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.25rem 1.35rem;
-  border-radius: 0.75rem;
-  border: 1px solid var(--lux-sand);
-  background: white;
+  min-height: 17.5rem;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 1rem;
+  padding: 1.35rem 1.5rem 1.5rem;
   transition:
-    border-color 0.25s ease,
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
+    transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
+    box-shadow 0.3s ease;
 }
 
 .lux-promo-card:hover {
-  border-color: color-mix(in srgb, var(--lux-gold) 45%, var(--lux-sand));
-  box-shadow: 0 8px 28px rgba(47, 47, 47, 0.06);
-  transform: translateY(-1px);
+  transform: translateY(-3px);
 }
 
-.lux-promo-card--gh {
-  background: color-mix(in srgb, var(--lux-ink) 3%, white);
-}
-
-.lux-promo-icon {
+.lux-promo-card__top {
+  position: relative;
+  z-index: 1;
   display: flex;
-  height: 2.75rem;
-  width: 2.75rem;
-  flex-shrink: 0;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.lux-promo-card__body {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  padding-top: 1.25rem;
+}
+
+.lux-promo-badge {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+[dir="rtl"] .lux-promo-badge {
+  letter-spacing: 0.04em;
+  text-transform: none;
+  font-size: 0.6875rem;
+}
+
+.lux-promo-card__mark {
+  display: flex;
+  height: 2.5rem;
+  width: 2.5rem;
   align-items: center;
   justify-content: center;
-  border-radius: 0.5rem;
-  border: 1px solid color-mix(in srgb, var(--lux-gold) 35%, var(--lux-sand));
+  border-radius: 0.625rem;
+}
+
+/* —— Ruwaq app: warm ivory + gold —— */
+.lux-promo-card--app {
+  border: 1px solid color-mix(in srgb, var(--lux-gold) 28%, #e8dcc8);
+  background:
+    radial-gradient(
+      ellipse 120% 80% at 100% 0%,
+      color-mix(in srgb, var(--lux-gold) 22%, #fff7eb) 0%,
+      transparent 55%
+    ),
+    linear-gradient(145deg, #fffdf9 0%, #f8f0e4 48%, #f3e8d8 100%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.8) inset,
+    0 12px 40px rgba(184, 148, 104, 0.12);
+}
+
+.lux-promo-card--app:hover {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 18px 48px rgba(184, 148, 104, 0.18);
+}
+
+.lux-promo-card--app .lux-promo-card__shine {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23b89468' fill-opacity='0.05'%3E%3Cpath d='M24 0L26 22H48L28 32L32 48L24 36L16 48L20 32L0 22H22Z'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.lux-promo-badge--app {
+  border: 1px solid color-mix(in srgb, var(--lux-gold) 35%, transparent);
+  background: color-mix(in srgb, var(--lux-gold) 12%, white);
+  color: #8a6a42;
+}
+
+.lux-promo-card--app .lux-promo-card__mark {
+  border: 1px solid color-mix(in srgb, var(--lux-gold) 40%, transparent);
+  background: linear-gradient(145deg, #fff 0%, #f5ebe0 100%);
   color: var(--lux-gold);
-  background: color-mix(in srgb, var(--lux-gold) 6%, white);
+  box-shadow: 0 4px 14px rgba(184, 148, 104, 0.15);
 }
 
-.lux-promo-logo {
-  display: flex;
-  height: 2.75rem;
-  width: 5.5rem;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: flex-start;
+.lux-promo-ruwaq-logo {
+  height: 2rem;
+  width: auto;
+  margin-bottom: 1rem;
 }
 
-.lux-promo-title {
-  display: block;
-  font-size: 0.9375rem;
-  font-weight: 700;
-  line-height: 1.3;
-  color: var(--lux-ink);
+.lux-promo-title--app {
+  color: #3d3024;
 }
 
-[dir="rtl"] .lux-promo-title {
-  font-size: 1rem;
+.lux-promo-subtitle--app {
+  color: #6b5c4a;
 }
 
-.lux-promo-subtitle {
-  display: block;
-  margin-top: 0.25rem;
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  color: var(--lux-ink-soft);
-}
-
-.lux-promo-cta {
+.lux-promo-cta--app {
+  position: relative;
+  z-index: 1;
+  margin-top: 1.25rem;
   display: inline-flex;
-  flex-shrink: 0;
+  width: fit-content;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.45rem;
+  border-radius: 0.375rem;
+  background: linear-gradient(180deg, #c9a87a 0%, var(--lux-gold) 100%);
+  padding: 0.7rem 1.15rem;
   font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--lux-gold);
+  color: white;
+  box-shadow: 0 4px 16px rgba(184, 148, 104, 0.35);
+  transition: filter 0.2s ease;
 }
 
-[dir="rtl"] .lux-promo-cta {
-  letter-spacing: 0;
+.lux-promo-card--app:hover .lux-promo-cta--app {
+  filter: brightness(1.05);
+}
+
+[dir="rtl"] .lux-promo-cta--app {
+  letter-spacing: 0.02em;
   text-transform: none;
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
+}
+
+/* —— Graphics House: dark teal + gold —— */
+.lux-promo-card--gh {
+  border: 1px solid color-mix(in srgb, #c9a84c 35%, #0a2824);
+  background:
+    radial-gradient(
+      ellipse 90% 70% at 0% 100%,
+      color-mix(in srgb, #c9a84c 14%, transparent) 0%,
+      transparent 50%
+    ),
+    linear-gradient(155deg, #0c2220 0%, #0a1a18 42%, #061210 100%);
+  box-shadow:
+    0 1px 0 rgba(201, 168, 76, 0.12) inset,
+    0 14px 44px rgba(6, 18, 16, 0.45);
+}
+
+.lux-promo-card--gh:hover {
+  box-shadow:
+    0 1px 0 rgba(201, 168, 76, 0.18) inset,
+    0 20px 52px rgba(6, 18, 16, 0.55);
+}
+
+.lux-promo-card--gh .lux-promo-card__glow {
+  position: absolute;
+  top: -20%;
+  inset-inline-end: -10%;
+  width: 55%;
+  height: 70%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.12) 0%, transparent 68%);
+  pointer-events: none;
+}
+
+.lux-promo-badge--gh {
+  border: 1px solid color-mix(in srgb, #c9a84c 45%, transparent);
+  background: color-mix(in srgb, #c9a84c 10%, #0f2a26);
+  color: #d4b47a;
+}
+
+.lux-promo-card__mark--gh {
+  border: 1px solid color-mix(in srgb, #c9a84c 35%, transparent);
+  background: color-mix(in srgb, #ffffff 6%, #0f2a26);
+  color: #c9a84c;
+}
+
+.lux-promo-gh-logo {
+  height: 2.35rem !important;
+  width: auto !important;
+  margin-bottom: 1rem;
+}
+
+.lux-promo-title--gh {
+  color: #f5f2ea;
+}
+
+.lux-promo-subtitle--gh {
+  color: color-mix(in srgb, #e8e4d8 72%, #8fa8a3);
+}
+
+.lux-promo-cta--gh {
+  position: relative;
+  z-index: 1;
+  margin-top: 1.25rem;
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: 0.375rem;
+  border: 1px solid color-mix(in srgb, #c9a84c 65%, transparent);
+  background: color-mix(in srgb, #c9a84c 8%, transparent);
+  padding: 0.7rem 1.15rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #d4b47a;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.lux-promo-card--gh:hover .lux-promo-cta--gh {
+  background: color-mix(in srgb, #c9a84c 16%, transparent);
+  border-color: #c9a84c;
+}
+
+[dir="rtl"] .lux-promo-cta--gh {
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 0.8125rem;
+}
+
+.lux-promo-title {
+  display: block;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+[dir="rtl"] .lux-promo-title {
+  font-size: 1.125rem;
+}
+
+.lux-promo-subtitle {
+  display: block;
+  margin-top: 0.5rem;
+  max-width: 28rem;
+  font-size: 0.8125rem;
+  line-height: 1.65;
+}
+
+[dir="rtl"] .lux-promo-subtitle {
+  font-size: 0.875rem;
+  line-height: 1.75;
 }
 
 @media (max-width: 767px) {
   .lux-promo-card {
-    flex-wrap: wrap;
-  }
-
-  .lux-promo-cta {
-    width: 100%;
-    padding-inline-start: 3.75rem;
-  }
-
-  [dir="rtl"] .lux-promo-cta {
-    padding-inline-start: 0;
-    padding-inline-end: 3.75rem;
+    min-height: 0;
   }
 }
