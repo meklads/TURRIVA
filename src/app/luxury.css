@@ -1,14 +1,14 @@
 /* Luxury public website — isolated from workspace software styles */
 
 .lux-shell {
-  --lux-ivory: #faf8f5;
+  --lux-ivory: #fdfbf7;
   --lux-cream: #f5f1eb;
   --lux-sand: #ebe4d8;
   --lux-stone: #d9d0c3;
-  --lux-gold: #b8956b;
-  --lux-gold-light: #d4b896;
-  --lux-ink: #3d3632;
-  --lux-ink-soft: #6b635c;
+  --lux-gold: #b89466;
+  --lux-gold-light: #c9a87a;
+  --lux-ink: #333333;
+  --lux-ink-soft: #5c554e;
   --lux-ink-muted: #9a928a;
   background: var(--lux-ivory);
   color: var(--lux-ink);
@@ -43,8 +43,12 @@
   @apply inline-flex items-center justify-center rounded-full border border-lux-stone bg-white/60 px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.18em] text-lux-ink backdrop-blur-sm transition-all duration-300 hover:border-lux-gold hover:text-lux-gold;
 }
 
+.lux-btn-outline-gold {
+  @apply inline-flex items-center justify-center rounded-full border border-lux-gold bg-transparent px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.16em] text-lux-gold transition-all duration-300 hover:bg-lux-gold/5;
+}
+
 .lux-btn-workspace {
-  @apply inline-flex items-center gap-2 rounded-full border border-lux-sand bg-lux-cream px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-lux-ink transition-all duration-300 hover:border-lux-gold hover:text-lux-gold;
+  @apply inline-flex items-center gap-2 rounded-full border border-lux-gold bg-transparent px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-lux-gold transition-all duration-300 hover:bg-lux-gold/5 sm:px-5 sm:py-2.5 sm:text-xs;
 }
 
 .lux-card {
@@ -73,7 +77,125 @@
 }
 
 .lux-nav-link {
-  @apply text-xs font-medium uppercase tracking-[0.16em] text-lux-ink-soft transition-colors duration-200 hover:text-lux-gold;
+  @apply text-[11px] font-medium uppercase tracking-[0.14em] text-lux-ink-soft transition-colors duration-200 hover:text-lux-gold xl:text-xs xl:tracking-[0.16em];
+}
+
+/* Header — seamless with hero cream background */
+.lux-header {
+  background: var(--lux-ivory);
+}
+
+/* Hero — split layout matching reference mockup */
+.lux-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--lux-ivory);
+}
+
+.lux-hero-watermark {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: -8%;
+  width: min(42vw, 28rem);
+  opacity: 0.045;
+  background: url("/brand/ruwaq/logo-transparent.png") no-repeat center / contain;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.lux-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  min-height: min(88vh, 52rem);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .lux-hero-grid {
+    grid-template-columns: minmax(0, 46%) minmax(0, 54%);
+  }
+}
+
+.lux-hero-content {
+  display: flex;
+  align-items: center;
+  padding: 2.5rem 1.25rem 3rem;
+}
+
+@media (min-width: 640px) {
+  .lux-hero-content {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lux-hero-content {
+    padding-inline-start: max(1.25rem, calc((100vw - 80rem) / 2 + 3rem));
+    padding-inline-end: 3rem;
+    padding-block: 4rem;
+  }
+}
+
+.lux-hero-visual {
+  position: relative;
+  min-height: 20rem;
+}
+
+@media (min-width: 1024px) {
+  .lux-hero-visual {
+    min-height: auto;
+  }
+}
+
+.lux-hero-visual-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    var(--lux-ivory) 0%,
+    color-mix(in srgb, var(--lux-ivory) 92%, transparent) 18%,
+    color-mix(in srgb, var(--lux-ivory) 55%, transparent) 38%,
+    transparent 62%
+  );
+  pointer-events: none;
+}
+
+[dir="rtl"] .lux-hero-visual-fade {
+  background: linear-gradient(
+    to left,
+    var(--lux-ivory) 0%,
+    color-mix(in srgb, var(--lux-ivory) 92%, transparent) 18%,
+    color-mix(in srgb, var(--lux-ivory) 55%, transparent) 38%,
+    transparent 62%
+  );
+}
+
+.lux-flourish {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-block: 1.25rem 1.5rem;
+}
+
+.lux-flourish-line {
+  display: block;
+  height: 1px;
+  width: 2.75rem;
+  background: var(--lux-gold);
+}
+
+.lux-flourish-line--short {
+  width: 1.25rem;
+}
+
+.lux-flourish-gem {
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: var(--lux-gold);
+  transform: rotate(45deg);
+  flex-shrink: 0;
 }
 
 .lux-reveal {

@@ -90,9 +90,9 @@ const en: LuxuryMessages = {
   hero: {
     title: "Designing Elegance.\nBuilding Excellence.",
     subtitle:
-      "Ruwaq is a premium Saudi interior design and construction company delivering exceptional spaces with craftsmanship, innovation, and timeless elegance.",
-    ctaPrimary: "BOOK CONSULTATION",
-    ctaSecondary: "OUR PROJECTS",
+      "Ruwaq is a premium interior design and construction company delivering exceptional spaces with time-honored craftsmanship and modern innovation.",
+    ctaPrimary: "EXPLORE OUR SERVICES",
+    ctaSecondary: "VIEW OUR WORK",
   },
   services: {
     eyebrow: "OUR SOLUTIONS",
@@ -225,9 +225,9 @@ const ar: LuxuryMessages = {
   hero: {
     title: "نصمّم الأناقة.\nنبني التميّز.",
     subtitle:
-      "رواق شركة سعودية فاخرة متخصصة في التصميم الداخلي والإنشاءات والتشطيب، تقدّم مساحات استثنائية بحرفية عالية وابتكار وأناقة خالدة.",
-    ctaPrimary: "احجز استشارة",
-    ctaSecondary: "مشاريعنا",
+      "رواق شركة فاخرة للتصميم الداخلي والإنشاءات تقدّم مساحات استثنائية بحرفية عريقة وابتكار عصري.",
+    ctaPrimary: "استكشف خدماتنا",
+    ctaSecondary: "شاهد أعمالنا",
   },
   services: {
     eyebrow: "حلولنا",

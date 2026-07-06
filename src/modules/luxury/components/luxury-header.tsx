@@ -1,9 +1,12 @@
-import Image from "next/image";
 import Link from "next/link";
 import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import { getLocale } from "@/shared/i18n/server";
 import { LocaleSwitcher } from "@/shared/i18n/locale-switcher";
+import { RuwaqLogo } from "@/shared/components/ruwaq-logo";
 import { LayoutGrid } from "lucide-react";
+import { LuxuryDesktopNav, LuxuryMobileNav } from "./luxury-nav-links";
+
+const LUXURY_LOGO_CLASS = "h-11 w-auto sm:h-12 lg:h-[3.25rem]";
 
 export async function LuxuryHeader() {
   const locale = await getLocale();
@@ -19,62 +22,26 @@ export async function LuxuryHeader() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-lux-sand/60 bg-lux-ivory/95 backdrop-blur-md">
+    <header className="lux-header">
       <div className="lux-container">
-        <div className="flex h-20 items-center justify-between gap-6 lg:h-24">
-          <Link href="/" className="flex shrink-0 items-center gap-3">
-            <Image
-              src="/brand/ruwaq/logo-on-light.png"
-              alt="Ruwaq"
-              width={120}
-              height={60}
-              className="h-10 w-auto sm:h-12"
-              priority
-            />
-            <div className="hidden sm:block">
-              <p className="text-sm font-semibold tracking-[0.2em] text-lux-ink">
-                {t.brand.name}
-              </p>
-              <p className="text-[10px] tracking-[0.24em] text-lux-ink-muted">
-                {t.brand.tagline}
-              </p>
-            </div>
-          </Link>
+        <div className="flex h-[4.5rem] items-center justify-between gap-4 sm:h-20 lg:h-[5.25rem]">
+          <div className="shrink-0 lg:min-w-[200px] xl:min-w-[240px]">
+            <RuwaqLogo href="/" priority className={LUXURY_LOGO_CLASS} />
+          </div>
 
-          <nav
-            className="hidden flex-1 items-center justify-center gap-6 xl:gap-8 lg:flex"
-            aria-label="Main"
-          >
-            {links.map((link) => (
-              <Link key={link.href} href={link.href} className="lux-nav-link">
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+          <LuxuryDesktopNav links={links} />
 
-          <div className="flex shrink-0 items-center gap-3">
+          <div className="flex shrink-0 items-center justify-end gap-2 sm:gap-3 lg:min-w-[200px]">
             <Link href="/workspace" className="lux-btn-workspace">
-              <LayoutGrid className="h-4 w-4" aria-hidden />
-              {t.nav.workspace}
+              <LayoutGrid className="h-3.5 w-3.5 text-lux-gold" aria-hidden />
+              <span className="hidden sm:inline">{t.nav.workspace}</span>
+              <span className="sm:hidden">WS</span>
             </Link>
             <LocaleSwitcher />
           </div>
         </div>
 
-        <nav
-          className="flex gap-2 overflow-x-auto border-t border-lux-sand/50 py-3 lg:hidden"
-          aria-label="Mobile"
-        >
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="shrink-0 rounded-full border border-lux-sand bg-white px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-lux-ink-soft"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        <LuxuryMobileNav links={links} />
       </div>
     </header>
   );
