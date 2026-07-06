@@ -54,8 +54,7 @@ export type LuxuryMessages = {
   };
   promos: {
     eyebrow: string;
-    workspace: { title: string; subtitle: string; cta: string };
-    graphicsHouse: { title: string; subtitle: string; cta: string };
+    workspace: { title: string; subtitle: string; cta: string; features: string[] };
   };
   footer: {
     about: string;
@@ -175,16 +174,13 @@ const en: LuxuryMessages = {
     button: "GET IN TOUCH",
   },
   promos: {
-    eyebrow: "Related Services",
+    eyebrow: "Digital platform",
     workspace: {
-      title: "Ruwaq Proposals",
-      subtitle: "Create professional client quotes for contractors and firms.",
-      cta: "Open platform",
-    },
-    graphicsHouse: {
-      title: "Graphics House",
-      subtitle: "Architectural visualization, CGI, and immersive sales experiences.",
-      cta: "Visit website",
+      title: "Ruwaq workspace for quotes & projects",
+      subtitle:
+        "Create polished client proposals, organize your projects, and manage relationships — all in one professional hub.",
+      cta: "Enter workspace",
+      features: ["Professional PDF quotes", "Project tracking", "Client management"],
     },
   },
   footer: {
@@ -325,16 +321,13 @@ const ar: LuxuryMessages = {
     button: "تواصل معنا",
   },
   promos: {
-    eyebrow: "خدمات مرتبطة",
+    eyebrow: "منصة رقمية",
     workspace: {
-      title: "منصة رواق للعروض",
-      subtitle: "أنشئ عروضاً احترافية لعملائك — للمقاولين والمكاتب.",
-      cta: "افتح المنصة",
-    },
-    graphicsHouse: {
-      title: "جرافيكس هاوس",
-      subtitle: "تصوير معماري، سينمائي ثلاثي الأبعاد، وتجارب مبيعات تفاعلية.",
-      cta: "زيارة الموقع",
+      title: "منصة رواق للعروض والمشاريع",
+      subtitle:
+        "أنشئ عروض أسعار احترافية، نظّم مشاريعك، وأدر علاقات عملائك — في مساحة عمل واحدة متكاملة.",
+      cta: "الدخول إلى المنصة",
+      features: ["عروض PDF احترافية", "متابعة المشاريع", "إدارة العملاء"],
     },
   },
   footer: {
