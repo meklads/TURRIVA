@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import { getLocale } from "@/shared/i18n/server";
-import { LocaleSwitcher } from "@/shared/i18n/locale-switcher";
 import { LayoutGrid } from "lucide-react";
 import { LuxuryBrandLogo } from "./luxury-brand-logo";
 
@@ -26,10 +25,7 @@ export async function LuxuryFooter() {
       <div className="lux-container py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <LuxuryBrandLogo
-              href="/"
-              markClassName="h-11 w-11 sm:h-12 sm:w-12"
-            />
+            <LuxuryBrandLogo href="/" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-lux-ink-soft">
               {t.footer.about}
             </p>
@@ -123,7 +119,6 @@ export async function LuxuryFooter() {
         <div className="lux-container flex flex-col items-center justify-between gap-4 py-6 text-xs text-lux-ink-muted sm:flex-row">
           <p>{t.footer.copyright}</p>
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-            <LocaleSwitcher />
             <Link href="/privacy" className="hover:text-lux-gold">
               {t.footer.privacy}
             </Link>

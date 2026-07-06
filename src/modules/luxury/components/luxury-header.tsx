@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import { getLocale } from "@/shared/i18n/server";
+import { LocaleSwitcher } from "@/shared/i18n/locale-switcher";
 import { LayoutGrid } from "lucide-react";
 import { LuxuryBrandLogo } from "./luxury-brand-logo";
 import { LuxuryDesktopNav, LuxuryMobileNav } from "./luxury-nav-links";
@@ -27,6 +28,7 @@ export async function LuxuryHeader() {
               <span className="hidden sm:inline">{t.nav.workspace}</span>
               <span className="sm:hidden">WS</span>
             </Link>
+            <LocaleSwitcher />
           </div>
         </div>
 

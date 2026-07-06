@@ -13,9 +13,9 @@ const LOGO_SRC = {
   dark: "/brand/ruwaq/logo-on-dark.png",
 } as const;
 
-/** Intrinsic dimensions — PNG source is 1774×887 for crisp retina scaling. */
-const LOGO_WIDTH = 1774;
-const LOGO_HEIGHT = 887;
+/** Intrinsic dimensions — upscaled from brand master for crisp retina. */
+const LOGO_WIDTH = 1248;
+const LOGO_HEIGHT = 492;
 
 /** Shared site chrome logo — header & footer match. */
 export const SITE_LOGO_SIZE_CLASS = "h-16 w-auto sm:h-[4.5rem] lg:h-20 xl:h-[5.25rem]";

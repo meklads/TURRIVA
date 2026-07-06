@@ -125,67 +125,62 @@
 
 .lux-header-actions {
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .lux-header-actions {
+    gap: 0.75rem;
+  }
+}
+
+.lux-header-actions [role="group"] {
+  border-color: var(--lux-sand);
+  background: white;
+}
+
+/* Arabic luxury typography */
+[dir="rtl"] .lux-nav-link {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+[dir="rtl"] .lux-btn-primary,
+[dir="rtl"] .lux-btn-outline-gold,
+[dir="rtl"] .lux-btn-workspace {
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+}
+
+[dir="rtl"] .lux-eyebrow {
+  text-transform: none;
+  letter-spacing: 0.12em;
+}
+
+[dir="rtl"] .lux-display {
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+
+[dir="rtl"] .lux-body {
+  font-size: 1.0625rem;
+  line-height: 1.9;
+}
+
+[dir="rtl"] .lux-mobile-nav-link,
+[dir="rtl"] nav[aria-label="Mobile"] a {
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .lux-header-bar > nav {
   flex: 1;
   min-width: 0;
-}
-
-/* Brand lockup — icon + coded typography */
-.lux-brand-lockup {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.lux-brand-mark {
-  display: inline-flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-}
-
-.lux-brand-type {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.3rem;
-  padding-top: 0.1rem;
-}
-
-.lux-brand-name {
-  font-family: var(--font-latin-display), Georgia, "Times New Roman", serif;
-  font-size: 1.3125rem;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0.14em;
-  color: var(--lux-ink);
-  text-transform: uppercase;
-}
-
-[dir="rtl"] .lux-brand-name {
-  font-family: var(--font-ar-display), var(--font-ar), serif;
-  font-size: 1.5rem;
-  letter-spacing: 0.02em;
-  text-transform: none;
-}
-
-.lux-brand-tagline {
-  font-family: var(--font-latin), system-ui, sans-serif;
-  font-size: 0.5rem;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0.28em;
-  color: var(--lux-ink);
-  text-transform: uppercase;
-}
-
-[dir="rtl"] .lux-brand-tagline {
-  font-family: var(--font-ar), "Segoe UI", sans-serif;
-  font-size: 0.5625rem;
-  letter-spacing: 0.08em;
-  text-transform: none;
 }
 
 /* Hero — header separate; image starts below header only */
