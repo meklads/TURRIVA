@@ -52,7 +52,12 @@ export async function LuxuryFooter() {
             <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-lux-ink">
               {t.footer.workspace}
             </h3>
-            <Link href="/workspace" className="lux-footer-promo group mt-5">
+            <Link
+              href="/workspace"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="lux-footer-promo group mt-5"
+            >
               <span className="lux-footer-promo__icon" aria-hidden>
                 <LayoutGrid className="h-4 w-4" strokeWidth={1.5} />
               </span>
