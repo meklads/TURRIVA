@@ -437,6 +437,8 @@ model DesignGeneration {
   /// Detected executable materials from vision / catalog match
   materials  Json?
   materialsAiDetected Boolean @default(false)
+  furniture  Json?
+  furnitureAiDetected Boolean @default(false)
   createdAt  DateTime @default(now())
 
   user User? @relation(fields: [userId], references: [id], onDelete: SetNull)

@@ -15,7 +15,9 @@ import { DESIGN_STYLES, ROOM_TYPES, type SpaceType } from "@/modules/design/lib/
 import { DesignBeforeAfter } from "./design-before-after";
 import { DesignConsultationModal } from "./design-consultation-modal";
 import { DesignMaterialsBreakdown } from "./design-materials-breakdown";
+import { DesignFurnitureFinder } from "./design-furniture-finder";
 import type { DetectedMaterial } from "@/modules/design/server/design-materials.service";
+import type { DetectedFurniture } from "@/modules/design/server/design-furniture.service";
 import type { DesignMessages } from "@/shared/i18n/messages/design";
 
 type Props = {
@@ -29,6 +31,8 @@ type Result = {
   isMock: boolean;
   materials: DetectedMaterial[];
   materialsAiDetected: boolean;
+  furniture: DetectedFurniture[];
+  furnitureAiDetected: boolean;
 };
 
 export function DesignStudio({ messages, locale }: Props) {
@@ -112,6 +116,8 @@ export function DesignStudio({ messages, locale }: Props) {
         isMock: data.isMock,
         materials: data.materials ?? [],
         materialsAiDetected: data.materialsAiDetected ?? false,
+        furniture: data.furniture ?? [],
+        furnitureAiDetected: data.furnitureAiDetected ?? false,
       });
       setCredits(data.creditsRemaining);
     } catch {
@@ -282,6 +288,17 @@ export function DesignStudio({ messages, locale }: Props) {
                 <DesignMaterialsBreakdown
                   materials={result.materials}
                   isAiDetected={result.materialsAiDetected}
+                  messages={messages}
+                  locale={locale}
+                  onRequestQuote={() => setConsultOpen(true)}
+                />
+              )}
+
+              {result.furniture.length > 0 && (
+                <DesignFurnitureFinder
+                  afterImageUrl={result.afterUrl}
+                  items={result.furniture}
+                  isAiDetected={result.furnitureAiDetected}
                   messages={messages}
                   locale={locale}
                   onRequestQuote={() => setConsultOpen(true)}

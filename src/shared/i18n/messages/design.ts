@@ -117,6 +117,26 @@ export type DesignMessages = {
     quoteHint: string;
     quoteCta: string;
   };
+  furniture: {
+    title: string;
+    subtitle: string;
+    badge: string;
+    fallbackNotice: string;
+    tapPins: string;
+    match: string;
+    showDetected: string;
+    showAlternative: string;
+    executable: string;
+    quoteHint: string;
+    quoteCta: string;
+  };
+  furnitureFeature: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    points: string[];
+    cta: string;
+  };
   footer: {
     about: string;
     product: string;
@@ -311,6 +331,34 @@ const en: DesignMessages = {
     quoteHint: "Want a formal quote with these materials? Book a free consultation.",
     quoteCta: "Request execution quote",
   },
+  furniture: {
+    title: "AI Furniture Finder",
+    subtitle:
+      "We detected furniture in your design and matched it to real products — swap alternatives with one click.",
+    badge: "Smart detection",
+    fallbackNotice:
+      "Suggested pieces based on your room type — AI pin detection activates with production API.",
+    tapPins: "Tap numbered pins to explore each piece",
+    match: "match",
+    showDetected: "Detected",
+    showAlternative: "Alternative",
+    executable: "Supply & install by Ruwaq",
+    quoteHint: "Add these pieces to your execution quote with one consultation call.",
+    quoteCta: "Get furniture quote",
+  },
+  furnitureFeature: {
+    eyebrow: "Like Zory — but we build it",
+    title: "Upload your room. Discover every piece. We execute.",
+    subtitle:
+      "Our AI furniture finder identifies sofas, tables, lighting, and decor — then Ruwaq supplies and installs them with the same quality as your design.",
+    points: [
+      "Numbered pins on your design — tap to explore",
+      "Real partner brands: Pan Home, Home Center, and more",
+      "One-click swap to alternative products",
+      "Formal quote + installation by Ruwaq contracting",
+    ],
+    cta: "Try furniture finder",
+  },
   footer: {
     about:
       "Ruwaq combines AI design visualization with premium decor and contracting — from concept to execution.",
@@ -504,6 +552,34 @@ const ar: DesignMessages = {
     available: "متوفر",
     quoteHint: "تريد عرض سعر رسمي بهذه الخامات؟ احجز استشارة مجانية.",
     quoteCta: "اطلب عرض تنفيذ",
+  },
+  furniture: {
+    title: "مكتشف الأثاث بالذكاء الاصطناعي",
+    subtitle:
+      "حدّدنا قطع الأثاث في تصميمك وطابقناها مع منتجات حقيقية — بدّل البدائل بنقرة واحدة.",
+    badge: "اكتشاف ذكي",
+    fallbackNotice:
+      "قطع مقترحة حسب نوع الغرفة — التعرف بالدبابيس يُفعّل مع API الإنتاج.",
+    tapPins: "اضغط على الدبابيس المرقّمة لاستكشاف كل قطعة",
+    match: "تطابق",
+    showDetected: "المكتشف",
+    showAlternative: "بديل",
+    executable: "توريد وتركيب من رواق",
+    quoteHint: "أضف هذه القطع لعرض التنفيذ بمكالمة استشارة واحدة.",
+    quoteCta: "احصل على عرض أثاث",
+  },
+  furnitureFeature: {
+    eyebrow: "مثل زوري — لكننا ننفّذ",
+    title: "ارفع غرفتك. اكتشف كل قطعة. ونحن ننفّذ.",
+    subtitle:
+      "مكتشف الأثاث يحدد الكنب والطاولات والإضاءة والديكور — ثم رواق توردها وتركّبها بنفس جودة التصميم.",
+    points: [
+      "دبابيس مرقّمة على تصميمك — اضغط للاستكشاف",
+      "علامات شريكة حقيقية: بان هوم، هوم سنتر، والمزيد",
+      "تبديل بنقرة لمنتج بديل",
+      "عرض رسمي + تركيب من مقاولات رواق",
+    ],
+    cta: "جرّب مكتشف الأثاث",
   },
   footer: {
     about:

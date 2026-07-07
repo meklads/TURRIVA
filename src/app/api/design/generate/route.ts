@@ -6,6 +6,7 @@ import { saveDesignImage } from "@/modules/design/server/design-storage";
 import { getStyleById } from "@/modules/design/lib/styles";
 import type { SpaceType } from "@/modules/design/lib/styles";
 import { analyzeDesignMaterials } from "@/modules/design/server/design-materials.service";
+import { analyzeDesignFurniture } from "@/modules/design/server/design-furniture.service";
 import { db } from "@/shared/lib/db";
 import { logServerError } from "@/shared/lib/usage-events";
 
@@ -55,13 +56,11 @@ export async function POST(req: NextRequest) {
       locale,
     });
 
-    const { materials, isAiDetected } = await analyzeDesignMaterials({
-      afterUrl,
-      styleId,
-      spaceType,
-      roomType,
-      locale,
-    });
+    const [{ materials, isAiDetected }, { furniture, isAiDetected: furnitureAi }] =
+      await Promise.all([
+        analyzeDesignMaterials({ afterUrl, styleId, spaceType, roomType, locale }),
+        analyzeDesignFurniture({ afterUrl, styleId, spaceType, roomType, locale }),
+      ]);
 
     const generation = await db.designGeneration.create({
       data: {
@@ -75,6 +74,8 @@ export async function POST(req: NextRequest) {
         locale,
         materials: materials as object,
         materialsAiDetected: isAiDetected,
+        furniture: furniture as object,
+        furnitureAiDetected: furnitureAi,
       },
     });
 
@@ -86,6 +87,8 @@ export async function POST(req: NextRequest) {
       creditsRemaining: deducted.balance,
       materials,
       materialsAiDetected: isAiDetected,
+      furniture,
+      furnitureAiDetected: furnitureAi,
     });
   } catch (error) {
     logServerError("design generate", error);

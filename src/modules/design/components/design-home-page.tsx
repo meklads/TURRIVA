@@ -4,6 +4,7 @@ import { DesignWelcomeModal } from "./design-welcome-modal";
 import { DesignQualitySection } from "./design-quality-section";
 import { DesignRoomShowcase } from "./design-room-showcase";
 import { DesignExecutionBanner } from "./design-execution-banner";
+import { DesignFurnitureFeature } from "./design-furniture-feature";
 import { getDesignMessages } from "@/shared/i18n/messages/design";
 import type { Locale } from "@/shared/i18n/locale";
 
@@ -79,6 +80,8 @@ export function DesignHomePage({ locale }: Props) {
       </section>
 
       <DesignRoomShowcase messages={t} locale={locale} />
+
+      <DesignFurnitureFeature messages={t} locale={locale} />
 
       <DesignExecutionBanner messages={t} />
 
