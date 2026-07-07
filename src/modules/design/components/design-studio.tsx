@@ -15,6 +15,8 @@ import { DESIGN_STYLES, ROOM_TYPES, type SpaceType } from "@/modules/design/lib/
 import { citySupportsExecution, type DesignCity } from "@/modules/design/lib/city";
 import { DesignBeforeAfter } from "./design-before-after";
 import { DesignConsultationModal } from "./design-consultation-modal";
+import { DesignBespokeUpsell } from "./design-bespoke-upsell";
+import type { ConsultationInterest } from "@/modules/design/lib/consultation-interest";
 import { DesignMaterialsBreakdown } from "./design-materials-breakdown";
 import { DesignFurnitureFinder } from "./design-furniture-finder";
 import type { DetectedMaterial } from "@/modules/design/server/design-materials.service";
@@ -53,6 +55,12 @@ export function DesignStudio({ messages, locale }: Props) {
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<Result | null>(null);
   const [consultOpen, setConsultOpen] = useState(false);
+  const [consultInterest, setConsultInterest] = useState<ConsultationInterest>("execution");
+
+  const openConsultation = (interest: ConsultationInterest = "execution") => {
+    setConsultInterest(interest);
+    setConsultOpen(true);
+  };
 
   const rooms = ROOM_TYPES[spaceType];
 
@@ -329,13 +337,18 @@ export function DesignStudio({ messages, locale }: Props) {
                   : messages.studio.executionWaitlist}
               </p>
 
+              <DesignBespokeUpsell
+                messages={messages}
+                onRequestBespoke={() => openConsultation("bespoke")}
+              />
+
               {result.materials.length > 0 && (
                 <DesignMaterialsBreakdown
                   materials={result.materials}
                   isAiDetected={result.materialsAiDetected}
                   messages={messages}
                   locale={locale}
-                  onRequestQuote={() => setConsultOpen(true)}
+                  onRequestQuote={() => openConsultation("execution")}
                 />
               )}
 
@@ -346,7 +359,7 @@ export function DesignStudio({ messages, locale }: Props) {
                   isAiDetected={result.furnitureAiDetected}
                   messages={messages}
                   locale={locale}
-                  onRequestQuote={() => setConsultOpen(true)}
+                  onRequestQuote={() => openConsultation("execution")}
                 />
               )}
 
@@ -364,7 +377,7 @@ export function DesignStudio({ messages, locale }: Props) {
                 <button
                   type="button"
                   className="design-btn design-btn-execution"
-                  onClick={() => setConsultOpen(true)}
+                  onClick={() => openConsultation("execution")}
                 >
                   {citySupportsExecution(result.city)
                     ? messages.studio.likeExecutionCta
@@ -374,7 +387,7 @@ export function DesignStudio({ messages, locale }: Props) {
                   <button
                     type="button"
                     className="design-btn design-btn-primary"
-                    onClick={() => setConsultOpen(true)}
+                    onClick={() => openConsultation("execution")}
                   >
                     {messages.consultation.executionCta}
                   </button>
@@ -402,6 +415,7 @@ export function DesignStudio({ messages, locale }: Props) {
         open={consultOpen}
         onClose={() => setConsultOpen(false)}
         initialCity={result?.city ?? city}
+        initialInterest={consultInterest}
         generationId={result?.id ?? null}
       />
     </>

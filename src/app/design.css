@@ -653,6 +653,122 @@
   color: var(--ds-primary);
 }
 
+/* Bespoke design upsell */
+.design-bespoke {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  border-radius: var(--ds-radius-lg);
+  border: 1px solid #e8dcc8;
+  background: linear-gradient(145deg, #fffefb 0%, #f8f0e4 55%, #fff9f0 100%);
+  padding: 1.1rem 1.15rem;
+  box-shadow: 0 8px 24px rgba(184, 148, 104, 0.1);
+}
+
+.design-bespoke__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.65rem;
+  border: 1px solid rgba(184, 148, 104, 0.35);
+  background: white;
+  color: #9a7848;
+}
+
+.design-bespoke__eyebrow {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9a7848;
+}
+
+[dir="rtl"] .design-bespoke__eyebrow {
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 0.6875rem;
+}
+
+.design-bespoke__title {
+  margin-top: 0.25rem;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.35;
+  color: var(--ds-ink);
+}
+
+.design-bespoke__subtitle {
+  margin-top: 0.4rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--ds-ink-soft);
+}
+
+.design-bespoke__list {
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.design-bespoke__list li {
+  position: relative;
+  padding-inline-start: 1rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--ds-ink);
+}
+
+.design-bespoke__list li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.45rem;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  background: #b89468;
+}
+
+.design-bespoke__cta {
+  margin-top: 0.85rem;
+  border-color: #d4b896 !important;
+  color: #7a5c32 !important;
+}
+
+.design-bespoke__cta:hover {
+  background: #fdf6ee !important;
+}
+
+.design-interest-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.design-interest-pill {
+  border-radius: 0.5rem;
+  border: 1px solid var(--ds-border);
+  background: white;
+  padding: 0.55rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: start;
+  color: var(--ds-ink-soft);
+  transition: all 0.15s ease;
+}
+
+.design-interest-pill--active {
+  border-color: var(--ds-primary);
+  background: #eff6ff;
+  color: var(--ds-primary);
+}
+
 /* Sections */
 .design-section {
   padding: 3.5rem 0;

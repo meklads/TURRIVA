@@ -77,6 +77,19 @@ export type DesignMessages = {
     city: string;
     executionAvailableSubtitle: string;
     executionWaitlistSubtitle: string;
+    interestLabel: string;
+    interestExecution: string;
+    interestBespoke: string;
+    interestBoth: string;
+    bespokeSubtitle: string;
+    bothSubtitle: string;
+  };
+  bespoke: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    points: string[];
+    cta: string;
   };
   howItWorks: {
     eyebrow: string;
@@ -256,6 +269,27 @@ const en: DesignMessages = {
       "We'll visit your site in Jeddah or Makkah and turn this preview into a formal technical & financial quote.",
     executionWaitlistSubtitle:
       "We'll save your design and contact you if execution opens in your area.",
+    interestLabel: "What do you need?",
+    interestExecution: "Execute my AI preview",
+    interestBespoke: "Private design with our engineers",
+    interestBoth: "Execution + bespoke design",
+    bespokeSubtitle:
+      "Our senior design engineers will meet you and develop a fully custom, human-crafted concept for your space.",
+    bothSubtitle:
+      "We'll execute what you loved in the preview and our design team will refine it into a signature bespoke project.",
+  },
+  bespoke: {
+    eyebrow: "Beyond the AI preview",
+    title: "Want something truly one-of-a-kind?",
+    subtitle:
+      "Love the preview? Ruwaq can build it in Jeddah & Makkah. For a fully bespoke interior — our design engineers are ready to meet you.",
+    points: [
+      "Senior Ruwaq design engineers — human-led, not AI",
+      "Custom concepts for villas, palaces, and premium spaces",
+      "From mood boards to executable drawings",
+      "Free introductory meeting to understand your vision",
+    ],
+    cta: "Book a bespoke design session",
   },
   howItWorks: {
     eyebrow: "How it works",
@@ -499,6 +533,27 @@ const ar: DesignMessages = {
     executionAvailableSubtitle:
       "نزور موقعك في جدة أو مكة ونحوّل هذه المعاينة إلى عرض فني ومالي رسمي.",
     executionWaitlistSubtitle: "نحفظ تصميمك ونتواصل معك عند توفر التنفيذ في منطقتك.",
+    interestLabel: "ماذا تحتاج؟",
+    interestExecution: "تنفيذ ما أعجبني من المعاينة",
+    interestBespoke: "تصميم خاص مع مهندسينا",
+    interestBoth: "تنفيذ + تصميم خاص",
+    bespokeSubtitle:
+      "مهندسو التصميم في رواق يلتقون معك ويعدّون مفهوماً بشرياً فاخراً ومخصصاً بالكامل لمساحتك.",
+    bothSubtitle:
+      "ننفّذ ما أعجبك من المعاينة، وفريق التصميم يطوّره إلى مشروع خاص يعكس ذوقك بالكامل.",
+  },
+  bespoke: {
+    eyebrow: "أبعد من المعاينة الذكية",
+    title: "تريد تصميماً خاصاً لا يشبه أحداً؟",
+    subtitle:
+      "أعجبتك المعاينة؟ رواق تنفّذها في جدة ومكة. ولتصميم بشري فاخر ومخصص بالكامل — مهندسو التصميم في رواق جاهزون للاجتماع معك.",
+    points: [
+      "مهندسو تصميم رواق — خبرة بشرية عالية، ليس ذكاءً اصطناعياً",
+      "مفاهيم خاصة للفلل والقصور والمساحات الفاخرة",
+      "من الفكرة إلى مخططات قابلة للتنفيذ",
+      "اجتماع تعريفي مجاني لفهم رؤيتك",
+    ],
+    cta: "احجز جلسة تصميم خاص",
   },
   howItWorks: {
     eyebrow: "كيف يعمل",

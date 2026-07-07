@@ -459,6 +459,8 @@ model ConsultationLead {
   /// jeddah | makkah | other
   city      String?
   generationId String?
+  /// execution | bespoke | both
+  interest  String?
   source    String   @default("design_studio")
   locale    String   @default("ar")
   userId    String?
