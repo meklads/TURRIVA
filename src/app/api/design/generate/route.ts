@@ -7,6 +7,9 @@ import { getStyleById } from "@/modules/design/lib/styles";
 import type { SpaceType } from "@/modules/design/lib/styles";
 import { analyzeDesignMaterials } from "@/modules/design/server/design-materials.service";
 import { analyzeDesignFurniture } from "@/modules/design/server/design-furniture.service";
+import { buildWatermarkedPreview } from "@/modules/design/server/design-preview.service";
+import { saveDesignBuffer } from "@/modules/design/server/design-storage";
+import { isDesignCity } from "@/modules/design/lib/city";
 import { db } from "@/shared/lib/db";
 import { logServerError } from "@/shared/lib/usage-events";
 
@@ -37,6 +40,12 @@ export async function POST(req: NextRequest) {
     const spaceType = String(form.get("spaceType") ?? "interior") as SpaceType;
     const roomType = String(form.get("roomType") ?? "living");
     const locale = String(form.get("locale") ?? "ar") as "ar" | "en";
+    const cityRaw = String(form.get("city") ?? "");
+
+    if (!isDesignCity(cityRaw)) {
+      return NextResponse.json({ code: "CITY_REQUIRED", error: "City required" }, { status: 400 });
+    }
+    const city = cityRaw;
 
     if (!(file instanceof File)) {
       return NextResponse.json({ code: "UPLOAD_REQUIRED", error: "No image" }, { status: 400 });
@@ -56,10 +65,18 @@ export async function POST(req: NextRequest) {
       locale,
     });
 
+    const watermarkLabel = locale === "ar" ? "رواق — معاينة" : "Ruwaq — Preview";
+    const previewBuffer = await buildWatermarkedPreview(afterUrl, watermarkLabel);
+    const previewUrl = await saveDesignBuffer(
+      previewBuffer,
+      "image/jpeg",
+      `${session.user.id}-after`
+    );
+
     const [{ materials, isAiDetected }, { furniture, isAiDetected: furnitureAi }] =
       await Promise.all([
-        analyzeDesignMaterials({ afterUrl, styleId, spaceType, roomType, locale }),
-        analyzeDesignFurniture({ afterUrl, styleId, spaceType, roomType, locale }),
+        analyzeDesignMaterials({ afterUrl: previewUrl, styleId, spaceType, roomType, locale }),
+        analyzeDesignFurniture({ afterUrl: previewUrl, styleId, spaceType, roomType, locale }),
       ]);
 
     const generation = await db.designGeneration.create({
@@ -69,7 +86,9 @@ export async function POST(req: NextRequest) {
         roomType,
         styleId,
         beforeUrl,
-        afterUrl,
+        afterUrl: previewUrl,
+        afterUrlSource: afterUrl,
+        city,
         isMock,
         locale,
         materials: materials as object,
@@ -82,8 +101,10 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       id: generation.id,
       beforeUrl,
-      afterUrl,
+      afterUrl: previewUrl,
       isMock,
+      city,
+      isPreview: true,
       creditsRemaining: deducted.balance,
       materials,
       materialsAiDetected: isAiDetected,

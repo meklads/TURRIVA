@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { getSession } from "@/modules/auth/server/session";
+import { isDesignCity } from "@/modules/design/lib/city";
 import { db } from "@/shared/lib/db";
 import { logServerError } from "@/shared/lib/usage-events";
 
@@ -11,6 +12,8 @@ const bodySchema = z.object({
   phone: z.string().min(8).max(20),
   message: z.string().max(2000).optional(),
   locale: z.enum(["ar", "en"]).optional(),
+  city: z.enum(["jeddah", "makkah", "other"]).optional(),
+  generationId: z.string().cuid().optional(),
 });
 
 export async function POST(req: NextRequest) {
@@ -22,13 +25,19 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid input" }, { status: 400 });
     }
 
-    const { name, phone, message, locale } = parsed.data;
+    const { name, phone, message, locale, city, generationId } = parsed.data;
+
+    if (city && !isDesignCity(city)) {
+      return NextResponse.json({ error: "Invalid city" }, { status: 400 });
+    }
 
     await db.consultationLead.create({
       data: {
         name,
         phone,
         message,
+        city: city ?? null,
+        generationId: generationId ?? null,
         locale: locale ?? "ar",
         userId: session?.user?.id ?? null,
         source: "design_studio",

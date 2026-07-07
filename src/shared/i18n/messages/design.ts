@@ -47,6 +47,14 @@ export type DesignMessages = {
     after: string;
     mockNotice: string;
     tryAnother: string;
+    cityTitle: string;
+    cityJeddah: string;
+    cityMakkah: string;
+    cityOther: string;
+    previewNotice: string;
+    executionAvailable: string;
+    executionWaitlist: string;
+    likeExecutionCta: string;
   };
   welcome: {
     title: string;
@@ -66,6 +74,9 @@ export type DesignMessages = {
     success: string;
     cta: string;
     executionCta: string;
+    city: string;
+    executionAvailableSubtitle: string;
+    executionWaitlistSubtitle: string;
   };
   howItWorks: {
     eyebrow: string;
@@ -158,6 +169,7 @@ export type DesignMessages = {
     styleRequired: string;
     signInRequired: string;
     creditsExhausted: string;
+    cityRequired: string;
     generic: string;
   };
 };
@@ -210,6 +222,15 @@ const en: DesignMessages = {
     after: "After",
     mockNotice: "Preview mode — production AI will use your exact photo",
     tryAnother: "Try another style",
+    cityTitle: "Project city",
+    cityJeddah: "Jeddah",
+    cityMakkah: "Makkah",
+    cityOther: "Other city",
+    previewNotice:
+      "Low-resolution preview with Ruwaq watermark — full quality unlocks with execution or a pro subscription.",
+    executionAvailable: "Ruwaq can execute this design in Jeddah & Makkah.",
+    executionWaitlist: "Execution is currently in Jeddah & Makkah only — we'll note your interest.",
+    likeExecutionCta: "I love it — request execution",
   },
   welcome: {
     title: "Welcome to Ruwaq!",
@@ -230,6 +251,11 @@ const en: DesignMessages = {
     success: "Thank you! Our team will contact you shortly.",
     cta: "Free consultation",
     executionCta: "Request execution quote",
+    city: "City",
+    executionAvailableSubtitle:
+      "We'll visit your site in Jeddah or Makkah and turn this preview into a formal technical & financial quote.",
+    executionWaitlistSubtitle:
+      "We'll save your design and contact you if execution opens in your area.",
   },
   howItWorks: {
     eyebrow: "How it works",
@@ -387,6 +413,7 @@ const en: DesignMessages = {
     styleRequired: "Please choose a style.",
     signInRequired: "Sign in to generate designs.",
     creditsExhausted: "No credits left. Book a consultation to continue.",
+    cityRequired: "Please select your city.",
     generic: "Something went wrong. Please try again.",
   },
 };
@@ -439,6 +466,15 @@ const ar: DesignMessages = {
     after: "بعد",
     mockNotice: "وضع معاينة — الذكاء الاصطناعي الإنتاجي سيستخدم صورتك الفعلية",
     tryAnother: "جرّب نمطاً آخر",
+    cityTitle: "مدينة المشروع",
+    cityJeddah: "جدة",
+    cityMakkah: "مكة",
+    cityOther: "مدينة أخرى",
+    previewNotice:
+      "معاينة بدقة منخفضة وعلامة رواق المائية — الجودة الكاملة مع التنفيذ أو اشتراك احترافي.",
+    executionAvailable: "رواق تنفّذ هذا التصميم في جدة ومكة.",
+    executionWaitlist: "التنفيذ حالياً في جدة ومكة فقط — سنسجّل اهتمامك.",
+    likeExecutionCta: "أعجبني — أريد تنفيذاً",
   },
   welcome: {
     title: "مرحباً بك في رواق!",
@@ -459,6 +495,10 @@ const ar: DesignMessages = {
     success: "شكراً! سيتواصل معك فريقنا قريباً.",
     cta: "استشارة مجانية",
     executionCta: "اطلب عرض تنفيذ",
+    city: "المدينة",
+    executionAvailableSubtitle:
+      "نزور موقعك في جدة أو مكة ونحوّل هذه المعاينة إلى عرض فني ومالي رسمي.",
+    executionWaitlistSubtitle: "نحفظ تصميمك ونتواصل معك عند توفر التنفيذ في منطقتك.",
   },
   howItWorks: {
     eyebrow: "كيف يعمل",
@@ -615,6 +655,7 @@ const ar: DesignMessages = {
     styleRequired: "يرجى اختيار نمط.",
     signInRequired: "سجّل الدخول لتوليد التصاميم.",
     creditsExhausted: "لا توجد أرصدة. احجز استشارة للمتابعة.",
+    cityRequired: "يرجى اختيار المدينة.",
     generic: "حدث خطأ. يرجى المحاولة مرة أخرى.",
   },
 };

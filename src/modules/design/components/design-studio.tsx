@@ -12,6 +12,7 @@ import {
   Upload,
 } from "lucide-react";
 import { DESIGN_STYLES, ROOM_TYPES, type SpaceType } from "@/modules/design/lib/styles";
+import { citySupportsExecution, type DesignCity } from "@/modules/design/lib/city";
 import { DesignBeforeAfter } from "./design-before-after";
 import { DesignConsultationModal } from "./design-consultation-modal";
 import { DesignMaterialsBreakdown } from "./design-materials-breakdown";
@@ -26,9 +27,11 @@ type Props = {
 };
 
 type Result = {
+  id: string;
   beforeUrl: string;
   afterUrl: string;
   isMock: boolean;
+  city: DesignCity;
   materials: DetectedMaterial[];
   materialsAiDetected: boolean;
   furniture: DetectedFurniture[];
@@ -41,6 +44,7 @@ export function DesignStudio({ messages, locale }: Props) {
 
   const [spaceType, setSpaceType] = useState<SpaceType>("interior");
   const [roomType, setRoomType] = useState("living");
+  const [city, setCity] = useState<DesignCity | null>(null);
   const [styleId, setStyleId] = useState<string | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [file, setFile] = useState<File | null>(null);
@@ -84,6 +88,10 @@ export function DesignStudio({ messages, locale }: Props) {
       setError(messages.errors.styleRequired);
       return;
     }
+    if (!city) {
+      setError(messages.errors.cityRequired);
+      return;
+    }
     if (!session?.user) {
       setError(messages.errors.signInRequired);
       return;
@@ -98,6 +106,7 @@ export function DesignStudio({ messages, locale }: Props) {
     form.append("spaceType", spaceType);
     form.append("roomType", roomType);
     form.append("locale", locale);
+    form.append("city", city);
 
     try {
       const res = await fetch("/api/design/generate", { method: "POST", body: form });
@@ -106,14 +115,17 @@ export function DesignStudio({ messages, locale }: Props) {
       if (!res.ok) {
         if (data.code === "SIGN_IN_REQUIRED") setError(messages.errors.signInRequired);
         else if (data.code === "CREDITS_EXHAUSTED") setError(messages.errors.creditsExhausted);
+        else if (data.code === "CITY_REQUIRED") setError(messages.errors.cityRequired);
         else setError(messages.errors.generic);
         return;
       }
 
       setResult({
+        id: data.id,
         beforeUrl: data.beforeUrl,
         afterUrl: data.afterUrl,
         isMock: data.isMock,
+        city: data.city,
         materials: data.materials ?? [],
         materialsAiDetected: data.materialsAiDetected ?? false,
         furniture: data.furniture ?? [],
@@ -188,6 +200,26 @@ export function DesignStudio({ messages, locale }: Props) {
                 </option>
               ))}
             </select>
+
+            <label className="design-studio-section-title mt-3 block">{messages.studio.cityTitle}</label>
+            <div className="design-city-pills">
+              {(
+                [
+                  { id: "jeddah" as const, label: messages.studio.cityJeddah },
+                  { id: "makkah" as const, label: messages.studio.cityMakkah },
+                  { id: "other" as const, label: messages.studio.cityOther },
+                ] as const
+              ).map((option) => (
+                <button
+                  key={option.id}
+                  type="button"
+                  className={`design-city-pill${city === option.id ? " design-city-pill--active" : ""}`}
+                  onClick={() => setCity(option.id)}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
 
             <div
               className="design-upload-zone"
@@ -281,8 +313,21 @@ export function DesignStudio({ messages, locale }: Props) {
                 afterSrc={result.afterUrl}
                 beforeLabel={messages.studio.before}
                 afterLabel={messages.studio.after}
+                protectAfter
               />
+              <p className="design-preview-notice">{messages.studio.previewNotice}</p>
               {result.isMock && <p className="design-mock-notice">{messages.studio.mockNotice}</p>}
+              <p
+                className={`design-execution-notice ${
+                  citySupportsExecution(result.city)
+                    ? "design-execution-notice--available"
+                    : "design-execution-notice--waitlist"
+                }`}
+              >
+                {citySupportsExecution(result.city)
+                  ? messages.studio.executionAvailable
+                  : messages.studio.executionWaitlist}
+              </p>
 
               {result.materials.length > 0 && (
                 <DesignMaterialsBreakdown
@@ -321,15 +366,19 @@ export function DesignStudio({ messages, locale }: Props) {
                   className="design-btn design-btn-execution"
                   onClick={() => setConsultOpen(true)}
                 >
-                  {messages.consultation.executionCta}
+                  {citySupportsExecution(result.city)
+                    ? messages.studio.likeExecutionCta
+                    : messages.consultation.cta}
                 </button>
-                <button
-                  type="button"
-                  className="design-btn design-btn-primary"
-                  onClick={() => setConsultOpen(true)}
-                >
-                  {messages.consultation.cta}
-                </button>
+                {citySupportsExecution(result.city) && (
+                  <button
+                    type="button"
+                    className="design-btn design-btn-primary"
+                    onClick={() => setConsultOpen(true)}
+                  >
+                    {messages.consultation.executionCta}
+                  </button>
+                )}
               </div>
             </>
           )}
@@ -352,6 +401,8 @@ export function DesignStudio({ messages, locale }: Props) {
         locale={locale}
         open={consultOpen}
         onClose={() => setConsultOpen(false)}
+        initialCity={result?.city ?? city}
+        generationId={result?.id ?? null}
       />
     </>
   );

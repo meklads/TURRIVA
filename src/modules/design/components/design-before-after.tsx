@@ -7,9 +7,16 @@ type Props = {
   afterSrc: string;
   beforeLabel: string;
   afterLabel: string;
+  protectAfter?: boolean;
 };
 
-export function DesignBeforeAfter({ beforeSrc, afterSrc, beforeLabel, afterLabel }: Props) {
+export function DesignBeforeAfter({
+  beforeSrc,
+  afterSrc,
+  beforeLabel,
+  afterLabel,
+  protectAfter = false,
+}: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [split, setSplit] = useState(50);
 
@@ -38,12 +45,17 @@ export function DesignBeforeAfter({ beforeSrc, afterSrc, beforeLabel, afterLabel
       }}
     >
       <img src={beforeSrc} alt={beforeLabel} draggable={false} />
-      <img
-        src={afterSrc}
-        alt={afterLabel}
-        className="design-before-after__after"
-        draggable={false}
-      />
+      <div
+        className={`design-before-after__after-wrap${protectAfter ? " design-before-after__after-wrap--protected" : ""}`}
+        onContextMenu={protectAfter ? (e) => e.preventDefault() : undefined}
+      >
+        <img
+          src={afterSrc}
+          alt={afterLabel}
+          className="design-before-after__after"
+          draggable={false}
+        />
+      </div>
       <span className="design-ba-label design-ba-label--before">{beforeLabel}</span>
       <span className="design-ba-label design-ba-label--after">{afterLabel}</span>
       <div className="design-before-after__handle" style={{ left: `${split}%` }} />

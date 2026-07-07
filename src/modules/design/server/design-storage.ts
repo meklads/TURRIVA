@@ -30,3 +30,21 @@ export async function saveDesignImage(
   await writeFile(path.join(dir, filename), buffer);
   return `/uploads/designs/${filename}`;
 }
+
+export async function saveDesignBuffer(
+  buffer: Buffer,
+  mime: string,
+  prefix: string
+): Promise<string> {
+  const ext = mime === "image/png" ? "png" : mime === "image/webp" ? "webp" : "jpg";
+  const filename = `${prefix}-${Date.now()}-preview.${ext}`;
+
+  if (isCloudStorageConfigured()) {
+    return uploadPublicObject(`designs/${filename}`, buffer, mime);
+  }
+
+  const dir = path.join(process.cwd(), "public", "uploads", "designs");
+  await mkdir(dir, { recursive: true });
+  await writeFile(path.join(dir, filename), buffer);
+  return `/uploads/designs/${filename}`;
+}
