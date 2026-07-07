@@ -69,6 +69,7 @@ export type DesignMessages = {
     generate: string;
     generating: string;
     creditsLeft: string;
+    creditsUnlimited: string;
     noCredits: string;
     signInForCredits: string;
     before: string;
@@ -297,6 +298,7 @@ const en: DesignMessages = {
     generate: "Generate design",
     generating: "Generating…",
     creditsLeft: "{count} credits left",
+    creditsUnlimited: "Open testing — no generation limit",
     noCredits: "No credits left",
     signInForCredits: "Sign in to get 3 free credits",
     before: "Your photo",
@@ -607,6 +609,7 @@ const ar: DesignMessages = {
     generate: "توليد التصميم",
     generating: "جاري التوليد…",
     creditsLeft: "{count} رصيد متبقي",
+    creditsUnlimited: "تجربة مفتوحة — بدون حد للتوليد",
     noCredits: "لا توجد أرصدة",
     signInForCredits: "سجّل الدخول للحصول على 3 أرصدة مجانية",
     before: "صورتك الأصلية",

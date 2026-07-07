@@ -48,6 +48,7 @@ export function DesignStudio({ messages, locale }: Props) {
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [file, setFile] = useState<File | null>(null);
   const [credits, setCredits] = useState<number | null>(null);
+  const [creditsUnlimited, setCreditsUnlimited] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<Result | null>(null);
@@ -66,6 +67,7 @@ export function DesignStudio({ messages, locale }: Props) {
     if (res.ok) {
       const data = await res.json();
       setCredits(data.signedIn ? data.balance : null);
+      setCreditsUnlimited(Boolean(data.unlimited));
     }
   }, []);
 
@@ -163,8 +165,9 @@ export function DesignStudio({ messages, locale }: Props) {
     }
   };
 
-  const creditsLabel =
-    credits !== null
+  const creditsLabel = creditsUnlimited
+    ? messages.studio.creditsUnlimited
+    : credits !== null
       ? messages.studio.creditsLeft.replace("{count}", String(credits))
       : messages.studio.signInForCredits;
 
@@ -342,7 +345,7 @@ export function DesignStudio({ messages, locale }: Props) {
             </div>
 
             <div
-              className={`design-credits-pill mt-3${credits === 0 ? " design-credits-pill--low" : ""}`}
+              className={`design-credits-pill mt-3${!creditsUnlimited && credits === 0 ? " design-credits-pill--low" : ""}${creditsUnlimited ? " design-credits-pill--unlimited" : ""}`}
             >
               <Sparkles className="h-3.5 w-3.5" />
               {creditsLabel}

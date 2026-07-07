@@ -1058,6 +1058,11 @@
   color: #92400e;
 }
 
+.design-credits-pill--unlimited {
+  background: #ecfdf5;
+  color: #047857;
+}
+
 /* Before / After */
 .design-result {
   padding: 1.25rem;

@@ -1,6 +1,15 @@
 import { db } from "@/shared/lib/db";
+import { isBillingEnabled } from "@/shared/lib/env";
 
 export const FREE_DESIGN_CREDITS = 3;
+
+/** Unlimited generations while billing is off, or when DESIGN_CREDITS_UNLIMITED=true. */
+export function isDesignCreditsUnlimited(): boolean {
+  const flag = process.env.DESIGN_CREDITS_UNLIMITED?.trim().toLowerCase();
+  if (flag === "true") return true;
+  if (flag === "false") return false;
+  return !isBillingEnabled();
+}
 
 export async function getOrCreateCreditAccount(userId: string) {
   return db.designCreditAccount.upsert({
@@ -12,10 +21,16 @@ export async function getOrCreateCreditAccount(userId: string) {
 
 export async function getCreditBalance(userId: string): Promise<number> {
   const account = await getOrCreateCreditAccount(userId);
+  if (isDesignCreditsUnlimited()) return Math.max(account.balance, 999);
   return account.balance;
 }
 
 export async function deductCredit(userId: string): Promise<{ ok: true; balance: number } | { ok: false }> {
+  if (isDesignCreditsUnlimited()) {
+    const balance = await getCreditBalance(userId);
+    return { ok: true, balance };
+  }
+
   const account = await getOrCreateCreditAccount(userId);
   if (account.balance < 1) return { ok: false };
 
@@ -31,6 +46,8 @@ export async function deductCredit(userId: string): Promise<{ ok: true; balance:
 }
 
 export async function refundCredit(userId: string): Promise<void> {
+  if (isDesignCreditsUnlimited()) return;
+
   await db.designCreditAccount.update({
     where: { userId },
     data: {

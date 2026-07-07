@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSession } from "@/modules/auth/server/session";
-import { getCreditBalance } from "@/modules/design/server/design-credits.service";
+import { getCreditBalance, isDesignCreditsUnlimited } from "@/modules/design/server/design-credits.service";
 import { logServerError } from "@/shared/lib/usage-events";
 
 export const dynamic = "force-dynamic";
@@ -17,9 +17,11 @@ export async function GET() {
     }
 
     const balance = await getCreditBalance(session.user.id);
+    const unlimited = isDesignCreditsUnlimited();
     return NextResponse.json({
       signedIn: true,
       balance,
+      unlimited,
       freeCredits: 3,
     });
   } catch (error) {
