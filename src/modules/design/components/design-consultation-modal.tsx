@@ -73,7 +73,7 @@ export function DesignConsultationModal({ messages, locale, open, onClose }: Pro
             <div className="design-modal-actions">
               <button
                 type="button"
-                className="design-btn design-btn-gold w-full"
+                className="design-btn design-btn-execution w-full"
                 disabled={loading}
                 onClick={submit}
               >

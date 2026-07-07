@@ -11,24 +11,25 @@ export async function DesignFooter() {
 
   return (
     <footer className="design-footer">
-      <div className="design-container">
+      <div className="design-container design-container--wide">
         <div className="design-footer-grid">
-          <div>
+          <div className="design-footer-brand">
             <Image
               src="/brand/ruwaq/logo-on-light.png"
               alt={t.brand.name}
               width={1248}
               height={492}
-              className="h-7 w-auto"
+              className="design-logo-img"
             />
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-gray-600">{t.footer.about}</p>
+            <p>{t.footer.about}</p>
           </div>
 
           <div>
             <h3>{t.footer.product}</h3>
             <Link href="/#studio">{t.nav.generate}</Link>
-            <Link href="/#styles">{t.nav.styles}</Link>
-            <Link href="/workspace">{locale === "ar" ? "منصة العروض" : "Proposals platform"}</Link>
+            <Link href="/#gallery">{t.nav.styleGallery}</Link>
+            <Link href="/pricing">{t.nav.pricing}</Link>
+            <Link href="/workspace">{locale === "ar" ? "منصة العروض" : "Proposals"}</Link>
           </div>
 
           <div>
@@ -40,22 +41,17 @@ export async function DesignFooter() {
 
           <div>
             <h3>{t.footer.support}</h3>
+            <Link href="/faq">FAQ</Link>
             <Link href="/privacy">{t.footer.privacy}</Link>
             <Link href="/terms">{t.footer.terms}</Link>
-            <Link href="/faq">FAQ</Link>
           </div>
         </div>
 
         <div className="design-footer-bottom">
           <p>
             {t.footer.copyright}{" "}
-            <span className="text-gray-400">·</span> {t.footer.poweredByPrefix}{" "}
-            <a
-              href={GRAPHICS_HOUSE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
-            >
+            <span>·</span> {t.footer.poweredByPrefix}{" "}
+            <a href={GRAPHICS_HOUSE_URL} target="_blank" rel="noopener noreferrer">
               {t.footer.poweredByLink}
             </a>
           </p>

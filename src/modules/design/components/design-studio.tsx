@@ -148,7 +148,7 @@ export function DesignStudio({ messages, locale }: Props) {
           </div>
 
           <div className="design-studio-sidebar">
-            <p className="design-studio-section-title">{messages.studio.title}</p>
+            <p className="design-studio-prompt">{messages.studio.prompt}</p>
 
             <div className="design-space-tabs">
               {spaceTabs.map(({ id, label, icon: Icon }) => (
@@ -192,7 +192,7 @@ export function DesignStudio({ messages, locale }: Props) {
               <p className="mt-1 text-xs text-gray-500">{messages.studio.uploadHint}</p>
               <button
                 type="button"
-                className="design-btn design-btn-primary mt-3"
+                className="design-btn design-btn-dark mt-3"
                 onClick={(e) => {
                   e.stopPropagation();
                   fileRef.current?.click();
@@ -284,7 +284,7 @@ export function DesignStudio({ messages, locale }: Props) {
                 </button>
                 <button
                   type="button"
-                  className="design-btn design-btn-gold"
+                  className="design-btn design-btn-execution"
                   onClick={() => setConsultOpen(true)}
                 >
                   {messages.consultation.executionCta}

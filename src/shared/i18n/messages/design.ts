@@ -4,8 +4,8 @@ export type DesignMessages = {
   brand: { name: string; tagline: string };
   nav: {
     generate: string;
-    styles: string;
-    howItWorks: string;
+    designTypes: string;
+    styleGallery: string;
     pricing: string;
     signIn: string;
     about: string;
@@ -19,11 +19,15 @@ export type DesignMessages = {
     ctaFacade: string;
     ctaYard: string;
     statRating: string;
+    statRatingSub: string;
     statTime: string;
+    statTimeSub: string;
     statStyles: string;
+    statStylesSub: string;
   };
   studio: {
     title: string;
+    prompt: string;
     spaceInterior: string;
     spaceFacade: string;
     spaceYard: string;
@@ -31,6 +35,7 @@ export type DesignMessages = {
     uploadTitle: string;
     uploadHint: string;
     uploadButton: string;
+    uploadDrag: string;
     styleTitle: string;
     generate: string;
     generating: string;
@@ -66,11 +71,42 @@ export type DesignMessages = {
     title: string;
     steps: { title: string; description: string }[];
   };
-  differentiation: {
+  quality: {
     eyebrow: string;
     title: string;
     subtitle: string;
-    items: { title: string; description: string }[];
+    tabInterior: string;
+    tabFacade: string;
+    tabYard: string;
+    yourPhoto: string;
+    otherAi: string;
+    ruwaq: string;
+    otherNotes: string[];
+    ruwaqNotes: string[];
+    footnote: string;
+  };
+  rooms: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    items: { id: string; title: string; description: string; cta: string }[];
+  };
+  execution: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    points: string[];
+    cta: string;
+    stepDesign: string;
+    stepMaterials: string;
+    stepBuild: string;
+  };
+  ctaBottom: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    cta: string;
+    note: string;
   };
   footer: {
     about: string;
@@ -96,34 +132,39 @@ const en: DesignMessages = {
   brand: { name: "RUWAQ", tagline: "Design · Build" },
   nav: {
     generate: "Generate Design",
-    styles: "Styles",
-    howItWorks: "How It Works",
+    designTypes: "Design Types",
+    styleGallery: "Style Gallery",
     pricing: "Pricing",
     signIn: "Sign In",
     about: "About",
     contact: "Contact",
   },
   hero: {
-    badge: "AI design + real execution",
-    title: "Redesign your room, villa, or store with AI in 30 seconds",
+    badge: "AI Home Design",
+    title: "Redesign your Interior, Facade or Yard with AI in 30 Seconds",
     subtitle:
-      "Upload a photo — pick a style — get a photorealistic before/after. Then request a free consultation and execution quote from Ruwaq with real materials.",
+      "Upload a photo of a room, villa exterior, or backyard — pick a style and AI returns a photorealistic redesign in seconds.",
     ctaInterior: "Design Interior",
     ctaFacade: "Design Facade",
     ctaYard: "Design Yard",
-    statRating: "4.9/5 client satisfaction",
-    statTime: "~30 sec per design",
-    statStyles: "6+ luxury styles",
+    statRating: "4.8/5",
+    statRatingSub: "from 1,200+ reviews",
+    statTime: "~30 sec",
+    statTimeSub: "per design",
+    statStyles: "6+",
+    statStylesSub: "design styles",
   },
   studio: {
-    title: "Design studio",
+    title: "Create your design",
+    prompt: "Upload a photo of the majlis, room, villa or store you want to redesign",
     spaceInterior: "Interior",
     spaceFacade: "Facade",
     spaceYard: "Yard",
     roomType: "Room type",
-    uploadTitle: "Upload your photo",
+    uploadTitle: "Click or drag and drop",
     uploadHint: "JPG, PNG or WEBP — any angle works",
     uploadButton: "Upload",
+    uploadDrag: "Drop your image here",
     styleTitle: "Choose a style",
     generate: "Generate design",
     generating: "Generating…",
@@ -132,11 +173,11 @@ const en: DesignMessages = {
     signInForCredits: "Sign in to get 3 free credits",
     before: "Before",
     after: "After",
-    mockNotice: "Preview mode — connect production AI for your exact photo",
+    mockNotice: "Preview mode — production AI will use your exact photo",
     tryAnother: "Try another style",
   },
   welcome: {
-    title: "Welcome to Ruwaq Design!",
+    title: "Welcome to Ruwaq!",
     subtitle: "See how to create a redesign in seconds.",
     credits: "3 free credits have been added to your account",
     start: "Start",
@@ -161,36 +202,94 @@ const en: DesignMessages = {
     steps: [
       {
         title: "Upload your photo",
-        description: "Any room, villa facade, store, or yard. JPG, PNG or WEBP.",
+        description: "Any room, house exterior, or backyard. JPG, PNG or WEBP — any angle works.",
       },
       {
         title: "Pick a style",
-        description: "Choose from curated luxury styles — modern, neoclassic, Islamic, and more.",
+        description: "Choose from curated presets — modern, neoclassic, Islamic geometric, and more.",
       },
       {
-        title: "Get your redesign",
-        description: "AI returns a photorealistic before/after. Then book execution with Ruwaq.",
+        title: "Get a photoreal redesign",
+        description: "AI returns a magazine-quality redesign in about 30 seconds.",
       },
     ],
   },
-  differentiation: {
-    eyebrow: "Why Ruwaq",
-    title: "Not just AI — executable design",
-    subtitle: "Unlike pure visualization tools, Ruwaq connects your design to real materials and construction.",
+  quality: {
+    eyebrow: "Quality matters",
+    title: "Most AI tools use cheap models. We don't.",
+    subtitle:
+      "Other design tools generate a different room from scratch. Ruwaq preserves your layout, windows, and doors.",
+    tabInterior: "Interior",
+    tabFacade: "Facade",
+    tabYard: "Garden",
+    yourPhoto: "Your photo",
+    otherAi: "Other AI tools",
+    ruwaq: "Ruwaq",
+    otherNotes: [
+      "Different room — generated from scratch",
+      "Geometry and openings ignored",
+      "Cartoonish, unrealistic feel",
+    ],
+    ruwaqNotes: [
+      "Same space, restyled",
+      "Photoreal materials and lighting",
+      "Designer-grade composition",
+    ],
+    footnote: "Powered by top-tier image AI — premium quality on every render",
+  },
+  rooms: {
+    eyebrow: "AI design",
+    title: "AI Design for Every Space",
+    subtitle: "Upload a photo of any space — inside or outside — and see it transformed in seconds",
     items: [
       {
-        title: "Real material catalogs",
-        description: "Wood, marble, glass, and furniture from suppliers we actually work with.",
+        id: "living",
+        title: "AI Living Room Makeover",
+        description:
+          "See your living room or majlis completely reimagined with furniture layout, palettes, and decor.",
+        cta: "Redesign my living room",
       },
       {
-        title: "Free consultation",
-        description: "Talk to our team before you commit — no pressure, no hidden fees.",
+        id: "bedroom",
+        title: "AI Bedroom Design",
+        description: "Turn your bedroom into a cozy retreat. See the result in 30 seconds.",
+        cta: "Redesign my bedroom",
       },
       {
-        title: "Same-quality execution",
-        description: "We build what you see — premium decor and contracting across the Gulf.",
+        id: "kitchen",
+        title: "AI Kitchen Redesign",
+        description: "Visualize new cabinets, countertops, and layouts on your actual kitchen photo.",
+        cta: "Redesign my kitchen",
+      },
+      {
+        id: "facade",
+        title: "AI House Exterior Design",
+        description: "See your home's curb appeal transformed with modern, classic, or Gulf luxury styles.",
+        cta: "Redesign my exterior",
       },
     ],
+  },
+  execution: {
+    badge: "Only on Ruwaq",
+    title: "From AI design to real execution",
+    subtitle:
+      "Unlike GenRoom and similar tools, Ruwaq doesn't stop at the image — we build it with real materials and premium contracting.",
+    points: [
+      "Real material catalogs — wood, marble, glass, furniture",
+      "Free consultation with our design team",
+      "Formal execution quote via Ruwaq workspace",
+    ],
+    cta: "Book free consultation",
+    stepDesign: "AI Design",
+    stepMaterials: "Real Materials",
+    stepBuild: "Ruwaq Builds",
+  },
+  ctaBottom: {
+    badge: "3 free credits — no card required",
+    title: "Ready to see your space transformed?",
+    subtitle: "Start free — sign in to get 3 credits. Then book execution with Ruwaq.",
+    cta: "Redesign my room for free",
+    note: "No credit card · Free consultation · Real execution",
   },
   footer: {
     about:
@@ -217,34 +316,39 @@ const ar: DesignMessages = {
   brand: { name: "رواق", tagline: "تصميم · تنفيذ" },
   nav: {
     generate: "إنشاء تصميم",
-    styles: "الأنماط",
-    howItWorks: "كيف يعمل",
+    designTypes: "أنواع التصميم",
+    styleGallery: "معرض الأنماط",
     pricing: "الأسعار",
     signIn: "تسجيل الدخول",
     about: "من نحن",
     contact: "تواصل",
   },
   hero: {
-    badge: "تصميم بالذكاء الاصطناعي + تنفيذ حقيقي",
-    title: "حوّل غرفتك أو فيلتك أو متجرك بالذكاء الاصطناعي في 30 ثانية",
+    badge: "تصميم المنزل بالذكاء الاصطناعي",
+    title: "حوّل الداخل أو الواجهة أو الحديقة بالذكاء الاصطناعي في 30 ثانية",
     subtitle:
-      "ارفع صورة — اختر نمطاً — احصل على قبل/بعد واقعي. ثم اطلب استشارة مجانية وعرض تنفيذ من رواق بمواد حقيقية قابلة للتطبيق.",
+      "ارفع صورة لغرفة أو واجهة فيلا أو فناء — اختر نمطاً وسيعيد الذكاء الاصطناعي تصميمها بواقعية فائقة في ثوانٍ.",
     ctaInterior: "صمّم الداخل",
     ctaFacade: "صمّم الواجهة",
     ctaYard: "صمّم الحديقة",
-    statRating: "4.9/5 رضا العملاء",
-    statTime: "~30 ثانية لكل تصميم",
-    statStyles: "+6 أنماط فاخرة",
+    statRating: "4.8/5",
+    statRatingSub: "من +1,200 تقييم",
+    statTime: "~30 ث",
+    statTimeSub: "لكل تصميم",
+    statStyles: "+6",
+    statStylesSub: "أنماط تصميم",
   },
   studio: {
-    title: "استوديو التصميم",
+    title: "أنشئ تصميمك",
+    prompt: "ارفع صورة للمجلس أو الغرفة أو الفيلا أو المتجر الذي تريد إعادة تصميمه",
     spaceInterior: "داخلي",
     spaceFacade: "واجهة",
     spaceYard: "حديقة",
-    roomType: "نوع المساحة",
-    uploadTitle: "ارفع صورتك",
+    roomType: "نوع الغرفة",
+    uploadTitle: "انقر أو اسحب وأفلت",
     uploadHint: "JPG أو PNG أو WEBP — أي زاوية تناسب",
     uploadButton: "رفع",
+    uploadDrag: "أفلت صورتك هنا",
     styleTitle: "اختر النمط",
     generate: "توليد التصميم",
     generating: "جاري التوليد…",
@@ -253,11 +357,11 @@ const ar: DesignMessages = {
     signInForCredits: "سجّل الدخول للحصول على 3 أرصدة مجانية",
     before: "قبل",
     after: "بعد",
-    mockNotice: "وضع معاينة — سيتم ربط الذكاء الاصطناعي الإنتاجي لصورتك الفعلية",
+    mockNotice: "وضع معاينة — الذكاء الاصطناعي الإنتاجي سيستخدم صورتك الفعلية",
     tryAnother: "جرّب نمطاً آخر",
   },
   welcome: {
-    title: "مرحباً بك في رواق للتصميم!",
+    title: "مرحباً بك في رواق!",
     subtitle: "دعنا نريك كيف تنشئ تصميماً جديداً في ثوانٍ.",
     credits: "تمت إضافة 3 أرصدة مجانية إلى حسابك",
     start: "ابدأ",
@@ -282,36 +386,93 @@ const ar: DesignMessages = {
     steps: [
       {
         title: "ارفع صورتك",
-        description: "أي غرفة أو واجهة فيلا أو متجر أو حديقة. JPG أو PNG أو WEBP.",
+        description: "أي غرفة أو واجهة منزل أو حديقة. JPG أو PNG أو WEBP — أي زاوية تناسب.",
       },
       {
-        title: "اختر نمطاً",
-        description: "من أنماط فاخرة منتقاة — عصري، نيوكلاسيك، هندسي إسلامي، والمزيد.",
+        title: "اختر أسلوباً",
+        description: "اختر من أنماط جاهزة — عصري، نيوكلاسيك، هندسي إسلامي، والمزيد.",
       },
       {
-        title: "احصل على التصميم",
-        description: "الذكاء الاصطناعي يعيد تصميماً واقعياً قبل/بعد. ثم احجز التنفيذ مع رواق.",
+        title: "احصل على تصميم فائق الواقعية",
+        description: "يُعيد الذكاء الاصطناعي تصميماً بجودة المجلات في نحو 30 ثانية.",
       },
     ],
   },
-  differentiation: {
-    eyebrow: "لماذا رواق",
-    title: "ليس مجرد ذكاء اصطناعي — تصميم قابل للتنفيذ",
-    subtitle: "على عكس أدوات التصوير فقط، رواق يربط تصميمك بمواد حقيقية ومقاولات فعلية.",
+  quality: {
+    eyebrow: "الجودة مهمة",
+    title: "معظم أدوات الذكاء الاصطناعي تستخدم نماذج رخيصة. نحن لا.",
+    subtitle:
+      "أدوات التصميم الأخرى تولّد غرفة مختلفة من الصفر. رواق يحافظ على تخطيط مساحتك ونوافذها وأبوابها.",
+    tabInterior: "الداخل",
+    tabFacade: "الواجهة",
+    tabYard: "الحديقة",
+    yourPhoto: "صورتك",
+    otherAi: "أدوات AI أخرى",
+    ruwaq: "رواق",
+    otherNotes: [
+      "غرفة مختلفة — مُولّدة من الصفر",
+      "تجاهل الهندسة والفتحات",
+      "مظهر كاريكاتوري وغير واقعي",
+    ],
+    ruwaqNotes: [
+      "نفس المساحة، بأسلوب جديد",
+      "مواد وإضاءة واقعية",
+      "تركيب بمستوى مصمّم",
+    ],
+    footnote: "مدعوم بأحدث ذكاء اصطناعي للصور — جودة ممتازة في كل صورة",
+  },
+  rooms: {
+    eyebrow: "تصميم بالذكاء الاصطناعي",
+    title: "تصميم ذكي لكل مساحة في منزلك",
+    subtitle: "ارفع صورة لأي مساحة — داخلية أو خارجية — وشاهدها محوّلة في ثوانٍ",
     items: [
       {
-        title: "كتالوجات مواد حقيقية",
-        description: "خشب، رخام، زجاج، وفرش من موردين نتعامل معهم فعلياً.",
+        id: "living",
+        title: "تجديد غرفة المعيشة والمجلس",
+        description: "شاهد مجلسك أو غرفة معيشتك بشكل جديد مع توزيع أثاث وألوان مناسبة.",
+        cta: "أعد تصميم غرفة المعيشة",
       },
       {
-        title: "استشارة مجانية",
-        description: "تحدث مع فريقنا قبل الالتزام — بدون ضغط وبدون رسوم مخفية.",
+        id: "bedroom",
+        title: "تصميم غرفة النوم",
+        description: "حوّل غرفة نومك إلى ملاذ مريح. شاهد النتيجة في 30 ثانية.",
+        cta: "أعد تصميم غرفة النوم",
       },
       {
-        title: "تنفيذ بنفس الجودة",
-        description: "ننفّذ ما تراه — ديكور ومقاولات فاخرة في الخليج.",
+        id: "kitchen",
+        title: "إعادة تصميم المطبخ",
+        description: "تصوّر خزائن وأسطح وتخطيطات جديدة على صورة مطبخك الفعلي.",
+        cta: "أعد تصميم مطبخي",
+      },
+      {
+        id: "facade",
+        title: "تصميم واجهة المنزل",
+        description: "شاهد جاذبية منزلك الخارجية بأنماط حديثة وكلاسيكية وفاخرة.",
+        cta: "أعد تصميم واجهتي",
       },
     ],
+  },
+  execution: {
+    badge: "حصري في رواق",
+    title: "من تصميم AI إلى تنفيذ حقيقي",
+    subtitle:
+      "على عكس أدوات التصوير فقط، رواق لا تتوقف عند الصورة — ننفّذها بمواد حقيقية ومقاولات فاخرة.",
+    points: [
+      "كتالوجات مواد حقيقية — خشب، رخام، زجاج، أثاث",
+      "استشارة مجانية مع فريق التصميم",
+      "عرض تنفيذ رسمي عبر منصة رواق",
+    ],
+    cta: "احجز استشارة مجانية",
+    stepDesign: "تصميم AI",
+    stepMaterials: "مواد حقيقية",
+    stepBuild: "تنفيذ رواق",
+  },
+  ctaBottom: {
+    badge: "3 أرصدة مجانية — بدون بطاقة",
+    title: "مستعد لرؤية مساحتك بشكل جديد؟",
+    subtitle: "ابدأ مجاناً — سجّل الدخول للحصول على 3 أرصدة. ثم احجز التنفيذ مع رواق.",
+    cta: "أعد تصميم غرفتي مجاناً",
+    note: "بدون بطاقة · استشارة مجانية · تنفيذ حقيقي",
   },
   footer: {
     about:

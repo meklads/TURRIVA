@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Almarai, Amiri, Montserrat, Playfair_Display } from "next/font/google";
+import { Almarai, Amiri, Inter, Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { getLocale } from "@/shared/i18n/server";
@@ -17,6 +17,13 @@ const amiri = Amiri({
   subsets: ["arabic"],
   weight: ["400", "700"],
   variable: "--font-ar-display",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -61,7 +68,7 @@ export default async function RootLayout({
       lang={locale}
       dir={dir}
       data-lang={locale}
-      className={`${almarai.variable} ${amiri.variable} ${montserrat.variable} ${playfair.variable}`}
+      className={`${almarai.variable} ${amiri.variable} ${inter.variable} ${montserrat.variable} ${playfair.variable}`}
     >
       <body
         className={`min-h-screen bg-white ${locale === "ar" ? almarai.className : montserrat.className}`}
