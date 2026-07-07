@@ -434,6 +434,9 @@ model DesignGeneration {
   afterUrl   String
   isMock     Boolean  @default(false)
   locale     String   @default("ar")
+  /// Detected executable materials from vision / catalog match
+  materials  Json?
+  materialsAiDetected Boolean @default(false)
   createdAt  DateTime @default(now())
 
   user User? @relation(fields: [userId], references: [id], onDelete: SetNull)

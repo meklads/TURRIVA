@@ -14,6 +14,8 @@ import {
 import { DESIGN_STYLES, ROOM_TYPES, type SpaceType } from "@/modules/design/lib/styles";
 import { DesignBeforeAfter } from "./design-before-after";
 import { DesignConsultationModal } from "./design-consultation-modal";
+import { DesignMaterialsBreakdown } from "./design-materials-breakdown";
+import type { DetectedMaterial } from "@/modules/design/server/design-materials.service";
 import type { DesignMessages } from "@/shared/i18n/messages/design";
 
 type Props = {
@@ -25,6 +27,8 @@ type Result = {
   beforeUrl: string;
   afterUrl: string;
   isMock: boolean;
+  materials: DetectedMaterial[];
+  materialsAiDetected: boolean;
 };
 
 export function DesignStudio({ messages, locale }: Props) {
@@ -106,6 +110,8 @@ export function DesignStudio({ messages, locale }: Props) {
         beforeUrl: data.beforeUrl,
         afterUrl: data.afterUrl,
         isMock: data.isMock,
+        materials: data.materials ?? [],
+        materialsAiDetected: data.materialsAiDetected ?? false,
       });
       setCredits(data.creditsRemaining);
     } catch {
@@ -271,6 +277,17 @@ export function DesignStudio({ messages, locale }: Props) {
                 afterLabel={messages.studio.after}
               />
               {result.isMock && <p className="design-mock-notice">{messages.studio.mockNotice}</p>}
+
+              {result.materials.length > 0 && (
+                <DesignMaterialsBreakdown
+                  materials={result.materials}
+                  isAiDetected={result.materialsAiDetected}
+                  messages={messages}
+                  locale={locale}
+                  onRequestQuote={() => setConsultOpen(true)}
+                />
+              )}
+
               <div className="mt-4 flex flex-wrap gap-2">
                 <button
                   type="button"

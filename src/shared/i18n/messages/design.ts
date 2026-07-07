@@ -108,6 +108,15 @@ export type DesignMessages = {
     cta: string;
     note: string;
   };
+  materials: {
+    title: string;
+    subtitle: string;
+    executableBadge: string;
+    fallbackNotice: string;
+    available: string;
+    quoteHint: string;
+    quoteCta: string;
+  };
   footer: {
     about: string;
     product: string;
@@ -291,6 +300,17 @@ const en: DesignMessages = {
     cta: "Redesign my room for free",
     note: "No credit card · Free consultation · Real execution",
   },
+  materials: {
+    title: "Design components — executable materials",
+    subtitle:
+      "Materials detected in your design, matched to Ruwaq's real supplier catalog — ready for quoting and execution.",
+    executableBadge: "Executable by Ruwaq",
+    fallbackNotice:
+      "Material suggestions based on your style — AI vision matching activates with production API.",
+    available: "Available",
+    quoteHint: "Want a formal quote with these materials? Book a free consultation.",
+    quoteCta: "Request execution quote",
+  },
   footer: {
     about:
       "Ruwaq combines AI design visualization with premium decor and contracting — from concept to execution.",
@@ -473,6 +493,17 @@ const ar: DesignMessages = {
     subtitle: "ابدأ مجاناً — سجّل الدخول للحصول على 3 أرصدة. ثم احجز التنفيذ مع رواق.",
     cta: "أعد تصميم غرفتي مجاناً",
     note: "بدون بطاقة · استشارة مجانية · تنفيذ حقيقي",
+  },
+  materials: {
+    title: "مكوّنات التصميم — خامات قابلة للتنفيذ",
+    subtitle:
+      "خامات مُستخرجة من تصميمك ومطابقة لكتالوج موردي رواق — جاهزة للتسعير والتنفيذ.",
+    executableBadge: "قابل للتنفيذ من رواق",
+    fallbackNotice:
+      "اقتراحات خامات بناءً على النمط — التعرف بالذكاء الاصطناعي يُفعّل مع API الإنتاج.",
+    available: "متوفر",
+    quoteHint: "تريد عرض سعر رسمي بهذه الخامات؟ احجز استشارة مجانية.",
+    quoteCta: "اطلب عرض تنفيذ",
   },
   footer: {
     about:
