@@ -175,10 +175,10 @@ const en: DesignMessages = {
     contact: "Contact",
   },
   hero: {
-    badge: "AI Home Design",
-    title: "Redesign your Interior, Facade or Yard with AI in 30 Seconds",
+    badge: "AI Design + Real Execution · Jeddah & Makkah",
+    title: "Design your home with AI — we help you develop and build it",
     subtitle:
-      "Upload a photo of a room, villa exterior, or backyard — pick a style and AI returns a photorealistic redesign in seconds.",
+      "Now in Jeddah and Makkah. Upload a photo, pick a style, and get a photorealistic redesign in seconds — then Ruwaq executes the project on the ground.",
     ctaInterior: "Design Interior",
     ctaFacade: "Design Facade",
     ctaYard: "Design Yard",
@@ -404,10 +404,10 @@ const ar: DesignMessages = {
     contact: "تواصل",
   },
   hero: {
-    badge: "تصميم المنزل بالذكاء الاصطناعي",
-    title: "حوّل الداخل أو الواجهة أو الحديقة بالذكاء الاصطناعي في 30 ثانية",
+    badge: "تصميم بالذكاء الاصطناعي + تنفيذ · جدة ومكة",
+    title: "صمّم منزلك بالذكاء الاصطناعي — ونحن نساعدك في تطويره وتنفيذه",
     subtitle:
-      "ارفع صورة لغرفة أو واجهة فيلا أو فناء — اختر نمطاً وسيعيد الذكاء الاصطناعي تصميمها بواقعية فائقة في ثوانٍ.",
+      "في جدة ومكة الآن. ارفع صورة لغرفتك أو واجهتك أو حديقتك، اختر نمطاً، واحصل على تصميم في ثوانٍ — ثم فريق رواق ينفّذ المشروع على أرض الواقع.",
     ctaInterior: "صمّم الداخل",
     ctaFacade: "صمّم الواجهة",
     ctaYard: "صمّم الحديقة",
