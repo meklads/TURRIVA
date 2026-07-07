@@ -9,10 +9,19 @@ export async function DesignHeader() {
   const t = getDesignMessages(locale);
 
   return (
-    <header className="design-header design-header--tool">
+    <header className="design-header design-header--brand">
       <div className="design-container design-container--wide">
         <div className="design-header-bar">
-          <RuwaqLogo priority className="h-9 w-auto sm:h-10" />
+          <div className="design-header-brand">
+            <RuwaqLogo priority className="h-10 w-auto sm:h-11" />
+            <span className="design-header-tagline">{t.brand.tagline}</span>
+          </div>
+
+          <nav className="design-nav" aria-label={locale === "ar" ? "التنقل الرئيسي" : "Main navigation"}>
+            <a href="#studio">{t.nav.studio}</a>
+            <Link href="/our-work">{t.nav.work}</Link>
+            <Link href="/contact">{t.nav.contact}</Link>
+          </nav>
 
           <div className="design-header-actions">
             <LocaleSwitcher />
@@ -20,12 +29,15 @@ export async function DesignHeader() {
               href="/workspace"
               target="_blank"
               rel="noopener noreferrer"
-              className="design-header-link hidden sm:inline-flex"
+              className="design-header-link hidden lg:inline-flex"
             >
               {t.nav.workspace}
             </Link>
-            <Link href="/login?callbackUrl=/" className="design-btn design-btn-primary">
-              {locale === "ar" ? "ابدأ مجاناً" : "Get started free"}
+            <a href="#studio" className="design-btn design-btn-outline hidden sm:inline-flex">
+              {t.nav.tryTool}
+            </a>
+            <Link href="/contact" className="design-btn design-btn-execution">
+              {t.nav.contactCta}
             </Link>
           </div>
         </div>

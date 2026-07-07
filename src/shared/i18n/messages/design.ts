@@ -4,6 +4,10 @@ export type DesignMessages = {
   brand: { name: string; tagline: string };
   nav: {
     generate: string;
+    studio: string;
+    work: string;
+    tryTool: string;
+    contactCta: string;
     designTypes: string;
     styleGallery: string;
     pricing: string;
@@ -16,15 +20,32 @@ export type DesignMessages = {
     badge: string;
     title: string;
     subtitle: string;
-    ctaInterior: string;
-    ctaExterior: string;
-    ctaBooth: string;
-    statRating: string;
-    statRatingSub: string;
-    statTime: string;
-    statTimeSub: string;
-    statStyles: string;
-    statStylesSub: string;
+    services: string;
+    ctaTryTool: string;
+    ctaBespoke: string;
+    noteTryToolLabel: string;
+    noteTryTool: string;
+    noteBespokeLabel: string;
+    noteBespoke: string;
+    imageAlt: string;
+  };
+  studioSection: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+  };
+  paths: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    toolTitle: string;
+    toolBody: string;
+    toolPoints: string[];
+    toolCta: string;
+    bespokeTitle: string;
+    bespokeBody: string;
+    bespokePoints: string[];
+    bespokeCta: string;
   };
   studio: {
     title: string;
@@ -196,9 +217,13 @@ export type DesignMessages = {
 };
 
 const en: DesignMessages = {
-  brand: { name: "RUWAQ", tagline: "AI Design Studio" },
+  brand: { name: "RUWAQ", tagline: "Decor & Contracting" },
   nav: {
     generate: "Generate Design",
+    studio: "AI Studio",
+    work: "Our work",
+    tryTool: "Try the tool",
+    contactCta: "Contact us",
     designTypes: "Design Types",
     styleGallery: "Style Gallery",
     pricing: "Pricing",
@@ -208,19 +233,45 @@ const en: DesignMessages = {
     contact: "Contact",
   },
   hero: {
-    badge: "AI Design Studio",
-    title: "Design your space in seconds",
+    badge: "Ruwaq Decor & Contracting",
+    title: "We design and build premium spaces",
     subtitle:
-      "Fixed decor (interior & exterior finishing) and advertising booths — upload a photo, pick a style, preview in seconds. 3 free generations after sign-in.",
-    ctaInterior: "Interior finishing",
-    ctaExterior: "Exterior finishing",
-    ctaBooth: "Booth & exhibition",
-    statRating: "4.8/5",
-    statRatingSub: "from 1,200+ reviews",
-    statTime: "~30 sec",
-    statTimeSub: "per design",
-    statStyles: "6+",
-    statStylesSub: "design styles",
+      "A Saudi contracting and decor company — fixed finishing for villas, apartments, palaces & shops, plus advertising booths and exhibitions.",
+    services: "Interior · Exterior · Booths & exhibitions — Jeddah & Makkah",
+    ctaTryTool: "Try the AI preview",
+    ctaBespoke: "Bespoke design — contact us",
+    noteTryToolLabel: "Quick preview?",
+    noteTryTool: "Upload a photo below and generate a style preview in seconds — 3 free tries.",
+    noteBespokeLabel: "Signature project?",
+    noteBespoke: "Our design engineers craft a fully custom concept and Ruwaq executes it on site.",
+    imageAlt: "Luxury palace interior designed and finished by Ruwaq",
+  },
+  studioSection: {
+    eyebrow: "Try it yourself",
+    title: "Quick AI preview — then we build it for real",
+    subtitle:
+      "Not just software: this tool helps you explore styles before Ruwaq turns your project into real materials, BOQs, and on-site execution.",
+  },
+  paths: {
+    eyebrow: "Two ways to start",
+    title: "Fast preview or fully bespoke",
+    subtitle: "Choose the path that fits your project — both lead to Ruwaq execution.",
+    toolTitle: "Explore with the AI studio",
+    toolBody: "Ideal when you want a fast visual before committing.",
+    toolPoints: [
+      "Upload your space — interior, exterior, or booth",
+      "Pick a style and city",
+      "3 free watermarked previews after sign-in",
+    ],
+    toolCta: "Open the studio",
+    bespokeTitle: "Bespoke design with our engineers",
+    bespokeBody: "For villas, palaces, flagship stores, and exhibition builds that need a human touch.",
+    bespokePoints: [
+      "Senior Ruwaq design engineers — not AI alone",
+      "Custom drawings and material boards",
+      "Formal execution quote via Ruwaq workspace",
+    ],
+    bespokeCta: "Book a consultation",
   },
   studio: {
     title: "Create your design",
@@ -265,8 +316,8 @@ const en: DesignMessages = {
     likeExecutionCta: "I love it — request execution",
   },
   welcome: {
-    title: "Welcome to Ruwaq!",
-    subtitle: "See how to preview fixed decor or advertising booths in seconds.",
+    title: "Welcome to Ruwaq",
+    subtitle: "A decor & contracting company — try a quick AI preview or book a bespoke session.",
     credits: "3 free credits have been added to your account",
     start: "Start",
     skip: "Skip",
@@ -476,9 +527,13 @@ const en: DesignMessages = {
 };
 
 const ar: DesignMessages = {
-  brand: { name: "رواق", tagline: "استوديو التصميم بالذكاء الاصطناعي" },
+  brand: { name: "رواق", tagline: "للديكور والمقاولات" },
   nav: {
     generate: "إنشاء تصميم",
+    studio: "استوديو التصميم",
+    work: "أعمالنا",
+    tryTool: "جرّب الأداة",
+    contactCta: "تواصل معنا",
     designTypes: "أنواع التصميم",
     styleGallery: "معرض الأنماط",
     pricing: "الأسعار",
@@ -488,19 +543,45 @@ const ar: DesignMessages = {
     contact: "تواصل",
   },
   hero: {
-    badge: "استوديو تصميم بالذكاء الاصطناعي",
-    title: "صمّم مساحتك في ثوانٍ",
+    badge: "رواق للديكور والمقاولات",
+    title: "نصمّم وننفّذ مساحات فاخرة",
     subtitle:
-      "ديكور ثابت (داخلي وخارجي — تشطيبات) وديكور إعلاني (بوث ومعارض مؤقتة). ارفع صورة، اختر نمطاً، وشاهد المعاينة — 3 تجارب مجانية بعد التسجيل.",
-    ctaInterior: "تشطيب داخلي",
-    ctaExterior: "تشطيب خارجي",
-    ctaBooth: "بوث ومعارض",
-    statRating: "4.8/5",
-    statRatingSub: "من +1,200 تقييم",
-    statTime: "~30 ث",
-    statTimeSub: "لكل تصميم",
-    statStyles: "+6",
-    statStylesSub: "أنماط تصميم",
+      "شركة سعودية للديكور والمقاولات — تشطيبات ثابتة للفلل والشقق والقصور والمحلات، وديكور إعلاني للبوث والمعارض المؤقتة.",
+    services: "داخلي · خارجي · بوث ومعارض — جدة ومكة",
+    ctaTryTool: "جرّب معاينة الذكاء الاصطناعي",
+    ctaBespoke: "تصميم خاص — تواصل معنا",
+    noteTryToolLabel: "معاينة سريعة؟",
+    noteTryTool: "ارفع صورتك في الأداة بالأسفل واختر نمطاً — 3 تجارب مجانية بعد التسجيل.",
+    noteBespokeLabel: "مشروع مميز؟",
+    noteBespoke: "مهندسو التصميم في رواق يعدّون مفهوماً خاصاً وننفّذه في الموقع بمواد حقيقية.",
+    imageAlt: "داخل قصر فاخر — ديكور وتشطيبات رواق",
+  },
+  studioSection: {
+    eyebrow: "جرّب بنفسك",
+    title: "معاينة سريعة بالذكاء الاصطناعي — ثم ننفّذها حقيقياً",
+    subtitle:
+      "ليست مجرد برمجية: الأداة تساعدك على استكشاف الأنماط قبل أن يحوّل رواق مشروعك إلى مواد فعلية وعروض تنفيذ على أرض الواقع.",
+  },
+  paths: {
+    eyebrow: "طريقتان للبدء",
+    title: "معاينة سريعة أو تصميم خاص بالكامل",
+    subtitle: "اختر ما يناسب مشروعك — كلاهما يقود إلى تنفيذ رواق.",
+    toolTitle: "استكشف عبر الاستوديو الذكي",
+    toolBody: "مناسب عندما تريد رؤية بصرية سريعة قبل الالتزام.",
+    toolPoints: [
+      "ارفع مساحتك — داخلية، خارجية، أو بوث",
+      "اختر النمط والمدينة",
+      "3 معاينات مجانية بعلامة مائية بعد التسجيل",
+    ],
+    toolCta: "افتح الاستوديو",
+    bespokeTitle: "تصميم خاص مع مهندسينا",
+    bespokeBody: "للفلل والقصور والمحلات الرائدة ومعارض البوث التي تحتاج لمسة بشرية فاخرة.",
+    bespokePoints: [
+      "مهندسو تصميم رواق — ليس ذكاءً اصطناعياً وحده",
+      "مخططات ومزاج بصري ومواد مخصصة",
+      "عرض تنفيذ رسمي عبر منصة رواق",
+    ],
+    bespokeCta: "احجز استشارة",
   },
   studio: {
     title: "أنشئ تصميمك",
@@ -545,8 +626,8 @@ const ar: DesignMessages = {
     likeExecutionCta: "أعجبني — أريد تنفيذاً",
   },
   welcome: {
-    title: "مرحباً بك في رواق!",
-    subtitle: "دعنا نريك كيف تعاين تشطيبات ثابتة أو بوث معارض في ثوانٍ.",
+    title: "مرحباً بك في رواق",
+    subtitle: "شركة ديكور ومقاولات — جرّب معاينة سريعة أو احجز جلسة تصميم خاص.",
     credits: "تمت إضافة 3 أرصدة مجانية إلى حسابك",
     start: "ابدأ",
     skip: "تخطي",

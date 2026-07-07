@@ -1,6 +1,7 @@
 import { DesignStudio } from "./design-studio";
 import { DesignWelcomeModal } from "./design-welcome-modal";
-import { DesignExecutionBanner } from "./design-execution-banner";
+import { DesignSplitHero } from "./design-split-hero";
+import { DesignPathsSection } from "./design-paths-section";
 import { getDesignMessages } from "@/shared/i18n/messages/design";
 import type { Locale } from "@/shared/i18n/locale";
 
@@ -14,20 +15,22 @@ export function DesignHomePage({ locale }: Props) {
   return (
     <>
       <DesignWelcomeModal messages={t} />
+      <DesignSplitHero messages={t} />
 
-      <section className="design-tool-hero">
+      <section className="design-studio-wrap" aria-labelledby="design-studio-heading">
         <div className="design-container design-container--wide">
-          <p className="design-tool-hero__badge">{t.hero.badge}</p>
-          <h1 className="design-tool-hero__title">{t.hero.title}</h1>
-          <p className="design-tool-hero__subtitle">{t.hero.subtitle}</p>
+          <header className="design-studio-wrap__intro">
+            <p className="design-eyebrow">{t.studioSection.eyebrow}</p>
+            <h2 id="design-studio-heading" className="design-section-title">
+              {t.studioSection.title}
+            </h2>
+            <p className="design-section-subtitle">{t.studioSection.subtitle}</p>
+          </header>
+          <DesignStudio messages={t} locale={locale} />
         </div>
       </section>
 
-      <div className="design-container design-container--wide design-tool-page">
-        <DesignStudio messages={t} locale={locale} />
-      </div>
-
-      <DesignExecutionBanner messages={t} />
+      <DesignPathsSection messages={t} />
     </>
   );
 }

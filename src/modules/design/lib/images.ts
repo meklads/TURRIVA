@@ -1,5 +1,9 @@
 /** Showcase & comparison imagery — Unsplash (replace with owned assets in production). */
 export const DESIGN_IMAGES = {
+  hero: {
+    palace:
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=90",
+  },
   quality: {
     interior: {
       yours: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80",
