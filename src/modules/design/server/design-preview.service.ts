@@ -31,12 +31,8 @@ function watermarkSvg(width: number, height: number, label: string): Buffer {
  * Low-resolution, watermarked preview — what B2C/B2B free tiers receive.
  * Uses ASCII watermark text for reliable sharp/librsvg rendering.
  */
-export async function buildWatermarkedPreview(
-  sourceUrl: string,
-  _watermarkLabel?: string
-): Promise<Buffer> {
+export async function buildWatermarkedPreviewFromBuffer(input: Buffer): Promise<Buffer> {
   const watermarkText = "RUWAQ PREVIEW";
-  const input = await loadImageBuffer(sourceUrl);
 
   const resized = sharp(input).resize({
     width: PREVIEW_MAX_PX,
@@ -53,4 +49,12 @@ export async function buildWatermarkedPreview(
     .composite([{ input: watermarkSvg(outW, outH, watermarkText), blend: "over" }])
     .jpeg({ quality: JPEG_QUALITY, mozjpeg: true })
     .toBuffer();
+}
+
+export async function buildWatermarkedPreview(
+  sourceUrl: string,
+  _watermarkLabel?: string
+): Promise<Buffer> {
+  const input = await loadImageBuffer(sourceUrl);
+  return buildWatermarkedPreviewFromBuffer(input);
 }

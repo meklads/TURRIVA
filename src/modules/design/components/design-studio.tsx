@@ -124,12 +124,16 @@ export function DesignStudio({ messages, locale }: Props) {
         if (data.code === "SIGN_IN_REQUIRED") setError(messages.errors.signInRequired);
         else if (data.code === "CREDITS_EXHAUSTED") setError(messages.errors.creditsExhausted);
         else if (data.code === "CITY_REQUIRED") setError(messages.errors.cityRequired);
+        else if (data.code === "FILE_TOO_LARGE") setError(messages.errors.fileTooLarge);
+        else if (data.code === "UNSUPPORTED_TYPE") setError(messages.errors.unsupportedType);
+        else if (data.code === "IMAGE_FETCH_FAILED") setError(messages.errors.imageProcessing);
         else setError(messages.errors.generic);
+        await loadCredits();
         return;
       }
 
       setResult({
-        id: data.id,
+        id: data.id ?? `local-${Date.now()}`,
         beforeUrl: data.beforeUrl,
         afterUrl: data.afterUrl,
         isMock: data.isMock,
@@ -142,6 +146,7 @@ export function DesignStudio({ messages, locale }: Props) {
       setCredits(data.creditsRemaining);
     } catch {
       setError(messages.errors.generic);
+      await loadCredits();
     } finally {
       setLoading(false);
     }

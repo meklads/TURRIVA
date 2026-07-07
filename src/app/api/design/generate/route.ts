@@ -6,7 +6,7 @@ import { saveDesignImage } from "@/modules/design/server/design-storage";
 import { getStyleById, normalizeSpaceType } from "@/modules/design/lib/styles";
 import { analyzeDesignMaterials } from "@/modules/design/server/design-materials.service";
 import { analyzeDesignFurniture } from "@/modules/design/server/design-furniture.service";
-import { buildWatermarkedPreview } from "@/modules/design/server/design-preview.service";
+import { buildWatermarkedPreviewFromBuffer } from "@/modules/design/server/design-preview.service";
 import { saveDesignBuffer } from "@/modules/design/server/design-storage";
 import { isDesignCity } from "@/modules/design/lib/city";
 import { db } from "@/shared/lib/db";
@@ -60,8 +60,7 @@ export async function POST(req: NextRequest) {
     creditDeducted = true;
 
     const beforeUrl = await saveDesignImage(file, userId);
-
-    const { afterUrl, isMock } = await generateDesignAfter({
+    const { afterUrl, afterBuffer, isMock } = await generateDesignAfter({
       beforeUrl,
       styleId,
       spaceType,
@@ -70,36 +69,69 @@ export async function POST(req: NextRequest) {
       userId,
     });
 
-    const previewBuffer = await buildWatermarkedPreview(afterUrl);
+    const previewBuffer = await buildWatermarkedPreviewFromBuffer(afterBuffer);
     const previewUrl = await saveDesignBuffer(previewBuffer, "image/jpeg", `${userId}-after`);
 
-    const [{ materials, isAiDetected }, { furniture, isAiDetected: furnitureAi }] =
-      await Promise.all([
-        analyzeDesignMaterials({ afterUrl: previewUrl, styleId, spaceType, roomType, locale }),
-        analyzeDesignFurniture({ afterUrl: previewUrl, styleId, spaceType, roomType, locale }),
-      ]);
+    let materials: Awaited<ReturnType<typeof analyzeDesignMaterials>>["materials"] = [];
+    let materialsAiDetected = false;
+    let furniture: Awaited<ReturnType<typeof analyzeDesignFurniture>>["furniture"] = [];
+    let furnitureAiDetected = false;
 
-    const generation = await db.designGeneration.create({
-      data: {
-        userId,
+    try {
+      const materialResult = await analyzeDesignMaterials({
+        afterUrl: previewUrl,
+        styleId,
         spaceType,
         roomType,
-        styleId,
-        beforeUrl,
-        afterUrl: previewUrl,
-        afterUrlSource: afterUrl,
-        city,
-        isMock,
         locale,
-        materials: materials as object,
-        materialsAiDetected: isAiDetected,
-        furniture: furniture as object,
-        furnitureAiDetected: furnitureAi,
-      },
-    });
+      });
+      materials = materialResult.materials;
+      materialsAiDetected = materialResult.isAiDetected;
+    } catch (error) {
+      logServerError("design materials", error);
+    }
+
+    try {
+      const furnitureResult = await analyzeDesignFurniture({
+        afterUrl: previewUrl,
+        styleId,
+        spaceType,
+        roomType,
+        locale,
+      });
+      furniture = furnitureResult.furniture;
+      furnitureAiDetected = furnitureResult.isAiDetected;
+    } catch (error) {
+      logServerError("design furniture", error);
+    }
+
+    let generationId: string | null = null;
+    try {
+      const generation = await db.designGeneration.create({
+        data: {
+          userId,
+          spaceType,
+          roomType,
+          styleId,
+          beforeUrl,
+          afterUrl: previewUrl,
+          afterUrlSource: afterUrl,
+          city,
+          isMock,
+          locale,
+          materials: materials as object,
+          materialsAiDetected,
+          furniture: furniture as object,
+          furnitureAiDetected,
+        },
+      });
+      generationId = generation.id;
+    } catch (error) {
+      logServerError("design generation save", error);
+    }
 
     return NextResponse.json({
-      id: generation.id,
+      id: generationId,
       beforeUrl,
       afterUrl: previewUrl,
       isMock,
@@ -107,9 +139,9 @@ export async function POST(req: NextRequest) {
       isPreview: true,
       creditsRemaining: deducted.balance,
       materials,
-      materialsAiDetected: isAiDetected,
+      materialsAiDetected,
       furniture,
-      furnitureAiDetected: furnitureAi,
+      furnitureAiDetected,
     });
   } catch (error) {
     if (creditDeducted && userId) {

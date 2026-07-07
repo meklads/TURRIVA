@@ -212,6 +212,9 @@ export type DesignMessages = {
     signInRequired: string;
     creditsExhausted: string;
     cityRequired: string;
+    fileTooLarge: string;
+    unsupportedType: string;
+    imageProcessing: string;
     generic: string;
   };
 };
@@ -522,6 +525,9 @@ const en: DesignMessages = {
     signInRequired: "Sign in to generate designs.",
     creditsExhausted: "No credits left. Book a consultation to continue.",
     cityRequired: "Please select your city.",
+    fileTooLarge: "Image is too large (max 8 MB).",
+    unsupportedType: "Use JPG, PNG, or WEBP only.",
+    imageProcessing: "Could not process the image. Try another photo.",
     generic: "Something went wrong. Please try again.",
   },
 };
@@ -829,6 +835,9 @@ const ar: DesignMessages = {
     signInRequired: "سجّل الدخول لتوليد التصاميم.",
     creditsExhausted: "لا توجد أرصدة. احجز استشارة للمتابعة.",
     cityRequired: "يرجى اختيار المدينة.",
+    fileTooLarge: "الصورة كبيرة جداً (الحد 8 ميجابايت).",
+    unsupportedType: "استخدم JPG أو PNG أو WEBP فقط.",
+    imageProcessing: "تعذّر معالجة الصورة. جرّب صورة أخرى.",
     generic: "حدث خطأ. يرجى المحاولة مرة أخرى.",
   },
 };

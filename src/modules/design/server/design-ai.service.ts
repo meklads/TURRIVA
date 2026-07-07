@@ -1,5 +1,5 @@
 import sharp from "sharp";
-import OpenAI from "openai";
+import OpenAI, { toFile } from "openai";
 import { getStyleById, getRoomLabel, type SpaceType } from "../lib/styles";
 import { loadImageBuffer } from "./design-image.utils";
 import { saveDesignBuffer } from "./design-storage";
@@ -17,8 +17,9 @@ type GenerateInput = {
   userId: string;
 };
 
-type GenerateResult = {
+export type GenerateResult = {
   afterUrl: string;
+  afterBuffer: Buffer;
   isMock: boolean;
 };
 
@@ -69,22 +70,20 @@ async function createFullEditMask(): Promise<Buffer> {
     .toBuffer();
 }
 
-async function stylePreviewFromPhoto(buffer: Buffer, userId: string): Promise<string> {
-  const styled = await sharp(buffer)
+async function stylePreviewBuffer(buffer: Buffer): Promise<Buffer> {
+  return sharp(buffer)
     .rotate()
     .resize(1024, 1024, { fit: "cover", position: "centre" })
     .modulate({ brightness: 1.06, saturation: 1.18 })
     .sharpen({ sigma: 0.6 })
     .jpeg({ quality: 85, mozjpeg: true })
     .toBuffer();
-
-  return saveDesignBuffer(styled, "image/jpeg", `${userId}-styled`);
 }
 
 async function generateWithOpenAIEdit(
   beforeBuffer: Buffer,
   input: GenerateInput
-): Promise<string | null> {
+): Promise<Buffer | null> {
   if (!openai) return null;
 
   const png = await prepareSquarePng(beforeBuffer);
@@ -93,8 +92,8 @@ async function generateWithOpenAIEdit(
 
   const response = await openai.images.edit({
     model: "dall-e-2",
-    image: new File([new Uint8Array(png)], "room.png", { type: "image/png" }),
-    mask: new File([new Uint8Array(mask)], "mask.png", { type: "image/png" }),
+    image: await toFile(png, "room.png", { type: "image/png" }),
+    mask: await toFile(mask, "mask.png", { type: "image/png" }),
     prompt,
     n: 1,
     size: "1024x1024",
@@ -104,8 +103,7 @@ async function generateWithOpenAIEdit(
   const b64 = response.data?.[0]?.b64_json;
   if (!b64) return null;
 
-  const out = Buffer.from(b64, "base64");
-  return saveDesignBuffer(out, "image/png", `${input.userId}-ai`);
+  return Buffer.from(b64, "base64");
 }
 
 export async function generateDesignAfter(input: GenerateInput): Promise<GenerateResult> {
@@ -116,9 +114,10 @@ export async function generateDesignAfter(input: GenerateInput): Promise<Generat
 
   if (openai) {
     try {
-      const editedUrl = await generateWithOpenAIEdit(beforeBuffer, input);
-      if (editedUrl) {
-        return { afterUrl: editedUrl, isMock: false };
+      const editedBuffer = await generateWithOpenAIEdit(beforeBuffer, input);
+      if (editedBuffer) {
+        const afterUrl = await saveDesignBuffer(editedBuffer, "image/png", `${input.userId}-ai`);
+        return { afterUrl, afterBuffer: editedBuffer, isMock: false };
       }
     } catch {
       // fall through to styled preview
@@ -126,12 +125,12 @@ export async function generateDesignAfter(input: GenerateInput): Promise<Generat
   }
 
   try {
-    const styledUrl = await stylePreviewFromPhoto(beforeBuffer, input.userId);
-    return { afterUrl: styledUrl, isMock: true };
+    const styledBuffer = await stylePreviewBuffer(beforeBuffer);
+    const afterUrl = await saveDesignBuffer(styledBuffer, "image/jpeg", `${input.userId}-styled`);
+    return { afterUrl, afterBuffer: styledBuffer, isMock: true };
   } catch {
-    return {
-      afterUrl: style.sampleAfter[input.spaceType],
-      isMock: true,
-    };
+    const sampleBuffer = await loadImageBuffer(style.sampleAfter[input.spaceType]);
+    const afterUrl = await saveDesignBuffer(sampleBuffer, "image/jpeg", `${input.userId}-sample`);
+    return { afterUrl, afterBuffer: sampleBuffer, isMock: true };
   }
 }

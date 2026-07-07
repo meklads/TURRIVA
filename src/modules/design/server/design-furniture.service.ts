@@ -72,14 +72,17 @@ const PIN_POSITIONS: PinPosition[] = [
 
 function fallbackFurniture(styleId: string, roomType: string): DetectedFurniture[] {
   const ids = getFallbackFurniture(styleId, roomType);
-  return ids.map((id, i) => {
-    const item = getFurnitureById(id)!;
-    const altPool = FURNITURE_CATALOG.filter(
-      (f) => f.category === item.category && f.id !== item.id
-    );
-    const alt = altPool[0]?.id;
-    return toDetected(item, 78 + (i % 3) * 5, PIN_POSITIONS[i % PIN_POSITIONS.length]!, i + 1, alt);
-  });
+  return ids
+    .map((id, i) => {
+      const item = getFurnitureById(id);
+      if (!item) return null;
+      const altPool = FURNITURE_CATALOG.filter(
+        (f) => f.category === item.category && f.id !== item.id
+      );
+      const alt = altPool[0]?.id;
+      return toDetected(item, 78 + (i % 3) * 5, PIN_POSITIONS[i % PIN_POSITIONS.length]!, i + 1, alt);
+    })
+    .filter((item): item is DetectedFurniture => item !== null);
 }
 
 function resolveImageUrl(afterUrl: string): string {
