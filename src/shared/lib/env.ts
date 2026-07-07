@@ -117,6 +117,8 @@ export function getGoogleOAuthCredentials(): {
 
 export const isGoogleAuthConfigured = () => getGoogleOAuthCredentials() !== null;
 
+export const isOpenAIConfigured = () => Boolean(process.env.OPENAI_API_KEY?.trim());
+
 /** Premium-templates paywall master switch. Defaults to OFF (free trial). */
 export const isBillingEnabled = () =>
   (process.env.BILLING_ENABLED ?? "false").trim().toLowerCase() === "true";

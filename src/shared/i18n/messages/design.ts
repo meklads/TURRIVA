@@ -212,6 +212,8 @@ export type DesignMessages = {
     fileTooLarge: string;
     unsupportedType: string;
     imageProcessing: string;
+    openaiNotConfigured: string;
+    openaiGenerationFailed: string;
     generic: string;
   };
 };
@@ -523,6 +525,10 @@ const en: DesignMessages = {
     fileTooLarge: "Image is too large (max 8 MB).",
     unsupportedType: "Use JPG, PNG, or WEBP only.",
     imageProcessing: "Could not process the image. Try another photo.",
+    openaiNotConfigured:
+      "AI redesign is not enabled on the server yet. Add OPENAI_API_KEY in Coolify, then redeploy.",
+    openaiGenerationFailed:
+      "AI could not redesign this photo. Try another image or a simpler room photo.",
     generic: "Something went wrong. Please try again.",
   },
 };
@@ -832,6 +838,10 @@ const ar: DesignMessages = {
     fileTooLarge: "الصورة كبيرة جداً (الحد 8 ميجابايت).",
     unsupportedType: "استخدم JPG أو PNG أو WEBP فقط.",
     imageProcessing: "تعذّر معالجة الصورة. جرّب صورة أخرى.",
+    openaiNotConfigured:
+      "إعادة التصميم بالذكاء الاصطناعي غير مفعّلة على السيرفر. أضف OPENAI_API_KEY في Coolify ثم أعد النشر.",
+    openaiGenerationFailed:
+      "تعذّر على الذكاء الاصطناعي إعادة تصميم هذه الصورة. جرّب صورة أخرى أو غرفة أوضح.",
     generic: "حدث خطأ. يرجى المحاولة مرة أخرى.",
   },
 };

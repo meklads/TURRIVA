@@ -204,6 +204,26 @@ export async function POST(req: NextRequest) {
     if (message === "STORAGE_FAILED") {
       return NextResponse.json({ code: "STORAGE_FAILED", error: "Storage failed" }, { status: 500 });
     }
+    if (message === "OPENAI_NOT_CONFIGURED") {
+      return NextResponse.json(
+        {
+          code: "OPENAI_NOT_CONFIGURED",
+          error: "OpenAI API key is not configured on the server",
+        },
+        { status: 503 }
+      );
+    }
+    if (message.startsWith("OPENAI_GENERATION_FAILED")) {
+      const detail = message.slice("OPENAI_GENERATION_FAILED:".length) || "Unknown OpenAI error";
+      return NextResponse.json(
+        {
+          code: "OPENAI_GENERATION_FAILED",
+          error: "AI redesign failed",
+          detail,
+        },
+        { status: 502 }
+      );
+    }
     return NextResponse.json(
       {
         code: "GENERIC",

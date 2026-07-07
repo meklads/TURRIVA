@@ -1,17 +1,24 @@
 import sharp from "sharp";
 import OpenAI, { toFile } from "openai";
+import type { ImagesResponse } from "openai/resources/images";
 import { getStyleById, getRoomLabel, type SpaceType } from "../lib/styles";
 import { loadImageBuffer } from "./design-image.utils";
-import { toDataUrl, trySaveDesignBuffer } from "./design-storage";
+import { trySaveDesignBuffer } from "./design-storage";
+import { isOpenAIConfigured } from "@/shared/lib/env";
 import { logServerError } from "@/shared/lib/usage-events";
 
-const openai = process.env.OPENAI_API_KEY
+const openai = isOpenAIConfigured()
   ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
   : null;
 
-const PRIMARY_IMAGE_MODEL = process.env.OPENAI_IMAGE_MODEL?.trim() || "gpt-image-1.5";
-const FALLBACK_IMAGE_MODEL = "dall-e-2";
+const IMAGE_MODELS = [
+  process.env.OPENAI_IMAGE_MODEL?.trim() || "gpt-image-1.5",
+  "gpt-image-1",
+  "dall-e-2",
+].filter((model, index, all) => model && all.indexOf(model) === index);
+
 const OPENAI_EDIT_TIMEOUT_MS = 90_000;
+const EDIT_SIZE = 1024;
 
 type GenerateInput = {
   beforeUrl: string;
@@ -66,33 +73,29 @@ function isGptImageModel(model: string): boolean {
   return model.startsWith("gpt-image");
 }
 
-async function prepareEditImage(buffer: Buffer): Promise<{ file: Awaited<ReturnType<typeof toFile>>; size: "1024x1024" | "1536x1024" }> {
-  const meta = await sharp(buffer).metadata();
-  const landscape = (meta.width ?? 1) >= (meta.height ?? 1);
-  const size = landscape ? "1536x1024" : "1024x1024";
-  const width = landscape ? 1536 : 1024;
-  const height = landscape ? 1024 : 1024;
+function openAIErrorMessage(error: unknown): string {
+  if (error && typeof error === "object" && "error" in error) {
+    const nested = (error as { error?: { message?: string } }).error;
+    if (nested?.message) return nested.message;
+  }
+  if (error instanceof Error) return error.message;
+  return String(error);
+}
 
-  const png = await sharp(buffer)
+async function prepareSquarePng(buffer: Buffer): Promise<Buffer> {
+  return sharp(buffer)
     .rotate()
-    .resize(width, height, { fit: "cover", position: "centre" })
+    .resize(EDIT_SIZE, EDIT_SIZE, { fit: "cover", position: "centre" })
     .ensureAlpha()
     .png()
     .toBuffer();
-
-  return {
-    file: await toFile(png, "room.png", { type: "image/png" }),
-    size,
-  };
 }
 
-/** Transparent mask = edit the full frame (DALL-E 2 edit API semantics). */
-async function createFullEditMask(size: "1024x1024" | "1536x1024"): Promise<Buffer> {
-  const [width, height] = size === "1536x1024" ? [1536, 1024] : [1024, 1024];
+async function createFullEditMask(): Promise<Buffer> {
   return sharp({
     create: {
-      width,
-      height,
+      width: EDIT_SIZE,
+      height: EDIT_SIZE,
       channels: 4,
       background: { r: 0, g: 0, b: 0, alpha: 0 },
     },
@@ -101,14 +104,12 @@ async function createFullEditMask(size: "1024x1024" | "1536x1024"): Promise<Buff
     .toBuffer();
 }
 
-async function stylePreviewBuffer(buffer: Buffer): Promise<Buffer> {
-  return sharp(buffer)
-    .rotate()
-    .resize(1536, 1024, { fit: "cover", position: "centre" })
-    .modulate({ brightness: 1.04, saturation: 1.12 })
-    .sharpen({ sigma: 0.4 })
-    .jpeg({ quality: 85, mozjpeg: true })
-    .toBuffer();
+async function responseToBuffer(response: ImagesResponse): Promise<Buffer | null> {
+  const item = response.data?.[0];
+  if (!item) return null;
+  if (item.b64_json) return Buffer.from(item.b64_json, "base64");
+  if (item.url) return loadImageBuffer(item.url);
+  return null;
 }
 
 async function callOpenAIEdit(
@@ -119,61 +120,99 @@ async function callOpenAIEdit(
   if (!openai) return null;
 
   const prompt = buildEditPrompt(input);
-  const { file, size } = await prepareEditImage(beforeBuffer);
+  const png = await prepareSquarePng(beforeBuffer);
+  const imageFile = await toFile(png, "room.png", { type: "image/png" });
 
-  const request =
-    isGptImageModel(model)
-      ? openai.images.edit({
+  let lastError: unknown = null;
+
+  const runEdit = async (request: Promise<ImagesResponse>) => {
+    const response = await Promise.race([
+      request,
+      new Promise<never>((_, reject) => {
+        setTimeout(() => reject(new Error("OPENAI_TIMEOUT")), OPENAI_EDIT_TIMEOUT_MS);
+      }),
+    ]);
+    return responseToBuffer(response);
+  };
+
+  if (isGptImageModel(model)) {
+    const gptAttempts = [
+      () =>
+        runEdit(
+          openai.images.edit({
+            model,
+            image: imageFile,
+            prompt,
+            n: 1,
+            size: "1024x1024",
+            quality: "high",
+            input_fidelity: "high",
+            response_format: "b64_json",
+          })
+        ),
+      () =>
+        runEdit(
+          openai.images.edit({
+            model,
+            image: imageFile,
+            prompt,
+            n: 1,
+            size: "1024x1024",
+            quality: "high",
+          })
+        ),
+    ];
+
+    for (const attempt of gptAttempts) {
+      try {
+        const buffer = await attempt();
+        if (buffer) return buffer;
+      } catch (error) {
+        lastError = error;
+        logServerError(`design openai edit (${model})`, error);
+      }
+    }
+  } else {
+    try {
+      const buffer = await runEdit(
+        openai.images.edit({
           model,
-          image: file,
+          image: imageFile,
+          mask: await toFile(await createFullEditMask(), "mask.png", { type: "image/png" }),
           prompt,
           n: 1,
-          size,
-          quality: "high",
-          input_fidelity: "high",
+          size: "1024x1024",
           response_format: "b64_json",
         })
-      : openai.images.edit({
-          model,
-          image: file,
-          mask: await toFile(await createFullEditMask(size), "mask.png", { type: "image/png" }),
-          prompt,
-          n: 1,
-          size: size === "1536x1024" ? "1024x1024" : size,
-          response_format: "b64_json",
-        });
+      );
+      if (buffer) return buffer;
+    } catch (error) {
+      lastError = error;
+      logServerError(`design openai edit (${model})`, error);
+    }
+  }
 
-  const response = await Promise.race([
-    request,
-    new Promise<never>((_, reject) => {
-      setTimeout(() => reject(new Error("OPENAI_TIMEOUT")), OPENAI_EDIT_TIMEOUT_MS);
-    }),
-  ]);
-
-  const b64 = response.data?.[0]?.b64_json;
-  if (!b64) return null;
-
-  return Buffer.from(b64, "base64");
+  if (lastError) throw lastError;
+  return null;
 }
 
 async function generateWithOpenAIEdit(
   beforeBuffer: Buffer,
   input: GenerateInput
-): Promise<Buffer | null> {
-  const models = [PRIMARY_IMAGE_MODEL, FALLBACK_IMAGE_MODEL].filter(
-    (model, index, all) => all.indexOf(model) === index
-  );
+): Promise<Buffer> {
+  let lastError: unknown = null;
 
-  for (const model of models) {
+  for (const model of IMAGE_MODELS) {
     try {
       const editedBuffer = await callOpenAIEdit(beforeBuffer, input, model);
       if (editedBuffer) return editedBuffer;
     } catch (error) {
-      logServerError(`design openai edit (${model})`, error);
+      lastError = error;
     }
   }
 
-  return null;
+  const detail = openAIErrorMessage(lastError);
+  throw new Error(`OPENAI_GENERATION_FAILED:${detail}`);
 }
 
 async function persistAfterUrl(
@@ -182,24 +221,21 @@ async function persistAfterUrl(
   prefix: string
 ): Promise<string> {
   const stored = await trySaveDesignBuffer(buffer, mime, prefix);
-  return stored ?? toDataUrl(buffer, mime);
+  if (stored) return stored;
+  return `data:${mime};base64,${buffer.toString("base64")}`;
 }
 
 export async function generateDesignAfter(input: GenerateInput): Promise<GenerateResult> {
   const style = getStyleById(input.styleId);
   if (!style) throw new Error("INVALID_STYLE");
 
-  const beforeBuffer = input.beforeBuffer ?? (await loadImageBuffer(input.beforeUrl));
-
-  if (openai) {
-    const editedBuffer = await generateWithOpenAIEdit(beforeBuffer, input);
-    if (editedBuffer) {
-      const afterUrl = await persistAfterUrl(editedBuffer, "image/png", `${input.userId}-ai`);
-      return { afterUrl, afterBuffer: editedBuffer, isMock: false };
-    }
+  if (!isOpenAIConfigured() || !openai) {
+    throw new Error("OPENAI_NOT_CONFIGURED");
   }
 
-  const styledBuffer = await stylePreviewBuffer(beforeBuffer);
-  const afterUrl = await persistAfterUrl(styledBuffer, "image/jpeg", `${input.userId}-styled`);
-  return { afterUrl, afterBuffer: styledBuffer, isMock: true };
+  const beforeBuffer = input.beforeBuffer ?? (await loadImageBuffer(input.beforeUrl));
+  const editedBuffer = await generateWithOpenAIEdit(beforeBuffer, input);
+  const afterUrl = await persistAfterUrl(editedBuffer, "image/png", `${input.userId}-ai`);
+
+  return { afterUrl, afterBuffer: editedBuffer, isMock: false };
 }
