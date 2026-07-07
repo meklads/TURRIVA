@@ -235,9 +235,13 @@ export function DesignStudio({ messages, locale }: Props) {
                   afterSrc={result.afterUrl}
                   beforeLabel={messages.studio.before}
                   afterLabel={messages.studio.after}
+                  compareHint={messages.studio.compareHint}
                   protectAfter
                   previewBadge={messages.studio.previewBadge}
                 />
+                {result.isMock && (
+                  <p className="design-mock-notice design-mock-notice--inline">{messages.studio.mockNotice}</p>
+                )}
               </div>
             )}
 

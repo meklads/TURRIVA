@@ -73,6 +73,7 @@ export type DesignMessages = {
     signInForCredits: string;
     before: string;
     after: string;
+    compareHint: string;
     mockNotice: string;
     tryAnother: string;
     previewBadge: string;
@@ -298,9 +299,11 @@ const en: DesignMessages = {
     creditsLeft: "{count} credits left",
     noCredits: "No credits left",
     signInForCredits: "Sign in to get 3 free credits",
-    before: "Before",
-    after: "After",
-    mockNotice: "Preview on your photo — connect OpenAI for full AI restyle",
+    before: "Your photo",
+    after: "New design",
+    compareHint: "Drag the handle — right: your photo · left: AI design",
+    mockNotice:
+      "Basic preview only — AI redesign did not run. Our team can deliver a full bespoke design on request.",
     tryAnother: "Try another style",
     previewBadge: "RUWAQ PREVIEW",
     previewNotice:
@@ -606,9 +609,11 @@ const ar: DesignMessages = {
     creditsLeft: "{count} رصيد متبقي",
     noCredits: "لا توجد أرصدة",
     signInForCredits: "سجّل الدخول للحصول على 3 أرصدة مجانية",
-    before: "قبل",
-    after: "بعد",
-    mockNotice: "معاينة على صورتك — فعّل OpenAI لإعادة التصميم الكاملة بالذكاء الاصطناعي",
+    before: "صورتك الأصلية",
+    after: "التصميم الجديد",
+    compareHint: "اسحب المقبض للمقارنة — يمين: صورتك · يسار: التصميم بالذكاء الاصطناعي",
+    mockNotice:
+      "معاينة بسيطة فقط — لم يعمل إعادة التصميم بالذكاء الاصطناعي. فريق رواق يقدّم تصميماً مخصصاً كاملاً عند الطلب.",
     tryAnother: "جرّب نمطاً آخر",
     previewBadge: "معاينة رواق",
     previewNotice:

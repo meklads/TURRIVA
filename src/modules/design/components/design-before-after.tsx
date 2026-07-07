@@ -7,6 +7,7 @@ type Props = {
   afterSrc: string;
   beforeLabel: string;
   afterLabel: string;
+  compareHint?: string;
   protectAfter?: boolean;
   previewBadge?: string;
 };
@@ -16,6 +17,7 @@ export function DesignBeforeAfter({
   afterSrc,
   beforeLabel,
   afterLabel,
+  compareHint,
   protectAfter = false,
   previewBadge,
 }: Props) {
@@ -64,6 +66,7 @@ export function DesignBeforeAfter({
         <span className="design-ba-preview-badge">{previewBadge}</span>
       )}
       <div className="design-before-after__handle" style={{ left: `${split}%` }} />
+      {compareHint && <p className="design-ba-hint">{compareHint}</p>}
     </div>
   );
 }
