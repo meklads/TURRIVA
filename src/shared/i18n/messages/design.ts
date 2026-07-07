@@ -51,6 +51,7 @@ export type DesignMessages = {
     cityJeddah: string;
     cityMakkah: string;
     cityOther: string;
+    previewBadge: string;
     previewNotice: string;
     executionAvailable: string;
     executionWaitlist: string;
@@ -188,7 +189,7 @@ export type DesignMessages = {
 };
 
 const en: DesignMessages = {
-  brand: { name: "RUWAQ", tagline: "Decor & Contracting" },
+  brand: { name: "RUWAQ", tagline: "AI Design Studio" },
   nav: {
     generate: "Generate Design",
     designTypes: "Design Types",
@@ -201,9 +202,8 @@ const en: DesignMessages = {
   },
   hero: {
     badge: "AI Design Studio",
-    title: "Ruwaq Decor & Contracting",
-    subtitle:
-      "You design with AI — we execute with premium quality (Jeddah — Makkah). Upload a photo, pick a style, and get a redesign in seconds.",
+    title: "Design your space in seconds",
+    subtitle: "Upload a photo, pick a style, and see an AI redesign — 3 free generations after sign-in.",
     ctaInterior: "Design Interior",
     ctaFacade: "Design Facade",
     ctaYard: "Design Yard",
@@ -239,6 +239,7 @@ const en: DesignMessages = {
     cityJeddah: "Jeddah",
     cityMakkah: "Makkah",
     cityOther: "Other city",
+    previewBadge: "RUWAQ PREVIEW",
     previewNotice:
       "Low-resolution preview with Ruwaq watermark — full quality unlocks with execution or a pro subscription.",
     executionAvailable: "Ruwaq can execute this design in Jeddah & Makkah.",
@@ -453,7 +454,7 @@ const en: DesignMessages = {
 };
 
 const ar: DesignMessages = {
-  brand: { name: "رواق", tagline: "للديكور والمقاولات" },
+  brand: { name: "رواق", tagline: "استوديو التصميم بالذكاء الاصطناعي" },
   nav: {
     generate: "إنشاء تصميم",
     designTypes: "أنواع التصميم",
@@ -466,9 +467,8 @@ const ar: DesignMessages = {
   },
   hero: {
     badge: "استوديو تصميم بالذكاء الاصطناعي",
-    title: "رواق للديكور والمقاولات",
-    subtitle:
-      "أنت تصمّم بالذكاء الاصطناعي ونحن ننفّذ بأعلى جودة (جدة — مكة). ارفع صورة، اختر نمطاً، واحصل على تصميم في ثوانٍ.",
+    title: "صمّم مساحتك في ثوانٍ",
+    subtitle: "ارفع صورة، اختر نمطاً، وشاهد إعادة التصميم — 3 تجارب مجانية بعد التسجيل.",
     ctaInterior: "صمّم الداخل",
     ctaFacade: "صمّم الواجهة",
     ctaYard: "صمّم الحديقة",
@@ -504,6 +504,7 @@ const ar: DesignMessages = {
     cityJeddah: "جدة",
     cityMakkah: "مكة",
     cityOther: "مدينة أخرى",
+    previewBadge: "معاينة رواق",
     previewNotice:
       "معاينة بدقة منخفضة وعلامة رواق المائية — الجودة الكاملة مع التنفيذ أو اشتراك احترافي.",
     executionAvailable: "رواق تنفّذ هذا التصميم في جدة ومكة.",

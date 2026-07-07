@@ -158,30 +158,52 @@ export function DesignStudio({ messages, locale }: Props) {
     { id: "yard", label: messages.studio.spaceYard, icon: TreePine },
   ];
 
+  const emptyHint =
+    locale === "ar"
+      ? "ارفع صورة واختر نمطاً ثم اضغط توليد التصميم"
+      : "Upload a photo, pick a style, then generate";
+
   return (
     <>
       <section id="studio" className="design-studio">
-        <div className="design-studio-grid">
-          <div className="design-studio-styles">
-            <p className="design-studio-section-title">{messages.studio.styleTitle}</p>
-            <div className="design-style-grid">
-              {DESIGN_STYLES.map((style) => (
-                <button
-                  key={style.id}
-                  type="button"
-                  className={`design-style-card${styleId === style.id ? " design-style-card--active" : ""}`}
-                  onClick={() => setStyleId(style.id)}
-                >
-                  <img src={style.preview} alt="" />
-                  <span>{locale === "ar" ? style.nameAr : style.nameEn}</span>
-                </button>
-              ))}
-            </div>
+        <div className="design-studio-layout">
+          <div className="design-studio-canvas">
+            {loading && (
+              <div className="design-generating-overlay design-studio-canvas__state">
+                <span className="design-spinner" />
+                <p>{messages.studio.generating}</p>
+              </div>
+            )}
+
+            {!loading && result && (
+              <div className="design-studio-canvas__result">
+                <DesignBeforeAfter
+                  beforeSrc={result.beforeUrl}
+                  afterSrc={result.afterUrl}
+                  beforeLabel={messages.studio.before}
+                  afterLabel={messages.studio.after}
+                  protectAfter
+                  previewBadge={messages.studio.previewBadge}
+                />
+              </div>
+            )}
+
+            {!loading && !result && previewUrl && (
+              <div className="design-studio-canvas__preview">
+                <img src={previewUrl} alt="" />
+                <span className="design-studio-canvas__preview-label">{messages.studio.before}</span>
+              </div>
+            )}
+
+            {!loading && !result && !previewUrl && (
+              <div className="design-generating-overlay design-studio-canvas__state">
+                <LayoutGrid className="h-10 w-10 text-gray-300" />
+                <p className="max-w-sm text-sm">{emptyHint}</p>
+              </div>
+            )}
           </div>
 
-          <div className="design-studio-sidebar">
-            <p className="design-studio-prompt">{messages.studio.prompt}</p>
-
+          <aside className="design-studio-panel">
             <div className="design-space-tabs">
               {spaceTabs.map(({ id, label, icon: Icon }) => (
                 <button
@@ -196,7 +218,7 @@ export function DesignStudio({ messages, locale }: Props) {
               ))}
             </div>
 
-            <label className="design-studio-section-title mt-3 block">{messages.studio.roomType}</label>
+            <label className="design-studio-section-title">{messages.studio.roomType}</label>
             <select
               className="design-select"
               value={roomType}
@@ -230,7 +252,7 @@ export function DesignStudio({ messages, locale }: Props) {
             </div>
 
             <div
-              className="design-upload-zone"
+              className="design-upload-zone design-upload-zone--compact"
               onClick={() => fileRef.current?.click()}
               onDragOver={(e) => e.preventDefault()}
               onDrop={(e) => {
@@ -239,12 +261,11 @@ export function DesignStudio({ messages, locale }: Props) {
                 if (f) onFile(f);
               }}
             >
-              <Upload className="mx-auto h-6 w-6 text-gray-400" />
-              <p className="mt-2 text-sm font-medium">{messages.studio.uploadTitle}</p>
-              <p className="mt-1 text-xs text-gray-500">{messages.studio.uploadHint}</p>
+              <Upload className="mx-auto h-5 w-5 text-gray-400" />
+              <p className="mt-1.5 text-xs font-medium">{messages.studio.uploadTitle}</p>
               <button
                 type="button"
-                className="design-btn design-btn-dark mt-3"
+                className="design-btn design-btn-dark mt-2 text-xs"
                 onClick={(e) => {
                   e.stopPropagation();
                   fileRef.current?.click();
@@ -264,27 +285,36 @@ export function DesignStudio({ messages, locale }: Props) {
               />
             </div>
 
-            {previewUrl && (
-              <div className="design-upload-preview">
-                <img src={previewUrl} alt="" />
-              </div>
-            )}
+            <p className="design-studio-section-title mt-3">{messages.studio.styleTitle}</p>
+            <div className="design-style-grid design-style-grid--compact">
+              {DESIGN_STYLES.map((style) => (
+                <button
+                  key={style.id}
+                  type="button"
+                  className={`design-style-card${styleId === style.id ? " design-style-card--active" : ""}`}
+                  onClick={() => setStyleId(style.id)}
+                >
+                  <img src={style.preview} alt="" />
+                  <span>{locale === "ar" ? style.nameAr : style.nameEn}</span>
+                </button>
+              ))}
+            </div>
 
             <div
-              className={`design-credits-pill mt-4${credits === 0 ? " design-credits-pill--low" : ""}`}
+              className={`design-credits-pill mt-3${credits === 0 ? " design-credits-pill--low" : ""}`}
             >
               <Sparkles className="h-3.5 w-3.5" />
               {creditsLabel}
             </div>
 
             {status === "unauthenticated" ? (
-              <Link href="/login?callbackUrl=/#studio" className="design-btn design-btn-primary w-full">
+              <Link href="/login?callbackUrl=/#studio" className="design-btn design-btn-primary w-full mt-3">
                 {messages.studio.signInForCredits}
               </Link>
             ) : (
               <button
                 type="button"
-                className="design-btn design-btn-primary w-full"
+                className="design-btn design-btn-primary w-full mt-3"
                 disabled={loading}
                 onClick={generate}
               >
@@ -303,110 +333,91 @@ export function DesignStudio({ messages, locale }: Props) {
             )}
 
             {error && <p className="mt-2 text-xs text-red-600">{error}</p>}
-          </div>
+          </aside>
         </div>
 
-        <div className="design-result">
-          {loading && (
-            <div className="design-generating-overlay">
-              <span className="design-spinner" />
-              <p>{messages.studio.generating}</p>
-            </div>
-          )}
+        {result && !loading && (
+          <div className="design-studio-extras">
+            <p className="design-preview-notice">{messages.studio.previewNotice}</p>
+            {result.isMock && <p className="design-mock-notice">{messages.studio.mockNotice}</p>}
+            <p
+              className={`design-execution-notice ${
+                citySupportsExecution(result.city)
+                  ? "design-execution-notice--available"
+                  : "design-execution-notice--waitlist"
+              }`}
+            >
+              {citySupportsExecution(result.city)
+                ? messages.studio.executionAvailable
+                : messages.studio.executionWaitlist}
+            </p>
 
-          {!loading && result && (
-            <>
-              <DesignBeforeAfter
-                beforeSrc={result.beforeUrl}
-                afterSrc={result.afterUrl}
-                beforeLabel={messages.studio.before}
-                afterLabel={messages.studio.after}
-                protectAfter
-              />
-              <p className="design-preview-notice">{messages.studio.previewNotice}</p>
-              {result.isMock && <p className="design-mock-notice">{messages.studio.mockNotice}</p>}
-              <p
-                className={`design-execution-notice ${
-                  citySupportsExecution(result.city)
-                    ? "design-execution-notice--available"
-                    : "design-execution-notice--waitlist"
-                }`}
+            <DesignBespokeUpsell
+              messages={messages}
+              onRequestBespoke={() => openConsultation("bespoke")}
+            />
+
+            <div className="design-studio-extras__actions">
+              <button
+                type="button"
+                className="design-btn design-btn-outline"
+                onClick={() => {
+                  setResult(null);
+                  setStyleId(null);
+                }}
+              >
+                {messages.studio.tryAnother}
+              </button>
+              <button
+                type="button"
+                className="design-btn design-btn-execution"
+                onClick={() => openConsultation("execution")}
               >
                 {citySupportsExecution(result.city)
-                  ? messages.studio.executionAvailable
-                  : messages.studio.executionWaitlist}
-              </p>
-
-              <DesignBespokeUpsell
-                messages={messages}
-                onRequestBespoke={() => openConsultation("bespoke")}
-              />
-
-              {result.materials.length > 0 && (
-                <DesignMaterialsBreakdown
-                  materials={result.materials}
-                  isAiDetected={result.materialsAiDetected}
-                  messages={messages}
-                  locale={locale}
-                  onRequestQuote={() => openConsultation("execution")}
-                />
-              )}
-
-              {result.furniture.length > 0 && (
-                <DesignFurnitureFinder
-                  afterImageUrl={result.afterUrl}
-                  items={result.furniture}
-                  isAiDetected={result.furnitureAiDetected}
-                  messages={messages}
-                  locale={locale}
-                  onRequestQuote={() => openConsultation("execution")}
-                />
-              )}
-
-              <div className="mt-4 flex flex-wrap gap-2">
+                  ? messages.studio.likeExecutionCta
+                  : messages.consultation.cta}
+              </button>
+              {citySupportsExecution(result.city) && (
                 <button
                   type="button"
-                  className="design-btn design-btn-outline"
-                  onClick={() => {
-                    setResult(null);
-                    setStyleId(null);
-                  }}
-                >
-                  {messages.studio.tryAnother}
-                </button>
-                <button
-                  type="button"
-                  className="design-btn design-btn-execution"
+                  className="design-btn design-btn-primary"
                   onClick={() => openConsultation("execution")}
                 >
-                  {citySupportsExecution(result.city)
-                    ? messages.studio.likeExecutionCta
-                    : messages.consultation.cta}
+                  {messages.consultation.executionCta}
                 </button>
-                {citySupportsExecution(result.city) && (
-                  <button
-                    type="button"
-                    className="design-btn design-btn-primary"
-                    onClick={() => openConsultation("execution")}
-                  >
-                    {messages.consultation.executionCta}
-                  </button>
-                )}
-              </div>
-            </>
-          )}
-
-          {!loading && !result && (
-            <div className="design-generating-overlay min-h-[12rem] text-center">
-              <LayoutGrid className="h-10 w-10 text-gray-300" />
-              <p className="max-w-sm text-sm">
-                {locale === "ar"
-                  ? "ارفع صورة واختر نمطاً ثم اضغط توليد التصميم"
-                  : "Upload a photo, pick a style, then generate"}
-              </p>
+              )}
             </div>
-          )}
-        </div>
+
+            {(result.materials.length > 0 || result.furniture.length > 0) && (
+              <details className="design-studio-details">
+                <summary>
+                  {locale === "ar" ? "المواد والأثاث المقترحة" : "Suggested materials & furniture"}
+                </summary>
+                <div className="design-studio-details__body">
+                  {result.materials.length > 0 && (
+                    <DesignMaterialsBreakdown
+                      materials={result.materials}
+                      isAiDetected={result.materialsAiDetected}
+                      messages={messages}
+                      locale={locale}
+                      onRequestQuote={() => openConsultation("execution")}
+                    />
+                  )}
+                  {result.furniture.length > 0 && (
+                    <DesignFurnitureFinder
+                      afterImageUrl={result.afterUrl}
+                      items={result.furniture}
+                      isAiDetected={result.furnitureAiDetected}
+                      messages={messages}
+                      locale={locale}
+                      onRequestQuote={() => openConsultation("execution")}
+                    />
+                  )}
+                </div>
+              </details>
+            )}
+          </div>
+        )}
       </section>
 
       <DesignConsultationModal

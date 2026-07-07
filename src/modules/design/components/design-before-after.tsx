@@ -8,6 +8,7 @@ type Props = {
   beforeLabel: string;
   afterLabel: string;
   protectAfter?: boolean;
+  previewBadge?: string;
 };
 
 export function DesignBeforeAfter({
@@ -16,6 +17,7 @@ export function DesignBeforeAfter({
   beforeLabel,
   afterLabel,
   protectAfter = false,
+  previewBadge,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [split, setSplit] = useState(50);
@@ -58,6 +60,9 @@ export function DesignBeforeAfter({
       </div>
       <span className="design-ba-label design-ba-label--before">{beforeLabel}</span>
       <span className="design-ba-label design-ba-label--after">{afterLabel}</span>
+      {protectAfter && previewBadge && (
+        <span className="design-ba-preview-badge">{previewBadge}</span>
+      )}
       <div className="design-before-after__handle" style={{ left: `${split}%` }} />
     </div>
   );
