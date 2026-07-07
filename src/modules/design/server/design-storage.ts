@@ -38,13 +38,13 @@ export function resolveDesignImageMime(file: File, buffer: Buffer): string {
   const fromType = MIME_TO_EXT.get(file.type);
   if (fromType) return file.type === "image/jpg" ? "image/jpeg" : file.type;
 
+  const sniffed = sniffImageMime(buffer);
+  if (sniffed) return sniffed;
+
   const lower = file.name.toLowerCase();
   if (lower.endsWith(".png")) return "image/png";
   if (lower.endsWith(".webp")) return "image/webp";
   if (lower.endsWith(".jpg") || lower.endsWith(".jpeg")) return "image/jpeg";
-
-  const sniffed = sniffImageMime(buffer);
-  if (sniffed) return sniffed;
 
   throw new Error("UNSUPPORTED_TYPE");
 }

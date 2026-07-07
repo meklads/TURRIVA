@@ -14,7 +14,7 @@ function watermarkSvg(width: number, height: number, label: string): Buffer {
   const centerX = width / 2;
   const centerY = height / 2;
   const svg = `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
+<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
   <defs>
     <pattern id="wm" width="300" height="140" patternTransform="rotate(-22)" patternUnits="userSpaceOnUse">
       <text x="12" y="72" fill="rgba(255,255,255,0.3)" font-size="22" font-family="Arial,sans-serif" font-weight="700">${safe}</text>
@@ -34,19 +34,22 @@ function watermarkSvg(width: number, height: number, label: string): Buffer {
 export async function buildWatermarkedPreviewFromBuffer(input: Buffer): Promise<Buffer> {
   const watermarkText = "RUWAQ PREVIEW";
 
-  const resized = sharp(input).resize({
-    width: PREVIEW_MAX_PX,
-    height: PREVIEW_MAX_PX,
-    fit: "inside",
-    withoutEnlargement: true,
-  });
+  const resizedBuffer = await sharp(input)
+    .rotate()
+    .resize({
+      width: PREVIEW_MAX_PX,
+      height: PREVIEW_MAX_PX,
+      fit: "inside",
+      withoutEnlargement: true,
+    })
+    .toBuffer();
 
-  const meta = await resized.metadata();
+  const meta = await sharp(resizedBuffer).metadata();
   const outW = meta.width ?? PREVIEW_MAX_PX;
   const outH = meta.height ?? PREVIEW_MAX_PX;
 
-  return resized
-    .composite([{ input: watermarkSvg(outW, outH, watermarkText), blend: "over" }])
+  return sharp(resizedBuffer)
+    .composite([{ input: watermarkSvg(outW, outH, watermarkText), top: 0, left: 0, blend: "over" }])
     .jpeg({ quality: JPEG_QUALITY, mozjpeg: true })
     .toBuffer();
 }
