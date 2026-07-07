@@ -6,15 +6,15 @@ export const DESIGN_IMAGES = {
       other: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80",
       ruwaq: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
     },
-    facade: {
+    exterior: {
       yours: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
       other: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
       ruwaq: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=800&q=80",
     },
-    yard: {
-      yours: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=800&q=80",
-      other: "https://images.unsplash.com/photo-1600566753086-5f57f50e65d7?auto=format&fit=crop&w=800&q=80",
-      ruwaq: "https://images.unsplash.com/photo-1600585152915-d208bec867a1?auto=format&fit=crop&w=800&q=80",
+    booth: {
+      yours: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80",
+      other: "https://images.unsplash.com/photo-1560438774-fub1452f70d0?auto=format&fit=crop&w=800&q=80",
+      ruwaq: "https://images.unsplash.com/photo-1505373877841-8d25f39d4686?auto=format&fit=crop&w=800&q=80",
     },
   },
   rooms: [
@@ -40,11 +40,18 @@ export const DESIGN_IMAGES = {
         "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=600&q=80",
     },
     {
-      id: "facade",
+      id: "exterior",
       before:
         "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80",
       after:
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
+    },
+    {
+      id: "booth",
+      before:
+        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=600&q=80",
+      after:
+        "https://images.unsplash.com/photo-1505373877841-8d25f39d4686?auto=format&fit=crop&w=600&q=80",
     },
   ],
 } as const;

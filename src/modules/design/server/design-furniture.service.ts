@@ -161,6 +161,10 @@ export async function analyzeDesignFurniture(input: AnalyzeInput): Promise<{
   furniture: DetectedFurniture[];
   isAiDetected: boolean;
 }> {
+  if (input.spaceType === "exterior" || input.spaceType === "booth") {
+    return { furniture: [], isAiDetected: false };
+  }
+
   const vision = await analyzeWithVision(input);
   if (vision && vision.length > 0) {
     return { furniture: vision, isAiDetected: true };

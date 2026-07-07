@@ -17,8 +17,8 @@ export type DesignMessages = {
     title: string;
     subtitle: string;
     ctaInterior: string;
-    ctaFacade: string;
-    ctaYard: string;
+    ctaExterior: string;
+    ctaBooth: string;
     statRating: string;
     statRatingSub: string;
     statTime: string;
@@ -28,13 +28,20 @@ export type DesignMessages = {
   };
   studio: {
     title: string;
-    prompt: string;
+    promptInterior: string;
+    promptExterior: string;
+    promptBooth: string;
     spaceInterior: string;
-    spaceFacade: string;
-    spaceYard: string;
-    roomType: string;
+    spaceExterior: string;
+    spaceBooth: string;
+    decorFixed: string;
+    decorAdvertising: string;
+    projectType: string;
+    boothType: string;
     uploadTitle: string;
-    uploadHint: string;
+    uploadHintInterior: string;
+    uploadHintExterior: string;
+    uploadHintBooth: string;
     uploadButton: string;
     uploadDrag: string;
     styleTitle: string;
@@ -102,8 +109,8 @@ export type DesignMessages = {
     title: string;
     subtitle: string;
     tabInterior: string;
-    tabFacade: string;
-    tabYard: string;
+    tabExterior: string;
+    tabBooth: string;
     yourPhoto: string;
     otherAi: string;
     ruwaq: string;
@@ -203,10 +210,11 @@ const en: DesignMessages = {
   hero: {
     badge: "AI Design Studio",
     title: "Design your space in seconds",
-    subtitle: "Upload a photo, pick a style, and see an AI redesign — 3 free generations after sign-in.",
-    ctaInterior: "Design Interior",
-    ctaFacade: "Design Facade",
-    ctaYard: "Design Yard",
+    subtitle:
+      "Fixed decor (interior & exterior finishing) and advertising booths — upload a photo, pick a style, preview in seconds. 3 free generations after sign-in.",
+    ctaInterior: "Interior finishing",
+    ctaExterior: "Exterior finishing",
+    ctaBooth: "Booth & exhibition",
     statRating: "4.8/5",
     statRatingSub: "from 1,200+ reviews",
     statTime: "~30 sec",
@@ -216,13 +224,23 @@ const en: DesignMessages = {
   },
   studio: {
     title: "Create your design",
-    prompt: "Upload a photo of the majlis, room, villa or store you want to redesign",
+    promptInterior:
+      "Upload a photo of the interior space you want to finish — villa, apartment, palace, shop, majlis, or room.",
+    promptExterior:
+      "Upload a photo of the exterior you want to finish — villa facade, building, shop front, or courtyard.",
+    promptBooth:
+      "Upload a photo of your booth, stand, or temporary exhibition space you want to redesign.",
     spaceInterior: "Interior",
-    spaceFacade: "Facade",
-    spaceYard: "Yard",
-    roomType: "Room type",
+    spaceExterior: "Exterior",
+    spaceBooth: "Booth & expo",
+    decorFixed: "Fixed decor",
+    decorAdvertising: "Advertising",
+    projectType: "Project type",
+    boothType: "Booth / stand type",
     uploadTitle: "Click or drag and drop",
-    uploadHint: "JPG, PNG or WEBP — any angle works",
+    uploadHintInterior: "Villa, apartment, palace, shop, majlis — JPG, PNG or WEBP",
+    uploadHintExterior: "Facade, building, shop front, courtyard — JPG, PNG or WEBP",
+    uploadHintBooth: "Booth, stand, pop-up, pavilion — JPG, PNG or WEBP",
     uploadButton: "Upload",
     uploadDrag: "Drop your image here",
     styleTitle: "Choose a style",
@@ -248,7 +266,7 @@ const en: DesignMessages = {
   },
   welcome: {
     title: "Welcome to Ruwaq!",
-    subtitle: "See how to create a redesign in seconds.",
+    subtitle: "See how to preview fixed decor or advertising booths in seconds.",
     credits: "3 free credits have been added to your account",
     start: "Start",
     skip: "Skip",
@@ -286,7 +304,7 @@ const en: DesignMessages = {
       "Love the preview? Ruwaq can build it in Jeddah & Makkah. For a fully bespoke interior — our design engineers are ready to meet you.",
     points: [
       "Senior Ruwaq design engineers — human-led, not AI",
-      "Custom concepts for villas, palaces, and premium spaces",
+      "Custom concepts for villas, palaces, shops, and exhibition booths",
       "From mood boards to executable drawings",
       "Free introductory meeting to understand your vision",
     ],
@@ -298,7 +316,8 @@ const en: DesignMessages = {
     steps: [
       {
         title: "Upload your photo",
-        description: "Any room, house exterior, or backyard. JPG, PNG or WEBP — any angle works.",
+        description:
+          "Any interior room, building exterior, or exhibition booth. JPG, PNG or WEBP — any angle works.",
       },
       {
         title: "Pick a style",
@@ -315,9 +334,9 @@ const en: DesignMessages = {
     title: "Most AI tools use cheap models. We don't.",
     subtitle:
       "Other design tools generate a different room from scratch. Ruwaq preserves your layout, windows, and doors.",
-    tabInterior: "Interior",
-    tabFacade: "Facade",
-    tabYard: "Garden",
+    tabInterior: "Interior (fixed)",
+    tabExterior: "Exterior (fixed)",
+    tabBooth: "Booth & expo",
     yourPhoto: "Your photo",
     otherAi: "Other AI tools",
     ruwaq: "Ruwaq",
@@ -335,33 +354,36 @@ const en: DesignMessages = {
   },
   rooms: {
     eyebrow: "AI design",
-    title: "AI Design for Every Space",
-    subtitle: "Upload a photo of any space — inside or outside — and see it transformed in seconds",
+    title: "AI Design for Every Project",
+    subtitle:
+      "Fixed finishing for villas, apartments, palaces & shops — or temporary booths and exhibitions",
     items: [
       {
         id: "living",
-        title: "AI Living Room Makeover",
+        title: "Interior finishing — living & majlis",
         description:
-          "See your living room or majlis completely reimagined with furniture layout, palettes, and decor.",
-        cta: "Redesign my living room",
+          "See your villa, apartment, or majlis completely reimagined with finishes, furniture layout, and decor.",
+        cta: "Design my interior",
       },
       {
-        id: "bedroom",
-        title: "AI Bedroom Design",
-        description: "Turn your bedroom into a cozy retreat. See the result in 30 seconds.",
-        cta: "Redesign my bedroom",
+        id: "shop",
+        title: "Interior finishing — retail & shops",
+        description: "Visualize shop and showroom interiors with premium materials and layout.",
+        cta: "Design my shop",
       },
       {
-        id: "kitchen",
-        title: "AI Kitchen Redesign",
-        description: "Visualize new cabinets, countertops, and layouts on your actual kitchen photo.",
-        cta: "Redesign my kitchen",
+        id: "exterior",
+        title: "Exterior finishing & facades",
+        description:
+          "Transform villa, palace, or commercial facades with modern, classic, or Gulf luxury styles.",
+        cta: "Design my exterior",
       },
       {
-        id: "facade",
-        title: "AI House Exterior Design",
-        description: "See your home's curb appeal transformed with modern, classic, or Gulf luxury styles.",
-        cta: "Redesign my exterior",
+        id: "booth",
+        title: "Booths & temporary exhibitions",
+        description:
+          "Redesign trade-show booths, brand activations, and pop-up stands for your next event.",
+        cta: "Design my booth",
       },
     ],
   },
@@ -369,7 +391,7 @@ const en: DesignMessages = {
     badge: "Only on Ruwaq",
     title: "From AI design to real execution",
     subtitle:
-      "Unlike GenRoom and similar tools, Ruwaq doesn't stop at the image — we build it with real materials and premium contracting.",
+      "Fixed decor and advertising booths — Ruwaq doesn't stop at the image. We build with real materials and premium contracting.",
     points: [
       "Real material catalogs — wood, marble, glass, furniture",
       "Free consultation with our design team",
@@ -468,10 +490,11 @@ const ar: DesignMessages = {
   hero: {
     badge: "استوديو تصميم بالذكاء الاصطناعي",
     title: "صمّم مساحتك في ثوانٍ",
-    subtitle: "ارفع صورة، اختر نمطاً، وشاهد إعادة التصميم — 3 تجارب مجانية بعد التسجيل.",
-    ctaInterior: "صمّم الداخل",
-    ctaFacade: "صمّم الواجهة",
-    ctaYard: "صمّم الحديقة",
+    subtitle:
+      "ديكور ثابت (داخلي وخارجي — تشطيبات) وديكور إعلاني (بوث ومعارض مؤقتة). ارفع صورة، اختر نمطاً، وشاهد المعاينة — 3 تجارب مجانية بعد التسجيل.",
+    ctaInterior: "تشطيب داخلي",
+    ctaExterior: "تشطيب خارجي",
+    ctaBooth: "بوث ومعارض",
     statRating: "4.8/5",
     statRatingSub: "من +1,200 تقييم",
     statTime: "~30 ث",
@@ -481,13 +504,23 @@ const ar: DesignMessages = {
   },
   studio: {
     title: "أنشئ تصميمك",
-    prompt: "ارفع صورة للمجلس أو الغرفة أو الفيلا أو المتجر الذي تريد إعادة تصميمه",
+    promptInterior:
+      "ارفع صورة للمساحة الداخلية التي تريد تشطيبها — فيلا، شقة، قصر، محل، مجلس، أو غرفة.",
+    promptExterior:
+      "ارفع صورة للخارج الذي تريد تشطيبه — واجهة فيلا، مبنى، واجهة محل، أو فناء خارجي.",
+    promptBooth:
+      "ارفع صورة للبوث أو الستاند أو المعرض المؤقت الذي تريد إعادة تصميمه.",
     spaceInterior: "داخلي",
-    spaceFacade: "واجهة",
-    spaceYard: "حديقة",
-    roomType: "نوع الغرفة",
+    spaceExterior: "خارجي",
+    spaceBooth: "بوث ومعارض",
+    decorFixed: "ثابت",
+    decorAdvertising: "إعلاني",
+    projectType: "نوع المشروع",
+    boothType: "نوع البوث / المعرض",
     uploadTitle: "انقر أو اسحب وأفلت",
-    uploadHint: "JPG أو PNG أو WEBP — أي زاوية تناسب",
+    uploadHintInterior: "فيلا، شقة، قصر، محل، مجلس — JPG أو PNG أو WEBP",
+    uploadHintExterior: "واجهة، مبنى، محل، فناء — JPG أو PNG أو WEBP",
+    uploadHintBooth: "بوث، ستاند، متجر مؤقت، جناح — JPG أو PNG أو WEBP",
     uploadButton: "رفع",
     uploadDrag: "أفلت صورتك هنا",
     styleTitle: "اختر النمط",
@@ -513,7 +546,7 @@ const ar: DesignMessages = {
   },
   welcome: {
     title: "مرحباً بك في رواق!",
-    subtitle: "دعنا نريك كيف تنشئ تصميماً جديداً في ثوانٍ.",
+    subtitle: "دعنا نريك كيف تعاين تشطيبات ثابتة أو بوث معارض في ثوانٍ.",
     credits: "تمت إضافة 3 أرصدة مجانية إلى حسابك",
     start: "ابدأ",
     skip: "تخطي",
@@ -550,7 +583,7 @@ const ar: DesignMessages = {
       "أعجبتك المعاينة؟ رواق تنفّذها في جدة ومكة. ولتصميم بشري فاخر ومخصص بالكامل — مهندسو التصميم في رواق جاهزون للاجتماع معك.",
     points: [
       "مهندسو تصميم رواق — خبرة بشرية عالية، ليس ذكاءً اصطناعياً",
-      "مفاهيم خاصة للفلل والقصور والمساحات الفاخرة",
+      "مفاهيم خاصة للفلل والقصور والمحلات وبوث المعارض",
       "من الفكرة إلى مخططات قابلة للتنفيذ",
       "اجتماع تعريفي مجاني لفهم رؤيتك",
     ],
@@ -562,7 +595,8 @@ const ar: DesignMessages = {
     steps: [
       {
         title: "ارفع صورتك",
-        description: "أي غرفة أو واجهة منزل أو حديقة. JPG أو PNG أو WEBP — أي زاوية تناسب.",
+        description:
+          "أي غرفة داخلية، واجهة خارجية، أو بوث معرض. JPG أو PNG أو WEBP — أي زاوية تناسب.",
       },
       {
         title: "اختر أسلوباً",
@@ -579,9 +613,9 @@ const ar: DesignMessages = {
     title: "معظم أدوات الذكاء الاصطناعي تستخدم نماذج رخيصة. نحن لا.",
     subtitle:
       "أدوات التصميم الأخرى تولّد غرفة مختلفة من الصفر. رواق يحافظ على تخطيط مساحتك ونوافذها وأبوابها.",
-    tabInterior: "الداخل",
-    tabFacade: "الواجهة",
-    tabYard: "الحديقة",
+    tabInterior: "داخلي (ثابت)",
+    tabExterior: "خارجي (ثابت)",
+    tabBooth: "بوث ومعارض",
     yourPhoto: "صورتك",
     otherAi: "أدوات AI أخرى",
     ruwaq: "رواق",
@@ -599,32 +633,34 @@ const ar: DesignMessages = {
   },
   rooms: {
     eyebrow: "تصميم بالذكاء الاصطناعي",
-    title: "تصميم ذكي لكل مساحة في منزلك",
-    subtitle: "ارفع صورة لأي مساحة — داخلية أو خارجية — وشاهدها محوّلة في ثوانٍ",
+    title: "تصميم ذكي لكل نوع مشروع",
+    subtitle:
+      "تشطيبات ثابتة للفلل والشقق والقصور والمحلات — أو بوث ومعارض مؤقتة إعلانية",
     items: [
       {
         id: "living",
-        title: "تجديد غرفة المعيشة والمجلس",
-        description: "شاهد مجلسك أو غرفة معيشتك بشكل جديد مع توزيع أثاث وألوان مناسبة.",
-        cta: "أعد تصميم غرفة المعيشة",
+        title: "تشطيب داخلي — معيشة ومجلس",
+        description:
+          "شاهد فيلاك أو شقتك أو مجلسك بمواد وتشطيبات وأثاث جديد — ديكور ثابت فاخر.",
+        cta: "صمّم الداخل",
       },
       {
-        id: "bedroom",
-        title: "تصميم غرفة النوم",
-        description: "حوّل غرفة نومك إلى ملاذ مريح. شاهد النتيجة في 30 ثانية.",
-        cta: "أعد تصميم غرفة النوم",
+        id: "shop",
+        title: "تشطيب داخلي — محلات ومعارض",
+        description: "تصوّر محلاتك وصالات العرض بمواد وتخطيط احترافي.",
+        cta: "صمّم المحل",
       },
       {
-        id: "kitchen",
-        title: "إعادة تصميم المطبخ",
-        description: "تصوّر خزائن وأسطح وتخطيطات جديدة على صورة مطبخك الفعلي.",
-        cta: "أعد تصميم مطبخي",
+        id: "exterior",
+        title: "تشطيب خارجي وواجهات",
+        description: "حوّل واجهات الفلل والقصور والمباني التجارية بأنماط حديثة وفاخرة.",
+        cta: "صمّم الخارج",
       },
       {
-        id: "facade",
-        title: "تصميم واجهة المنزل",
-        description: "شاهد جاذبية منزلك الخارجية بأنماط حديثة وكلاسيكية وفاخرة.",
-        cta: "أعد تصميم واجهتي",
+        id: "booth",
+        title: "بوث ومعارض مؤقتة",
+        description: "أعد تصميم بوث المعارض وتفعيلات العلامات والمتاجر المؤقتة لفعاليتك القادمة.",
+        cta: "صمّم البوث",
       },
     ],
   },
@@ -632,7 +668,7 @@ const ar: DesignMessages = {
     badge: "حصري في رواق",
     title: "من تصميم AI إلى تنفيذ حقيقي",
     subtitle:
-      "على عكس أدوات التصوير فقط، رواق لا تتوقف عند الصورة — ننفّذها بمواد حقيقية ومقاولات فاخرة.",
+      "ديكور ثابت وبوث إعلاني — رواق لا تتوقف عند الصورة. ننفّذها بمواد حقيقية ومقاولات فاخرة.",
     points: [
       "كتالوجات مواد حقيقية — خشب، رخام، زجاج، أثاث",
       "استشارة مجانية مع فريق التصميم",

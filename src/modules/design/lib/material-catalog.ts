@@ -236,11 +236,12 @@ const STYLE_MATERIAL_MAP: Record<string, string[]> = {
   contemporary: ["porcelain-tile", "wood-oak", "glass-tempered", "lighting-recessed", "paint-velvet", "curtain-sheer"],
 };
 
-const FACADE_MATERIALS = ["stone-travertine", "glass-tempered", "metal-brass", "paint-velvet", "lighting-recessed"];
-const YARD_MATERIALS = ["stone-travertine", "porcelain-tile", "wood-oak", "lighting-recessed"];
+const EXTERIOR_MATERIALS = ["stone-travertine", "glass-tempered", "metal-brass", "paint-velvet", "lighting-recessed"];
+const BOOTH_MATERIALS = ["metal-brass", "glass-tempered", "lighting-recessed", "paint-velvet", "gypsum-board"];
 
 export function getFallbackMaterialIds(styleId: string, spaceType: string): string[] {
-  if (spaceType === "facade") return FACADE_MATERIALS;
-  if (spaceType === "yard") return YARD_MATERIALS;
+  const normalized = spaceType === "facade" || spaceType === "yard" ? "exterior" : spaceType;
+  if (normalized === "exterior") return EXTERIOR_MATERIALS;
+  if (normalized === "booth") return BOOTH_MATERIALS;
   return STYLE_MATERIAL_MAP[styleId] ?? STYLE_MATERIAL_MAP.modern ?? [];
 }

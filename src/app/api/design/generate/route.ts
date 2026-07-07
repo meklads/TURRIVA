@@ -3,8 +3,7 @@ import { getSession } from "@/modules/auth/server/session";
 import { generateDesignAfter } from "@/modules/design/server/design-ai.service";
 import { deductCredit, refundCredit } from "@/modules/design/server/design-credits.service";
 import { saveDesignImage } from "@/modules/design/server/design-storage";
-import { getStyleById } from "@/modules/design/lib/styles";
-import type { SpaceType } from "@/modules/design/lib/styles";
+import { getStyleById, normalizeSpaceType } from "@/modules/design/lib/styles";
 import { analyzeDesignMaterials } from "@/modules/design/server/design-materials.service";
 import { analyzeDesignFurniture } from "@/modules/design/server/design-furniture.service";
 import { buildWatermarkedPreview } from "@/modules/design/server/design-preview.service";
@@ -33,8 +32,8 @@ export async function POST(req: NextRequest) {
     const form = await req.formData();
     const file = form.get("image");
     const styleId = String(form.get("styleId") ?? "");
-    const spaceType = String(form.get("spaceType") ?? "interior") as SpaceType;
-    const roomType = String(form.get("roomType") ?? "living");
+    const spaceType = normalizeSpaceType(String(form.get("spaceType") ?? "interior"));
+    const roomType = String(form.get("roomType") ?? "villa");
     const locale = String(form.get("locale") ?? "ar") as "ar" | "en";
     const cityRaw = String(form.get("city") ?? "");
 

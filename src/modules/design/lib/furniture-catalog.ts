@@ -233,7 +233,15 @@ export function getFurnitureById(id: string): CatalogFurniture | undefined {
 }
 
 export function getFallbackFurniture(styleId: string, roomType: string): string[] {
-  const byRoom = FURNITURE_CATALOG.filter((f) => f.roomTypes.includes(roomType));
+  const interiorRoomMap: Record<string, string> = {
+    villa: "living",
+    apartment: "living",
+    palace: "majlis",
+    shop: "retail",
+    office: "living",
+  };
+  const effectiveRoom = interiorRoomMap[roomType] ?? roomType;
+  const byRoom = FURNITURE_CATALOG.filter((f) => f.roomTypes.includes(effectiveRoom));
   const byStyle = byRoom.filter(
     (f) => f.styleTags.includes(styleId) || f.styleTags.includes("modern")
   );

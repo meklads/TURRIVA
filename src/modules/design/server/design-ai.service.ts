@@ -1,6 +1,6 @@
 import sharp from "sharp";
 import OpenAI from "openai";
-import { ROOM_TYPES, getStyleById, type SpaceType } from "../lib/styles";
+import { getStyleById, getRoomLabel, type SpaceType } from "../lib/styles";
 import { loadImageBuffer } from "./design-image.utils";
 import { saveDesignBuffer } from "./design-storage";
 
@@ -23,18 +23,27 @@ type GenerateResult = {
 };
 
 const STYLE_PROMPTS: Record<string, string> = {
-  modern: "modern luxury interior with clean lines, neutral palette, premium materials",
+  modern: "modern luxury design with clean lines, neutral palette, premium materials",
   neoclassic: "neoclassical design with elegant moldings, marble, and refined gold accents",
   islamic: "Islamic geometric patterns, mashrabiya details, warm stone and wood",
   minimal: "minimalist serene space with natural light and understated luxury",
-  luxury: "ultra-luxury Gulf villa interior with premium finishes and bespoke furniture",
+  luxury: "ultra-luxury Gulf design with premium finishes and bespoke detailing",
   contemporary: "contemporary Saudi luxury with warm tones and designer-grade composition",
 };
 
-function roomLabel(spaceType: SpaceType, roomType: string, locale: "ar" | "en"): string {
-  const room = ROOM_TYPES[spaceType].find((r) => r.id === roomType);
-  if (!room) return spaceType;
-  return locale === "ar" ? room.nameAr : room.nameEn;
+function buildEditPrompt(input: GenerateInput): string {
+  const stylePrompt = STYLE_PROMPTS[input.styleId] ?? "luxury design";
+  const room = getRoomLabel(input.spaceType, input.roomType, input.locale);
+
+  if (input.spaceType === "booth") {
+    return `Redesign this ${room} photo as a premium ${stylePrompt} exhibition booth or temporary brand display. Keep the same booth footprint, structure, and camera angle. Professional trade-show quality with clear branding zones.`;
+  }
+
+  if (input.spaceType === "exterior") {
+    return `Redesign this ${room} exterior facade photo in ${stylePrompt}. Keep the same building structure, openings, landscape, and camera angle. Photorealistic architectural visualization with premium finishing materials.`;
+  }
+
+  return `Redesign this ${room} interior photo in ${stylePrompt}. Keep the same room layout, walls, windows, doors, and camera angle. Photorealistic magazine-quality interior finishing and decor.`;
 }
 
 async function prepareSquarePng(buffer: Buffer): Promise<Buffer> {
@@ -80,10 +89,7 @@ async function generateWithOpenAIEdit(
 
   const png = await prepareSquarePng(beforeBuffer);
   const mask = await createFullEditMask();
-  const stylePrompt = STYLE_PROMPTS[input.styleId] ?? "luxury interior design";
-  const room = roomLabel(input.spaceType, input.roomType, input.locale);
-
-  const prompt = `Redesign this ${room} photo in ${stylePrompt}. Keep the same room layout, walls, windows, doors, and camera angle. Photorealistic magazine-quality result.`;
+  const prompt = buildEditPrompt(input);
 
   const response = await openai.images.edit({
     model: "dall-e-2",

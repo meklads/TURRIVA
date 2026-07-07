@@ -10,7 +10,7 @@ type Props = {
   locale: "ar" | "en";
 };
 
-const TABS: SpaceType[] = ["interior", "facade", "yard"];
+const TABS: SpaceType[] = ["interior", "exterior", "booth"];
 
 export function DesignQualitySection({ messages, locale }: Props) {
   const [tab, setTab] = useState<SpaceType>("interior");
@@ -19,8 +19,8 @@ export function DesignQualitySection({ messages, locale }: Props) {
 
   const tabLabels: Record<SpaceType, string> = {
     interior: q.tabInterior,
-    facade: q.tabFacade,
-    yard: q.tabYard,
+    exterior: q.tabExterior,
+    booth: q.tabBooth,
   };
 
   return (

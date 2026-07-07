@@ -427,7 +427,7 @@ model DesignCreditAccount {
 model DesignGeneration {
   id         String   @id @default(cuid())
   userId     String?
-  spaceType  String   /// interior | facade | yard
+  spaceType  String   /// interior | exterior | booth
   roomType   String
   styleId    String
   beforeUrl  String

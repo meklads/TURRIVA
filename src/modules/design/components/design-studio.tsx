@@ -8,7 +8,7 @@ import {
   Home,
   LayoutGrid,
   Sparkles,
-  TreePine,
+  Store,
   Upload,
 } from "lucide-react";
 import { DESIGN_STYLES, ROOM_TYPES, type SpaceType } from "@/modules/design/lib/styles";
@@ -45,7 +45,7 @@ export function DesignStudio({ messages, locale }: Props) {
   const fileRef = useRef<HTMLInputElement>(null);
 
   const [spaceType, setSpaceType] = useState<SpaceType>("interior");
-  const [roomType, setRoomType] = useState("living");
+  const [roomType, setRoomType] = useState("villa");
   const [city, setCity] = useState<DesignCity | null>(null);
   const [styleId, setStyleId] = useState<string | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
@@ -152,16 +152,53 @@ export function DesignStudio({ messages, locale }: Props) {
       ? messages.studio.creditsLeft.replace("{count}", String(credits))
       : messages.studio.signInForCredits;
 
-  const spaceTabs: { id: SpaceType; label: string; icon: typeof Home }[] = [
-    { id: "interior", label: messages.studio.spaceInterior, icon: Home },
-    { id: "facade", label: messages.studio.spaceFacade, icon: Building2 },
-    { id: "yard", label: messages.studio.spaceYard, icon: TreePine },
+  const spaceTabs: {
+    id: SpaceType;
+    label: string;
+    decor: string;
+    icon: typeof Home;
+  }[] = [
+    {
+      id: "interior",
+      label: messages.studio.spaceInterior,
+      decor: messages.studio.decorFixed,
+      icon: Home,
+    },
+    {
+      id: "exterior",
+      label: messages.studio.spaceExterior,
+      decor: messages.studio.decorFixed,
+      icon: Building2,
+    },
+    {
+      id: "booth",
+      label: messages.studio.spaceBooth,
+      decor: messages.studio.decorAdvertising,
+      icon: Store,
+    },
   ];
+
+  const spacePrompt =
+    spaceType === "interior"
+      ? messages.studio.promptInterior
+      : spaceType === "exterior"
+        ? messages.studio.promptExterior
+        : messages.studio.promptBooth;
+
+  const uploadHint =
+    spaceType === "interior"
+      ? messages.studio.uploadHintInterior
+      : spaceType === "exterior"
+        ? messages.studio.uploadHintExterior
+        : messages.studio.uploadHintBooth;
+
+  const projectTypeLabel =
+    spaceType === "booth" ? messages.studio.boothType : messages.studio.projectType;
 
   const emptyHint =
     locale === "ar"
-      ? "ارفع صورة واختر نمطاً ثم اضغط توليد التصميم"
-      : "Upload a photo, pick a style, then generate";
+      ? "اختر النوع، ارفع صورة، واختر نمطاً ثم اضغط توليد التصميم"
+      : "Pick a type, upload a photo, choose a style, then generate";
 
   return (
     <>
@@ -204,8 +241,10 @@ export function DesignStudio({ messages, locale }: Props) {
           </div>
 
           <aside className="design-studio-panel">
+            <p className="design-studio-prompt">{spacePrompt}</p>
+
             <div className="design-space-tabs">
-              {spaceTabs.map(({ id, label, icon: Icon }) => (
+              {spaceTabs.map(({ id, label, decor, icon: Icon }) => (
                 <button
                   key={id}
                   type="button"
@@ -213,12 +252,13 @@ export function DesignStudio({ messages, locale }: Props) {
                   onClick={() => setSpaceType(id)}
                 >
                   <Icon className="h-4 w-4" />
-                  {label}
+                  <span>{label}</span>
+                  <span className="design-space-tab__decor">{decor}</span>
                 </button>
               ))}
             </div>
 
-            <label className="design-studio-section-title">{messages.studio.roomType}</label>
+            <label className="design-studio-section-title">{projectTypeLabel}</label>
             <select
               className="design-select"
               value={roomType}
@@ -263,6 +303,7 @@ export function DesignStudio({ messages, locale }: Props) {
             >
               <Upload className="mx-auto h-5 w-5 text-gray-400" />
               <p className="mt-1.5 text-xs font-medium">{messages.studio.uploadTitle}</p>
+              <p className="mt-1 text-[0.65rem] leading-snug text-gray-500">{uploadHint}</p>
               <button
                 type="button"
                 className="design-btn design-btn-dark mt-2 text-xs"
