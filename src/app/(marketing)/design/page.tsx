@@ -6,19 +6,13 @@ import { getLocale } from "@/shared/i18n/server";
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const t = getDesignMessages(locale);
-
   return {
-    title: locale === "ar" ? "رواق — تصميم داخلي بالذكاء الاصطناعي + تنفيذ" : "Ruwaq — AI Design + Real Execution",
+    title: locale === "ar" ? "استوديو التصميم — رواق" : "Design Studio — Ruwaq",
     description: t.hero.subtitle,
-    openGraph: {
-      title: t.hero.title,
-      description: t.hero.subtitle,
-      locale: locale === "ar" ? "ar_SA" : "en_US",
-    },
   };
 }
 
-export default async function HomePage() {
+export default async function DesignPage() {
   const locale = await getLocale();
   return <DesignHomePage locale={locale} />;
 }
