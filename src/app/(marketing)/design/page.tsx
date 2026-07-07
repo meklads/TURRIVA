@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const t = getDesignMessages(locale);
   return {
-    title: locale === "ar" ? "استوديو التصميم — رواق" : "Design Studio — Ruwaq",
+    title: locale === "ar" ? "رواق للديكور والمقاولات — استوديو التصميم" : "Ruwaq Decor & Contracting — Design Studio",
     description: t.hero.subtitle,
   };
 }

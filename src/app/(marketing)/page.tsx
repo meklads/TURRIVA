@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const t = getDesignMessages(locale);
 
   return {
-    title: locale === "ar" ? "رواق — أنت تصمّم بالذكاء الاصطناعي ونحن ننفّذ (جدة — مكة)" : "Ruwaq — You design with AI, we execute (Jeddah — Makkah)",
+    title: locale === "ar" ? "رواق للديكور والمقاولات" : "Ruwaq Decor & Contracting",
     description: t.hero.subtitle,
     openGraph: {
       title: t.hero.title,

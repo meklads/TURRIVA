@@ -163,7 +163,7 @@ export type DesignMessages = {
 };
 
 const en: DesignMessages = {
-  brand: { name: "RUWAQ", tagline: "Design · Build" },
+  brand: { name: "RUWAQ", tagline: "Decor & Contracting" },
   nav: {
     generate: "Generate Design",
     designTypes: "Design Types",
@@ -176,9 +176,9 @@ const en: DesignMessages = {
   },
   hero: {
     badge: "You design · We build · Jeddah & Makkah",
-    title: "You design with AI — we execute with premium quality (Jeddah — Makkah)",
+    title: "Ruwaq Decor & Contracting",
     subtitle:
-      "Upload a photo, pick a style, and get a photorealistic redesign in seconds — Ruwaq turns it into a finished space on the ground.",
+      "You design with AI — we execute with premium quality (Jeddah — Makkah). Upload a photo, pick a style, and get a redesign in seconds.",
     ctaInterior: "Design Interior",
     ctaFacade: "Design Facade",
     ctaYard: "Design Yard",
@@ -392,7 +392,7 @@ const en: DesignMessages = {
 };
 
 const ar: DesignMessages = {
-  brand: { name: "رواق", tagline: "تصميم · تنفيذ" },
+  brand: { name: "رواق", tagline: "للديكور والمقاولات" },
   nav: {
     generate: "إنشاء تصميم",
     designTypes: "أنواع التصميم",
@@ -405,9 +405,9 @@ const ar: DesignMessages = {
   },
   hero: {
     badge: "أنت تصمّم · ونحن ننفّذ · جدة ومكة",
-    title: "أنت تصمّم بالذكاء الاصطناعي ونحن ننفّذ بأعلى جودة (جدة — مكة)",
+    title: "رواق للديكور والمقاولات",
     subtitle:
-      "ارفع صورة، اختر نمطاً، واحصل على تصميم في ثوانٍ — رواق تحوّله إلى مساحة منفّذة على أرض الواقع.",
+      "أنت تصمّم بالذكاء الاصطناعي ونحن ننفّذ بأعلى جودة (جدة — مكة). ارفع صورة، اختر نمطاً، واحصل على تصميم في ثوانٍ.",
     ctaInterior: "صمّم الداخل",
     ctaFacade: "صمّم الواجهة",
     ctaYard: "صمّم الحديقة",

@@ -46,8 +46,8 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title:
       locale === "ar"
-        ? "رواق · شركة ديكور ومقاولات فاخرة في السعودية"
-        : "Ruwaq · Luxury Decor & Contracting Saudi Arabia",
+        ? "رواق للديكور والمقاولات"
+        : "Ruwaq Decor & Contracting",
     description:
       locale === "ar"
         ? "رواق شركة سعودية فاخرة للديكور والمقاولات — فلل، قصور، ومشاريع سكنية راقية."
