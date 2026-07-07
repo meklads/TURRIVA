@@ -175,7 +175,7 @@ const en: DesignMessages = {
     contact: "Contact",
   },
   hero: {
-    badge: "You design · We build · Jeddah & Makkah",
+    badge: "AI Design Studio",
     title: "Ruwaq Decor & Contracting",
     subtitle:
       "You design with AI — we execute with premium quality (Jeddah — Makkah). Upload a photo, pick a style, and get a redesign in seconds.",
@@ -404,7 +404,7 @@ const ar: DesignMessages = {
     contact: "تواصل",
   },
   hero: {
-    badge: "أنت تصمّم · ونحن ننفّذ · جدة ومكة",
+    badge: "استوديو تصميم بالذكاء الاصطناعي",
     title: "رواق للديكور والمقاولات",
     subtitle:
       "أنت تصمّم بالذكاء الاصطناعي ونحن ننفّذ بأعلى جودة (جدة — مكة). ارفع صورة، اختر نمطاً، واحصل على تصميم في ثوانٍ.",
