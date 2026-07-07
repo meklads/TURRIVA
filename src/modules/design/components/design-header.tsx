@@ -1,9 +1,9 @@
-import Link from "next/link";
-import Image from "next/image";
 import { ChevronDown } from "lucide-react";
+import Link from "next/link";
 import { getDesignMessages } from "@/shared/i18n/messages/design";
 import { getLocale } from "@/shared/i18n/server";
 import { LocaleSwitcher } from "@/shared/i18n/locale-switcher";
+import { DESIGN_LOGO_SIZE_CLASS, RuwaqLogo } from "@/shared/components/ruwaq-logo";
 
 export async function DesignHeader() {
   const locale = await getLocale();
@@ -20,16 +20,7 @@ export async function DesignHeader() {
     <header className="design-header">
       <div className="design-container design-container--wide">
         <div className="design-header-bar">
-          <Link href="/" className="design-logo">
-            <Image
-              src="/brand/ruwaq/logo-on-light.png"
-              alt={t.brand.name}
-              width={1248}
-              height={492}
-              priority
-              className="design-logo-img"
-            />
-          </Link>
+          <RuwaqLogo priority className={DESIGN_LOGO_SIZE_CLASS} />
 
           <nav className="design-nav" aria-label="Main">
             {links.map((link) => (

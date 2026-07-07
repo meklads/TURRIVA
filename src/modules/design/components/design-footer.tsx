@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowLeft, ArrowRight, LayoutGrid } from "lucide-react";
 import { getDesignMessages } from "@/shared/i18n/messages/design";
 import { getLocale } from "@/shared/i18n/server";
+import { DESIGN_LOGO_SIZE_CLASS, RuwaqLogo } from "@/shared/components/ruwaq-logo";
 
 const GRAPHICS_HOUSE_URL = "https://3dgraphicshouse.com/";
 
@@ -16,13 +17,7 @@ export async function DesignFooter() {
       <div className="design-container design-container--wide">
         <div className="design-footer-grid">
           <div className="design-footer-brand">
-            <Image
-              src="/brand/ruwaq/logo-on-light.png"
-              alt={t.brand.name}
-              width={1248}
-              height={492}
-              className="design-logo-img"
-            />
+            <RuwaqLogo href="" className={DESIGN_LOGO_SIZE_CLASS} />
             <p>{t.footer.about}</p>
           </div>
 
@@ -39,10 +34,11 @@ export async function DesignFooter() {
                 <LayoutGrid className="h-4 w-4" strokeWidth={1.5} />
               </span>
               <Image
-                src="/brand/ruwaq/logo-on-light.png"
+                src="/brand/ruwaq/logo-transparent.png"
                 alt=""
-                width={1248}
-                height={492}
+                width={1774}
+                height={887}
+                quality={100}
                 className="design-footer-promo__logo"
               />
               <p className="design-footer-promo__desc">{t.footer.workspaceDesc}</p>

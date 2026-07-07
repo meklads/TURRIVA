@@ -59,7 +59,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  min-height: 4rem;
+  min-height: 5.5rem;
 }
 
 .design-logo {
@@ -69,11 +69,6 @@
   font-weight: 700;
   font-size: 1.125rem;
   color: var(--ds-ink);
-}
-
-.design-logo img {
-  height: 1.75rem;
-  width: auto;
 }
 
 .design-nav {
@@ -138,9 +133,8 @@
   background: #f9fafb;
 }
 
-.design-logo-img {
-  height: 1.65rem;
-  width: auto;
+.ruwaq-logo-img {
+  max-width: min(100%, 22rem);
 }
 
 .design-nav-link {
