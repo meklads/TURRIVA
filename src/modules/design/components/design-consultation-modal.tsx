@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from "react";
 import type { DesignMessages } from "@/shared/i18n/messages/design";
-import type { DesignCity } from "@/modules/design/lib/city";
-import { citySupportsExecution } from "@/modules/design/lib/city";
 import type { ConsultationInterest } from "@/modules/design/lib/consultation-interest";
 
 type Props = {
@@ -11,7 +9,6 @@ type Props = {
   locale: "ar" | "en";
   open: boolean;
   onClose: () => void;
-  initialCity?: DesignCity | null;
   initialInterest?: ConsultationInterest;
   generationId?: string | null;
 };
@@ -21,25 +18,22 @@ export function DesignConsultationModal({
   locale,
   open,
   onClose,
-  initialCity = null,
   initialInterest = "execution",
   generationId = null,
 }: Props) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
-  const [city, setCity] = useState<DesignCity | "">("");
   const [interest, setInterest] = useState<ConsultationInterest>("execution");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     if (open) {
-      setCity(initialCity ?? "");
       setInterest(initialInterest);
       setSuccess(false);
     }
-  }, [open, initialCity, initialInterest]);
+  }, [open, initialInterest]);
 
   if (!open) return null;
 
@@ -50,28 +44,20 @@ export function DesignConsultationModal({
       ? c.bespokeSubtitle
       : interest === "both"
         ? c.bothSubtitle
-        : city && citySupportsExecution(city)
-          ? c.executionAvailableSubtitle
-          : city === "other"
-            ? c.executionWaitlistSubtitle
-            : c.subtitle;
+        : c.executionContactSubtitle;
 
   const modalTitle =
     interest === "bespoke"
       ? messages.bespoke.cta
       : interest === "both"
         ? c.interestBoth
-        : c.title;
+        : c.executionContactTitle;
 
   const submitLabel =
-    interest === "bespoke"
-      ? messages.bespoke.cta
-      : interest === "both"
-        ? c.submit
-        : c.submit;
+    interest === "bespoke" ? messages.bespoke.cta : c.executionContactCta;
 
   const submit = async () => {
-    if (!name.trim() || !phone.trim() || !city) return;
+    if (!name.trim() || !phone.trim()) return;
     setLoading(true);
     try {
       const res = await fetch("/api/design/consultation", {
@@ -82,7 +68,6 @@ export function DesignConsultationModal({
           phone,
           message,
           locale,
-          city,
           interest,
           generationId: generationId ?? undefined,
         }),
@@ -105,6 +90,7 @@ export function DesignConsultationModal({
         {success ? (
           <>
             <h2>{c.success}</h2>
+            <p className="mt-2 text-sm text-gray-600">{c.successFollowUp}</p>
             <button type="button" className="design-btn design-btn-primary w-full mt-4" onClick={onClose}>
               OK
             </button>
@@ -128,17 +114,6 @@ export function DesignConsultationModal({
                   </button>
                 ))}
               </div>
-              <label className="block text-xs font-semibold text-gray-600">{c.city}</label>
-              <select
-                className="design-select w-full"
-                value={city}
-                onChange={(e) => setCity(e.target.value as DesignCity)}
-              >
-                <option value="">{locale === "ar" ? "اختر المدينة" : "Select city"}</option>
-                <option value="jeddah">{messages.studio.cityJeddah}</option>
-                <option value="makkah">{messages.studio.cityMakkah}</option>
-                <option value="other">{messages.studio.cityOther}</option>
-              </select>
               <input
                 className="design-select w-full"
                 placeholder={c.name}
@@ -163,7 +138,7 @@ export function DesignConsultationModal({
               <button
                 type="button"
                 className="design-btn design-btn-execution w-full"
-                disabled={loading || !city}
+                disabled={loading || !name.trim() || !phone.trim()}
                 onClick={submit}
               >
                 {loading ? "…" : submitLabel}

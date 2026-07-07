@@ -75,14 +75,9 @@ export type DesignMessages = {
     after: string;
     mockNotice: string;
     tryAnother: string;
-    cityTitle: string;
-    cityJeddah: string;
-    cityMakkah: string;
-    cityOther: string;
     previewBadge: string;
     previewNotice: string;
-    executionAvailable: string;
-    executionWaitlist: string;
+    executionContact: string;
     likeExecutionCta: string;
   };
   welcome: {
@@ -101,11 +96,12 @@ export type DesignMessages = {
     message: string;
     submit: string;
     success: string;
+    successFollowUp: string;
     cta: string;
     executionCta: string;
-    city: string;
-    executionAvailableSubtitle: string;
-    executionWaitlistSubtitle: string;
+    executionContactTitle: string;
+    executionContactSubtitle: string;
+    executionContactCta: string;
     interestLabel: string;
     interestExecution: string;
     interestBespoke: string;
@@ -211,7 +207,6 @@ export type DesignMessages = {
     styleRequired: string;
     signInRequired: string;
     creditsExhausted: string;
-    cityRequired: string;
     fileTooLarge: string;
     unsupportedType: string;
     imageProcessing: string;
@@ -307,16 +302,12 @@ const en: DesignMessages = {
     after: "After",
     mockNotice: "Preview on your photo — connect OpenAI for full AI restyle",
     tryAnother: "Try another style",
-    cityTitle: "Project city",
-    cityJeddah: "Jeddah",
-    cityMakkah: "Makkah",
-    cityOther: "Other city",
     previewBadge: "RUWAQ PREVIEW",
     previewNotice:
       "Low-resolution preview with Ruwaq watermark — full quality unlocks with execution or a pro subscription.",
-    executionAvailable: "Ruwaq can execute this design in Jeddah & Makkah.",
-    executionWaitlist: "Execution is currently in Jeddah & Makkah only — we'll note your interest.",
-    likeExecutionCta: "I love it — request execution",
+    executionContact:
+      "Love the design? Contact us — we'll discuss execution, location, and project details together.",
+    likeExecutionCta: "I love it — contact us for execution",
   },
   welcome: {
     title: "Welcome to Ruwaq",
@@ -335,13 +326,13 @@ const en: DesignMessages = {
     message: "Tell us about your project (optional)",
     submit: "Book free consultation",
     success: "Thank you! Our team will contact you shortly.",
+    successFollowUp: "We'll reach out to discuss your project, location, and execution details.",
     cta: "Free consultation",
     executionCta: "Request execution quote",
-    city: "City",
-    executionAvailableSubtitle:
-      "We'll visit your site in Jeddah or Makkah and turn this preview into a formal technical & financial quote.",
-    executionWaitlistSubtitle:
-      "We'll save your design and contact you if execution opens in your area.",
+    executionContactTitle: "Contact us about execution",
+    executionContactSubtitle:
+      "Leave your details and we'll call you to discuss the design, site visit, and a formal quote.",
+    executionContactCta: "Send — we'll contact you",
     interestLabel: "What do you need?",
     interestExecution: "Execute my AI preview",
     interestBespoke: "Private design with our engineers",
@@ -524,7 +515,6 @@ const en: DesignMessages = {
     styleRequired: "Please choose a style.",
     signInRequired: "Sign in to generate designs.",
     creditsExhausted: "No credits left. Book a consultation to continue.",
-    cityRequired: "Please select your city.",
     fileTooLarge: "Image is too large (max 8 MB).",
     unsupportedType: "Use JPG, PNG, or WEBP only.",
     imageProcessing: "Could not process the image. Try another photo.",
@@ -620,16 +610,12 @@ const ar: DesignMessages = {
     after: "بعد",
     mockNotice: "معاينة على صورتك — فعّل OpenAI لإعادة التصميم الكاملة بالذكاء الاصطناعي",
     tryAnother: "جرّب نمطاً آخر",
-    cityTitle: "مدينة المشروع",
-    cityJeddah: "جدة",
-    cityMakkah: "مكة",
-    cityOther: "مدينة أخرى",
     previewBadge: "معاينة رواق",
     previewNotice:
       "معاينة بدقة منخفضة وعلامة رواق المائية — الجودة الكاملة مع التنفيذ أو اشتراك احترافي.",
-    executionAvailable: "رواق تنفّذ هذا التصميم في جدة ومكة.",
-    executionWaitlist: "التنفيذ حالياً في جدة ومكة فقط — سنسجّل اهتمامك.",
-    likeExecutionCta: "أعجبني — أريد تنفيذاً",
+    executionContact:
+      "أعجبك التصميم؟ تواصل معنا — نتفاهم معك حول التنفيذ والموقع وتفاصيل المشروع.",
+    likeExecutionCta: "أعجبني — تواصل للتنفيذ",
   },
   welcome: {
     title: "مرحباً بك في رواق",
@@ -648,12 +634,13 @@ const ar: DesignMessages = {
     message: "أخبرنا عن مشروعك (اختياري)",
     submit: "احجز استشارة مجانية",
     success: "شكراً! سيتواصل معك فريقنا قريباً.",
+    successFollowUp: "نتواصل معك لمناقشة المشروع والموقع وتفاصيل التنفيذ.",
     cta: "استشارة مجانية",
     executionCta: "اطلب عرض تنفيذ",
-    city: "المدينة",
-    executionAvailableSubtitle:
-      "نزور موقعك في جدة أو مكة ونحوّل هذه المعاينة إلى عرض فني ومالي رسمي.",
-    executionWaitlistSubtitle: "نحفظ تصميمك ونتواصل معك عند توفر التنفيذ في منطقتك.",
+    executionContactTitle: "تواصل معنا بخصوص التنفيذ",
+    executionContactSubtitle:
+      "اترك بياناتك وسنتصل بك لمناقشة التصميم وزيارة الموقع وعرض التنفيذ.",
+    executionContactCta: "إرسال — سنتواصل معك",
     interestLabel: "ماذا تحتاج؟",
     interestExecution: "تنفيذ ما أعجبني من المعاينة",
     interestBespoke: "تصميم خاص مع مهندسينا",
@@ -834,7 +821,6 @@ const ar: DesignMessages = {
     styleRequired: "يرجى اختيار نمط.",
     signInRequired: "سجّل الدخول لتوليد التصاميم.",
     creditsExhausted: "لا توجد أرصدة. احجز استشارة للمتابعة.",
-    cityRequired: "يرجى اختيار المدينة.",
     fileTooLarge: "الصورة كبيرة جداً (الحد 8 ميجابايت).",
     unsupportedType: "استخدم JPG أو PNG أو WEBP فقط.",
     imageProcessing: "تعذّر معالجة الصورة. جرّب صورة أخرى.",

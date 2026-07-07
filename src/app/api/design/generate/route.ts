@@ -8,7 +8,6 @@ import { analyzeDesignMaterials } from "@/modules/design/server/design-materials
 import { analyzeDesignFurniture } from "@/modules/design/server/design-furniture.service";
 import { buildWatermarkedPreviewFromBuffer } from "@/modules/design/server/design-preview.service";
 import { saveDesignBuffer } from "@/modules/design/server/design-storage";
-import { isDesignCity } from "@/modules/design/lib/city";
 import { db } from "@/shared/lib/db";
 import { logServerError } from "@/shared/lib/usage-events";
 
@@ -35,7 +34,6 @@ export async function POST(req: NextRequest) {
     const spaceType = normalizeSpaceType(String(form.get("spaceType") ?? "interior"));
     const roomType = String(form.get("roomType") ?? "villa");
     const locale = String(form.get("locale") ?? "ar") as "ar" | "en";
-    const cityRaw = String(form.get("city") ?? "");
 
     if (!(file instanceof File)) {
       return NextResponse.json({ code: "UPLOAD_REQUIRED", error: "No image" }, { status: 400 });
@@ -44,11 +42,6 @@ export async function POST(req: NextRequest) {
     if (!getStyleById(styleId)) {
       return NextResponse.json({ code: "INVALID_STYLE", error: "Invalid style" }, { status: 400 });
     }
-
-    if (!isDesignCity(cityRaw)) {
-      return NextResponse.json({ code: "CITY_REQUIRED", error: "City required" }, { status: 400 });
-    }
-    const city = cityRaw;
 
     const deducted = await deductCredit(userId);
     if (!deducted.ok) {
@@ -116,7 +109,6 @@ export async function POST(req: NextRequest) {
           beforeUrl,
           afterUrl: previewUrl,
           afterUrlSource: afterUrl,
-          city,
           isMock,
           locale,
           materials: materials as object,
@@ -135,7 +127,6 @@ export async function POST(req: NextRequest) {
       beforeUrl,
       afterUrl: previewUrl,
       isMock,
-      city,
       isPreview: true,
       creditsRemaining: deducted.balance,
       materials,

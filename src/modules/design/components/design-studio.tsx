@@ -12,7 +12,6 @@ import {
   Upload,
 } from "lucide-react";
 import { DESIGN_STYLES, ROOM_TYPES, type SpaceType } from "@/modules/design/lib/styles";
-import { citySupportsExecution, type DesignCity } from "@/modules/design/lib/city";
 import { DesignBeforeAfter } from "./design-before-after";
 import { DesignConsultationModal } from "./design-consultation-modal";
 import { DesignBespokeUpsell } from "./design-bespoke-upsell";
@@ -33,7 +32,6 @@ type Result = {
   beforeUrl: string;
   afterUrl: string;
   isMock: boolean;
-  city: DesignCity;
   materials: DetectedMaterial[];
   materialsAiDetected: boolean;
   furniture: DetectedFurniture[];
@@ -46,7 +44,6 @@ export function DesignStudio({ messages, locale }: Props) {
 
   const [spaceType, setSpaceType] = useState<SpaceType>("interior");
   const [roomType, setRoomType] = useState("villa");
-  const [city, setCity] = useState<DesignCity | null>(null);
   const [styleId, setStyleId] = useState<string | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [file, setFile] = useState<File | null>(null);
@@ -96,10 +93,6 @@ export function DesignStudio({ messages, locale }: Props) {
       setError(messages.errors.styleRequired);
       return;
     }
-    if (!city) {
-      setError(messages.errors.cityRequired);
-      return;
-    }
     if (!session?.user) {
       setError(messages.errors.signInRequired);
       return;
@@ -114,7 +107,6 @@ export function DesignStudio({ messages, locale }: Props) {
     form.append("spaceType", spaceType);
     form.append("roomType", roomType);
     form.append("locale", locale);
-    form.append("city", city);
 
     try {
       const res = await fetch("/api/design/generate", { method: "POST", body: form });
@@ -123,7 +115,6 @@ export function DesignStudio({ messages, locale }: Props) {
       if (!res.ok) {
         if (data.code === "SIGN_IN_REQUIRED") setError(messages.errors.signInRequired);
         else if (data.code === "CREDITS_EXHAUSTED") setError(messages.errors.creditsExhausted);
-        else if (data.code === "CITY_REQUIRED") setError(messages.errors.cityRequired);
         else if (data.code === "FILE_TOO_LARGE") setError(messages.errors.fileTooLarge);
         else if (data.code === "UNSUPPORTED_TYPE") setError(messages.errors.unsupportedType);
         else if (data.code === "IMAGE_FETCH_FAILED") setError(messages.errors.imageProcessing);
@@ -137,7 +128,6 @@ export function DesignStudio({ messages, locale }: Props) {
         beforeUrl: data.beforeUrl,
         afterUrl: data.afterUrl,
         isMock: data.isMock,
-        city: data.city,
         materials: data.materials ?? [],
         materialsAiDetected: data.materialsAiDetected ?? false,
         furniture: data.furniture ?? [],
@@ -276,26 +266,6 @@ export function DesignStudio({ messages, locale }: Props) {
               ))}
             </select>
 
-            <label className="design-studio-section-title mt-3 block">{messages.studio.cityTitle}</label>
-            <div className="design-city-pills">
-              {(
-                [
-                  { id: "jeddah" as const, label: messages.studio.cityJeddah },
-                  { id: "makkah" as const, label: messages.studio.cityMakkah },
-                  { id: "other" as const, label: messages.studio.cityOther },
-                ] as const
-              ).map((option) => (
-                <button
-                  key={option.id}
-                  type="button"
-                  className={`design-city-pill${city === option.id ? " design-city-pill--active" : ""}`}
-                  onClick={() => setCity(option.id)}
-                >
-                  {option.label}
-                </button>
-              ))}
-            </div>
-
             <div
               className="design-upload-zone design-upload-zone--compact"
               onClick={() => fileRef.current?.click()}
@@ -386,16 +356,8 @@ export function DesignStudio({ messages, locale }: Props) {
           <div className="design-studio-extras">
             <p className="design-preview-notice">{messages.studio.previewNotice}</p>
             {result.isMock && <p className="design-mock-notice">{messages.studio.mockNotice}</p>}
-            <p
-              className={`design-execution-notice ${
-                citySupportsExecution(result.city)
-                  ? "design-execution-notice--available"
-                  : "design-execution-notice--waitlist"
-              }`}
-            >
-              {citySupportsExecution(result.city)
-                ? messages.studio.executionAvailable
-                : messages.studio.executionWaitlist}
+            <p className="design-execution-notice design-execution-notice--available">
+              {messages.studio.executionContact}
             </p>
 
             <DesignBespokeUpsell
@@ -419,19 +381,8 @@ export function DesignStudio({ messages, locale }: Props) {
                 className="design-btn design-btn-execution"
                 onClick={() => openConsultation("execution")}
               >
-                {citySupportsExecution(result.city)
-                  ? messages.studio.likeExecutionCta
-                  : messages.consultation.cta}
+                {messages.studio.likeExecutionCta}
               </button>
-              {citySupportsExecution(result.city) && (
-                <button
-                  type="button"
-                  className="design-btn design-btn-primary"
-                  onClick={() => openConsultation("execution")}
-                >
-                  {messages.consultation.executionCta}
-                </button>
-              )}
             </div>
 
             {(result.materials.length > 0 || result.furniture.length > 0) && (
@@ -471,7 +422,6 @@ export function DesignStudio({ messages, locale }: Props) {
         locale={locale}
         open={consultOpen}
         onClose={() => setConsultOpen(false)}
-        initialCity={result?.city ?? city}
         initialInterest={consultInterest}
         generationId={result?.id ?? null}
       />
