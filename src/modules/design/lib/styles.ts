@@ -121,6 +121,7 @@ export const ROOM_TYPES: Record<
     { id: "villa", nameAr: "فيلا", nameEn: "Villa" },
     { id: "apartment", nameAr: "شقة", nameEn: "Apartment" },
     { id: "palace", nameAr: "قصر", nameEn: "Palace" },
+    { id: "empty_room", nameAr: "غرفة فاضية", nameEn: "Empty Room" },
     { id: "shop", nameAr: "محل تجاري", nameEn: "Retail Shop" },
     { id: "majlis", nameAr: "مجلس", nameEn: "Majlis" },
     { id: "living", nameAr: "غرفة معيشة", nameEn: "Living Room" },
@@ -138,11 +139,12 @@ export const ROOM_TYPES: Record<
     { id: "courtyard", nameAr: "فناء / حديقة خارجية", nameEn: "Courtyard / Garden" },
   ],
   booth: [
-    { id: "exhibition_booth", nameAr: "بوث معرض", nameEn: "Exhibition Booth" },
+    { id: "exhibition_booth", nameAr: "جناح معرض", nameEn: "Exhibition Booth" },
     { id: "trade_show", nameAr: "ستاند معرض تجاري", nameEn: "Trade Show Stand" },
     { id: "pop_up", nameAr: "متجر مؤقت", nameEn: "Pop-up Store" },
     { id: "event_pavilion", nameAr: "جناح فعالية", nameEn: "Event Pavilion" },
     { id: "brand_activation", nameAr: "تفعيل علامة تجارية", nameEn: "Brand Activation" },
+    { id: "showroom", nameAr: "صالة عرض", nameEn: "Showroom" },
   ],
 };
 

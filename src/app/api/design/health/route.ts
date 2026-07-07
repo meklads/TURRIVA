@@ -1,6 +1,12 @@
 import { NextResponse } from "next/server";
 import { db } from "@/shared/lib/db";
-import { isOpenAIConfigured } from "@/shared/lib/env";
+import {
+  getDesignImageProvider,
+  getGeminiImageModel,
+  isDesignAIConfigured,
+  isGeminiConfigured,
+  isOpenAIConfigured,
+} from "@/shared/lib/env";
 import { isCloudStorageConfigured } from "@/shared/lib/storage";
 
 export const dynamic = "force-dynamic";
@@ -13,21 +19,23 @@ export async function GET() {
          AND table_name IN ('DesignCreditAccount', 'DesignGeneration')`
     );
     const names = new Set(tables.map((t) => t.table_name));
-
-    const openaiConfigured = isOpenAIConfigured();
+    const provider = getDesignImageProvider();
 
     return NextResponse.json({
       ok:
         names.has("DesignCreditAccount") &&
         names.has("DesignGeneration") &&
-        openaiConfigured,
+        isDesignAIConfigured(),
       tables: {
         designCreditAccount: names.has("DesignCreditAccount"),
         designGeneration: names.has("DesignGeneration"),
       },
       cloudStorage: isCloudStorageConfigured(),
-      openaiConfigured,
-      imageModel: process.env.OPENAI_IMAGE_MODEL?.trim() || "gpt-image-1.5",
+      geminiConfigured: isGeminiConfigured(),
+      openaiConfigured: isOpenAIConfigured(),
+      imageProvider: provider,
+      geminiModel: getGeminiImageModel(),
+      openaiModel: process.env.OPENAI_IMAGE_MODEL?.trim() || "gpt-image-1.5",
       timestamp: new Date().toISOString(),
     });
   } catch (error) {

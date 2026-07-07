@@ -204,13 +204,33 @@ export async function POST(req: NextRequest) {
     if (message === "STORAGE_FAILED") {
       return NextResponse.json({ code: "STORAGE_FAILED", error: "Storage failed" }, { status: 500 });
     }
-    if (message === "OPENAI_NOT_CONFIGURED") {
+    if (message === "OPENAI_NOT_CONFIGURED" || message === "AI_NOT_CONFIGURED") {
       return NextResponse.json(
         {
-          code: "OPENAI_NOT_CONFIGURED",
-          error: "OpenAI API key is not configured on the server",
+          code: "AI_NOT_CONFIGURED",
+          error: "Design AI is not configured on the server",
         },
         { status: 503 }
+      );
+    }
+    if (message === "GEMINI_NOT_CONFIGURED") {
+      return NextResponse.json(
+        {
+          code: "GEMINI_NOT_CONFIGURED",
+          error: "Gemini API key is not configured",
+        },
+        { status: 503 }
+      );
+    }
+    if (message.startsWith("GEMINI_GENERATION_FAILED")) {
+      const detail = message.slice("GEMINI_GENERATION_FAILED:".length) || "Unknown Gemini error";
+      return NextResponse.json(
+        {
+          code: "GEMINI_GENERATION_FAILED",
+          error: "Gemini redesign failed",
+          detail,
+        },
+        { status: 502 }
       );
     }
     if (message.startsWith("OPENAI_GENERATION_FAILED")) {

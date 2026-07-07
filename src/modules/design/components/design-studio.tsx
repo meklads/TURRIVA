@@ -130,9 +130,13 @@ export function DesignStudio({ messages, locale }: Props) {
         else if (data.code === "UNSUPPORTED_TYPE") setError(messages.errors.unsupportedType);
         else if (data.code === "IMAGE_FETCH_FAILED" || data.code === "STORAGE_FAILED") {
           setError(messages.errors.imageProcessing);
-        } else if (data.code === "OPENAI_NOT_CONFIGURED") {
+        } else if (
+          data.code === "OPENAI_NOT_CONFIGURED" ||
+          data.code === "AI_NOT_CONFIGURED" ||
+          data.code === "GEMINI_NOT_CONFIGURED"
+        ) {
           setError(messages.errors.openaiNotConfigured);
-        } else if (data.code === "OPENAI_GENERATION_FAILED") {
+        } else if (data.code === "OPENAI_GENERATION_FAILED" || data.code === "GEMINI_GENERATION_FAILED") {
           setError(messages.errors.openaiGenerationFailed);
         } else if (detail && process.env.NODE_ENV === "development") {
           setError(detail);

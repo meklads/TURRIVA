@@ -119,6 +119,29 @@ export const isGoogleAuthConfigured = () => getGoogleOAuthCredentials() !== null
 
 export const isOpenAIConfigured = () => Boolean(process.env.OPENAI_API_KEY?.trim());
 
+export function getGeminiApiKey(): string | null {
+  const key =
+    process.env.GEMINI_API_KEY?.trim() ||
+    process.env.GOOGLE_AI_API_KEY?.trim() ||
+    process.env.GOOGLE_GENERATIVE_AI_API_KEY?.trim();
+  return key || null;
+}
+
+export const isGeminiConfigured = () => Boolean(getGeminiApiKey());
+
+export function getGeminiImageModel(): string {
+  return process.env.GEMINI_IMAGE_MODEL?.trim() || "gemini-2.5-flash-image";
+}
+
+/** Prefer Gemini (Nano Banana) for photo edits; OpenAI is fallback. */
+export function getDesignImageProvider(): "gemini" | "openai" | null {
+  if (isGeminiConfigured()) return "gemini";
+  if (isOpenAIConfigured()) return "openai";
+  return null;
+}
+
+export const isDesignAIConfigured = () => getDesignImageProvider() !== null;
+
 /** Premium-templates paywall master switch. Defaults to OFF (free trial). */
 export const isBillingEnabled = () =>
   (process.env.BILLING_ENABLED ?? "false").trim().toLowerCase() === "true";

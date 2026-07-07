@@ -239,6 +239,7 @@ export function getFallbackFurniture(styleId: string, roomType: string): string[
     palace: "majlis",
     shop: "retail",
     office: "living",
+    empty_room: "living",
   };
   const effectiveRoom = interiorRoomMap[roomType] ?? roomType;
   const byRoom = FURNITURE_CATALOG.filter((f) => f.roomTypes.includes(effectiveRoom));

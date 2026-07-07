@@ -291,9 +291,9 @@ const en: DesignMessages = {
     projectType: "Project type",
     boothType: "Booth / stand type",
     uploadTitle: "Click or drag and drop",
-    uploadHintInterior: "Villa, apartment, palace, shop, majlis — JPG, PNG or WEBP",
+    uploadHintInterior: "Villa, apartment, palace, empty room, shop, majlis — JPG, PNG or WEBP",
     uploadHintExterior: "Facade, building, shop front, courtyard — JPG, PNG or WEBP",
-    uploadHintBooth: "Booth, stand, pop-up, pavilion — JPG, PNG or WEBP",
+    uploadHintBooth: "Exhibition booth, stand, pop-up, showroom — JPG, PNG or WEBP",
     uploadButton: "Upload",
     uploadDrag: "Drop your image here",
     styleTitle: "Choose a style",
@@ -526,7 +526,7 @@ const en: DesignMessages = {
     unsupportedType: "Use JPG, PNG, or WEBP only.",
     imageProcessing: "Could not process the image. Try another photo.",
     openaiNotConfigured:
-      "AI redesign is not enabled on the server yet. Add OPENAI_API_KEY in Coolify, then redeploy.",
+      "AI redesign is not enabled on the server yet. Add GEMINI_API_KEY (Nano Banana) or OPENAI_API_KEY in Coolify, then redeploy.",
     openaiGenerationFailed:
       "AI could not redesign this photo. Try another image or a simpler room photo.",
     generic: "Something went wrong. Please try again.",
@@ -606,9 +606,9 @@ const ar: DesignMessages = {
     projectType: "نوع المشروع",
     boothType: "نوع البوث / المعرض",
     uploadTitle: "انقر أو اسحب وأفلت",
-    uploadHintInterior: "فيلا، شقة، قصر، محل، مجلس — JPG أو PNG أو WEBP",
+    uploadHintInterior: "فيلا، شقة، قصر، غرفة فاضية، محل، مجلس — JPG أو PNG أو WEBP",
     uploadHintExterior: "واجهة، مبنى، محل، فناء — JPG أو PNG أو WEBP",
-    uploadHintBooth: "بوث، ستاند، متجر مؤقت، جناح — JPG أو PNG أو WEBP",
+    uploadHintBooth: "جناح معرض، ستاند، متجر مؤقت، صالة عرض — JPG أو PNG أو WEBP",
     uploadButton: "رفع",
     uploadDrag: "أفلت صورتك هنا",
     styleTitle: "اختر النمط",
@@ -839,7 +839,7 @@ const ar: DesignMessages = {
     unsupportedType: "استخدم JPG أو PNG أو WEBP فقط.",
     imageProcessing: "تعذّر معالجة الصورة. جرّب صورة أخرى.",
     openaiNotConfigured:
-      "إعادة التصميم بالذكاء الاصطناعي غير مفعّلة على السيرفر. أضف OPENAI_API_KEY في Coolify ثم أعد النشر.",
+      "إعادة التصميم بالذكاء الاصطناعي غير مفعّلة. أضف GEMINI_API_KEY (نانو بانانا) أو OPENAI_API_KEY في Coolify ثم أعد النشر.",
     openaiGenerationFailed:
       "تعذّر على الذكاء الاصطناعي إعادة تصميم هذه الصورة. جرّب صورة أخرى أو غرفة أوضح.",
     generic: "حدث خطأ. يرجى المحاولة مرة أخرى.",
