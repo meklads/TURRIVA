@@ -2,7 +2,7 @@ import sharp from "sharp";
 import OpenAI, { toFile } from "openai";
 import { getStyleById, getRoomLabel, type SpaceType } from "../lib/styles";
 import { loadImageBuffer } from "./design-image.utils";
-import { saveDesignBuffer } from "./design-storage";
+import { toDataUrl, trySaveDesignBuffer } from "./design-storage";
 
 const openai = process.env.OPENAI_API_KEY
   ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
@@ -114,6 +114,15 @@ async function generateWithOpenAIEdit(
   return Buffer.from(b64, "base64");
 }
 
+async function persistAfterUrl(
+  buffer: Buffer,
+  mime: string,
+  prefix: string
+): Promise<string> {
+  const stored = await trySaveDesignBuffer(buffer, mime, prefix);
+  return stored ?? toDataUrl(buffer, mime);
+}
+
 export async function generateDesignAfter(input: GenerateInput): Promise<GenerateResult> {
   const style = getStyleById(input.styleId);
   if (!style) throw new Error("INVALID_STYLE");
@@ -124,7 +133,7 @@ export async function generateDesignAfter(input: GenerateInput): Promise<Generat
     try {
       const editedBuffer = await generateWithOpenAIEdit(beforeBuffer, input);
       if (editedBuffer) {
-        const afterUrl = await saveDesignBuffer(editedBuffer, "image/png", `${input.userId}-ai`);
+        const afterUrl = await persistAfterUrl(editedBuffer, "image/png", `${input.userId}-ai`);
         return { afterUrl, afterBuffer: editedBuffer, isMock: false };
       }
     } catch {
@@ -134,16 +143,16 @@ export async function generateDesignAfter(input: GenerateInput): Promise<Generat
 
   try {
     const styledBuffer = await stylePreviewBuffer(beforeBuffer);
-    const afterUrl = await saveDesignBuffer(styledBuffer, "image/jpeg", `${input.userId}-styled`);
+    const afterUrl = await persistAfterUrl(styledBuffer, "image/jpeg", `${input.userId}-styled`);
     return { afterUrl, afterBuffer: styledBuffer, isMock: true };
   } catch {
     try {
       const sampleBuffer = await loadImageBuffer(style.sampleAfter[input.spaceType]);
-      const afterUrl = await saveDesignBuffer(sampleBuffer, "image/jpeg", `${input.userId}-sample`);
+      const afterUrl = await persistAfterUrl(sampleBuffer, "image/jpeg", `${input.userId}-sample`);
       return { afterUrl, afterBuffer: sampleBuffer, isMock: true };
     } catch {
       const styledBuffer = await stylePreviewBuffer(beforeBuffer);
-      const afterUrl = await saveDesignBuffer(styledBuffer, "image/jpeg", `${input.userId}-fallback`);
+      const afterUrl = await persistAfterUrl(styledBuffer, "image/jpeg", `${input.userId}-fallback`);
       return { afterUrl, afterBuffer: styledBuffer, isMock: true };
     }
   }

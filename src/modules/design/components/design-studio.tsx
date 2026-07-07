@@ -113,7 +113,8 @@ export function DesignStudio({ messages, locale }: Props) {
       let data: Record<string, unknown> = {};
       try {
         data = await res.json();
-      } catch {
+      } catch (parseError) {
+        console.error("[design-studio] non-JSON generate response", parseError);
         setError(messages.errors.generic);
         await loadCredits();
         return;
@@ -153,7 +154,8 @@ export function DesignStudio({ messages, locale }: Props) {
       if (typeof data.creditsRemaining === "number") {
         setCredits(data.creditsRemaining);
       }
-    } catch {
+    } catch (networkError) {
+      console.error("[design-studio] generate request failed", networkError);
       setError(messages.errors.generic);
       await loadCredits();
     } finally {

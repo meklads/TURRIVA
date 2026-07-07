@@ -27,6 +27,20 @@ function watermarkSvg(width: number, height: number, label: string): Buffer {
   return Buffer.from(svg, "utf-8");
 }
 
+/** Resize for UI display — keeps API JSON small when returning inline data URLs. */
+export async function buildDisplayPreviewFromBuffer(input: Buffer): Promise<Buffer> {
+  return sharp(input)
+    .rotate()
+    .resize({
+      width: PREVIEW_MAX_PX,
+      height: PREVIEW_MAX_PX,
+      fit: "inside",
+      withoutEnlargement: true,
+    })
+    .jpeg({ quality: JPEG_QUALITY, mozjpeg: true })
+    .toBuffer();
+}
+
 /**
  * Low-resolution, watermarked preview — what B2C/B2B free tiers receive.
  * Uses ASCII watermark text for reliable sharp/librsvg rendering.

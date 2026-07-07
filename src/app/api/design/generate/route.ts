@@ -11,7 +11,10 @@ import {
 import { getStyleById, normalizeSpaceType } from "@/modules/design/lib/styles";
 import { analyzeDesignMaterials } from "@/modules/design/server/design-materials.service";
 import { analyzeDesignFurniture } from "@/modules/design/server/design-furniture.service";
-import { buildWatermarkedPreviewFromBuffer } from "@/modules/design/server/design-preview.service";
+import {
+  buildDisplayPreviewFromBuffer,
+  buildWatermarkedPreviewFromBuffer,
+} from "@/modules/design/server/design-preview.service";
 import { db } from "@/shared/lib/db";
 import { logServerError } from "@/shared/lib/usage-events";
 
@@ -82,8 +85,11 @@ export async function POST(req: NextRequest) {
       userId,
     });
 
-    const previewBuffer = await buildWatermarkedPreviewFromBuffer(afterBuffer);
-    const beforeDisplayUrl = toDataUrl(beforeBuffer, beforeMime);
+    const [beforePreviewBuffer, previewBuffer] = await Promise.all([
+      buildDisplayPreviewFromBuffer(beforeBuffer),
+      buildWatermarkedPreviewFromBuffer(afterBuffer),
+    ]);
+    const beforeDisplayUrl = toDataUrl(beforePreviewBuffer, "image/jpeg");
     const afterDisplayUrl = toDataUrl(previewBuffer, "image/jpeg");
 
     const [persistedBeforeUrl, persistedAfterUrl] = await Promise.all([
@@ -172,6 +178,20 @@ export async function POST(req: NextRequest) {
     }
     logServerError("design generate", error);
     const message = error instanceof Error ? error.message : "Unknown error";
+    const prismaCode =
+      error && typeof error === "object" && "code" in error
+        ? String((error as { code: string }).code)
+        : null;
+    if (prismaCode === "P2021" || prismaCode === "P2022") {
+      return NextResponse.json(
+        {
+          code: "SCHEMA_NOT_READY",
+          error: "Design tables missing — redeploy or run prisma db push",
+          detail: message,
+        },
+        { status: 503 }
+      );
+    }
     if (message === "FILE_TOO_LARGE") {
       return NextResponse.json({ code: "FILE_TOO_LARGE", error: "File too large" }, { status: 400 });
     }
