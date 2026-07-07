@@ -42,6 +42,14 @@ export async function DesignHeader() {
 
           <div className="design-header-actions">
             <LocaleSwitcher />
+            <Link
+              href="/workspace"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="design-btn design-btn-ghost hidden md:inline-flex"
+            >
+              {t.nav.workspace}
+            </Link>
             <Link href="/#studio" className="design-btn design-btn-ghost hidden sm:inline-flex">
               {t.nav.generate}
             </Link>

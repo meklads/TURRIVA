@@ -8,6 +8,7 @@ export type DesignMessages = {
     styleGallery: string;
     pricing: string;
     signIn: string;
+    workspace: string;
     about: string;
     contact: string;
   };
@@ -142,6 +143,10 @@ export type DesignMessages = {
     product: string;
     company: string;
     support: string;
+    solutions: string;
+    workspaceDesc: string;
+    workspaceCta: string;
+    workspaceBadge: string;
     copyright: string;
     privacy: string;
     terms: string;
@@ -165,6 +170,7 @@ const en: DesignMessages = {
     styleGallery: "Style Gallery",
     pricing: "Pricing",
     signIn: "Sign In",
+    workspace: "Proposals",
     about: "About",
     contact: "Contact",
   },
@@ -365,6 +371,11 @@ const en: DesignMessages = {
     product: "Product",
     company: "Company",
     support: "Support",
+    solutions: "Solutions",
+    workspaceDesc:
+      "AI-powered proposals, BOQ, and project quotes — the Ruwaq workspace your team already uses.",
+    workspaceCta: "Open proposals platform",
+    workspaceBadge: "Existing app",
     copyright: "© Ruwaq. All rights reserved.",
     privacy: "Privacy Policy",
     terms: "Terms of Use",
@@ -388,6 +399,7 @@ const ar: DesignMessages = {
     styleGallery: "معرض الأنماط",
     pricing: "الأسعار",
     signIn: "تسجيل الدخول",
+    workspace: "منصة العروض",
     about: "من نحن",
     contact: "تواصل",
   },
@@ -587,6 +599,11 @@ const ar: DesignMessages = {
     product: "المنتج",
     company: "الشركة",
     support: "الدعم",
+    solutions: "الحلول",
+    workspaceDesc:
+      "عروض أسعار ذكية، جداول كميات، وإدارة مشاريع — منصة رواق التي يستخدمها فريقك.",
+    workspaceCta: "الدخول إلى المنصة",
+    workspaceBadge: "التطبيق الحالي",
     copyright: "© رواق. جميع الحقوق محفوظة.",
     privacy: "سياسة الخصوصية",
     terms: "شروط الاستخدام",
