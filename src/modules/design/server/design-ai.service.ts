@@ -10,6 +10,7 @@ const openai = process.env.OPENAI_API_KEY
 
 type GenerateInput = {
   beforeUrl: string;
+  beforeBuffer?: Buffer;
   styleId: string;
   spaceType: SpaceType;
   roomType: string;
@@ -110,7 +111,7 @@ export async function generateDesignAfter(input: GenerateInput): Promise<Generat
   const style = getStyleById(input.styleId);
   if (!style) throw new Error("INVALID_STYLE");
 
-  const beforeBuffer = await loadImageBuffer(input.beforeUrl);
+  const beforeBuffer = input.beforeBuffer ?? (await loadImageBuffer(input.beforeUrl));
 
   if (openai) {
     try {
@@ -129,8 +130,14 @@ export async function generateDesignAfter(input: GenerateInput): Promise<Generat
     const afterUrl = await saveDesignBuffer(styledBuffer, "image/jpeg", `${input.userId}-styled`);
     return { afterUrl, afterBuffer: styledBuffer, isMock: true };
   } catch {
-    const sampleBuffer = await loadImageBuffer(style.sampleAfter[input.spaceType]);
-    const afterUrl = await saveDesignBuffer(sampleBuffer, "image/jpeg", `${input.userId}-sample`);
-    return { afterUrl, afterBuffer: sampleBuffer, isMock: true };
+    try {
+      const sampleBuffer = await loadImageBuffer(style.sampleAfter[input.spaceType]);
+      const afterUrl = await saveDesignBuffer(sampleBuffer, "image/jpeg", `${input.userId}-sample`);
+      return { afterUrl, afterBuffer: sampleBuffer, isMock: true };
+    } catch {
+      const styledBuffer = await stylePreviewBuffer(beforeBuffer);
+      const afterUrl = await saveDesignBuffer(styledBuffer, "image/jpeg", `${input.userId}-fallback`);
+      return { afterUrl, afterBuffer: styledBuffer, isMock: true };
+    }
   }
 }

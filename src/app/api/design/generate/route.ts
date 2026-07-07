@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getSession } from "@/modules/auth/server/session";
 import { generateDesignAfter } from "@/modules/design/server/design-ai.service";
 import { deductCredit, refundCredit } from "@/modules/design/server/design-credits.service";
-import { saveDesignImage } from "@/modules/design/server/design-storage";
+import { resolveDesignImageMime, saveDesignImageBuffer } from "@/modules/design/server/design-storage";
 import { getStyleById, normalizeSpaceType } from "@/modules/design/lib/styles";
 import { analyzeDesignMaterials } from "@/modules/design/server/design-materials.service";
 import { analyzeDesignFurniture } from "@/modules/design/server/design-furniture.service";
@@ -52,9 +52,12 @@ export async function POST(req: NextRequest) {
     }
     creditDeducted = true;
 
-    const beforeUrl = await saveDesignImage(file, userId);
+    const beforeBuffer = Buffer.from(await file.arrayBuffer());
+    const beforeMime = resolveDesignImageMime(file, beforeBuffer);
+    const beforeUrl = await saveDesignImageBuffer(beforeBuffer, beforeMime, userId);
     const { afterUrl, afterBuffer, isMock } = await generateDesignAfter({
       beforeUrl,
+      beforeBuffer,
       styleId,
       spaceType,
       roomType,
@@ -153,6 +156,16 @@ export async function POST(req: NextRequest) {
     if (message === "FETCH_IMAGE_FAILED") {
       return NextResponse.json({ code: "IMAGE_FETCH_FAILED", error: "Image processing failed" }, { status: 500 });
     }
-    return NextResponse.json({ code: "GENERIC", error: "Generation failed" }, { status: 500 });
+    if (message === "Cloud storage is not configured" || message.includes("S3") || message.includes("storage")) {
+      return NextResponse.json({ code: "STORAGE_FAILED", error: "Storage failed" }, { status: 500 });
+    }
+    return NextResponse.json(
+      {
+        code: "GENERIC",
+        error: "Generation failed",
+        detail: process.env.NODE_ENV === "development" ? message : undefined,
+      },
+      { status: 500 }
+    );
   }
 }

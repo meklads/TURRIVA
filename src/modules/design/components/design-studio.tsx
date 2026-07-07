@@ -110,7 +110,14 @@ export function DesignStudio({ messages, locale }: Props) {
 
     try {
       const res = await fetch("/api/design/generate", { method: "POST", body: form });
-      const data = await res.json();
+      let data: Record<string, unknown> = {};
+      try {
+        data = await res.json();
+      } catch {
+        setError(messages.errors.generic);
+        await loadCredits();
+        return;
+      }
 
       if (!res.ok) {
         if (data.code === "SIGN_IN_REQUIRED") setError(messages.errors.signInRequired);
@@ -124,16 +131,18 @@ export function DesignStudio({ messages, locale }: Props) {
       }
 
       setResult({
-        id: data.id ?? `local-${Date.now()}`,
-        beforeUrl: data.beforeUrl,
-        afterUrl: data.afterUrl,
-        isMock: data.isMock,
-        materials: data.materials ?? [],
-        materialsAiDetected: data.materialsAiDetected ?? false,
-        furniture: data.furniture ?? [],
-        furnitureAiDetected: data.furnitureAiDetected ?? false,
+        id: String(data.id ?? `local-${Date.now()}`),
+        beforeUrl: String(data.beforeUrl),
+        afterUrl: String(data.afterUrl),
+        isMock: Boolean(data.isMock),
+        materials: (data.materials as Result["materials"]) ?? [],
+        materialsAiDetected: Boolean(data.materialsAiDetected),
+        furniture: (data.furniture as Result["furniture"]) ?? [],
+        furnitureAiDetected: Boolean(data.furnitureAiDetected),
       });
-      setCredits(data.creditsRemaining);
+      if (typeof data.creditsRemaining === "number") {
+        setCredits(data.creditsRemaining);
+      }
     } catch {
       setError(messages.errors.generic);
       await loadCredits();
