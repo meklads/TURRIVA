@@ -81,6 +81,8 @@ async function stylePreviewBuffer(buffer: Buffer): Promise<Buffer> {
     .toBuffer();
 }
 
+const OPENAI_EDIT_TIMEOUT_MS = 25_000;
+
 async function generateWithOpenAIEdit(
   beforeBuffer: Buffer,
   input: GenerateInput
@@ -91,15 +93,20 @@ async function generateWithOpenAIEdit(
   const mask = await createFullEditMask();
   const prompt = buildEditPrompt(input);
 
-  const response = await openai.images.edit({
-    model: "dall-e-2",
-    image: await toFile(png, "room.png", { type: "image/png" }),
-    mask: await toFile(mask, "mask.png", { type: "image/png" }),
-    prompt,
-    n: 1,
-    size: "1024x1024",
-    response_format: "b64_json",
-  });
+  const response = await Promise.race([
+    openai.images.edit({
+      model: "dall-e-2",
+      image: await toFile(png, "room.png", { type: "image/png" }),
+      mask: await toFile(mask, "mask.png", { type: "image/png" }),
+      prompt,
+      n: 1,
+      size: "1024x1024",
+      response_format: "b64_json",
+    }),
+    new Promise<never>((_, reject) => {
+      setTimeout(() => reject(new Error("OPENAI_TIMEOUT")), OPENAI_EDIT_TIMEOUT_MS);
+    }),
+  ]);
 
   const b64 = response.data?.[0]?.b64_json;
   if (!b64) return null;

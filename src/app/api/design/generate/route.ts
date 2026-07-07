@@ -2,12 +2,16 @@ import { NextRequest, NextResponse } from "next/server";
 import { getSession } from "@/modules/auth/server/session";
 import { generateDesignAfter } from "@/modules/design/server/design-ai.service";
 import { deductCredit, refundCredit } from "@/modules/design/server/design-credits.service";
-import { resolveDesignImageMime, saveDesignImageBuffer } from "@/modules/design/server/design-storage";
+import {
+  resolveDesignImageMime,
+  toDataUrl,
+  trySaveDesignBuffer,
+  trySaveDesignImageBuffer,
+} from "@/modules/design/server/design-storage";
 import { getStyleById, normalizeSpaceType } from "@/modules/design/lib/styles";
 import { analyzeDesignMaterials } from "@/modules/design/server/design-materials.service";
 import { analyzeDesignFurniture } from "@/modules/design/server/design-furniture.service";
 import { buildWatermarkedPreviewFromBuffer } from "@/modules/design/server/design-preview.service";
-import { saveDesignBuffer } from "@/modules/design/server/design-storage";
 import { db } from "@/shared/lib/db";
 import { logServerError } from "@/shared/lib/usage-events";
 
@@ -43,6 +47,22 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ code: "INVALID_STYLE", error: "Invalid style" }, { status: 400 });
     }
 
+    const beforeBuffer = Buffer.from(await file.arrayBuffer());
+    let beforeMime: string;
+    try {
+      beforeMime = resolveDesignImageMime(file, beforeBuffer);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "UNSUPPORTED_TYPE";
+      if (message === "UNSUPPORTED_TYPE") {
+        return NextResponse.json({ code: "UNSUPPORTED_TYPE", error: "Unsupported type" }, { status: 400 });
+      }
+      throw error;
+    }
+
+    if (beforeBuffer.length > 8 * 1024 * 1024) {
+      return NextResponse.json({ code: "FILE_TOO_LARGE", error: "File too large" }, { status: 400 });
+    }
+
     const deducted = await deductCredit(userId);
     if (!deducted.ok) {
       return NextResponse.json(
@@ -52,11 +72,8 @@ export async function POST(req: NextRequest) {
     }
     creditDeducted = true;
 
-    const beforeBuffer = Buffer.from(await file.arrayBuffer());
-    const beforeMime = resolveDesignImageMime(file, beforeBuffer);
-    const beforeUrl = await saveDesignImageBuffer(beforeBuffer, beforeMime, userId);
     const { afterUrl, afterBuffer, isMock } = await generateDesignAfter({
-      beforeUrl,
+      beforeUrl: toDataUrl(beforeBuffer, beforeMime),
       beforeBuffer,
       styleId,
       spaceType,
@@ -66,16 +83,24 @@ export async function POST(req: NextRequest) {
     });
 
     const previewBuffer = await buildWatermarkedPreviewFromBuffer(afterBuffer);
-    const previewUrl = await saveDesignBuffer(previewBuffer, "image/jpeg", `${userId}-after`);
+    const beforeDisplayUrl = toDataUrl(beforeBuffer, beforeMime);
+    const afterDisplayUrl = toDataUrl(previewBuffer, "image/jpeg");
+
+    const [persistedBeforeUrl, persistedAfterUrl] = await Promise.all([
+      trySaveDesignImageBuffer(beforeBuffer, beforeMime, userId),
+      trySaveDesignBuffer(previewBuffer, "image/jpeg", `${userId}-after`),
+    ]);
 
     let materials: Awaited<ReturnType<typeof analyzeDesignMaterials>>["materials"] = [];
     let materialsAiDetected = false;
     let furniture: Awaited<ReturnType<typeof analyzeDesignFurniture>>["furniture"] = [];
     let furnitureAiDetected = false;
 
+    const analysisAfterUrl = persistedAfterUrl ?? afterDisplayUrl;
+
     try {
       const materialResult = await analyzeDesignMaterials({
-        afterUrl: previewUrl,
+        afterUrl: analysisAfterUrl,
         styleId,
         spaceType,
         roomType,
@@ -89,7 +114,7 @@ export async function POST(req: NextRequest) {
 
     try {
       const furnitureResult = await analyzeDesignFurniture({
-        afterUrl: previewUrl,
+        afterUrl: analysisAfterUrl,
         styleId,
         spaceType,
         roomType,
@@ -109,8 +134,8 @@ export async function POST(req: NextRequest) {
           spaceType,
           roomType,
           styleId,
-          beforeUrl,
-          afterUrl: previewUrl,
+          beforeUrl: persistedBeforeUrl ?? beforeDisplayUrl,
+          afterUrl: persistedAfterUrl ?? afterDisplayUrl,
           afterUrlSource: afterUrl,
           isMock,
           locale,
@@ -127,8 +152,8 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       id: generationId,
-      beforeUrl,
-      afterUrl: previewUrl,
+      beforeUrl: beforeDisplayUrl,
+      afterUrl: afterDisplayUrl,
       isMock,
       isPreview: true,
       creditsRemaining: deducted.balance,
@@ -156,14 +181,14 @@ export async function POST(req: NextRequest) {
     if (message === "FETCH_IMAGE_FAILED") {
       return NextResponse.json({ code: "IMAGE_FETCH_FAILED", error: "Image processing failed" }, { status: 500 });
     }
-    if (message === "Cloud storage is not configured" || message.includes("S3") || message.includes("storage")) {
+    if (message === "STORAGE_FAILED") {
       return NextResponse.json({ code: "STORAGE_FAILED", error: "Storage failed" }, { status: 500 });
     }
     return NextResponse.json(
       {
         code: "GENERIC",
         error: "Generation failed",
-        detail: process.env.NODE_ENV === "development" ? message : undefined,
+        detail: message,
       },
       { status: 500 }
     );

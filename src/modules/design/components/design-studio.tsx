@@ -120,12 +120,22 @@ export function DesignStudio({ messages, locale }: Props) {
       }
 
       if (!res.ok) {
+        const detail = typeof data.detail === "string" ? data.detail : null;
         if (data.code === "SIGN_IN_REQUIRED") setError(messages.errors.signInRequired);
         else if (data.code === "CREDITS_EXHAUSTED") setError(messages.errors.creditsExhausted);
         else if (data.code === "FILE_TOO_LARGE") setError(messages.errors.fileTooLarge);
         else if (data.code === "UNSUPPORTED_TYPE") setError(messages.errors.unsupportedType);
-        else if (data.code === "IMAGE_FETCH_FAILED") setError(messages.errors.imageProcessing);
-        else setError(messages.errors.generic);
+        else if (data.code === "IMAGE_FETCH_FAILED" || data.code === "STORAGE_FAILED") {
+          setError(messages.errors.imageProcessing);
+        } else if (detail && process.env.NODE_ENV === "development") {
+          setError(detail);
+        } else setError(messages.errors.generic);
+        await loadCredits();
+        return;
+      }
+
+      if (!data.afterUrl || !data.beforeUrl) {
+        setError(messages.errors.generic);
         await loadCredits();
         return;
       }
