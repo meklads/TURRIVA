@@ -55,6 +55,16 @@ export type LuxuryMessages = {
   footer: {
     about: string;
     quickLinks: string;
+    importantLinks: string;
+    servicesLinks: string;
+    solutionsLinks: string;
+    offices: string;
+    countries: {
+      saudiArabia: string;
+      oman: string;
+      bahrain: string;
+      egypt: string;
+    };
     contact: string;
     workspace: string;
     workspaceDesc: string;
@@ -172,6 +182,16 @@ const en: LuxuryMessages = {
     about:
       "Ruwaq is a premium Saudi decor and contracting company specializing in luxury villas, palaces, and high-end residential projects.",
     quickLinks: "Quick Links",
+    importantLinks: "Important Links",
+    servicesLinks: "Services",
+    solutionsLinks: "Solutions",
+    offices: "Offices",
+    countries: {
+      saudiArabia: "Saudi Arabia",
+      oman: "Oman",
+      bahrain: "Bahrain",
+      egypt: "Egypt",
+    },
     contact: "Contact Us",
     workspace: "Platform",
     workspaceDesc: "Professional quotes and project management for your team.",
@@ -308,6 +328,16 @@ const ar: LuxuryMessages = {
     about:
       "رواق شركة سعودية فاخرة للديكور والمقاولات، متخصصة في الفلل والقصور والمشاريع السكنية الراقية.",
     quickLinks: "روابط سريعة",
+    importantLinks: "أهم الروابط",
+    servicesLinks: "الخدمات",
+    solutionsLinks: "الحلول",
+    offices: "مكاتبنا",
+    countries: {
+      saudiArabia: "السعودية",
+      oman: "سلطنة عُمان",
+      bahrain: "مملكة البحرين",
+      egypt: "مصر",
+    },
     contact: "تواصل معنا",
     workspace: "المنصة",
     workspaceDesc: "عروض احترافية وإدارة مشاريعك في مكان واحد.",

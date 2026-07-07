@@ -12,17 +12,47 @@ export async function LuxuryFooter() {
   const t = getLuxuryMessages(locale);
   const Arrow = locale === "ar" ? ArrowLeft : ArrowRight;
 
-  const quickLinks = [
+  const importantLinks = [
     { href: "/", label: t.nav.home },
     { href: "/our-work", label: t.nav.ourWork },
     { href: "/about", label: t.nav.about },
     { href: "/contact", label: t.nav.contact },
   ];
 
+  const servicesLinks = [
+    { href: "/interior-design", label: t.nav.interiorDesign },
+    { href: "/construction", label: t.nav.construction },
+  ];
+
+  const solutionsLinks = [{ href: "/workspace", label: t.nav.workspace }];
+
+  const offices = [
+    {
+      title: t.footer.countries.saudiArabia,
+      lines: [locale === "ar" ? "جدة" : "Jeddah", "P.O.Box 136972", "CR 4030502306"],
+      phone: "+966502786513",
+    },
+    {
+      title: t.footer.countries.oman,
+      lines: [locale === "ar" ? "مسقط" : "Muscat", locale === "ar" ? "الخوض، السيب" : "Al Khod, Al Seeb", "CR 1460078"],
+      phone: "+96891326735",
+    },
+    {
+      title: t.footer.countries.bahrain,
+      lines: [locale === "ar" ? "المنامة" : "Manama", locale === "ar" ? "مجمع 316" : "Block 316", "CR 15571301"],
+      phone: "+97332150369",
+    },
+    {
+      title: t.footer.countries.egypt,
+      lines: [locale === "ar" ? "القاهرة" : "Cairo", locale === "ar" ? "شارع محمد عثمان" : "Mohamed Othman St.", locale === "ar" ? "برج فيكتوريا سيتي" : "Victoria City Tower"],
+      phone: "+201032955089",
+    },
+  ];
+
   return (
     <footer className="border-t border-lux-sand bg-lux-cream">
       <div className="lux-container py-16 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-5">
+        <div className="grid gap-12 lg:grid-cols-6">
           <div className="lg:col-span-2">
             <LuxuryBrandLogo href="/" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-lux-ink-soft">
@@ -32,10 +62,10 @@ export async function LuxuryFooter() {
 
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-lux-ink">
-              {t.footer.quickLinks}
+              {t.footer.importantLinks}
             </h3>
             <ul className="mt-5 space-y-3">
-              {quickLinks.map((link) => (
+              {importantLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -50,30 +80,79 @@ export async function LuxuryFooter() {
 
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-lux-ink">
-              {t.footer.workspace}
+              {t.footer.servicesLinks}
             </h3>
-            <Link
-              href="/workspace"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="lux-footer-promo group mt-5"
-            >
-              <span className="lux-footer-promo__icon" aria-hidden>
-                <LayoutGrid className="h-4 w-4" strokeWidth={1.5} />
-              </span>
-              <Image
-                src="/brand/ruwaq/logo-on-light.png"
-                alt=""
-                width={1248}
-                height={492}
-                className="lux-footer-promo__logo"
-              />
-              <p className="lux-footer-promo__desc">{t.footer.workspaceDesc}</p>
-              <span className="lux-footer-promo__cta">
-                {t.footer.workspaceCta}
-                <Arrow className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5" />
-              </span>
-            </Link>
+            <ul className="mt-5 space-y-3">
+              {servicesLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-lux-ink-soft transition-colors hover:text-lux-gold">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-lux-ink">
+              {t.footer.solutionsLinks}
+            </h3>
+            <div className="mt-5">
+              <Link
+                href="/workspace"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="lux-footer-promo group"
+              >
+                <span className="lux-footer-promo__icon" aria-hidden>
+                  <LayoutGrid className="h-4 w-4" strokeWidth={1.5} />
+                </span>
+                <Image
+                  src="/brand/ruwaq/logo-on-light.png"
+                  alt=""
+                  width={1248}
+                  height={492}
+                  className="lux-footer-promo__logo"
+                />
+                <p className="lux-footer-promo__desc">{t.footer.workspaceDesc}</p>
+                <span className="lux-footer-promo__cta">
+                  {t.footer.workspaceCta}
+                  <Arrow className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5" />
+                </span>
+              </Link>
+            </div>
+            <ul className="mt-6 space-y-3">
+              {solutionsLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-lux-ink-soft transition-colors hover:text-lux-gold">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-lux-ink">
+              {t.footer.offices}
+            </h3>
+            <div className="mt-5 space-y-5 text-sm text-lux-ink-soft">
+              {offices.map((office) => (
+                <div key={office.title} className="space-y-1">
+                  <div className="text-xs font-semibold uppercase tracking-[0.2em] text-lux-ink">
+                    {office.title}
+                  </div>
+                  <div className="space-y-0.5">
+                    {office.lines.map((line) => (
+                      <div key={line}>{line}</div>
+                    ))}
+                  </div>
+                  <a href={`tel:${office.phone}`} dir="ltr" className="inline-block text-lux-gold hover:underline">
+                    {office.phone}
+                  </a>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div>
