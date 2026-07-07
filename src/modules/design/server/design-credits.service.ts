@@ -29,3 +29,13 @@ export async function deductCredit(userId: string): Promise<{ ok: true; balance:
 
   return { ok: true, balance: updated.balance };
 }
+
+export async function refundCredit(userId: string): Promise<void> {
+  await db.designCreditAccount.update({
+    where: { userId },
+    data: {
+      balance: { increment: 1 },
+      totalUsed: { decrement: 1 },
+    },
+  });
+}

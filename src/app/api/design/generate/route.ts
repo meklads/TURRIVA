@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSession } from "@/modules/auth/server/session";
 import { generateDesignAfter } from "@/modules/design/server/design-ai.service";
-import { deductCredit } from "@/modules/design/server/design-credits.service";
+import { deductCredit, refundCredit } from "@/modules/design/server/design-credits.service";
 import { saveDesignImage } from "@/modules/design/server/design-storage";
 import { getStyleById } from "@/modules/design/lib/styles";
 import type { SpaceType } from "@/modules/design/lib/styles";
@@ -17,6 +17,9 @@ export const dynamic = "force-dynamic";
 export const maxDuration = 120;
 
 export async function POST(req: NextRequest) {
+  let userId: string | null = null;
+  let creditDeducted = false;
+
   try {
     const session = await getSession();
     if (!session?.user?.id) {
@@ -25,14 +28,7 @@ export async function POST(req: NextRequest) {
         { status: 401 }
       );
     }
-
-    const deducted = await deductCredit(session.user.id);
-    if (!deducted.ok) {
-      return NextResponse.json(
-        { code: "CREDITS_EXHAUSTED", error: "No credits left" },
-        { status: 402 }
-      );
-    }
+    userId = session.user.id;
 
     const form = await req.formData();
     const file = form.get("image");
@@ -42,11 +38,6 @@ export async function POST(req: NextRequest) {
     const locale = String(form.get("locale") ?? "ar") as "ar" | "en";
     const cityRaw = String(form.get("city") ?? "");
 
-    if (!isDesignCity(cityRaw)) {
-      return NextResponse.json({ code: "CITY_REQUIRED", error: "City required" }, { status: 400 });
-    }
-    const city = cityRaw;
-
     if (!(file instanceof File)) {
       return NextResponse.json({ code: "UPLOAD_REQUIRED", error: "No image" }, { status: 400 });
     }
@@ -55,7 +46,21 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ code: "INVALID_STYLE", error: "Invalid style" }, { status: 400 });
     }
 
-    const beforeUrl = await saveDesignImage(file, session.user.id);
+    if (!isDesignCity(cityRaw)) {
+      return NextResponse.json({ code: "CITY_REQUIRED", error: "City required" }, { status: 400 });
+    }
+    const city = cityRaw;
+
+    const deducted = await deductCredit(userId);
+    if (!deducted.ok) {
+      return NextResponse.json(
+        { code: "CREDITS_EXHAUSTED", error: "No credits left" },
+        { status: 402 }
+      );
+    }
+    creditDeducted = true;
+
+    const beforeUrl = await saveDesignImage(file, userId);
 
     const { afterUrl, isMock } = await generateDesignAfter({
       beforeUrl,
@@ -63,15 +68,11 @@ export async function POST(req: NextRequest) {
       spaceType,
       roomType,
       locale,
+      userId,
     });
 
-    const watermarkLabel = locale === "ar" ? "رواق — معاينة" : "Ruwaq — Preview";
-    const previewBuffer = await buildWatermarkedPreview(afterUrl, watermarkLabel);
-    const previewUrl = await saveDesignBuffer(
-      previewBuffer,
-      "image/jpeg",
-      `${session.user.id}-after`
-    );
+    const previewBuffer = await buildWatermarkedPreview(afterUrl);
+    const previewUrl = await saveDesignBuffer(previewBuffer, "image/jpeg", `${userId}-after`);
 
     const [{ materials, isAiDetected }, { furniture, isAiDetected: furnitureAi }] =
       await Promise.all([
@@ -81,7 +82,7 @@ export async function POST(req: NextRequest) {
 
     const generation = await db.designGeneration.create({
       data: {
-        userId: session.user.id,
+        userId,
         spaceType,
         roomType,
         styleId,
@@ -112,6 +113,13 @@ export async function POST(req: NextRequest) {
       furnitureAiDetected: furnitureAi,
     });
   } catch (error) {
+    if (creditDeducted && userId) {
+      try {
+        await refundCredit(userId);
+      } catch {
+        // best-effort refund
+      }
+    }
     logServerError("design generate", error);
     const message = error instanceof Error ? error.message : "Unknown error";
     if (message === "FILE_TOO_LARGE") {
@@ -119,6 +127,9 @@ export async function POST(req: NextRequest) {
     }
     if (message === "UNSUPPORTED_TYPE") {
       return NextResponse.json({ code: "UNSUPPORTED_TYPE", error: "Unsupported type" }, { status: 400 });
+    }
+    if (message === "FETCH_IMAGE_FAILED") {
+      return NextResponse.json({ code: "IMAGE_FETCH_FAILED", error: "Image processing failed" }, { status: 500 });
     }
     return NextResponse.json({ code: "GENERIC", error: "Generation failed" }, { status: 500 });
   }

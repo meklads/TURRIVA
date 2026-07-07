@@ -22,13 +22,14 @@ export function DesignWelcomeModal({ messages }: Props) {
   const close = (persist = true) => {
     if (persist) localStorage.setItem(STORAGE_KEY, "1");
     setOpen(false);
+    document.getElementById("studio")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   if (!open) return null;
 
   return (
-    <div className="design-modal-overlay" role="dialog" aria-modal="true">
-      <div className="design-modal">
+    <div className="design-modal-overlay" role="dialog" aria-modal="true" onClick={() => close()}>
+      <div className="design-modal" onClick={(e) => e.stopPropagation()}>
         <h2>{messages.welcome.title}</h2>
         <p>{messages.welcome.subtitle}</p>
         <div className="design-modal-credits">{messages.welcome.credits}</div>
