@@ -204,6 +204,86 @@ export type DesignMessages = {
     poweredByPrefix: string;
     poweredByLink: string;
   };
+  conversion: {
+    uploadPrompt: string;
+    spaceTitle: string;
+    uploadHint: string;
+    emptyHint: string;
+    generateFree: string;
+    spaces: {
+      living: string;
+      bedroom: string;
+      kitchen: string;
+      bathroom: string;
+      majlis: string;
+      exterior: string;
+    };
+    unlockTitle: string;
+    unlockBody: string;
+    unlockCta: string;
+    unlockNote: string;
+    successTitle: string;
+    successBody: string;
+    successCta: string;
+    bonusLeft: string;
+    nurtureTitle: string;
+    nurtureBody: string;
+    nurtureCta: string;
+    errors: { rateLimit: string; noCredits: string };
+    qualify: {
+      close: string;
+      stepOf: string;
+      back: string;
+      continue: string;
+      finish: string;
+      submitting: string;
+      submitError: string;
+      invalidPhone: string;
+      projectTitle: string;
+      projectSubtitle: string;
+      projectApartment: string;
+      projectVilla: string;
+      projectCommercial: string;
+      projectOffice: string;
+      scopeTitle: string;
+      scopeSubtitle: string;
+      scopeOneRoom: string;
+      scopeMultiple: string;
+      scopeFull: string;
+      timelineTitle: string;
+      timelineSubtitle: string;
+      timelineImmediate: string;
+      timeline1Month: string;
+      timeline3Months: string;
+      timelineExploring: string;
+      budgetTitle: string;
+      budgetSubtitle: string;
+      budgetUnder30: string;
+      budget30_80: string;
+      budget80_200: string;
+      budgetOver200: string;
+      contactTitle: string;
+      contactSubtitle: string;
+      nameLabel: string;
+      namePlaceholder: string;
+      phoneLabel: string;
+      phonePlaceholder: string;
+      privacy: string;
+    };
+  };
+  inspiration: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    tabInterior: string;
+    tabExterior: string;
+    tabExhibition: string;
+    tabRetail: string;
+    tabVilla: string;
+    tabPalace: string;
+    ctaText: string;
+    ctaButton: string;
+  };
   errors: {
     uploadRequired: string;
     styleRequired: string;
@@ -243,16 +323,16 @@ const en: DesignMessages = {
     ctaTryTool: "Try the AI preview",
     ctaBespoke: "Bespoke design — contact us",
     noteTryToolLabel: "Quick preview?",
-    noteTryTool: "Upload a photo below and generate a style preview in seconds — 3 free tries.",
+    noteTryTool: "Upload a photo below — your first AI design is free, no sign-in required.",
     noteBespokeLabel: "Signature project?",
     noteBespoke: "Our design engineers craft a fully custom concept and Ruwaq executes it on site.",
     imageAlt: "Luxury palace interior designed and finished by Ruwaq",
   },
   studioSection: {
     eyebrow: "Try it yourself",
-    title: "Quick AI preview — then we build it for real",
+    title: "Free AI preview — then we build it for real",
     subtitle:
-      "Not just software: this tool helps you explore styles before Ruwaq turns your project into real materials, BOQs, and on-site execution.",
+      "Upload your space, get one free design instantly. Unlock two more after a quick project profile — then Ruwaq turns it into real execution.",
   },
   paths: {
     eyebrow: "Two ways to start",
@@ -517,6 +597,93 @@ const en: DesignMessages = {
     poweredByPrefix: "Ruwaq by",
     poweredByLink: "Graphics House",
   },
+  conversion: {
+    uploadPrompt: "Upload your space photo, pick a room type and style — your first design is completely free.",
+    spaceTitle: "Which space is this?",
+    uploadHint: "Living room, bedroom, kitchen, bathroom, majlis, or exterior — JPG, PNG, WEBP",
+    emptyHint: "Choose a space, upload a photo, pick a style, then generate your free design.",
+    generateFree: "Generate free design",
+    spaces: {
+      living: "Living room",
+      bedroom: "Bedroom",
+      kitchen: "Kitchen",
+      bathroom: "Bathroom",
+      majlis: "Majlis",
+      exterior: "Exterior",
+    },
+    unlockTitle: "Like the result?",
+    unlockBody:
+      "Complete a quick 30-second project profile to unlock 2 more AI designs — plus a review from Ruwaq's design team.",
+    unlockCta: "Continue",
+    unlockNote: "No spam — we only use your number to follow up on your project.",
+    successTitle: "Your 2 free designs are unlocked",
+    successBody:
+      "Our design consultant will contact you shortly to help turn your vision into a real Ruwaq project.",
+    successCta: "Generate next design",
+    bonusLeft: "{count} bonus designs remaining",
+    nurtureTitle: "Thank you for sharing your project",
+    nurtureBody:
+      "Our team will review your request and contact you if additional design assistance is recommended.",
+    nurtureCta: "Back to studio",
+    errors: {
+      rateLimit: "Daily free preview limit reached. Try again tomorrow or contact us.",
+      noCredits: "Complete the short steps above to unlock more designs.",
+    },
+    qualify: {
+      close: "Close",
+      stepOf: "Step {current} of {total}",
+      back: "Back",
+      continue: "Continue",
+      finish: "Unlock designs",
+      submitting: "Saving…",
+      submitError: "Could not save. Please try again.",
+      invalidPhone: "Enter a valid Saudi mobile number (05xxxxxxxx).",
+      projectTitle: "What are you planning to renovate?",
+      projectSubtitle: "This helps us tailor the next designs to your project.",
+      projectApartment: "Apartment",
+      projectVilla: "Villa",
+      projectCommercial: "Commercial shop",
+      projectOffice: "Office",
+      scopeTitle: "Which scope do you want to execute?",
+      scopeSubtitle: "Select the scale that best matches your plan.",
+      scopeOneRoom: "One room",
+      scopeMultiple: "Multiple rooms",
+      scopeFull: "Full property",
+      timelineTitle: "When do you plan to start?",
+      timelineSubtitle: "So we can prioritize the right follow-up.",
+      timelineImmediate: "Immediately",
+      timeline1Month: "Within 1 month",
+      timeline3Months: "Within 3 months",
+      timelineExploring: "Just exploring ideas",
+      budgetTitle: "Estimated execution budget?",
+      budgetSubtitle: "Helps us match you with the right Ruwaq team.",
+      budgetUnder30: "Less than 30,000 SAR",
+      budget30_80: "30,000 – 80,000 SAR",
+      budget80_200: "80,000 – 200,000 SAR",
+      budgetOver200: "More than 200,000 SAR",
+      contactTitle: "Almost done",
+      contactSubtitle: "Where should our consultant reach you?",
+      nameLabel: "Your name",
+      namePlaceholder: "Full name",
+      phoneLabel: "Mobile number",
+      phonePlaceholder: "05xxxxxxxx",
+      privacy: "I agree that Ruwaq may contact me about this project. No promotional messages without consent.",
+    },
+  },
+  inspiration: {
+    eyebrow: "Inspiration",
+    title: "Spaces we love to design & build",
+    subtitle:
+      "Interiors, villas, palaces, shops, and exhibition booths — explore the quality Ruwaq delivers on site.",
+    tabInterior: "Interiors",
+    tabExterior: "Exteriors",
+    tabExhibition: "Exhibitions",
+    tabRetail: "Shops",
+    tabVilla: "Villas",
+    tabPalace: "Palaces",
+    ctaText: "Ready to see your space transformed?",
+    ctaButton: "Try free AI preview",
+  },
   errors: {
     uploadRequired: "Please upload a photo first.",
     styleRequired: "Please choose a style.",
@@ -558,16 +725,16 @@ const ar: DesignMessages = {
     ctaTryTool: "جرّب معاينة الذكاء الاصطناعي",
     ctaBespoke: "تصميم خاص — تواصل معنا",
     noteTryToolLabel: "معاينة سريعة؟",
-    noteTryTool: "ارفع صورتك في الأداة بالأسفل واختر نمطاً — 3 تجارب مجانية بعد التسجيل.",
+    noteTryTool: "ارفع صورتك بالأسفل — تصميمك الأول مجاني بدون تسجيل.",
     noteBespokeLabel: "مشروع مميز؟",
     noteBespoke: "مهندسو التصميم في رواق يعدّون مفهوماً خاصاً وننفّذه في الموقع بمواد حقيقية.",
     imageAlt: "داخل قصر فاخر — ديكور وتشطيبات رواق",
   },
   studioSection: {
     eyebrow: "جرّب بنفسك",
-    title: "معاينة سريعة بالذكاء الاصطناعي — ثم ننفّذها حقيقياً",
+    title: "معاينة مجانية — ثم ننفّذها حقيقياً",
     subtitle:
-      "ليست مجرد برمجية: الأداة تساعدك على استكشاف الأنماط قبل أن يحوّل رواق مشروعك إلى مواد فعلية وعروض تنفيذ على أرض الواقع.",
+      "ارفع مساحتك واحصل على تصميم مجاني فوراً. افتح تصميمين إضافيين بعد ملف مشروع سريع — ثم رواق يحوّلها إلى تنفيذ فعلي.",
   },
   paths: {
     eyebrow: "طريقتان للبدء",
@@ -829,6 +996,90 @@ const ar: DesignMessages = {
     terms: "شروط الاستخدام",
     poweredByPrefix: "رواق بواسطة",
     poweredByLink: "جرافيكس هاوس",
+  },
+  conversion: {
+    uploadPrompt: "ارفع صورة مساحتك، اختر نوع الغرفة والنمط — تصميمك الأول مجاني بالكامل.",
+    spaceTitle: "ما نوع هذه المساحة؟",
+    uploadHint: "معيشة، نوم، مطبخ، حمام، مجلس، أو خارجي — JPG أو PNG أو WEBP",
+    emptyHint: "اختر المساحة، ارفع صورة، اختر نمطاً، ثم ولّد تصميمك المجاني.",
+    generateFree: "توليد تصميم مجاني",
+    spaces: {
+      living: "معيشة",
+      bedroom: "غرفة نوم",
+      kitchen: "مطبخ",
+      bathroom: "حمام",
+      majlis: "مجلس",
+      exterior: "خارجي",
+    },
+    unlockTitle: "أعجبك النتيجة؟",
+    unlockBody:
+      "أكمل ملف مشروعك في 30 ثانية لفتح تصميمين إضافيين — مع مراجعة من فريق تصميم رواق.",
+    unlockCta: "متابعة",
+    unlockNote: "لن نزعجك — نستخدم رقمك فقط لمتابعة مشروعك.",
+    successTitle: "تم فتح تصميمين مجانيين إضافيين",
+    successBody: "سيتواصل معك مستشار التصميم قريباً لتحويل رؤيتك إلى مشروع رواق حقيقي.",
+    successCta: "توليد التصميم التالي",
+    bonusLeft: "{count} تصاميم إضافية متبقية",
+    nurtureTitle: "شكراً لمشاركة مشروعك",
+    nurtureBody: "سيراجع فريقنا طلبك ويتواصل معك إذا رُئي أن مساعدة تصميم إضافية مناسبة.",
+    nurtureCta: "العودة للاستوديو",
+    errors: {
+      rateLimit: "وصلت للحد اليومي للمعاينة المجانية. جرّب غداً أو تواصل معنا.",
+      noCredits: "أكمل الخطوات القصيرة أعلاه لفتح المزيد من التصاميم.",
+    },
+    qualify: {
+      close: "إغلاق",
+      stepOf: "الخطوة {current} من {total}",
+      back: "رجوع",
+      continue: "متابعة",
+      finish: "فتح التصاميم",
+      submitting: "جاري الحفظ…",
+      submitError: "تعذّر الحفظ. حاول مرة أخرى.",
+      invalidPhone: "أدخل رقم جوال سعودي صحيح (05xxxxxxxx).",
+      projectTitle: "ما الذي تخطط لتجديده؟",
+      projectSubtitle: "يساعدنا على تخصيص التصاميم التالية لمشروعك.",
+      projectApartment: "شقة",
+      projectVilla: "فيلا",
+      projectCommercial: "محل تجاري",
+      projectOffice: "مكتب",
+      scopeTitle: "ما نطاق التنفيذ المطلوب؟",
+      scopeSubtitle: "اختر الحجم الأقرب لخطتك.",
+      scopeOneRoom: "غرفة واحدة",
+      scopeMultiple: "عدة غرف",
+      scopeFull: "كامل العقار",
+      timelineTitle: "متى تخطط للبدء؟",
+      timelineSubtitle: "لنرتّب المتابعة المناسبة.",
+      timelineImmediate: "فوراً",
+      timeline1Month: "خلال شهر",
+      timeline3Months: "خلال 3 أشهر",
+      timelineExploring: "استكشاف أفكار فقط",
+      budgetTitle: "الميزانية التقديرية للتنفيذ؟",
+      budgetSubtitle: "لنوصلك بالفريق المناسب في رواق.",
+      budgetUnder30: "أقل من 30,000 ريال",
+      budget30_80: "30,000 – 80,000 ريال",
+      budget80_200: "80,000 – 200,000 ريال",
+      budgetOver200: "أكثر من 200,000 ريال",
+      contactTitle: "أوشكنا على الانتهاء",
+      contactSubtitle: "أين يتواصل معك مستشارنا؟",
+      nameLabel: "اسمك",
+      namePlaceholder: "الاسم الكامل",
+      phoneLabel: "رقم الجوال",
+      phonePlaceholder: "05xxxxxxxx",
+      privacy: "أوافق على تواصل رواق معي بخصوص هذا المشروع دون رسائل ترويجية بدون إذني.",
+    },
+  },
+  inspiration: {
+    eyebrow: "إلهام",
+    title: "مساحات نحب تصميمها وتنفيذها",
+    subtitle: "داخلي، فلل، قصور، محلات، ومعارض — جودة رواق على أرض الواقع.",
+    tabInterior: "داخلي",
+    tabExterior: "خارجي",
+    tabExhibition: "معارض",
+    tabRetail: "محلات",
+    tabVilla: "فلل",
+    tabPalace: "قصور",
+    ctaText: "جاهز لرؤية مساحتك بشكل جديد؟",
+    ctaButton: "جرّب المعاينة المجانية",
   },
   errors: {
     uploadRequired: "يرجى رفع صورة أولاً.",

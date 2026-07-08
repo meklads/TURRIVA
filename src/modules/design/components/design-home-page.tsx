@@ -1,5 +1,5 @@
-import { DesignStudio } from "./design-studio";
-import { DesignWelcomeModal } from "./design-welcome-modal";
+import { DesignConversionStudio } from "./design-conversion-studio";
+import { DesignInspirationSection } from "./design-inspiration-section";
 import { DesignSplitHero } from "./design-split-hero";
 import { DesignPathsSection } from "./design-paths-section";
 import { getDesignMessages } from "@/shared/i18n/messages/design";
@@ -14,7 +14,6 @@ export function DesignHomePage({ locale }: Props) {
 
   return (
     <>
-      <DesignWelcomeModal messages={t} />
       <DesignSplitHero messages={t} />
 
       <section className="design-studio-wrap" aria-labelledby="design-studio-heading">
@@ -26,10 +25,11 @@ export function DesignHomePage({ locale }: Props) {
             </h2>
             <p className="design-section-subtitle">{t.studioSection.subtitle}</p>
           </header>
-          <DesignStudio messages={t} locale={locale} />
+          <DesignConversionStudio messages={t} locale={locale} />
         </div>
       </section>
 
+      <DesignInspirationSection messages={t} locale={locale} />
       <DesignPathsSection messages={t} />
     </>
   );
