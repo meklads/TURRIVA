@@ -12,8 +12,8 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
 
   const description =
     locale === "ar"
-      ? "رواق شركة سعودية فاخرة للديكور والمقاولات — فلل، قصور، ومشاريع سكنية راقية في الرياض وجميع أنحاء المملكة."
-      : "Ruwaq is a premium Saudi decor and contracting company — luxury villas, palaces, and high-end residential projects across Riyadh and the Kingdom.";
+      ? "توريفا العقارية شركة سعودية فاخرة للديكور والمقاولات — فلل، قصور، ومشاريع سكنية راقية في الرياض وجميع أنحاء المملكة."
+      : "Turriva is a premium Saudi decor and contracting company — luxury villas, palaces, and high-end residential projects across Riyadh and the Kingdom.";
 
   return {
     title,
@@ -26,14 +26,14 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
             "تشطيب فاخر",
             "شركة ديكور السعودية",
             "مقاولات فلل فاخرة",
-            "رواق",
+            "توريفا العقارية",
           ]
         : [
             "luxury decor Saudi Arabia",
             "premium contracting Riyadh",
             "villa fit-out",
             "high-end decor",
-            "Ruwaq",
+            "Turriva",
           ],
     openGraph: {
       title,
@@ -66,7 +66,7 @@ export function luxuryPageMetadata(
   intro: string
 ): Metadata {
   const base = luxurySiteMetadata(locale);
-  const brand = locale === "ar" ? "رواق" : "Ruwaq";
+  const brand = locale === "ar" ? "توريفا العقارية" : "Turriva";
   const title = `${pageTitle} · ${brand}`;
 
   return {

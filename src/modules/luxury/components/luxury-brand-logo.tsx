@@ -8,7 +8,7 @@ type Props = {
   priority?: boolean;
 };
 
-/** Original Ruwaq bilingual lockup (رواق + RUWAQ). */
+/** Original Turriva bilingual lockup (توريفا العقارية + TURRIVA). */
 export function LuxuryBrandLogo({
   href = "/",
   className = LUXURY_LOGO_CLASS,

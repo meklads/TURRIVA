@@ -88,7 +88,7 @@ export type LuxuryMessages = {
 };
 
 const en: LuxuryMessages = {
-  brand: { name: "RUWAQ", tagline: "INTERIOR • CONSTRUCTION" },
+  brand: { name: "TURRIVA", tagline: "INTERIOR • CONSTRUCTION" },
   nav: {
     home: "HOME",
     interiorDesign: "INTERIOR DESIGN",
@@ -101,7 +101,7 @@ const en: LuxuryMessages = {
   hero: {
     title: "Designing Elegance.\nBuilding Excellence.",
     subtitle:
-      "Ruwaq is a premium interior design and construction company delivering exceptional spaces with time-honored craftsmanship and modern innovation.",
+      "Turriva is a premium interior design and construction company delivering exceptional spaces with time-honored craftsmanship and modern innovation.",
     ctaPrimary: "EXPLORE OUR SERVICES",
     ctaSecondary: "VIEW OUR WORK",
   },
@@ -133,7 +133,7 @@ const en: LuxuryMessages = {
     ],
   },
   why: {
-    eyebrow: "WHY RUWAQ",
+    eyebrow: "WHY TURRIVA",
     title: "The Art of Luxury Living",
     items: [
       { title: "Timeless Design", description: "Elegant proportions and refined aesthetics that endure beyond trends." },
@@ -162,7 +162,7 @@ const en: LuxuryMessages = {
     title: "Trusted by Discerning Clients",
     items: [
       {
-        quote: "Ruwaq transformed our villa into a sanctuary of calm luxury. Every detail exceeded our expectations.",
+        quote: "Turriva transformed our villa into a sanctuary of calm luxury. Every detail exceeded our expectations.",
         author: "Private Client",
         role: "Luxury Villa, Riyadh",
       },
@@ -180,7 +180,7 @@ const en: LuxuryMessages = {
   },
   footer: {
     about:
-      "Ruwaq is a premium Saudi decor and contracting company specializing in luxury villas, palaces, and high-end residential projects.",
+      "Turriva is a premium Saudi decor and contracting company specializing in luxury villas, palaces, and high-end residential projects.",
     quickLinks: "Quick Links",
     importantLinks: "Important Links",
     servicesLinks: "Services",
@@ -196,13 +196,13 @@ const en: LuxuryMessages = {
     workspace: "Platform",
     workspaceDesc: "Professional quotes and project management for your team.",
     workspaceCta: "Open workspace",
-    copyright: "© Ruwaq. All rights reserved.",
+    copyright: "© Turriva. All rights reserved.",
     privacy: "Privacy Policy",
     terms: "Terms of Use",
     address: "Riyadh, Saudi Arabia",
     email: "hello@ruwaq.co",
     phone: "+966 11 000 0000",
-    poweredByPrefix: "Ruwaq by",
+    poweredByPrefix: "Turriva by",
     poweredByLink: "Graphics House",
   },
   pages: {
@@ -219,7 +219,7 @@ const en: LuxuryMessages = {
       intro: "A curated portfolio of luxury residential and hospitality projects.",
     },
     about: {
-      title: "About Ruwaq",
+      title: "About Turriva Real Estate",
       intro: "Craftsmanship, elegance, and quiet confidence — built in Saudi Arabia.",
     },
     contact: {
@@ -234,7 +234,7 @@ const en: LuxuryMessages = {
 };
 
 const ar: LuxuryMessages = {
-  brand: { name: "رواق", tagline: "ديكور · مقاولات" },
+  brand: { name: "توريفا العقارية", tagline: "ديكور · مقاولات" },
   nav: {
     home: "الرئيسية",
     interiorDesign: "التصميم الداخلي",
@@ -247,7 +247,7 @@ const ar: LuxuryMessages = {
   hero: {
     title: "نصمّم الأناقة.\nونبني التميّز.",
     subtitle:
-      "رواق شركة سعودية فاخرة للديكور والمقاولات، نصنع مساحات استثنائية تجمع بين الحرفية العريقة والابتكار المعاصر — للفلل والقصور والمشاريع السكنية الراقية.",
+      "توريفا العقارية شركة سعودية فاخرة للديكور والمقاولات، نصنع مساحات استثنائية تجمع بين الحرفية العريقة والابتكار المعاصر — للفلل والقصور والمشاريع السكنية الراقية.",
     ctaPrimary: "استكشف خدماتنا",
     ctaSecondary: "شاهد أعمالنا",
   },
@@ -279,7 +279,7 @@ const ar: LuxuryMessages = {
     ],
   },
   why: {
-    eyebrow: "لماذا رواق",
+    eyebrow: "لماذا توريفا العقارية",
     title: "فن العيش الفاخر",
     items: [
       { title: "تصميم خالد", description: "تناسق أنيق وجماليات راقية تتجاوز الموضة." },
@@ -308,7 +308,7 @@ const ar: LuxuryMessages = {
     title: "ثقة عملاء مميزين",
     items: [
       {
-        quote: "حوّلت رواق فيلتنا إلى ملاذ من الفخامة الهادئة. كل تفصيلة فاقت توقعاتنا.",
+        quote: "حوّلت توريفا العقارية فيلتنا إلى ملاذ من الفخامة الهادئة. كل تفصيلة فاقت توقعاتنا.",
         author: "عميل خاص",
         role: "فيلا فاخرة، الرياض",
       },
@@ -326,7 +326,7 @@ const ar: LuxuryMessages = {
   },
   footer: {
     about:
-      "رواق شركة سعودية فاخرة للديكور والمقاولات، متخصصة في الفلل والقصور والمشاريع السكنية الراقية.",
+      "توريفا العقارية شركة سعودية فاخرة للديكور والمقاولات، متخصصة في الفلل والقصور والمشاريع السكنية الراقية.",
     quickLinks: "روابط سريعة",
     importantLinks: "أهم الروابط",
     servicesLinks: "الخدمات",
@@ -342,13 +342,13 @@ const ar: LuxuryMessages = {
     workspace: "المنصة",
     workspaceDesc: "عروض احترافية وإدارة مشاريعك في مكان واحد.",
     workspaceCta: "الدخول إلى المنصة",
-    copyright: "© رواق. جميع الحقوق محفوظة.",
+    copyright: "© توريفا العقارية. جميع الحقوق محفوظة.",
     privacy: "سياسة الخصوصية",
     terms: "شروط الاستخدام",
     address: "الرياض، المملكة العربية السعودية",
     email: "hello@ruwaq.co",
     phone: "+966 11 000 0000",
-    poweredByPrefix: "رواق بواسطة",
+    poweredByPrefix: "توريفا العقارية بواسطة",
     poweredByLink: "جرافيكس هاوس",
   },
   pages: {
@@ -368,13 +368,13 @@ const ar: LuxuryMessages = {
         "معرض منتقى من مشاريعنا السكنية والضيافية — مساحات صُمّمت وبُنيت بعناية فائقة.",
     },
     about: {
-      title: "عن رواق",
+      title: "عن توريفا العقارية",
       intro:
-        "رواق شركة سعودية للديكور والمقاولات تجمع بين الحرفية والأناقة والثقة الهادئة.",
+        "توريفا العقارية شركة سعودية للديكور والمقاولات تجمع بين الحرفية والأناقة والثقة الهادئة.",
     },
     contact: {
       title: "تواصل معنا",
-      intro: "ابدأ مشروعك الفاخر باستشارة خاصة مع فريق رواق.",
+      intro: "ابدأ مشروعك الفاخر باستشارة خاصة مع فريق توريفا العقارية.",
       formName: "الاسم",
       formEmail: "البريد الإلكتروني",
       formMessage: "أخبرنا عن مشروعك",

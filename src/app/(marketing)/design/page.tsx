@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const t = getDesignMessages(locale);
   return {
-    title: locale === "ar" ? "رواق للديكور والمقاولات" : "Ruwaq Decor & Contracting",
+    title: locale === "ar" ? "توريفا العقارية للديكور والمقاولات" : "Turriva Real Estate — Decor & Contracting",
     description: t.hero.subtitle,
   };
 }

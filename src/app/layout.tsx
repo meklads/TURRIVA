@@ -46,12 +46,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title:
       locale === "ar"
-        ? "رواق للديكور والمقاولات"
-        : "Ruwaq Decor & Contracting",
+        ? "توريفا العقارية للديكور والمقاولات"
+        : "Turriva Real Estate — Decor & Contracting",
     description:
       locale === "ar"
-        ? "رواق شركة سعودية فاخرة للديكور والمقاولات — فلل، قصور، ومشاريع سكنية راقية."
-        : "Ruwaq is a premium Saudi decor and contracting company for luxury villas, palaces, and high-end residential projects.",
+        ? "توريفا العقارية شركة سعودية فاخرة للديكور والمقاولات — فلل، قصور، ومشاريع سكنية راقية."
+        : "Turriva is a premium Saudi decor and contracting company for luxury villas, palaces, and high-end residential projects.",
   };
 }
 

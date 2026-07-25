@@ -299,7 +299,7 @@ export type DesignMessages = {
 };
 
 const en: DesignMessages = {
-  brand: { name: "RUWAQ", tagline: "Decor & Contracting" },
+  brand: { name: "TURRIVA", tagline: "Decor & Contracting" },
   nav: {
     generate: "Generate Design",
     studio: "AI Studio",
@@ -315,7 +315,7 @@ const en: DesignMessages = {
     contact: "Contact",
   },
   hero: {
-    badge: "Ruwaq Decor & Contracting",
+    badge: "Turriva Real Estate — Decor & Contracting",
     title: "We design and build premium spaces",
     subtitle:
       "A Saudi contracting and decor company — fixed finishing for villas, apartments, palaces & shops, plus advertising booths and exhibitions.",
@@ -325,19 +325,19 @@ const en: DesignMessages = {
     noteTryToolLabel: "Quick preview?",
     noteTryTool: "Upload a photo below — your first AI design is free, no sign-in required.",
     noteBespokeLabel: "Signature project?",
-    noteBespoke: "Our design engineers craft a fully custom concept and Ruwaq executes it on site.",
-    imageAlt: "Luxury palace interior designed and finished by Ruwaq",
+    noteBespoke: "Our design engineers craft a fully custom concept and Turriva executes it on site.",
+    imageAlt: "Luxury palace interior designed and finished by Turriva",
   },
   studioSection: {
     eyebrow: "Try it yourself",
     title: "Free AI preview — then we build it for real",
     subtitle:
-      "Upload your space, get one free design instantly. Unlock two more after a quick project profile — then Ruwaq turns it into real execution.",
+      "Upload your space, get one free design instantly. Unlock two more after a quick project profile — then Turriva turns it into real execution.",
   },
   paths: {
     eyebrow: "Two ways to start",
     title: "Fast preview or fully bespoke",
-    subtitle: "Choose the path that fits your project — both lead to Ruwaq execution.",
+    subtitle: "Choose the path that fits your project — both lead to Turriva execution.",
     toolTitle: "Explore with the AI studio",
     toolBody: "Ideal when you want a fast visual before committing.",
     toolPoints: [
@@ -349,9 +349,9 @@ const en: DesignMessages = {
     bespokeTitle: "Bespoke design with our engineers",
     bespokeBody: "For villas, palaces, flagship stores, and exhibition builds that need a human touch.",
     bespokePoints: [
-      "Senior Ruwaq design engineers — not AI alone",
+      "Senior Turriva design engineers — not AI alone",
       "Custom drawings and material boards",
-      "Formal execution quote via Ruwaq workspace",
+      "Formal execution quote via Turriva workspace",
     ],
     bespokeCta: "Book a consultation",
   },
@@ -389,15 +389,15 @@ const en: DesignMessages = {
     mockNotice:
       "Basic preview only — AI redesign did not run. Our team can deliver a full bespoke design on request.",
     tryAnother: "Try another style",
-    previewBadge: "RUWAQ PREVIEW",
+    previewBadge: "TURRIVA PREVIEW",
     previewNotice:
-      "Low-resolution preview with Ruwaq watermark — full quality unlocks with execution or a pro subscription.",
+      "Low-resolution preview with Turriva watermark — full quality unlocks with execution or a pro subscription.",
     executionContact:
       "Love the design? Contact us — we'll discuss execution, location, and project details together.",
     likeExecutionCta: "I love it — contact us for execution",
   },
   welcome: {
-    title: "Welcome to Ruwaq",
+    title: "Welcome to Turriva",
     subtitle: "A decor & contracting company — try a quick AI preview or book a bespoke session.",
     credits: "3 free credits have been added to your account",
     start: "Start",
@@ -406,7 +406,7 @@ const en: DesignMessages = {
   consultation: {
     title: "Free consultation & execution quote",
     subtitle:
-      "Love your design? Book a free call with Ruwaq — we'll turn it into a real project with executable materials.",
+      "Love your design? Book a free call with Turriva — we'll turn it into a real project with executable materials.",
     freeBadge: "Free consultation",
     name: "Your name",
     phone: "Phone number",
@@ -433,9 +433,9 @@ const en: DesignMessages = {
     eyebrow: "Beyond the AI preview",
     title: "Want something truly one-of-a-kind?",
     subtitle:
-      "Love the preview? Ruwaq can build it in Jeddah & Makkah. For a fully bespoke interior — our design engineers are ready to meet you.",
+      "Love the preview? Turriva can build it in Jeddah & Makkah. For a fully bespoke interior — our design engineers are ready to meet you.",
     points: [
-      "Senior Ruwaq design engineers — human-led, not AI",
+      "Senior Turriva design engineers — human-led, not AI",
       "Custom concepts for villas, palaces, shops, and exhibition booths",
       "From mood boards to executable drawings",
       "Free introductory meeting to understand your vision",
@@ -465,13 +465,13 @@ const en: DesignMessages = {
     eyebrow: "Quality matters",
     title: "Most AI tools use cheap models. We don't.",
     subtitle:
-      "Other design tools generate a different room from scratch. Ruwaq preserves your layout, windows, and doors.",
+      "Other design tools generate a different room from scratch. Turriva preserves your layout, windows, and doors.",
     tabInterior: "Interior (fixed)",
     tabExterior: "Exterior (fixed)",
     tabBooth: "Booth & expo",
     yourPhoto: "Your photo",
     otherAi: "Other AI tools",
-    ruwaq: "Ruwaq",
+    ruwaq: "Turriva",
     otherNotes: [
       "Different room — generated from scratch",
       "Geometry and openings ignored",
@@ -520,32 +520,32 @@ const en: DesignMessages = {
     ],
   },
   execution: {
-    badge: "Only on Ruwaq",
+    badge: "Only on Turriva",
     title: "From AI design to real execution",
     subtitle:
-      "Fixed decor and advertising booths — Ruwaq doesn't stop at the image. We build with real materials and premium contracting.",
+      "Fixed decor and advertising booths — Turriva doesn't stop at the image. We build with real materials and premium contracting.",
     points: [
       "Real material catalogs — wood, marble, glass, furniture",
       "Free consultation with our design team",
-      "Formal execution quote via Ruwaq workspace",
+      "Formal execution quote via Turriva workspace",
     ],
     cta: "Book free consultation",
     stepDesign: "AI Design",
     stepMaterials: "Real Materials",
-    stepBuild: "Ruwaq Builds",
+    stepBuild: "Turriva Builds",
   },
   ctaBottom: {
     badge: "3 free credits — no card required",
     title: "Ready to see your space transformed?",
-    subtitle: "Start free — sign in to get 3 credits. Then book execution with Ruwaq.",
+    subtitle: "Start free — sign in to get 3 credits. Then book execution with Turriva.",
     cta: "Redesign my room for free",
     note: "No credit card · Free consultation · Real execution",
   },
   materials: {
     title: "Design components — executable materials",
     subtitle:
-      "Materials detected in your design, matched to Ruwaq's real supplier catalog — ready for quoting and execution.",
-    executableBadge: "Executable by Ruwaq",
+      "Materials detected in your design, matched to Turriva's real supplier catalog — ready for quoting and execution.",
+    executableBadge: "Executable by Turriva",
     fallbackNotice:
       "Material suggestions based on your style — AI vision matching activates with production API.",
     available: "Available",
@@ -563,7 +563,7 @@ const en: DesignMessages = {
     match: "match",
     showDetected: "Detected",
     showAlternative: "Alternative",
-    executable: "Supply & install by Ruwaq",
+    executable: "Supply & install by Turriva",
     quoteHint: "Add these pieces to your execution quote with one consultation call.",
     quoteCta: "Get furniture quote",
   },
@@ -571,30 +571,30 @@ const en: DesignMessages = {
     eyebrow: "Like Zory — but we build it",
     title: "Upload your room. Discover every piece. We execute.",
     subtitle:
-      "Our AI furniture finder identifies sofas, tables, lighting, and decor — then Ruwaq supplies and installs them with the same quality as your design.",
+      "Our AI furniture finder identifies sofas, tables, lighting, and decor — then Turriva supplies and installs them with the same quality as your design.",
     points: [
       "Numbered pins on your design — tap to explore",
       "Real partner brands: Pan Home, Home Center, and more",
       "One-click swap to alternative products",
-      "Formal quote + installation by Ruwaq contracting",
+      "Formal quote + installation by Turriva contracting",
     ],
     cta: "Try furniture finder",
   },
   footer: {
     about:
-      "Ruwaq combines AI design visualization with premium decor and contracting — from concept to execution.",
+      "Turriva combines AI design visualization with premium decor and contracting — from concept to execution.",
     product: "Product",
     company: "Company",
     support: "Support",
     solutions: "Solutions",
     workspaceDesc:
-      "AI-powered proposals, BOQ, and project quotes — the Ruwaq workspace your team already uses.",
+      "AI-powered proposals, BOQ, and project quotes — the Turriva workspace your team already uses.",
     workspaceCta: "Open proposals platform",
     workspaceBadge: "Existing app",
-    copyright: "© Ruwaq. All rights reserved.",
+    copyright: "© Turriva. All rights reserved.",
     privacy: "Privacy Policy",
     terms: "Terms of Use",
-    poweredByPrefix: "Ruwaq by",
+    poweredByPrefix: "Turriva by",
     poweredByLink: "Graphics House",
   },
   conversion: {
@@ -613,12 +613,12 @@ const en: DesignMessages = {
     },
     unlockTitle: "Like the result?",
     unlockBody:
-      "Complete a quick 30-second project profile to unlock 2 more AI designs — plus a review from Ruwaq's design team.",
+      "Complete a quick 30-second project profile to unlock 2 more AI designs — plus a review from Turriva's design team.",
     unlockCta: "Continue",
     unlockNote: "No spam — we only use your number to follow up on your project.",
     successTitle: "Your 2 free designs are unlocked",
     successBody:
-      "Our design consultant will contact you shortly to help turn your vision into a real Ruwaq project.",
+      "Our design consultant will contact you shortly to help turn your vision into a real Turriva project.",
     successCta: "Generate next design",
     bonusLeft: "{count} bonus designs remaining",
     nurtureTitle: "Thank you for sharing your project",
@@ -656,7 +656,7 @@ const en: DesignMessages = {
       timeline3Months: "Within 3 months",
       timelineExploring: "Just exploring ideas",
       budgetTitle: "Estimated execution budget?",
-      budgetSubtitle: "Helps us match you with the right Ruwaq team.",
+      budgetSubtitle: "Helps us match you with the right Turriva team.",
       budgetUnder30: "Less than 30,000 SAR",
       budget30_80: "30,000 – 80,000 SAR",
       budget80_200: "80,000 – 200,000 SAR",
@@ -667,14 +667,14 @@ const en: DesignMessages = {
       namePlaceholder: "Full name",
       phoneLabel: "Mobile number",
       phonePlaceholder: "05xxxxxxxx",
-      privacy: "I agree that Ruwaq may contact me about this project. No promotional messages without consent.",
+      privacy: "I agree that Turriva may contact me about this project. No promotional messages without consent.",
     },
   },
   inspiration: {
     eyebrow: "Inspiration",
     title: "Spaces we love to design & build",
     subtitle:
-      "Interiors, villas, palaces, shops, and exhibition booths — explore the quality Ruwaq delivers on site.",
+      "Interiors, villas, palaces, shops, and exhibition booths — explore the quality Turriva delivers on site.",
     tabInterior: "Interiors",
     tabExterior: "Exteriors",
     tabExhibition: "Exhibitions",
@@ -701,7 +701,7 @@ const en: DesignMessages = {
 };
 
 const ar: DesignMessages = {
-  brand: { name: "رواق", tagline: "للديكور والمقاولات" },
+  brand: { name: "توريفا العقارية", tagline: "للديكور والمقاولات" },
   nav: {
     generate: "إنشاء تصميم",
     studio: "استوديو التصميم",
@@ -717,7 +717,7 @@ const ar: DesignMessages = {
     contact: "تواصل",
   },
   hero: {
-    badge: "رواق للديكور والمقاولات",
+    badge: "توريفا العقارية للديكور والمقاولات",
     title: "نصمّم وننفّذ مساحات فاخرة",
     subtitle:
       "شركة سعودية للديكور والمقاولات — تشطيبات ثابتة للفلل والشقق والقصور والمحلات، وديكور إعلاني للبوث والمعارض المؤقتة.",
@@ -727,19 +727,19 @@ const ar: DesignMessages = {
     noteTryToolLabel: "معاينة سريعة؟",
     noteTryTool: "ارفع صورتك بالأسفل — تصميمك الأول مجاني بدون تسجيل.",
     noteBespokeLabel: "مشروع مميز؟",
-    noteBespoke: "مهندسو التصميم في رواق يعدّون مفهوماً خاصاً وننفّذه في الموقع بمواد حقيقية.",
-    imageAlt: "داخل قصر فاخر — ديكور وتشطيبات رواق",
+    noteBespoke: "مهندسو التصميم في توريفا العقارية يعدّون مفهوماً خاصاً وننفّذه في الموقع بمواد حقيقية.",
+    imageAlt: "داخل قصر فاخر — ديكور وتشطيبات توريفا العقارية",
   },
   studioSection: {
     eyebrow: "جرّب بنفسك",
     title: "معاينة مجانية — ثم ننفّذها حقيقياً",
     subtitle:
-      "ارفع مساحتك واحصل على تصميم مجاني فوراً. افتح تصميمين إضافيين بعد ملف مشروع سريع — ثم رواق يحوّلها إلى تنفيذ فعلي.",
+      "ارفع مساحتك واحصل على تصميم مجاني فوراً. افتح تصميمين إضافيين بعد ملف مشروع سريع — ثم توريفا العقارية يحوّلها إلى تنفيذ فعلي.",
   },
   paths: {
     eyebrow: "طريقتان للبدء",
     title: "معاينة سريعة أو تصميم خاص بالكامل",
-    subtitle: "اختر ما يناسب مشروعك — كلاهما يقود إلى تنفيذ رواق.",
+    subtitle: "اختر ما يناسب مشروعك — كلاهما يقود إلى تنفيذ توريفا العقارية.",
     toolTitle: "استكشف عبر الاستوديو الذكي",
     toolBody: "مناسب عندما تريد رؤية بصرية سريعة قبل الالتزام.",
     toolPoints: [
@@ -751,9 +751,9 @@ const ar: DesignMessages = {
     bespokeTitle: "تصميم خاص مع مهندسينا",
     bespokeBody: "للفلل والقصور والمحلات الرائدة ومعارض البوث التي تحتاج لمسة بشرية فاخرة.",
     bespokePoints: [
-      "مهندسو تصميم رواق — ليس ذكاءً اصطناعياً وحده",
+      "مهندسو تصميم توريفا العقارية — ليس ذكاءً اصطناعياً وحده",
       "مخططات ومزاج بصري ومواد مخصصة",
-      "عرض تنفيذ رسمي عبر منصة رواق",
+      "عرض تنفيذ رسمي عبر منصة توريفا العقارية",
     ],
     bespokeCta: "احجز استشارة",
   },
@@ -789,17 +789,17 @@ const ar: DesignMessages = {
     after: "التصميم الجديد",
     compareHint: "اسحب المقبض للمقارنة — يمين: صورتك · يسار: التصميم بالذكاء الاصطناعي",
     mockNotice:
-      "معاينة بسيطة فقط — لم يعمل إعادة التصميم بالذكاء الاصطناعي. فريق رواق يقدّم تصميماً مخصصاً كاملاً عند الطلب.",
+      "معاينة بسيطة فقط — لم يعمل إعادة التصميم بالذكاء الاصطناعي. فريق توريفا العقارية يقدّم تصميماً مخصصاً كاملاً عند الطلب.",
     tryAnother: "جرّب نمطاً آخر",
-    previewBadge: "معاينة رواق",
+    previewBadge: "معاينة توريفا العقارية",
     previewNotice:
-      "معاينة بدقة منخفضة وعلامة رواق المائية — الجودة الكاملة مع التنفيذ أو اشتراك احترافي.",
+      "معاينة بدقة منخفضة وعلامة توريفا العقارية المائية — الجودة الكاملة مع التنفيذ أو اشتراك احترافي.",
     executionContact:
       "أعجبك التصميم؟ تواصل معنا — نتفاهم معك حول التنفيذ والموقع وتفاصيل المشروع.",
     likeExecutionCta: "أعجبني — تواصل للتنفيذ",
   },
   welcome: {
-    title: "مرحباً بك في رواق",
+    title: "مرحباً بك في توريفا العقارية",
     subtitle: "شركة ديكور ومقاولات — جرّب معاينة سريعة أو احجز جلسة تصميم خاص.",
     credits: "تمت إضافة 3 أرصدة مجانية إلى حسابك",
     start: "ابدأ",
@@ -808,7 +808,7 @@ const ar: DesignMessages = {
   consultation: {
     title: "استشارة مجانية وعرض تنفيذ",
     subtitle:
-      "أعجبك التصميم؟ احجز مكالمة مجانية مع رواق — نحوّله إلى مشروع حقيقي بمواد قابلة للتنفيذ.",
+      "أعجبك التصميم؟ احجز مكالمة مجانية مع توريفا العقارية — نحوّله إلى مشروع حقيقي بمواد قابلة للتنفيذ.",
     freeBadge: "استشارة مجانية",
     name: "اسمك",
     phone: "رقم الجوال",
@@ -827,7 +827,7 @@ const ar: DesignMessages = {
     interestBespoke: "تصميم خاص مع مهندسينا",
     interestBoth: "تنفيذ + تصميم خاص",
     bespokeSubtitle:
-      "مهندسو التصميم في رواق يلتقون معك ويعدّون مفهوماً بشرياً فاخراً ومخصصاً بالكامل لمساحتك.",
+      "مهندسو التصميم في توريفا العقارية يلتقون معك ويعدّون مفهوماً بشرياً فاخراً ومخصصاً بالكامل لمساحتك.",
     bothSubtitle:
       "ننفّذ ما أعجبك من المعاينة، وفريق التصميم يطوّره إلى مشروع خاص يعكس ذوقك بالكامل.",
   },
@@ -835,9 +835,9 @@ const ar: DesignMessages = {
     eyebrow: "أبعد من المعاينة الذكية",
     title: "تريد تصميماً خاصاً لا يشبه أحداً؟",
     subtitle:
-      "أعجبتك المعاينة؟ رواق تنفّذها في جدة ومكة. ولتصميم بشري فاخر ومخصص بالكامل — مهندسو التصميم في رواق جاهزون للاجتماع معك.",
+      "أعجبتك المعاينة؟ توريفا العقارية تنفّذها في جدة ومكة. ولتصميم بشري فاخر ومخصص بالكامل — مهندسو التصميم في توريفا العقارية جاهزون للاجتماع معك.",
     points: [
-      "مهندسو تصميم رواق — خبرة بشرية عالية، ليس ذكاءً اصطناعياً",
+      "مهندسو تصميم توريفا العقارية — خبرة بشرية عالية، ليس ذكاءً اصطناعياً",
       "مفاهيم خاصة للفلل والقصور والمحلات وبوث المعارض",
       "من الفكرة إلى مخططات قابلة للتنفيذ",
       "اجتماع تعريفي مجاني لفهم رؤيتك",
@@ -867,13 +867,13 @@ const ar: DesignMessages = {
     eyebrow: "الجودة مهمة",
     title: "معظم أدوات الذكاء الاصطناعي تستخدم نماذج رخيصة. نحن لا.",
     subtitle:
-      "أدوات التصميم الأخرى تولّد غرفة مختلفة من الصفر. رواق يحافظ على تخطيط مساحتك ونوافذها وأبوابها.",
+      "أدوات التصميم الأخرى تولّد غرفة مختلفة من الصفر. توريفا العقارية يحافظ على تخطيط مساحتك ونوافذها وأبوابها.",
     tabInterior: "داخلي (ثابت)",
     tabExterior: "خارجي (ثابت)",
     tabBooth: "بوث ومعارض",
     yourPhoto: "صورتك",
     otherAi: "أدوات AI أخرى",
-    ruwaq: "رواق",
+    ruwaq: "توريفا العقارية",
     otherNotes: [
       "غرفة مختلفة — مُولّدة من الصفر",
       "تجاهل الهندسة والفتحات",
@@ -920,32 +920,32 @@ const ar: DesignMessages = {
     ],
   },
   execution: {
-    badge: "حصري في رواق",
+    badge: "حصري في توريفا العقارية",
     title: "من تصميم AI إلى تنفيذ حقيقي",
     subtitle:
-      "ديكور ثابت وبوث إعلاني — رواق لا تتوقف عند الصورة. ننفّذها بمواد حقيقية ومقاولات فاخرة.",
+      "ديكور ثابت وبوث إعلاني — توريفا العقارية لا تتوقف عند الصورة. ننفّذها بمواد حقيقية ومقاولات فاخرة.",
     points: [
       "كتالوجات مواد حقيقية — خشب، رخام، زجاج، أثاث",
       "استشارة مجانية مع فريق التصميم",
-      "عرض تنفيذ رسمي عبر منصة رواق",
+      "عرض تنفيذ رسمي عبر منصة توريفا العقارية",
     ],
     cta: "احجز استشارة مجانية",
     stepDesign: "تصميم AI",
     stepMaterials: "مواد حقيقية",
-    stepBuild: "تنفيذ رواق",
+    stepBuild: "تنفيذ توريفا العقارية",
   },
   ctaBottom: {
     badge: "3 أرصدة مجانية — بدون بطاقة",
     title: "مستعد لرؤية مساحتك بشكل جديد؟",
-    subtitle: "ابدأ مجاناً — سجّل الدخول للحصول على 3 أرصدة. ثم احجز التنفيذ مع رواق.",
+    subtitle: "ابدأ مجاناً — سجّل الدخول للحصول على 3 أرصدة. ثم احجز التنفيذ مع توريفا العقارية.",
     cta: "أعد تصميم غرفتي مجاناً",
     note: "بدون بطاقة · استشارة مجانية · تنفيذ حقيقي",
   },
   materials: {
     title: "مكوّنات التصميم — خامات قابلة للتنفيذ",
     subtitle:
-      "خامات مُستخرجة من تصميمك ومطابقة لكتالوج موردي رواق — جاهزة للتسعير والتنفيذ.",
-    executableBadge: "قابل للتنفيذ من رواق",
+      "خامات مُستخرجة من تصميمك ومطابقة لكتالوج موردي توريفا العقارية — جاهزة للتسعير والتنفيذ.",
+    executableBadge: "قابل للتنفيذ من توريفا العقارية",
     fallbackNotice:
       "اقتراحات خامات بناءً على النمط — التعرف بالذكاء الاصطناعي يُفعّل مع API الإنتاج.",
     available: "متوفر",
@@ -963,7 +963,7 @@ const ar: DesignMessages = {
     match: "تطابق",
     showDetected: "المكتشف",
     showAlternative: "بديل",
-    executable: "توريد وتركيب من رواق",
+    executable: "توريد وتركيب من توريفا العقارية",
     quoteHint: "أضف هذه القطع لعرض التنفيذ بمكالمة استشارة واحدة.",
     quoteCta: "احصل على عرض أثاث",
   },
@@ -971,30 +971,30 @@ const ar: DesignMessages = {
     eyebrow: "مثل زوري — لكننا ننفّذ",
     title: "ارفع غرفتك. اكتشف كل قطعة. ونحن ننفّذ.",
     subtitle:
-      "مكتشف الأثاث يحدد الكنب والطاولات والإضاءة والديكور — ثم رواق توردها وتركّبها بنفس جودة التصميم.",
+      "مكتشف الأثاث يحدد الكنب والطاولات والإضاءة والديكور — ثم توريفا العقارية توردها وتركّبها بنفس جودة التصميم.",
     points: [
       "دبابيس مرقّمة على تصميمك — اضغط للاستكشاف",
       "علامات شريكة حقيقية: بان هوم، هوم سنتر، والمزيد",
       "تبديل بنقرة لمنتج بديل",
-      "عرض رسمي + تركيب من مقاولات رواق",
+      "عرض رسمي + تركيب من مقاولات توريفا العقارية",
     ],
     cta: "جرّب مكتشف الأثاث",
   },
   footer: {
     about:
-      "رواق تجمع بين تصور التصميم بالذكاء الاصطناعي والديكور والمقاولات الفاخرة — من الفكرة إلى التنفيذ.",
+      "توريفا العقارية تجمع بين تصور التصميم بالذكاء الاصطناعي والديكور والمقاولات الفاخرة — من الفكرة إلى التنفيذ.",
     product: "المنتج",
     company: "الشركة",
     support: "الدعم",
     solutions: "الحلول",
     workspaceDesc:
-      "عروض أسعار ذكية، جداول كميات، وإدارة مشاريع — منصة رواق التي يستخدمها فريقك.",
+      "عروض أسعار ذكية، جداول كميات، وإدارة مشاريع — منصة توريفا العقارية التي يستخدمها فريقك.",
     workspaceCta: "الدخول إلى المنصة",
     workspaceBadge: "التطبيق الحالي",
-    copyright: "© رواق. جميع الحقوق محفوظة.",
+    copyright: "© توريفا العقارية. جميع الحقوق محفوظة.",
     privacy: "سياسة الخصوصية",
     terms: "شروط الاستخدام",
-    poweredByPrefix: "رواق بواسطة",
+    poweredByPrefix: "توريفا العقارية بواسطة",
     poweredByLink: "جرافيكس هاوس",
   },
   conversion: {
@@ -1013,11 +1013,11 @@ const ar: DesignMessages = {
     },
     unlockTitle: "أعجبك النتيجة؟",
     unlockBody:
-      "أكمل ملف مشروعك في 30 ثانية لفتح تصميمين إضافيين — مع مراجعة من فريق تصميم رواق.",
+      "أكمل ملف مشروعك في 30 ثانية لفتح تصميمين إضافيين — مع مراجعة من فريق تصميم توريفا العقارية.",
     unlockCta: "متابعة",
     unlockNote: "لن نزعجك — نستخدم رقمك فقط لمتابعة مشروعك.",
     successTitle: "تم فتح تصميمين مجانيين إضافيين",
-    successBody: "سيتواصل معك مستشار التصميم قريباً لتحويل رؤيتك إلى مشروع رواق حقيقي.",
+    successBody: "سيتواصل معك مستشار التصميم قريباً لتحويل رؤيتك إلى مشروع توريفا العقارية حقيقي.",
     successCta: "توليد التصميم التالي",
     bonusLeft: "{count} تصاميم إضافية متبقية",
     nurtureTitle: "شكراً لمشاركة مشروعك",
@@ -1054,7 +1054,7 @@ const ar: DesignMessages = {
       timeline3Months: "خلال 3 أشهر",
       timelineExploring: "استكشاف أفكار فقط",
       budgetTitle: "الميزانية التقديرية للتنفيذ؟",
-      budgetSubtitle: "لنوصلك بالفريق المناسب في رواق.",
+      budgetSubtitle: "لنوصلك بالفريق المناسب في توريفا العقارية.",
       budgetUnder30: "أقل من 30,000 ريال",
       budget30_80: "30,000 – 80,000 ريال",
       budget80_200: "80,000 – 200,000 ريال",
@@ -1065,13 +1065,13 @@ const ar: DesignMessages = {
       namePlaceholder: "الاسم الكامل",
       phoneLabel: "رقم الجوال",
       phonePlaceholder: "05xxxxxxxx",
-      privacy: "أوافق على تواصل رواق معي بخصوص هذا المشروع دون رسائل ترويجية بدون إذني.",
+      privacy: "أوافق على تواصل توريفا العقارية معي بخصوص هذا المشروع دون رسائل ترويجية بدون إذني.",
     },
   },
   inspiration: {
     eyebrow: "إلهام",
     title: "مساحات نحب تصميمها وتنفيذها",
-    subtitle: "داخلي، فلل، قصور، محلات، ومعارض — جودة رواق على أرض الواقع.",
+    subtitle: "داخلي، فلل، قصور، محلات، ومعارض — جودة توريفا العقارية على أرض الواقع.",
     tabInterior: "داخلي",
     tabExterior: "خارجي",
     tabExhibition: "معارض",

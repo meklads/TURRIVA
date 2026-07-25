@@ -58,7 +58,7 @@ function actionError(error: unknown, fallback: string) {
     message.includes("OPENAI")
   ) {
     message =
-      "خدمة الذكاء الاصطناعي غير متاحة حالياً. تواصل مع فريق رواق أو حاول لاحقاً.";
+      "خدمة الذكاء الاصطناعي غير متاحة حالياً. تواصل مع فريق توريفا العقارية أو حاول لاحقاً.";
   }
 
   console.error(`[proposal.action] ${fallback}:`, error);

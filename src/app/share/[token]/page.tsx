@@ -31,7 +31,7 @@ export default async function ShareProposalPage({ params }: Props) {
 export async function generateMetadata({ params }: Props) {
   const data = await getShareViewByToken(params.token);
   if (!data) {
-    return { title: "Ruwaq" };
+    return { title: "Turriva Real Estate" };
   }
   return {
     title:

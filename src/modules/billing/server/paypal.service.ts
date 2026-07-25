@@ -73,7 +73,7 @@ export async function createPremiumTemplatesOrder(userId: string) {
       purchase_units: [
         {
           custom_id: userId,
-          description: "Ruwaq — premium proposal templates (one-time unlock)",
+          description: "Turriva — premium proposal templates (one-time unlock)",
           amount: {
             currency_code: PREMIUM_TEMPLATES_CURRENCY,
             value: PREMIUM_TEMPLATES_PRICE_USD.toFixed(2),

@@ -1,5 +1,5 @@
 /**
- * Ruwaq Trust Layer v1 — Pre-vetted clause library (Arabic primary).
+ * Turriva Trust Layer v1 — Pre-vetted clause library (Arabic primary).
  * AI may select/fill placeholders only — never draft legal text.
  */
 
@@ -151,7 +151,7 @@ const variationOrder = (prefix: string, sortOrder: number): ClauseSeed => ({
   placeholders: [],
   sortOrder,
   isMandatory: true,
-  sourceRef: "Ruwaq — Scope Creep Protection",
+  sourceRef: "Turriva — Scope Creep Protection",
 });
 
 const retentionPayment = (prefix: string, sortOrder: number): ClauseSeed => ({
@@ -180,7 +180,7 @@ const fitOutMaterialsContractor: ClauseSeed = {
   sortOrder: 50,
   isMandatory: false,
   alternativeGroup: "fit_out_materials_supply",
-  sourceRef: "Ruwaq Fit-out — Materials Supply",
+  sourceRef: "Turriva Fit-out — Materials Supply",
 };
 
 const fitOutMaterialsClient: ClauseSeed = {
@@ -193,7 +193,7 @@ const fitOutMaterialsClient: ClauseSeed = {
   sortOrder: 51,
   isMandatory: false,
   alternativeGroup: "fit_out_materials_supply",
-  sourceRef: "Ruwaq Fit-out — Client-Supplied Materials",
+  sourceRef: "Turriva Fit-out — Client-Supplied Materials",
 };
 
 const fitOutWarranty: ClauseSeed = {
@@ -205,7 +205,7 @@ const fitOutWarranty: ClauseSeed = {
   placeholders: ph("warranty_months"),
   sortOrder: 90,
   isMandatory: true,
-  sourceRef: "Ruwaq Fit-out — Workmanship Warranty",
+  sourceRef: "Turriva Fit-out — Workmanship Warranty",
 };
 
 const fitOutDelayPenaltyContractor: ClauseSeed = {
@@ -222,7 +222,7 @@ const fitOutDelayPenaltyContractor: ClauseSeed = {
   sortOrder: 100,
   isMandatory: false,
   alternativeGroup: "fit_out_delay_penalty",
-  sourceRef: "Ruwaq Fit-out — Delay Penalties (Contractor)",
+  sourceRef: "Turriva Fit-out — Delay Penalties (Contractor)",
 };
 
 const fitOutDelayPenaltyNone: ClauseSeed = {
@@ -235,7 +235,7 @@ const fitOutDelayPenaltyNone: ClauseSeed = {
   sortOrder: 101,
   isMandatory: false,
   alternativeGroup: "fit_out_delay_penalty",
-  sourceRef: "Ruwaq Fit-out — No Delay Penalties",
+  sourceRef: "Turriva Fit-out — No Delay Penalties",
 };
 
 export const CLAUSE_PACKS: PackSeed[] = [
@@ -268,7 +268,7 @@ export const CLAUSE_PACKS: PackSeed[] = [
         placeholders: ph("variance_percent"),
         sortOrder: 120,
         isMandatory: false,
-        sourceRef: "Ruwaq — Estimate Only Disclaimer",
+        sourceRef: "Turriva — Estimate Only Disclaimer",
       },
     ],
   },
@@ -290,7 +290,7 @@ export const CLAUSE_PACKS: PackSeed[] = [
         placeholders: ph("site_visit_frequency", "rfi_response_days"),
         sortOrder: 30,
         isMandatory: true,
-        sourceRef: "Ruwaq Supervision — Scope Limitation",
+        sourceRef: "Turriva Supervision — Scope Limitation",
       },
       hiddenSoilRock("SA-SUPERV", 40),
       {
@@ -302,7 +302,7 @@ export const CLAUSE_PACKS: PackSeed[] = [
         placeholders: [],
         sortOrder: 50,
         isMandatory: true,
-        sourceRef: "Ruwaq Supervision — Means & Methods Exclusion",
+        sourceRef: "Turriva Supervision — Means & Methods Exclusion",
       },
       vatClause("SA-SUPERV", 60),
       retentionPayment("SA-SUPERV", 70),
@@ -317,7 +317,7 @@ export const CLAUSE_PACKS: PackSeed[] = [
         placeholders: [],
         sortOrder: 100,
         isMandatory: false,
-        sourceRef: "Ruwaq Supervision — Delay Exclusion",
+        sourceRef: "Turriva Supervision — Delay Exclusion",
       },
       {
         clauseKey: "SA-SUPERV-PHASE-SIGNOFF",
@@ -328,7 +328,7 @@ export const CLAUSE_PACKS: PackSeed[] = [
         placeholders: [],
         sortOrder: 130,
         isMandatory: false,
-        sourceRef: "Ruwaq — Phase Sign-off Hook (Live Room)",
+        sourceRef: "Turriva — Phase Sign-off Hook (Live Room)",
       },
     ],
   },
@@ -353,7 +353,7 @@ export const CLAUSE_PACKS: PackSeed[] = [
         ),
         sortOrder: 10,
         isMandatory: true,
-        sourceRef: "Ruwaq Maintenance — SLA",
+        sourceRef: "Turriva Maintenance — SLA",
       },
       {
         clauseKey: "SA-MAINT-SPARE-PARTS",
@@ -364,7 +364,7 @@ export const CLAUSE_PACKS: PackSeed[] = [
         placeholders: ph("spare_parts_cap_sar", "spare_parts_markup_percent"),
         sortOrder: 20,
         isMandatory: true,
-        sourceRef: "Ruwaq Maintenance — Spare Parts",
+        sourceRef: "Turriva Maintenance — Spare Parts",
       },
       {
         clauseKey: "SA-MAINT-EXCLUDED-EQUIPMENT",
@@ -375,7 +375,7 @@ export const CLAUSE_PACKS: PackSeed[] = [
         placeholders: ph("excluded_age_years"),
         sortOrder: 30,
         isMandatory: true,
-        sourceRef: "Ruwaq Maintenance — Exclusions",
+        sourceRef: "Turriva Maintenance — Exclusions",
       },
       baladyPermitsLiability("SA-MAINT", 35),
       vatClause("SA-MAINT", 60),
@@ -390,7 +390,7 @@ export const CLAUSE_PACKS: PackSeed[] = [
         placeholders: ph("renewal_notice_days", "renewal_increase_cap_percent"),
         sortOrder: 120,
         isMandatory: true,
-        sourceRef: "Ruwaq Maintenance — Annual Renewal",
+        sourceRef: "Turriva Maintenance — Annual Renewal",
       },
       {
         clauseKey: "SA-MAINT-SBC-SAFETY",

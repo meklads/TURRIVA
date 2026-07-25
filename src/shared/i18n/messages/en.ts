@@ -2,7 +2,7 @@ import type { Messages } from "./types";
 
 export const en: Messages = {
  app: {
-  name: "Ruwaq",
+  name: "Turriva Real Estate",
   subtitle: "Easiest, most trusted real estate proposals",
  },
  nav: {
@@ -16,7 +16,7 @@ export const en: Messages = {
  },
  form: {
   title: "Create a professional real estate proposal",
-  subtitle: "Just 3 inputs, Ruwaq writes the full document for you.",
+  subtitle: "Just 3 inputs, Turriva writes the full document for you.",
   steps: {
    project: "Project",
    details: "Details & price",
@@ -82,7 +82,7 @@ export const en: Messages = {
  },
  review: {
   trustBanner:
-   "Ruwaq organizes the proposal, you confirm assumptions, exclusions, and price before sending.",
+   "Turriva organizes the proposal, you confirm assumptions, exclusions, and price before sending.",
   reviewGatesTitle: "Review gates before sending",
   reviewGatesHint: "Confirm BOQ breakdown, clause pack, and commercial terms before export.",
   exportBlocked: "Complete all required review gates before exporting.",
@@ -182,7 +182,7 @@ export const en: Messages = {
    source: "Reference",
    confirmClauses: "I confirm the approved clauses in this pack",
    legalDisclaimer:
-    "I understand Ruwaq does not provide legal advice, clauses are pre-vetted templates only",
+    "I understand Turriva does not provide legal advice, clauses are pre-vetted templates only",
    categories: {
     materials: "Materials",
     permits: "Permits & municipality",
@@ -216,7 +216,7 @@ export const en: Messages = {
    titleHighlight: "not days",
    subtitleIntro: "Just 3 inputs:",
    subtitleInputs: ["Client name", "Work description", "Price or estimate"],
-   subtitleOutcomeBefore: "Ruwaq drafts full scope with ",
+   subtitleOutcomeBefore: "Turriva drafts full scope with ",
    subtitleHighlight: "an approved clause pack that protects you",
    subtitleOutcomeAfter: ", then exports a PDF under your brand.",
    cta: "Start a proposal now",
@@ -229,7 +229,7 @@ export const en: Messages = {
    title: "Three steps, your proposal ready",
    items: [
     { label: "Three inputs only", hint: "" },
-    { label: "Ruwaq writes the proposal", hint: "" },
+    { label: "Turriva writes the proposal", hint: "" },
     { label: "PDF ready under your brand", hint: "" },
    ],
   },
@@ -280,7 +280,7 @@ export const en: Messages = {
    body:
     "Most real estate contractors send proposals from outdated templates, incomplete, inconsistent, and missing clear assumptions. Clients hesitate. You lose time and trust.",
    traditionalLabel: "The old way",
-   ruwaqLabel: "With Ruwaq",
+   ruwaqLabel: "With Turriva",
    traditional: [
     "2 hours in Word, copy-paste from an old proposal",
     "Vague scope that opens disputes later",
@@ -291,11 +291,11 @@ export const en: Messages = {
     "3 inputs → complete draft in minutes",
     "11 organized layers: scope, deliverables, payments, timeline",
     "Mandatory review gates before export",
-    "PDF with your company identity only, Ruwaq stays invisible",
+    "PDF with your company identity only, Turriva stays invisible",
    ],
   },
   features: {
-   eyebrow: "Why Ruwaq",
+   eyebrow: "Why Turriva",
    title: "Built for private clients, not government tender uploads",
    subtitle:
     "Not ERP. Not a template library. A smart translator that turns what you know into a trust-building document.",
@@ -342,7 +342,7 @@ export const en: Messages = {
      body: "Project name, client, work description. Location, area, or property type, all optional.",
     },
     {
-     title: "Ruwaq writes the proposal",
+     title: "Turriva writes the proposal",
      body: "Scope, deliverables, timeline, commercial terms, assumptions, and exclusions, ready to review.",
     },
     {
@@ -353,10 +353,10 @@ export const en: Messages = {
   },
   why: {
    eyebrow: "Why us",
-   title: "Why clients choose Ruwaq",
+   title: "Why clients choose Turriva",
    subtitle:
     "Not because we're \"an AI platform\", because we solve a daily problem for everyone sending proposals in real estate & engineering.",
-   table: { need: "Your need", others: "Alternatives", ruwaq: "Ruwaq" },
+   table: { need: "Your need", others: "Alternatives", ruwaq: "Turriva" },
    rows: [
     {
      need: "Fast reply after a call or WhatsApp",
@@ -435,17 +435,17 @@ export const en: Messages = {
    eyebrow: "See for yourself",
    title: "Proposal sample gallery",
    body:
-    "Three live samples: villa fit-out, engineering supervision, and 3D visualization — Ruwaq and Graphics House designs.",
+    "Three live samples: villa fit-out, engineering supervision, and 3D visualization — Turriva and Graphics House designs.",
    cta: "Browse all three samples",
    comingSoon: "Coming soon",
    items: [
     {
-     title: "Villa fit-out — Ruwaq",
+     title: "Villa fit-out — Turriva",
      body: "Scope, BOQ, payments, and approved clause pack.",
      live: true,
     },
     {
-     title: "Engineering supervision — Ruwaq executive",
+     title: "Engineering supervision — Turriva executive",
      body: "Formal layout for engineering firms and site supervision.",
      live: true,
     },
@@ -465,7 +465,7 @@ export const en: Messages = {
    eyebrow: "Inside every proposal",
    title: "11 layers, not a single page",
    subtitle:
-    "Every Ruwaq proposal is structured like a consulting firm document: from project understanding to acceptance.",
+    "Every Turriva proposal is structured like a consulting firm document: from project understanding to acceptance.",
    layers: [
     "Company identity",
     "Proposal metadata",
@@ -482,14 +482,14 @@ export const en: Messages = {
   },
   trustPartner: {
    eyebrow: "Your partner in the field",
-   title: "Ruwaq stands with you, protecting your interest before the client signs",
+   title: "Turriva stands with you, protecting your interest before the client signs",
    subtitle:
     "We don't just write a beautiful proposal. We embed pre-vetted clauses grounded in SBC, ZATCA, and Balady, so the client trusts you and you are protected before work begins.",
    pillars: [
     {
      illustration: "partner",
      title: "Partner, not competitor",
-     body: "Ruwaq is your ally: assistant, companion, and backer. The goal is for the contractor to win and the client to trust, not to leave you alone with Word.",
+     body: "Turriva is your ally: assistant, companion, and backer. The goal is for the contractor to win and the client to trust, not to leave you alone with Word.",
     },
     {
      illustration: "protection",
@@ -561,7 +561,7 @@ export const en: Messages = {
     },
    ],
    disclaimer:
-    "Pre-vetted templates to protect contractors. Ruwaq does not provide legal advice; review with your advisor when needed.",
+    "Pre-vetted templates to protect contractors. Turriva does not provide legal advice; review with your advisor when needed.",
    cta: "Start a protected proposal",
   },
   ctaFinal: {
@@ -576,7 +576,7 @@ export const en: Messages = {
  site: {
   nav: {
    howItWorks: "How it works",
-   about: "About Ruwaq",
+   about: "About Turriva",
    services: "Services",
    pricing: "Pricing",
    faq: "FAQ",
@@ -612,8 +612,8 @@ export const en: Messages = {
    company: "Company",
    legal: "Legal",
    contact: "Contact us",
-   copyright: "© Ruwaq. All rights reserved.",
-   sponsoredBy: "Ruwaq is powered by",
+   copyright: "© Turriva. All rights reserved.",
+   sponsoredBy: "Turriva is powered by",
    sponsoredByLink: "Graphics House",
    ctaTitle: "Let's talk",
    ctaSubtitle: "Send your first professional proposal today, no account or card required.",
@@ -622,16 +622,16 @@ export const en: Messages = {
  },
  pages: {
   howItWorks: {
-   title: "How Ruwaq works",
+   title: "How Turriva works",
    intro:
-    "Ruwaq turns what you know about a project into a professional proposal, without complex forms or hours of writing.",
+    "Turriva turns what you know about a project into a professional proposal, without complex forms or hours of writing.",
    steps: [
     {
      title: "Enter 3 core inputs",
      body: "Project name, client name, and work description. Location, property type, area, and duration are optional.",
     },
     {
-     title: "Ruwaq drafts with AI",
+     title: "Turriva drafts with AI",
      body: "Scope, deliverables, timeline, commercial terms, assumptions, and exclusions, organized and ready to review.",
     },
     {
@@ -640,17 +640,17 @@ export const en: Messages = {
     },
     {
      title: "Export a PDF with your brand",
-     body: "Client documents show your company only. Ruwaq stays in the background.",
+     body: "Client documents show your company only. Turriva stays in the background.",
     },
    ],
    reviewTitle: "Why 3 review steps?",
    reviewBody:
-    "In real estate, clients trust vendors who clarify assumptions, exclusions, and price. Ruwaq organizes, you confirm before sending.",
+    "In real estate, clients trust vendors who clarify assumptions, exclusions, and price. Turriva organizes, you confirm before sending.",
   },
   about: {
-   title: "About Ruwaq",
+   title: "About Turriva",
    intro:
-    "Ruwaq is your partner for turning project knowledge into a trust-building proposal, for everyone in Saudi real estate & engineering.",
+    "Turriva is your partner for turning project knowledge into a trust-building proposal, for everyone in Saudi real estate & engineering.",
    sections: [
     {
      title: "What we do",
@@ -662,25 +662,25 @@ export const en: Messages = {
     },
     {
      title: "What we are not",
-     body: "Not a PDF tool alone, not empty form builders, not ERP. Ruwaq is a professional translator, you own the final content.",
+     body: "Not a PDF tool alone, not empty form builders, not ERP. Turriva is a professional translator, you own the final content.",
     },
    ],
    values: [
     { title: "Trust first", body: "Assumptions and exclusions are core, not an afterthought." },
     { title: "Real simplicity", body: "3 inputs to start. Everything else is optional." },
-    { title: "Your identity", body: "Your proposals show your company, Ruwaq works behind the scenes." },
+    { title: "Your identity", body: "Your proposals show your company, Turriva works behind the scenes." },
     { title: "Built for KSA", body: "Arabic/English, CR/VAT, local real estate context." },
    ],
    sponsoredTitle: "Powered by Graphics House",
    sponsoredBody:
-    "Ruwaq is built with the design and brand expertise of Graphics House, professional visual identity for proposals that build trust.",
+    "Turriva is built with the design and brand expertise of Graphics House, professional visual identity for proposals that build trust.",
    sponsoredLink: "3dgraphicshouse.com",
   },
   privacy: {
    title: "Privacy policy",
    updated: "Last updated: June 2026",
    intro:
-    "We respect your privacy. This policy explains how we collect and use your data when you use Ruwaq (ruwaq.co).",
+    "We respect your privacy. This policy explains how we collect and use your data when you use Turriva (ruwaq.co).",
    sections: [
     {
      title: "Data we collect",
@@ -713,11 +713,11 @@ export const en: Messages = {
    title: "Terms of service",
    updated: "Last updated: June 2026",
    intro:
-    "By using Ruwaq (ruwaq.co) you agree to these terms. Please read them before creating or sending proposals.",
+    "By using Turriva (ruwaq.co) you agree to these terms. Please read them before creating or sending proposals.",
    sections: [
     {
      title: "Service description",
-     body: "Ruwaq helps contractors and firms draft, review, and export professional proposals. AI-generated content is a starting point — you are responsible for reviewing accuracy before client delivery.",
+     body: "Turriva helps contractors and firms draft, review, and export professional proposals. AI-generated content is a starting point — you are responsible for reviewing accuracy before client delivery.",
     },
     {
      title: "Accounts & guest access",
@@ -725,15 +725,15 @@ export const en: Messages = {
     },
     {
      title: "Acceptable use",
-     body: "Do not use Ruwaq for unlawful content, impersonation, or spam. Do not attempt to bypass security or access other users' data.",
+     body: "Do not use Turriva for unlawful content, impersonation, or spam. Do not attempt to bypass security or access other users' data.",
     },
     {
      title: "Intellectual property",
-     body: "You retain ownership of your project data and exported documents. Ruwaq retains rights to the platform, templates, and branding.",
+     body: "You retain ownership of your project data and exported documents. Turriva retains rights to the platform, templates, and branding.",
     },
     {
      title: "Disclaimer",
-     body: "Proposals and clauses are not legal advice. Consult qualified counsel for binding contracts. Ruwaq is provided as-is without warranties of uninterrupted service.",
+     body: "Proposals and clauses are not legal advice. Consult qualified counsel for binding contracts. Turriva is provided as-is without warranties of uninterrupted service.",
     },
     {
      title: "Changes",
@@ -743,11 +743,11 @@ export const en: Messages = {
    contact: "Questions:",
   },
   faq: {
-   eyebrow: "Ruwaq guide",
+   eyebrow: "Turriva guide",
    title: "Everything you need to know before you start",
    intro:
-    "Why Ruwaq is different, and exactly how the free trial and subscription work — no ambiguity, no surprises later.",
-   differentiatorsTitle: "Why Ruwaq?",
+    "Why Turriva is different, and exactly how the free trial and subscription work — no ambiguity, no surprises later.",
+   differentiatorsTitle: "Why Turriva?",
    differentiators: [
     {
      title: "From idea to a ready proposal in minutes, not hours",
@@ -790,7 +790,7 @@ export const en: Messages = {
    questionsTitle: "Frequently asked questions",
    questions: [
     {
-     q: "Is Ruwaq really free?",
+     q: "Is Turriva really free?",
      a: "Yes. The platform is currently in a fully free launch trial with no limits. Even after that trial ends, a permanent free plan covers a limited number of proposals per month — no card needed to start.",
     },
     {
@@ -807,7 +807,7 @@ export const en: Messages = {
     },
     {
      q: "How is this different from writing it myself in Word or using ChatGPT directly?",
-     a: "ChatGPT gives you generic text you have to format yourself from scratch every time. Ruwaq builds a structured, export-ready proposal — scope, timeline, payment terms, and your branding — with no manual formatting or copy-pasting.",
+     a: "ChatGPT gives you generic text you have to format yourself from scratch every time. Turriva builds a structured, export-ready proposal — scope, timeline, payment terms, and your branding — with no manual formatting or copy-pasting.",
     },
     {
      q: "Is there a limit on how many proposals I can create?",
@@ -835,7 +835,7 @@ export const en: Messages = {
  templates: {
   title: "Proposal sample gallery",
   subtitle:
-   "Three samples to explore: villa fit-out (Ruwaq classic), engineering supervision (Ruwaq executive), and 3D visualization (Graphics House).",
+   "Three samples to explore: villa fit-out (Turriva classic), engineering supervision (Turriva executive), and 3D visualization (Graphics House).",
   openSample: "Open in new tab",
   openSampleHint: "Demo data for preview only, not for client delivery.",
   note: "Your real proposals show your company identity only.",
@@ -844,17 +844,17 @@ export const en: Messages = {
   gallery: [
    {
     slug: "ruwaq-classic",
-    brand: "Ruwaq",
+    brand: "Turriva",
     title: "Residential villa fit-out",
     body: "Fit-out scope, BOQ, 30/40/30 payments, and approved clause pack.",
     badge: "Primary sample",
    },
    {
     slug: "ruwaq-executive",
-    brand: "Ruwaq — Executive",
+    brand: "Turriva — Executive",
     title: "Engineering supervision — office tower",
     body: "A more formal layout for engineering firms: supervision, reports, timeline.",
-    badge: "Ruwaq sample 2",
+    badge: "Turriva sample 2",
    },
    {
     slug: "graphics-house",
@@ -910,7 +910,7 @@ export const en: Messages = {
   subtitle: "Save proposals and build your company profile, on every export.",
   google: "Sign in with Google",
   googleUnavailable:
-   "Google sign-in is not configured yet, contact the Ruwaq team or try again later.",
+   "Google sign-in is not configured yet, contact the Turriva team or try again later.",
   hint: "No account needed to create proposals. Sign in to save and manage your company profile.",
   perks: {
    profile: "Full company profile, logo, CR, VAT, and links",
@@ -920,11 +920,11 @@ export const en: Messages = {
   },
   servicesTitle: "Want a stronger identity?",
   servicesBody:
-   "Ruwaq helps with identity, design, and marketing, so your proposals match a big-office standard.",
-  servicesCta: "Explore Ruwaq services →",
+   "Turriva helps with identity, design, and marketing, so your proposals match a big-office standard.",
+  servicesCta: "Explore Turriva services →",
  },
  services: {
-  title: "Ruwaq services",
+  title: "Turriva services",
   subtitle:
    "Identity, design, and marketing, for real estate professionals who want big-office proposals.",
   supportNote:
@@ -981,8 +981,8 @@ export const en: Messages = {
   exportTemplateHint:
    "Choose the layout used when you export proposals. Preview samples in the template gallery.",
   exportTemplateOptions: {
-   ruwaq: "Ruwaq Classic — fit-out & general contracting",
-   ruwaq_executive: "Ruwaq Executive — engineering & supervision",
+   ruwaq: "Turriva Classic — fit-out & general contracting",
+   ruwaq_executive: "Turriva Executive — engineering & supervision",
    graphics_house: "Graphics House — visualization & creative",
   },
   address: "Address",
@@ -1006,12 +1006,12 @@ export const en: Messages = {
  },
  upgrade: {
   title: "Unlock premium templates",
-  subtitle: "Ruwaq Executive and Graphics House templates — a higher-end look for your proposals.",
+  subtitle: "Turriva Executive and Graphics House templates — a higher-end look for your proposals.",
   price: "$15 one-time",
   priceNote: "Paid via PayPal for now (a Saudi payment gateway is coming soon). The base template stays free forever.",
   cta: "Upgrade now",
   inlineTitle: "Premium templates available",
-  inlineBody: "Unlock the \"Ruwaq Executive\" and \"Graphics House\" templates with a single small payment.",
+  inlineBody: "Unlock the \"Turriva Executive\" and \"Graphics House\" templates with a single small payment.",
   lockedSuffix: "locked",
   notConfigured: "Payments aren't enabled yet. Contact hello@ruwaq.co.",
   close: "Close",
@@ -1024,7 +1024,7 @@ export const en: Messages = {
   cta: "See Graphics House services",
  },
  gates: {
-  signInRequired: "You tried Ruwaq for free — nice! Sign in with Google (one click) to create more proposals.",
+  signInRequired: "You tried Turriva for free — nice! Sign in with Google (one click) to create more proposals.",
   signInCta: "Sign in with Google",
   profileIncomplete: "Complete your company name and logo in Company Profile first — they appear on every exported proposal.",
   profileIncompleteCta: "Complete company profile",
@@ -1033,7 +1033,7 @@ export const en: Messages = {
  },
  pricing: {
   eyebrow: "Pricing",
-  title: "Ruwaq plans",
+  title: "Turriva plans",
   subtitle: "Start free, upgrade when your workload grows.",
   perMonth: "/ month",
   freeLabel: "Free",
@@ -1056,7 +1056,7 @@ export const en: Messages = {
   savePdf: "Print or save as PDF",
   footer: "Please review this proposal before final acceptance.",
   sampleBadge: "Design sample, preview only",
-  sampleFooter: "Ruwaq design sample, not for client delivery.",
+  sampleFooter: "Turriva design sample, not for client delivery.",
   logoPlaceholder: "Your logo here",
   preparedFor: "Prepared for:",
   preparedBy: "Prepared by:",
@@ -1102,7 +1102,7 @@ export const en: Messages = {
   notFoundTitle: "Proposal not found",
   notFoundMessage:
    "This link may have expired or is no longer valid. Contact the sender for an updated link.",
-  goHome: "Go to Ruwaq",
-  poweredBy: "Delivered via Ruwaq, professional proposals for Saudi contractors.",
+  goHome: "Go to Turriva",
+  poweredBy: "Delivered via Turriva, professional proposals for Saudi contractors.",
  },
 };

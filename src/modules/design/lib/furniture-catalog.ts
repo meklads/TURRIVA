@@ -44,8 +44,8 @@ export const FURNITURE_CATALOG: CatalogFurniture[] = [
     category: "sofa",
     nameAr: "كنب مخمل ذهبي فاخر",
     nameEn: "Luxury gold velvet sofa",
-    brandAr: "رواق للأثاث",
-    brandEn: "Ruwaq furniture",
+    brandAr: "توريفا العقارية للأثاث",
+    brandEn: "Turriva furniture",
     priceAr: "32,000 ر.س",
     priceEn: "SAR 32,000",
     image:
@@ -119,8 +119,8 @@ export const FURNITURE_CATALOG: CatalogFurniture[] = [
     category: "storage",
     nameAr: "زوج كوموديو خشب فاخر",
     nameEn: "Premium wood nightstand pair",
-    brandAr: "رواق للأثاث",
-    brandEn: "Ruwaq furniture",
+    brandAr: "توريفا العقارية للأثاث",
+    brandEn: "Turriva furniture",
     priceAr: "3,800 ر.س",
     priceEn: "SAR 3,800",
     image:
@@ -164,8 +164,8 @@ export const FURNITURE_CATALOG: CatalogFurniture[] = [
     category: "storage",
     nameAr: "مكتبة مدمجة مخصصة",
     nameEn: "Custom built-in bookshelf",
-    brandAr: "ورش نجارة رواق",
-    brandEn: "Ruwaq joinery",
+    brandAr: "ورش نجارة توريفا العقارية",
+    brandEn: "Turriva joinery",
     priceAr: "9,500 ر.س",
     priceEn: "SAR 9,500",
     image:
@@ -194,8 +194,8 @@ export const FURNITURE_CATALOG: CatalogFurniture[] = [
     category: "storage",
     nameAr: "وحدة عرض تجارية",
     nameEn: "Retail display unit",
-    brandAr: "رواق للتجارة",
-    brandEn: "Ruwaq retail fit-out",
+    brandAr: "توريفا العقارية للتجارة",
+    brandEn: "Turriva retail fit-out",
     priceAr: "14,000 ر.س",
     priceEn: "SAR 14,000",
     image:

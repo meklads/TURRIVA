@@ -46,7 +46,7 @@ export async function buildDisplayPreviewFromBuffer(input: Buffer): Promise<Buff
  * Uses ASCII watermark text for reliable sharp/librsvg rendering.
  */
 export async function buildWatermarkedPreviewFromBuffer(input: Buffer): Promise<Buffer> {
-  const watermarkText = "RUWAQ PREVIEW";
+  const watermarkText = "TURRIVA PREVIEW";
 
   const resizedBuffer = await sharp(input)
     .rotate()

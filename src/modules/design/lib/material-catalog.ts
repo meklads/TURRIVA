@@ -41,8 +41,8 @@ export const MATERIAL_CATALOG: CatalogMaterial[] = [
     category: "wood",
     nameAr: "خشب جوز طبيعي",
     nameEn: "Natural walnut wood",
-    supplierAr: "ورش نجارة رواق",
-    supplierEn: "Ruwaq joinery partners",
+    supplierAr: "ورش نجارة توريفا العقارية",
+    supplierEn: "Turriva joinery partners",
     priceHintAr: "1,200–2,800 ر.س/م.ط",
     priceHintEn: "SAR 1,200–2,800/lm",
     image:
@@ -54,8 +54,8 @@ export const MATERIAL_CATALOG: CatalogMaterial[] = [
     category: "wood",
     nameAr: "خشب بلوط فاتح",
     nameEn: "Light oak wood",
-    supplierAr: "ورش نجارة رواق",
-    supplierEn: "Ruwaq joinery partners",
+    supplierAr: "ورش نجارة توريفا العقارية",
+    supplierEn: "Turriva joinery partners",
     priceHintAr: "900–1,800 ر.س/م.ط",
     priceHintEn: "SAR 900–1,800/lm",
     image:
@@ -93,8 +93,8 @@ export const MATERIAL_CATALOG: CatalogMaterial[] = [
     category: "walls",
     nameAr: "جبس بورد ديكوري",
     nameEn: "Decorative gypsum board",
-    supplierAr: "مقاولات رواق",
-    supplierEn: "Ruwaq contracting",
+    supplierAr: "مقاولات توريفا العقارية",
+    supplierEn: "Turriva contracting",
     priceHintAr: "120–220 ر.س/م²",
     priceHintEn: "SAR 120–220/m²",
     image:

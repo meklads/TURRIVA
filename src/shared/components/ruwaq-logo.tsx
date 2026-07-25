@@ -33,7 +33,7 @@ export function RuwaqLogo({
   const logo = (
     <Image
       src={LOGO_SRC[variant]}
-      alt="رواق Ruwaq"
+      alt="توريفا العقارية Turriva Real Estate"
       width={LOGO_WIDTH}
       height={LOGO_HEIGHT}
       className={`ruwaq-logo-img block w-auto ${className}`}
@@ -49,7 +49,7 @@ export function RuwaqLogo({
     <Link
       href={href}
       className="inline-flex shrink-0 items-center bg-transparent p-0 leading-none"
-      aria-label="رواق — الصفحة الرئيسية"
+      aria-label="توريفا العقارية — الصفحة الرئيسية"
     >
       {logo}
     </Link>

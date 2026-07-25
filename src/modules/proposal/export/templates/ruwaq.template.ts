@@ -308,7 +308,7 @@ export function renderRuwaqTemplate(
 
   const platformFooter = `<footer class="doc-footer">
       <div>
-        <img src="${escapeHtml(assetUrl(base, assets.logoOnLight))}" alt="Ruwaq">
+        <img src="${escapeHtml(assetUrl(base, assets.logoOnLight))}" alt="Turriva">
         <div class="doc-footer-tagline">${escapeHtml(footerTagline)}</div>
       </div>
       <div class="doc-footer-meta">

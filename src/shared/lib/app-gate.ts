@@ -6,7 +6,7 @@
  * routes are gated — marketing stays public. Set to "true" to lock the entire site.
  */
 
-export const APP_GATE_REALM = "Ruwaq · Pre-launch";
+export const APP_GATE_REALM = "Turriva · Pre-launch";
 
 /** Static assets — never gated */
 function isStaticAssetPath(pathname: string): boolean {

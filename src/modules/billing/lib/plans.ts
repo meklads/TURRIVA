@@ -89,7 +89,7 @@ export const PLANS: Record<PlanId, Plan> = {
     ],
     featuresEn: [
       "Unlimited proposals",
-      "Full white-label (no Ruwaq badge)",
+      "Full white-label (no Turriva badge)",
       "Priority support",
     ],
   },

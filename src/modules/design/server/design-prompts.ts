@@ -39,12 +39,12 @@ export function buildDesignEditPrompt(input: DesignGenerateInput): string {
   }
 
   if (input.roomType === "empty_room") {
-    return `You are a Saudi interior designer. This ${room} is empty or unfinished. Stage and furnish it in ${stylePrompt}: add flooring finish, wall treatments, ceiling details, lighting, furniture, textiles, and decor appropriate for the space. ${preserve} Photorealistic magazine-quality interior suitable for Ruwaq decor clients in Saudi Arabia.`;
+    return `You are a Saudi interior designer. This ${room} is empty or unfinished. Stage and furnish it in ${stylePrompt}: add flooring finish, wall treatments, ceiling details, lighting, furniture, textiles, and decor appropriate for the space. ${preserve} Photorealistic magazine-quality interior suitable for Turriva decor clients in Saudi Arabia.`;
   }
 
   if (input.roomType === "shop") {
     return `You are a Saudi retail interior designer. Transform this ${room} into ${stylePrompt} commercial retail design with premium merchandising displays, lighting, materials, and customer circulation. ${preserve} Photorealistic shop visualization for a luxury Saudi fit-out company.`;
   }
 
-  return `You are a Saudi interior designer. Transform this ${room} interior photo into a stunning ${stylePrompt}. Redesign flooring, wall finishes, ceiling details, lighting fixtures, furniture, textiles, and decor. ${preserve} Photorealistic magazine-quality interior rendering for Ruwaq decor and contracting.`;
+  return `You are a Saudi interior designer. Transform this ${room} interior photo into a stunning ${stylePrompt}. Redesign flooring, wall finishes, ceiling details, lighting fixtures, furniture, textiles, and decor. ${preserve} Photorealistic magazine-quality interior rendering for Turriva decor and contracting.`;
 }
