@@ -91,7 +91,7 @@ export default async function PricingPage() {
                 </a>
               ) : (
                 <a
-                  href={`mailto:hello@ruwaq.co?subject=${encodeURIComponent(
+                  href={`mailto:hello@turriva.co?subject=${encodeURIComponent(
                     `${isAr ? "اشتراك باقة" : "Subscribe to"} ${name}`
                   )}`}
                   className="btn-ruwaq-primary mt-6 w-full py-2.5 text-center text-sm"

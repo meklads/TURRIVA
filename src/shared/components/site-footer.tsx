@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getMessages } from "@/shared/i18n";
 import { getLocale } from "@/shared/i18n/server";
+import { TURRIVA_PUBLIC_EMAIL, TURRIVA_PUBLIC_HOST, TURRIVA_PUBLIC_URL } from "@/shared/constants/brand";
 import { RuwaqLogo, SITE_LOGO_SIZE_CLASS } from "@/shared/components/ruwaq-logo";
 import { GraphicsHouseLogo } from "@/shared/components/graphics-house-logo";
 
@@ -25,7 +26,7 @@ export async function SiteFooter() {
       links: [
         { href: "/about", label: t.site.nav.about },
         { href: "/services", label: t.site.nav.services },
-        { href: "mailto:hello@ruwaq.co", label: t.site.footer.contact },
+        { href: `mailto:${TURRIVA_PUBLIC_EMAIL}`, label: t.site.footer.contact },
       ],
     },
     {
@@ -88,8 +89,8 @@ export async function SiteFooter() {
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-slate-100 py-8 text-xs text-ruwaq-ink-muted sm:flex-row">
           <p>{t.site.footer.copyright}</p>
-          <a href="https://ruwaq.co" className="ruwaq-link-gold hover:underline">
-            ruwaq.co
+          <a href={TURRIVA_PUBLIC_URL} className="ruwaq-link-gold hover:underline">
+            {TURRIVA_PUBLIC_HOST}
           </a>
         </div>
       </div>

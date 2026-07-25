@@ -31,7 +31,7 @@ const envSchema = z.object({
    *  charge — no code change needed, the PayPal flow is already wired. */
   BILLING_ENABLED: z.string().optional().default("false"),
   NEXT_PUBLIC_APP_URL: z.string().optional().default("http://localhost:3000"),
-  NEXT_PUBLIC_APP_NAME: z.string().default("Saudi Proposal OS"),
+  NEXT_PUBLIC_APP_NAME: z.string().default("Turriva Real Estate"),
   /** When set, HTTP Basic Auth protects dashboard/API (marketing stays public) */
   APP_GATE_PASSWORD: z.string().optional(),
   APP_GATE_USER: z.string().optional(),
@@ -48,7 +48,7 @@ function parseEnv(): Env {
 
   const appUrl = normalizeAppUrl(
     process.env.NEXT_PUBLIC_APP_URL ?? process.env.AUTH_URL,
-    isBuildTime ? "http://localhost:3000" : "https://ruwaq.co"
+    isBuildTime ? "http://localhost:3000" : "https://turriva.co"
   );
 
   const normalized = {
@@ -89,7 +89,7 @@ function parseEnv(): Env {
     PAYPAL_ENV: process.env.PAYPAL_ENV ?? "sandbox",
     BILLING_ENABLED: process.env.BILLING_ENABLED ?? "false",
     NEXT_PUBLIC_APP_URL: appUrl,
-    NEXT_PUBLIC_APP_NAME: process.env.NEXT_PUBLIC_APP_NAME ?? "Saudi Proposal OS",
+    NEXT_PUBLIC_APP_NAME: process.env.NEXT_PUBLIC_APP_NAME ?? "Turriva Real Estate",
     APP_GATE_PASSWORD: process.env.APP_GATE_PASSWORD,
     APP_GATE_USER: process.env.APP_GATE_USER,
     ADMIN_EMAILS: process.env.ADMIN_EMAILS ?? "radwan3@gmail.com",

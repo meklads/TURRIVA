@@ -9,7 +9,7 @@ function appBaseUrl(): string {
   return (
     process.env.NEXT_PUBLIC_APP_URL ??
     process.env.AUTH_URL ??
-    "https://ruwaq.co"
+    "https://turriva.co"
   ).replace(/\/$/, "");
 }
 

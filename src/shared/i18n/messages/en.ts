@@ -280,7 +280,7 @@ export const en: Messages = {
    body:
     "Most real estate contractors send proposals from outdated templates, incomplete, inconsistent, and missing clear assumptions. Clients hesitate. You lose time and trust.",
    traditionalLabel: "The old way",
-   ruwaqLabel: "With Turriva",
+   ruwaqLabel: "With Turriva Real Estate",
    traditional: [
     "2 hours in Word, copy-paste from an old proposal",
     "Vague scope that opens disputes later",
@@ -356,7 +356,7 @@ export const en: Messages = {
    title: "Why clients choose Turriva",
    subtitle:
     "Not because we're \"an AI platform\", because we solve a daily problem for everyone sending proposals in real estate & engineering.",
-   table: { need: "Your need", others: "Alternatives", ruwaq: "Turriva" },
+   table: { need: "Your need", others: "Alternatives", ruwaq: "Turriva Real Estate" },
    rows: [
     {
      need: "Fast reply after a call or WhatsApp",
@@ -612,7 +612,7 @@ export const en: Messages = {
    company: "Company",
    legal: "Legal",
    contact: "Contact us",
-   copyright: "© Turriva. All rights reserved.",
+   copyright: "© Turriva Real Estate. All rights reserved.",
    sponsoredBy: "Turriva is powered by",
    sponsoredByLink: "Graphics House",
    ctaTitle: "Let's talk",
@@ -680,7 +680,7 @@ export const en: Messages = {
    title: "Privacy policy",
    updated: "Last updated: June 2026",
    intro:
-    "We respect your privacy. This policy explains how we collect and use your data when you use Turriva (ruwaq.co).",
+    "We respect your privacy. This policy explains how we collect and use your data when you use Turriva (turriva.co).",
    sections: [
     {
      title: "Data we collect",
@@ -713,7 +713,7 @@ export const en: Messages = {
    title: "Terms of service",
    updated: "Last updated: June 2026",
    intro:
-    "By using Turriva (ruwaq.co) you agree to these terms. Please read them before creating or sending proposals.",
+    "By using Turriva (turriva.co) you agree to these terms. Please read them before creating or sending proposals.",
    sections: [
     {
      title: "Service description",
@@ -1013,7 +1013,7 @@ export const en: Messages = {
   inlineTitle: "Premium templates available",
   inlineBody: "Unlock the \"Turriva Executive\" and \"Graphics House\" templates with a single small payment.",
   lockedSuffix: "locked",
-  notConfigured: "Payments aren't enabled yet. Contact hello@ruwaq.co.",
+  notConfigured: "Payments aren't enabled yet. Contact hello@turriva.co.",
   close: "Close",
   error: "Payment could not be completed. Try again or contact us.",
   trialNotice: "All templates are free for now during the trial period.",

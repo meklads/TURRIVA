@@ -36,7 +36,7 @@ export default async function ServicesPage() {
         <Link href="/proposals/new" className="btn-ruwaq-primary">
           {t.services.cta}
         </Link>
-        <a href="mailto:hello@ruwaq.co" className="btn-ruwaq-secondary">
+        <a href="mailto:hello@turriva.co" className="btn-ruwaq-secondary">
           {t.services.ctaSecondary}
         </a>
       </div>

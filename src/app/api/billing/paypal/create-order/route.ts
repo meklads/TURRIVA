@@ -10,7 +10,7 @@ export async function POST() {
     }
     if (!isPaypalConfigured()) {
       return NextResponse.json(
-        { error: "Payments are not configured yet. Contact hello@ruwaq.co." },
+        { error: "Payments are not configured yet. Contact hello@turriva.co." },
         { status: 503 }
       );
     }

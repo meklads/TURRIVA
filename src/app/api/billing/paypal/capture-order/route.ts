@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     logServerError("paypal capture-order", error);
     return NextResponse.json(
-      { error: "Payment could not be confirmed. If you were charged, contact hello@ruwaq.co." },
+      { error: "Payment could not be confirmed. If you were charged, contact hello@turriva.co." },
       { status: 500 }
     );
   }

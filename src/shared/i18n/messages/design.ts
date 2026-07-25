@@ -471,7 +471,7 @@ const en: DesignMessages = {
     tabBooth: "Booth & expo",
     yourPhoto: "Your photo",
     otherAi: "Other AI tools",
-    ruwaq: "Turriva",
+    ruwaq: "Turriva Real Estate",
     otherNotes: [
       "Different room — generated from scratch",
       "Geometry and openings ignored",

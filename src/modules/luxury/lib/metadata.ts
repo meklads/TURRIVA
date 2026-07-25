@@ -38,7 +38,7 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
     openGraph: {
       title,
       description,
-      url: "https://ruwaq.co",
+      url: "https://turriva.co",
       siteName: t.brand.name,
       locale: locale === "ar" ? "ar_SA" : "en_US",
       type: "website",

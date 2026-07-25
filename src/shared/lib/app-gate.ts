@@ -76,7 +76,7 @@ export function isFullSiteGate(): boolean {
 export function getGateCredentials(): { user: string; password: string } | null {
   const password = process.env.APP_GATE_PASSWORD?.trim();
   if (!password) return null;
-  const user = process.env.APP_GATE_USER?.trim() || "ruwaq";
+  const user = process.env.APP_GATE_USER?.trim() || "turriva";
   return { user, password };
 }
 

@@ -1,4 +1,4 @@
-/** Ruwaq brand tokens — from identity guide */
+/** Turriva Real Estate brand tokens — export PDFs & proposals */
 export const ruwaqBrand = {
   id: "ruwaq" as const,
   colors: {
@@ -26,7 +26,7 @@ export const ruwaqBrand = {
   footer: {
     addressAr: "جدة، حي الزهراء، المملكة العربية السعودية",
     addressEn: "Jeddah, Al-Zahra District, Saudi Arabia",
-    website: "ruwaq.co",
+    website: "turriva.co",
     taglineAr: "احترافية تبني الثقة",
     taglineEn: "Professionalism builds trust",
   },

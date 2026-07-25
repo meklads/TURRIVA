@@ -30,10 +30,10 @@ export default async function PrivacyPage() {
       <p className="mt-12 text-sm text-ruwaq-navy-soft">
         {t.pages.privacy.contact}{" "}
         <a
-          href="mailto:hello@ruwaq.co"
+          href="mailto:hello@turriva.co"
           className="font-semibold text-ruwaq-gold hover:underline"
         >
-          hello@ruwaq.co
+          hello@turriva.co
         </a>
       </p>
     </div>
