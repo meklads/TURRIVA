@@ -12,7 +12,7 @@ export function LuxuryCapabilitiesSection({ messages }: Props) {
       <div className="lux-container text-center">
         <p className="lux-eyebrow">{c.eyebrow}</p>
         <div className="lux-divider-gold" />
-        <h2 className="lux-display mt-6 text-3xl sm:text-4xl">{c.title}</h2>
+        <h2 className="lux-display lux-heading mt-6">{c.title}</h2>
       </div>
       <div className="lux-container mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {c.items.map((item, i) => (

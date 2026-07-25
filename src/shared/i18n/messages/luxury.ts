@@ -15,6 +15,7 @@ export type LuxuryMessages = {
     title: string;
     subtitle: string;
     servicesLine: string;
+    tags: readonly string[];
     ctaPrimary: string;
     ctaSecondary: string;
   };
@@ -108,12 +109,13 @@ const en: LuxuryMessages = {
     contact: "CONTACT",
   },
   hero: {
-    eyebrow: "Turriva Real Estate — Decor & Contracting",
-    title: "We design and build premium spaces",
+    eyebrow: "Turriva · Decor & Contracting",
+    title: "Fixed finishing from design through handover on site",
     subtitle:
-      "A Saudi contracting and decor company — fixed finishing for villas, apartments, palaces & shops, plus advertising booths and exhibitions.",
-    servicesLine: "Interior · Exterior · Booths & exhibitions — Jeddah & Makkah",
-    ctaPrimary: "Bespoke design — contact us",
+      "One team for decor and contracting in Jeddah and Makkah — villas, retail, and exhibition booths. Real materials, clear schedules, delivery that matches what you approved.",
+    servicesLine: "Interior · Facades · Booths & exhibitions",
+    tags: ["Interior finishing", "Facades", "Booths & exhibitions", "Jeddah & Makkah"],
+    ctaPrimary: "Book a consultation",
     ctaSecondary: "View our work",
   },
   execution: {
@@ -320,12 +322,13 @@ const ar: LuxuryMessages = {
     contact: "تواصل",
   },
   hero: {
-    eyebrow: "توريفا العقارية للديكور والمقاولات",
-    title: "نصمّم وننفّذ مساحات فاخرة",
+    eyebrow: "توريفا العقارية · ديكور ومقاولات",
+    title: "تشطيبات ثابتة من التصميم حتى التسليم في الموقع",
     subtitle:
-      "شركة سعودية للديكور والمقاولات — تشطيبات ثابتة للفلل والشقق والقصور والمحلات، وديكور إعلاني للبوث والمعارض المؤقتة.",
-    servicesLine: "داخلي · خارجي · بوث ومعارض — جدة ومكة",
-    ctaPrimary: "تصميم خاص — تواصل معنا",
+      "فريق واحد للديكور والمقاولات في جدة ومكة — فلل، محلات، وبوث معارض. مواد حقيقية، جداول واضحة، وتسليم يطابق ما اعتمدته.",
+    servicesLine: "تشطيب داخلي · واجهات · بوث ومعارض",
+    tags: ["تشطيب داخلي", "واجهات", "بوث ومعارض", "جدة ومكة"],
+    ctaPrimary: "احجز استشارة",
     ctaSecondary: "أعمالنا",
   },
   execution: {

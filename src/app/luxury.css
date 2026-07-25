@@ -1,20 +1,22 @@
 /* Luxury public website — isolated from workspace software styles */
 
 .lux-shell {
-  --lux-ivory: #fdfcf8;
-  --lux-cream: #f5f1eb;
-  --lux-sand: #ebe4d8;
-  --lux-stone: #d9d0c3;
-  --lux-gold: #b89468;
-  --lux-gold-light: #c9a87a;
-  --lux-ink: #2f2f2f;
-  --lux-ink-soft: #5a534c;
-  --lux-ink-muted: #8a827a;
-  --lux-teal-deep: #0c4a5e;
-  --lux-teal-mid: #1a6b7a;
+  --lux-ivory: #ffffff;
+  --lux-cream: #f5f5f5;
+  --lux-sand: #e5e5e5;
+  --lux-stone: #d4d4d4;
+  --lux-gold: #0a0a0a;
+  --lux-gold-light: #262626;
+  --lux-ink: #0a0a0a;
+  --lux-ink-soft: #525252;
+  --lux-ink-muted: #737373;
+  --lux-teal-deep: #0a0a0a;
+  --lux-teal-mid: #171717;
   background: var(--lux-ivory);
   color: var(--lux-ink);
   font-family: var(--font-marketing-latin), var(--font-latin), system-ui, sans-serif;
+  font-size: clamp(0.9375rem, 1.4vw, 1.0625rem);
+  line-height: 1.65;
 }
 
 [dir="rtl"] .lux-shell {
@@ -26,40 +28,73 @@
 }
 
 .lux-eyebrow {
-  @apply text-xs font-medium uppercase tracking-[0.28em] text-lux-gold;
-  font-family: var(--font-latin), system-ui, sans-serif;
+  @apply text-[0.6875rem] font-semibold uppercase tracking-[0.22em] text-lux-ink-muted;
+  font-family: var(--font-marketing-latin), system-ui, sans-serif;
+}
+
+[dir="rtl"] .lux-eyebrow {
+  font-family: var(--font-marketing-ar), var(--font-ar), sans-serif;
+  @apply normal-case tracking-normal text-sm font-medium text-lux-ink-muted;
 }
 
 .lux-display {
-  font-family: var(--font-latin-display), Georgia, "Times New Roman", serif;
-  @apply font-normal tracking-[-0.01em] text-lux-ink;
+  font-family: var(--font-marketing-latin), var(--font-latin), system-ui, sans-serif;
+  @apply font-semibold tracking-[-0.03em] text-lux-ink;
 }
 
 [dir="rtl"] .lux-display {
-  font-family: var(--font-ar-display), var(--font-ar), serif;
+  font-family: var(--font-marketing-ar), var(--font-ar), sans-serif;
+  @apply font-bold tracking-normal;
+}
+
+.lux-heading {
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+  line-height: 1.15;
+}
+
+.lux-hero-title {
+  font-size: clamp(2.125rem, 5.5vw, 4.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
 }
 
 .lux-body {
-  @apply text-base leading-relaxed text-lux-ink-soft;
-  font-family: var(--font-latin), system-ui, sans-serif;
+  @apply leading-relaxed text-lux-ink-soft;
+  font-size: clamp(0.9375rem, 1.35vw, 1.0625rem);
+  font-family: var(--font-marketing-latin), system-ui, sans-serif;
 }
 
 [dir="rtl"] .lux-body {
-  font-family: var(--font-ar), "Segoe UI", sans-serif;
+  font-family: var(--font-marketing-ar), var(--font-ar), sans-serif;
+  line-height: 1.75;
 }
 
 .lux-btn-primary {
-  @apply inline-flex min-w-[11rem] items-center justify-center rounded-[3px] bg-lux-gold px-7 py-3.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:bg-lux-gold-light;
-  font-family: var(--font-latin), system-ui, sans-serif;
+  @apply inline-flex min-w-[11rem] items-center justify-center rounded-sm bg-lux-ink px-7 py-3.5 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:bg-lux-gold-light;
+  font-family: var(--font-marketing-latin), system-ui, sans-serif;
+}
+
+[dir="rtl"] .lux-btn-primary {
+  font-family: var(--font-marketing-ar), var(--font-ar), sans-serif;
+  @apply normal-case tracking-normal text-sm font-semibold;
 }
 
 .lux-btn-outline {
-  @apply inline-flex items-center justify-center rounded-[3px] border border-lux-stone bg-white/60 px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.18em] text-lux-ink backdrop-blur-sm transition-all duration-300 hover:border-lux-gold hover:text-lux-gold;
+  @apply inline-flex items-center justify-center rounded-sm border border-lux-ink bg-transparent px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.16em] text-lux-ink transition-all duration-300 hover:bg-lux-ink hover:text-white;
+}
+
+[dir="rtl"] .lux-btn-outline {
+  @apply normal-case tracking-normal text-sm;
 }
 
 .lux-btn-outline-gold {
-  @apply inline-flex min-w-[11rem] items-center justify-center rounded-[3px] border border-lux-gold bg-transparent px-7 py-3.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-lux-gold transition-all duration-300 hover:bg-lux-gold/5;
-  font-family: var(--font-latin), system-ui, sans-serif;
+  @apply inline-flex min-w-[11rem] items-center justify-center rounded-sm border border-lux-ink bg-transparent px-7 py-3.5 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-lux-ink transition-all duration-300 hover:bg-lux-ink hover:text-white;
+  font-family: var(--font-marketing-latin), system-ui, sans-serif;
+}
+
+[dir="rtl"] .lux-btn-outline-gold {
+  font-family: var(--font-marketing-ar), var(--font-ar), sans-serif;
+  @apply normal-case tracking-normal text-sm font-semibold;
 }
 
 .lux-btn-workspace {
@@ -80,21 +115,20 @@
 }
 
 .lux-divider-gold {
-  @apply mx-auto mt-4 h-px w-12 bg-lux-gold;
+  @apply mx-auto mt-4 h-px w-12 bg-lux-ink;
 }
 
 .lux-pattern-bg {
   background-color: var(--lux-cream);
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b89468' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 .lux-icon-wrap {
-  @apply mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-lux-sand text-lux-gold;
+  @apply mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-lux-sand text-lux-ink;
 }
 
 .lux-nav-link {
-  @apply relative pb-2 text-[10px] font-medium uppercase tracking-[0.12em] text-lux-ink transition-colors duration-200 hover:text-lux-gold xl:text-[11px] xl:tracking-[0.14em];
-  font-family: var(--font-latin), system-ui, sans-serif;
+  @apply relative pb-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-lux-ink transition-colors duration-200 hover:text-lux-ink-soft xl:text-[11px];
+  font-family: var(--font-marketing-latin), system-ui, sans-serif;
 }
 
 /* Header */
@@ -194,7 +228,7 @@
   min-width: 0;
 }
 
-/* Hero — header separate; image starts below header only */
+/* Hero — cinematic split, image below header */
 .lux-hero {
   position: relative;
   overflow: hidden;
@@ -203,14 +237,14 @@
 
 .lux-hero-inner {
   display: grid;
-  min-height: min(76vh, 42rem);
+  min-height: min(88vh, 52rem);
   grid-template-columns: 1fr;
 }
 
 @media (min-width: 1024px) {
   .lux-hero-inner {
-    grid-template-columns: minmax(0, 47%) minmax(0, 53%);
-    min-height: min(82vh, 46rem);
+    grid-template-columns: minmax(0, 44%) minmax(0, 56%);
+    min-height: min(90vh, 54rem);
   }
 }
 
@@ -219,38 +253,21 @@
   z-index: 2;
   display: flex;
   align-items: center;
-  padding-block: 2.5rem 3.5rem;
+  padding-block: 3rem 4rem;
   background: var(--lux-ivory);
 }
 
 .lux-hero-copy-inner {
   position: relative;
   z-index: 1;
-  max-width: 34rem;
-}
-
-.lux-hero-watermark {
-  position: absolute;
-  inset-inline-start: -1.5rem;
-  top: 50%;
-  width: 9rem;
-  height: 9rem;
-  opacity: 0.04;
-  transform: translateY(-50%);
-  background: url("/brand/luxury/ruwaq-mandala-hq.png") no-repeat center / contain;
-  pointer-events: none;
-}
-
-[dir="rtl"] .lux-hero-watermark {
-  inset-inline-start: auto;
-  inset-inline-end: -1.5rem;
+  max-width: 36rem;
 }
 
 .lux-hero-media {
   position: relative;
-  min-height: 17rem;
+  min-height: 22rem;
   order: -1;
-  background: var(--lux-ivory);
+  background: #0a0a0a;
 }
 
 @media (min-width: 1024px) {
@@ -266,9 +283,9 @@
   background: linear-gradient(
     to right,
     var(--lux-ivory) 0%,
-    color-mix(in srgb, var(--lux-ivory) 90%, transparent) 12%,
-    color-mix(in srgb, var(--lux-ivory) 50%, transparent) 26%,
-    transparent 52%
+    color-mix(in srgb, var(--lux-ivory) 92%, transparent) 8%,
+    color-mix(in srgb, var(--lux-ivory) 55%, transparent) 22%,
+    transparent 48%
   );
   pointer-events: none;
 }
@@ -277,34 +294,50 @@
   background: linear-gradient(
     to left,
     var(--lux-ivory) 0%,
-    color-mix(in srgb, var(--lux-ivory) 90%, transparent) 12%,
-    color-mix(in srgb, var(--lux-ivory) 50%, transparent) 26%,
-    transparent 52%
+    color-mix(in srgb, var(--lux-ivory) 92%, transparent) 8%,
+    color-mix(in srgb, var(--lux-ivory) 55%, transparent) 22%,
+    transparent 48%
   );
 }
 
-.lux-flourish {
+.lux-hero-tags {
   display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.75rem;
+}
+
+.lux-hero-tag {
+  display: inline-flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 0.625rem;
-  margin-block: 1.35rem 1.5rem;
+  border: 1px solid var(--lux-sand);
+  background: white;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lux-ink-soft);
 }
 
-.lux-flourish-line {
+[dir="rtl"] .lux-hero-tag {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.lux-flourish {
   display: block;
-  height: 1px;
-  width: 2.5rem;
-  background: var(--lux-gold);
+  width: 3rem;
+  height: 2px;
+  margin-block: 1.5rem 1.25rem;
+  background: var(--lux-ink);
 }
 
+.lux-flourish-line,
 .lux-flourish-gem {
-  display: block;
-  width: 5px;
-  height: 5px;
-  background: var(--lux-gold);
-  transform: rotate(45deg);
-  flex-shrink: 0;
+  display: none;
 }
 
 .lux-reveal {
@@ -406,12 +439,8 @@
 }
 
 .lux-section--partnership {
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--lux-teal-deep) 92%, black) 0%,
-    color-mix(in srgb, var(--lux-teal-mid) 88%, #0f172a) 100%
-  );
-  color: #f8fafc;
+  background: var(--lux-ink);
+  color: #fafafa;
 }
 
 .lux-section--partnership .lux-eyebrow,
@@ -425,7 +454,15 @@
 }
 
 .lux-section--partnership .lux-divider-gold {
-  background: var(--lux-gold-light);
+  background: #fafafa;
+}
+
+.lux-partnership-stat {
+  font-family: var(--font-marketing-latin), system-ui, sans-serif;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #fafafa;
 }
 
 .lux-partnership-grid {
@@ -453,14 +490,6 @@
   flex-direction: column;
 }
 
-.lux-partnership-stat {
-  font-family: var(--font-marketing-latin), var(--font-latin-display), serif;
-  font-size: 2.5rem;
-  font-weight: 300;
-  letter-spacing: -0.02em;
-  color: var(--lux-gold-light);
-}
-
 .lux-partnership-stat-label {
   font-size: 0.75rem;
   letter-spacing: 0.12em;
@@ -481,7 +510,7 @@
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: var(--lux-gold);
+  color: var(--lux-ink-muted);
 }
 
 .lux-nav-link {

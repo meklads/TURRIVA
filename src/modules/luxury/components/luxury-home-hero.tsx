@@ -10,29 +10,25 @@ type Props = {
 
 export function LuxuryHomeHero({ locale }: Props) {
   const t = getLuxuryMessages(locale);
+  const tags = t.hero.tags;
 
   return (
     <section className="lux-hero" aria-label="Hero">
       <div className="lux-container lux-hero-inner">
         <div className="lux-hero-copy">
-          <div className="lux-hero-watermark" aria-hidden />
           <div className="lux-hero-copy-inner lux-reveal">
             <p className="lux-eyebrow">{t.hero.eyebrow}</p>
-            <h1 className="lux-display text-[2rem] leading-[1.14] sm:text-[2.65rem] lg:text-[3rem] lg:leading-[1.12]">
-              {t.hero.title}
-            </h1>
-            <div className="lux-flourish" aria-hidden>
-              <span className="lux-flourish-line" />
-              <span className="lux-flourish-gem" />
-              <span className="lux-flourish-line" />
+            <h1 className="lux-display lux-hero-title mt-4">{t.hero.title}</h1>
+            <div className="lux-flourish" aria-hidden />
+            <p className="lux-body max-w-lg">{t.hero.subtitle}</p>
+            <div className="lux-hero-tags" aria-label={t.hero.servicesLine}>
+              {tags.map((tag) => (
+                <span key={tag} className="lux-hero-tag">
+                  {tag}
+                </span>
+              ))}
             </div>
-            <p className="lux-body max-w-md text-[15px] leading-[1.75] sm:text-base">
-              {t.hero.subtitle}
-            </p>
-            <p className="mt-3 text-sm font-medium tracking-wide text-lux-ink-muted">
-              {t.hero.servicesLine}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3 sm:mt-9">
+            <div className="mt-9 flex flex-wrap gap-3 sm:mt-10">
               <Link href="/contact" className="lux-btn-primary">
                 {t.hero.ctaPrimary}
               </Link>
@@ -50,7 +46,7 @@ export function LuxuryHomeHero({ locale }: Props) {
             fill
             priority
             className="object-cover object-center"
-            sizes="(max-width: 1024px) 100vw, 52vw"
+            sizes="(max-width: 1024px) 100vw, 56vw"
           />
           <div className="lux-hero-media-fade" aria-hidden />
         </div>

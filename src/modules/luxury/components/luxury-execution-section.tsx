@@ -14,12 +14,12 @@ export function LuxuryExecutionSection({ messages }: Props) {
         <div className="flex flex-col gap-8 rounded-2xl border border-lux-sand bg-white p-8 shadow-lux-card lg:flex-row lg:items-center lg:justify-between lg:p-12">
           <div className="max-w-2xl">
             <span className="lux-eyebrow">{e.badge}</span>
-            <h2 className="lux-display mt-4 text-2xl sm:text-3xl">{e.title}</h2>
+            <h2 className="lux-display lux-heading mt-4">{e.title}</h2>
             <p className="lux-body mt-4">{e.subtitle}</p>
             <ul className="mt-6 space-y-2 text-sm text-lux-ink-soft">
               {e.points.map((point) => (
                 <li key={point} className="flex gap-2">
-                  <span className="text-lux-gold" aria-hidden>
+                  <span className="text-lux-ink" aria-hidden>
                     ·
                   </span>
                   <span>{point}</span>

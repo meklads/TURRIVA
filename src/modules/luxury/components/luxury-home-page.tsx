@@ -47,7 +47,7 @@ export function LuxuryHomePage({ locale }: Props) {
         <div className="lux-container text-center">
           <p className="lux-eyebrow">{t.services.eyebrow}</p>
           <div className="lux-divider-gold" />
-          <h2 className="lux-display mt-6 text-3xl sm:text-4xl">{t.services.title}</h2>
+          <h2 className="lux-display lux-heading mt-6">{t.services.title}</h2>
         </div>
         <div className="lux-container mt-14 grid gap-8 md:grid-cols-3">
           {t.services.items.map((item, i) => {
@@ -70,7 +70,7 @@ export function LuxuryHomePage({ locale }: Props) {
                 </p>
                 <Link
                   href={item.href}
-                  className="mt-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-lux-gold transition-colors hover:text-lux-gold-light"
+                  className="mt-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-lux-ink transition-colors hover:text-lux-ink-soft"
                 >
                   {item.cta}
                   <Arrow className="h-3.5 w-3.5" />
@@ -87,7 +87,7 @@ export function LuxuryHomePage({ locale }: Props) {
         <div className="lux-container text-center">
           <p className="lux-eyebrow">{t.why.eyebrow}</p>
           <div className="lux-divider-gold" />
-          <h2 className="lux-display mt-6 text-3xl sm:text-4xl">{t.why.title}</h2>
+          <h2 className="lux-display lux-heading mt-6">{t.why.title}</h2>
         </div>
         <div className="lux-container mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {t.why.items.map((item, i) => {
@@ -111,7 +111,7 @@ export function LuxuryHomePage({ locale }: Props) {
         <div className="lux-container text-center">
           <p className="lux-eyebrow">{t.projects.eyebrow}</p>
           <div className="lux-divider-gold" />
-          <h2 className="lux-display mt-6 text-3xl sm:text-4xl">{t.projects.title}</h2>
+          <h2 className="lux-display lux-heading mt-6">{t.projects.title}</h2>
         </div>
         <div className="lux-container mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[LUXURY_IMAGES.project1, LUXURY_IMAGES.project2, LUXURY_IMAGES.project3].map((src) => (
@@ -141,12 +141,12 @@ export function LuxuryHomePage({ locale }: Props) {
         <div className="lux-container text-center">
           <p className="lux-eyebrow">{t.process.eyebrow}</p>
           <div className="lux-divider-gold" />
-          <h2 className="lux-display mt-6 text-3xl sm:text-4xl">{t.process.title}</h2>
+          <h2 className="lux-display lux-heading mt-6">{t.process.title}</h2>
         </div>
         <div className="lux-container mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {t.process.steps.map((step, i) => (
             <div key={step.title} className="text-center">
-              <span className="lux-display text-4xl text-lux-gold/40">
+              <span className="lux-display text-4xl text-lux-ink/20">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="lux-display mt-3 text-lg">{step.title}</h3>
@@ -163,7 +163,7 @@ export function LuxuryHomePage({ locale }: Props) {
         <div className="lux-container text-center">
           <p className="lux-eyebrow">{t.testimonials.eyebrow}</p>
           <div className="lux-divider-gold" />
-          <h2 className="lux-display mt-6 text-3xl sm:text-4xl">
+          <h2 className="lux-display lux-heading mt-6">
             {t.testimonials.title}
           </h2>
         </div>
@@ -188,7 +188,7 @@ export function LuxuryHomePage({ locale }: Props) {
       {/* CTA */}
       <section className="lux-pattern-bg lux-section">
         <div className="lux-container text-center">
-          <h2 className="lux-display text-3xl sm:text-4xl">{t.cta.title}</h2>
+          <h2 className="lux-display lux-heading">{t.cta.title}</h2>
           <p className="lux-body mx-auto mt-4 max-w-lg">{t.cta.subtitle}</p>
           <Link href="/contact" className="lux-btn-primary mt-10">
             {t.cta.button}
