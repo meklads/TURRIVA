@@ -36,7 +36,8 @@ const RASTER_WIDTH = 1536;
 const RASTER_HEIGHT = 1024;
 
 /** Shared site chrome logo — header & footer match. */
-export const SITE_LOGO_SIZE_CLASS = "h-16 w-auto sm:h-[4.5rem] lg:h-20 xl:h-[5.25rem]";
+export const SITE_LOGO_SIZE_CLASS =
+  "h-48 w-auto sm:h-[13.5rem] lg:h-60 xl:h-[15.75rem]";
 
 /** Design marketing header — 3× previous ~1.65rem shell size */
 export const DESIGN_LOGO_SIZE_CLASS = "h-20 w-auto sm:h-[5.25rem]";
@@ -67,7 +68,7 @@ export function RuwaqLogo({
         className={`ruwaq-logo-img block w-auto ${className}`}
         priority={priority}
         quality={100}
-        sizes="(max-width: 640px) 240px, (max-width: 1024px) 320px, 360px"
+        sizes="(max-width: 640px) 540px, (max-width: 1024px) 720px, 840px"
       />
     ) : (
       <span

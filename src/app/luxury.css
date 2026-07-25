@@ -158,13 +158,15 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  min-height: 4.75rem;
+  min-height: 8.5rem;
+  padding-block: 0.75rem;
 }
 
 @media (min-width: 1024px) {
   .lux-header-bar {
-    min-height: 5rem;
+    min-height: 10rem;
     gap: 1.5rem;
+    padding-block: 1rem;
   }
 }
 

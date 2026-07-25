@@ -7,7 +7,7 @@ export const TURRIVA_LOGO_SRC = "/brand/turriva/turriva-logo.png";
 const LOGO_WIDTH = 1536;
 const LOGO_HEIGHT = 1024;
 
-const LUXURY_LOGO_CLASS = "h-10 w-auto sm:h-11 lg:h-12";
+const LUXURY_LOGO_CLASS = "h-[7.5rem] w-auto sm:h-[8.25rem] lg:h-36";
 
 type Props = {
   href?: string;
@@ -30,10 +30,10 @@ export function LuxuryBrandLogo({
       alt="توريفا العقارية — Turriva Real Estate"
       width={LOGO_WIDTH}
       height={LOGO_HEIGHT}
-      className={`block w-auto max-w-[min(100%,16rem)] object-contain object-start ${className}`}
+      className={`block w-auto max-w-[min(100%,36rem)] object-contain object-start ${className}`}
       priority={priority}
       quality={100}
-      sizes="(max-width: 640px) 180px, (max-width: 1024px) 220px, 260px"
+      sizes="(max-width: 640px) 540px, (max-width: 1024px) 660px, 780px"
     />
   );
 
