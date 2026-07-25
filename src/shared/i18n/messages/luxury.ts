@@ -9,7 +9,6 @@ export type LuxuryMessages = {
     ourWork: string;
     about: string;
     contact: string;
-    workspace: string;
   };
   hero: {
     eyebrow: string;
@@ -83,7 +82,6 @@ export type LuxuryMessages = {
     quickLinks: string;
     importantLinks: string;
     servicesLinks: string;
-    solutionsLinks: string;
     offices: string;
     countries: {
       saudiArabia: string;
@@ -92,9 +90,6 @@ export type LuxuryMessages = {
       egypt: string;
     };
     contact: string;
-    workspace: string;
-    workspaceDesc: string;
-    workspaceCta: string;
     copyright: string;
     privacy: string;
     terms: string;
@@ -103,9 +98,13 @@ export type LuxuryMessages = {
     phone: string;
     poweredByPrefix: string;
     poweredByLink: string;
-    insightsLink: string;
     ghProjectLaunchLink: string;
   };
+  portfolio: readonly {
+    title: string;
+    location: string;
+    scope: string;
+  }[];
   pages: {
     interiorDesign: { title: string; intro: string };
     construction: { title: string; intro: string };
@@ -124,7 +123,6 @@ const en: LuxuryMessages = {
     ourWork: "OUR WORK",
     about: "ABOUT",
     contact: "CONTACT",
-    workspace: "WORKSPACE",
   },
   hero: {
     eyebrow: "Fixed decor & premium contracting",
@@ -227,13 +225,29 @@ const en: LuxuryMessages = {
     ],
   },
   why: {
-    eyebrow: "WHY TURRIVA",
-    title: "The Art of Luxury Living",
+    eyebrow: "DELIVERY DISCIPLINE",
+    title: "Palace-grade fit-out, measured on site",
     items: [
-      { title: "Timeless Design", description: "Elegant proportions and refined aesthetics that endure beyond trends." },
-      { title: "Premium Quality", description: "Fine materials, vetted suppliers, and uncompromising standards." },
-      { title: "Attention to Detail", description: "Every junction, texture, and finish considered with care." },
-      { title: "On-Time Delivery", description: "Structured project management with clear milestones and accountability." },
+      {
+        title: "Material truth",
+        description:
+          "Stone, veneer, and metal samples signed off before CNC and site install — no substitute finishes at handover.",
+      },
+      {
+        title: "Trade orchestration",
+        description:
+          "Joinery, MEP, and stone teams sequenced with daily QC logs — the standard used on GCC luxury residential programs.",
+      },
+      {
+        title: "Joinery & FF&E",
+        description:
+          "Bespoke cabinetry, integrated lighting, and furniture schedules aligned with architectural set — not catalog paste-ins.",
+      },
+      {
+        title: "Handover packs",
+        description:
+          "Snag closure, maintenance notes, and as-built decor documentation so estates teams can operate the space.",
+      },
     ],
   },
   projects: {
@@ -242,43 +256,61 @@ const en: LuxuryMessages = {
     cta: "VIEW ALL PROJECTS",
   },
   process: {
-    eyebrow: "OUR PROCESS",
-    title: "From Vision to Reality",
+    eyebrow: "HOW WE WORK",
+    title: "Four gates from brief to keys",
     steps: [
-      { title: "Discovery", description: "Understanding your vision, lifestyle, and spatial requirements." },
-      { title: "Design", description: "Concept development, materials, and detailed design documentation." },
-      { title: "Execution", description: "Skilled craftsmen and site teams bringing the design to life." },
-      { title: "Delivery", description: "Final styling, quality checks, and a flawless handover." },
+      {
+        title: "Brief & survey",
+        description:
+          "Lifestyle interview, as-built survey, and constraint map — ceiling heights, MEP routes, and authority requirements.",
+      },
+      {
+        title: "Design freeze",
+        description:
+          "Material boards, joinery shop drawings, and lighting scenes approved before a riyal hits the workshop floor.",
+      },
+      {
+        title: "Site execution",
+        description:
+          "Phased fit-out with protected finishes, mock-ups for critical rooms, and weekly client walk-throughs.",
+      },
+      {
+        title: "Styling & handover",
+        description:
+          "Final soft staging, commissioning, snag list, and formal handover to your household or facilities team.",
+      },
     ],
   },
   testimonials: {
-    eyebrow: "CLIENT VOICES",
-    title: "Trusted by Discerning Clients",
+    eyebrow: "FIELD NOTES",
+    title: "What clients repeat after handover",
     items: [
       {
-        quote: "Turriva transformed our villa into a sanctuary of calm luxury. Every detail exceeded our expectations.",
-        author: "Private Client",
-        role: "Luxury Villa, Riyadh",
+        quote:
+          "The majlis joinery and stone floors arrived exactly as the mock-up — rare in a 14-week program.",
+        author: "Private principal",
+        role: "Palace extension · Jeddah",
       },
       {
-        quote: "Exceptional craftsmanship and seamless project management from first meeting to handover.",
-        author: "Development Group",
-        role: "Hospitality Project, Jeddah",
+        quote:
+          "Our seasonal booth had to ship, install, and sell in five days. Turriva kept the finish level of a permanent showroom.",
+        author: "Institutional marketing lead",
+        role: "Exhibition build · Makkah region",
       },
     ],
   },
   cta: {
-    title: "Let's Build Something Extraordinary",
-    subtitle: "Share your vision with our team and begin your luxury project journey.",
-    button: "GET IN TOUCH",
+    title: "Brief us on your next fit-out",
+    subtitle:
+      "Villas, palaces, hospitality suites, or a fixed booth for the upcoming season — share scope and programme dates.",
+    button: "REQUEST A CONSULTATION",
   },
   footer: {
     about:
-      "Turriva Real Estate executes fixed decor and premium contracting for villas, palaces, and seasonal exhibition environments — the on-site arm of Graphics House for build and handover.",
+      "Turriva Real Estate is the Saudi fit-out and contracting arm for fixed decor — villas, palaces, hospitality suites, and seasonal exhibition environments — executed with Graphics House launch discipline.",
     quickLinks: "Quick Links",
     importantLinks: "Important Links",
     servicesLinks: "Services",
-    solutionsLinks: "Solutions",
     offices: "Offices",
     countries: {
       saudiArabia: "Saudi Arabia",
@@ -287,36 +319,68 @@ const en: LuxuryMessages = {
       egypt: "Egypt",
     },
     contact: "Contact Us",
-    workspace: "Platform",
-    workspaceDesc: "Professional quotes and project management for your team.",
-    workspaceCta: "Open workspace",
-    copyright: "© Turriva. All rights reserved.",
+    copyright: "© Turriva Real Estate. All rights reserved.",
     privacy: "Privacy Policy",
     terms: "Terms of Use",
-    address: "Riyadh, Saudi Arabia",
+    address: "Jeddah, Al-Zahra District, Saudi Arabia",
     email: "hello@turriva.co",
-    phone: "+966 11 000 0000",
+    phone: "+966 50 278 6513",
     poweredByPrefix: "Turriva by",
     poweredByLink: "Graphics House",
-    insightsLink: "Design preview (internal)",
     ghProjectLaunchLink: "ProjectLaunch™ by Graphics House",
   },
+  portfolio: [
+    {
+      title: "Coastal villa majlis",
+      location: "North Obhur · Jeddah",
+      scope: "Full fixed fit-out — stone, custom joinery, integrated lighting",
+    },
+    {
+      title: "Private dining & gallery wing",
+      location: "Al Muhammadiyah · Riyadh",
+      scope: "Palace-grade interiors with acoustic ceiling and art lighting",
+    },
+    {
+      title: "Developer sales suite",
+      location: "Central Riyadh",
+      scope: "Permanent showroom decor tied to a residential launch",
+    },
+    {
+      title: "Institutional exhibition booth",
+      location: "Makkah region",
+      scope: "Seasonal fixed advertising environment — 5-day install programme",
+    },
+    {
+      title: "Hospitality lobby refresh",
+      location: "Corniche · Jeddah",
+      scope: "Marble, brass, and guest-flow joinery without closing the property",
+    },
+    {
+      title: "Family villa — quiet luxury",
+      location: "Western Region",
+      scope: "Warm palettes, wardrobe walls, and layered lighting scenes",
+    },
+  ],
   pages: {
     interiorDesign: {
       title: "Luxury fit-out",
-      intro: "Bespoke luxury interiors for Saudi Arabia's most discerning clients.",
+      intro:
+        "Fixed interior decor for villas and palaces — joinery workshops, stone yards, and site teams under one Turriva programme.",
     },
     construction: {
-      title: "Construction",
-      intro: "Premium construction for villas, palaces, and exclusive developments.",
+      title: "Premium contracting",
+      intro:
+        "Structured GCC contracting for high-end residential and hospitality — trades coordinated, finishes protected, handover documented.",
     },
     ourWork: {
-      title: "Our Work",
-      intro: "A curated portfolio of luxury residential and hospitality projects.",
+      title: "Selected execution",
+      intro:
+        "A cross-section of recent fit-out and booth programmes — names anonymised where required, standards never are.",
     },
     about: {
       title: "About Turriva Real Estate",
-      intro: "Craftsmanship, elegance, and quiet confidence — built in Saudi Arabia.",
+      intro:
+        "Saudi specialists in fixed decor and contracting — the team that turns approved concepts into walkable luxury, backed by Graphics House launch experience.",
     },
     contact: {
       title: "Contact Us",
@@ -338,7 +402,6 @@ const ar: LuxuryMessages = {
     ourWork: "أعمالنا",
     about: "من نحن",
     contact: "تواصل",
-    workspace: "المنصة",
   },
   hero: {
     eyebrow: "ديكور ثابت ومقاولات فاخرة",
@@ -441,13 +504,29 @@ const ar: LuxuryMessages = {
     ],
   },
   why: {
-    eyebrow: "لماذا توريفا العقارية",
-    title: "فن العيش الفاخر",
+    eyebrow: "انضباط التسليم",
+    title: "تشطيب بمعايير القصور — مقاس ميداني",
     items: [
-      { title: "تصميم خالد", description: "تناسق أنيق وجماليات راقية تتجاوز الموضة." },
-      { title: "جودة فائقة", description: "مواد فاخرة وموردون موثوقون ومعايير لا تقبل المساومة." },
-      { title: "اهتمام بالتفاصيل", description: "كل وصلة وتفصيلة ولمسة نهائية مدروسة بعناية." },
-      { title: "تسليم في الوقت", description: "إدارة مشاريع منظمة بمراحل واضحة ومساءلة." },
+      {
+        title: "صدق الخامات",
+        description:
+          "عينات الحجر والقشرة والمعدن تُعتمد قبل CNC والتركيب — بلا بدائل مخفية عند التسليم.",
+      },
+      {
+        title: "تنسيق التخصصات",
+        description:
+          "نجارة وMEP وحجر بمراحل واضحة وسجل جودة يومي — كما في برامج السكن الفاخر في الخليج.",
+      },
+      {
+        title: "نجارة وFF&E",
+        description:
+          "خزائن مخصصة وإضاءة مدمجة وجداول أثاث متوافقة مع المخطط المعماري — لا «لصق» كatalog.",
+      },
+      {
+        title: "حزمة التسليم",
+        description:
+          "إغلاق الملاحظات، دليل صيانة، وتوثيق ديكور as-built لفرق تشغيل العقار.",
+      },
     ],
   },
   projects: {
@@ -456,43 +535,61 @@ const ar: LuxuryMessages = {
     cta: "عرض كل المشاريع",
   },
   process: {
-    eyebrow: "منهجيتنا",
-    title: "من الرؤية إلى الواقع",
+    eyebrow: "آلية العمل",
+    title: "أربع محطات من الموجز إلى المفتاح",
     steps: [
-      { title: "الاكتشاف", description: "فهم رؤيتك وأسلوب حياتك ومتطلبات المساحة." },
-      { title: "التصميم", description: "تطوير المفهوم والمواد والوثائق التفصيلية." },
-      { title: "التنفيذ", description: "حرفيون وفرق ميدانية تحوّل التصميم إلى واقع." },
-      { title: "التسليم", description: "تنسيق نهائي وفحص جودة وتسليم بلا عيوب." },
+      {
+        title: "الموجز والمسح",
+        description:
+          "مقابلة أسلوب حياة، مسح as-built، وخريطة قيود — ارتفاعات، مسارات MEP، ومتطلبات الجهات.",
+      },
+      {
+        title: "تجميد التصميم",
+        description:
+          "لوحات خامات، shop drawings للنجارة، ومشاهد إضاءة تُعتمد قبل صرف الريال في الورشة.",
+      },
+      {
+        title: "تنفيذ ميداني",
+        description:
+          "تشطيب مرحلي مع حماية التشطيبات، mock-ups للغرف الحساسة، وجولات أسبوعية مع العميل.",
+      },
+      {
+        title: "تنسيق وتسليم",
+        description:
+          "Staging نهائي، تشغيل، قائمة ملاحظات، وتسليم رسمي لأسرتك أو فريق المرافق.",
+      },
     ],
   },
   testimonials: {
-    eyebrow: "آراء العملاء",
-    title: "ثقة عملاء مميزين",
+    eyebrow: "من الميدان",
+    title: "ما يكرّره العملاء بعد التسليم",
     items: [
       {
-        quote: "حوّلت توريفا العقارية فيلتنا إلى ملاذ من الفخامة الهادئة. كل تفصيلة فاقت توقعاتنا.",
-        author: "عميل خاص",
-        role: "فيلا فاخرة، الرياض",
+        quote:
+          "نجارة المجلس والرخام وصلت كالمock-up — نادر في برنامج 14 أسبوعاً.",
+        author: "مالك خاص",
+        role: "توسعة قصر · جدة",
       },
       {
-        quote: "حرفية استثنائية وإدارة مشروع سلسة من أول لقاء حتى التسليم.",
-        author: "مجموعة تطوير",
-        role: "مشروع ضيافة، جدة",
+        quote:
+          "بوثنا الموسمي كان يجب أن يُركّب ويبيع خلال خمسة أيام. توريفا حافظت على مستوى صالة دائمة.",
+        author: "مسؤول تسويق مؤسسي",
+        role: "بناء معرض · مكة المكرمة",
       },
     ],
   },
   cta: {
-    title: "لنبني شيئاً استثنائياً",
-    subtitle: "شاركنا رؤيتك وابدأ رحلة مشروعك الفاخر مع فريقنا.",
-    button: "تواصل معنا",
+    title: "أرسل موجز مشروعك القادم",
+    subtitle:
+      "فلل، قصور، أجنحة ضيافة، أو بوث ثابت للموسم القادم — شاركنا النطاق وتواريخ البرنامج.",
+    button: "اطلب استشارة",
   },
   footer: {
     about:
-      "توريفا العقارية تنفّذ الديكور الثابت والمقاولات الفاخرة للفلل والقصور وبيئات المعارض الموسمية — الذراع التنفيذي لـ Graphics House في البناء والتسليم.",
+      "توريفا العقارية — الذراع السعودي للديكور الثابت والمقاولات: فلل، قصور، ضيافة، وبيئات معارض موسمية، بانضباط إطلاق Graphics House.",
     quickLinks: "روابط سريعة",
     importantLinks: "أهم الروابط",
     servicesLinks: "الخدمات",
-    solutionsLinks: "الحلول",
     offices: "مكاتبنا",
     countries: {
       saudiArabia: "السعودية",
@@ -501,40 +598,68 @@ const ar: LuxuryMessages = {
       egypt: "مصر",
     },
     contact: "تواصل معنا",
-    workspace: "المنصة",
-    workspaceDesc: "عروض احترافية وإدارة مشاريعك في مكان واحد.",
-    workspaceCta: "الدخول إلى المنصة",
     copyright: "© توريفا العقارية. جميع الحقوق محفوظة.",
     privacy: "سياسة الخصوصية",
     terms: "شروط الاستخدام",
-    address: "الرياض، المملكة العربية السعودية",
+    address: "جدة، حي الزهراء، المملكة العربية السعودية",
     email: "hello@turriva.co",
-    phone: "+966 11 000 0000",
+    phone: "+966 50 278 6513",
     poweredByPrefix: "توريفا العقارية بواسطة",
     poweredByLink: "جرافيكس هاوس",
-    insightsLink: "معاينة تصميم (داخلية)",
     ghProjectLaunchLink: "ProjectLaunch™ — Graphics House",
   },
+  portfolio: [
+    {
+      title: "مجلس فيلا ساحلية",
+      location: "أبحر الشمالية · جدة",
+      scope: "تشطيب ثابت كامل — حجر، نجارة مخصصة، إضاءة مدمجة",
+    },
+    {
+      title: "جناح طعام ومعرض خاص",
+      location: "المحمدية · الرياض",
+      scope: "ديكور بمعايير قصر — سقف صوتي وإضاءة أعمال فنية",
+    },
+    {
+      title: "صالة بيع مطوّر",
+      location: "وسط الرياض",
+      scope: "ديكور ثابت لصالة عرض مرتبط بإطلاق سكني",
+    },
+    {
+      title: "بوث معرض مؤسسي",
+      location: "مكة المكرمة",
+      scope: "بيئة إعلانية موسمية — برنامج تركيب 5 أيام",
+    },
+    {
+      title: "تجديد لوبي ضيافة",
+      location: "الكورنيش · جدة",
+      scope: "رخام ونحاس ونجارة تدفق ضيوف دون إغلاق المنشأة",
+    },
+    {
+      title: "فيلا عائلية — فخامة هادئة",
+      location: "المنطقة الغربية",
+      scope: "لوحات دافئة، جدران خزائن، ومشاهد إضاءة متعددة الطبقات",
+    },
+  ],
   pages: {
     interiorDesign: {
-      title: "التصميم الداخلي",
+      title: "التشطيب الفاخر",
       intro:
-        "تصاميم داخلية فاخرة مخصصة للفلل والقصور والضيافة في المملكة — من المفهوم الأول حتى آخر لمسة تشطيب.",
+        "ديكور داخلي ثابت للفلل والقصور — ورش نجارة، مصانع حجر، وفرق ميدانية ضمن برنامج توريفا واحد.",
     },
     construction: {
-      title: "الإنشاءات",
+      title: "مقاولات فاخرة",
       intro:
-        "إنشاءات فاخرة للفلل والقصور والمشاريع الحصرية بإشراف هندسي وميداني ومعايير جودة عالمية.",
+        "مقاولات منظمة للسكن والضيافة الراقية في الخليج — تخصصات منسّقة، تشطيبات محمية، وتسليم موثّق.",
     },
     ourWork: {
-      title: "أعمالنا",
+      title: "تنفيذ مختار",
       intro:
-        "معرض منتقى من مشاريعنا السكنية والضيافية — مساحات صُمّمت وبُنيت بعناية فائقة.",
+        "عيّنة من برامج التشطيب والبوث الأخيرة — أسماء مُخفّاة عند الحاجة، المعايير لا.",
     },
     about: {
       title: "عن توريفا العقارية",
       intro:
-        "توريفا العقارية شركة سعودية للديكور والمقاولات تجمع بين الحرفية والأناقة والثقة الهادئة.",
+        "متخصصون سعوديون في الديكور الثابت والمقاولات — الفريق الذي يحوّل المفاهيم المعتمدة إلى فخامة قابلة للمشي، بخبرة إطلاق Graphics House.",
     },
     contact: {
       title: "تواصل معنا",
@@ -554,11 +679,22 @@ export function getLuxuryMessages(locale: Locale): LuxuryMessages {
 /** Luxury interior photography — Unsplash (replace with owned assets in production). */
 export const LUXURY_IMAGES = {
   hero: "/brand/luxury/hero-villa.jpg",
-  interior: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
-  construction: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-  fitout: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
-  project1: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80",
-  project2: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80",
-  project3: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
-  project4: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=800&q=80",
+  interior:
+    "https://images.unsplash.com/photo-1618221197210-72a278510744?auto=format&fit=crop&w=1200&q=85",
+  construction:
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85",
+  fitout:
+    "https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1200&q=85",
+  project1:
+    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85",
+  project2:
+    "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85",
+  project3:
+    "https://images.unsplash.com/photo-1616137467491-cd0c3e0a1f0d?auto=format&fit=crop&w=900&q=85",
+  project4:
+    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=85",
+  project5:
+    "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=900&q=85",
+  project6:
+    "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85",
 } as const;

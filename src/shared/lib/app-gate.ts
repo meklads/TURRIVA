@@ -34,15 +34,8 @@ export function isPublicAppPath(pathname: string): boolean {
     "/construction",
     "/interior-design",
     "/our-work",
-    "/how-it-works",
     "/privacy",
     "/terms",
-    "/services",
-    "/pricing",
-    "/faq",
-    "/templates/sample",
-    "/design",
-    "/login",
   ];
 
   if (publicPrefixes.some((p) => pathname === p || pathname.startsWith(`${p}/`))) {
@@ -54,13 +47,10 @@ export function isPublicAppPath(pathname: string): boolean {
   return false;
 }
 
-/** Public API — health, marketing samples, client share, design studio */
+/** Public API — health only on marketing site (tools live on ruwaq.co) */
 export function isPublicApiPath(pathname: string): boolean {
   if (pathname === "/api/health") return true;
-  if (pathname.startsWith("/api/templates/")) return true;
   if (pathname.startsWith("/api/share/")) return true;
-  if (pathname.startsWith("/api/design/")) return true;
-  if (pathname.startsWith("/api/auth/")) return true;
   return false;
 }
 

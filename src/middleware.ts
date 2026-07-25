@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import {
+  isRuwaqPlatformPath,
+  ruwaqPlatformRedirectUrl,
+} from "@/shared/constants/platform-redirect";
+import {
   APP_GATE_REALM,
   getGateCredentials,
   isGateEnabled,
@@ -8,11 +12,15 @@ import {
 } from "@/shared/lib/app-gate";
 
 export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  if (isRuwaqPlatformPath(pathname)) {
+    return NextResponse.redirect(ruwaqPlatformRedirectUrl(pathname), 308);
+  }
+
   if (!isGateEnabled()) {
     return NextResponse.next();
   }
-
-  const { pathname } = request.nextUrl;
 
   if (!shouldProtectPath(pathname)) {
     return NextResponse.next();

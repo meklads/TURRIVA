@@ -50,7 +50,7 @@ export default function Error({
         <button onClick={reset} className="btn-ruwaq-primary px-4 py-2">
           {t.retry}
         </button>
-        <Link href="/proposals/new" className="btn-ruwaq-secondary px-4 py-2">
+        <Link href="/" className="btn-ruwaq-secondary px-4 py-2">
           {t.home}
         </Link>
       </div>
