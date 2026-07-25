@@ -12,7 +12,7 @@ export async function SiteFooter() {
 
   const companyLinks = [
     { href: "/", label: locale === "ar" ? "الرئيسية" : "Home" },
-    { href: "/interior-design", label: locale === "ar" ? "ديكور داخلي ثابت" : "Fixed interior decor" },
+    { href: "/interior-design", label: locale === "ar" ? "التصميم الداخلي" : "Interior design" },
     { href: "/construction", label: locale === "ar" ? "المقاولات" : "Contracting" },
     { href: "/our-work", label: locale === "ar" ? "أعمالنا" : "Our work" },
     { href: "/about", label: t.site.nav.about },

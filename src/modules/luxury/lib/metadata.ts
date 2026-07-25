@@ -7,13 +7,13 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
 
   const title =
     locale === "ar"
-      ? `${t.brand.name} · شركة ديكور ومقاولات فاخرة في السعودية`
-      : `${t.brand.name} · Luxury Decor & Contracting Saudi Arabia`;
+      ? `${t.brand.name} · ${t.brand.tagline}`
+      : `${t.brand.name} · ${t.brand.tagline}`;
 
   const description =
     locale === "ar"
-      ? "توريفا العقارية شركة سعودية فاخرة للديكور والمقاولات — فلل، قصور، ومشاريع سكنية راقية في الرياض وجميع أنحاء المملكة."
-      : "Turriva is a premium Saudi decor and contracting company — luxury villas, palaces, and high-end residential projects across Riyadh and the Kingdom.";
+      ? "توريفا العقارية — تصميم وتنفيذ ديكور عصري للفلل والقصور والمحلات وأجنحة المعارض في جدة ومكة. جودة، رضا العميل، وتسليم في الموقع."
+      : "Turriva — modern decor design and on-site delivery for villas, palaces, retail, and exhibitions in Jeddah and Makkah. Quality, client care, and disciplined handover.";
 
   return {
     title,
@@ -21,18 +21,18 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
     keywords:
       locale === "ar"
         ? [
-            "ديكور فاخر",
-            "مقاولات فلل",
-            "تشطيب فاخر",
-            "شركة ديكور السعودية",
-            "مقاولات فلل فاخرة",
+            "تصميم داخلي",
+            "تنفيذ ديكور",
+            "ديكور فلل",
+            "تشطيب قصور",
+            "شركة ديكور جدة",
             "توريفا العقارية",
           ]
         : [
-            "luxury decor Saudi Arabia",
-            "premium contracting Riyadh",
-            "villa fit-out",
-            "high-end decor",
+            "interior design Saudi Arabia",
+            "decor fit-out Jeddah",
+            "villa interior design",
+            "exhibition booth build",
             "Turriva",
           ],
     openGraph: {
@@ -44,7 +44,7 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
       type: "website",
       images: [
         {
-          url: "/brand/hero/hero.jpg",
+          url: "/brand/luxury/hero-villa.jpg",
           width: 1200,
           height: 630,
           alt: title,
@@ -55,7 +55,7 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
       card: "summary_large_image",
       title,
       description,
-      images: ["/brand/hero/hero.jpg"],
+      images: ["/brand/luxury/hero-villa.jpg"],
     },
   };
 }

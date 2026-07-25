@@ -109,186 +109,187 @@ export type LuxuryMessages = {
 };
 
 const en: LuxuryMessages = {
-  brand: { name: "Turriva Real Estate", tagline: "Decor & Contracting" },
+  brand: { name: "Turriva Real Estate", tagline: "Design & build decor" },
   nav: {
     home: "HOME",
-    interiorDesign: "FIXED INTERIOR DECOR",
-    construction: "CONTRACTING",
+    interiorDesign: "INTERIOR DESIGN",
+    construction: "DELIVERY & BUILD",
     ourWork: "OUR WORK",
     about: "ABOUT",
     contact: "CONTACT",
   },
   hero: {
-    eyebrow: "Saudi Arabia · Decor & contracting",
-    title: "Spaces finished to live in, sell from, and open on time",
+    eyebrow: "Saudi Arabia · Design & build",
+    title: "Modern decor, designed with you and delivered on your site",
     subtitle:
-      "Turriva designs and builds fixed interior decor and contracting for villas, palaces, retail, and exhibition booths — one team from approved materials to site handover in Jeddah and Makkah.",
-    servicesLine: "Interior · Facades · Booths",
-    tags: ["Fixed interior", "Facades", "Exhibition booths", "Jeddah & Makkah"],
-    ctaPrimary: "Request a consultation",
-    ctaSecondary: "Explore our work",
+      "Turriva is a Saudi team for interior design and execution — villas, palaces, retail, and exhibition spaces in Jeddah and Makkah. We care about craft, clarity, and client satisfaction: what you approve is what we install, on schedule and to a standard you can feel when you walk in.",
+    servicesLine: "Interiors · Facades · Exhibitions",
+    tags: ["Interior design", "Facades", "Exhibition builds", "Jeddah & Makkah"],
+    ctaPrimary: "Book a consultation",
+    ctaSecondary: "See our work",
   },
   intro: {
-    eyebrow: "The Turriva standard",
-    title: "Gallery-quality finishing, built for real sites",
+    eyebrow: "How we work",
+    title: "Design that reads the room — execution that respects your name",
     body:
-      "Global luxury brands win trust with material honesty and room stories you can picture yourself in. Turriva brings that same discipline to contracting: curated finishes, documented approvals, and crews who install what was signed off — not a cheaper substitute on site.",
+      "Leading decor brands earn trust by showing real materials and believable spaces. We do the same for Gulf homes and businesses: contemporary lines, warm hospitality, and details that suit majlis life as well as modern living. One studio from concept and samples to site teams and handover — with open updates so you are never guessing.",
   },
   stats: {
     items: [
-      { value: "15+", label: "Years in decor & fit-out" },
-      { value: "200+", label: "Residential & retail scopes" },
-      { value: "1 team", label: "Design, supply & site delivery" },
-      { value: "Jeddah · Makkah", label: "Western Region focus" },
+      { value: "15+", label: "Years in design & fit-out" },
+      { value: "200+", label: "Residential & commercial projects" },
+      { value: "1 team", label: "Design through handover" },
+      { value: "Jeddah · Makkah", label: "Western Region base" },
     ],
   },
   execution: {
-    badge: "On-site execution",
-    title: "Drawings are the start — handover is the product",
+    badge: "Design & site delivery",
+    title: "The drawing is a promise — the handover is our reputation",
     subtitle:
-      "We supply joinery, stone, lighting, and FF&E, then coordinate trades until the space matches your approved boards. Seasonal booths get the same rigour as permanent villas.",
+      "Joinery, stone, lighting, and furnishings are procured against approved boards. Trades are coordinated on site until the space matches what you signed. Exhibition builds follow the same care as a family villa.",
     points: [
-      "Material boards and samples before procurement",
-      "Shop drawings aligned with architectural sets",
-      "Dedicated site supervision through snag and handover",
+      "Samples and sign-off before we order at scale",
+      "Execution drawings aligned with your architect",
+      "Site lead through snagging, styling, and keys",
     ],
-    cta: "Discuss your project",
+    cta: "Talk to our team",
   },
   capabilities: {
-    eyebrow: "Scope",
-    title: "Four pillars of fixed decor we deliver",
+    eyebrow: "What we deliver",
+    title: "Four disciplines, one coherent vision",
     items: [
       {
-        title: "Residential interiors",
+        title: "Villas & palaces",
         description:
-          "Majlis, living, bedrooms, and kitchens — millwork, stone, lighting, and styling installed as one coordinated scope.",
+          "Majlis, dining, bedrooms, and kitchens — contemporary Gulf character with materials chosen for daily use and Saudi climate.",
       },
       {
         title: "Retail & hospitality",
         description:
-          "Showrooms, boutiques, and F&B fronts built for footfall, brand presence, and durable daily use.",
+          "Boutiques, showrooms, and guest-facing spaces that carry your brand and stand up to real footfall.",
       },
       {
-        title: "Facades & exterior character",
+        title: "Facades & arrival",
         description:
-          "Villa and commercial envelopes with consistent detailing from street to entry lobby.",
+          "Street presence and entry sequences for villas and commercial buildings — consistent from gate to lobby.",
       },
       {
-        title: "Exhibition & brand booths",
+        title: "Exhibitions & brand spaces",
         description:
-          "Fast programmes for fairs and activations — fabrication, install, and strike with premium finish.",
+          "Fair booths and activations: design, build, install, and dismantle on tight show calendars.",
       },
     ],
   },
   services: {
     eyebrow: "Services",
-    title: "Three ways owners and brands work with us",
+    title: "Where clients start with Turriva",
     items: [
       {
-        title: "Fixed interior decor",
+        title: "Interior design & decor",
         description:
-          "End-to-end interior finishing for villas, apartments, palaces, and majlis — concept, procurement, and installation.",
-        cta: "Interior decor",
+          "Layout, materials, lighting, and styling for villas, apartments, palaces, and majlis — from first sketch to installation.",
+        cta: "Interior design",
         href: "/interior-design",
       },
       {
-        title: "Premium contracting",
+        title: "Project delivery on site",
         description:
-          "Trade coordination, QA on finishes, and documented handover for high-value residential and commercial builds.",
-        cta: "Contracting",
+          "Trade coordination, quality checks, and documented handover so finishes survive the build programme intact.",
+        cta: "Delivery & build",
         href: "/construction",
       },
       {
-        title: "Booths & exhibitions",
+        title: "Exhibition & booth builds",
         description:
-          "Campaign-ready stands — design, build, on-site styling, and dismantle when the season ends.",
-        cta: "Start a brief",
+          "Campaign-ready stands: concept, fabrication, on-site dressing, and strike when the event ends.",
+        cta: "Send a brief",
         href: "/contact",
       },
     ],
   },
   why: {
     eyebrow: "Why Turriva",
-    title: "What premium decor clients expect — applied on site",
+    title: "Quality and service, without the noise",
     items: [
       {
-        title: "Curated materials",
-        description: "Wood, marble, metal, and textiles selected for how they age in Saudi climate and use.",
+        title: "Modern Gulf sensibility",
+        description: "Contemporary design language that still feels at home in Jeddah and Makkah — not a copy-paste import.",
       },
       {
-        title: "Human-led design",
-        description: "Senior designers shape each project — no generic catalogue pasted onto your floor plan.",
+        title: "Materials you can trust",
+        description: "Wood, stone, metal, and textiles specified for how they look on day one and live on year five.",
       },
       {
-        title: "Buildable documentation",
-        description: "Teams receive drawings and schedules they can execute without guesswork.",
+        title: "People who stay on the job",
+        description: "Designers and site leads who know your file — fewer handoffs, fewer surprises.",
       },
       {
-        title: "Clear consultation first",
-        description: "We scope timeline, budget bands, and trades before you commit to construction.",
+        title: "Satisfaction built in",
+        description: "We scope honestly, communicate often, and close snags before we call it done.",
       },
     ],
   },
   projects: {
     eyebrow: "Portfolio",
-    title: "Recent atmospheres we built",
-    subtitle: "Representative interiors and retail environments — replace with owned photography as projects publish.",
-    cta: "View full portfolio",
+    title: "Spaces shaped for Gulf living and business",
+    subtitle:
+      "Interiors and facades for homes, majlis, and retail — contemporary execution with regional character.",
+    cta: "Full portfolio",
     items: [
-      { title: "Coastal villa living", category: "Residential · Jeddah" },
-      { title: "Boutique showroom", category: "Retail · Makkah region" },
-      { title: "Contemporary majlis", category: "Residential · Western Region" },
+      { title: "Palace majlis & reception", category: "Residential · Jeddah" },
+      { title: "Villa living & dining", category: "Residential · Makkah region" },
+      { title: "Boutique showroom", category: "Retail · Western Region" },
     ],
   },
   process: {
-    eyebrow: "Method",
-    title: "A straight path from brief to keys",
+    eyebrow: "Process",
+    title: "From first meeting to handover",
     steps: [
       {
-        title: "Discovery",
-        description: "Site walk or brief — programme, style direction, and budget bands agreed upfront.",
+        title: "Listen & brief",
+        description: "We visit or workshop your needs — lifestyle, programme, and how you measure success.",
       },
       {
-        title: "Design & samples",
-        description: "Layouts, material boards, and approvals locked before major procurement.",
+        title: "Design & approve",
+        description: "Concepts, layouts, and material boards for your sign-off before major spend.",
       },
       {
-        title: "Fabrication & site",
-        description: "Workshop output and on-site trades managed under one Turriva programme.",
+        title: "Build & coordinate",
+        description: "Workshop and site under one Turriva programme with regular progress updates.",
       },
       {
-        title: "Handover",
-        description: "Snagging, styling, and documentation so you can move in or open doors.",
+        title: "Handover & care",
+        description: "Snagging, final styling, and walk-through so you move in or open with confidence.",
       },
     ],
   },
   testimonials: {
-    eyebrow: "Client notes",
-    title: "Quiet confidence after handover",
+    eyebrow: "Clients",
+    title: "When the space matches the promise",
     items: [
       {
         quote:
-          "The majlis and shop wing arrived exactly as we signed on the material board — no last-minute swaps.",
+          "Our majlis and guest wing looked like the renders — same stone, same lighting levels. The team stayed until we were comfortable, not just until the clock ran out.",
         author: "Private client",
-        role: "Villa & retail · Jeddah",
+        role: "Villa · Jeddah",
       },
       {
         quote:
-          "Our fair booth had a forty-eight-hour install window. The finish felt permanent, not temporary.",
-        author: "Brand marketing lead",
-        role: "Exhibition · Makkah region",
+          "The exhibition stand had two days on the floor. Finish and detailing felt like a permanent showroom, and our team could focus on guests, not fixes.",
+        author: "Marketing director",
+        role: "Trade show · Makkah region",
       },
     ],
   },
   cta: {
-    title: "Tell us about your space",
+    title: "Start with a conversation",
     subtitle:
-      "Share your villa, palace, store, or booth brief — we reply with scope, timeline, and the right team within one business day.",
+      "Tell us about your villa, palace, store, or booth. We will respond with a clear scope, timeline, and the right Turriva lead within one working day.",
     button: "Contact Turriva",
   },
   footer: {
     about:
-      "Turriva Real Estate is a Saudi decor and contracting company — fixed finishing for villas, apartments, palaces and shops, plus advertising booths and exhibitions in Jeddah and Makkah.",
+      "Turriva Real Estate — Saudi interior design and on-site delivery for villas, palaces, shops, and exhibition builds in Jeddah and Makkah. Modern decor, disciplined execution, and client care at every stage.",
     quickLinks: "Quick Links",
     importantLinks: "Important Links",
     servicesLinks: "Services",
@@ -312,217 +313,217 @@ const en: LuxuryMessages = {
   },
   pages: {
     interiorDesign: {
-      title: "Fixed interior decor",
+      title: "Interior design & decor",
       intro:
-        "Permanent finishing for villas, apartments, palaces, shops, and majlis — from concept to installation in Jeddah and Makkah.",
+        "Contemporary interiors for villas, palaces, apartments, and majlis in Jeddah and Makkah — concept, materials, and installation with Turriva designers and site teams.",
     },
     construction: {
-      title: "Premium contracting",
+      title: "Delivery & build on site",
       intro:
-        "Turriva Real Estate coordinates trades, protects finishes, and delivers handover for high-end residential and retail projects.",
+        "Turriva coordinates trades, protects approved finishes, and delivers handover documentation for residential and commercial programmes.",
     },
     ourWork: {
       title: "Our work",
       intro:
-        "Selected interior, facade, and exhibition projects finished by Turriva teams across the Western Region and central KSA.",
+        "Selected Gulf-facing interiors, facades, and exhibition projects delivered by Turriva across the Western Region and central KSA.",
     },
     about: {
-      title: "About Turriva Real Estate",
+      title: "About Turriva",
       intro:
-        "A Saudi decor and contracting company — we design and build premium spaces with fixed finishing and real materials on site.",
+        "A Saudi company for modern decor design and execution — quality materials, honest timelines, and service that aims to exceed what clients expect.",
     },
     contact: {
-      title: "Contact Turriva Real Estate",
-      intro: "Request a consultation for fixed decor, contracting, or your next booth and exhibition build.",
+      title: "Contact Turriva",
+      intro: "Request a consultation for interior design, site delivery, or your next exhibition build.",
       formName: "Name",
       formEmail: "Email",
-      formMessage: "Tell us about your project (villa, shop, booth…)",
+      formMessage: "Your project (villa, palace, retail, booth…)",
       formSubmit: "Send message",
     },
   },
 };
 
 const ar: LuxuryMessages = {
-  brand: { name: "توريفا العقارية", tagline: "للديكور والمقاولات" },
+  brand: { name: "توريفا العقارية", tagline: "تصميم وتنفيذ الديكور" },
   nav: {
     home: "الرئيسية",
-    interiorDesign: "ديكور داخلي ثابت",
-    construction: "المقاولات",
+    interiorDesign: "التصميم الداخلي",
+    construction: "التنفيذ في الموقع",
     ourWork: "أعمالنا",
     about: "من نحن",
     contact: "تواصل",
   },
   hero: {
-    eyebrow: "السعودية · ديكور ومقاولات",
-    title: "مساحات تُشغَّل وتُباع وتُفتَح في موعدها",
+    eyebrow: "السعودية · تصميم وتنفيذ",
+    title: "ديكور عصري… نصمّمه معك وننفّذه في موقعك",
     subtitle:
-      "توريفا العقارية تصمّم وتنفّذ الديكور الثابت والمقاولات للفلل والقصور والمحلات وبوث المعارض — فريق واحد من اعتماد الخامات حتى التسليم في الموقع بجدة ومكة.",
-    servicesLine: "داخلي · واجهات · بوث",
-    tags: ["تشطيب داخلي ثابت", "واجهات", "بوث معارض", "جدة ومكة"],
-    ctaPrimary: "اطلب استشارة",
-    ctaSecondary: "استكشف أعمالنا",
+      "توريفا العقارية فريق سعودي للتصميم الداخلي والتنفيذ — فلل وقصور ومحلات ومساحات معارض في جدة ومكة. نركّز على الجودة ورضا العميل: ما تعتمده على الورق هو ما يُركَّب في الموقع، في الوقت المتفق، وبمعايير تُحسّها حين تدخل المكان.",
+    servicesLine: "داخلي · واجهات · معارض",
+    tags: ["تصميم داخلي", "واجهات", "أجنحة معارض", "جدة ومكة"],
+    ctaPrimary: "احجز استشارة",
+    ctaSecondary: "شاهد أعمالنا",
   },
   intro: {
-    eyebrow: "معيار توريفا",
-    title: "تشطيب بجودة معرض — مبني لموقع حقيقي",
+    eyebrow: "منهجنا",
+    title: "تصميم يقرأ أسلوب حياتك… وتنفيذ يحترم اسمك",
     body:
-      "العلامات العالمية الراقية تكسب الثقة بالخامات الصادقة وصور مساحات يتخيلها العميل. توريفا تطبّق ذلك في المقاولات: تشطيبات مختارة، اعتمادات موثّقة، وفرق تركّب ما وُقّع عليه — لا بديل أرخص في الموقع.",
+      "شركات الديكور العالمية تكسب الثقة حين تعرض خامات حقيقية ومساحات يصدقها العميل. نحن نطبّق ذلك على بيوت ومنشآت الخليج: خطوط معاصرة، ضيافة دافئة، وتفاصيل تناسب المجلس والمعيشة اليوم. استوديو واحد من الفكرة والعينات إلى فرق الموقع والتسليم — مع تحديثات واضحة لا تتركك تتساءل عن ما يحدث.",
   },
   stats: {
     items: [
-      { value: "+15", label: "عامًا في الديكور والتشطيب" },
-      { value: "+200", label: "نطاق سكني وتجاري" },
-      { value: "فريق واحد", label: "تصميم وتوريد وتنفيذ" },
-      { value: "جدة · مكة", label: "تركيز المنطقة الغربية" },
+      { value: "+15", label: "عامًا في التصميم والتشطيب" },
+      { value: "+200", label: "مشروع سكني وتجاري" },
+      { value: "فريق واحد", label: "من التصميم حتى التسليم" },
+      { value: "جدة · مكة", label: "مقرّنا في الغربية" },
     ],
   },
   execution: {
-    badge: "تنفيذ ميداني",
-    title: "المخططات بداية — التسليم هو المنتج",
+    badge: "تصميم وتسليم ميداني",
+    title: "الرسم وعد… والتسليم سمعتنا",
     subtitle:
-      "نوفر النجارة والحجر والإضاءة والأثاث، وننسّق التخصصات حتى تطابق المساحة لوحات الاعتماد. البوث الموسمية بنفس انضباط الفلل الدائمة.",
+      "نجارة وحجر وإضاءة وأثاث تُشتَرى وفق لوحات الاعتماد. التخصصات تُنسَّق في الموقع حتى تطابق المساحة ما وقّعت عليه. أجنحة المعارض تُعامل بنفس الاهتمام كفيلا عائلية.",
     points: [
-      "لوحات خامات وعينات قبل الشراء",
-      "shop drawings متوافقة مع المخطط المعماري",
-      "إشراف موقع حتى الملاحظات والتسليم",
+      "عينات واعتماد قبل الشراء بالجملة",
+      "رسومات تنفيذ متوافقة مع مهندس المشروع",
+      "مسؤول موقع حتى الملاحظات والتسليم",
     ],
-    cta: "ناقش مشروعك",
+    cta: "تحدّث مع فريقنا",
   },
   capabilities: {
-    eyebrow: "نطاق العمل",
-    title: "أربعة محاور للديكور الثابت",
+    eyebrow: "مجالاتنا",
+    title: "أربعة محاور… رؤية واحدة",
     items: [
       {
-        title: "تشطيبات سكنية",
+        title: "فلل وقصور",
         description:
-          "مجلس ومعيشة وغرف نوم ومطابخ — نجارة وحجر وإضاءة وتنسيق ضمن عقد واحد.",
+          "مجلس وضيافة وغرف نوم ومطابخ — طابع خليجي معاصر وخامات تُختار للاستخدام اليومي ومناخ المملكة.",
       },
       {
         title: "تجزئة وضيافة",
         description:
-          "صالات عرض ومحلات ومطاعم — حضور للعلامة ومتانة للاستخدام اليومي.",
+          "محلات وصالات عرض ومساحات استقبال الزوار — حضور للعلامة ومتانة أمام الزحام الحقيقي.",
       },
       {
-        title: "واجهات وهوية خارجية",
+        title: "واجهات ومداخل",
         description:
-          "أغلفة فلل وتجارية بتفاصيل متسقة من الشارع إلى المدخل.",
+          "حضور الشارع وتسلسل الدخول للفلل والمباني التجارية — من البوابة إلى الردهة.",
       },
       {
-        title: "معارض وبوث علامات",
+        title: "معارض ومساحات علامات",
         description:
-          "برامج سريعة للفعاليات — تصنيع وتركيب وتفكيك بجودة تشطيب عالية.",
+          "بوث وفعاليات: تصميم وتصنيع وتركيب وتفكيك ضمن جداول المعارض الضيقة.",
       },
     ],
   },
   services: {
     eyebrow: "الخدمات",
-    title: "ثلاث طرق للتعاون معنا",
+    title: "كيف يبدأ العملاء مع توريفا",
     items: [
       {
-        title: "ديكور داخلي ثابت",
+        title: "التصميم الداخلي والديكور",
         description:
-          "تشطيب متكامل للفلل والشقق والقصور والمجالس — من المفهوم إلى التركيب.",
-        cta: "الديكور الداخلي",
+          "توزيع وخامات وإضاءة وتنسيق للفلل والشقق والقصور والمجالس — من أول مخطط إلى التركيب.",
+        cta: "التصميم الداخلي",
         href: "/interior-design",
       },
       {
-        title: "مقاولات فاخرة",
+        title: "تنفيذ المشروع في الموقع",
         description:
-          "تنسيق trades وضبط جودة التشطيبات وتسليم موثّق للمشاريع عالية القيمة.",
-        cta: "المقاولات",
+          "تنسيق التخصصات وضبط الجودة وتوثيق التسليم حتى تبقى التشطيبات المعتمدة سليمة حتى النهاية.",
+        cta: "التنفيذ في الموقع",
         href: "/construction",
       },
       {
-        title: "بوث ومعارض",
+        title: "أجنحة المعارض والبوث",
         description:
-          "ستاندات جاهزة للحملة — تصميم وبناء وتنسيق في الموقع ثم التفكيك.",
-        cta: "ابدأ الموجز",
+          "ستاندات جاهزة للحملة: فكرة وتصنيع وتنسيق في الموقع ثم التفكيك بعد الحدث.",
+        cta: "أرسل موجز المشروع",
         href: "/contact",
       },
     ],
   },
   why: {
     eyebrow: "لماذا توريفا",
-    title: "ما يتوقعه عميل الديكور الراقي — على أرض الواقع",
+    title: "جودة وخدمة… بلا مبالغة في الكلام",
     items: [
       {
-        title: "خامات مختارة",
-        description: "خشب ورخام ومعدن ومنسوجات تُختار لعمرها في المناخ والاستخدام السعودي.",
+        title: "ذوق خليجي معاصر",
+        description: "لغة تصميم حديثة تليق بجدة ومكة — لا نسخة جاهزة مستوردة على مخططك.",
       },
       {
-        title: "تصميم بقيادة بشرية",
-        description: "مصممون كبار لكل مشروع — لا قوالب جاهزة على مخططك.",
+        title: "خامات تثق بها",
+        description: "خشب وحجر ومعدن وأقمشة نحدّدها لشكلها في اليوم الأول ولحياتها بعد سنوات.",
       },
       {
-        title: "وثائق قابلة للبناء",
-        description: "فرق الموقع تستلم رسومات وجداول تنفّذها دون تخمين.",
+        title: "فريق يتابع ملفك",
+        description: "مصممون ومسؤولون ميدانيون يعرفون تفاصيل مشروعك — تسليمات أقل ومفاجآت أقل.",
       },
       {
-        title: "استشارة واضحة أولًا",
-        description: "نحدّد الزمن ونطاق الميزانية والتخصصات قبل الدخول في التنفيذ.",
+        title: "رضا العميل جزء من العمل",
+        description: "نحدّد النطاق بصدق، نتواصل بانتظام، ونغلق الملاحظات قبل أن نقول «انتهينا».",
       },
     ],
   },
   projects: {
     eyebrow: "معرض الأعمال",
-    title: "أجواء حديثة نفّذناها",
-    subtitle: "نماذج تمثيلية للداخل والتجزئة — استبدلها بتصوير مشاريعكم عند النشر.",
-    cta: "المعرض الكامل",
+    title: "مساحات صُمّمت لحياة وعمل الخليج",
+    subtitle: "داخليات وواجهات للسكن والمجالس والتجزئة — تنفيذ معاصر بطابع إقليمي.",
+    cta: "كل الأعمال",
     items: [
-      { title: "معيشة فيلا ساحلية", category: "سكني · جدة" },
-      { title: "صالة عرض بوتيك", category: "تجزئة · مكة" },
-      { title: "مجلس معاصر", category: "سكني · المنطقة الغربية" },
+      { title: "مجلس واستقبال قصر", category: "سكني · جدة" },
+      { title: "معيشة وضيافة فيلا", category: "سكني · مكة" },
+      { title: "صالة عرض بوتيك", category: "تجزئة · المنطقة الغربية" },
     ],
   },
   process: {
-    eyebrow: "المنهج",
-    title: "مسار واضح من الموجز إلى التسليم",
+    eyebrow: "مراحل العمل",
+    title: "من أول لقاء إلى التسليم",
     steps: [
       {
-        title: "استكشاف",
-        description: "زيارة موقع أو موجز — البرنامج والاتجاه الجمالي ونطاق الميزانية.",
+        title: "نستمع ونفهم",
+        description: "زيارة أو ورشة عمل — أسلوب حياتك، الجدول، وكيف تقيس نجاح المشروع.",
       },
       {
-        title: "تصميم وعينات",
-        description: "مخططات ولوحات خامات واعتمادات قبل الشراء الكبير.",
+        title: "تصميم واعتماد",
+        description: "أفكار ومخططات ولوحات خامات لاعتمادك قبل أي التزام مالي كبير.",
       },
       {
-        title: "ورشة وموقع",
-        description: "إنتاج الورشة والتخصصات في الموقع ضمن برنامج توريفا واحد.",
+        title: "بناء وتنسيق",
+        description: "ورشة وموقع ضمن برنامج توريفا واحد مع تحديثات دورية.",
       },
       {
-        title: "تسليم",
-        description: "ملاحظات وتنسيق ووثائق لتسكن أو تفتح أبوابك.",
+        title: "تسليم ومتابعة",
+        description: "ملاحظات وتنسيق نهائي وجولة تسليم تدخل بها أو تفتتح وأنت مطمئن.",
       },
     ],
   },
   testimonials: {
-    eyebrow: "من العملاء",
-    title: "ثقة هادئة بعد التسليم",
+    eyebrow: "عملاؤنا",
+    title: "حين يطابق المكان الوعد",
     items: [
       {
         quote:
-          "المجلس والجناح التجاري وصلا كما وقّعنا على لوحة الخامات — دون استبدالات في اللحظة الأخيرة.",
+          "المجلس وجناح الضيافة خرجا كالعرض — نفس الحجر ونفس الإضاءة. الفريق بقي حتى ارتاحينا، لا حتى انتهى الوقت فقط.",
         author: "عميل خاص",
-        role: "فيلا وتجزئة · جدة",
+        role: "فيلا · جدة",
       },
       {
         quote:
-          "نافذة تركيب البوث كانت ثمان وأربعين ساعة. التشطيب بدا دائمًا لا موسميًا.",
-        author: "مسؤول تسويق",
+          "البوث كان يومين على الأرض. التشطيب والتفاصيل كأنه صالة دائمة، واستطعنا التركيز على الزوار لا على الإصلاحات.",
+        author: "مدير تسويق",
         role: "معرض · مكة",
       },
     ],
   },
   cta: {
-    title: "حدّثنا عن مساحتك",
+    title: "ابدأ بمحادثة",
     subtitle:
-      "شاركنا موجز الفيلا أو القصر أو المحل أو البوث — نرد بالنطاق والجدول والفريق المناسب خلال يوم عمل.",
+      "أخبرنا عن فيلتك أو قصرك أو محلك أو بوثك. نرد خلال يوم عمل بنطاق واضح وجدول والمسؤول المناسب من توريفا.",
     button: "تواصل مع توريفا",
   },
   footer: {
     about:
-      "توريفا العقارية شركة سعودية للديكور والمقاولات — تشطيبات ثابتة للفلل والشقق والقصور والمحلات، وديكور إعلاني للبوث والمعارض في جدة ومكة المكرمة.",
+      "توريفا العقارية — تصميم داخلي وتنفيذ في الموقع للفلل والقصور والمحلات وأجنحة المعارض في جدة ومكة. ديكور عصري، انضباط في التنفيذ، وخدمة تراعي رضا العميل في كل مرحلة.",
     quickLinks: "روابط سريعة",
     importantLinks: "أهم الروابط",
     servicesLinks: "الخدمات",
@@ -546,57 +547,56 @@ const ar: LuxuryMessages = {
   },
   pages: {
     interiorDesign: {
-      title: "ديكور داخلي ثابت",
+      title: "التصميم الداخلي والديكور",
       intro:
-        "تشطيب دائم للفلل والشقق والقصور والمحلات والمجالس — من المفهوم إلى التركيب في جدة ومكة.",
+        "داخليات معاصرة للفلل والقصور والشقق والمجالس في جدة ومكة — من المفهوم والخامات إلى التركيب مع مصممي وفرق توريفا.",
     },
     construction: {
-      title: "مقاولات فاخرة",
+      title: "التنفيذ في الموقع",
       intro:
-        "تنسّق توريفا العقارية التخصصات وتحمي التشطيبات وتسلّم المشاريع السكنية والتجارية الراقية.",
+        "تنسّق توريفا التخصصات، تحمي التشطيبات المعتمدة، وتسلّم مشروعك بتوثيق واضح للسكني والتجاري.",
     },
     ourWork: {
       title: "أعمالنا",
-      intro: "مشاريع داخلية وواجهات ومعارض مختارة نفّذها فريق توريفا في المنطقة الغربية ووسط المملكة.",
+      intro: "نماذج من داخليات وواجهات ومعارض نفّذها فريق توريفا في الغربية ووسط المملكة.",
     },
     about: {
       title: "عن توريفا العقارية",
       intro:
-        "شركة سعودية للديكور والمقاولات — نصمّم وننفّذ مساحات فاخرة بتشطيبات ثابتة ومواد حقيقية في الموقع.",
+        "شركة سعودية لتصميم وتنفيذ الديكور بأسلوب حديث — خامات جيدة، جداول صادقة، وخدمة نسعى فيها لأن تتجاوز توقعات العميل.",
     },
     contact: {
       title: "تواصل مع توريفا العقارية",
-      intro: "اطلب استشارة للديكور الثابت أو المقاولات أو بناء بوث ومعرض قادم.",
+      intro: "اطلب استشارة للتصميم الداخلي أو التنفيذ في الموقع أو لبناء جناح معرض قادم.",
       formName: "الاسم",
       formEmail: "البريد الإلكتروني",
-      formMessage: "أخبرنا عن مشروعك (فيلا، محل، بوث…)",
+      formMessage: "مشروعك (فيلا، قصر، محل، بوث…)",
       formSubmit: "إرسال الرسالة",
     },
   },
 };
 
-
 export function getLuxuryMessages(locale: Locale): LuxuryMessages {
   return locale === "ar" ? ar : en;
 }
 
-/** Editorial interior photography — high-res Unsplash (swap for owned assets). */
+/** Gulf-leaning interiors & architecture — Unsplash (replace with Turriva project photos). */
 const IMG_Q = "auto=format&fit=crop&q=90";
 export const LUXURY_IMAGES = {
   hero: "/brand/luxury/hero-villa.jpg",
-  intro: `https://images.unsplash.com/photo-1600210492493-3d8c3f6e3f3a?${IMG_Q}&w=1600`,
-  execution: `https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?${IMG_Q}&w=1600`,
-  interior: `https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?${IMG_Q}&w=1400`,
-  construction: `https://images.unsplash.com/photo-1600585154340-be6161a56a0c?${IMG_Q}&w=1400`,
-  fitout: `https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?${IMG_Q}&w=1400`,
-  cap1: `https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?${IMG_Q}&w=900`,
-  cap2: `https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?${IMG_Q}&w=900`,
+  intro: `https://images.unsplash.com/photo-1700306692751-1fd5f2b88443?${IMG_Q}&w=1600`,
+  execution: `https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?${IMG_Q}&w=1600`,
+  interior: `https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?${IMG_Q}&w=1400`,
+  construction: `https://images.unsplash.com/photo-1600047509358-9dc75507daeb?${IMG_Q}&w=1400`,
+  fitout: `https://images.unsplash.com/photo-1441986300917-64674bd600d8?${IMG_Q}&w=1400`,
+  cap1: `https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?${IMG_Q}&w=900`,
+  cap2: `https://images.unsplash.com/photo-1700306692751-1fd5f2b88443?${IMG_Q}&w=900`,
   cap3: `https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?${IMG_Q}&w=900`,
   cap4: `https://images.unsplash.com/photo-1600047509358-9dc75507daeb?${IMG_Q}&w=900`,
-  project1: `https://images.unsplash.com/photo-1600585154526-990dced4db0d?${IMG_Q}&w=1200`,
-  project2: `https://images.unsplash.com/photo-1618210243602-43df858682a7?${IMG_Q}&w=1200`,
-  project3: `https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?${IMG_Q}&w=1200`,
-  project4: `https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?${IMG_Q}&w=1200`,
+  project1: `https://images.unsplash.com/photo-1600607687644-c7171b42498f?${IMG_Q}&w=1200`,
+  project2: `https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?${IMG_Q}&w=1200`,
+  project3: `https://images.unsplash.com/photo-1700306692751-1fd5f2b88443?${IMG_Q}&w=1200`,
+  project4: `https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?${IMG_Q}&w=1200`,
 } as const;
 
 export const LUXURY_PROJECT_IMAGES = [
