@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
-import { DesignHomePage } from "@/modules/design/components/design-home-page";
-import { getDesignMessages } from "@/shared/i18n/messages/design";
+import { LuxuryHomePage } from "@/modules/luxury/components/luxury-home-page";
+import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import { getLocale } from "@/shared/i18n/server";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
-  const t = getDesignMessages(locale);
+  const t = getLuxuryMessages(locale);
 
   return {
-    title: locale === "ar" ? "توريفا العقارية للديكور والمقاولات" : "Turriva Real Estate — Decor & Contracting",
+    title:
+      locale === "ar"
+        ? "توريفا العقارية | ديكور ثابت وتشطيبات فاخرة"
+        : "Turriva Real Estate | Luxury fit-out & fixed decor",
     description: t.hero.subtitle,
     openGraph: {
-      title: t.hero.title,
+      title: t.hero.title.replace("\n", " "),
       description: t.hero.subtitle,
       locale: locale === "ar" ? "ar_SA" : "en_US",
     },
@@ -20,5 +23,5 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function HomePage() {
   const locale = await getLocale();
-  return <DesignHomePage locale={locale} />;
+  return <LuxuryHomePage locale={locale} />;
 }

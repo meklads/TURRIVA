@@ -5,7 +5,10 @@ import {
   LUXURY_IMAGES,
 } from "@/shared/i18n/messages/luxury";
 import type { Locale } from "@/shared/i18n/locale";
+import { LuxuryCapabilitiesSection } from "./luxury-capabilities-section";
 import { LuxuryHomeHero } from "./luxury-home-hero";
+import { LuxuryPartnershipSection } from "./luxury-partnership-section";
+import { LuxurySpotlightSection } from "./luxury-spotlight-section";
 import {
   Compass,
   Gem,
@@ -32,16 +35,13 @@ export function LuxuryHomePage({ locale }: Props) {
 
   const whyIcons = [Compass, Gem, Ruler, Clock];
 
-  const projectImages = [
-    LUXURY_IMAGES.project1,
-    LUXURY_IMAGES.project2,
-    LUXURY_IMAGES.project3,
-    LUXURY_IMAGES.project4,
-  ];
-
   return (
     <>
       <LuxuryHomeHero locale={locale} />
+
+      <LuxuryCapabilitiesSection messages={t} />
+
+      <LuxuryPartnershipSection locale={locale} messages={t} />
 
       {/* Services */}
       <section id="services" className="lux-section lux-section--cream scroll-mt-24">
@@ -108,30 +108,31 @@ export function LuxuryHomePage({ locale }: Props) {
         </div>
       </section>
 
-      {/* Projects */}
+      <LuxurySpotlightSection messages={t} />
+
       <section className="lux-section lux-section--cream">
         <div className="lux-container text-center">
           <p className="lux-eyebrow">{t.projects.eyebrow}</p>
           <div className="lux-divider-gold" />
           <h2 className="lux-display mt-6 text-3xl sm:text-4xl">{t.projects.title}</h2>
         </div>
-        <div className="lux-container mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {projectImages.map((src, i) => (
+        <div className="lux-container mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[LUXURY_IMAGES.project1, LUXURY_IMAGES.project2, LUXURY_IMAGES.project3].map((src) => (
             <div
               key={src}
-              className="group relative aspect-[3/4] overflow-hidden rounded-xl shadow-lux-card"
+              className="group relative aspect-[4/5] overflow-hidden rounded-xl shadow-lux-card"
             >
               <Image
                 src={src}
                 alt=""
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes="(max-width: 768px) 50vw, 25vw"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
             </div>
           ))}
         </div>
-        <div className="lux-container mt-12 text-center">
+        <div className="lux-container mt-10 text-center">
           <Link href="/our-work" className="lux-btn-outline">
             {t.projects.cta}
           </Link>

@@ -10,13 +10,15 @@
   --lux-ink: #2f2f2f;
   --lux-ink-soft: #5a534c;
   --lux-ink-muted: #8a827a;
+  --lux-teal-deep: #0c4a5e;
+  --lux-teal-mid: #1a6b7a;
   background: var(--lux-ivory);
   color: var(--lux-ink);
-  font-family: var(--font-latin), system-ui, sans-serif;
+  font-family: var(--font-marketing-latin), var(--font-latin), system-ui, sans-serif;
 }
 
 [dir="rtl"] .lux-shell {
-  font-family: var(--font-ar), "Segoe UI", sans-serif;
+  font-family: var(--font-marketing-ar), var(--font-ar), "Segoe UI", sans-serif;
 }
 
 .lux-container {
@@ -401,5 +403,94 @@
 
 .lux-footer-promo:hover .lux-footer-promo__cta {
   color: #9a7848;
+}
+
+.lux-section--partnership {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--lux-teal-deep) 92%, black) 0%,
+    color-mix(in srgb, var(--lux-teal-mid) 88%, #0f172a) 100%
+  );
+  color: #f8fafc;
+}
+
+.lux-section--partnership .lux-eyebrow,
+.lux-section--partnership .lux-display,
+.lux-section--partnership .lux-body {
+  color: inherit;
+}
+
+.lux-section--partnership .lux-body {
+  color: color-mix(in srgb, white 82%, transparent);
+}
+
+.lux-section--partnership .lux-divider-gold {
+  background: var(--lux-gold-light);
+}
+
+.lux-partnership-grid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .lux-partnership-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3rem;
+  }
+}
+
+.lux-partnership-panel {
+  border-radius: 1rem;
+  border: 1px solid color-mix(in srgb, white 12%, transparent);
+  background: color-mix(in srgb, white 6%, transparent);
+  padding: 2rem;
+}
+
+.lux-partnership-panel-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.lux-partnership-stat {
+  font-family: var(--font-marketing-latin), var(--font-latin-display), serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--lux-gold-light);
+}
+
+.lux-partnership-stat-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, white 65%, transparent);
+}
+
+.lux-cap-card,
+.lux-spot-card {
+  border-radius: 1rem;
+  border: 1px solid color-mix(in srgb, var(--lux-sand) 80%, transparent);
+  background: white;
+  padding: 1.75rem;
+  box-shadow: 0 8px 32px rgba(47, 47, 47, 0.04);
+}
+
+.lux-cap-index {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--lux-gold);
+}
+
+.lux-nav-link {
+  font-family: var(--font-marketing-latin), var(--font-latin), system-ui, sans-serif;
+}
+
+[dir="rtl"] .lux-nav-link {
+  font-family: var(--font-marketing-ar), var(--font-ar), sans-serif;
+  letter-spacing: 0.02em;
+  text-transform: none;
 }
 

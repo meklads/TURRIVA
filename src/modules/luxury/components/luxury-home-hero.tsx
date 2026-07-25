@@ -17,6 +17,7 @@ export function LuxuryHomeHero({ locale }: Props) {
         <div className="lux-hero-copy">
           <div className="lux-hero-watermark" aria-hidden />
           <div className="lux-hero-copy-inner lux-reveal">
+            <p className="lux-eyebrow">{t.hero.eyebrow}</p>
             <h1 className="lux-display whitespace-pre-line text-[2rem] leading-[1.14] sm:text-[2.65rem] lg:text-[3rem] lg:leading-[1.12]">
               {t.hero.title}
             </h1>
