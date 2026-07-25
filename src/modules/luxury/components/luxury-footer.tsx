@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Phone } from "lucide-react";
 import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import { getLocale } from "@/shared/i18n/server";
-import { TURRIVA_LOGO_SRC } from "./luxury-brand-logo";
+import { TURRIVA_LOGO_SRC, TURRIVA_LOGO_HEIGHT, TURRIVA_LOGO_WIDTH } from "./luxury-brand-logo";
 import { GraphicsHouseLogo } from "@/shared/components/graphics-house-logo";
 import { TURRIVA_PUBLIC_HOST, TURRIVA_PUBLIC_URL } from "@/shared/constants/brand";
 
@@ -87,9 +87,11 @@ export async function LuxuryFooter() {
               <Image
                 src={TURRIVA_LOGO_SRC}
                 alt=""
-                width={1536}
-                height={1024}
+                width={TURRIVA_LOGO_WIDTH}
+                height={TURRIVA_LOGO_HEIGHT}
                 className="lux-footer-logo"
+                quality={100}
+                unoptimized
               />
             </Link>
             <p className="lux-footer-about">{t.footer.about}</p>
@@ -200,9 +202,11 @@ export async function LuxuryFooter() {
             <Image
               src={TURRIVA_LOGO_SRC}
               alt=""
-              width={1536}
-              height={1024}
+              width={TURRIVA_LOGO_WIDTH}
+              height={TURRIVA_LOGO_HEIGHT}
               className="lux-footer-mark-img"
+              quality={100}
+              unoptimized
             />
           </Link>
         </div>

@@ -4,10 +4,14 @@ import Link from "next/link";
 /** Official Turriva lockup — `public/brand/turriva/turriva logo.png` */
 export const TURRIVA_LOGO_SRC = "/brand/turriva/turriva-logo.png";
 
-const LOGO_WIDTH = 1536;
-const LOGO_HEIGHT = 1024;
+export const TURRIVA_LOGO_WIDTH = 2304;
+export const TURRIVA_LOGO_HEIGHT = 1536;
 
-const LUXURY_LOGO_CLASS = "h-[7.5rem] w-auto sm:h-[8.25rem] lg:h-36";
+const LOGO_WIDTH = TURRIVA_LOGO_WIDTH;
+const LOGO_HEIGHT = TURRIVA_LOGO_HEIGHT;
+
+/** Header lockup — 1.5× previous shell size */
+const LUXURY_LOGO_CLASS = "h-[11.25rem] w-auto sm:h-[12.375rem] lg:h-[13.5rem]";
 
 type Props = {
   href?: string;
@@ -30,10 +34,11 @@ export function LuxuryBrandLogo({
       alt="توريفا العقارية — Turriva Real Estate"
       width={LOGO_WIDTH}
       height={LOGO_HEIGHT}
-      className={`block w-auto max-w-[min(100%,36rem)] object-contain object-start ${className}`}
+      className={`block w-auto max-w-[min(100%,54rem)] object-contain object-start ${className}`}
       priority={priority}
       quality={100}
-      sizes="(max-width: 640px) 540px, (max-width: 1024px) 660px, 780px"
+      unoptimized
+      sizes="(max-width: 640px) 810px, (max-width: 1024px) 990px, 1170px"
     />
   );
 
