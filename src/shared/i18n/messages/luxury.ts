@@ -590,6 +590,7 @@ export function getLuxuryMessages(locale: Locale): LuxuryMessages {
 const IMG_Q = "auto=format&fit=crop&q=90";
 export const LUXURY_IMAGES = {
   hero: "/brand/luxury/hero-villa.jpg",
+  contact: "/brand/turriva/turriva-office.png",
   intro: `https://images.unsplash.com/photo-1700306692751-1fd5f2b88443?${IMG_Q}&w=1600`,
   execution: `https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?${IMG_Q}&w=1600`,
   interior: `https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?${IMG_Q}&w=1400`,
