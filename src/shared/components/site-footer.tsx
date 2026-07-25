@@ -82,7 +82,7 @@ export async function SiteFooter() {
             <p className="mt-4 text-xs text-ruwaq-ink-muted">{t.site.footer.address}</p>
             <p className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-2 text-xs text-ruwaq-ink-muted">
               <span>{t.site.footer.sponsoredBy}</span>
-              <GraphicsHouseLogo variant="mark" className="h-7 w-auto sm:h-8" />
+              <GraphicsHouseLogo variant="light" />
             </p>
           </div>
         </div>

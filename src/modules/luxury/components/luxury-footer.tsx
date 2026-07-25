@@ -2,6 +2,8 @@ import Link from "next/link";
 import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import { getLocale } from "@/shared/i18n/server";
 import { LuxuryBrandLogo } from "./luxury-brand-logo";
+import { GraphicsHouseLogo } from "@/shared/components/graphics-house-logo";
+import { TURRIVA_PUBLIC_HOST, TURRIVA_PUBLIC_URL } from "@/shared/constants/brand";
 
 const GRAPHICS_HOUSE_URL = "https://3dgraphicshouse.com/";
 
@@ -49,9 +51,13 @@ export async function LuxuryFooter() {
       <div className="lux-container py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <LuxuryBrandLogo href="/" />
+            <LuxuryBrandLogo href="/" legacyRuwaqRaster />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-lux-ink-soft">
               {t.footer.about}
+            </p>
+            <p className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-2 text-xs text-lux-ink-muted">
+              <span>{t.footer.sponsoredBy}</span>
+              <GraphicsHouseLogo variant="light" />
             </p>
           </div>
 
@@ -168,6 +174,9 @@ export async function LuxuryFooter() {
             <Link href="/terms" className="hover:text-lux-gold">
               {t.footer.terms}
             </Link>
+            <a href={TURRIVA_PUBLIC_URL} className="hover:text-lux-gold" dir="ltr">
+              {TURRIVA_PUBLIC_HOST}
+            </a>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import Image from "next/image";
 type Props = {
   href?: string;
   className?: string;
+  /** Prefer full wordmark on light/dark backgrounds. "mark" is dark-bg only (black plate). */
   variant?: "light" | "dark" | "mark";
   priority?: boolean;
 };
@@ -19,26 +20,27 @@ const LOGO_DIMS = {
   mark: { width: 900, height: 200 },
 } as const;
 
-export const GRAPHICS_HOUSE_LOGO_CLASS = "h-8 w-auto sm:h-9";
+export const GRAPHICS_HOUSE_LOGO_CLASS = "h-9 w-auto max-w-[200px] sm:h-10 sm:max-w-[240px]";
 
 export function GraphicsHouseLogo({
   href = "https://3dgraphicshouse.com",
   className = GRAPHICS_HOUSE_LOGO_CLASS,
-  variant = "mark",
+  variant = "light",
   priority = false,
 }: Props) {
-  const { width, height } = LOGO_DIMS[variant];
+  const resolvedVariant = variant === "mark" ? "light" : variant;
+  const { width, height } = LOGO_DIMS[resolvedVariant];
 
   const logo = (
     <Image
-      src={LOGO_SRC[variant]}
+      src={LOGO_SRC[resolvedVariant]}
       alt="Graphics House"
       width={width}
       height={height}
-      className={`block w-auto ${className}`}
+      className={`block w-auto object-contain object-left ${className}`}
       priority={priority}
       quality={95}
-      sizes="(max-width: 640px) 140px, 180px"
+      sizes="(max-width: 640px) 160px, 240px"
     />
   );
 

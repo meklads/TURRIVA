@@ -86,6 +86,7 @@ export type LuxuryMessages = {
     phone: string;
     poweredByPrefix: string;
     poweredByLink: string;
+    sponsoredBy: string;
   };
   pages: {
     interiorDesign: { title: string; intro: string };
@@ -274,6 +275,7 @@ const en: LuxuryMessages = {
     phone: "+966 50 278 6513",
     poweredByPrefix: "Turriva by",
     poweredByLink: "Graphics House",
+    sponsoredBy: "Turriva Real Estate is powered by",
   },
   pages: {
     interiorDesign: {
@@ -480,6 +482,7 @@ const ar: LuxuryMessages = {
     phone: "+966 50 278 6513",
     poweredByPrefix: "توريفا العقارية بواسطة",
     poweredByLink: "جرافيكس هاوس",
+    sponsoredBy: "توريفا العقارية برعاية",
   },
   pages: {
     interiorDesign: {
