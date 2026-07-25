@@ -606,7 +606,8 @@ export const en: Messages = {
    ],
   },
   footer: {
-   tagline: "Professionalism builds trust, the easiest, most trusted real estate & engineering proposals.",
+   tagline:
+    "Turriva Real Estate — Saudi decor and contracting: fixed finishing for villas, apartments, palaces & shops, plus exhibition booths in Jeddah and Makkah.",
    address: "Jeddah, Al-Zahra District, Saudi Arabia",
    product: "Product",
    company: "Company",
