@@ -108,7 +108,7 @@ export async function LuxuryFooter() {
                   <LayoutGrid className="h-4 w-4" strokeWidth={1.5} />
                 </span>
                 <Image
-                  src="/brand/ruwaq/logo-on-light.png"
+                  src="/brand/turriva/logo-on-light.png"
                   alt=""
                   width={1248}
                   height={492}

@@ -1169,6 +1169,36 @@
     image-rendering: -webkit-optimize-contrast;
   }
 
+  .turriva-brand-lockup {
+    @apply inline-flex max-w-none items-center gap-2.5 sm:gap-3;
+    height: inherit;
+    max-height: 100%;
+  }
+
+  .turriva-brand-motif {
+    @apply block h-[88%] w-auto max-w-[4.5rem] shrink-0 object-contain sm:max-w-[5rem];
+  }
+
+  .turriva-brand-wordmark {
+    @apply flex min-w-0 flex-col justify-center leading-none;
+  }
+
+  .turriva-brand-ar {
+    @apply font-display text-[0.95rem] font-bold tracking-tight text-ruwaq-navy sm:text-[1.05rem] lg:text-[1.15rem];
+  }
+
+  .turriva-brand-en {
+    @apply mt-1 font-display text-[0.62rem] font-medium uppercase tracking-[0.28em] text-ruwaq-gold sm:text-[0.68rem];
+  }
+
+  .turriva-brand-lockup--dark .turriva-brand-ar {
+    @apply text-white;
+  }
+
+  .turriva-brand-lockup--dark .turriva-brand-en {
+    @apply text-ruwaq-gold;
+  }
+
   .proposal-section {
     @apply rounded-3xl border border-ruwaq-stone/50 bg-white p-6 shadow-ruwaq;
   }

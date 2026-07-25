@@ -137,6 +137,14 @@
   max-width: min(100%, 22rem);
 }
 
+.turriva-brand-lockup {
+  max-width: min(100%, 20rem);
+}
+
+.turriva-brand-ar {
+  font-family: var(--font-ar), sans-serif;
+}
+
 .design-nav-link {
   display: inline-flex;
   align-items: center;

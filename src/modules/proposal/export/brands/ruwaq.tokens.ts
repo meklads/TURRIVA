@@ -31,9 +31,9 @@ export const ruwaqBrand = {
     taglineEn: "Professionalism builds trust",
   },
   assets: {
-    logoOnLight: "/brand/ruwaq/logo-on-light.png",
-    logoOnDark: "/brand/ruwaq/logo-on-dark.png",
-    logoFullDark: "/brand/ruwaq/logo-full-dark.png",
+    logoOnLight: "/brand/turriva/logo-on-light.png",
+    logoOnDark: "/brand/turriva/logo-on-dark.png",
+    logoFullDark: "/brand/turriva/logo-full-dark.png",
   },
 } as const;
 

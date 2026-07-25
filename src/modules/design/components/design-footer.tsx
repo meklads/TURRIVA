@@ -34,7 +34,7 @@ export async function DesignFooter() {
                 <LayoutGrid className="h-4 w-4" strokeWidth={1.5} />
               </span>
               <Image
-                src="/brand/ruwaq/logo-transparent.png"
+                src="/brand/turriva/logo-transparent.png"
                 alt=""
                 width={1774}
                 height={887}
