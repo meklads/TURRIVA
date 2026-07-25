@@ -78,6 +78,7 @@ export async function LuxuryFooter() {
 
   return (
     <footer className="lux-footer">
+      <div className="lux-footer-accent" aria-hidden />
       <div className="lux-footer-watermark" aria-hidden />
 
       <div className="lux-container lux-footer-inner">

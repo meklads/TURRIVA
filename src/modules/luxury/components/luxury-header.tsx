@@ -12,7 +12,7 @@ export async function LuxuryHeader() {
   const t = getLuxuryMessages(locale);
 
   return (
-    <header className="lux-header">
+    <header className="lux-header lux-header--elevated">
       <div className="lux-container">
         <div className="lux-header-bar">
           <div className="lux-header-logo">

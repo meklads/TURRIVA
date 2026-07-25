@@ -40,14 +40,18 @@ export function LuxuryHomeHero({ locale }: Props) {
         </div>
 
         <div className="lux-hero-media">
-          <Image
-            src={LUXURY_HERO_IMAGE}
-            alt=""
-            fill
-            priority
-            className="object-cover object-center"
-            sizes="(max-width: 1024px) 100vw, 56vw"
-          />
+          <div className="lux-hero-media-frame">
+            <Image
+              src={LUXURY_HERO_IMAGE}
+              alt=""
+              fill
+              priority
+              quality={92}
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 56vw"
+            />
+            <div className="lux-hero-media-vignette" aria-hidden />
+          </div>
           <div className="lux-hero-media-fade" aria-hidden />
         </div>
       </div>

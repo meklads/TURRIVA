@@ -13,4 +13,4 @@ export function getLuxuryNavLinks(locale: Locale) {
   ] as const;
 }
 
-export const LUXURY_HERO_IMAGE = "/brand/luxury/hero-villa.jpg";
+export const LUXURY_HERO_IMAGE = "/brand/turriva/hero-turriva.png";

@@ -28,17 +28,11 @@ export function LuxuryDesktopNav({ links }: { links: readonly NavLink[] }) {
         <Link
           key={link.href}
           href={link.href}
-          className={`lux-nav-link relative shrink-0 whitespace-nowrap ${
-            isActive(link.href) ? "text-lux-gold" : ""
+          className={`lux-nav-link shrink-0 whitespace-nowrap ${
+            isActive(link.href) ? "lux-nav-link--active" : ""
           }`}
         >
           {link.label}
-          {isActive(link.href) && (
-            <span
-              className="absolute inset-x-0 -bottom-px mx-auto h-px w-6 bg-lux-gold"
-              aria-hidden
-            />
-          )}
         </Link>
       ))}
     </nav>
@@ -50,7 +44,7 @@ export function LuxuryMobileNav({ links }: { links: readonly NavLink[] }) {
 
   return (
     <nav
-      className="flex gap-2 overflow-x-auto border-t border-lux-sand/40 py-3 xl:hidden"
+      className="lux-header-mobile flex gap-2 overflow-x-auto border-t border-lux-sand/40 py-3.5 xl:hidden"
       aria-label="Mobile"
     >
       {links.map((link) => (
