@@ -89,6 +89,8 @@ export type LuxuryMessages = {
       egypt: string;
     };
     contact: string;
+    callNow: string;
+    followUs: string;
     copyright: string;
     privacy: string;
     terms: string;
@@ -300,7 +302,9 @@ const en: LuxuryMessages = {
       bahrain: "Bahrain",
       egypt: "Egypt",
     },
-    contact: "Contact Us",
+    contact: "Contact",
+    callNow: "Call now",
+    followUs: "Follow us",
     copyright: "© Turriva Real Estate. All rights reserved.",
     privacy: "Privacy Policy",
     terms: "Terms of Use",
@@ -535,6 +539,8 @@ const ar: LuxuryMessages = {
       egypt: "مصر",
     },
     contact: "تواصل معنا",
+    callNow: "اتصل الآن",
+    followUs: "تابعنا على:",
     copyright: "© توريفا العقارية. جميع الحقوق محفوظة.",
     privacy: "سياسة الخصوصية",
     terms: "شروط الاستخدام",

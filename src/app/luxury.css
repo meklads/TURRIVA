@@ -725,3 +725,335 @@
   text-transform: none;
 }
 
+/* Footer — GH grid layout, Turriva ink/ivory palette */
+.lux-footer {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    165deg,
+    color-mix(in srgb, var(--lux-ink) 96%, #0d0d0d) 0%,
+    var(--lux-ink) 45%,
+    color-mix(in srgb, var(--lux-ink) 88%, #2a2826) 100%
+  );
+  color: color-mix(in srgb, var(--lux-ivory) 92%, white);
+}
+
+.lux-footer-watermark {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: url("/brand/turriva/turriva-logo.png") no-repeat center 55% / min(85%, 42rem);
+  opacity: 0.055;
+  filter: brightness(0) invert(1);
+}
+
+.lux-footer-inner {
+  position: relative;
+  z-index: 1;
+  padding-block: 3.5rem 2rem;
+}
+
+@media (min-width: 1024px) {
+  .lux-footer-inner {
+    padding-block: 4rem 2.25rem;
+  }
+}
+
+.lux-footer-top {
+  display: grid;
+  gap: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .lux-footer-top {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.45fr);
+    gap: 3rem;
+    align-items: start;
+  }
+}
+
+.lux-footer-logo-link {
+  display: inline-block;
+}
+
+.lux-footer-logo {
+  display: block;
+  height: auto;
+  width: auto;
+  max-height: 4.5rem;
+  max-width: min(100%, 14rem);
+  object-fit: contain;
+  object-position: start;
+  filter: brightness(0) invert(1);
+}
+
+.lux-footer-about {
+  margin-top: 1.25rem;
+  max-width: 22rem;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: color-mix(in srgb, var(--lux-ivory) 72%, transparent);
+}
+
+.lux-footer-partner {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: color-mix(in srgb, var(--lux-ivory) 55%, transparent);
+}
+
+.lux-footer-nav-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .lux-footer-nav-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem 2rem;
+  }
+}
+
+.lux-footer-col-title {
+  margin: 0;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--lux-sand) 55%, transparent);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--lux-ivory);
+}
+
+[dir="rtl"] .lux-footer-col-title {
+  letter-spacing: 0;
+  font-size: 0.9375rem;
+}
+
+.lux-footer-links {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lux-footer-links a {
+  display: inline-block;
+  padding-block: 0.35rem;
+  font-size: 0.875rem;
+  color: color-mix(in srgb, var(--lux-ivory) 78%, transparent);
+  transition: color 0.2s ease;
+}
+
+.lux-footer-links a:hover {
+  color: var(--lux-ivory);
+}
+
+.lux-footer-contact-line {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--lux-ivory) 65%, transparent);
+}
+
+.lux-footer-contact-line:hover {
+  color: var(--lux-ivory);
+}
+
+.lux-footer-rule {
+  margin-block: 2.25rem;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--lux-sand) 70%, transparent) 20%,
+    color-mix(in srgb, var(--lux-sand) 70%, transparent) 80%,
+    transparent
+  );
+}
+
+.lux-footer-offices {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .lux-footer-offices {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lux-footer-offices {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+.lux-footer-office-title {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--lux-ivory);
+}
+
+.lux-footer-office-lines {
+  margin-top: 0.65rem;
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  color: color-mix(in srgb, var(--lux-ivory) 62%, transparent);
+}
+
+.lux-footer-office-lines p {
+  margin: 0;
+}
+
+.lux-footer-call {
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid color-mix(in srgb, var(--lux-ivory) 45%, transparent);
+  border-radius: 9999px;
+  padding: 0.45rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--lux-ivory);
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.lux-footer-call:hover {
+  background: color-mix(in srgb, var(--lux-ivory) 8%, transparent);
+  border-color: color-mix(in srgb, var(--lux-ivory) 70%, transparent);
+}
+
+.lux-footer-social-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .lux-footer-social-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.lux-footer-follow {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--lux-ivory) 85%, transparent);
+}
+
+.lux-footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.lux-footer-social-btn {
+  display: flex;
+  height: 2.25rem;
+  width: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in srgb, var(--lux-sand) 50%, transparent);
+  background: color-mix(in srgb, var(--lux-ivory) 6%, transparent);
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--lux-ivory);
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.lux-footer-social-btn:hover {
+  background: color-mix(in srgb, var(--lux-ivory) 14%, transparent);
+  border-color: color-mix(in srgb, var(--lux-ivory) 50%, transparent);
+}
+
+.lux-footer-bottom {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .lux-footer-bottom {
+    grid-template-columns: 1fr auto auto;
+    gap: 1.5rem;
+  }
+}
+
+.lux-footer-legal {
+  margin: 0;
+  font-size: 0.6875rem;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--lux-ivory) 55%, transparent);
+}
+
+.lux-footer-legal a {
+  color: color-mix(in srgb, var(--lux-ivory) 78%, transparent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.lux-footer-legal a:hover {
+  color: var(--lux-ivory);
+}
+
+.lux-footer-legal-sep {
+  opacity: 0.45;
+}
+
+.lux-footer-legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  font-size: 0.6875rem;
+}
+
+.lux-footer-legal-links a {
+  color: color-mix(in srgb, var(--lux-ivory) 65%, transparent);
+  transition: color 0.2s ease;
+}
+
+.lux-footer-legal-links a:hover {
+  color: var(--lux-ivory);
+}
+
+.lux-footer-mark {
+  justify-self: end;
+  opacity: 0.85;
+}
+
+.lux-footer-mark-img {
+  display: block;
+  height: 2rem;
+  width: auto;
+  max-width: 3.5rem;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+}
+
+[dir="rtl"] .lux-footer-mark {
+  justify-self: start;
+}
+
+.lux-footer .lux-powered-by {
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+[dir="rtl"] .lux-footer .lux-powered-by {
+  font-family: var(--font-tajawal), var(--font-marketing-ar), sans-serif;
+}
+
