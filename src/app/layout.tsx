@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Almarai, Amiri, IBM_Plex_Sans_Arabic, Inter, Montserrat, Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import { Almarai, Amiri, IBM_Plex_Sans_Arabic, Inter, Montserrat, Playfair_Display, Tajawal } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { getLocale } from "@/shared/i18n/server";
@@ -20,9 +20,10 @@ const amiri = Amiri({
   display: "swap",
 });
 
+/** Graphics House ProjectLaunch™ — Inter (EN) */
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-inter",
   display: "swap",
 });
@@ -41,11 +42,11 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-/** Marketing site — matches Graphics House ProjectLaunch™ stack */
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-marketing-latin",
+/** ProjectLaunch™ Arabic — Tajawal + IBM Plex Sans Arabic */
+const tajawal = Tajawal({
+  subsets: ["arabic"],
+  weight: ["200", "300", "400", "500", "700"],
+  variable: "--font-tajawal",
   display: "swap",
 });
 
@@ -83,7 +84,7 @@ export default async function RootLayout({
       lang={locale}
       dir={dir}
       data-lang={locale}
-      className={`${almarai.variable} ${amiri.variable} ${inter.variable} ${montserrat.variable} ${playfair.variable} ${plusJakarta.variable} ${ibmPlexArabic.variable}`}
+      className={`${almarai.variable} ${amiri.variable} ${inter.variable} ${montserrat.variable} ${playfair.variable} ${tajawal.variable} ${ibmPlexArabic.variable}`}
     >
       <body
         className={`min-h-screen bg-white ${locale === "ar" ? almarai.className : montserrat.className}`}

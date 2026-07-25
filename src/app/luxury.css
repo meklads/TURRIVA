@@ -15,13 +15,13 @@
   --lux-teal-mid: #171717;
   background: var(--lux-ivory);
   color: var(--lux-ink);
-  font-family: var(--font-marketing-latin), var(--font-latin), system-ui, sans-serif;
+  font-family: var(--font-inter), var(--font-latin), system-ui, sans-serif;
   font-size: clamp(0.9375rem, 1.4vw, 1.0625rem);
   line-height: 1.65;
 }
 
 [dir="rtl"] .lux-shell {
-  font-family: var(--font-marketing-ar), var(--font-ar), "Segoe UI", sans-serif;
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), "Segoe UI", sans-serif;
 }
 
 .lux-container {
@@ -30,21 +30,21 @@
 
 .lux-eyebrow {
   @apply text-[0.6875rem] font-semibold uppercase tracking-[0.22em] text-lux-ink-muted;
-  font-family: var(--font-marketing-latin), system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
 }
 
 [dir="rtl"] .lux-eyebrow {
-  font-family: var(--font-marketing-ar), var(--font-ar), sans-serif;
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
   @apply normal-case tracking-normal text-sm font-medium text-lux-ink-muted;
 }
 
 .lux-display {
-  font-family: var(--font-marketing-latin), var(--font-latin), system-ui, sans-serif;
+  font-family: var(--font-inter), var(--font-latin), system-ui, sans-serif;
   @apply font-semibold tracking-[-0.03em] text-lux-ink;
 }
 
 [dir="rtl"] .lux-display {
-  font-family: var(--font-marketing-ar), var(--font-ar), sans-serif;
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
   @apply font-bold tracking-normal;
 }
 
@@ -62,21 +62,21 @@
 .lux-body {
   @apply leading-relaxed text-lux-ink-soft;
   font-size: clamp(0.9375rem, 1.35vw, 1.0625rem);
-  font-family: var(--font-marketing-latin), system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
 }
 
 [dir="rtl"] .lux-body {
-  font-family: var(--font-marketing-ar), var(--font-ar), sans-serif;
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
   line-height: 1.75;
 }
 
 .lux-btn-primary {
   @apply inline-flex min-w-[11rem] items-center justify-center rounded-sm bg-lux-ink px-7 py-3.5 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:bg-lux-gold-light;
-  font-family: var(--font-marketing-latin), system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
 }
 
 [dir="rtl"] .lux-btn-primary {
-  font-family: var(--font-marketing-ar), var(--font-ar), sans-serif;
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
   @apply normal-case tracking-normal text-sm font-semibold;
 }
 
@@ -90,11 +90,11 @@
 
 .lux-btn-outline-gold {
   @apply inline-flex min-w-[11rem] items-center justify-center rounded-sm border border-lux-ink bg-transparent px-7 py-3.5 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-lux-ink transition-all duration-300 hover:bg-lux-ink hover:text-white;
-  font-family: var(--font-marketing-latin), system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
 }
 
 [dir="rtl"] .lux-btn-outline-gold {
-  font-family: var(--font-marketing-ar), var(--font-ar), sans-serif;
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
   @apply normal-case tracking-normal text-sm font-semibold;
 }
 
@@ -142,7 +142,7 @@
 
 .lux-nav-link {
   @apply relative pb-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-lux-ink transition-colors duration-200 hover:text-lux-ink-soft xl:text-[11px];
-  font-family: var(--font-marketing-latin), system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
 }
 
 /* Header */
@@ -474,7 +474,7 @@
 }
 
 .lux-partnership-stat {
-  font-family: var(--font-marketing-latin), system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 600;
   letter-spacing: -0.03em;
@@ -604,14 +604,14 @@
 
 .lux-stat-value {
   display: block;
-  font-family: var(--font-marketing-latin), system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: 600;
   letter-spacing: -0.03em;
 }
 
 [dir="rtl"] .lux-stat-value {
-  font-family: var(--font-marketing-ar), var(--font-ar), sans-serif;
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
 }
 
 .lux-stat-label {
@@ -716,11 +716,11 @@
 }
 
 .lux-nav-link {
-  font-family: var(--font-marketing-latin), var(--font-latin), system-ui, sans-serif;
+  font-family: var(--font-inter), var(--font-latin), system-ui, sans-serif;
 }
 
 [dir="rtl"] .lux-nav-link {
-  font-family: var(--font-marketing-ar), var(--font-ar), sans-serif;
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
   letter-spacing: 0.02em;
   text-transform: none;
 }
