@@ -70,7 +70,7 @@ export async function LuxuryFooter() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-lux-ink-soft transition-colors hover:text-lux-gold"
+                    className="text-sm text-lux-ink-soft transition-colors hover:text-lux-ink"
                   >
                     {link.label}
                   </Link>
@@ -86,7 +86,7 @@ export async function LuxuryFooter() {
             <ul className="mt-5 space-y-3">
               {servicesLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-lux-ink-soft transition-colors hover:text-lux-gold">
+                  <Link href={link.href} className="text-sm text-lux-ink-soft transition-colors hover:text-lux-ink">
                     {link.label}
                   </Link>
                 </li>
@@ -109,7 +109,7 @@ export async function LuxuryFooter() {
                       <div key={line}>{line}</div>
                     ))}
                   </div>
-                  <a href={`tel:${office.phone}`} dir="ltr" className="inline-block text-lux-gold hover:underline">
+                  <a href={`tel:${office.phone}`} dir="ltr" className="inline-block text-lux-ink hover:underline">
                     {office.phone}
                   </a>
                 </div>
@@ -124,7 +124,7 @@ export async function LuxuryFooter() {
             <ul className="mt-5 space-y-3 text-sm text-lux-ink-soft">
               <li>{t.footer.address}</li>
               <li>
-                <a href={`mailto:${t.footer.email}`} className="hover:text-lux-gold">
+                <a href={`mailto:${t.footer.email}`} className="hover:text-lux-ink">
                   {t.footer.email}
                 </a>
               </li>
@@ -133,14 +133,14 @@ export async function LuxuryFooter() {
             <div className="mt-5 flex gap-3">
               <a
                 href="https://instagram.com"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-lux-sand text-[10px] font-semibold uppercase tracking-wider text-lux-gold transition-colors hover:border-lux-gold"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-lux-sand text-[10px] font-semibold uppercase tracking-wider text-lux-ink transition-colors hover:border-lux-ink hover:text-lux-ink"
                 aria-label="Instagram"
               >
                 IG
               </a>
               <a
                 href="https://linkedin.com"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-lux-sand text-[10px] font-semibold uppercase tracking-wider text-lux-gold transition-colors hover:border-lux-gold"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-lux-sand text-[10px] font-semibold uppercase tracking-wider text-lux-ink transition-colors hover:border-lux-ink hover:text-lux-ink"
                 aria-label="LinkedIn"
               >
                 IN
@@ -168,13 +168,13 @@ export async function LuxuryFooter() {
             </span>
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-            <Link href="/privacy" className="hover:text-lux-gold">
+            <Link href="/privacy" className="hover:text-lux-ink">
               {t.footer.privacy}
             </Link>
-            <Link href="/terms" className="hover:text-lux-gold">
+            <Link href="/terms" className="hover:text-lux-ink">
               {t.footer.terms}
             </Link>
-            <a href={TURRIVA_PUBLIC_URL} className="hover:text-lux-gold" dir="ltr">
+            <a href={TURRIVA_PUBLIC_URL} className="hover:text-lux-ink" dir="ltr">
               {TURRIVA_PUBLIC_HOST}
             </a>
           </div>
