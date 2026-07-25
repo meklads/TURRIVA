@@ -18,7 +18,7 @@ export function LuxuryHomeHero({ locale }: Props) {
           <div className="lux-hero-watermark" aria-hidden />
           <div className="lux-hero-copy-inner lux-reveal">
             <p className="lux-eyebrow">{t.hero.eyebrow}</p>
-            <h1 className="lux-display whitespace-pre-line text-[2rem] leading-[1.14] sm:text-[2.65rem] lg:text-[3rem] lg:leading-[1.12]">
+            <h1 className="lux-display text-[2rem] leading-[1.14] sm:text-[2.65rem] lg:text-[3rem] lg:leading-[1.12]">
               {t.hero.title}
             </h1>
             <div className="lux-flourish" aria-hidden>
@@ -29,8 +29,11 @@ export function LuxuryHomeHero({ locale }: Props) {
             <p className="lux-body max-w-md text-[15px] leading-[1.75] sm:text-base">
               {t.hero.subtitle}
             </p>
+            <p className="mt-3 text-sm font-medium tracking-wide text-lux-ink-muted">
+              {t.hero.servicesLine}
+            </p>
             <div className="mt-8 flex flex-wrap gap-3 sm:mt-9">
-              <Link href="#services" className="lux-btn-primary">
+              <Link href="/contact" className="lux-btn-primary">
                 {t.hero.ctaPrimary}
               </Link>
               <Link href="/our-work" className="lux-btn-outline-gold">

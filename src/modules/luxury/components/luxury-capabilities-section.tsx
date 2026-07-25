@@ -14,7 +14,7 @@ export function LuxuryCapabilitiesSection({ messages }: Props) {
         <div className="lux-divider-gold" />
         <h2 className="lux-display mt-6 text-3xl sm:text-4xl">{c.title}</h2>
       </div>
-      <div className="lux-container mt-14 grid gap-6 md:grid-cols-3">
+      <div className="lux-container mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {c.items.map((item, i) => (
           <article key={item.title} className="lux-cap-card">
             <span className="lux-cap-index">{String(i + 1).padStart(2, "0")}</span>

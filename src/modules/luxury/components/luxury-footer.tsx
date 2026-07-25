@@ -168,14 +168,6 @@ export async function LuxuryFooter() {
             <Link href="/terms" className="hover:text-lux-gold">
               {t.footer.terms}
             </Link>
-            <a
-              href="https://3dgraphicshouse.com/solutions/project-launch.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-lux-gold"
-            >
-              {t.footer.ghProjectLaunchLink}
-            </a>
           </div>
         </div>
       </div>

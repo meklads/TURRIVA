@@ -6,9 +6,8 @@ import {
 } from "@/shared/i18n/messages/luxury";
 import type { Locale } from "@/shared/i18n/locale";
 import { LuxuryCapabilitiesSection } from "./luxury-capabilities-section";
+import { LuxuryExecutionSection } from "./luxury-execution-section";
 import { LuxuryHomeHero } from "./luxury-home-hero";
-import { LuxuryPartnershipSection } from "./luxury-partnership-section";
-import { LuxurySpotlightSection } from "./luxury-spotlight-section";
 import {
   Compass,
   Gem,
@@ -41,7 +40,7 @@ export function LuxuryHomePage({ locale }: Props) {
 
       <LuxuryCapabilitiesSection messages={t} />
 
-      <LuxuryPartnershipSection locale={locale} messages={t} />
+      <LuxuryExecutionSection messages={t} />
 
       {/* Services */}
       <section id="services" className="lux-section lux-section--cream scroll-mt-24">
@@ -83,7 +82,7 @@ export function LuxuryHomePage({ locale }: Props) {
         </div>
       </section>
 
-      {/* Why Ruwaaq */}
+      {/* Why Turriva */}
       <section className="lux-section">
         <div className="lux-container text-center">
           <p className="lux-eyebrow">{t.why.eyebrow}</p>
@@ -108,9 +107,7 @@ export function LuxuryHomePage({ locale }: Props) {
         </div>
       </section>
 
-      <LuxurySpotlightSection messages={t} />
-
-      <section className="lux-section lux-section--cream">
+      <section className="lux-section">
         <div className="lux-container text-center">
           <p className="lux-eyebrow">{t.projects.eyebrow}</p>
           <div className="lux-divider-gold" />

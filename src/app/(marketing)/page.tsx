@@ -10,8 +10,8 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title:
       locale === "ar"
-        ? "توريفا العقارية | ديكور ثابت وتشطيبات فاخرة"
-        : "Turriva Real Estate | Luxury fit-out & fixed decor",
+        ? "توريفا العقارية | للديكور والمقاولات"
+        : "Turriva Real Estate | Decor & Contracting",
     description: t.hero.subtitle,
     openGraph: {
       title: t.hero.title.replace("\n", " "),
