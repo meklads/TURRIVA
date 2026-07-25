@@ -24,7 +24,7 @@ export async function SiteFooter() {
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
           <div>
-            <RuwaqLogo href="/" className={SITE_LOGO_SIZE_CLASS} />
+            <RuwaqLogo href="/" className={SITE_LOGO_SIZE_CLASS} raster />
             <p className="mt-6 max-w-md text-sm leading-relaxed text-ruwaq-ink-soft">
               {t.site.footer.tagline}
             </p>

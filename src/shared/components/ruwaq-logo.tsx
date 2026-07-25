@@ -21,8 +21,8 @@ const MOTIF_SRC = {
 } as const;
 
 const TURRIVA_RASTER_SRC = {
-  light: "/brand/turriva/logo-on-light.png",
-  dark: "/brand/turriva/logo-on-dark.png",
+  light: "/brand/turriva/turriva-logo.png",
+  dark: "/brand/turriva/turriva-logo.png",
 } as const;
 
 const RUWQ_LEGACY_RASTER_SRC = {
@@ -32,8 +32,8 @@ const RUWQ_LEGACY_RASTER_SRC = {
 
 const MOTIF_WIDTH = 520;
 const MOTIF_HEIGHT = 887;
-const RASTER_WIDTH = 1774;
-const RASTER_HEIGHT = 887;
+const RASTER_WIDTH = 1536;
+const RASTER_HEIGHT = 1024;
 
 /** Shared site chrome logo — header & footer match. */
 export const SITE_LOGO_SIZE_CLASS = "h-16 w-auto sm:h-[4.5rem] lg:h-20 xl:h-[5.25rem]";

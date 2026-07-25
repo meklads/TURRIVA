@@ -1,33 +1,51 @@
-import { RuwaqLogo, SITE_LOGO_SIZE_CLASS } from "@/shared/components/ruwaq-logo";
+import Image from "next/image";
+import Link from "next/link";
 
-const LUXURY_LOGO_CLASS = "h-11 w-auto sm:h-12 lg:h-[3.65rem]";
+/** Official Turriva lockup — `public/brand/turriva/turriva logo.png` */
+export const TURRIVA_LOGO_SRC = "/brand/turriva/turriva-logo.png";
+
+const LOGO_WIDTH = 1536;
+const LOGO_HEIGHT = 1024;
+
+const LUXURY_LOGO_CLASS = "h-10 w-auto sm:h-11 lg:h-12";
 
 type Props = {
   href?: string;
   className?: string;
   priority?: boolean;
-  /** Classic رواق / RUWAQ PNG lockup (footer). */
+  /** @deprecated Use official raster only; kept for call-site compatibility */
   legacyRuwaqRaster?: boolean;
-  /** Turriva raster (motif + TURRIVA). */
+  /** @deprecated Official logo is always used */
   raster?: boolean;
 };
 
-/** Turriva Real Estate lockup — توريفا العقارية + TURRIVA, or legacy Ruwaq raster. */
 export function LuxuryBrandLogo({
   href = "/",
   className = LUXURY_LOGO_CLASS,
   priority = false,
-  legacyRuwaqRaster = false,
-  raster = false,
 }: Props) {
-  return (
-    <RuwaqLogo
-      href={href}
-      className={legacyRuwaqRaster || raster ? SITE_LOGO_SIZE_CLASS : className}
-      variant="light"
+  const logo = (
+    <Image
+      src={TURRIVA_LOGO_SRC}
+      alt="توريفا العقارية — Turriva Real Estate"
+      width={LOGO_WIDTH}
+      height={LOGO_HEIGHT}
+      className={`block w-auto max-w-[min(100%,16rem)] object-contain object-start ${className}`}
       priority={priority}
-      legacyRuwaqRaster={legacyRuwaqRaster}
-      raster={raster}
+      quality={100}
+      sizes="(max-width: 640px) 180px, (max-width: 1024px) 220px, 260px"
     />
+  );
+
+  if (!href) return logo;
+
+  return (
+    <Link
+      href={href}
+      className="inline-flex shrink-0 items-center bg-transparent p-0 leading-none"
+      aria-label="توريفا العقارية — الصفحة الرئيسية"
+    >
+      {logo}
+    </Link>
   );
 }
