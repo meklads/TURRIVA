@@ -65,8 +65,8 @@ export async function generateMetadata(): Promise<Metadata> {
         : "Turriva Real Estate — Decor & Contracting",
     description:
       locale === "ar"
-        ? "توريفا العقارية — ديكور ثابت ومقاولات فاخرة للفلل والقصور وصالات العرض والمعارض في جدة والرياض ومكة."
-        : "Turriva Real Estate — fixed luxury fit-out and premium contracting for villas, palaces, sales suites, and exhibition build-outs across Jeddah, Riyadh, and Makkah.",
+        ? "توريفا العقارية شركة سعودية فاخرة للديكور والمقاولات — فلل، قصور، ومشاريع سكنية راقية."
+        : "Turriva is a premium Saudi decor and contracting company for luxury villas, palaces, and high-end residential projects.",
   };
 }
 

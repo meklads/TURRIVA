@@ -30,7 +30,7 @@ export function LuxuryHomeHero({ locale }: Props) {
               {t.hero.subtitle}
             </p>
             <div className="mt-8 flex flex-wrap gap-3 sm:mt-9">
-              <Link href="/contact" className="lux-btn-primary">
+              <Link href="#services" className="lux-btn-primary">
                 {t.hero.ctaPrimary}
               </Link>
               <Link href="/our-work" className="lux-btn-outline-gold">

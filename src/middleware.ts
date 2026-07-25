@@ -1,8 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import {
-  isRuwaqPlatformPath,
-  ruwaqPlatformRedirectUrl,
-} from "@/shared/constants/platform-redirect";
+import { isRemovedAppPath } from "@/shared/constants/removed-app-paths";
 import {
   APP_GATE_REALM,
   getGateCredentials,
@@ -14,8 +11,8 @@ import {
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  if (isRuwaqPlatformPath(pathname)) {
-    return NextResponse.redirect(ruwaqPlatformRedirectUrl(pathname), 308);
+  if (isRemovedAppPath(pathname)) {
+    return NextResponse.rewrite(new URL("/not-found", request.url));
   }
 
   if (!isGateEnabled()) {
