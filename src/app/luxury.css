@@ -178,8 +178,8 @@
 .lux-header--elevated {
   position: sticky;
   top: 0;
-  overflow: visible;
-  background: color-mix(in srgb, var(--lux-ivory) 90%, transparent);
+  overflow: hidden;
+  background: color-mix(in srgb, var(--lux-ivory) 92%, transparent);
   border-bottom-color: color-mix(in srgb, var(--lux-sand) 30%, transparent);
   box-shadow: 0 1px 0 color-mix(in srgb, var(--lux-ink) 4%, transparent),
     0 8px 32px color-mix(in srgb, var(--lux-ink) 5%, transparent);
@@ -207,44 +207,32 @@
 
 .lux-header-shell {
   position: relative;
-  z-index: 50;
 }
 
 .lux-header-bar {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.75rem 1rem;
-  min-height: 3.5rem;
-  padding-block: 0.5rem;
+  min-height: 0;
+  padding-block: 0.625rem;
 }
 
 .lux-header-logo {
-  position: absolute;
-  inset-inline-start: 0;
-  bottom: 0.35rem;
-  z-index: 60;
+  position: static;
   flex-shrink: 0;
   min-width: 0;
   line-height: 0;
-  transform: translateY(52%);
-  pointer-events: none;
-}
-
-.lux-header-logo a {
-  pointer-events: auto;
+  transform: none;
 }
 
 .lux-header-bar > nav {
-  grid-column: 2;
-  justify-self: center;
-  align-self: center;
+  flex: 1;
+  min-width: 0;
+  justify-content: center;
 }
 
 .lux-header-actions {
-  grid-column: 3;
-  justify-self: end;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -252,25 +240,8 @@
 }
 
 .lux-header-mobile {
-  position: relative;
-  z-index: 55;
-  margin-top: 5.25rem;
-}
-
-@media (min-width: 640px) {
-  .lux-header-mobile {
-    margin-top: 5.75rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .lux-header-mobile {
-    margin-top: 0;
-  }
-
-  .lux-header-logo {
-    transform: translateY(46%);
-  }
+  margin-top: 0;
+  padding-block: 0.5rem 0.625rem;
 }
 
 @media (min-width: 640px) {
@@ -359,12 +330,12 @@
   min-width: 0;
 }
 
-/* Hero — cinematic split; logo overlaps from header */
+/* Hero — cinematic split */
 .lux-hero {
   position: relative;
   z-index: 30;
   overflow: hidden;
-  margin-top: -2.75rem;
+  margin-top: 0;
   background: linear-gradient(
     180deg,
     var(--lux-ivory) 0%,
@@ -392,21 +363,7 @@
   display: flex;
   align-items: center;
   padding-block: 2.5rem 3.5rem;
-  padding-top: 6.5rem;
   background: transparent;
-}
-
-@media (min-width: 640px) {
-  .lux-hero-copy {
-    padding-top: 7rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .lux-hero-copy {
-    padding-top: 5.25rem;
-    padding-block: 2rem 3.5rem;
-  }
 }
 
 .lux-hero-copy::before {
