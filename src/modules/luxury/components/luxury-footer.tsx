@@ -1,20 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone } from "lucide-react";
+import { Mail, MessageCircle, Phone } from "lucide-react";
 import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import { getLocale } from "@/shared/i18n/server";
 import { TURRIVA_LOGO_SRC, TURRIVA_LOGO_HEIGHT, TURRIVA_LOGO_WIDTH } from "./luxury-brand-logo";
-import { GraphicsHouseLogo } from "@/shared/components/graphics-house-logo";
-import { TURRIVA_PUBLIC_HOST, TURRIVA_PUBLIC_URL } from "@/shared/constants/brand";
+import { TURRIVA_PUBLIC_EMAIL, TURRIVA_PUBLIC_HOST, TURRIVA_PUBLIC_URL } from "@/shared/constants/brand";
 
 const GRAPHICS_HOUSE_URL = "https://3dgraphicshouse.com/";
+const WHATSAPP_SA = "966502786513";
 
 const SOCIAL = [
-  { label: "YouTube", href: "https://youtube.com", abbr: "YT" },
-  { label: "LinkedIn", href: "https://linkedin.com", abbr: "IN" },
-  { label: "Instagram", href: "https://instagram.com", abbr: "IG" },
-  { label: "X", href: "https://x.com", abbr: "X" },
-  { label: "Facebook", href: "https://facebook.com", abbr: "FB" },
+  { label: "Facebook", href: "https://web.facebook.com/3dghouse", abbr: "FB" },
+  { label: "X", href: "https://twitter.com/GraphicsHouse2", abbr: "X" },
+  { label: "Instagram", href: "https://www.instagram.com/3dgraphicshouse/", abbr: "IG" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/graphics-house-gh/", abbr: "IN" },
+  { label: "YouTube", href: "https://www.youtube.com/user/3dghouse/videos", abbr: "YT" },
 ] as const;
 
 export async function LuxuryFooter() {
@@ -31,21 +31,27 @@ export async function LuxuryFooter() {
   const servicesLinks = [
     { href: "/interior-design", label: t.nav.interiorDesign },
     { href: "/construction", label: t.nav.construction },
-    { href: "/contact", label: t.nav.contact },
+    { href: "/our-work", label: t.nav.ourWork },
   ];
 
-  const contactLinks = [
-    { href: "/contact", label: t.nav.contact },
-    { href: "/privacy", label: t.footer.privacy },
-    { href: "/terms", label: t.footer.terms },
-  ];
+  const solutionLinks =
+    locale === "ar"
+      ? [
+          { href: "/interior-design", label: "تصميم وتشطيب داخلي" },
+          { href: "/construction", label: "تنفيذ في الموقع" },
+          { href: "/contact", label: "معارض وأجنحة" },
+        ]
+      : [
+          { href: "/interior-design", label: "Interior design & fit-out" },
+          { href: "/construction", label: "On-site delivery" },
+          { href: "/contact", label: "Exhibitions & booths" },
+        ];
 
   const offices = [
     {
       title: t.footer.countries.saudiArabia,
       lines: [locale === "ar" ? "جدة" : "Jeddah", "P.O.Box 136972", "CR 4030502306"],
       phone: "+966502786513",
-      displayPhone: "+966 50 278 6513",
     },
     {
       title: t.footer.countries.oman,
@@ -81,10 +87,25 @@ export async function LuxuryFooter() {
       <div className="lux-footer-accent" aria-hidden />
       <div className="lux-footer-watermark" aria-hidden />
 
+      <div className="lux-footer-float" aria-label={t.footer.contact}>
+        <a
+          href={`https://wa.me/${WHATSAPP_SA}`}
+          className="lux-footer-float-btn lux-footer-float-btn--wa"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+        >
+          <MessageCircle className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+        </a>
+        <a href={`mailto:${TURRIVA_PUBLIC_EMAIL}`} className="lux-footer-float-btn" aria-label="Email">
+          <Mail className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+        </a>
+      </div>
+
       <div className="lux-container lux-footer-inner">
         <div className="lux-footer-top">
           <div className="lux-footer-brand">
-            <Link href="/" className="lux-footer-logo-link" aria-label="توريفا العقارية">
+            <Link href="/" className="lux-footer-logo-link" aria-label={t.brand.name}>
               <Image
                 src={TURRIVA_LOGO_SRC}
                 alt=""
@@ -96,53 +117,41 @@ export async function LuxuryFooter() {
               />
             </Link>
             <p className="lux-footer-about">{t.footer.about}</p>
-            <p className="lux-footer-partner">
-              <span>{t.footer.sponsoredBy}</span>
-              <GraphicsHouseLogo variant="dark" className="h-8 w-auto max-w-[140px] opacity-90" />
-            </p>
           </div>
 
-          <div className="lux-footer-nav-grid">
-            <div className="lux-footer-col">
-              <h3 className="lux-footer-col-title">{t.footer.importantLinks}</h3>
-              <ul className="lux-footer-links">
-                {importantLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href}>{link.label}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="lux-footer-col">
+            <h3 className="lux-footer-col-title">{t.footer.importantLinks}</h3>
+            <nav className="lux-footer-links" aria-label={t.footer.importantLinks}>
+              {importantLinks.map((link) => (
+                <Link key={link.href + link.label} href={link.href}>
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
 
-            <div className="lux-footer-col">
-              <h3 className="lux-footer-col-title">{t.footer.servicesLinks}</h3>
-              <ul className="lux-footer-links">
-                {servicesLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href}>{link.label}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="lux-footer-col">
+            <h3 className="lux-footer-col-title">{t.footer.servicesLinks}</h3>
+            <nav className="lux-footer-links" aria-label={t.footer.servicesLinks}>
+              {servicesLinks.map((link) => (
+                <Link key={link.href} href={link.href}>
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
 
-            <div className="lux-footer-col">
-              <h3 className="lux-footer-col-title">{t.footer.contact}</h3>
-              <ul className="lux-footer-links">
-                {contactLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href}>{link.label}</Link>
-                  </li>
-                ))}
-              </ul>
-              <p className="lux-footer-contact-line mt-4">{t.footer.address}</p>
-              <a href={`mailto:${t.footer.email}`} className="lux-footer-contact-line block">
-                {t.footer.email}
-              </a>
-            </div>
+          <div className="lux-footer-col">
+            <h3 className="lux-footer-col-title">{t.footer.solutionsLinks}</h3>
+            <nav className="lux-footer-links" aria-label={t.footer.solutionsLinks}>
+              {solutionLinks.map((link) => (
+                <Link key={link.href} href={link.href}>
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
           </div>
         </div>
-
-        <div className="lux-footer-rule" aria-hidden />
 
         <div className="lux-footer-offices">
           {offices.map((office) => (
@@ -154,18 +163,16 @@ export async function LuxuryFooter() {
                 ))}
               </div>
               <a href={`tel:${office.phone}`} className="lux-footer-call">
-                <Phone className="h-3.5 w-3.5 shrink-0" strokeWidth={2} aria-hidden />
+                <Phone className="h-3 w-3 shrink-0" strokeWidth={2} aria-hidden />
                 <span>{t.footer.callNow}</span>
               </a>
             </div>
           ))}
         </div>
 
-        <div className="lux-footer-rule" aria-hidden />
-
-        <div className="lux-footer-social-row">
-          <p className="lux-footer-follow">{t.footer.followUs}</p>
-          <div className="lux-footer-social">
+        <div className="lux-footer-social">
+          <span className="lux-footer-follow">{t.footer.followUs}</span>
+          <div className="lux-footer-social-icons">
             {SOCIAL.map((item) => (
               <a
                 key={item.label}

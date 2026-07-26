@@ -13,7 +13,7 @@ export async function LuxuryHeader() {
 
   return (
     <header className="lux-header lux-header--elevated">
-      <div className="lux-container">
+      <div className="lux-container lux-header-shell">
         <div className="lux-header-bar">
           <div className="lux-header-logo">
             <LuxuryBrandLogo href="/" priority />

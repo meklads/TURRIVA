@@ -81,6 +81,7 @@ export type LuxuryMessages = {
     quickLinks: string;
     importantLinks: string;
     servicesLinks: string;
+    solutionsLinks: string;
     offices: string;
     countries: {
       saudiArabia: string;
@@ -295,6 +296,7 @@ const en: LuxuryMessages = {
     quickLinks: "Quick Links",
     importantLinks: "Important Links",
     servicesLinks: "Services",
+    solutionsLinks: "Solutions",
     offices: "Offices",
     countries: {
       saudiArabia: "Saudi Arabia",
@@ -531,6 +533,7 @@ const ar: LuxuryMessages = {
     quickLinks: "روابط سريعة",
     importantLinks: "أهم الروابط",
     servicesLinks: "الخدمات",
+    solutionsLinks: "الحلول",
     offices: "مكاتبنا",
     countries: {
       saudiArabia: "السعودية",
