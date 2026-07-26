@@ -13,11 +13,24 @@
   --lux-ink-muted: #78716c;
   --lux-teal-deep: #0a0a0a;
   --lux-teal-mid: #171717;
+  --lux-logo-overhang: 7.75rem;
   background: var(--lux-ivory);
   color: var(--lux-ink);
   font-family: var(--font-inter), var(--font-latin), system-ui, sans-serif;
   font-size: clamp(0.9375rem, 1.4vw, 1.0625rem);
   line-height: 1.65;
+}
+
+@media (min-width: 640px) {
+  .lux-shell {
+    --lux-logo-overhang: 8.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lux-shell {
+    --lux-logo-overhang: 10.25rem;
+  }
 }
 
 [dir="rtl"] .lux-shell {
@@ -178,7 +191,7 @@
 .lux-header--elevated {
   position: sticky;
   top: 0;
-  overflow: hidden;
+  overflow: visible;
   background: color-mix(in srgb, var(--lux-ivory) 92%, transparent);
   border-bottom-color: color-mix(in srgb, var(--lux-sand) 30%, transparent);
   box-shadow: 0 1px 0 color-mix(in srgb, var(--lux-ink) 4%, transparent),
@@ -192,24 +205,28 @@
 }
 
 .lux-header-shell {
+  --lux-header-bar-h: 3.25rem;
   position: relative;
+  min-height: var(--lux-header-bar-h);
 }
 
-.lux-header-bar {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 0.5rem 1rem;
-  min-height: 0;
-  padding-block: 0.2rem 0.35rem;
+@media (min-width: 1024px) {
+  .lux-header-shell {
+    --lux-header-bar-h: 3.35rem;
+  }
 }
 
 .lux-header-logo {
-  position: static;
-  flex-shrink: 0;
-  min-width: 0;
+  position: absolute;
+  top: 0.1rem;
+  inset-inline-start: 0;
+  z-index: 70;
   line-height: 0;
-  transform: none;
+  pointer-events: none;
+}
+
+.lux-header-logo a {
+  pointer-events: auto;
 }
 
 .lux-header-logo-img {
@@ -218,12 +235,22 @@
   backface-visibility: hidden;
 }
 
+.lux-header-bar {
+  position: relative;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem 1rem;
+  min-height: var(--lux-header-bar-h);
+  padding-block: 0.25rem;
+  padding-inline-start: clamp(10.5rem, 36vw, 20.75rem);
+}
+
 .lux-header-bar > nav {
   flex: 1;
   min-width: 0;
   justify-content: center;
-  align-self: center;
-  padding-top: 0.65rem;
 }
 
 .lux-header-actions {
@@ -231,8 +258,6 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  align-self: center;
-  padding-top: 0.5rem;
 }
 
 .lux-header .lux-btn-primary {
@@ -240,9 +265,27 @@
 }
 
 .lux-header-mobile {
+  position: relative;
+  z-index: 65;
   margin-top: 0;
-  padding-block: 0.35rem 0.45rem;
+  padding-block: 0.3rem 0.4rem;
   border-top-color: color-mix(in srgb, var(--lux-sand) 35%, transparent);
+}
+
+@media (max-width: 1279px) {
+  .lux-header-mobile {
+    padding-inline-start: clamp(9rem, 40vw, 13rem);
+    background: color-mix(in srgb, var(--lux-ivory) 94%, transparent);
+  }
+}
+
+/* Pull hero up under overlapping logo; inner pages reserve space for logo tail */
+.lux-hero {
+  margin-top: calc(-1 * var(--lux-logo-overhang, 7.75rem));
+}
+
+.lux-shell main:not(:has(.lux-hero)) > :first-child {
+  padding-top: calc(var(--lux-logo-overhang, 7.75rem) + 0.5rem);
 }
 
 @media (min-width: 640px) {
@@ -336,7 +379,6 @@
   position: relative;
   z-index: 30;
   overflow: hidden;
-  margin-top: 0;
   background: linear-gradient(
     180deg,
     var(--lux-ivory) 0%,
@@ -364,6 +406,7 @@
   display: flex;
   align-items: center;
   padding-block: 2.5rem 3.5rem;
+  padding-top: calc(var(--lux-logo-overhang) * 0.35 + 1rem);
   background: transparent;
 }
 
