@@ -46,11 +46,10 @@ export function LuxuryHomeHero({ locale }: Props) {
               alt=""
               fill
               priority
-              quality={92}
-              className="object-cover object-center"
+              unoptimized
+              className="lux-hero-media-img object-contain object-center"
               sizes="(max-width: 1024px) 100vw, 56vw"
             />
-            <div className="lux-hero-media-vignette" aria-hidden />
           </div>
           <div className="lux-hero-media-fade" aria-hidden />
         </div>

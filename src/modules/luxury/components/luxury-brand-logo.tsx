@@ -10,11 +10,11 @@ export const TURRIVA_LOGO_HEIGHT = 1536;
 const LOGO_WIDTH = TURRIVA_LOGO_WIDTH;
 const LOGO_HEIGHT = TURRIVA_LOGO_HEIGHT;
 
-/** Compact header lockup — full-size raster used in footer only */
+/** Header lockup — full raster (clarity: unoptimized PNG in component) */
 export const LUXURY_HEADER_LOGO_CLASS =
-  "h-14 w-auto sm:h-16 lg:h-[4.25rem] max-w-[min(100%,13.5rem)]";
+  "h-[11.25rem] w-auto sm:h-[12.375rem] lg:h-[13.5rem] max-w-[min(100%,54rem)]";
 
-/** @deprecated Prefer LUXURY_HEADER_LOGO_CLASS in header; kept for overrides */
+/** @deprecated Use LUXURY_HEADER_LOGO_CLASS */
 const LUXURY_LOGO_CLASS = LUXURY_HEADER_LOGO_CLASS;
 
 type Props = {
@@ -38,7 +38,7 @@ export function LuxuryBrandLogo({
       alt="توريفا العقارية — Turriva Real Estate"
       width={LOGO_WIDTH}
       height={LOGO_HEIGHT}
-      className={`block w-auto object-contain object-start ${className}`}
+      className={`lux-header-logo-img block w-auto object-contain object-start ${className}`}
       priority={priority}
       quality={100}
       unoptimized

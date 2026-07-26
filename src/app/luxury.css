@@ -188,21 +188,7 @@
 }
 
 .lux-header--elevated::before {
-  content: "";
-  position: absolute;
-  inset-inline: 0;
-  top: 0;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    color-mix(in srgb, var(--lux-ink) 22%, transparent) 18%,
-    var(--lux-ink) 50%,
-    color-mix(in srgb, var(--lux-ink) 22%, transparent) 82%,
-    transparent 100%
-  );
-  opacity: 0.35;
-  pointer-events: none;
+  display: none;
 }
 
 .lux-header-shell {
@@ -211,11 +197,11 @@
 
 .lux-header-bar {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 0.75rem 1rem;
+  gap: 0.5rem 1rem;
   min-height: 0;
-  padding-block: 0.625rem;
+  padding-block: 0.2rem 0.35rem;
 }
 
 .lux-header-logo {
@@ -226,10 +212,18 @@
   transform: none;
 }
 
+.lux-header-logo-img {
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
 .lux-header-bar > nav {
   flex: 1;
   min-width: 0;
   justify-content: center;
+  align-self: center;
+  padding-top: 0.65rem;
 }
 
 .lux-header-actions {
@@ -237,11 +231,18 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  align-self: center;
+  padding-top: 0.5rem;
+}
+
+.lux-header .lux-btn-primary {
+  padding-block: 0.55rem;
 }
 
 .lux-header-mobile {
   margin-top: 0;
-  padding-block: 0.5rem 0.625rem;
+  padding-block: 0.35rem 0.45rem;
+  border-top-color: color-mix(in srgb, var(--lux-sand) 35%, transparent);
 }
 
 @media (min-width: 640px) {
@@ -351,7 +352,7 @@
 
 @media (min-width: 1024px) {
   .lux-hero-inner {
-    grid-template-columns: minmax(0, 46%) minmax(0, 54%);
+    grid-template-columns: minmax(0, 42%) minmax(0, 58%);
     min-height: min(92vh, 56rem);
     gap: 0;
   }
@@ -407,74 +408,65 @@
 
 .lux-hero-media {
   position: relative;
-  min-height: 24rem;
+  min-height: 16rem;
   order: -1;
-  background: #0a0a0a;
+  background: var(--lux-ivory);
 }
 
 @media (min-width: 1024px) {
   .lux-hero-media {
     order: 0;
     min-height: auto;
-    padding: 2rem 0 2rem 1.25rem;
+    padding: 0.5rem 0 0.5rem 0.75rem;
   }
 
   [dir="rtl"] .lux-hero-media {
-    padding: 2rem 1.25rem 2rem 0;
+    padding: 0.5rem 0.75rem 0.5rem 0;
   }
 }
 
 .lux-hero-media-frame {
   position: relative;
   height: 100%;
-  min-height: 24rem;
+  min-height: 16rem;
   overflow: hidden;
-  background: #0a0a0a;
-  box-shadow: 0 24px 64px color-mix(in srgb, var(--lux-ink) 22%, transparent);
+  background: var(--lux-ivory);
+  box-shadow: 0 12px 40px color-mix(in srgb, var(--lux-ink) 10%, transparent);
 }
 
 @media (min-width: 1024px) {
   .lux-hero-media-frame {
-    min-height: calc(min(92vh, 56rem) - 4rem);
-    outline: 1px solid color-mix(in srgb, var(--lux-sand) 55%, transparent);
+    min-height: calc(min(92vh, 56rem) - 1rem);
+    aspect-ratio: 3 / 2;
+    outline: 1px solid color-mix(in srgb, var(--lux-sand) 45%, transparent);
     outline-offset: -1px;
   }
 }
 
 .lux-hero-media-vignette {
-  pointer-events: none;
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    ellipse 85% 75% at 50% 45%,
-    transparent 40%,
-    color-mix(in srgb, #0a0a0a 35%, transparent) 100%
-  );
-  opacity: 0.65;
+  display: none;
 }
 
 .lux-hero-media-fade {
   position: absolute;
-  inset: 0;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: min(18%, 7rem);
   background: linear-gradient(
     to right,
-    var(--lux-ivory) 0%,
-    color-mix(in srgb, var(--lux-ivory) 94%, transparent) 6%,
-    color-mix(in srgb, var(--lux-ivory) 72%, transparent) 16%,
-    color-mix(in srgb, var(--lux-ivory) 28%, transparent) 32%,
-    transparent 52%
+    color-mix(in srgb, var(--lux-ivory) 88%, transparent) 0%,
+    transparent 100%
   );
   pointer-events: none;
 }
 
 [dir="rtl"] .lux-hero-media-fade {
+  inset-inline-start: auto;
+  inset-inline-end: 0;
   background: linear-gradient(
     to left,
-    var(--lux-ivory) 0%,
-    color-mix(in srgb, var(--lux-ivory) 94%, transparent) 6%,
-    color-mix(in srgb, var(--lux-ivory) 72%, transparent) 16%,
-    color-mix(in srgb, var(--lux-ivory) 28%, transparent) 32%,
-    transparent 52%
+    color-mix(in srgb, var(--lux-ivory) 88%, transparent) 0%,
+    transparent 100%
   );
 }
 
