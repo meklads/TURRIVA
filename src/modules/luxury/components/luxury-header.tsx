@@ -14,11 +14,11 @@ export async function LuxuryHeader() {
   return (
     <header className="lux-header lux-header--elevated">
       <div className="lux-container lux-header-shell">
-        <div className="lux-header-logo">
-          <LuxuryBrandLogo href="/" priority />
-        </div>
-
         <div className="lux-header-bar">
+          <div className="lux-header-logo">
+            <LuxuryBrandLogo href="/" priority />
+          </div>
+
           <LuxuryDesktopNav links={links} />
 
           <div className="lux-header-actions">
