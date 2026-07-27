@@ -10,9 +10,9 @@ export const TURRIVA_LOGO_HEIGHT = 1536;
 const LOGO_WIDTH = TURRIVA_LOGO_WIDTH;
 const LOGO_HEIGHT = TURRIVA_LOGO_HEIGHT;
 
-/** Header lockup — full raster (clarity: unoptimized PNG in component) */
+/** Header lockup — responsive; full size from lg (PNG unoptimized for clarity) */
 export const LUXURY_HEADER_LOGO_CLASS =
-  "h-[11.25rem] w-auto sm:h-[12.375rem] lg:h-[13.5rem] max-w-[min(100%,54rem)]";
+  "h-14 w-auto max-w-[9.75rem] sm:h-[4.25rem] sm:max-w-[11.5rem] md:h-24 md:max-w-[14rem] lg:h-[11.25rem] lg:max-w-[min(100%,54rem)] xl:h-[13.5rem]";
 
 /** @deprecated Use LUXURY_HEADER_LOGO_CLASS */
 const LUXURY_LOGO_CLASS = LUXURY_HEADER_LOGO_CLASS;
@@ -42,7 +42,7 @@ export function LuxuryBrandLogo({
       priority={priority}
       quality={100}
       unoptimized
-      sizes="(max-width: 640px) 810px, (max-width: 1024px) 990px, 1170px"
+      sizes="(max-width: 640px) 400px, (max-width: 1024px) 660px, 1170px"
     />
   );
 

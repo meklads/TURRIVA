@@ -51,7 +51,7 @@ export function LuxuryMobileNav({ links }: { links: readonly NavLink[] }) {
         <Link
           key={link.href}
           href={link.href}
-          className={`shrink-0 rounded-full border px-3 py-1.5 text-[10px] font-semibold tracking-wider transition-colors lux-mobile-nav-link ${
+          className={`shrink-0 rounded-full border px-3.5 py-2 text-xs font-semibold tracking-wide transition-colors lux-mobile-nav-link sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-wider ${
             isActive(link.href)
               ? "border-lux-gold bg-lux-gold/10 text-lux-gold"
               : "border-lux-sand bg-white text-lux-ink-soft"

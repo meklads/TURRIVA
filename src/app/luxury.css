@@ -1345,3 +1345,157 @@
   font-family: var(--font-tajawal), var(--font-marketing-ar), sans-serif;
 }
 
+/* ——— Mobile & tablet responsive ——— */
+@media (max-width: 1279px) {
+  .lux-header-bar {
+    align-items: center;
+    gap: 0.5rem 0.75rem;
+    padding-block: 0.35rem 0.2rem;
+  }
+
+  .lux-header-bar > nav {
+    padding-top: 0;
+  }
+
+  .lux-header-actions {
+    padding-top: 0;
+  }
+
+  .lux-header-logo {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: calc(100% - 6.75rem);
+  }
+
+  .lux-header-mobile {
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-inline: 1rem;
+    padding-block: 0.5rem 0.55rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .lux-hero-inner {
+    min-height: 0;
+  }
+
+  .lux-hero-copy {
+    padding-block: 1.25rem 2rem;
+  }
+
+  .lux-hero-copy-inner {
+    max-width: none;
+  }
+
+  .lux-hero-title {
+    font-size: clamp(1.625rem, 7.5vw, 2.375rem);
+    line-height: 1.12;
+  }
+
+  .lux-hero-media {
+    min-height: 0;
+  }
+
+  .lux-hero-media-frame {
+    min-height: 11.5rem;
+    max-height: min(52vh, 22rem);
+    box-shadow: none;
+  }
+
+  .lux-hero-media-fade {
+    display: none;
+  }
+
+  .lux-hero-cta .lux-btn-primary,
+  .lux-hero-cta .lux-btn-outline-gold {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .lux-editorial-split {
+    gap: 1.75rem;
+  }
+
+  .lux-editorial-media--tall {
+    min-height: 14rem;
+  }
+
+  .lux-contact-media {
+    min-height: 12rem;
+    max-height: 20rem;
+    background: var(--lux-cream);
+  }
+
+  .lux-cap-tile-body {
+    padding: 1.25rem;
+  }
+
+  .lux-shell {
+    padding-bottom: 4.5rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .lux-container {
+    padding-inline: 1rem;
+  }
+
+  .lux-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .lux-hero-tags {
+    margin-top: 1.25rem;
+    gap: 0.4rem;
+  }
+
+  .lux-hero-tag {
+    font-size: 0.625rem;
+    padding: 0.35rem 0.65rem;
+  }
+
+  [dir="rtl"] .lux-hero-tag {
+    font-size: 0.75rem;
+  }
+
+  .lux-flourish {
+    margin-block: 1.15rem 1rem;
+  }
+
+  .lux-footer-float {
+    inset-inline-start: 0.65rem;
+    bottom: max(0.85rem, env(safe-area-inset-bottom, 0px));
+  }
+
+  .lux-footer-inner {
+    padding-inline: 0.25rem;
+  }
+
+  .lux-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lux-footer-mark {
+    align-self: flex-start;
+  }
+
+  [dir="rtl"] .lux-footer-mark {
+    align-self: flex-start;
+  }
+
+  .lux-footer-offices {
+    gap: 1.5rem;
+  }
+
+  .lux-partnership-panel {
+    padding: 1.25rem;
+  }
+
+  .lux-btn-primary,
+  .lux-btn-outline-gold {
+    min-width: 0;
+  }
+}
+

@@ -20,18 +20,18 @@ export function LuxuryInnerPage({
       <div className="lux-container max-w-3xl text-center">
         <p className="lux-eyebrow">{t.brand.tagline}</p>
         <div className="lux-divider-gold" />
-        <h1 className="lux-display mt-6 text-4xl sm:text-5xl">{content.title}</h1>
+        <h1 className="lux-display mt-5 text-3xl sm:mt-6 sm:text-4xl md:text-5xl">{content.title}</h1>
         <p className="lux-body mx-auto mt-6">{content.intro}</p>
       </div>
 
       {page === "contact" ? (
-        <div className="lux-container mt-12 max-w-6xl lux-editorial-split lux-editorial-split--reverse">
-          <div className="lux-editorial-media lux-editorial-media--tall">
+        <div className="lux-container mt-10 max-w-6xl sm:mt-12 lux-editorial-split lux-editorial-split--reverse lux-contact-split">
+          <div className="lux-editorial-media lux-editorial-media--tall lux-contact-media">
             <Image
               src={LUXURY_IMAGES.contact}
               alt=""
               fill
-              className="object-cover"
+              className="object-contain object-center sm:object-cover sm:object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
               quality={92}
               priority
