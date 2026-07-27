@@ -17,8 +17,7 @@
   --lux-ink-muted: #7a7268;
   --lux-teal-deep: #1f1c18;
   --lux-teal-mid: #2a241c;
-  --lux-header-chrome-h: 3.2rem;
-  --lux-logo-tail: 4.25rem;
+  --lux-header-chrome-h: auto;
   position: relative;
   isolation: isolate;
   color: var(--lux-ink);
@@ -51,25 +50,6 @@
 
 [dir="rtl"] .lux-shell {
   font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), "Segoe UI", sans-serif;
-}
-
-@media (min-width: 640px) {
-  .lux-shell {
-    --lux-logo-tail: 4.75rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .lux-shell {
-    --lux-header-chrome-h: 3.35rem;
-    --lux-logo-tail: 8.75rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .lux-shell {
-    --lux-logo-tail: 10rem;
-  }
 }
 
 .lux-container {
@@ -238,13 +218,10 @@
   font-weight: 700;
 }
 
-/* Header — compact sticky chrome; full-size logo overlays content below */
+/* Header — logo in bar; sticky block sits flush above hero */
 .lux-header {
   position: relative;
   z-index: 50;
-  overflow: visible;
-  background: transparent;
-  border: none;
 }
 
 .lux-header-shell {
@@ -259,7 +236,6 @@
 .lux-header--elevated {
   position: sticky;
   top: 0;
-  overflow: visible;
   background: color-mix(in srgb, var(--lux-ivory) 88%, transparent);
   border-bottom: 1px solid color-mix(in srgb, var(--lux-gold) 22%, var(--lux-sand));
   box-shadow:
@@ -269,49 +245,16 @@
   -webkit-backdrop-filter: blur(14px) saturate(1.12);
 }
 
-.lux-header--elevated::before {
-  display: none;
-}
-
 .lux-header-bar {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   gap: 0.5rem 0.85rem;
-  min-height: var(--lux-header-chrome-h);
-  padding-block: 0.2rem;
+  padding-block: 0.35rem 0.4rem;
 }
 
-.lux-header-logo-spacer {
+.lux-header-brand {
   flex-shrink: 0;
-  width: clamp(9.25rem, 38vw, 10.5rem);
-  height: 1px;
-  margin-inline-end: auto;
-}
-
-@media (min-width: 768px) {
-  .lux-header-logo-spacer {
-    width: clamp(10.5rem, 32vw, 14.5rem);
-  }
-}
-
-@media (min-width: 1024px) {
-  .lux-header-logo-spacer {
-    width: clamp(17.5rem, 28vw, 20.75rem);
-  }
-}
-
-.lux-header-logo {
-  position: absolute;
-  top: 0.12rem;
-  inset-inline-start: 0;
-  z-index: 51;
   line-height: 0;
-  pointer-events: none;
-}
-
-.lux-header-logo a {
-  pointer-events: auto;
 }
 
 .lux-header-logo-img {
@@ -341,16 +284,6 @@
   margin-top: 0;
   padding-block: 0.35rem 0.45rem;
   border-top: 1px solid color-mix(in srgb, var(--lux-sand) 35%, transparent);
-}
-
-.lux-shell main:not(:has(.lux-hero)) > :first-child {
-  padding-top: calc(var(--lux-logo-tail) + 0.35rem);
-}
-
-@media (min-width: 1024px) {
-  .lux-hero-copy {
-    padding-top: max(1.5rem, calc(var(--lux-logo-tail) * 0.42));
-  }
 }
 
 @media (min-width: 640px) {
@@ -1553,7 +1486,6 @@
     -webkit-overflow-scrolling: touch;
     scroll-padding-inline: 1rem;
     padding-block: 0.45rem 0.5rem;
-    padding-inline-start: clamp(8.5rem, 36vw, 10rem);
   }
 }
 
@@ -1564,7 +1496,6 @@
 
   .lux-hero-copy {
     padding-block: 1.25rem 2rem;
-    padding-top: max(1rem, calc(var(--lux-logo-tail) * 0.38));
   }
 
   .lux-hero-copy-inner {

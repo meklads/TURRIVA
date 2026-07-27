@@ -13,10 +13,12 @@ export async function LuxuryHeader() {
 
   return (
     <header className="lux-header">
-      <div className="lux-container lux-header-shell">
-        <div className="lux-header-chrome lux-header--elevated">
+      <div className="lux-header-chrome lux-header--elevated">
+        <div className="lux-container lux-header-shell">
           <div className="lux-header-bar">
-            <div className="lux-header-logo-spacer" aria-hidden />
+            <div className="lux-header-brand">
+              <LuxuryBrandLogo href="/" priority />
+            </div>
             <LuxuryDesktopNav links={links} />
             <div className="lux-header-actions">
               <Link href="/contact" className="lux-btn-primary hidden xl:inline-flex !min-w-0 px-5 py-2.5 text-[10px]">
@@ -26,10 +28,6 @@ export async function LuxuryHeader() {
             </div>
           </div>
           <LuxuryMobileNav links={links} />
-        </div>
-
-        <div className="lux-header-logo">
-          <LuxuryBrandLogo href="/" priority />
         </div>
       </div>
     </header>

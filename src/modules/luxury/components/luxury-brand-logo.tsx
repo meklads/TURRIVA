@@ -10,9 +10,9 @@ export const TURRIVA_LOGO_HEIGHT = 1536;
 const LOGO_WIDTH = TURRIVA_LOGO_WIDTH;
 const LOGO_HEIGHT = TURRIVA_LOGO_HEIGHT;
 
-/** Header lockup — responsive; full size from lg (PNG unoptimized for clarity) */
+/** Header lockup — in-flow in the bar (PNG unoptimized for clarity) */
 export const LUXURY_HEADER_LOGO_CLASS =
-  "h-14 w-auto max-w-[9.75rem] sm:h-[4.25rem] sm:max-w-[11.5rem] md:h-24 md:max-w-[14rem] lg:h-[11.25rem] lg:max-w-[min(100%,54rem)] xl:h-[13.5rem]";
+  "h-11 w-auto max-w-[8.75rem] sm:h-12 sm:max-w-[9.5rem] md:h-14 md:max-w-[11rem] lg:h-[4.25rem] lg:max-w-[13rem] xl:h-[4.75rem] xl:max-w-[14.5rem]";
 
 /** @deprecated Use LUXURY_HEADER_LOGO_CLASS */
 const LUXURY_LOGO_CLASS = LUXURY_HEADER_LOGO_CLASS;
