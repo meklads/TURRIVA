@@ -29,7 +29,7 @@ export function LuxuryExecutionSection({ messages }: Props) {
           <ul className="mt-8 space-y-3 border-t border-lux-sand pt-6 text-sm text-lux-ink-soft">
             {e.points.map((point) => (
               <li key={point} className="flex gap-3">
-                <span className="mt-2 h-px w-4 shrink-0 bg-lux-ink" aria-hidden />
+                <span className="mt-2 h-px w-4 shrink-0 bg-lux-gold" aria-hidden />
                 <span>{point}</span>
               </li>
             ))}

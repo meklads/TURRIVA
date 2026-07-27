@@ -64,7 +64,7 @@ export function LuxuryHomePage({ locale }: Props) {
                   <p className="lux-body mt-4 max-w-md">{item.description}</p>
                   <Link
                     href={item.href}
-                    className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-lux-ink transition-colors hover:text-lux-ink-soft"
+                    className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-lux-gold transition-colors hover:text-lux-gold-light"
                   >
                     {item.cta}
                     <Arrow className="h-4 w-4" strokeWidth={1.5} />
@@ -84,7 +84,7 @@ export function LuxuryHomePage({ locale }: Props) {
         </div>
         <div className="lux-container mt-14 grid gap-px overflow-hidden rounded-sm border border-lux-sand bg-lux-sand sm:grid-cols-2 lg:grid-cols-4">
           {t.why.items.map((item) => (
-            <div key={item.title} className="bg-white p-8 lg:p-9">
+            <div key={item.title} className="bg-lux-gold-muted/25 p-8 lg:p-9">
               <h3 className="lux-display text-lg">{item.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-lux-ink-soft">{item.description}</p>
             </div>
