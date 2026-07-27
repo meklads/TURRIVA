@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-/** Official Turriva lockup — `public/brand/turriva/turriva logo.png` */
+/** Official Turriva lockup — cream horizontal wordmark (`public/brand/turriva/turriva-logo.png`) */
 export const TURRIVA_LOGO_SRC = "/brand/turriva/turriva-logo.png";
 
-export const TURRIVA_LOGO_WIDTH = 1536;
-export const TURRIVA_LOGO_HEIGHT = 1024;
+export const TURRIVA_LOGO_WIDTH = 2518;
+export const TURRIVA_LOGO_HEIGHT = 512;
 
 const LOGO_WIDTH = TURRIVA_LOGO_WIDTH;
 const LOGO_HEIGHT = TURRIVA_LOGO_HEIGHT;
@@ -39,7 +39,7 @@ export function LuxuryBrandLogo({
       priority={priority}
       quality={100}
       unoptimized
-      sizes="(max-width: 640px) 560px, (max-width: 1280px) 920px, 1400px"
+      sizes="(max-width: 640px) 420px, (max-width: 1280px) 720px, 960px"
     />
   );
 

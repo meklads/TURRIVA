@@ -339,9 +339,8 @@
 }
 
 .lux-header-logo-img {
-  image-rendering: -webkit-optimize-contrast;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  image-rendering: auto;
+  -webkit-font-smoothing: antialiased;
 }
 
 .lux-header-bar > nav {
