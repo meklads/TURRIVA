@@ -5,7 +5,7 @@ import Link from "next/link";
 export const TURRIVA_LOGO_SRC = "/brand/turriva/turriva-logo.png";
 
 export const TURRIVA_LOGO_WIDTH = 2304;
-export const TURRIVA_LOGO_HEIGHT = 1572;
+export const TURRIVA_LOGO_HEIGHT = 1608;
 
 const LOGO_WIDTH = TURRIVA_LOGO_WIDTH;
 const LOGO_HEIGHT = TURRIVA_LOGO_HEIGHT;
