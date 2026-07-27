@@ -10,7 +10,7 @@ export const TURRIVA_LOGO_HEIGHT = 1536;
 const LOGO_WIDTH = TURRIVA_LOGO_WIDTH;
 const LOGO_HEIGHT = TURRIVA_LOGO_HEIGHT;
 
-/** Header lockup — in-flow in the bar (PNG unoptimized for clarity) */
+/** Header lockup — layout size; `.lux-header-logo-link` scales 2× visually (compact bar) */
 export const LUXURY_HEADER_LOGO_CLASS =
   "h-11 w-auto max-w-[8.75rem] sm:h-12 sm:max-w-[9.5rem] md:h-14 md:max-w-[11rem] lg:h-[4.25rem] lg:max-w-[13rem] xl:h-[4.75rem] xl:max-w-[14.5rem]";
 
@@ -51,7 +51,7 @@ export function LuxuryBrandLogo({
   return (
     <Link
       href={href}
-      className="inline-flex shrink-0 items-center bg-transparent p-0 leading-none"
+      className="lux-header-logo-link inline-flex shrink-0 items-center bg-transparent p-0 leading-none"
       aria-label="توريفا العقارية — الصفحة الرئيسية"
     >
       {logo}

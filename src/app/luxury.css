@@ -295,7 +295,7 @@
   font-weight: 700;
 }
 
-/* Header — logo in bar; sticky block sits flush above hero */
+/* Header — logo 2× visual size; nav row stays compact */
 .lux-header {
   position: relative;
   z-index: 50;
@@ -308,11 +308,13 @@
 .lux-header-chrome {
   position: relative;
   z-index: 52;
+  overflow: visible;
 }
 
 .lux-header--elevated {
   position: sticky;
   top: 0;
+  overflow: visible;
   background: color-mix(in srgb, var(--lux-ivory) 88%, transparent);
   border-bottom: 1px solid color-mix(in srgb, var(--lux-gold) 22%, var(--lux-sand));
   box-shadow:
@@ -326,12 +328,48 @@
   display: flex;
   align-items: center;
   gap: 0.5rem 0.85rem;
+  min-height: 3.2rem;
   padding-block: 0.35rem 0.4rem;
 }
 
 .lux-header-brand {
-  flex-shrink: 0;
-  line-height: 0;
+  flex: 0 0 auto;
+  align-self: flex-start;
+  width: clamp(4.5rem, 19vw, 5.5rem);
+  height: 0;
+  overflow: visible;
+  z-index: 55;
+  margin-block-start: 0.2rem;
+}
+
+@media (min-width: 640px) {
+  .lux-header-brand {
+    width: clamp(5rem, 16vw, 6rem);
+  }
+}
+
+@media (min-width: 768px) {
+  .lux-header-brand {
+    width: clamp(5.5rem, 14vw, 6.75rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .lux-header-brand {
+    width: clamp(8.5rem, 14vw, 10.25rem);
+  }
+}
+
+@media (min-width: 1280px) {
+  .lux-header-brand {
+    width: clamp(9rem, 12vw, 11rem);
+  }
+}
+
+.lux-header-logo-link {
+  display: inline-flex;
+  transform: scale(2);
+  transform-origin: top inline-start;
 }
 
 .lux-header-logo-img {
@@ -361,6 +399,16 @@
   margin-top: 0;
   padding-block: 0.35rem 0.45rem;
   border-top: 1px solid color-mix(in srgb, var(--lux-sand) 35%, transparent);
+}
+
+.lux-shell main:not(:has(.lux-hero)) > :first-child {
+  padding-top: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .lux-shell main:not(:has(.lux-hero)) > :first-child {
+    padding-top: 4.25rem;
+  }
 }
 
 @media (min-width: 640px) {
@@ -516,6 +564,7 @@
 @media (min-width: 1024px) {
   .lux-hero-copy {
     padding-inline-end: 2rem;
+    padding-top: 4.25rem;
   }
 
   .lux-hero-copy::before {
@@ -1614,6 +1663,7 @@
     -webkit-overflow-scrolling: touch;
     scroll-padding-inline: 1rem;
     padding-block: 0.45rem 0.5rem;
+    padding-inline-start: clamp(9rem, 38vw, 10.5rem);
   }
 }
 
@@ -1624,6 +1674,7 @@
 
   .lux-hero-copy {
     padding-block: 1.25rem 2rem;
+    padding-top: 2.75rem;
   }
 
   .lux-hero-copy-inner {
