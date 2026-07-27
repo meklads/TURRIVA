@@ -17,8 +17,6 @@
   --lux-ink-muted: #7a7268;
   --lux-teal-deep: #1f1c18;
   --lux-teal-mid: #2a241c;
-  --lux-header-chrome-h: auto;
-  --lux-logo-overhang: 2.35rem;
   position: relative;
   isolation: isolate;
   color: var(--lux-ink);
@@ -51,24 +49,6 @@
 
 [dir="rtl"] .lux-shell {
   font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), "Segoe UI", sans-serif;
-}
-
-@media (min-width: 640px) {
-  .lux-shell {
-    --lux-logo-overhang: 2.85rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .lux-shell {
-    --lux-logo-overhang: 5.65rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .lux-shell {
-    --lux-logo-overhang: 5.85rem;
-  }
 }
 
 .lux-container {
@@ -314,7 +294,7 @@
   font-weight: 700;
 }
 
-/* Header — logo 2× visual size; nav row stays compact */
+/* Header — balanced editorial bar: logo · nav · actions */
 .lux-header {
   position: relative;
   z-index: 50;
@@ -327,19 +307,16 @@
 .lux-header-chrome {
   position: relative;
   z-index: 52;
-  overflow: visible;
 }
 
 .lux-header--elevated {
   position: sticky;
   top: 0;
-  overflow: visible;
-  padding-bottom: var(--lux-logo-overhang);
-  background: color-mix(in srgb, var(--lux-ivory) 88%, transparent);
+  background: color-mix(in srgb, var(--lux-ivory) 92%, white);
   border-bottom: 1px solid color-mix(in srgb, var(--lux-gold) 22%, var(--lux-sand));
   box-shadow:
-    0 1px 0 color-mix(in srgb, var(--lux-gold-light) 18%, transparent),
-    0 6px 24px color-mix(in srgb, var(--lux-ink) 5%, transparent);
+    0 1px 0 color-mix(in srgb, var(--lux-gold-light) 14%, transparent),
+    0 8px 28px color-mix(in srgb, var(--lux-ink) 4%, transparent);
   backdrop-filter: blur(14px) saturate(1.12);
   -webkit-backdrop-filter: blur(14px) saturate(1.12);
 }
@@ -347,56 +324,20 @@
 .lux-header-bar {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
   gap: 0.5rem 0.85rem;
-  min-height: 3.65rem;
-  padding-block: 0.55rem 0.7rem;
-}
-
-@media (min-width: 1024px) {
-  .lux-header-bar {
-    min-height: 4rem;
-    padding-block: 0.65rem 0.85rem;
-  }
+  padding-block: 0.65rem 0.7rem;
 }
 
 .lux-header-brand {
-  flex: 0 0 auto;
-  align-self: flex-start;
-  width: clamp(4.5rem, 19vw, 5.5rem);
-  height: 0;
-  overflow: visible;
-  z-index: 55;
-  margin-block-start: 0.35rem;
-}
-
-@media (min-width: 640px) {
-  .lux-header-brand {
-    width: clamp(5rem, 16vw, 6rem);
-  }
-}
-
-@media (min-width: 768px) {
-  .lux-header-brand {
-    width: clamp(5.5rem, 14vw, 6.75rem);
-  }
-}
-
-@media (min-width: 1024px) {
-  .lux-header-brand {
-    width: clamp(8.5rem, 14vw, 10.25rem);
-  }
-}
-
-@media (min-width: 1280px) {
-  .lux-header-brand {
-    width: clamp(9rem, 12vw, 11rem);
-  }
+  flex-shrink: 0;
+  line-height: 0;
+  margin-inline-end: auto;
 }
 
 .lux-header-logo-link {
   display: inline-flex;
-  transform: scale(2);
-  transform-origin: top inline-start;
 }
 
 .lux-header-logo-img {
@@ -406,15 +347,43 @@
 }
 
 .lux-header-bar > nav {
-  flex: 1;
+  flex: 1 1 100%;
   min-width: 0;
   justify-content: center;
+}
+
+@media (min-width: 1280px) {
+  .lux-header-bar {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    flex-wrap: nowrap;
+    column-gap: clamp(1rem, 2.5vw, 2rem);
+    row-gap: 0;
+    padding-block: 0.75rem 0.8rem;
+  }
+
+  .lux-header-brand {
+    margin-inline-end: 0;
+    justify-self: start;
+  }
+
+  .lux-header-bar > nav {
+    flex: none;
+    justify-self: center;
+    width: 100%;
+  }
+
+  .lux-header-actions {
+    justify-self: end;
+  }
 }
 
 .lux-header-actions {
   flex-shrink: 0;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 0.5rem;
 }
 
@@ -429,13 +398,7 @@
 }
 
 .lux-shell main:not(:has(.lux-hero)) > :first-child {
-  padding-top: 1.25rem;
-}
-
-@media (min-width: 1024px) {
-  .lux-shell main:not(:has(.lux-hero)) > :first-child {
-    padding-top: 1.5rem;
-  }
+  padding-top: 0;
 }
 
 @media (min-width: 640px) {
@@ -591,7 +554,7 @@
 @media (min-width: 1024px) {
   .lux-hero-copy {
     padding-inline-end: 2rem;
-    padding-top: 1.75rem;
+    padding-top: 2rem;
   }
 
   .lux-hero-copy::before {
@@ -1683,14 +1646,13 @@
 @media (max-width: 1279px) {
   .lux-header-bar {
     gap: 0.5rem 0.65rem;
-    padding-block: 0.25rem;
+    padding-block: 0.6rem 0.65rem;
   }
 
   .lux-header-mobile {
     -webkit-overflow-scrolling: touch;
     scroll-padding-inline: 1rem;
     padding-block: 0.45rem 0.5rem;
-    padding-inline-start: clamp(9rem, 38vw, 10.5rem);
   }
 }
 
