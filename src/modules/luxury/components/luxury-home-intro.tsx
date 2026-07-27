@@ -10,7 +10,7 @@ export function LuxuryHomeIntro({ messages }: Props) {
   const i = messages.intro;
 
   return (
-    <section className="lux-section lux-section--linen">
+    <section className="lux-section lux-section--white">
       <div className="lux-container lux-editorial-split">
         <div className="lux-editorial-copy">
           <p className="lux-eyebrow">{i.eyebrow}</p>

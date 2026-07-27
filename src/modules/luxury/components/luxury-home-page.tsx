@@ -35,7 +35,7 @@ export function LuxuryHomePage({ locale }: Props) {
       <LuxuryCapabilitiesSection messages={t} />
       <LuxuryExecutionSection messages={t} />
 
-      <section id="services" className="lux-section scroll-mt-24">
+      <section id="services" className="lux-section lux-section--linen scroll-mt-24">
         <div className="lux-container max-w-3xl text-center">
           <p className="lux-eyebrow">{t.services.eyebrow}</p>
           <div className="lux-divider-gold" />
@@ -76,23 +76,23 @@ export function LuxuryHomePage({ locale }: Props) {
         </div>
       </section>
 
-      <section className="lux-section lux-section--linen">
+      <section className="lux-section lux-section--dark">
         <div className="lux-container max-w-3xl text-center">
           <p className="lux-eyebrow">{t.why.eyebrow}</p>
           <div className="lux-divider-gold" />
           <h2 className="lux-display lux-heading mt-6">{t.why.title}</h2>
         </div>
-        <div className="lux-container mt-14 grid gap-px overflow-hidden rounded-sm border border-lux-sand bg-lux-sand sm:grid-cols-2 lg:grid-cols-4">
+        <div className="lux-container mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
           {t.why.items.map((item) => (
-            <div key={item.title} className="bg-lux-gold-muted/25 p-8 lg:p-9">
+            <div key={item.title} className="lux-dark-card">
               <h3 className="lux-display text-lg">{item.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-lux-ink-soft">{item.description}</p>
+              <p className="mt-3 text-sm leading-relaxed">{item.description}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="lux-section">
+      <section className="lux-section lux-section--white">
         <div className="lux-container max-w-3xl text-center">
           <p className="lux-eyebrow">{t.projects.eyebrow}</p>
           <div className="lux-divider-gold" />
@@ -145,32 +145,38 @@ export function LuxuryHomePage({ locale }: Props) {
         </div>
       </section>
 
-      <section className="lux-section">
+      <section className="lux-section lux-section--dark">
         <div className="lux-container max-w-3xl text-center">
           <p className="lux-eyebrow">{t.testimonials.eyebrow}</p>
           <div className="lux-divider-gold" />
           <h2 className="lux-display lux-heading mt-6">{t.testimonials.title}</h2>
         </div>
-        <div className="lux-container mt-14 grid gap-8 md:grid-cols-2">
+        <div className="lux-container mt-14 grid gap-6 md:grid-cols-2 md:gap-8">
           {t.testimonials.items.map((item) => (
-            <blockquote key={item.quote} className="lux-quote">
-              <p className="lux-display text-xl leading-snug text-lux-ink">&ldquo;{item.quote}&rdquo;</p>
-              <footer className="mt-8 border-t border-lux-sand pt-5">
-                <p className="text-sm font-semibold text-lux-ink">{item.author}</p>
-                <p className="text-xs text-lux-ink-muted">{item.role}</p>
+            <blockquote key={item.quote} className="lux-quote lux-quote--on-dark">
+              <p className="lux-display text-xl leading-snug">&ldquo;{item.quote}&rdquo;</p>
+              <footer className="mt-8 border-t border-lux-gold/30 pt-5">
+                <p className="text-sm font-semibold text-lux-ivory">{item.author}</p>
+                <p className="text-xs text-lux-gold-light/90">{item.role}</p>
               </footer>
             </blockquote>
           ))}
         </div>
       </section>
 
-      <section className="lux-cta-band">
-        <div className="lux-container text-center">
-          <h2 className="lux-display lux-heading text-white">{t.cta.title}</h2>
-          <p className="lux-body mx-auto mt-4 max-w-xl text-white/75">{t.cta.subtitle}</p>
-          <Link href="/contact" className="lux-btn-primary lux-btn-primary--on-dark mt-10">
-            {t.cta.button}
-          </Link>
+      <section className="lux-cta-band" aria-labelledby="home-cta-heading">
+        <div className="lux-container">
+          <div className="lux-cta-band-panel text-center">
+            <p className="lux-eyebrow">{t.brand.tagline}</p>
+            <div className="lux-divider-gold" />
+            <h2 id="home-cta-heading" className="lux-display lux-heading mt-6">
+              {t.cta.title}
+            </h2>
+            <p className="lux-body mx-auto mt-4 max-w-xl">{t.cta.subtitle}</p>
+            <Link href="/contact" className="lux-btn-primary mt-10">
+              {t.cta.button}
+            </Link>
+          </div>
         </div>
       </section>
     </>

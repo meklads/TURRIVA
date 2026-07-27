@@ -10,7 +10,7 @@ export function LuxuryCapabilitiesSection({ messages }: Props) {
   const c = messages.capabilities;
 
   return (
-    <section className="lux-section">
+    <section className="lux-section lux-section--white">
       <div className="lux-container max-w-3xl text-center">
         <p className="lux-eyebrow">{c.eyebrow}</p>
         <div className="lux-divider-gold" />
