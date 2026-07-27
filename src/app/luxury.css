@@ -328,8 +328,15 @@
   display: flex;
   align-items: center;
   gap: 0.5rem 0.85rem;
-  min-height: 3.2rem;
-  padding-block: 0.35rem 0.4rem;
+  min-height: 3.65rem;
+  padding-block: 0.55rem 0.7rem;
+}
+
+@media (min-width: 1024px) {
+  .lux-header-bar {
+    min-height: 4rem;
+    padding-block: 0.65rem 0.85rem;
+  }
 }
 
 .lux-header-brand {
@@ -339,7 +346,7 @@
   height: 0;
   overflow: visible;
   z-index: 55;
-  margin-block-start: 0.2rem;
+  margin-block-start: 0.35rem;
 }
 
 @media (min-width: 640px) {
@@ -397,7 +404,7 @@
 
 .lux-header-mobile {
   margin-top: 0;
-  padding-block: 0.35rem 0.45rem;
+  padding-block: 0.45rem 0.55rem;
   border-top: 1px solid color-mix(in srgb, var(--lux-sand) 35%, transparent);
 }
 
