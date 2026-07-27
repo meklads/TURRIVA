@@ -44,14 +44,13 @@ export function LuxuryHomeHero({ locale }: Props) {
             <Image
               src={LUXURY_HERO_IMAGE}
               alt=""
-              fill
+              width={1536}
+              height={1024}
               priority
               unoptimized
-              className="lux-hero-media-img object-contain object-center"
-              sizes="(max-width: 1024px) 100vw, 56vw"
+              className="lux-hero-media-img h-auto w-full object-contain object-center"
             />
           </div>
-          <div className="lux-hero-media-fade" aria-hidden />
         </div>
       </div>
     </section>

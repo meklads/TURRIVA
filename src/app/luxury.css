@@ -512,15 +512,16 @@
   position: relative;
   z-index: 1;
   display: grid;
-  min-height: min(88vh, 52rem);
+  min-height: 0;
   grid-template-columns: 1fr;
 }
 
 @media (min-width: 1024px) {
   .lux-hero-inner {
     grid-template-columns: minmax(0, 42%) minmax(0, 58%);
-    min-height: min(92vh, 56rem);
+    min-height: 0;
     gap: 0;
+    align-items: center;
   }
 }
 
@@ -575,7 +576,6 @@
 
 .lux-hero-media {
   position: relative;
-  min-height: 16rem;
   order: -1;
   background: var(--lux-ivory);
 }
@@ -583,58 +583,37 @@
 @media (min-width: 1024px) {
   .lux-hero-media {
     order: 0;
-    min-height: auto;
-    padding: 0.5rem 0 0.5rem 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 0 0.75rem 0.5rem;
   }
 
   [dir="rtl"] .lux-hero-media {
-    padding: 0.5rem 0.75rem 0.5rem 0;
+    padding: 0.75rem 0.5rem 0.75rem 0;
   }
 }
 
 .lux-hero-media-frame {
   position: relative;
-  height: 100%;
-  min-height: 16rem;
-  overflow: hidden;
-  background: var(--lux-ivory);
-  box-shadow: 0 12px 40px color-mix(in srgb, var(--lux-ink) 10%, transparent);
+  width: 100%;
+  overflow: visible;
+  background: transparent;
+  box-shadow: 0 12px 40px color-mix(in srgb, var(--lux-ink) 8%, transparent);
 }
 
 @media (min-width: 1024px) {
   .lux-hero-media-frame {
-    min-height: calc(min(92vh, 56rem) - 1rem);
-    aspect-ratio: 3 / 2;
     outline: 1px solid color-mix(in srgb, var(--lux-gold) 28%, var(--lux-sand));
     outline-offset: -1px;
   }
 }
 
-.lux-hero-media-vignette {
-  display: none;
-}
-
-.lux-hero-media-fade {
-  position: absolute;
-  inset-block: 0;
-  inset-inline-start: 0;
-  width: min(18%, 7rem);
-  background: linear-gradient(
-    to right,
-    color-mix(in srgb, var(--lux-ivory) 88%, transparent) 0%,
-    transparent 100%
-  );
-  pointer-events: none;
-}
-
-[dir="rtl"] .lux-hero-media-fade {
-  inset-inline-start: auto;
-  inset-inline-end: 0;
-  background: linear-gradient(
-    to left,
-    color-mix(in srgb, var(--lux-ivory) 88%, transparent) 0%,
-    transparent 100%
-  );
+.lux-hero-media-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 
 .lux-hero-tags {
@@ -1680,13 +1659,7 @@
   }
 
   .lux-hero-media-frame {
-    min-height: 11.5rem;
-    max-height: min(52vh, 22rem);
     box-shadow: none;
-  }
-
-  .lux-hero-media-fade {
-    display: none;
   }
 
   .lux-hero-cta .lux-btn-primary,
