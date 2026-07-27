@@ -305,13 +305,15 @@
 .lux-header-chrome {
   position: relative;
   z-index: 52;
+  overflow: visible;
 }
 
 .lux-header--elevated {
   position: sticky;
   top: 0;
+  overflow: visible;
   background: color-mix(in srgb, var(--lux-ivory) 92%, white);
-  border-bottom: 1px solid color-mix(in srgb, var(--lux-gold) 22%, var(--lux-sand));
+  border-bottom: none;
   box-shadow:
     0 1px 0 color-mix(in srgb, var(--lux-gold-light) 14%, transparent),
     0 8px 28px color-mix(in srgb, var(--lux-ink) 4%, transparent);
@@ -320,6 +322,7 @@
 }
 
 .lux-header-bar {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -328,18 +331,39 @@
   padding-block: 0.65rem 0.7rem;
 }
 
+.lux-header-bar::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 54;
+  height: 1px;
+  background: color-mix(in srgb, var(--lux-gold) 22%, var(--lux-sand));
+  pointer-events: none;
+}
+
 .lux-header-brand {
   flex-shrink: 0;
+  width: clamp(5rem, 21vw, 6.25rem);
+  height: 0;
+  overflow: visible;
+  align-self: flex-end;
   line-height: 0;
   margin-inline-end: auto;
+  z-index: 55;
 }
 
 .lux-header-logo-link {
   display: inline-flex;
+  transform: scale(2);
+  transform-origin: bottom inline-start;
+  will-change: transform;
+  filter: contrast(1.04) saturate(1.06);
 }
 
 .lux-header-logo-img {
-  image-rendering: auto;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
@@ -348,6 +372,12 @@
   flex: 1 1 100%;
   min-width: 0;
   justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .lux-header-brand {
+    width: clamp(5.75rem, 15vw, 7rem);
+  }
 }
 
 @media (min-width: 1280px) {
@@ -362,8 +392,10 @@
   }
 
   .lux-header-brand {
+    width: clamp(8.75rem, 13vw, 10.75rem);
     margin-inline-end: 0;
     justify-self: start;
+    align-self: end;
   }
 
   .lux-header-bar > nav {
@@ -1630,6 +1662,7 @@
     -webkit-overflow-scrolling: touch;
     scroll-padding-inline: 1rem;
     padding-block: 0.45rem 0.5rem;
+    padding-inline-start: clamp(9.5rem, 40vw, 11rem);
   }
 }
 

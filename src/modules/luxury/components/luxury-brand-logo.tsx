@@ -39,7 +39,7 @@ export function LuxuryBrandLogo({
       priority={priority}
       quality={100}
       unoptimized
-      sizes="(max-width: 640px) 400px, (max-width: 1024px) 660px, 1170px"
+      sizes="(max-width: 640px) 560px, (max-width: 1280px) 920px, 1400px"
     />
   );
 
