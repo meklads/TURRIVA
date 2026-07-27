@@ -4,15 +4,15 @@ import Link from "next/link";
 /** Official Turriva lockup — `public/brand/turriva/turriva logo.png` */
 export const TURRIVA_LOGO_SRC = "/brand/turriva/turriva-logo.png";
 
-export const TURRIVA_LOGO_WIDTH = 2304;
-export const TURRIVA_LOGO_HEIGHT = 1554;
+export const TURRIVA_LOGO_WIDTH = 1536;
+export const TURRIVA_LOGO_HEIGHT = 1024;
 
 const LOGO_WIDTH = TURRIVA_LOGO_WIDTH;
 const LOGO_HEIGHT = TURRIVA_LOGO_HEIGHT;
 
-/** Header lockup — in-flow inside the bar; height sets total header rhythm */
+/** Header lockup — in-flow; ~1.5× display scale on prior sizes */
 export const LUXURY_HEADER_LOGO_CLASS =
-  "h-[3.25rem] w-auto max-w-[9.5rem] sm:h-14 sm:max-w-[10.5rem] md:h-16 md:max-w-[12rem] lg:h-[4.75rem] lg:max-w-[14.5rem] xl:h-[5.5rem] xl:max-w-[16.5rem]";
+  "h-[4.875rem] w-auto max-w-[14.25rem] sm:h-[5.25rem] sm:max-w-[15.75rem] md:h-24 md:max-w-[18rem] lg:h-[7.125rem] lg:max-w-[21.75rem] xl:h-[8.25rem] xl:max-w-[24.75rem]";
 
 type Props = {
   href?: string;
