@@ -18,7 +18,7 @@ export function LuxuryHomeHero({ locale }: Props) {
         <div className="lux-hero-copy">
           <div className="lux-hero-copy-inner lux-reveal">
             <p className="lux-eyebrow">{t.hero.eyebrow}</p>
-            <h1 className="lux-display lux-hero-title mt-4">{t.hero.title}</h1>
+            <h1 className="lux-display lux-heading mt-4">{t.hero.title}</h1>
             <div className="lux-flourish" aria-hidden />
             <p className="lux-body max-w-lg">{t.hero.subtitle}</p>
             <div className="lux-hero-tags" aria-label={t.hero.servicesLine}>

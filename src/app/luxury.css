@@ -80,10 +80,8 @@
   line-height: 1.15;
 }
 
-.lux-hero-title {
-  font-size: clamp(2.125rem, 5.5vw, 4.25rem);
-  line-height: 1.08;
-  letter-spacing: -0.035em;
+.lux-hero-copy .lux-heading {
+  letter-spacing: -0.02em;
   text-shadow:
     0 0 56px color-mix(in srgb, var(--lux-amber) 18%, transparent),
     0 2px 24px color-mix(in srgb, var(--lux-gold) 8%, transparent);
@@ -1647,11 +1645,6 @@
 
   .lux-hero-copy-inner {
     max-width: none;
-  }
-
-  .lux-hero-title {
-    font-size: clamp(1.625rem, 7.5vw, 2.375rem);
-    line-height: 1.12;
   }
 
   .lux-hero-media {
