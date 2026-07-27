@@ -12,24 +12,25 @@ export async function LuxuryHeader() {
   const t = getLuxuryMessages(locale);
 
   return (
-    <header className="lux-header lux-header--elevated">
+    <header className="lux-header">
       <div className="lux-container lux-header-shell">
-        <div className="lux-header-bar">
-          <div className="lux-header-logo">
-            <LuxuryBrandLogo href="/" priority />
+        <div className="lux-header-chrome lux-header--elevated">
+          <div className="lux-header-bar">
+            <div className="lux-header-logo-spacer" aria-hidden />
+            <LuxuryDesktopNav links={links} />
+            <div className="lux-header-actions">
+              <Link href="/contact" className="lux-btn-primary hidden xl:inline-flex !min-w-0 px-5 py-2.5 text-[10px]">
+                {t.hero.ctaPrimary}
+              </Link>
+              <LocaleSwitcher />
+            </div>
           </div>
-
-          <LuxuryDesktopNav links={links} />
-
-          <div className="lux-header-actions">
-            <Link href="/contact" className="lux-btn-primary hidden xl:inline-flex !min-w-0 px-5 py-2.5 text-[10px]">
-              {t.hero.ctaPrimary}
-            </Link>
-            <LocaleSwitcher />
-          </div>
+          <LuxuryMobileNav links={links} />
         </div>
 
-        <LuxuryMobileNav links={links} />
+        <div className="lux-header-logo">
+          <LuxuryBrandLogo href="/" priority />
+        </div>
       </div>
     </header>
   );
