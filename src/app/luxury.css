@@ -1286,8 +1286,8 @@
   display: block;
   height: auto;
   width: auto;
-  max-height: 3.325rem;
-  max-width: min(100%, 11.2rem);
+  max-height: 2.325rem;
+  max-width: min(100%, 7.84rem);
   object-fit: contain;
   object-position: start;
   filter: brightness(0) invert(1);
