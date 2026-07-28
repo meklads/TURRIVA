@@ -10,9 +10,9 @@ export const TURRIVA_LOGO_HEIGHT = 249;
 const LOGO_WIDTH = TURRIVA_LOGO_WIDTH;
 const LOGO_HEIGHT = TURRIVA_LOGO_HEIGHT;
 
-/** Header lockup — in-flow; ~1.5× display scale on prior sizes */
+/** Header lockup — in-flow (30% smaller than prior scale) */
 export const LUXURY_HEADER_LOGO_CLASS =
-  "h-[4.875rem] w-auto max-w-[14.25rem] sm:h-[5.25rem] sm:max-w-[15.75rem] md:h-24 md:max-w-[18rem] lg:h-[7.125rem] lg:max-w-[21.75rem] xl:h-[8.25rem] xl:max-w-[24.75rem]";
+  "h-[3.4rem] w-auto max-w-[10rem] sm:h-[3.675rem] sm:max-w-[11rem] md:h-[4.2rem] md:max-w-[12.6rem] lg:h-[5rem] lg:max-w-[15.25rem] xl:h-[5.75rem] xl:max-w-[17.25rem]";
 
 type Props = {
   href?: string;
