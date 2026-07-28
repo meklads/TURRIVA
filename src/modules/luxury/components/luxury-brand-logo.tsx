@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-/** Official Turriva lockup — cream horizontal wordmark (`public/brand/turriva/turriva-logo.png`) */
+/** Official Turriva lockup — source: `public/brand/turriva/turriva logo.png` (trimmed for header) */
 export const TURRIVA_LOGO_SRC = "/brand/turriva/turriva-logo.png";
 
-export const TURRIVA_LOGO_WIDTH = 2518;
-export const TURRIVA_LOGO_HEIGHT = 512;
+export const TURRIVA_LOGO_WIDTH = 1270;
+export const TURRIVA_LOGO_HEIGHT = 263;
 
 const LOGO_WIDTH = TURRIVA_LOGO_WIDTH;
 const LOGO_HEIGHT = TURRIVA_LOGO_HEIGHT;
