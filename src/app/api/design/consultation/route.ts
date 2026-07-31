@@ -15,6 +15,8 @@ const bodySchema = z.object({
   locale: z.enum(["ar", "en"]).optional(),
   city: z.enum(["jeddah", "makkah", "other"]).optional(),
   interest: z.enum(["execution", "bespoke", "both"]).optional(),
+  source: z.string().max(64).optional(),
+  projectType: z.string().max(64).optional(),
   generationId: z.string().cuid().optional(),
 });
 
@@ -27,7 +29,8 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid input" }, { status: 400 });
     }
 
-    const { name, phone, message, locale, city, interest, generationId } = parsed.data;
+    const { name, phone, message, locale, city, interest, generationId, source, projectType } =
+      parsed.data;
 
     if (city && !isDesignCity(city)) {
       return NextResponse.json({ error: "Invalid city" }, { status: 400 });
@@ -46,7 +49,8 @@ export async function POST(req: NextRequest) {
         generationId: generationId ?? null,
         locale: locale ?? "ar",
         userId: session?.user?.id ?? null,
-        source: "design_studio",
+        source: source ?? "design_studio",
+        projectType: projectType ?? null,
       },
     });
 

@@ -5,10 +5,10 @@ export function getLuxuryNavLinks(locale: Locale) {
   const t = getLuxuryMessages(locale);
   return [
     { href: "/", label: t.nav.home },
-    { href: "/interior-design", label: t.nav.interiorDesign },
-    { href: "/construction", label: t.nav.construction },
+    { href: "/villas", label: t.nav.villas },
+    { href: "/projects", label: t.nav.projects },
     { href: "/our-work", label: t.nav.ourWork },
-    { href: "/about", label: t.nav.about },
+    { href: "/design", label: t.nav.design3d },
     { href: "/contact", label: t.nav.contact },
   ] as const;
 }

@@ -7,7 +7,6 @@ const REMOVED_APP_PREFIXES = [
   "/templates",
   "/faq",
   "/services",
-  "/design",
   "/insights",
   "/login",
   "/share",

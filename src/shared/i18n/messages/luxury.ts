@@ -1,9 +1,16 @@
 import type { Locale } from "../locale";
+import {
+  getLuxuryPlatformMessages,
+  type LuxuryPlatformMessages,
+} from "./luxury-platform";
 
-export type LuxuryMessages = {
+export type LuxuryMessages = LuxuryPlatformMessages & {
   brand: { name: string; tagline: string };
   nav: {
     home: string;
+    villas: string;
+    projects: string;
+    design3d: string;
     interiorDesign: string;
     construction: string;
     ourWork: string;
@@ -18,6 +25,7 @@ export type LuxuryMessages = {
     tags: readonly string[];
     ctaPrimary: string;
     ctaSecondary: string;
+    ctaSample: string;
   };
   intro: {
     eyebrow: string;
@@ -107,14 +115,49 @@ export type LuxuryMessages = {
     construction: { title: string; intro: string };
     ourWork: { title: string; intro: string };
     about: { title: string; intro: string };
-    contact: { title: string; intro: string; formName: string; formEmail: string; formMessage: string; formSubmit: string };
+    contact: {
+      title: string;
+      intro: string;
+      formName: string;
+      formEmail: string;
+      formPhone: string;
+      formProjectType: string;
+      formMessage: string;
+      formSubmit: string;
+      formSuccess: string;
+      formError: string;
+      projectTypes: readonly { value: string; label: string }[];
+    };
+    villas: {
+      title: string;
+      intro: string;
+      steps: readonly { title: string; description: string }[];
+      ctaDesign: string;
+      ctaContact: string;
+    };
+    projects: {
+      title: string;
+      intro: string;
+      highlights: readonly { title: string; description: string }[];
+      formTitle: string;
+      formCompany: string;
+      formUnits: string;
+      formProducts: string;
+      formSubmit: string;
+      productOptions: readonly { value: string; label: string }[];
+    };
+    design: { title: string; intro: string };
   };
 };
 
 const en: LuxuryMessages = {
-  brand: { name: "Turriva Real Estate", tagline: "Design & build decor" },
+  ...getLuxuryPlatformMessages("en"),
+  brand: { name: "Turriva", tagline: "Integrated fit-out platform" },
   nav: {
     home: "HOME",
+    villas: "VILLAS",
+    projects: "PROJECTS",
+    design3d: "3D DESIGN",
     interiorDesign: "INTERIOR DESIGN",
     construction: "DELIVERY & BUILD",
     ourWork: "OUR WORK",
@@ -122,14 +165,15 @@ const en: LuxuryMessages = {
     contact: "CONTACT",
   },
   hero: {
-    eyebrow: "Saudi Arabia · Design & build",
-    title: "Modern decor, designed with you and delivered on your site",
+    eyebrow: "Saudi Arabia · Design · OPPEIN supply · Local execution",
+    title: "An integrated system to design, supply, and deliver premium spaces",
     subtitle:
-      "Turriva is a Saudi team for interior design and execution — villas, palaces, retail, and exhibition spaces in Jeddah and Makkah. We care about craft, clarity, and client satisfaction: what you approve is what we install, on schedule and to a standard you can feel when you walk in.",
-    servicesLine: "Interiors · Facades · Exhibitions",
-    tags: ["Interior design", "Facades", "Exhibition builds", "Jeddah & Makkah"],
-    ctaPrimary: "Book a consultation",
-    ctaSecondary: "View our work",
+      "We unite architectural 3D precision, automated global manufacturing through OPPEIN, and Turriva engineering on the ground — so developers and villa owners get one accountable partner from drawing to handover.",
+    servicesLine: "Kitchens · Wardrobes · Joinery · Villas · Projects",
+    tags: ["3D design", "OPPEIN supply", "Local install", "B2B & villas"],
+    ctaPrimary: "Book 3D design session",
+    ctaSecondary: "B2B project catalog",
+    ctaSample: "Request sample kit",
   },
   intro: {
     eyebrow: "How we work",
@@ -139,10 +183,10 @@ const en: LuxuryMessages = {
   },
   stats: {
     items: [
-      { value: "15+", label: "Years in design & fit-out" },
-      { value: "200+", label: "Residential & commercial projects" },
-      { value: "1 team", label: "Design through handover" },
-      { value: "Jeddah · Makkah", label: "Western Region base" },
+      { value: "3D", label: "Factory-aligned design studio" },
+      { value: "OPPEIN", label: "Global manufacturing partner" },
+      { value: "1 team", label: "Survey through warranty" },
+      { value: "SASO", label: "Local compliance & install" },
     ],
   },
   execution: {
@@ -285,14 +329,14 @@ const en: LuxuryMessages = {
     ],
   },
   cta: {
-    title: "Begin your project with us",
+    title: "Ready for a factory-aligned design review?",
     subtitle:
-      "Share your villa, palace, retail space, or exhibition brief. We respond within one business day with clear scope, timeline, and the right Turriva lead.",
-    button: "Contact Turriva",
+      "Request a sample kit, book a 3D session, or send your B2B floor plan. We respond within one business day.",
+    button: "Talk to Turriva",
   },
   footer: {
     about:
-      "Turriva Real Estate — Saudi interior design and on-site delivery for villas, palaces, shops, and exhibition builds in Jeddah and Makkah. Modern decor, disciplined execution, and client care at every stage.",
+      "Turriva — integrated fit-out platform in Saudi Arabia: architectural 3D, OPPEIN modular supply, and local engineering from survey to warranty.",
     quickLinks: "Quick Links",
     importantLinks: "Important Links",
     servicesLinks: "Services",
@@ -307,15 +351,15 @@ const en: LuxuryMessages = {
     contact: "Contact",
     callNow: "Call now",
     followUs: "Follow us",
-    copyright: "© Turriva Real Estate. All rights reserved.",
+    copyright: "© Turriva. All rights reserved.",
     privacy: "Privacy Policy",
     terms: "Terms of Use",
     address: "Jeddah, Al-Zahra District, Saudi Arabia",
     email: "hello@turriva.co",
     phone: "+966 50 278 6513",
-    poweredByPrefix: "Turriva by",
+    poweredByPrefix: "Design studio heritage ·",
     poweredByLink: "Graphics House",
-    sponsoredBy: "Turriva Real Estate is powered by",
+    sponsoredBy: "Turriva integrated fit-out platform",
   },
   pages: {
     interiorDesign: {
@@ -336,23 +380,77 @@ const en: LuxuryMessages = {
     about: {
       title: "About Turriva",
       intro:
-        "A Saudi company for modern decor design and execution — quality materials, honest timelines, and service that aims to exceed what clients expect.",
+        "Turriva is the master brand for an integrated fit-out system — design visualization, OPPEIN manufacturing access, and Saudi field execution under one accountable platform.",
     },
     contact: {
       title: "Contact Turriva",
-      intro: "Request a consultation for interior design, site delivery, or your next exhibition build.",
+      intro: "Request a sample kit, 3D session, or share your project brief.",
       formName: "Name",
       formEmail: "Email",
-      formMessage: "Your project (villa, palace, retail, booth…)",
-      formSubmit: "Send message",
+      formPhone: "Phone / WhatsApp",
+      formProjectType: "Project type",
+      formMessage: "Tell us about your project",
+      formSubmit: "Send request",
+      formSuccess: "Thank you — we will contact you within one business day.",
+      formError: "Something went wrong. Please try again or WhatsApp us.",
+      projectTypes: [
+        { value: "villa", label: "Private villa" },
+        { value: "developer", label: "Developer / B2B project" },
+        { value: "hospitality", label: "Hotel / hospitality" },
+        { value: "sample", label: "Sample kit request" },
+        { value: "other", label: "Other" },
+      ],
+    },
+    villas: {
+      title: "Villas & private residences",
+      intro:
+        "A Livspace-grade journey for luxury homes — free 3D visualization, OPPEIN kitchens and wardrobes, and Turriva installation with local warranty.",
+      steps: [
+        { title: "3D design session", description: "Upload your plan or book a visit — factory-module layouts in days." },
+        { title: "Samples & sign-off", description: "Physical finishes and hardware references before we order." },
+        { title: "Manufacture & import", description: "Automated OPPEIN production with SASO / SABER clearance." },
+        { title: "Install & warranty", description: "Laser-verified install and local after-sales support." },
+      ],
+      ctaDesign: "Start 3D design",
+      ctaContact: "Book villa consultation",
+    },
+    projects: {
+      title: "Developers & B2B projects",
+      intro:
+        "Oppein-grade supply for multi-unit programmes — competitive direct pricing without showroom overhead, shop drawings SLA, and phased logistics.",
+      highlights: [
+        { title: "MOQ & volume pricing", description: "Structured discounts for residential towers, compounds, and hospitality batches." },
+        { title: "Shop drawings SLA", description: "Execution drawings aligned to factory modules within agreed timelines." },
+        { title: "Customs & storage", description: "Import, SASO / SABER, and staged delivery to your programme." },
+        { title: "Site teams", description: "Turriva supervisors through snagging and handover documentation." },
+      ],
+      formTitle: "Request B2B proposal",
+      formCompany: "Company / developer name",
+      formUnits: "Approx. units or area (sqm)",
+      formProducts: "Products needed",
+      formSubmit: "Submit B2B brief",
+      productOptions: [
+        { value: "kitchens", label: "Kitchens" },
+        { value: "wardrobes", label: "Wardrobes" },
+        { value: "doors", label: "Doors & panels" },
+        { value: "whole", label: "Whole-house solution" },
+      ],
+    },
+    design: {
+      title: "3D design studio",
+      intro: "Visualize your space with factory-aligned modules — then qualify for execution and sample review.",
     },
   },
 };
 
 const ar: LuxuryMessages = {
-  brand: { name: "توريفا العقارية", tagline: "تصميم داخلي وتنفيذ متكامل" },
+  ...getLuxuryPlatformMessages("ar"),
+  brand: { name: "توريفا", tagline: "منصة تأثيث متكاملة" },
   nav: {
     home: "الرئيسية",
+    villas: "الفلل",
+    projects: "المشاريع",
+    design3d: "تصميم 3D",
     interiorDesign: "التصميم الداخلي",
     construction: "التنفيذ في الموقع",
     ourWork: "أعمالنا",
@@ -360,14 +458,15 @@ const ar: LuxuryMessages = {
     contact: "تواصل",
   },
   hero: {
-    eyebrow: "السعودية · تصميم وتنفيذ",
-    title: "ديكور معاصر… تصميم مشترك وتنفيذ في موقعكم",
+    eyebrow: "السعودية · تصميم · توريد OPPEIN · تنفيذ محلي",
+    title: "منظومة متكاملة لتصميم وتوريد وتنفيذ المساحات الفاخرة",
     subtitle:
-      "توريفا العقارية فريق سعودي متخصص في التصميم الداخلي والتنفيذ — فلل وقصور ومساحات تجارية وأجنحة معارض في جدة ومكة. نلتزم بما يُعتمد في لوحات العرض: تركيب مطابق للموافقات، جداول واضحة، ومعايير جودة تظهر في تفاصيل المكان.",
-    servicesLine: "داخلي · واجهات · معارض",
-    tags: ["تصميم داخلي", "واجهات", "أجنحة معارض", "جدة ومكة"],
-    ctaPrimary: "احجز استشارة",
-    ctaSecondary: "استعرض أعمالنا",
+      "نجمع بين دقة التصميم المعماري ثلاثي الأبعاد، التصنيع الأوتوماتيكي العالمي عبر OPPEIN، والهندسة الميدانية لتوريفا — جهة واحدة مسؤولة من المخطط حتى التسليم للمطورين وأصحاب الفلل.",
+    servicesLine: "مطابخ · خزائن · تكسيات · فلل · مشاريع",
+    tags: ["تصميم 3D", "توريد OPPEIN", "تركيب محلي", "B2B وفلل"],
+    ctaPrimary: "احجز جلسة تصميم 3D",
+    ctaSecondary: "كتالوج مشاريع B2B",
+    ctaSample: "اطلب حقيبة العينات",
   },
   intro: {
     eyebrow: "منهجنا",
@@ -377,10 +476,10 @@ const ar: LuxuryMessages = {
   },
   stats: {
     items: [
-      { value: "+15", label: "عامًا في التصميم والتشطيب" },
-      { value: "+200", label: "مشروع سكني وتجاري" },
-      { value: "فريق واحد", label: "من التصميم حتى التسليم" },
-      { value: "جدة · مكة", label: "المنطقة الغربية" },
+      { value: "3D", label: "استوديو تصميم بمقاسات المصنع" },
+      { value: "OPPEIN", label: "شريك تصنيع عالمي" },
+      { value: "فريق واحد", label: "من الرفع المساحي حتى الضمان" },
+      { value: "SASO", label: "امتثال وتركيب محلي" },
     ],
   },
   execution: {
@@ -522,14 +621,14 @@ const ar: LuxuryMessages = {
     ],
   },
   cta: {
-    title: "تواصل لبدء مشروعك",
+    title: "جاهز لمراجعة مخططاتك بمقاسات المصنع؟",
     subtitle:
-      "عرّفنا بمشروعك: فيلا، قصر، مساحة تجارية، أو جناح معرض. نرد خلال يوم عمل بنطاق واضح وجدول زمني ومسؤول المشروع المناسب.",
+      "اطلب حقيبة العينات، احجز جلسة 3D، أو أرسل مخطط مشروع B2B. نرد خلال يوم عمل.",
     button: "تواصل مع توريفا",
   },
   footer: {
     about:
-      "توريفا العقارية — تصميم داخلي وتنفيذ ميداني للفلل والقصور والمساحات التجارية وأجنحة المعارض في جدة ومكة. ديكور معاصر، انضباط في التنفيذ، وخدمة راقية في كل مرحلة.",
+      "توريفا — منصة تأثيث متكاملة في السعودية: إظهار معماري 3D، توريد معياري OPPEIN، وهندسة ميدانية من الرفع المساحي حتى الضمان.",
     quickLinks: "روابط سريعة",
     importantLinks: "أهم الروابط",
     servicesLinks: "الخدمات",
@@ -544,15 +643,15 @@ const ar: LuxuryMessages = {
     contact: "تواصل معنا",
     callNow: "اتصل الآن",
     followUs: "تابعنا على:",
-    copyright: "© توريفا العقارية. جميع الحقوق محفوظة.",
+    copyright: "© توريفا. جميع الحقوق محفوظة.",
     privacy: "سياسة الخصوصية",
     terms: "شروط الاستخدام",
     address: "جدة، حي الزهراء، المملكة العربية السعودية",
     email: "hello@turriva.co",
     phone: "+966 50 278 6513",
-    poweredByPrefix: "توريفا العقارية بواسطة",
+    poweredByPrefix: "تراث استوديو التصميم ·",
     poweredByLink: "جرافيكس هاوس",
-    sponsoredBy: "توريفا العقارية برعاية",
+    sponsoredBy: "منصة توريفا للتأثيث المتكامل",
   },
   pages: {
     interiorDesign: {
@@ -570,17 +669,67 @@ const ar: LuxuryMessages = {
       intro: "نماذج من داخليات وواجهات ومعارض نفّذها فريق توريفا في الغربية ووسط المملكة.",
     },
     about: {
-      title: "عن توريفا العقارية",
+      title: "عن توريفا",
       intro:
-        "شركة سعودية للتصميم الداخلي والتنفيذ — خامات مختارة، جداول زمنية واضحة، وخدمة تليق بمستوى مشاريعكم.",
+        "توريفا العلامة الرئيسية لمنظومة تأثيث متكاملة — إظهار 3D، توريد OPPEIN، وتنفيذ ميداني سعودي تحت منصة واحدة.",
     },
     contact: {
-      title: "تواصل مع توريفا العقارية",
-      intro: "اطلب استشارة للتصميم الداخلي أو التنفيذ في الموقع أو لبناء جناح معرض قادم.",
+      title: "تواصل مع توريفا",
+      intro: "اطلب حقيبة العينات، جلسة 3D، أو شاركنا ملخص مشروعك.",
       formName: "الاسم",
       formEmail: "البريد الإلكتروني",
-      formMessage: "مشروعك (فيلا، قصر، مساحة تجارية، جناح معرض…)",
-      formSubmit: "إرسال الرسالة",
+      formPhone: "الجوال / واتساب",
+      formProjectType: "نوع المشروع",
+      formMessage: "أخبرنا عن مشروعك",
+      formSubmit: "إرسال الطلب",
+      formSuccess: "شكراً — سنتواصل خلال يوم عمل.",
+      formError: "حدث خطأ. جرّب مرة أخرى أو راسلنا على واتساب.",
+      projectTypes: [
+        { value: "villa", label: "فيلا خاصة" },
+        { value: "developer", label: "مطور / مشروع B2B" },
+        { value: "hospitality", label: "فندق / ضيافة" },
+        { value: "sample", label: "طلب حقيبة عينات" },
+        { value: "other", label: "أخرى" },
+      ],
+    },
+    villas: {
+      title: "الفلل والمساكن الخاصة",
+      intro:
+        "رحلة تأثيث فاخرة — تصور 3D مجاني، مطابخ وخزائن OPPEIN، وتركيب توريفا بضمان محلي.",
+      steps: [
+        { title: "جلسة تصميم 3D", description: "ارفع مخططك أو احجز زيارة — تخطيطات بمقاسات المصنع." },
+        { title: "عينات واعتماد", description: "تشطيبات ومفصلات فيزيائية قبل أمر التصنيع." },
+        { title: "تصنيع واستيراد", description: "إنتاج OPPEIN أوتوماتيكي مع SASO / SABER." },
+        { title: "تركيب وضمان", description: "تركيب بالليزر ودعم ما بعد البيع محلياً." },
+      ],
+      ctaDesign: "ابدأ تصميم 3D",
+      ctaContact: "احجز استشارة فيلا",
+    },
+    projects: {
+      title: "المطورون ومشاريع B2B",
+      intro:
+        "توريد بمواصفات Oppein للمشاريع متعددة الوحدات — أسعار مباشرة دون أعباء معارض، SLA للمخططات، ولوجستيات مرحلية.",
+      highlights: [
+        { title: "تسعير MOQ", description: "خصومات هيكلية للأبراج والمجمعات والضيافة." },
+        { title: "SLA للمخططات", description: "مخططات تنفيذ متوافقة مع وحدات المصنع." },
+        { title: "جمارك وتخزين", description: "استيراد SASO / SABER وتسليم مرحلي." },
+        { title: "فرق موقع", description: "إشراف توريفا حتى الملاحظات والتسليم." },
+      ],
+      formTitle: "طلب عرض B2B",
+      formCompany: "اسم الشركة / المطور",
+      formUnits: "عدد الوحدات أو المساحة (م²)",
+      formProducts: "المنتجات المطلوبة",
+      formSubmit: "إرسال ملخص B2B",
+      productOptions: [
+        { value: "kitchens", label: "مطابخ" },
+        { value: "wardrobes", label: "خزائن" },
+        { value: "doors", label: "أبواب وتكسيات" },
+        { value: "whole", label: "حل منزل كامل" },
+      ],
+    },
+    design: {
+      title: "استوديو التصميم 3D",
+      intro: "صوّر مساحتك بوحدات متوافقة مع المصنع — ثم تأهل للتنفيذ ومراجعة العينات.",
     },
   },
 };
