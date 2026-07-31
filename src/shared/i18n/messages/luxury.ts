@@ -278,14 +278,14 @@ const en: LuxuryMessages = {
   },
   projects: {
     eyebrow: "Portfolio",
-    title: "Spaces shaped for Gulf living and business",
+    title: "From 3D approval to installed reality",
     subtitle:
-      "Interiors and facades for homes, majlis, and retail — contemporary execution with regional character.",
+      "Modular kitchens, wardrobes, and joinery for villas, compounds, and hospitality — documented before and after handover.",
     cta: "Full portfolio",
     items: [
-      { title: "Palace majlis & reception", category: "Residential · Jeddah" },
-      { title: "Villa living & dining", category: "Residential · Makkah region" },
-      { title: "Boutique showroom", category: "Retail · Western Region" },
+      { title: "Villa kitchen · OPPEIN modular", category: "Residential · Jeddah" },
+      { title: "Walk-in wardrobe suite", category: "Residential · Makkah" },
+      { title: "Developer tower joinery batch", category: "B2B · Western Region" },
     ],
   },
   process: {
@@ -312,19 +312,19 @@ const en: LuxuryMessages = {
   },
   testimonials: {
     eyebrow: "Clients",
-    title: "When the space matches the promise",
+    title: "When design, supply, and install align",
     items: [
       {
         quote:
-          "Our majlis and guest wing looked like the renders — same stone, same lighting levels. The team stayed until we were comfortable, not just until the clock ran out.",
+          "The 3D kitchen matched what arrived — same finishes, same dimensions. One team from approval to installation, with no blame game between designer and installer.",
         author: "Private client",
         role: "Villa · Jeddah",
       },
       {
         quote:
-          "The exhibition stand had two days on the floor. Finish and detailing felt like a permanent showroom, and our team could focus on guests, not fixes.",
-        author: "Marketing director",
-        role: "Trade show · Makkah region",
+          "For our compound batch, shop drawings and delivery phases were clear. Turriva handled import and site teams — we tracked units, not excuses.",
+        author: "Development manager",
+        role: "B2B · Western Region",
       },
     ],
   },
@@ -375,7 +375,7 @@ const en: LuxuryMessages = {
     ourWork: {
       title: "Our work",
       intro:
-        "Selected Gulf-facing interiors, facades, and exhibition projects delivered by Turriva across the Western Region and central KSA.",
+        "Selected modular kitchens, wardrobes, and joinery programmes — each documented from approved 3D through installation and handover.",
     },
     about: {
       title: "About Turriva",
@@ -571,13 +571,14 @@ const ar: LuxuryMessages = {
   },
   projects: {
     eyebrow: "معرض الأعمال",
-    title: "مساحات صُمّمت لحياة وعمل الخليج",
-    subtitle: "داخليات وواجهات للسكن والمجالس والتجزئة — تنفيذ معاصر بطابع إقليمي.",
+    title: "من اعتماد 3D إلى واقع منفّذ",
+    subtitle:
+      "مطابخ وخزائن وتشطيبات معيارية للفلل والمجمعات والضيافة — موثّقة قبل وبعد التسليم.",
     cta: "كل الأعمال",
     items: [
-      { title: "مجلس واستقبال قصر", category: "سكني · جدة" },
-      { title: "معيشة وضيافة فيلا", category: "سكني · مكة" },
-      { title: "صالة عرض بوتيك", category: "تجزئة · المنطقة الغربية" },
+      { title: "مطبخ فيلا · OPPEIN", category: "سكني · جدة" },
+      { title: "غرفة ملابس walk-in", category: "سكني · مكة" },
+      { title: "دفعة joinery برج سكني", category: "B2B · الغربية" },
     ],
   },
   process: {
@@ -604,19 +605,19 @@ const ar: LuxuryMessages = {
   },
   testimonials: {
     eyebrow: "عملاؤنا",
-    title: "حين يطابق المكان التصور المعتمد",
+    title: "حين يتوافق التصميم والتوريد والتركيب",
     items: [
       {
         quote:
-          "المجلس وجناح الضيافة طابقا الموافقات — الحجر والإضاءة كما في لوحات العرض. بقي الفريق إلى أن اكتمل رضانا عن كل التفاصيل.",
+          "مطبخ الـ 3D طابق ما وصل — نفس التشطيبات ونفس المقاسات. فريق واحد من الاعتماد حتى التركيب، بلا لوم بين مصمم ومورد ومُركّب.",
         author: "عميل خاص",
         role: "فيلا · جدة",
       },
       {
         quote:
-          "جناح المعرض اكتمل في وقت ضيق. التشطيبات كانت بمستوى مساحة دائمة، وتمكّنا من استقبال الزوار دون انشغال بالتفاصيل التنفيذية.",
-        author: "مدير تسويق",
-        role: "معرض · مكة",
+          "في دفعة المجمع، المخططات التنفيذية والتسليم المرحلي كانا واضحين. توريفا تولّت الاستيراد وفرق الموقع — نتابع الوحدات لا الأعذار.",
+        author: "مدير تطوير",
+        role: "B2B · الغربية",
       },
     ],
   },
@@ -666,7 +667,8 @@ const ar: LuxuryMessages = {
     },
     ourWork: {
       title: "أعمالنا",
-      intro: "نماذج من داخليات وواجهات ومعارض نفّذها فريق توريفا في الغربية ووسط المملكة.",
+      intro:
+        "نماذج من فلل ومشاريع تجارية نفّذتها توريفا — من التصميم ثلاثي الأبعاد إلى التوريد والتسليم في الموقع.",
     },
     about: {
       title: "عن توريفا",

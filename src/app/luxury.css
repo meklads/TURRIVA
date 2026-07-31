@@ -67,7 +67,8 @@
 
 .lux-display {
   font-family: var(--font-inter), var(--font-latin), system-ui, sans-serif;
-  @apply font-semibold tracking-[-0.03em] text-lux-ink;
+  @apply font-semibold tracking-[-0.03em];
+  color: inherit;
 }
 
 [dir="rtl"] .lux-display {
@@ -155,6 +156,35 @@
 
 .lux-section {
   @apply py-20 sm:py-24 lg:py-28;
+  color: var(--lux-ink);
+}
+
+.lux-section--white,
+.lux-section--cream,
+.lux-section--linen,
+.lux-cta-band {
+  color: var(--lux-ink);
+}
+
+.lux-section--white :is(.lux-display, .lux-heading, h1, h2, h3),
+.lux-section--cream :is(.lux-display, .lux-heading, h1, h2, h3),
+.lux-section--linen :is(.lux-display, .lux-heading, h1, h2, h3),
+.lux-cta-band :is(.lux-display, .lux-heading, h1, h2, h3) {
+  color: var(--lux-ink);
+}
+
+.lux-gallery-caption .lux-display {
+  color: var(--lux-ink);
+}
+
+.lux-pillar-card :is(.lux-display, h3),
+.lux-product-card :is(.lux-display, h3),
+.lux-faq-trigger {
+  color: var(--lux-ink);
+}
+
+.lux-sample-kit-panel :is(.lux-display, h2) {
+  color: var(--lux-ink);
 }
 
 .lux-section--white {
@@ -173,7 +203,7 @@
 .lux-section--dark {
   position: relative;
   overflow: hidden;
-  color: color-mix(in srgb, var(--lux-ivory) 94%, white);
+  color: color-mix(in srgb, var(--lux-ivory) 96%, white);
   background: linear-gradient(
     165deg,
     #141210 0%,
@@ -200,12 +230,14 @@
 }
 
 .lux-section--dark .lux-display,
-.lux-section--dark .lux-heading {
+.lux-section--dark .lux-heading,
+.lux-section--dark :is(h1, h2, h3, h4) {
   color: #faf7f2;
 }
 
-.lux-section--dark .lux-body {
-  color: color-mix(in srgb, var(--lux-ivory) 78%, transparent);
+.lux-section--dark .lux-body,
+.lux-section--dark p:not(.lux-ba-hint) {
+  color: color-mix(in srgb, var(--lux-ivory) 80%, transparent);
 }
 
 .lux-section--dark .lux-eyebrow {
@@ -924,7 +956,7 @@
 .lux-stats-band {
   position: relative;
   overflow: hidden;
-  color: #fafaf8;
+  color: color-mix(in srgb, var(--lux-ivory) 96%, white);
   padding-block: 2.75rem;
   border-block: 1px solid color-mix(in srgb, var(--lux-gold) 22%, transparent);
   background: linear-gradient(
@@ -933,6 +965,10 @@
     var(--lux-ink) 55%,
     #2f2a22 100%
   );
+}
+
+.lux-stats-band :is(h1, h2, h3, h4, .lux-display, .lux-heading) {
+  color: #faf7f2;
 }
 
 .lux-stats-band::before {
@@ -1183,7 +1219,11 @@
     var(--lux-ink) 38%,
     color-mix(in srgb, var(--lux-teal-mid) 92%, #1a1510) 100%
   );
-  color: color-mix(in srgb, var(--lux-ivory) 92%, white);
+  color: color-mix(in srgb, var(--lux-ivory) 94%, white);
+}
+
+.lux-footer :is(h1, h2, h3, h4, .lux-display, .lux-heading) {
+  color: var(--lux-ivory);
 }
 
 .lux-footer::after {
@@ -1785,6 +1825,16 @@
   height: 1rem;
   color: var(--lux-gold);
   flex-shrink: 0;
+}
+
+.lux-section--linen .lux-pillar-card :is(.lux-display, h2, h3),
+.lux-section--cream .lux-pillar-card :is(.lux-display, h2, h3) {
+  color: var(--lux-ink);
+}
+
+.lux-section--linen .lux-pillar-card p,
+.lux-section--cream .lux-pillar-card p {
+  color: var(--lux-ink-soft);
 }
 
 .lux-pillar-card {

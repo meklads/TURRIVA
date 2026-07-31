@@ -18,7 +18,7 @@ export default async function DesignPage() {
 
   return (
     <div className="design-shell !min-h-0 border-t border-lux-sand/40 bg-white">
-      <section className="lux-section !pb-8">
+      <section className="lux-section lux-section--white !pb-8">
         <div className="lux-container max-w-3xl text-center">
           <p className="lux-eyebrow">{luxury.brand.tagline}</p>
           <div className="lux-divider-gold" />

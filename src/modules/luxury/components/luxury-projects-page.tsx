@@ -66,7 +66,7 @@ export function LuxuryProjectsPage({ messages: t, locale }: Props) {
       <section id="joinery" className="lux-section lux-section--linen scroll-mt-24">
         <div className="lux-container grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {p.highlights.map((item) => (
-            <div key={item.title} className="lux-dark-card !bg-white !text-lux-ink shadow-sm">
+            <div key={item.title} className="lux-pillar-card">
               <h2 className="lux-display text-lg">{item.title}</h2>
               <p className="mt-3 text-sm leading-relaxed text-lux-ink-soft">{item.description}</p>
             </div>

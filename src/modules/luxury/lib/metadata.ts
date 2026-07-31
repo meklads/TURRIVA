@@ -12,8 +12,8 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
 
   const description =
     locale === "ar"
-      ? "توريفا العقارية — تصميم وتنفيذ ديكور عصري للفلل والقصور والمحلات وأجنحة المعارض في جدة ومكة. جودة، رضا العميل، وتسليم في الموقع."
-      : "Turriva — modern decor design and on-site delivery for villas, palaces, retail, and exhibitions in Jeddah and Makkah. Quality, client care, and disciplined handover.";
+      ? "توريفا — منصة تأثيث متكاملة: تصميم 3D، توريد OPPEIN، وتنفيذ محلي في السعودية للفلل والمشاريع."
+      : "Turriva — integrated fit-out platform: 3D design, OPPEIN supply, and local execution in Saudi Arabia.";
 
   return {
     title,

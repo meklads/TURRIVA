@@ -22,29 +22,30 @@ export async function LuxuryFooter() {
   const t = getLuxuryMessages(locale);
 
   const importantLinks = [
-    { href: "/about", label: t.nav.about },
+    { href: "/villas", label: t.nav.villas },
+    { href: "/projects", label: t.nav.projects },
+    { href: "/design", label: t.nav.design3d },
     { href: "/our-work", label: t.nav.ourWork },
     { href: "/contact", label: t.nav.contact },
-    { href: "/", label: t.nav.home },
   ];
 
   const servicesLinks = [
-    { href: "/interior-design", label: t.nav.interiorDesign },
-    { href: "/construction", label: t.nav.construction },
-    { href: "/our-work", label: t.nav.ourWork },
+    { href: "/villas", label: t.nav.villas },
+    { href: "/projects", label: t.nav.projects },
+    { href: "/design", label: t.nav.design3d },
   ];
 
   const solutionLinks =
     locale === "ar"
       ? [
-          { href: "/interior-design", label: "تصميم وتشطيب داخلي" },
-          { href: "/construction", label: "تنفيذ في الموقع" },
-          { href: "/contact", label: "معارض وأجنحة" },
+          { href: "/villas#kitchens", label: "مطابخ معيارية" },
+          { href: "/villas#wardrobes", label: "خزائن وغرف ملابس" },
+          { href: "/projects#joinery", label: "تشطيبات B2B" },
         ]
       : [
-          { href: "/interior-design", label: "Interior design & fit-out" },
-          { href: "/construction", label: "On-site delivery" },
-          { href: "/contact", label: "Exhibitions & booths" },
+          { href: "/villas#kitchens", label: "Modular kitchens" },
+          { href: "/villas#wardrobes", label: "Wardrobes & walk-ins" },
+          { href: "/projects#joinery", label: "B2B joinery" },
         ];
 
   const offices = [

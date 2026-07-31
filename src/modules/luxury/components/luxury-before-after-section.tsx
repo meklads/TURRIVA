@@ -12,7 +12,7 @@ export function LuxuryBeforeAfterSection({ messages }: { messages: LuxuryMessage
         <p className="lux-eyebrow">{t.eyebrow}</p>
         <div className="lux-divider-gold" />
         <h2 className="lux-display lux-heading mt-6">{t.title}</h2>
-        <p className="mx-auto mt-4 max-w-2xl text-sm text-lux-ivory/75">{t.subtitle}</p>
+        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed opacity-90">{t.subtitle}</p>
       </div>
       <div className="lux-container mt-12 max-w-4xl">
         <div className="lux-before-after-wrap">

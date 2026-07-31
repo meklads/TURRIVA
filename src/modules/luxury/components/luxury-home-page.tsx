@@ -74,6 +74,25 @@ export function LuxuryHomePage({ locale }: Props) {
       <LuxurySampleKitBand messages={t} />
       <LuxuryFaqSection messages={t} />
 
+      <section className="lux-section lux-section--dark">
+        <div className="lux-container max-w-3xl text-center">
+          <p className="lux-eyebrow">{t.testimonials.eyebrow}</p>
+          <div className="lux-divider-gold" />
+          <h2 className="lux-display lux-heading mt-6">{t.testimonials.title}</h2>
+        </div>
+        <div className="lux-container mt-14 grid gap-6 md:grid-cols-2 md:gap-8">
+          {t.testimonials.items.map((item) => (
+            <blockquote key={item.quote} className="lux-quote lux-quote--on-dark">
+              <p className="lux-display text-xl leading-snug">&ldquo;{item.quote}&rdquo;</p>
+              <footer className="mt-8 border-t border-lux-gold/30 pt-5">
+                <p className="text-sm font-semibold text-lux-ivory">{item.author}</p>
+                <p className="text-xs text-lux-gold-light/90">{item.role}</p>
+              </footer>
+            </blockquote>
+          ))}
+        </div>
+      </section>
+
       <section className="lux-cta-band" aria-labelledby="home-cta-heading">
         <div className="lux-container">
           <div className="lux-cta-band-panel text-center">
