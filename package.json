@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:deploy": "NODE_OPTIONS='--max-old-space-size=1024' next build",
     "start": "sh scripts/start.sh",
     "lint": "next lint",
     "db:generate": "prisma generate",

@@ -1,19 +1,19 @@
+# Exclude heavy / unused paths from Nixpacks build context (small VPS hosts).
 node_modules
 .next
 .git
 .github
 .cursor
-.env
-.env.*
-!.env.example
 *.md
 !README.md
+.env
+.env.*
 npm-debug.log*
 .DS_Store
 coverage
-.turbo
+terminals
 *.docx
 
-# Duplicate assets (canonical filenames kept)
+# Duplicate 2.4MB assets (canonical copies kept without spaces in filename)
 public/brand/turriva/hero turriva.png
 public/brand/turriva/turriva office.png

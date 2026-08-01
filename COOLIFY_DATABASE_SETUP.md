@@ -2,16 +2,44 @@
 
 ## فشل النشر (Deployment Failed)
 
-إذا ظهر **Generating nixpacks configuration** في السجل، Coolify ما زال يستخدم **Nixpacks** وليس **Dockerfile**.
+### السبب الأكثر شيوعاً
+إذا ظهر في السجل:
+```
+load metadata for ghcr.io/railwayapp/nixpacks:ubuntu
+Generating nixpacks configuration
+```
+فـ Coolify **ما زال على Nixpacks** — والسيرفر غالباً **لا يملك ذاكرة كافية** لبناء Next.js.
 
-### الحل (دقيقة واحدة)
-1. افتح تطبيق **turriva.com** في Coolify
-2. **Configuration → General → Build Pack**
-3. غيّر من **Nixpacks** إلى **Dockerfile**
+---
+
+### الحل A (موصى به): Docker Image جاهز من GitHub
+
+GitHub Actions يبني الصورة ويرفعها تلقائياً إلى **GHCR** عند كل push على `main`.
+
+1. في Coolify: **Create New Resource → Docker Image** (أو غيّر نوع التطبيق)
+2. الصورة:
+   ```
+   ghcr.io/meklads/turriva:latest
+   ```
+3. إذا كانت خاصة: أضف **Registry** في Coolify (GitHub PAT مع `read:packages`)
 4. **Port** = `3000`
-5. **Save** ثم **Redeploy**
+5. Environment Variables (DATABASE_URL, AUTH_SECRET, …)
+6. **Deploy**
 
-المستودع يحتوي `Dockerfile` و`coolify.json` — بعد التبديل يُبنى من Dockerfile مباشرة.
+---
+
+### الحل B: Dockerfile من المستودع
+
+1. افتح تطبيق turriva.com في Coolify
+2. **Configuration → General → Build Pack → Dockerfile** (ليس Nixpacks)
+3. **Port** = `3000`
+4. **Save** → **Redeploy**
+
+---
+
+### الحل C: إبقاء Nixpacks
+
+تم تخفيف البناء (`build:deploy` + `.nixpacksignore`). إن استمر الفشل مع `Killed` في السجل → زِد **Swap** على السيرفر أو استخدم الحل A.
 
 ---
 

@@ -1,5 +1,17 @@
-# Minimal Nixpacks fallback — keep memory low on small VPS hosts.
+[phases.setup]
+nixPkgs = ["nodejs_22"]
+aptPkgs = ["openssl", "ca-certificates"]
+
+[phases.install]
+cmds = ["npm ci --no-audit --no-fund"]
+
+[phases.build]
+cmds = ["npm run build:deploy"]
+
+[start]
+cmd = "npm start"
+
 [variables]
 NIXPACKS_NODE_VERSION = "22"
-NODE_OPTIONS = "--max-old-space-size=1536"
+NODE_OPTIONS = "--max-old-space-size=1024"
 NEXT_TELEMETRY_DISABLED = "1"
