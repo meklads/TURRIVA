@@ -9,7 +9,7 @@ export const LUXURY_INSPIRATION_IMAGES: Record<string, string> = {
   /** Fitted wardrobes & walk-in systems */
   wardrobe: `${OPPEIN_HOME}/fitted-furniture.webp`,
   /** Whole-house living & dining — warm walnut interior */
-  living: `${OPPEIN_PRODUCT}/20250820/contemporary-warm-white-and-walnut-interior-design.webp`,
+  living: "/brand/turriva/inspiration/living-walnut-interior.webp",
   bedroom: `https://images.unsplash.com/photo-1616594039964-ae9021a400a0?${IMG_Q}&w=1800`,
   /** Bathroom vanity programme */
   bathroom: `${OPPEIN_HOME}/bathroom-cabinets.webp`,

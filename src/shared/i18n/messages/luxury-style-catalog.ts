@@ -10,7 +10,7 @@ export const LUXURY_STYLE_IMAGES: Record<string, string> = {
   "italian-titian": `${LUXURY_STYLE_IMAGE_BASE}/20260709/modern-italian-luxury-high-gloss-burgundy-kitchen-cabinets-design.webp`,
   "french-sicily": `${LUXURY_STYLE_IMAGE_BASE}/20241029/modern-elegant-french-cream-style-home-decor.webp`,
   "contemporary-tahiti": `${LUXURY_STYLE_IMAGE_BASE}/20250708/modern-cream-and-white-oak-whole-house-solution.webp`,
-  "contemporary-golden-years": `${LUXURY_STYLE_IMAGE_BASE}/20250820/contemporary-warm-white-and-walnut-interior-design.webp`,
+  "contemporary-golden-years": "/brand/turriva/inspiration/living-walnut-interior.webp",
   "contemporary-seville": `${LUXURY_STYLE_IMAGE_BASE}/20260605/modern-minimalist-light-walnut-and-warm-grey-kitchen-cabinets-with-island.webp`,
   "minimal-urban-glow": `${LUXURY_STYLE_IMAGE_BASE}/20260731/modern-minimalist-warm-white-and-gold-kitchen-urban-glow.webp`,
 };
