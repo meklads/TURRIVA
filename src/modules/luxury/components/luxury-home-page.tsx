@@ -27,8 +27,9 @@ export function LuxuryHomePage({ locale }: Props) {
 
   return (
     <>
-      {/* Visual hook → system/offer → social proof → rational comparison → convert */}
+      {/* Hero wow → explore by room → trust → proof → offer → convert */}
       <LuxuryHomeHero locale={locale} />
+      <LuxuryInspirationSection messages={t} />
       <LuxuryTrustBar messages={t} />
 
       <section className="lux-section lux-section--white">
@@ -69,7 +70,6 @@ export function LuxuryHomePage({ locale }: Props) {
       <LuxuryWaysOfLivingSection messages={t} />
       <LuxuryEcosystemSection messages={t} />
       <LuxuryProductGrid messages={t} locale={locale} />
-      <LuxuryInspirationSection messages={t} />
       <LuxuryBeforeAfterSection messages={t} />
       <LuxuryTrustStats messages={t} />
       <LuxuryPartnersStrip messages={t} />
