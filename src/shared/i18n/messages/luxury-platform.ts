@@ -57,7 +57,8 @@ export type LuxuryPlatformMessages = {
   beforeAfter: {
     eyebrow: string;
     title: string;
-    subtitle: string;
+    subtitleLine1: string;
+    subtitleLine2: string;
     projectName: string;
     projectCredit: string;
   };
@@ -254,8 +255,8 @@ const en: LuxuryPlatformMessages = {
   beforeAfter: {
     eyebrow: "Project showcase",
     title: "From visualization to build-ready reality",
-    subtitle:
-      "Architectural 3D, interior joinery, and woodwork — demonstrated on developer programmes before manufacturing and site execution.",
+    subtitleLine1: "Architectural 3D, interior joinery, and woodwork on developer programmes.",
+    subtitleLine2: "From approved visualization through manufacturing to site execution.",
     projectName: "Rafal Pavilions",
     projectCredit: "Visualization & interior design · Graphics House",
   },
@@ -486,8 +487,8 @@ const ar: LuxuryPlatformMessages = {
   beforeAfter: {
     eyebrow: "عرض مشروع",
     title: "من الإظهار المعماري إلى واقع قابل للتنفيذ",
-    subtitle:
-      "إظهار ثلاثي الأبعاد، نجارة داخلية، وخشبيات — نماذج لمشاريع مطورين قبل التصنيع والتنفيذ الميداني.",
+    subtitleLine1: "إظهار ثلاثي الأبعاد، نجارة داخلية، وخشبيات — نماذج لمشاريع مطورين.",
+    subtitleLine2: "من التصور المعتمد مروراً بالتصنيع إلى التنفيذ الميداني.",
     projectName: "Rafal Pavilions",
     projectCredit: "إظهار وتصميم داخلي · Graphics House",
   },

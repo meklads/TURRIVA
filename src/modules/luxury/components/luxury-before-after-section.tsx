@@ -3,7 +3,8 @@
 import { useEffect, useRef } from "react";
 import type { LuxuryMessages } from "@/shared/i18n/messages/luxury";
 
-const RAFAL_LOOP = "/brand/graphics-house/rafal-pavilions-loop.webm";
+const RAFAL_LOOP_MP4 = "/brand/graphics-house/rafal-pavilions-loop.mp4";
+const RAFAL_LOOP_WEBM = "/brand/graphics-house/rafal-pavilions-loop.webm";
 const RAFAL_POSTER = "/brand/graphics-house/rafal-pavilions-poster.jpg";
 
 export function LuxuryBeforeAfterSection({ messages }: { messages: LuxuryMessages }) {
@@ -47,25 +48,34 @@ export function LuxuryBeforeAfterSection({ messages }: { messages: LuxuryMessage
         <h2 id="delivery-showcase-heading" className="lux-display lux-heading mt-6">
           {t.title}
         </h2>
-        <p className="lux-body mx-auto mt-4 max-w-2xl text-lux-ink-muted">{t.subtitle}</p>
+        <div className="lux-delivery-showcase__copy mx-auto mt-4 max-w-2xl">
+          <p className="lux-body text-lux-ink-muted">{t.subtitleLine1}</p>
+          <p className="lux-body mt-1 text-lux-ink-muted">{t.subtitleLine2}</p>
+        </div>
+      </div>
+
+      <div className="lux-delivery-showcase__video-frame">
+        <video
+          ref={videoRef}
+          className="lux-delivery-showcase__video"
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={RAFAL_POSTER}
+          aria-label={t.projectName}
+        >
+          <source src={RAFAL_LOOP_MP4} type="video/mp4" />
+          <source src={RAFAL_LOOP_WEBM} type="video/webm" />
+        </video>
+      </div>
+
+      <div className="lux-container lux-delivery-showcase__caption text-center">
         <p className="lux-delivery-showcase__project">
           <span className="lux-delivery-showcase__project-name">{t.projectName}</span>
           <span className="lux-delivery-showcase__project-credit">{t.projectCredit}</span>
         </p>
       </div>
-
-      <video
-        ref={videoRef}
-        className="lux-delivery-showcase__video"
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        poster={RAFAL_POSTER}
-        aria-label={t.projectName}
-      >
-        <source src={RAFAL_LOOP} type="video/webm" />
-      </video>
     </section>
   );
 }
