@@ -10,10 +10,15 @@ export type LuxuryPlatformMessages = {
     title: string;
     subtitle: string;
     pillars: readonly {
+      icon: string;
+      badge: string;
       title: string;
-      subtitle: string;
-      body: string;
+      points: readonly string[];
     }[];
+    ctaB2b: string;
+    ctaB2c: string;
+    ctaB2bHref: string;
+    ctaB2cHref: string;
   };
   comparison: {
     eyebrow: string;
@@ -81,30 +86,43 @@ const en: LuxuryPlatformMessages = {
     ],
   },
   ecosystem: {
-    eyebrow: "How we work",
-    title: "One integrated system — three specialist arms",
+    eyebrow: "What Turriva delivers",
+    title: "The Turriva system: three pillars from drawing to handover",
     subtitle:
-      "You deal with Turriva as a single accountable platform. Behind it, a steel triangle covers design accuracy, factory-grade production, and on-the-ground delivery in Saudi Arabia.",
+      "Architectural design depth, automated global manufacturing, and Saudi field engineering — one integrated platform that solves contractor fragmentation, design-reality gaps, and weak warranty.",
     pillars: [
       {
-        title: "Design & visualization",
-        subtitle: "Architectural studio depth",
-        body:
-          "Your plans become high-fidelity 3D and VR models built with factory-approved modules and dimensions — not fantasy renders that fall apart on site. What you approve is what we manufacture.",
+        icon: "design",
+        badge: "Design & visualization · Graphics House heritage",
+        title: "3D design with 100% site alignment",
+        points: [
+          "Plans become high-fidelity 3D and VR models using factory-approved engineering blocks.",
+          "Eliminates the gap between render and reality — full customization to your exact floor plan.",
+        ],
       },
       {
-        title: "Manufacturing & supply",
-        subtitle: "Powered by OPPEIN",
-        body:
-          "Strategic access to automated production lines: German HOMAG cutting, E0 sustainable boards, and premium Blum & Hettich hardware — direct B2B supply without showroom overhead.",
+        icon: "factory",
+        badge: "Manufacturing & technology · Powered by OPPEIN",
+        title: "Automated quality & German production tech",
+        points: [
+          "World-scale automated lines with German HOMAG cutting at 0.1 mm precision.",
+          "E0/ENF formaldehyde-free boards and laser edge-banding engineered for humidity resistance.",
+        ],
       },
       {
-        title: "Engineering & execution",
-        subtitle: "Turriva on the ground",
-        body:
-          "Laser site surveys, import & customs clearance (SASO / SABER), specialist installation teams, and a comprehensive local warranty with fast technical support.",
+        icon: "build",
+        badge: "Engineering & execution · Turriva on the ground",
+        title: "Laser survey, supply, and full local warranty",
+        points: [
+          "End-to-end field management: laser as-built surveys, customs clearance, SASO/SABER compliance.",
+          "Installation by specialist engineers and technicians — local warranty with fast spare-parts support.",
+        ],
       },
     ],
+    ctaB2b: "Request project catalog & pricing",
+    ctaB2c: "Book a plan review & sample session",
+    ctaB2bHref: "/projects",
+    ctaB2cHref: "/contact?intent=sample",
   },
   comparison: {
     eyebrow: "Why Turriva",
@@ -282,30 +300,43 @@ const ar: LuxuryPlatformMessages = {
     ],
   },
   ecosystem: {
-    eyebrow: "كيف نعمل",
-    title: "منظومة متكاملة — ثلاثة أذرع متخصصة",
+    eyebrow: "ما تقدمه توريفا",
+    title: "منظومة توريفا: قوة ثلاثية تضمن نجاح مشروعك من المخطط إلى التسليم",
     subtitle:
-      "تتعامل مع توريفا كمنصة واحدة مسؤولة. خلفها مثلث فولاذي يغطي دقة التصميم، قوة المصنع، والتنفيذ الميداني في المملكة.",
+      "نجمع بين إبداع التصميم المعماري، دقة التصنيع الأوتوماتيكي العالمي، والاحترافية الهندسية في التنفيذ الميداني داخل المملكة — لحل تشتت المقاولين، وفجوة التصميم عن الواقع، وضعف الضمان.",
     pillars: [
       {
-        title: "التصميم والإظهار المعماري",
-        subtitle: "عمق استوديو تصميم متخصص",
-        body:
-          "نحوّل مخططاتك إلى نماذج 3D و VR فائقة الدقة ببلوكات ومقاسات المصنع المعتمدة — لا صور خيالية تنهار في الموقع. ما تعتمده هو ما نصنعه.",
+        icon: "design",
+        badge: "استوديو التصميم والإظهار · Graphics House",
+        title: "تصميم ثلاثي الأبعاد بمطابقة واقعية 100%",
+        points: [
+          "تحويل المخططات إلى مجسمات 3D و VR بدقة فائقة باستخدام البلوكات الهندسية المعتمدة للمصنع.",
+          "إلغاء الفجوة بين صورة التصميم والواقع الميداني، مع إمكانية التخصيص الكامل حسب مساحة مشروعك.",
+        ],
       },
       {
-        title: "التصنيع والتوريد",
-        subtitle: "Powered by OPPEIN",
-        body:
-          "وصول استراتيجي لخطوط إنتاج أوتوماتيكية: تقطيع HOMAG الألماني، ألواح E0 مستدامة، ومفصلات Blum و Hettich — توريد B2B مباشر دون أعباء معارض.",
+        icon: "factory",
+        badge: "التصنيع والتقنية العالمية · Powered by OPPEIN",
+        title: "جودة أوتوماتيكية وتقنيات إنتاج ألمانية",
+        points: [
+          "تصنيع في أضخم خطوط إنتاج أوتوماتيكية عالمياً باستخدام ماكينات HOMAG الألمانية بدقة قطع 0.1 مم.",
+          "خامات صديقة للبيئة وخالية من الفرمالدهيد (معيار E0/ENF)، وتقنيات تقفيل الحواف بالليزر المقاومة للرطوبة.",
+        ],
       },
       {
-        title: "الهندسة والتنفيذ الميداني",
-        subtitle: "توريفا على أرض المملكة",
-        body:
-          "رفع مساحي بالليزر، استيراد وتخليص جمركي (SASO / SABER)، فرق تركيب متخصصة، وضمان محلي شامل مع دعم فني سريع.",
+        icon: "build",
+        badge: "الهندسة والتنفيذ المحلي · توريفا",
+        title: "رفع مساحي، توريد، وضمان محلي شامل",
+        points: [
+          "إدارة ميدانية كاملة: رفع المقاسات بالليزر، التخليص الجمركي وإصدار شهادات المطابقة (SASO/SABER).",
+          "تركيب بأيدي مهندسين وفنيين متخصصين مع ضمان محلي شامل وسرعة توفير قطع الغيار.",
+        ],
       },
     ],
+    ctaB2b: "اطلب كتالوج المشاريع وعرض الأسعار",
+    ctaB2c: "احجز جلسة مراجعة المخططات والعينات",
+    ctaB2bHref: "/projects",
+    ctaB2cHref: "/contact?intent=sample",
   },
   comparison: {
     eyebrow: "لماذا توريفا",

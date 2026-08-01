@@ -1852,6 +1852,130 @@
   color: var(--lux-gold);
 }
 
+/* Ecosystem offer — Oppein-style 3-pillar cards */
+.lux-ecosystem-offer {
+  background: var(--lux-cream);
+}
+
+.lux-offer-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ffffff;
+  padding: 2.25rem 1.35rem 2rem;
+  box-shadow: 3px 4px 10px color-mix(in srgb, var(--lux-ink) 5%, transparent);
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .lux-offer-card {
+    padding: 2.5rem 1.5rem 2.25rem;
+  }
+}
+
+.lux-offer-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 4.25rem;
+  height: 4.25rem;
+  color: var(--lux-gold);
+}
+
+.lux-offer-card__icon svg {
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.lux-offer-card__badge {
+  margin-top: 0.35rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--lux-ink-muted);
+  line-height: 1.5;
+}
+
+[dir="rtl"] .lux-offer-card__badge {
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 0.75rem;
+}
+
+.lux-offer-card__title {
+  margin-top: 1rem;
+  font-family: var(--font-inter), var(--font-latin), system-ui, sans-serif;
+  font-size: clamp(1.0625rem, 1.8vw, 1.375rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  color: var(--lux-gold);
+}
+
+[dir="rtl"] .lux-offer-card__title {
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
+  letter-spacing: 0;
+  font-weight: 700;
+  font-size: clamp(1.125rem, 2vw, 1.4375rem);
+}
+
+.lux-offer-card__points {
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  text-align: start;
+}
+
+.lux-offer-card__points li {
+  position: relative;
+  padding-inline-start: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--lux-ink-soft);
+}
+
+.lux-offer-card__points li + li {
+  margin-top: 0.75rem;
+}
+
+.lux-offer-card__points li::before {
+  content: "–";
+  position: absolute;
+  inset-inline-start: 0;
+  color: var(--lux-gold);
+  font-weight: 600;
+}
+
+[dir="rtl"] .lux-offer-card__points li {
+  font-size: 0.9375rem;
+  line-height: 1.85;
+}
+
+.lux-ecosystem-offer__ctas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-top: 3.5rem;
+}
+
+@media (min-width: 640px) {
+  .lux-ecosystem-offer__ctas {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 4.25rem;
+  }
+}
+
+.lux-ecosystem-offer__ctas .lux-inspiration-ghost-btn,
+.lux-ecosystem-offer__ctas .lux-btn-primary {
+  min-width: min(100%, 18rem);
+}
+
 .lux-product-card {
   display: flex;
   flex-direction: column;
