@@ -304,7 +304,7 @@ const en: LuxuryMessages = {
       "Modular kitchens, wardrobes, and joinery for villas, compounds, and hospitality — documented before and after handover.",
     cta: "Full portfolio",
     items: [
-      { title: "Villa kitchen · OPPEIN modular", category: "Residential · Jeddah" },
+      { title: "Villa kitchen · modular joinery", category: "Residential · Jeddah" },
       { title: "Walk-in wardrobe suite", category: "Residential · Makkah" },
       { title: "Developer tower joinery batch", category: "B2B · Western Region" },
     ],
@@ -686,7 +686,7 @@ const ar: LuxuryMessages = {
       "مطابخ وخزائن وتشطيبات معيارية للفلل والمجمعات والضيافة — موثّقة قبل وبعد التسليم.",
     cta: "كل الأعمال",
     items: [
-      { title: "مطبخ فيلا · OPPEIN", category: "سكني · جدة" },
+      { title: "مطبخ فيلا · تشطيب معياري", category: "سكني · جدة" },
       { title: "غرفة ملابس walk-in", category: "سكني · مكة" },
       { title: "دفعة joinery برج سكني", category: "B2B · الغربية" },
     ],
@@ -952,13 +952,10 @@ export const LUXURY_IMAGES = {
   cap2: "/brand/turriva/hero-turriva.png",
   cap3: `https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?${IMG_Q}&w=900`,
   cap4: `https://images.unsplash.com/photo-1600047509358-9dc75507daeb?${IMG_Q}&w=900`,
-  /** Portfolio gallery — Oppein product references (page 2) */
-  project1:
-    "https://www.oppeinhome.com/upload/image/product/thumb/20251023/modern-luxury-straight-grain-walnut-veneer-kitchen-cabinets-with-island.webp",
-  project2:
-    "https://www.oppeinhome.com/upload/image/product/thumb/20260612/modern-luxury-walnut-walk-in-wardrobe-system-1.webp",
-  project3:
-    "https://www.oppeinhome.com/upload/image/product/thumb/20260612/premium-whole-house-customization-walnut-and-warm-grey-collection.webp",
+  /** Portfolio gallery — cropped local assets (no third-party watermark) */
+  project1: "/brand/turriva/projects/project-kitchen-jeddah.webp",
+  project2: "/brand/turriva/projects/project-walk-in-makkah.webp",
+  project3: "/brand/turriva/projects/project-joinery-b2b.webp",
   ctaBand: "/brand/turriva/turriva-sign-facade.png",
   project4: `https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?${IMG_Q}&w=1200`,
 } as const;
