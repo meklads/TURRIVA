@@ -1,22 +1,23 @@
 /* Luxury public website — isolated from workspace software styles */
 
 .lux-shell {
-  --lux-ivory: #f2ede4;
-  --lux-cream: #e8e2d6;
-  --lux-linen: #dfd8cc;
-  --lux-sand: #d4c9b8;
-  --lux-stone: #b8aa96;
-  --lux-gold: #b8965d;
-  --lux-gold-light: #d4b47a;
-  --lux-gold-muted: #f5ede0;
-  --lux-amber: #e8b84a;
-  --lux-glow: rgba(232, 184, 74, 0.32);
-  --lux-ink: #1a1a1a;
-  --lux-charcoal: #252320;
-  --lux-ink-soft: #5a534c;
-  --lux-ink-muted: #7a7268;
-  --lux-teal-deep: #1f1c18;
-  --lux-teal-mid: #2a241c;
+  /* Oppein-aligned neutrals — clean white bands + light grey alternation */
+  --lux-ivory: #ffffff;
+  --lux-cream: #f7f7f7;
+  --lux-linen: #f2f2f2;
+  --lux-sand: #e8e8e8;
+  --lux-stone: #d4d4d4;
+  --lux-gold: #b3864b;
+  --lux-gold-light: #bb8e4a;
+  --lux-gold-muted: #f6f1ea;
+  --lux-amber: #e8dba4;
+  --lux-glow: rgba(179, 134, 75, 0.22);
+  --lux-ink: #121212;
+  --lux-charcoal: #454545;
+  --lux-ink-soft: #666666;
+  --lux-ink-muted: #858585;
+  --lux-teal-deep: #0a0a0a;
+  --lux-teal-mid: #1a1a1a;
   /* Vertical rhythm — luxury editorial scale */
   --lux-space-section: clamp(4.75rem, 8.5vw, 7.25rem);
   --lux-space-hero-y: clamp(2.75rem, 6vh, 4.5rem);
@@ -29,18 +30,7 @@
   font-family: var(--font-inter), var(--font-latin), system-ui, sans-serif;
   font-size: clamp(0.9375rem, 1.4vw, 1.0625rem);
   line-height: 1.65;
-  background:
-    radial-gradient(
-      ellipse 110% 70% at 50% -15%,
-      color-mix(in srgb, var(--lux-amber) 14%, transparent) 0%,
-      transparent 52%
-    ),
-    radial-gradient(
-      ellipse 85% 55% at 100% 35%,
-      color-mix(in srgb, var(--lux-gold) 10%, transparent) 0%,
-      transparent 48%
-    ),
-    linear-gradient(180deg, var(--lux-ivory) 0%, color-mix(in srgb, var(--lux-cream) 65%, var(--lux-ivory)) 100%);
+  background: var(--lux-ivory);
 }
 
 .lux-shell::before {
@@ -49,8 +39,8 @@
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0;
+  background-image: none;
 }
 
 [dir="rtl"] .lux-shell {
@@ -90,9 +80,7 @@
 .lux-hero-copy .lux-heading {
   font-size: clamp(1.875rem, 3.5vw, 3rem);
   letter-spacing: -0.02em;
-  text-shadow:
-    0 0 56px color-mix(in srgb, var(--lux-amber) 18%, transparent),
-    0 2px 24px color-mix(in srgb, var(--lux-gold) 8%, transparent);
+  text-shadow: none;
 }
 
 .lux-body {
@@ -150,7 +138,7 @@
 
 .lux-card {
   @apply overflow-hidden rounded-sm border border-lux-sand bg-white transition-shadow duration-300;
-  box-shadow: 0 8px 32px color-mix(in srgb, var(--lux-gold) 6%, transparent);
+  box-shadow: 0 6px 32px color-mix(in srgb, #000000 5%, transparent);
 }
 
 .lux-btn-primary--on-dark {
@@ -196,7 +184,7 @@
 
 .lux-section--white {
   background: #ffffff;
-  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--lux-sand) 35%, transparent);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--lux-sand) 55%, transparent);
 }
 
 .lux-section--cream {
@@ -210,12 +198,12 @@
 .lux-section--dark {
   position: relative;
   overflow: hidden;
-  color: color-mix(in srgb, var(--lux-ivory) 96%, white);
+  color: color-mix(in srgb, #ffffff 96%, transparent);
   background: linear-gradient(
     165deg,
-    #141210 0%,
+    #0a0a0a 0%,
     var(--lux-ink) 48%,
-    #2a241c 100%
+    #1a1a1a 100%
   );
 }
 
@@ -349,13 +337,11 @@
 .lux-header--elevated {
   position: sticky;
   top: 0;
-  background: color-mix(in srgb, var(--lux-ivory) 92%, white);
-  border-bottom: 1px solid color-mix(in srgb, var(--lux-gold) 22%, var(--lux-sand));
-  box-shadow:
-    0 1px 0 color-mix(in srgb, var(--lux-gold-light) 14%, transparent),
-    0 8px 28px color-mix(in srgb, var(--lux-ink) 4%, transparent);
-  backdrop-filter: blur(14px) saturate(1.12);
-  -webkit-backdrop-filter: blur(14px) saturate(1.12);
+  background: color-mix(in srgb, #ffffff 96%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--lux-sand) 80%, transparent);
+  box-shadow: 0 6px 32px color-mix(in srgb, #000000 5%, transparent);
+  backdrop-filter: blur(12px) saturate(1.05);
+  -webkit-backdrop-filter: blur(12px) saturate(1.05);
 }
 
 .lux-header-bar {
@@ -537,10 +523,10 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(
-    ellipse 90% 75% at 18% 42%,
-    color-mix(in srgb, var(--lux-amber) 12%, transparent) 0%,
-    transparent 58%
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--lux-cream) 45%, transparent) 0%,
+    transparent 42%
   );
 }
 
@@ -965,19 +951,19 @@
 .lux-stats-band {
   position: relative;
   overflow: hidden;
-  color: color-mix(in srgb, var(--lux-ivory) 96%, white);
+  color: color-mix(in srgb, #ffffff 96%, transparent);
   padding-block: 2.75rem;
-  border-block: 1px solid color-mix(in srgb, var(--lux-gold) 22%, transparent);
+  border-block: 1px solid color-mix(in srgb, #ffffff 10%, transparent);
   background: linear-gradient(
     145deg,
-    #1a1714 0%,
+    #0a0a0a 0%,
     var(--lux-ink) 55%,
-    #2f2a22 100%
+    #1a1a1a 100%
   );
 }
 
 .lux-stats-band :is(h1, h2, h3, h4, .lux-display, .lux-heading) {
-  color: #faf7f2;
+  color: #ffffff;
 }
 
 .lux-stats-band::before {
@@ -987,7 +973,7 @@
   pointer-events: none;
   background: radial-gradient(
     ellipse 75% 120% at 50% -10%,
-    color-mix(in srgb, var(--lux-amber) 28%, transparent) 0%,
+    color-mix(in srgb, var(--lux-gold) 14%, transparent) 0%,
     transparent 55%
   );
 }
@@ -1135,10 +1121,8 @@
   overflow: hidden;
   padding-block: 4.5rem;
   background: #ffffff;
-  border-top: 1px solid color-mix(in srgb, var(--lux-gold) 25%, var(--lux-sand));
-  box-shadow:
-    inset 0 1px 0 color-mix(in srgb, white 80%, var(--lux-gold-muted)),
-    0 -24px 64px color-mix(in srgb, var(--lux-gold) 6%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--lux-sand) 90%, transparent);
+  box-shadow: 0 -6px 32px color-mix(in srgb, #000000 4%, transparent);
 }
 
 .lux-cta-band::before {
@@ -1146,10 +1130,10 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(
-    ellipse 70% 90% at 50% 0%,
-    color-mix(in srgb, var(--lux-gold-muted) 85%, white) 0%,
-    transparent 62%
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--lux-cream) 65%, white) 0%,
+    transparent 55%
   );
 }
 
@@ -2086,8 +2070,8 @@
 }
 
 .lux-trust-bar {
-  border-block: 1px solid color-mix(in srgb, var(--lux-gold) 18%, var(--lux-sand));
-  background: color-mix(in srgb, var(--lux-ivory) 88%, white);
+  border-block: 1px solid color-mix(in srgb, var(--lux-sand) 90%, transparent);
+  background: var(--lux-cream);
 }
 
 .lux-trust-bar-inner {
@@ -2159,7 +2143,7 @@
 
 /* Ecosystem offer — Oppein-style 3-pillar cards */
 .lux-ecosystem-offer {
-  background: var(--lux-cream);
+  background: var(--lux-linen);
 }
 
 .lux-offer-card {
@@ -2168,7 +2152,7 @@
   height: 100%;
   background: #ffffff;
   padding: 2.25rem 1.35rem 2rem;
-  box-shadow: 3px 4px 10px color-mix(in srgb, var(--lux-ink) 5%, transparent);
+  box-shadow: 0 6px 32px color-mix(in srgb, #000000 5%, transparent);
   text-align: center;
 }
 
@@ -2549,9 +2533,10 @@
   flex-direction: column;
   gap: 1.25rem;
   align-items: flex-start;
-  border: 1px solid color-mix(in srgb, var(--lux-gold) 28%, var(--lux-sand));
-  border-radius: 1rem;
-  background: linear-gradient(135deg, white 0%, var(--lux-gold-muted) 100%);
+  border: 1px solid color-mix(in srgb, var(--lux-sand) 90%, transparent);
+  border-radius: 0.25rem;
+  background: #ffffff;
+  box-shadow: 0 6px 32px color-mix(in srgb, #000000 5%, transparent);
   padding: 1.75rem;
 }
 
