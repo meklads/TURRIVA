@@ -87,9 +87,9 @@ export type LuxuryPlatformMessages = {
 const en: LuxuryPlatformMessages = {
   trustBar: {
     items: [
+      { icon: "build", label: "Local engineering & field execution · Turriva" },
       { icon: "design", label: "Architectural design & 3D studio heritage" },
       { icon: "factory", label: "Global manufacturing partnership · Powered by OPPEIN" },
-      { icon: "build", label: "Local engineering & field execution · Turriva" },
     ],
   },
   ecosystem: {
@@ -320,9 +320,9 @@ const en: LuxuryPlatformMessages = {
 const ar: LuxuryPlatformMessages = {
   trustBar: {
     items: [
+      { icon: "build", label: "هندسة وتنفيذ محلي · توريفا" },
       { icon: "design", label: "استوديو تصميم معماري وإظهار ثلاثي الأبعاد" },
       { icon: "factory", label: "شراكة تصنيع عالمية · Powered by OPPEIN" },
-      { icon: "build", label: "هندسة وتنفيذ محلي · توريفا" },
     ],
   },
   ecosystem: {

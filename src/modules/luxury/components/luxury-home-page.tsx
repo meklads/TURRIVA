@@ -27,16 +27,13 @@ export function LuxuryHomePage({ locale }: Props) {
 
   return (
     <>
+      {/* Narrative: hook → system → offer → justify → prove → aspire → convert */}
       <LuxuryHomeHero locale={locale} />
       <LuxuryTrustBar messages={t} />
       <LuxuryEcosystemSection messages={t} />
       <LuxuryProductGrid messages={t} locale={locale} />
-      <LuxuryPartnersStrip messages={t} />
-      <LuxuryBeforeAfterSection messages={t} />
       <LuxuryComparisonSection messages={t} />
-      <LuxuryInspirationSection messages={t} />
-      <LuxuryTrustStats messages={t} />
-      <LuxuryWaysOfLivingSection messages={t} />
+      <LuxuryBeforeAfterSection messages={t} />
 
       <section className="lux-section lux-section--white">
         <div className="lux-container max-w-3xl text-center">
@@ -73,8 +70,10 @@ export function LuxuryHomePage({ locale }: Props) {
         </div>
       </section>
 
-      <LuxurySampleKitBand messages={t} />
-      <LuxuryFaqSection messages={t} />
+      <LuxuryInspirationSection messages={t} />
+      <LuxuryWaysOfLivingSection messages={t} />
+      <LuxuryTrustStats messages={t} />
+      <LuxuryPartnersStrip messages={t} />
 
       <section className="lux-section lux-section--dark">
         <div className="lux-container max-w-3xl text-center">
@@ -94,6 +93,9 @@ export function LuxuryHomePage({ locale }: Props) {
           ))}
         </div>
       </section>
+
+      <LuxurySampleKitBand messages={t} />
+      <LuxuryFaqSection messages={t} />
 
       <section className="lux-cta-band" aria-labelledby="home-cta-heading">
         <div className="lux-container">
