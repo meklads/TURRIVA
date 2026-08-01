@@ -16,6 +16,7 @@ import { LuxuryProductGrid } from "./luxury-product-grid";
 import { LuxurySampleKitBand } from "./luxury-sample-kit-band";
 import { LuxuryTrustBar } from "./luxury-trust-bar";
 import { LuxuryTrustStats } from "./luxury-trust-stats";
+import { LuxuryWaysOfLivingSection } from "./luxury-ways-of-living-section";
 
 type Props = {
   locale: Locale;
@@ -35,6 +36,7 @@ export function LuxuryHomePage({ locale }: Props) {
       <LuxuryComparisonSection messages={t} />
       <LuxuryInspirationSection messages={t} />
       <LuxuryTrustStats messages={t} />
+      <LuxuryWaysOfLivingSection messages={t} />
 
       <section className="lux-section lux-section--white">
         <div className="lux-container max-w-3xl text-center">

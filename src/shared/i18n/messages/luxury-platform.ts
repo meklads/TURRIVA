@@ -44,6 +44,10 @@ export type LuxuryPlatformMessages = {
       href: string;
     }[];
   };
+  waysOfLiving: {
+    title: string;
+    subtitle: string;
+  };
   beforeAfter: {
     eyebrow: string;
     title: string;
@@ -217,6 +221,11 @@ const en: LuxuryPlatformMessages = {
         href: "/projects",
       },
     ],
+  },
+  waysOfLiving: {
+    title: "Different ways of living",
+    subtitle:
+      "Kitchens, wardrobes, bathrooms, and whole-home joinery — visualized in 3D and delivered on site across Saudi Arabia.",
   },
   beforeAfter: {
     eyebrow: "Proof",
@@ -413,6 +422,11 @@ const ar: LuxuryPlatformMessages = {
         href: "/projects",
       },
     ],
+  },
+  waysOfLiving: {
+    title: "طرق مختلفة للعيش",
+    subtitle:
+      "مطابخ وخزائن وحمامات وتأثيث المنزل بالكامل — إظهار ثلاثي الأبعاد وتسليم ميداني في أنحاء المملكة.",
   },
   beforeAfter: {
     eyebrow: "إثبات",

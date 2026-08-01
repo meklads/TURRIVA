@@ -2105,6 +2105,46 @@
   }
 }
 
+/* Ways of living — full-width cinematic video (Oppein-style) */
+.lux-ways-of-living {
+  position: relative;
+  z-index: 6;
+  padding-top: 3rem;
+  padding-bottom: 0;
+  background: var(--lux-cream);
+}
+
+@media (min-width: 1024px) {
+  .lux-ways-of-living {
+    padding-top: 4rem;
+  }
+}
+
+.lux-ways-of-living__header {
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .lux-ways-of-living__header {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.lux-ways-of-living__video {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  background: var(--lux-charcoal);
+}
+
+@media (max-width: 1023px) {
+  .lux-ways-of-living__video {
+    height: min(60vh, 28rem);
+    object-fit: cover;
+  }
+}
+
 .lux-faq-item {
   border: 1px solid color-mix(in srgb, var(--lux-sand) 70%, transparent);
   border-radius: 0.75rem;
