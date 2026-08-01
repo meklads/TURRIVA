@@ -2,31 +2,48 @@
 
 ## فشل النشر (Deployment Failed)
 
-### السبب الأكثر شيوعاً
-إذا ظهر في السجل:
+### السبب الحقيقي (من السجل)
 ```
-load metadata for ghcr.io/railwayapp/nixpacks:ubuntu
+error: writing to file: No space left on device
+nix-env -if .nixpacks/nixpkgs-...
 Generating nixpacks configuration
 ```
-فـ Coolify **ما زال على Nixpacks** — والسيرفر غالباً **لا يملك ذاكرة كافية** لبناء Next.js.
+
+1. **Coolify ما زال على Nixpacks** — يحمّل مئات MB من Nixpkgs على السيرفر
+2. **قرص السيرفر ممتلئ** — لا يمكن البناء محلياً
+
+**الحل: لا تبنِ على السيرفر.** اسحب الصورة الجاهزة من GitHub.
 
 ---
 
-### الحل A (موصى به): Docker Image جاهز من GitHub
+### الحل A (الوحيد الموصى به): Docker Image جاهز
 
-GitHub Actions يبني الصورة ويرفعها تلقائياً إلى **GHCR** عند كل push على `main`.
+الصورة مبنية على GitHub Actions وتُرفع تلقائياً:
 
-1. في Coolify: **Create New Resource → Docker Image** (أو غيّر نوع التطبيق)
-2. الصورة:
-   ```
-   ghcr.io/meklads/turriva:latest
-   ```
-3. إذا كانت خاصة: أضف **Registry** في Coolify (GitHub PAT مع `read:packages`)
+```
+ghcr.io/meklads/turriva:latest
+```
+
+#### خطوات Coolify
+1. **أوقف** محاولات Redeploy على Nixpacks
+2. **New Resource → Docker Image** (أو Docker Compose مع `docker-compose.yaml` في المستودع)
+3. Image: `ghcr.io/meklads/turriva:latest`
 4. **Port** = `3000`
-5. Environment Variables (DATABASE_URL, AUTH_SECRET, …)
-6. **Deploy**
+5. Environment Variables:
+   - `DATABASE_URL`
+   - `AUTH_SECRET`
+   - `AUTH_URL` = `https://turriva.com`
+   - `NEXT_PUBLIC_APP_URL` = `https://turriva.com`
+6. إذا ظهر `unauthorized`: GitHub → **Packages → turriva → Package settings → Change visibility → Public**  
+   أو أضف Registry في Coolify (PAT مع `read:packages`)
+7. **Deploy** — يسحب الصورة فقط (بدون build)
 
-> بعد أول push ناجح، تحقق من الصورة: GitHub → Packages → `turriva`
+#### تنظيف قرص السيرفر (اختياري)
+على السيرفر:
+```bash
+docker system prune -af
+docker builder prune -af
+```
 
 ---
 

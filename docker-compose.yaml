@@ -1,0 +1,8 @@
+# Coolify — pull pre-built image (no build on server).
+# Use: New Resource → Docker Compose, or set Build Pack → Docker Compose.
+services:
+  turriva:
+    image: ghcr.io/meklads/turriva:latest
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
