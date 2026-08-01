@@ -27,7 +27,7 @@ export function LuxuryHomePage({ locale }: Props) {
 
   return (
     <>
-      {/* Hero wow → explore by room → trust → proof → offer → convert */}
+      {/* Explore → trust → proof → system → cinematic → offer → convert */}
       <LuxuryHomeHero locale={locale} />
       <LuxuryInspirationSection messages={t} />
       <LuxuryTrustBar messages={t} />
@@ -67,8 +67,8 @@ export function LuxuryHomePage({ locale }: Props) {
         </div>
       </section>
 
-      <LuxuryWaysOfLivingSection messages={t} />
       <LuxuryEcosystemSection messages={t} />
+      <LuxuryWaysOfLivingSection messages={t} />
       <LuxuryProductGrid messages={t} locale={locale} />
       <LuxuryBeforeAfterSection messages={t} />
       <LuxuryTrustStats messages={t} />
