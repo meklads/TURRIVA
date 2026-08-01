@@ -494,9 +494,9 @@ const en: LuxuryMessages = {
       ],
     },
     villas: {
-      title: "Villas & private residences",
+      title: "Villas, hospitality & commercial spaces",
       intro:
-        "A Livspace-grade journey for luxury homes, free 3D visualization, OPPEIN kitchens and wardrobes, and Turriva installation with local warranty.",
+        "An integrated fit-out journey for villas, boutique hotels, restaurants, and premium retail — free 3D visualization, OPPEIN kitchens and wardrobes, and Turriva installation with local warranty.",
       steps: [
         { title: "3D design session", description: "Upload your plan or book a visit, factory-module layouts in days." },
         { title: "Samples & sign-off", description: "Physical finishes and hardware references before we order." },
@@ -504,7 +504,7 @@ const en: LuxuryMessages = {
         { title: "Install & warranty", description: "Laser-verified install and local after-sales support." },
       ],
       ctaDesign: "Start 3D design",
-      ctaContact: "Book villa consultation",
+      ctaContact: "Book a fit-out consultation",
     },
     projects: {
       title: "Developers & B2B projects",
@@ -925,9 +925,9 @@ const ar: LuxuryMessages = {
       ],
     },
     villas: {
-      title: "الفلل والمساكن الخاصة",
+      title: "الفلل والفنادق والمساحات التجارية",
       intro:
-        "رحلة تأثيث فاخرة، تصور 3D مجاني، مطابخ وخزائن OPPEIN، وتركيب توريفا بضمان محلي.",
+        "رحلة تأثيث متكاملة للفلل والضيافة والمساحات التجارية الفاخرة — تصور 3D مجاني، مطابخ وخزائن OPPEIN، وتركيب توريفا بضمان محلي.",
       steps: [
         { title: "جلسة تصميم 3D", description: "ارفع مخططك أو احجز زيارة، تخطيطات بمقاسات المصنع." },
         { title: "عينات واعتماد", description: "تشطيبات ومفصلات فيزيائية قبل أمر التصنيع." },
@@ -935,7 +935,7 @@ const ar: LuxuryMessages = {
         { title: "تركيب وضمان", description: "تركيب بالليزر ودعم ما بعد البيع محلياً." },
       ],
       ctaDesign: "ابدأ تصميم 3D",
-      ctaContact: "احجز استشارة فيلا",
+      ctaContact: "احجز استشارة تأثيث",
     },
     projects: {
       title: "المطورون ومشاريع B2B",
