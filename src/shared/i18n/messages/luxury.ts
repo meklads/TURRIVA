@@ -154,6 +154,42 @@ export type LuxuryMessages = LuxuryPlatformMessages & {
       steps: readonly { title: string; description: string }[];
       ctaDesign: string;
       ctaContact: string;
+      segments: {
+        eyebrow: string;
+        title: string;
+        subtitle: string;
+        items: readonly { title: string; description: string; tag: string }[];
+      };
+      kitchens: {
+        eyebrow: string;
+        title: string;
+        intro: string;
+        highlights: readonly { title: string; description: string }[];
+        cta: string;
+      };
+      wardrobes: {
+        eyebrow: string;
+        title: string;
+        intro: string;
+        highlights: readonly { title: string; description: string }[];
+        cta: string;
+      };
+      gallery: {
+        eyebrow: string;
+        title: string;
+        subtitle: string;
+        items: readonly { title: string; category: string }[];
+        cta: string;
+      };
+      formSection: {
+        title: string;
+        subtitle: string;
+      };
+      faq: {
+        eyebrow: string;
+        title: string;
+        items: readonly { q: string; a: string }[];
+      };
     };
     projects: {
       title: string;
@@ -505,6 +541,116 @@ const en: LuxuryMessages = {
       ],
       ctaDesign: "Start 3D design",
       ctaContact: "Book a fit-out consultation",
+      segments: {
+        eyebrow: "Who we serve",
+        title: "One journey for private homes and premium spaces",
+        subtitle:
+          "Whether you are finishing a family villa, a boutique hotel suite, or a flagship store, the same Turriva system applies: design, samples, factory production, and accountable install.",
+        items: [
+          {
+            tag: "Residential",
+            title: "Villas & private homes",
+            description:
+              "Majlis, kitchens, walk-ins, and whole-home joinery — contemporary Gulf character with materials chosen for climate and daily life.",
+          },
+          {
+            tag: "Hospitality",
+            title: "Hotels & F&B",
+            description:
+              "Lobby joinery, guest suites, and restaurant fit-out with finishes that survive real footfall and operational wear.",
+          },
+          {
+            tag: "Commercial",
+            title: "Retail & showrooms",
+            description:
+              "Brand-forward boutiques, sales suites, and premium retail interiors that carry your identity from first sketch to opening day.",
+          },
+        ],
+      },
+      kitchens: {
+        eyebrow: "Modular kitchens",
+        title: "Factory-precise kitchens, built for Gulf homes and hospitality",
+        intro:
+          "OPPEIN modular systems with moisture-resistant cores, PET and lacquer finishes, and Blum soft-close hardware — specified in 3D, sampled on site, then cut to 0.1 mm tolerance.",
+        highlights: [
+          {
+            title: "Island & galley layouts",
+            description: "Central islands, parallel runs, and hidden storage tuned to your floor plan and factory module sizes.",
+          },
+          {
+            title: "Finishes you approve first",
+            description: "Physical boards and hardware references before manufacturing — no surprises at install.",
+          },
+          {
+            title: "Laser survey & install",
+            description: "Site verification, coordinated trades, and snagging until the kitchen matches the signed design.",
+          },
+        ],
+        cta: "Discuss your kitchen",
+      },
+      wardrobes: {
+        eyebrow: "Wardrobes & walk-ins",
+        title: "Walk-in closets and dressing rooms with hidden luxury",
+        intro:
+          "Integrated lighting, glass inserts, and hydraulic fittings in layouts designed around how you dress, store, and live — not catalogue boxes forced into your space.",
+        highlights: [
+          {
+            title: "Master suite programmes",
+            description: "His-and-hers zones, shoe walls, and jewellery drawers with soft-close throughout.",
+          },
+          {
+            title: "Hotel & staff wardrobes",
+            description: "Repeatable modules for guest suites and back-of-house storage on boutique hospitality projects.",
+          },
+          {
+            title: "Factory-aligned modules",
+            description: "Every elevation feeds OPPEIN production directly — fewer site adjustments, cleaner handover.",
+          },
+        ],
+        cta: "Plan your wardrobes",
+      },
+      gallery: {
+        eyebrow: "On site",
+        title: "Spaces we have delivered",
+        subtitle: "A selection of kitchens, wardrobes, and joinery programmes across Saudi Arabia.",
+        items: [
+          { category: "Kitchen", title: "Private villa, Jeddah" },
+          { category: "Walk-in", title: "Master suite, Makkah" },
+          { category: "Joinery", title: "Hospitality programme" },
+        ],
+        cta: "View full portfolio",
+      },
+      formSection: {
+        title: "Start your project with Turriva",
+        subtitle:
+          "Share your floor plan, space type, and timeline. We respond within one business day with next steps for 3D design, samples, or a site visit.",
+      },
+      faq: {
+        eyebrow: "FAQ",
+        title: "Questions about villas, hotels & retail fit-out",
+        items: [
+          {
+            q: "Do you only work on villas?",
+            a: "No. This page covers single-owner projects: villas, apartments, boutique hotels, restaurants, and premium retail. Multi-unit developer programmes sit on /projects.",
+          },
+          {
+            q: "How long from design to install?",
+            a: "Typical programmes run 8–14 weeks after sample sign-off, depending on scope, import lead times, and site readiness. We confirm a schedule at drawing approval.",
+          },
+          {
+            q: "Can I see materials before ordering?",
+            a: "Yes. We ship a physical sample kit and run a factory-aligned 3D review before anything is manufactured at scale.",
+          },
+          {
+            q: "What warranty do you offer?",
+            a: "Local warranty on products and installation, with spare-parts support. OPPEIN boards meet E0 standards; hardware is specified from Blum and Hettich.",
+          },
+          {
+            q: "How do I start?",
+            a: "Book a 3D design session, request a sample kit, or submit the form below with your plan — we route you to the right Turriva studio lead.",
+          },
+        ],
+      },
     },
     projects: {
       title: "Developers & B2B projects",
@@ -936,6 +1082,116 @@ const ar: LuxuryMessages = {
       ],
       ctaDesign: "ابدأ تصميم 3D",
       ctaContact: "احجز استشارة تأثيث",
+      segments: {
+        eyebrow: "من نخدم",
+        title: "رحلة واحدة للمساكن والمساحات الفاخرة",
+        subtitle:
+          "سواء كنت تُنهي فيلا عائلية، جناح فندق boutique، أو محل flagship — نفس منظومة توريفa: تصميم، عينات، تصنيع مصنعي، وتركيب بمسؤولية واحدة.",
+        items: [
+          {
+            tag: "سكني",
+            title: "الفلل والمساكن الخاصة",
+            description:
+              "مجالس، مطابخ، غرف ملابس، وتأثيث منزل كامل — أسلوب معاصر يناسب المناخ والحياة اليومية في الخليج.",
+          },
+          {
+            tag: "ضيافة",
+            title: "الفنادق والمطاعم",
+            description:
+              "تشطيبات الردهات والأجنحة والمطاعم بخامات تتحمل الاستخدام التشغيلي الحقيقي دون فقدان الفخامة.",
+          },
+          {
+            tag: "تجاري",
+            title: "التجزئة وصالات العرض",
+            description:
+              "بووتiques ومساحات بيع فاخرة تحمل هوية علامتك من المفهوم الأول حتى يوم الافتتاح.",
+          },
+        ],
+      },
+      kitchens: {
+        eyebrow: "المطابخ المعيارية",
+        title: "مطابخ بدقة المصنع — للفلل والضيافة",
+        intro:
+          "أنظمة OPPEIN بقلب مقاوم للرطوبة، تشطيبات PET وطلاء عالي الجودة، ومفصلات Blum — تُحدَّد في 3D، تُعتمد بعينات فيزيائية، ثم تُقطع بدقة 0.1 مم.",
+        highlights: [
+          {
+            title: "جزيرة وممرات عمل",
+            description: "جزائر مركزية، مسارات متوازية، وتخزين مخفي مُهندَس حسب مخططك ومقاسات الوحدات.",
+          },
+          {
+            title: "تشطيبات تعتمدها قبل التصنيع",
+            description: "لوحات خامات ومفصلات حقيقية قبل أمر الإنتاج — بلا مفاجآت يوم التركيب.",
+          },
+          {
+            title: "رفع مساحي وتركيب",
+            description: "تحقق ميداني، تنسيق تخصصات، وملاحظات حتى يطابق المطبخ ما وقّعت عليه.",
+          },
+        ],
+        cta: "ناقش مطبخك",
+      },
+      wardrobes: {
+        eyebrow: "الخزائن وغرف الملابس",
+        title: "غرف ملابس walk-in بفخامة هادئة",
+        intro:
+          "إضاءة مدمجة، زجاج، ومفصلات هيدروليك في تخطيطات مبنية على طريقة عيشك — لا وحدات جاهزة تُفرض على مساحتك.",
+        highlights: [
+          {
+            title: "برامج الجناح الرئيسي",
+            description: "مناطق his/hers، جدران أحذية، وأدراج مجوهرات بإغلاق ناعم في كل التفاصيل.",
+          },
+          {
+            title: "خزائن الفنادق والخدم",
+            description: "وحدات متكررة لأجنحة الضيوف ومخازن back-of-house في مشاريع الضيافة boutique.",
+          },
+          {
+            title: "وحدات متوافقة مع المصنع",
+            description: "كل واجهة تُغذّي إنتاج OPPEIN مباشرة — تعديلات أقل في الموقع وتسليم أنظف.",
+          },
+        ],
+        cta: "خطّط خزائنك",
+      },
+      gallery: {
+        eyebrow: "من الموقع",
+        title: "مساحات نفّذناها",
+        subtitle: "نماذج من مطابخ وخزائن وبرامج نجارة في أنحاء المملكة.",
+        items: [
+          { category: "مطبخ", title: "فيلا خاصة، جدة" },
+          { category: "walk-in", title: "جناح رئيسي، مكة" },
+          { category: "joinery", title: "برنامج ضيافة" },
+        ],
+        cta: "شاهد المزيد من الأعمال",
+      },
+      formSection: {
+        title: "ابدأ مشروعك مع توريفا",
+        subtitle:
+          "شاركنا مخططك ونوع المساحة والجدول الزمني. نرد خلال يوم عمل واحد بخطوات 3D أو العينات أو زيارة موقع.",
+      },
+      faq: {
+        eyebrow: "أسئلة شائعة",
+        title: "أسئلة عن تأثيث الفلل والفنادق والتجاري",
+        items: [
+          {
+            q: "هل تعملون على الفلل فقط؟",
+            a: "لا. هذه الصفحة لمشاريع مالك واحد: فلل، شقق، فنادق boutique، مطاعم، وتجزئة فاخرة. برامج المطورين متعددة الوحدات في /projects.",
+          },
+          {
+            q: "كم يستغرق من التصميم إلى التركيب؟",
+            a: "عادة 8–14 أسبوعاً بعد اعتماد العينات، حسب النطاق واستيراد المواد وجاهزية الموقع. نثبّت جدولاً عند اعتماد المخططات.",
+          },
+          {
+            q: "هل أرى الخامات قبل الطلب؟",
+            a: "نعم. نرسل حقيبة عينات فيزيائية ونجري مراجعة 3D متوافقة مع المصنع قبل أي تصنيع بالجملة.",
+          },
+          {
+            q: "ما الضمان المقدّم؟",
+            a: "ضمان محلي على المنتج والتركيب مع دعم قطع الغيار. ألواح OPPEIN بمعيار E0؛ مفصلات من Blum وHettich.",
+          },
+          {
+            q: "كيف أبدأ؟",
+            a: "احجز جلسة 3D، اطلب حقيبة عينات، أو أرسل النموذج أدناه مع مخططك — نوجّهك لمسؤول الاستوديو المناسب.",
+          },
+        ],
+      },
     },
     projects: {
       title: "المطورون ومشاريع B2B",

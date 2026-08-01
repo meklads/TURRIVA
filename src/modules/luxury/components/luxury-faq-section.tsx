@@ -4,8 +4,15 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import type { LuxuryMessages } from "@/shared/i18n/messages/luxury";
 
-export function LuxuryFaqSection({ messages }: { messages: LuxuryMessages }) {
-  const t = messages.faq;
+type FaqContent = LuxuryMessages["faq"];
+
+type Props = {
+  messages: LuxuryMessages;
+  faq?: FaqContent;
+};
+
+export function LuxuryFaqSection({ messages, faq }: Props) {
+  const t = faq ?? messages.faq;
   const [open, setOpen] = useState<number | null>(0);
 
   return (
