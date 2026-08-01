@@ -2190,20 +2190,21 @@
 
 .lux-delivery-showcase__video-frame {
   width: 100%;
-  height: min(45vh, 21rem);
+  /* +30% vs prior band; rem floor keeps mobile from feeling cramped */
+  height: clamp(27.25rem, 59vh, 35rem);
   overflow: hidden;
   background: var(--lux-charcoal);
 }
 
 @media (min-width: 768px) {
   .lux-delivery-showcase__video-frame {
-    height: min(48vh, 24rem);
+    height: clamp(31.25rem, 62vh, 38rem);
   }
 }
 
 @media (min-width: 1024px) {
   .lux-delivery-showcase__video-frame {
-    height: min(51vh, 27rem);
+    height: clamp(35rem, 66vh, 42rem);
   }
 }
 
@@ -2663,7 +2664,8 @@
 .lux-ways-of-living__video {
   display: block;
   width: 100%;
-  height: min(59.375vw, 63vh, 29.4rem);
+  /* +30% vs prior band; vw tracks width, rem floor stabilises mobile */
+  height: clamp(38.25rem, 77vw, 82vh);
   object-fit: cover;
   object-position: center;
   vertical-align: middle;
@@ -2672,7 +2674,7 @@
 
 @media (min-width: 1024px) {
   .lux-ways-of-living__video {
-    height: min(59.375vw, 73.5vh, 33.6rem);
+    height: clamp(43.75rem, 77vw, 96vh);
   }
 }
 
