@@ -425,7 +425,12 @@
   border-top: 1px solid color-mix(in srgb, var(--lux-sand) 35%, transparent);
 }
 
-.lux-shell main:not(:has(.lux-hero)) > :first-child {
+.lux-shell main {
+  scroll-padding-top: 5.5rem;
+}
+
+/* Only strip top padding on non-section first children (home uses .lux-hero spacing). */
+.lux-shell main:not(:has(.lux-hero)) > :first-child:not(.lux-section) {
   padding-top: 0;
 }
 
@@ -1857,6 +1862,11 @@
   .lux-section {
     padding-top: 3rem;
     padding-bottom: 3rem;
+  }
+
+  .lux-marketing-hero.lux-section {
+    padding-top: clamp(2.85rem, 9vw, 3.75rem);
+    padding-bottom: 2.5rem;
   }
 
   .lux-hero-tags {
@@ -3572,13 +3582,26 @@
 }
 
 /* Marketing inner pages — unified hero rhythm */
+.lux-marketing-hero.lux-section {
+  padding-top: clamp(3.5rem, 7.5vw, 6.25rem);
+  padding-bottom: clamp(2.75rem, 5vw, 4.5rem);
+}
+
+.lux-marketing-hero .lux-eyebrow {
+  margin-bottom: 0.15rem;
+}
+
+.lux-marketing-hero .lux-divider-gold {
+  margin-top: clamp(0.85rem, 1.8vw, 1.15rem);
+}
+
 .lux-marketing-hero__actions {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  margin-top: clamp(2rem, 4vw, 2.5rem);
+  margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
 }
 
 @media (min-width: 640px) {
@@ -3593,7 +3616,17 @@
 }
 
 .lux-marketing-gallery {
-  padding-block: clamp(3.5rem, 6vw, 5rem);
+  padding-top: clamp(2.5rem, 4.5vw, 3.5rem);
+  padding-bottom: clamp(3.5rem, 6vw, 5rem);
+}
+
+/* Tighter handoff when content follows a marketing hero */
+.lux-marketing-hero.lux-section + .lux-section {
+  padding-top: clamp(2.75rem, 5vw, 4rem);
+}
+
+.lux-marketing-hero.lux-section + .lux-marketing-gallery {
+  padding-top: clamp(1.75rem, 3vw, 2.5rem);
 }
 
 .lux-form-split .lux-quote-section__panel > .lux-display:first-child {

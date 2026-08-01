@@ -6,6 +6,7 @@ import Link from "next/link";
 import type { Locale } from "@/shared/i18n/locale";
 import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import { LUXURY_STYLE_IMAGES } from "@/shared/i18n/messages/luxury-style-catalog";
+import { LuxuryMarketingHero } from "./luxury-marketing-hero";
 import { LuxuryStyleLightbox, LuxuryStyleZoomHint } from "./luxury-style-lightbox";
 
 type StyleCategory = "italian" | "french" | "contemporary" | "minimal";
@@ -38,15 +39,9 @@ export function LuxuryStylesPage({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <section className="lux-section lux-section--white">
-        <div className="lux-container max-w-3xl text-center">
-          <p className="lux-eyebrow">{t.brand.tagline}</p>
-          <div className="lux-divider-gold" />
-          <h1 className="lux-display lux-heading mt-6">{p.title}</h1>
-          <p className="lux-body mx-auto mt-4 max-w-2xl">{p.intro}</p>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-lux-ink-muted">{p.disclaimer}</p>
-        </div>
-      </section>
+      <LuxuryMarketingHero eyebrow={t.brand.tagline} title={p.title} intro={p.intro}>
+        <p className="mx-auto max-w-2xl text-sm leading-relaxed text-lux-ink-muted">{p.disclaimer}</p>
+      </LuxuryMarketingHero>
 
       <section className="lux-section lux-section--cream pt-0">
         <div className="lux-container">
