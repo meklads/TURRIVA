@@ -17,6 +17,12 @@ export function isLeadEmailConfigured(): boolean {
   return Boolean(process.env.RESEND_API_KEY?.trim());
 }
 
+/** True when sending from a verified custom domain (not Resend's test sender). */
+export function isLeadEmailProductionReady(): boolean {
+  const from = process.env.RESEND_FROM_EMAIL?.trim() ?? "";
+  return Boolean(from) && !from.includes("@resend.dev");
+}
+
 /** Sends a lead alert to info@turriva.com (or LEAD_NOTIFICATION_EMAIL). Returns false if skipped/failed. */
 export async function sendLeadNotification(payload: LeadNotificationPayload): Promise<boolean> {
   const apiKey = process.env.RESEND_API_KEY?.trim();
@@ -64,7 +70,7 @@ export async function sendLeadNotification(payload: LeadNotificationPayload): Pr
     });
 
     if (error) {
-      console.error("[email] Resend error:", error);
+      console.error("[email] Resend error (to=%s, from=%s):", to, from, error);
       return false;
     }
 

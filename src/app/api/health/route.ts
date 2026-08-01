@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
 import { db } from "@/shared/lib/db";
 import { isGoogleAuthConfigured } from "@/shared/lib/env";
-import { isLeadEmailConfigured } from "@/shared/lib/email/send-lead-notification";
+import {
+  isLeadEmailConfigured,
+  isLeadEmailProductionReady,
+} from "@/shared/lib/email/send-lead-notification";
 
 export const dynamic = "force-dynamic";
 
@@ -9,6 +12,7 @@ export const dynamic = "force-dynamic";
 export async function GET() {
   const googleAuth = isGoogleAuthConfigured();
   const leadEmail = isLeadEmailConfigured();
+  const leadEmailProduction = isLeadEmailProductionReady();
 
   if (!process.env.DATABASE_URL) {
     return NextResponse.json({
@@ -18,6 +22,7 @@ export async function GET() {
       tables: false,
       googleAuth,
       leadEmail,
+      leadEmailProduction,
       error: "DATABASE_URL is not set",
       timestamp: new Date().toISOString(),
     });
@@ -51,6 +56,7 @@ export async function GET() {
       schemaReady,
       googleAuth,
       leadEmail,
+      leadEmailProduction,
       timestamp: new Date().toISOString(),
     });
   } catch (error) {
@@ -64,6 +70,7 @@ export async function GET() {
       tables: false,
       googleAuth,
       leadEmail,
+      leadEmailProduction,
       error: message,
       timestamp: new Date().toISOString(),
     });
