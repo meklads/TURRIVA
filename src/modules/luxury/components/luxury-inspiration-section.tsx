@@ -28,6 +28,9 @@ export function LuxuryInspirationSection({ messages }: Props) {
         <div className="lux-divider-gold" />
         <h2 className="lux-display lux-heading mt-6">{t.title}</h2>
         <p className="lux-body mx-auto mt-4 max-w-2xl text-lux-ink-muted">{t.subtitle}</p>
+        <Link href="/styles" className="lux-inspiration-ghost-btn mt-8 inline-flex">
+          {t.stylesLink}
+        </Link>
       </div>
 
       <div className="lux-container mt-10 flex flex-wrap justify-center gap-2">

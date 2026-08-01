@@ -147,6 +147,26 @@ export type LuxuryMessages = LuxuryPlatformMessages & {
       productOptions: readonly { value: string; label: string }[];
     };
     design: { title: string; intro: string };
+    styles: {
+      title: string;
+      intro: string;
+      disclaimer: string;
+      filters: {
+        all: string;
+        italian: string;
+        french: string;
+        contemporary: string;
+        minimal: string;
+      };
+      cta: string;
+      items: readonly {
+        id: string;
+        category: "italian" | "french" | "contemporary" | "minimal";
+        title: string;
+        description: string;
+        materials: string;
+      }[];
+    };
   };
 };
 
@@ -440,6 +460,93 @@ const en: LuxuryMessages = {
       title: "Design consultation",
       intro: "Share your floor plan — our studio team prepares factory-aligned layouts and a sample review session. No online uploads required.",
     },
+    styles: {
+      title: "Style directions",
+      intro:
+        "Italian, French, and contemporary whole-home palettes — reference boards for veneers, lacquers, stone-look panels, and joinery we can specify and deliver on your plan.",
+      disclaimer:
+        "Illustrative references for material direction and spatial quality — not a product catalogue. Your project is fully custom to approved drawings.",
+      filters: {
+        all: "All",
+        italian: "Italian",
+        french: "French",
+        contemporary: "Contemporary",
+        minimal: "Minimal",
+      },
+      cta: "Book a style review",
+      items: [
+        {
+          id: "italian-polynesia-house",
+          category: "italian",
+          title: "Italian · warm wood veneer",
+          description: "Whole-home programme — living, dining, and built-ins in natural veneer with soft neutral walls.",
+          materials: "Wood veneer · integrated lighting · stone-look accents",
+        },
+        {
+          id: "italian-polynesia-kitchen",
+          category: "italian",
+          title: "Italian · island kitchen",
+          description: "Central island layout with wood fronts and concealed storage — suited to open villa plans.",
+          materials: "Wood cabinetry · quartz worktop · premium hardware",
+        },
+        {
+          id: "italian-sylva-house",
+          category: "italian",
+          title: "Italian · dark wood suite",
+          description: "Rich timber palette across living zones — strong lines with layered ambient light.",
+          materials: "Dark wood veneer · metal trim · feature wall panels",
+        },
+        {
+          id: "italian-sylva-kitchen",
+          category: "italian",
+          title: "Italian · grey & timber kitchen",
+          description: "Two-tone kitchen combining grey lacquer with dark wood — high contrast for large kitchens.",
+          materials: "Lacquer · wood veneer · under-cabinet lighting",
+        },
+        {
+          id: "italian-titian",
+          category: "italian",
+          title: "Italian · gloss accent kitchen",
+          description: "Bold high-gloss fronts with refined hardware — for statement entertaining spaces.",
+          materials: "High-gloss lacquer · soft-close systems · island seating",
+        },
+        {
+          id: "french-sicily",
+          category: "french",
+          title: "French · elegant cream",
+          description: "Soft cream palette with classical proportion — living, dining, and bedroom coordination.",
+          materials: "Painted fronts · brass details · moulded panels",
+        },
+        {
+          id: "contemporary-tahiti",
+          category: "contemporary",
+          title: "Contemporary · cream & white oak",
+          description: "Light whole-house scheme — open planning with oak warmth and clean sightlines.",
+          materials: "White oak · matte lacquer · integrated handles",
+        },
+        {
+          id: "contemporary-golden-years",
+          category: "contemporary",
+          title: "Contemporary · warm white & walnut",
+          description: "Living and dining joinery with walnut feature walls — ideal for family villas.",
+          materials: "Walnut veneer · warm white lacquer · TV wall system",
+        },
+        {
+          id: "contemporary-seville",
+          category: "contemporary",
+          title: "Contemporary · walnut & grey",
+          description: "Balanced neutral kitchen with island — light walnut paired with warm grey tones.",
+          materials: "Walnut · grey lacquer · waterfall edge option",
+        },
+        {
+          id: "minimal-urban-glow",
+          category: "minimal",
+          title: "Minimal · white & gold accent",
+          description: "Crisp minimalist kitchen with subtle metallic highlights — for urban apartments and penthouses.",
+          materials: "Matte white · brushed gold trim · handle-less fronts",
+        },
+      ],
+    },
   },
 };
 
@@ -732,6 +839,93 @@ const ar: LuxuryMessages = {
     design: {
       title: "استشارة تصميم",
       intro: "شاركنا مخططك — فريق الاستوديو يُعد تخطيطات متوافقة مع المصنع وجلسة مراجعة للعينات. بدون رفع صور أونلاين.",
+    },
+    styles: {
+      title: "اتجاهات الأنماط",
+      intro:
+        "لوحات إيطالية وفرنسية ومعاصرة للمنزل الكامل — مراجع للقشور والlacquer وتكسيات بديل الرخام والنجارة التي نحدّدها وننفّذها على مخططك.",
+      disclaimer:
+        "مراجع توضيحية لجودة الخامات والمساحة — وليست كتالوج منتجات. مشروعك مخصص بالكامل وفق المخططات المعتمدة.",
+      filters: {
+        all: "الكل",
+        italian: "إيطالي",
+        french: "فرنسي",
+        contemporary: "معاصر",
+        minimal: "بسيط",
+      },
+      cta: "احجز مراجعة نمط",
+      items: [
+        {
+          id: "italian-polynesia-house",
+          category: "italian",
+          title: "إيطالي · قشرة خشب دافئة",
+          description: "برنامج منزل كامل — معيشة وطعام ونجارة مدمجة بقشرة طبيعية وجدران محايدة.",
+          materials: "قشرة خشب · إضاءة مدمجة · لمسات بديل رخام",
+        },
+        {
+          id: "italian-polynesia-kitchen",
+          category: "italian",
+          title: "إيطالي · مطبخ جزيرة",
+          description: "تخطيط جزيرة مركزية بواجهات خشبية وتخزين مخفي — يناسب الفلل المفتوحة.",
+          materials: "خزائن خشب · كونترتوب · مفصلات فاخرة",
+        },
+        {
+          id: "italian-sylva-house",
+          category: "italian",
+          title: "إيطالي · خشب داكن",
+          description: "لوحة خشبية غنية في zones المعيشة — خطوط قوية مع إضاءة محيطية متعددة الطبقات.",
+          materials: "قشرة خشب داكن · حواف معدنية · تكسيات جدار",
+        },
+        {
+          id: "italian-sylva-kitchen",
+          category: "italian",
+          title: "إيطالي · مطبخ رمادي وخشب",
+          description: "مطبخ ثنائي اللون يجمع lacquer رمادي مع خشب داكن — تباين عالٍ للمطابخ الكبيرة.",
+          materials: "Lacquer · قشرة خشب · إضاءة تحت الخزائن",
+        },
+        {
+          id: "italian-titian",
+          category: "italian",
+          title: "إيطالي · لمعان جريء",
+          description: "واجهات lacquer لامعة مع مفصلات ر refined — لمساحات استقبال مميزة.",
+          materials: "Lacquer لامع · soft-close · جلسة جزيرة",
+        },
+        {
+          id: "french-sicily",
+          category: "french",
+          title: "فرنسي · كريم أنيق",
+          description: "لوحة كريمية ناعمة بنسب كلاسيكية — تنسيق معيشة وطعام وغرف نوم.",
+          materials: "واجهات مطلية · تفاصيل نحاس · ألواح زخرفية",
+        },
+        {
+          id: "contemporary-tahiti",
+          category: "contemporary",
+          title: "معاصر · كريم وبلوط أبيض",
+          description: "مخطط منزل فاتح — فتحات واسعة مع دفء البلوط وخطوط نظيفة.",
+          materials: "بلوط أبيض · lacquer مطفي · مقابض مدمجة",
+        },
+        {
+          id: "contemporary-golden-years",
+          category: "contemporary",
+          title: "معاصر · أبيض دافئ وجوز",
+          description: "نجارة معيشة وطعام مع جدران جوز — مناسب للفلل العائلية.",
+          materials: "قشرة جوز · lacquer أبيض دافئ · جدار تلفزيون",
+        },
+        {
+          id: "contemporary-seville",
+          category: "contemporary",
+          title: "معاصر · جوز ورمادي",
+          description: "مطبخ محايد متوازن مع جزيرة — جوز فاتح مع رمادي دافئ.",
+          materials: "جوز · lacquer رمادي · حافة waterfall اختيارية",
+        },
+        {
+          id: "minimal-urban-glow",
+          category: "minimal",
+          title: "Minimal · أبيض ولمسة ذهب",
+          description: "مطبخ minimal نظيف مع لمسات معدنية خفيفة — للشقق والpenthouse الحضرية.",
+          materials: "أبيض مطفي · حواف ذهبية · واجهات بدون مقابض",
+        },
+      ],
     },
   },
 };

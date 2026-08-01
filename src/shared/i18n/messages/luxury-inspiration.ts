@@ -1,17 +1,18 @@
-/** Inspiration images — Oppein editorial references + verified fallbacks */
-const OPPEIN = "https://www.oppeinhome.com/public/home/1000000/images/home";
+/** Inspiration images — editorial product references + verified fallbacks */
+const OPPEIN_HOME = "https://www.oppeinhome.com/public/home/1000000/images/home";
+const OPPEIN_PRODUCT = "https://www.oppeinhome.com/upload/image/product/thumb";
 const IMG_Q = "auto=format&fit=crop&q=90";
 
 export const LUXURY_INSPIRATION_IMAGES: Record<string, string> = {
-  /** Oppein homepage — luxury modular kitchen */
-  kitchen: `${OPPEIN}/kitchens.webp`,
-  /** Oppein — fitted wardrobes & walk-in systems */
-  wardrobe: `${OPPEIN}/fitted-furniture.webp`,
-  /** Oppein banner — living & dining joinery */
-  living: `${OPPEIN}/banner2-2.webp`,
+  /** Luxury modular kitchen */
+  kitchen: `${OPPEIN_HOME}/kitchens.webp`,
+  /** Fitted wardrobes & walk-in systems */
+  wardrobe: `${OPPEIN_HOME}/fitted-furniture.webp`,
+  /** Whole-house living & dining — warm walnut interior */
+  living: `${OPPEIN_PRODUCT}/20250820/contemporary-warm-white-and-walnut-interior-design.webp`,
   bedroom: `https://images.unsplash.com/photo-1616594039964-ae9021a400a0?${IMG_Q}&w=1800`,
-  /** Oppein — bathroom vanity programme */
-  bathroom: `${OPPEIN}/bathroom-cabinets.webp`,
+  /** Bathroom vanity programme */
+  bathroom: `${OPPEIN_HOME}/bathroom-cabinets.webp`,
   /** Luxury F&B interior — lobbies & restaurant joinery reference */
   hospitality: `https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?${IMG_Q}&w=1800`,
 };

@@ -40,6 +40,7 @@ export type LuxuryPlatformMessages = {
     eyebrow: string;
     title: string;
     subtitle: string;
+    stylesLink: string;
     items: readonly {
       id: string;
       label: string;
@@ -186,7 +187,8 @@ const en: LuxuryPlatformMessages = {
   inspiration: {
     eyebrow: "Ideas",
     title: "Inspiration by space",
-    subtitle: "Browse kitchens, wardrobes, and living spaces by category — then book a design consultation.",
+    subtitle: "Browse kitchens, wardrobes, and living spaces — or explore style directions by region, then book a design consultation.",
+    stylesLink: "Style directions",
     items: [
       {
         id: "kitchen",
@@ -211,9 +213,9 @@ const en: LuxuryPlatformMessages = {
         label: "Living",
         title: "Living & dining",
         description:
-          "TV walls, shelving, and dining joinery in one coordinated palette — from concept board to handover.",
-        cta: "Explore living spaces",
-        href: "/contact?intent=design",
+          "TV walls, shelving, and dining joinery in coordinated palettes — browse Italian, French, and contemporary style directions.",
+        cta: "Explore style directions",
+        href: "/styles",
       },
       {
         id: "bedroom",
@@ -417,7 +419,8 @@ const ar: LuxuryPlatformMessages = {
   inspiration: {
     eyebrow: "إلهام",
     title: "أفكار حسب المساحة",
-    subtitle: "استكشف المطابخ والخزائن وغرف المعيشة حسب الفئة — ثم احجز استشارة تصميم.",
+    subtitle: "استكشف المطابخ والخزائن وغرف المعيشة — أو اتجاهات الأنماط حسب المنطقة — ثم احجز استشارة تصميم.",
+    stylesLink: "اتجاهات الأنماط",
     items: [
       {
         id: "kitchen",
@@ -442,9 +445,9 @@ const ar: LuxuryPlatformMessages = {
         label: "معيشة",
         title: "معيشة وطعام",
         description:
-          "جدران تلفزيون ورفوف ونجارة طعام بلوحة ألوان موحّدة — من لوحة المواد إلى التسليم.",
-        cta: "اكتشف المعيشة",
-        href: "/contact?intent=design",
+          "جدران تلفزيون ورفوف ونجارة طعام بلوحات متناسقة — استكشف اتجاهات إيطالية وفرنسية ومعاصرة.",
+        cta: "اتجاهات الأنماط",
+        href: "/styles",
       },
       {
         id: "bedroom",
