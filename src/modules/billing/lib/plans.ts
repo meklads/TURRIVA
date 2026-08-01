@@ -1,8 +1,8 @@
 /**
- * Monthly proposal-count plans — matches PRD_Saudi_Proposal_OS.md §9
+ * Monthly proposal-count plans, matches PRD_Saudi_Proposal_OS.md §9
  * ("Pricing Strategy"). Enforcement is gated by `isBillingEnabled()`
  * (env BILLING_ENABLED): while the free-trial launch month is running,
- * nothing here blocks anyone — it just sits ready. The moment billing is
+ * nothing here blocks anyone, it just sits ready. The moment billing is
  * flipped on, these limits apply automatically, no code change needed.
  *
  * `null` monthlyProposalLimit = unlimited.

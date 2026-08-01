@@ -2,7 +2,7 @@ import { z } from "zod";
 import type { CommercialMode } from "@/shared/types/proposal.types";
 
 // ============================================================
-// Trust Layer — Project & archetype
+// Trust Layer, Project & archetype
 // ============================================================
 
 export type ProjectArchetype = "fit_out" | "supervision" | "maintenance" | "other";
@@ -95,7 +95,7 @@ export interface BoqAllocateInput {
   budget: number;
   commercialMode: CommercialMode;
   archetype: ProjectArchetype;
-  /** Optional AI overrides — labels/notes only; amounts are system-allocated */
+  /** Optional AI overrides, labels/notes only; amounts are system-allocated */
   labelOverrides?: Array<{
     sortOrder: number;
     labelAr?: string;
@@ -113,7 +113,7 @@ export interface BoqAllocateResult {
 }
 
 // ============================================================
-// Soft approval — estimate_only enforces disclaimer ack
+// Soft approval, estimate_only enforces disclaimer ack
 // ============================================================
 
 const softApproveBaseFields = {
@@ -172,7 +172,7 @@ export function parseSoftApprovePayload(
   return softApprovePayloadSchema.parse(withMode);
 }
 
-/** Type guard — estimate_only payloads always carry disclaimer ack */
+/** Type guard, estimate_only payloads always carry disclaimer ack */
 export function isEstimateSoftApprove(
   payload: SoftApprovePayload
 ): payload is SoftApprovePayloadEstimate {

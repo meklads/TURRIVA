@@ -52,7 +52,7 @@ export function GraphicsHouseLogo({
       target="_blank"
       rel="noopener noreferrer"
       className="inline-flex shrink-0 items-center bg-transparent p-0 leading-none"
-      aria-label="Graphics House — 3dgraphicshouse.com"
+      aria-label="Graphics House, 3dgraphicshouse.com"
     >
       {logo}
     </a>

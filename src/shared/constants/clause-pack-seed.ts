@@ -1,6 +1,6 @@
 /**
- * Turriva Trust Layer v1 — Pre-vetted clause library (Arabic primary).
- * AI may select/fill placeholders only — never draft legal text.
+ * Turriva Trust Layer v1, Pre-vetted clause library (Arabic primary).
+ * AI may select/fill placeholders only, never draft legal text.
  */
 
 import {
@@ -37,7 +37,7 @@ export type ClauseSeed = {
   sourceRef?: string;
 };
 
-/** Approved defaults — re-exported from shared constants (single source of truth) */
+/** Approved defaults, re-exported from shared constants (single source of truth) */
 
 function ph(...keys: string[]): PlaceholderDef[] {
   return keys.map((key) => ({
@@ -71,7 +71,7 @@ const sbcResidentialCompliance = (
   placeholders: [],
   sortOrder,
   isMandatory: true,
-  sourceRef: "SBC 1101 — Residential Buildings",
+  sourceRef: "SBC 1101, Residential Buildings",
 });
 
 const baladyPermitsLiability = (
@@ -81,24 +81,24 @@ const baladyPermitsLiability = (
   clauseKey: `${prefix}-BALADY-PERMITS`,
   category: "permits",
   riskSide: "protects_contractor",
-  textAr: `الحصول على جميع التراخيص والتصاريح البلدية (بلدي) اللازمة للتنفيذ — بما في ذلك رخصة البناء أو الترميم، وتصاريح الحفر، وتصاريح النقل، وتصاريح العمل خارج أوقات الدوام إن لزم — يقع على عاتق الطرف الثاني (العميل) ما لم يُنص صراحة في هذا العرض على تولي الطرف الأول استخراجها مقابل أتعاب إضافية مكتوبة. يلتزم العميل بتزويد المقاول بنسخ معتمدة من التراخيص قبل بدء أي أعمال ميدانية. أي تأخير أو رفض أو إيقاف من البلدية بسبب نقص مستندات العميل أو مخالفة اشتراطات البلدية لا يُعد تأخيراً من قبل المقاول ولا يستحق غرامات تأخير عليه.`,
-  textEn: `Obtaining all required municipal (Balady) permits — including building/renovation licenses, excavation, transport, and after-hours work permits where applicable — is the Client's responsibility unless this proposal explicitly states the Contractor will obtain them for a separately stated fee. The Client shall provide approved permit copies before site works begin. Any Balady delay, rejection, or stoppage due to missing Client documents or municipal non-compliance shall not be deemed Contractor delay and shall not incur delay penalties against the Contractor.`,
+  textAr: `الحصول على جميع التراخيص والتصاريح البلدية (بلدي) اللازمة للتنفيذ، بما في ذلك رخصة البناء أو الترميم، وتصاريح الحفر، وتصاريح النقل، وتصاريح العمل خارج أوقات الدوام إن لزم، يقع على عاتق الطرف الثاني (العميل) ما لم يُنص صراحة في هذا العرض على تولي الطرف الأول استخراجها مقابل أتعاب إضافية مكتوبة. يلتزم العميل بتزويد المقاول بنسخ معتمدة من التراخيص قبل بدء أي أعمال ميدانية. أي تأخير أو رفض أو إيقاف من البلدية بسبب نقص مستندات العميل أو مخالفة اشتراطات البلدية لا يُعد تأخيراً من قبل المقاول ولا يستحق غرامات تأخير عليه.`,
+  textEn: `Obtaining all required municipal (Balady) permits, including building/renovation licenses, excavation, transport, and after-hours work permits where applicable, is the Client's responsibility unless this proposal explicitly states the Contractor will obtain them for a separately stated fee. The Client shall provide approved permit copies before site works begin. Any Balady delay, rejection, or stoppage due to missing Client documents or municipal non-compliance shall not be deemed Contractor delay and shall not incur delay penalties against the Contractor.`,
   placeholders: [],
   sortOrder,
   isMandatory: true,
-  sourceRef: "Balady — Municipal Permits & Licensing",
+  sourceRef: "Balady, Municipal Permits & Licensing",
 });
 
 const baladyDebrisDelay = (prefix: string, sortOrder: number): ClauseSeed => ({
   clauseKey: `${prefix}-BALADY-DEBRIS-DELAY`,
   category: "permits",
   riskSide: "protects_contractor",
-  textAr: `إزالة مخلفات البناء والهدم ونقلها إلى مواقع التخلص المعتمدة من البلدية تقع على عاتق الطرف الثاني (العميل) ما لم يُدرج بند صريح ضمن نطاق هذا العرض. أي تأخير ناتج عن عدم توفر حاويات مخلفات، أو رفض موقع التخلص، أو إيقاف البلدية لعمليات النقل، أو غرامات بلدية على الموقع — يُعد خارج مسؤولية الطرف الأول ويُمدَّد جدول التنفيذ بمدة التأخير الفعلية دون غرامات على المقاول. يلتزم العميل بسداد أي رسوم بلدية أو غرامات مباشرة أو استردادها للمقاول خلال {debris_fee_days} أيام عمل من تاريخ الفاتورة.`,
+  textAr: `إزالة مخلفات البناء والهدم ونقلها إلى مواقع التخلص المعتمدة من البلدية تقع على عاتق الطرف الثاني (العميل) ما لم يُدرج بند صريح ضمن نطاق هذا العرض. أي تأخير ناتج عن عدم توفر حاويات مخلفات، أو رفض موقع التخلص، أو إيقاف البلدية لعمليات النقل، أو غرامات بلدية على الموقع، يُعد خارج مسؤولية الطرف الأول ويُمدَّد جدول التنفيذ بمدة التأخير الفعلية دون غرامات على المقاول. يلتزم العميل بسداد أي رسوم بلدية أو غرامات مباشرة أو استردادها للمقاول خلال {debris_fee_days} أيام عمل من تاريخ الفاتورة.`,
   textEn: `Removal and lawful disposal of construction/demolition debris to Balady-approved sites is the Client's responsibility unless explicitly included in scope. Delays caused by unavailable skip containers, rejected disposal sites, municipal transport bans, or on-site municipal fines are outside the Contractor's responsibility and extend the schedule without Contractor delay penalties. The Client shall pay or reimburse any direct municipal fees or fines within {debris_fee_days} business days of invoice.`,
   placeholders: ph("debris_fee_days"),
   sortOrder,
   isMandatory: false,
-  sourceRef: "Balady — Waste Management & Site Compliance",
+  sourceRef: "Balady, Waste Management & Site Compliance",
 });
 
 const hiddenSoilRock = (prefix: string, sortOrder: number): ClauseSeed => ({
@@ -110,15 +110,15 @@ const hiddenSoilRock = (prefix: string, sortOrder: number): ClauseSeed => ({
   placeholders: [],
   sortOrder,
   isMandatory: true,
-  sourceRef: "Saudi FIDIC practice — Unforeseen Ground Conditions",
+  sourceRef: "Saudi FIDIC practice, Unforeseen Ground Conditions",
 });
 
 const priceEscalation = (prefix: string, sortOrder: number): ClauseSeed => ({
   clauseKey: `${prefix}-PRICE-ESCALATION`,
   category: "escalation",
   riskSide: "protects_contractor",
-  textAr: `نظراً لامتداد مدة المشروع ({project_duration_days} يوماً) وتذبذب أسعار مواد البناء (حديد، أسمنت، خشب، تشطيبات، وغيرها) في السوق السعودي، يُفعَّل شرط تذبذب الأسعار: إذا ارتفع مؤشر أسعار المواد الأساسية بنسبة تتجاوز {escalation_threshold_percent}% خلال فترة التنفيذ — وفقاً لبيانات الهيئة العامة للإحصاء أو فواتير الموردين المعتمدة — يحق للطرف الأول تعديل قيمة البنود المتأثرة بما يعادل الزيادة الفعلية في تكلفة التوريد، بعد إشعار خطي للعميل خلال {escalation_notice_days} أيام عمل مع مستندات داعمة. لا يُطبق هذا الشرط على الأعمال المنجزة والمفوترة مسبقاً.`,
-  textEn: `Given the project duration ({project_duration_days} days) and volatility of construction material prices in the Saudi market, a price escalation clause applies: if the index of key material prices rises by more than {escalation_threshold_percent}% during execution — per GASTAT data or approved supplier invoices — the Contractor may adjust affected line items by the actual supply cost increase, after {escalation_notice_days} business days' written notice with supporting documents. This clause does not apply to completed and previously invoiced works.`,
+  textAr: `نظراً لامتداد مدة المشروع ({project_duration_days} يوماً) وتذبذب أسعار مواد البناء (حديد، أسمنت، خشب، تشطيبات، وغيرها) في السوق السعودي، يُفعَّل شرط تذبذب الأسعار: إذا ارتفع مؤشر أسعار المواد الأساسية بنسبة تتجاوز {escalation_threshold_percent}% خلال فترة التنفيذ، وفقاً لبيانات الهيئة العامة للإحصاء أو فواتير الموردين المعتمدة، يحق للطرف الأول تعديل قيمة البنود المتأثرة بما يعادل الزيادة الفعلية في تكلفة التوريد، بعد إشعار خطي للعميل خلال {escalation_notice_days} أيام عمل مع مستندات داعمة. لا يُطبق هذا الشرط على الأعمال المنجزة والمفوترة مسبقاً.`,
+  textEn: `Given the project duration ({project_duration_days} days) and volatility of construction material prices in the Saudi market, a price escalation clause applies: if the index of key material prices rises by more than {escalation_threshold_percent}% during execution, per GASTAT data or approved supplier invoices, the Contractor may adjust affected line items by the actual supply cost increase, after {escalation_notice_days} business days' written notice with supporting documents. This clause does not apply to completed and previously invoiced works.`,
   placeholders: ph(
     "project_duration_days",
     "escalation_threshold_percent",
@@ -127,7 +127,7 @@ const priceEscalation = (prefix: string, sortOrder: number): ClauseSeed => ({
   sortOrder,
   isMandatory: false,
   autoTriggerRules: { minDurationDays: 90 },
-  sourceRef: "Saudi market — Material Price Volatility Mitigation",
+  sourceRef: "Saudi market, Material Price Volatility Mitigation",
 });
 
 const vatClause = (prefix: string, sortOrder: number): ClauseSeed => ({
@@ -139,7 +139,7 @@ const vatClause = (prefix: string, sortOrder: number): ClauseSeed => ({
   placeholders: ph("vat_inclusion_text", "vat_inclusion_text_en", "vat_rate_percent"),
   sortOrder,
   isMandatory: true,
-  sourceRef: "ZATCA — VAT Regulations",
+  sourceRef: "ZATCA, VAT Regulations",
 });
 
 const variationOrder = (prefix: string, sortOrder: number): ClauseSeed => ({
@@ -151,7 +151,7 @@ const variationOrder = (prefix: string, sortOrder: number): ClauseSeed => ({
   placeholders: [],
   sortOrder,
   isMandatory: true,
-  sourceRef: "Turriva — Scope Creep Protection",
+  sourceRef: "Turriva, Scope Creep Protection",
 });
 
 const retentionPayment = (prefix: string, sortOrder: number): ClauseSeed => ({
@@ -163,7 +163,7 @@ const retentionPayment = (prefix: string, sortOrder: number): ClauseSeed => ({
   placeholders: ph("retention_percent", "retention_months"),
   sortOrder,
   isMandatory: false,
-  sourceRef: "Saudi contracting practice — Retention",
+  sourceRef: "Saudi contracting practice, Retention",
 });
 
 // ---------------------------------------------------------------------------
@@ -180,7 +180,7 @@ const fitOutMaterialsContractor: ClauseSeed = {
   sortOrder: 50,
   isMandatory: false,
   alternativeGroup: "fit_out_materials_supply",
-  sourceRef: "Turriva Fit-out — Materials Supply",
+  sourceRef: "Turriva Fit-out, Materials Supply",
 };
 
 const fitOutMaterialsClient: ClauseSeed = {
@@ -193,7 +193,7 @@ const fitOutMaterialsClient: ClauseSeed = {
   sortOrder: 51,
   isMandatory: false,
   alternativeGroup: "fit_out_materials_supply",
-  sourceRef: "Turriva Fit-out — Client-Supplied Materials",
+  sourceRef: "Turriva Fit-out, Client-Supplied Materials",
 };
 
 const fitOutWarranty: ClauseSeed = {
@@ -205,7 +205,7 @@ const fitOutWarranty: ClauseSeed = {
   placeholders: ph("warranty_months"),
   sortOrder: 90,
   isMandatory: true,
-  sourceRef: "Turriva Fit-out — Workmanship Warranty",
+  sourceRef: "Turriva Fit-out, Workmanship Warranty",
 };
 
 const fitOutDelayPenaltyContractor: ClauseSeed = {
@@ -222,7 +222,7 @@ const fitOutDelayPenaltyContractor: ClauseSeed = {
   sortOrder: 100,
   isMandatory: false,
   alternativeGroup: "fit_out_delay_penalty",
-  sourceRef: "Turriva Fit-out — Delay Penalties (Contractor)",
+  sourceRef: "Turriva Fit-out, Delay Penalties (Contractor)",
 };
 
 const fitOutDelayPenaltyNone: ClauseSeed = {
@@ -235,7 +235,7 @@ const fitOutDelayPenaltyNone: ClauseSeed = {
   sortOrder: 101,
   isMandatory: false,
   alternativeGroup: "fit_out_delay_penalty",
-  sourceRef: "Turriva Fit-out — No Delay Penalties",
+  sourceRef: "Turriva Fit-out, No Delay Penalties",
 };
 
 export const CLAUSE_PACKS: PackSeed[] = [
@@ -268,7 +268,7 @@ export const CLAUSE_PACKS: PackSeed[] = [
         placeholders: ph("variance_percent"),
         sortOrder: 120,
         isMandatory: false,
-        sourceRef: "Turriva — Estimate Only Disclaimer",
+        sourceRef: "Turriva, Estimate Only Disclaimer",
       },
     ],
   },
@@ -285,12 +285,12 @@ export const CLAUSE_PACKS: PackSeed[] = [
         clauseKey: "SA-SUPERV-SCOPE-LIMIT",
         category: "compliance",
         riskSide: "protects_contractor",
-        textAr: `نطاق خدمات الإشراف الهندسي يقتصر على: مراجعة المخططات، زيارات دورية للموقع ({site_visit_frequency})، إصدار ملاحظات واستمارات عدم المطابقة (NCR)، والرد على RFIs خلال {rfi_response_days} أيام عمل. لا يشمل الإشراف: تنفيذ الأعمال، توريد المواد، تشغيل المعدات، أو إدارة العمالة — وتلك مسؤولية المقاول المنفذ (Contractor of Record).`,
-        textEn: `Supervision scope is limited to: drawing review, periodic site visits ({site_visit_frequency}), NCR issuance, and RFI responses within {rfi_response_days} business days. Supervision excludes execution, material supply, equipment operation, and labor management — those remain the Contractor of Record's responsibility.`,
+        textAr: `نطاق خدمات الإشراف الهندسي يقتصر على: مراجعة المخططات، زيارات دورية للموقع ({site_visit_frequency})، إصدار ملاحظات واستمارات عدم المطابقة (NCR)، والرد على RFIs خلال {rfi_response_days} أيام عمل. لا يشمل الإشراف: تنفيذ الأعمال، توريد المواد، تشغيل المعدات، أو إدارة العمالة، وتلك مسؤولية المقاول المنفذ (Contractor of Record).`,
+        textEn: `Supervision scope is limited to: drawing review, periodic site visits ({site_visit_frequency}), NCR issuance, and RFI responses within {rfi_response_days} business days. Supervision excludes execution, material supply, equipment operation, and labor management, those remain the Contractor of Record's responsibility.`,
         placeholders: ph("site_visit_frequency", "rfi_response_days"),
         sortOrder: 30,
         isMandatory: true,
-        sourceRef: "Turriva Supervision — Scope Limitation",
+        sourceRef: "Turriva Supervision, Scope Limitation",
       },
       hiddenSoilRock("SA-SUPERV", 40),
       {
@@ -302,7 +302,7 @@ export const CLAUSE_PACKS: PackSeed[] = [
         placeholders: [],
         sortOrder: 50,
         isMandatory: true,
-        sourceRef: "Turriva Supervision — Means & Methods Exclusion",
+        sourceRef: "Turriva Supervision, Means & Methods Exclusion",
       },
       vatClause("SA-SUPERV", 60),
       retentionPayment("SA-SUPERV", 70),
@@ -317,7 +317,7 @@ export const CLAUSE_PACKS: PackSeed[] = [
         placeholders: [],
         sortOrder: 100,
         isMandatory: false,
-        sourceRef: "Turriva Supervision — Delay Exclusion",
+        sourceRef: "Turriva Supervision, Delay Exclusion",
       },
       {
         clauseKey: "SA-SUPERV-PHASE-SIGNOFF",
@@ -328,7 +328,7 @@ export const CLAUSE_PACKS: PackSeed[] = [
         placeholders: [],
         sortOrder: 130,
         isMandatory: false,
-        sourceRef: "Turriva — Phase Sign-off Hook (Live Room)",
+        sourceRef: "Turriva, Phase Sign-off Hook (Live Room)",
       },
     ],
   },
@@ -353,7 +353,7 @@ export const CLAUSE_PACKS: PackSeed[] = [
         ),
         sortOrder: 10,
         isMandatory: true,
-        sourceRef: "Turriva Maintenance — SLA",
+        sourceRef: "Turriva Maintenance, SLA",
       },
       {
         clauseKey: "SA-MAINT-SPARE-PARTS",
@@ -364,7 +364,7 @@ export const CLAUSE_PACKS: PackSeed[] = [
         placeholders: ph("spare_parts_cap_sar", "spare_parts_markup_percent"),
         sortOrder: 20,
         isMandatory: true,
-        sourceRef: "Turriva Maintenance — Spare Parts",
+        sourceRef: "Turriva Maintenance, Spare Parts",
       },
       {
         clauseKey: "SA-MAINT-EXCLUDED-EQUIPMENT",
@@ -375,7 +375,7 @@ export const CLAUSE_PACKS: PackSeed[] = [
         placeholders: ph("excluded_age_years"),
         sortOrder: 30,
         isMandatory: true,
-        sourceRef: "Turriva Maintenance — Exclusions",
+        sourceRef: "Turriva Maintenance, Exclusions",
       },
       baladyPermitsLiability("SA-MAINT", 35),
       vatClause("SA-MAINT", 60),
@@ -390,7 +390,7 @@ export const CLAUSE_PACKS: PackSeed[] = [
         placeholders: ph("renewal_notice_days", "renewal_increase_cap_percent"),
         sortOrder: 120,
         isMandatory: true,
-        sourceRef: "Turriva Maintenance — Annual Renewal",
+        sourceRef: "Turriva Maintenance, Annual Renewal",
       },
       {
         clauseKey: "SA-MAINT-SBC-SAFETY",
@@ -401,7 +401,7 @@ export const CLAUSE_PACKS: PackSeed[] = [
         placeholders: [],
         sortOrder: 15,
         isMandatory: true,
-        sourceRef: "SBC — Maintenance Safety Compliance",
+        sourceRef: "SBC, Maintenance Safety Compliance",
       },
     ],
   },

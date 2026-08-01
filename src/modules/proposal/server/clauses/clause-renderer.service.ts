@@ -1,6 +1,6 @@
 /**
  * Compile clause text from ClauseTemplate + PLACEHOLDER_DEFAULTS.
- * AI never produces legal prose — only the matcher supplies override values.
+ * AI never produces legal prose, only the matcher supplies override values.
  */
 
 import {
@@ -43,7 +43,7 @@ export function allowedPlaceholderKeys(template: ClauseTemplateRecord): Set<stri
   return new Set(normalizePlaceholderDefs(template.placeholders).map((p) => p.key));
 }
 
-/** System-resolved values — duration-parser output takes precedence for escalation */
+/** System-resolved values, duration-parser output takes precedence for escalation */
 export function buildSystemPlaceholderValues(
   template: ClauseTemplateRecord,
   ctx: ClauseRenderContext
@@ -135,7 +135,7 @@ export function renderClauseTemplate(
 }
 
 /**
- * Architecture guard — rendered text must originate from template + placeholders.
+ * Architecture guard, rendered text must originate from template + placeholders.
  */
 export function assertRenderedFromTemplate(
   template: ClauseTemplateRecord,
@@ -149,7 +149,7 @@ export function assertRenderedFromTemplate(
     );
   }
   if (renderedTextAr === template.textAr && template.textAr.includes("{")) {
-    // unfilled placeholders are OK for audit but warn in strict mode — allow partial
+    // unfilled placeholders are OK for audit but warn in strict mode, allow partial
   }
   if (
     renderedTextAr.length > 0 &&
@@ -157,6 +157,6 @@ export function assertRenderedFromTemplate(
     renderedTextAr === renderedTextEn &&
     template.textAr !== template.textEn
   ) {
-    // bilingual templates should differ when sources differ — not an error
+    // bilingual templates should differ when sources differ, not an error
   }
 }

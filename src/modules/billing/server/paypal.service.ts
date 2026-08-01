@@ -1,12 +1,12 @@
 import { db } from "@/shared/lib/db";
 
 /**
- * PayPal REST integration — temporary payment rail (per product decision,
+ * PayPal REST integration, temporary payment rail (per product decision,
  * 2026-07-02) while a Saudi-native gateway (Moyasar / Tap, Mada support) is
  * evaluated. PayPal cannot settle in SAR, so the premium-template unlock is
  * priced in USD. Swap PAYPAL_ENV to "live" once real credentials are set.
  *
- * Unlocks: premium export templates (ruwaq_executive, graphics_house) —
+ * Unlocks: premium export templates (ruwaq_executive, graphics_house) ,
  * the free "ruwaq" template stays free forever, per the site's existing
  * "no account, no card to start" promise.
  */
@@ -73,7 +73,7 @@ export async function createPremiumTemplatesOrder(userId: string) {
       purchase_units: [
         {
           custom_id: userId,
-          description: "Turriva — premium proposal templates (one-time unlock)",
+          description: "Turriva, premium proposal templates (one-time unlock)",
           amount: {
             currency_code: PREMIUM_TEMPLATES_CURRENCY,
             value: PREMIUM_TEMPLATES_PRICE_USD.toFixed(2),
@@ -105,7 +105,7 @@ export async function createPremiumTemplatesOrder(userId: string) {
 
 /**
  * Captures a previously-created PayPal order. Verifies the order actually
- * belongs to this user and is COMPLETED before unlocking anything —
+ * belongs to this user and is COMPLETED before unlocking anything ,
  * never trust the client-side "success" callback alone.
  */
 export async function capturePremiumTemplatesOrder(

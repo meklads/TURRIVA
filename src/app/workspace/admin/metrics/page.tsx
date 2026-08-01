@@ -94,7 +94,7 @@ export default async function AdminMetricsPage() {
       <AppPageHero
         eyebrow="لوحة داخلية"
         title="مؤشرات الاستخدام"
-        subtitle="أرقام حقيقية من قاعدة البيانات — بدون خدمة خارجية."
+        subtitle="أرقام حقيقية من قاعدة البيانات، بدون خدمة خارجية."
       />
       <div className="app-content-area max-w-4xl space-y-10">
         <section>
@@ -141,13 +141,13 @@ export default async function AdminMetricsPage() {
             <div className="rounded-2xl border border-ruwaq-stone/50 px-5 py-4">
               <div className="text-xs text-ruwaq-ink-muted">معدل التوليد بالذكاء الاصطناعي</div>
               <div className="mt-1 text-2xl font-bold text-ruwaq-ink">
-                {genRate7d !== null ? `${genRate7d}%` : "—"}
+                {genRate7d !== null ? `${genRate7d}%` : "…"}
               </div>
             </div>
             <div className="rounded-2xl border border-ruwaq-stone/50 px-5 py-4">
               <div className="text-xs text-ruwaq-ink-muted">معدل تصدير PDF بعد التوليد</div>
               <div className="mt-1 text-2xl font-bold text-ruwaq-ink">
-                {exportRate7d !== null ? `${exportRate7d}%` : "—"}
+                {exportRate7d !== null ? `${exportRate7d}%` : "…"}
               </div>
             </div>
           </div>
@@ -155,7 +155,7 @@ export default async function AdminMetricsPage() {
 
         <section>
           <h2 className="mb-3 text-sm font-semibold text-ruwaq-ink">
-            عروض جديدة يومياً — آخر 14 يوماً
+            عروض جديدة يومياً، آخر 14 يوماً
           </h2>
           {last14Days.length === 0 ? (
             <p className="text-sm text-ruwaq-ink-muted">لا بيانات كافية بعد.</p>
@@ -188,7 +188,7 @@ export default async function AdminMetricsPage() {
             آخر أخطاء السيرفر
           </h2>
           {recentErrors.length === 0 ? (
-            <p className="text-sm text-ruwaq-ink-muted">لا أخطاء مسجّلة — تمام.</p>
+            <p className="text-sm text-ruwaq-ink-muted">لا أخطاء مسجّلة، تمام.</p>
           ) : (
             <div className="overflow-hidden rounded-2xl border border-ruwaq-stone/50">
               <table className="w-full text-sm">
@@ -204,10 +204,10 @@ export default async function AdminMetricsPage() {
                           {e.createdAt.toLocaleString("ar-SA")}
                         </td>
                         <td className="px-4 py-3 align-top text-xs font-semibold text-ruwaq-ink whitespace-nowrap">
-                          {meta.context ?? "—"}
+                          {meta.context ?? "…"}
                         </td>
                         <td className="px-4 py-3 align-top text-xs text-red-600">
-                          {meta.message ?? "—"}
+                          {meta.message ?? "…"}
                         </td>
                       </tr>
                     );

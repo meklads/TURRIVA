@@ -4,7 +4,7 @@ import { isGoogleAuthConfigured } from "@/shared/lib/env";
 
 export const dynamic = "force-dynamic";
 
-/** Liveness probe — always 200 so Coolify does not 502 when DB is misconfigured */
+/** Liveness probe, always 200 so Coolify does not 502 when DB is misconfigured */
 export async function GET() {
   const googleAuth = isGoogleAuthConfigured();
 

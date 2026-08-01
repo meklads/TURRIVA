@@ -5,7 +5,7 @@ import { Providers } from "./providers";
 import { getLocale } from "@/shared/i18n/server";
 import { localeDir } from "@/shared/i18n/locale";
 
-/** Same Arabic stack as dotforlife.com — Almarai 300/400/700 */
+/** Same Arabic stack as dotforlife.com, Almarai 300/400/700 */
 const almarai = Almarai({
   subsets: ["arabic"],
   weight: ["300", "400", "700"],
@@ -20,7 +20,7 @@ const amiri = Amiri({
   display: "swap",
 });
 
-/** Graphics House ProjectLaunch™ — Inter (EN) */
+/** Graphics House ProjectLaunch™, Inter (EN) */
 const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -42,7 +42,7 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-/** ProjectLaunch™ Arabic — Tajawal + IBM Plex Sans Arabic */
+/** ProjectLaunch™ Arabic, Tajawal + IBM Plex Sans Arabic */
 const tajawal = Tajawal({
   subsets: ["arabic"],
   weight: ["200", "300", "400", "500", "700"],
@@ -66,7 +66,7 @@ export async function generateMetadata(): Promise<Metadata> {
         : "Turriva Real Estate · Design & build decor",
     description:
       locale === "ar"
-        ? "شركة سعودية لتصميم وتنفيذ الديكور — فلل وقصور ومحلات وأجنحة معارض في جدة ومكة. أسلوب حديث، جودة، ورضا العميل."
+        ? "شركة سعودية لتصميم وتنفيذ الديكور، فلل وقصور ومحلات وأجنحة معارض في جدة ومكة. أسلوب حديث، جودة، ورضا العميل."
         : "Saudi design and on-site decor delivery for villas, palaces, retail, and exhibitions in Jeddah & Makkah.",
   };
 }

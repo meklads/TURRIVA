@@ -6,10 +6,10 @@ export const EXPORT_TEMPLATE_IDS = [
 
 export type ExportTemplateId = (typeof EXPORT_TEMPLATE_IDS)[number];
 
-/** Free forever — the site's "no account, no card" promise depends on this. */
+/** Free forever, the site's "no account, no card" promise depends on this. */
 export const FREE_EXPORT_TEMPLATE_ID: ExportTemplateId = "ruwaq";
 
-/** Premium — unlocked by a one-time payment (see modules/billing). */
+/** Premium, unlocked by a one-time payment (see modules/billing). */
 export const PREMIUM_EXPORT_TEMPLATE_IDS: readonly ExportTemplateId[] = [
   "ruwaq_executive",
   "graphics_house",

@@ -147,7 +147,7 @@ export function renderRuwaqTemplate(
   const useClausePack = clauseItems.length > 0;
 
   // Executive variant: numbered section badges (01, 02, ...) in true visual
-  // order — computed up front so boq/clauses (built as standalone strings
+  // order, computed up front so boq/clauses (built as standalone strings
   // before the final template literal) still get the right number even
   // though they're generated out of on-page order.
   const sectionIndexByKey = new Map<string, number>();
@@ -266,7 +266,7 @@ export function renderRuwaqTemplate(
       </div>`
     : "";
 
-  // Header/footer color skin — a free-tier customization layer independent
+  // Header/footer color skin, a free-tier customization layer independent
   // of exportTemplateId. Only meaningful on the classic "ruwaq" template;
   // executive/Graphics House keep their own fixed, premium-differentiated look.
   const hfStyle = !isExecutive ? getHeaderFooterStyle(data.headerFooterStyleId) : null;
@@ -326,7 +326,7 @@ export function renderRuwaqTemplate(
 <html dir="${dir}" lang="${locale}">
 <head>
   <meta charset="utf-8">
-  <title>${escapeHtml(data.projectName)} — ${docTitle}</title>
+  <title>${escapeHtml(data.projectName)}, ${docTitle}</title>
   ${fontLink}
   <style>
     @media print {
@@ -740,7 +740,7 @@ export function renderRuwaqTemplate(
     body.has-watermark .page-wrap {
       margin-top: 36px;
     }
-    /* ===== Executive variant — formal "engineering office letterhead" identity =====
+    /* ===== Executive variant, formal "engineering office letterhead" identity =====
        Distinct from the warm cream/gold classic: deep navy header + footer,
        squared (not rounded) panels, numbered section index badges, dark
        table headers. Same content/data, deliberately different mood. */
@@ -896,7 +896,7 @@ export function renderRuwaqTemplate(
 
     <!-- Rendered here (not at the end of the document) so Paged.js's
          position: running(pageFooter) captures it before laying out
-         page 1 — a running element only repeats on pages generated AFTER
+         page 1, a running element only repeats on pages generated AFTER
          its source appears in the DOM, so this must sit near the top,
          right alongside the header, even though it visually renders in
          the page's bottom margin box on every page. -->
@@ -952,7 +952,7 @@ export function renderRuwaqTemplate(
           ? `${sectionTitle(labels.deliverables, "deliverables")}<ul>${data.deliverables
               .map(
                 (d) =>
-                  `<li><strong>${escapeHtml(d.name)}</strong> — ${escapeHtml(d.description)}</li>`
+                  `<li><strong>${escapeHtml(d.name)}</strong>, ${escapeHtml(d.description)}</li>`
               )
               .join("")}</ul>`
           : ""
@@ -1008,7 +1008,7 @@ export function renderRuwaqTemplate(
       <p style="font-size:13px;color:${colors.textMuted};margin-bottom:8px;">${escapeHtml(labels.acceptanceText)}</p>
       <div class="signature">
         <div class="signature-box"><strong style="color:${colors.navy};">${escapeHtml(labels.clientSignature)}</strong><br>${escapeHtml(data.clientName)}</div>
-        <div class="signature-box"><strong style="color:${colors.navy};">${escapeHtml(labels.providerSignature)}</strong><br>${escapeHtml(data.companyName ?? "—")}</div>
+        <div class="signature-box"><strong style="color:${colors.navy};">${escapeHtml(labels.providerSignature)}</strong><br>${escapeHtml(data.companyName ?? "…")}</div>
       </div>
     </main>
   </div>

@@ -1,5 +1,5 @@
 /**
- * Hybrid Clause Engine — match, auto-trigger, and render pre-vetted clauses.
+ * Hybrid Clause Engine, match, auto-trigger, and render pre-vetted clauses.
  */
 
 import { db } from "@/shared/lib/db";
@@ -71,7 +71,7 @@ export async function loadClausePackBySlug(
 }
 
 /**
- * Strict 90-day rule — uses duration-parser output ONLY.
+ * Strict 90-day rule, uses duration-parser output ONLY.
  * Returns false when duration is unknown (null).
  */
 export function shouldAutoTriggerClause(
@@ -158,7 +158,7 @@ function shouldEnableTemplate(
 }
 
 /**
- * Pure matching + rendering — no DB writes.
+ * Pure matching + rendering, no DB writes.
  */
 export function matchAndRenderClauses(input: ClauseMatchInput): ClauseMatchResult {
   const templates = input.pack.clauses;
@@ -304,7 +304,7 @@ export async function matchClausesForProposal(
   });
 }
 
-/** Persist selections — replaces existing clause rows for proposal */
+/** Persist selections, replaces existing clause rows for proposal */
 export async function persistClauseSelections(
   proposalId: string,
   result: ClauseMatchResult

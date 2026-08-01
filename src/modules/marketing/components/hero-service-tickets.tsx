@@ -15,7 +15,7 @@ type Props = {
 
 const TICKET_DELAYS = ["", "ruwaq-reveal-delay-1", "ruwaq-reveal-delay-2", "ruwaq-reveal-delay-3"] as const;
 
-/** Proposal component tickets — overlap hero bottom, centered illustration layout. */
+/** Proposal component tickets, overlap hero bottom, centered illustration layout. */
 export function HeroServiceTickets({ tickets }: Props) {
   return (
     <section className="ruwaq-hero-tickets-band" aria-label="Proposal components">

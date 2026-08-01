@@ -12,7 +12,7 @@ export function buildWhatsAppMessage(
 ): string {
   const amount = formatSar(data.budget, locale);
   if (locale === "en") {
-    return `Hello ${data.clientName},\n\nPlease find our proposal for "${data.projectName}" — total value SAR ${amount}.\n\nView proposal: ${data.shareUrl}\n\nBest regards`;
+    return `Hello ${data.clientName},\n\nPlease find our proposal for "${data.projectName}", total value SAR ${amount}.\n\nView proposal: ${data.shareUrl}\n\nBest regards`;
   }
   return `السلام عليكم ${data.clientName}،\n\nنرفق لكم عرضنا لمشروع «${data.projectName}» بقيمة ${amount} ريال.\n\nرابط العرض: ${data.shareUrl}\n\nمع التحية`;
 }

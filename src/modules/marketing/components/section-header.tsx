@@ -5,7 +5,7 @@ type Props = {
   align?: "center" | "start";
 };
 
-/** Shared landing section heading — light Apple rhythm. */
+/** Shared landing section heading, light Apple rhythm. */
 export function SectionHeader({ eyebrow, title, subtitle, align = "center" }: Props) {
   const alignClass = align === "center" ? "text-center mx-auto" : "text-start";
 

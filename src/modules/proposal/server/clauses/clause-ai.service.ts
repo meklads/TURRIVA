@@ -1,5 +1,5 @@
 /**
- * AI selects clause keys and placeholder overrides ONLY — never legal prose.
+ * AI selects clause keys and placeholder overrides ONLY, never legal prose.
  */
 
 import OpenAI from "openai";

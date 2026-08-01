@@ -1,5 +1,5 @@
 /**
- * Post-AI Trust Layer pipeline — BOQ, clauses, review gates.
+ * Post-AI Trust Layer pipeline, BOQ, clauses, review gates.
  */
 
 import { db } from "@/shared/lib/db";

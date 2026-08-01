@@ -1,4 +1,4 @@
-/** Editorial reference imagery — style direction only (no third-party branding in UI) */
+/** Editorial reference imagery, style direction only (no third-party branding in UI) */
 export const LUXURY_STYLE_IMAGE_BASE =
   "https://www.oppeinhome.com/upload/image/product/thumb";
 

@@ -1,7 +1,7 @@
 import sharp from "sharp";
 import { loadImageBuffer } from "./design-image.utils";
 
-/** Max longest edge for free preview exports — HD unlock comes in a later tier. */
+/** Max longest edge for free preview exports, HD unlock comes in a later tier. */
 const PREVIEW_MAX_PX = 960;
 const JPEG_QUALITY = 72;
 
@@ -27,7 +27,7 @@ function watermarkSvg(width: number, height: number, label: string): Buffer {
   return Buffer.from(svg, "utf-8");
 }
 
-/** Resize for UI display — keeps API JSON small when returning inline data URLs. */
+/** Resize for UI display, keeps API JSON small when returning inline data URLs. */
 export async function buildDisplayPreviewFromBuffer(input: Buffer): Promise<Buffer> {
   return sharp(input)
     .rotate()
@@ -42,7 +42,7 @@ export async function buildDisplayPreviewFromBuffer(input: Buffer): Promise<Buff
 }
 
 /**
- * Low-resolution, watermarked preview — what B2C/B2B free tiers receive.
+ * Low-resolution, watermarked preview, what B2C/B2B free tiers receive.
  * Uses ASCII watermark text for reliable sharp/librsvg rendering.
  */
 export async function buildWatermarkedPreviewFromBuffer(input: Buffer): Promise<Buffer> {

@@ -1,4 +1,4 @@
-/** Showcase & comparison imagery — Unsplash (replace with owned assets in production). */
+/** Showcase & comparison imagery, Unsplash (replace with owned assets in production). */
 export const DESIGN_IMAGES = {
   hero: {
     palace:

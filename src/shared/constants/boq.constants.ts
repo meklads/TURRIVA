@@ -1,6 +1,6 @@
 import type { BoqCategory, ProjectArchetype } from "@/shared/types/trust-layer.types";
 
-/** Strict Smart BOQ bounds — enforced in service layer */
+/** Strict Smart BOQ bounds, enforced in service layer */
 export const BOQ_MIN_LINES = 8;
 export const BOQ_MAX_LINES = 15;
 
@@ -40,7 +40,7 @@ export const BOQ_WEIGHT_TEMPLATES: Record<
     {
       category: "materials",
       weight: 0.18,
-      labelAr: "مواد MEP — التأسيس",
+      labelAr: "مواد MEP، التأسيس",
       labelEn: "MEP rough-in materials",
     },
     {

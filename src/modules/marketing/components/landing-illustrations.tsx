@@ -2,7 +2,7 @@ type Props = { className?: string };
 
 type Ill = (props: Props) => React.ReactElement;
 
-/** Three input fields — minimal form. */
+/** Three input fields, minimal form. */
 export const IllThreeInputs: Ill = ({ className }) => (
   <svg viewBox="0 0 88 88" fill="none" className={className} aria-hidden>
     <rect x="20" y="18" width="48" height="10" rx="5" stroke="#0F172A" strokeWidth="2" />
@@ -13,7 +13,7 @@ export const IllThreeInputs: Ill = ({ className }) => (
   </svg>
 );
 
-/** Assumptions & exclusions — shield on document. */
+/** Assumptions & exclusions, shield on document. */
 export const IllShieldDoc: Ill = ({ className }) => (
   <svg viewBox="0 0 88 88" fill="none" className={className} aria-hidden>
     <rect x="22" y="14" width="44" height="56" rx="5" stroke="#0F172A" strokeWidth="2" />
@@ -39,7 +39,7 @@ export const IllBrandPdf: Ill = ({ className }) => (
   </svg>
 );
 
-/** Preliminary estimate — clipboard. */
+/** Preliminary estimate, clipboard. */
 export const IllEstimate: Ill = ({ className }) => (
   <svg viewBox="0 0 88 88" fill="none" className={className} aria-hidden>
     <rect x="26" y="22" width="36" height="48" rx="4" stroke="#0F172A" strokeWidth="2" />
@@ -50,7 +50,7 @@ export const IllEstimate: Ill = ({ className }) => (
   </svg>
 );
 
-/** Arabic & English — bilingual. */
+/** Arabic & English, bilingual. */
 export const IllBilingual: Ill = ({ className }) => (
   <svg viewBox="0 0 88 88" fill="none" className={className} aria-hidden>
     <rect x="16" y="28" width="26" height="32" rx="6" stroke="#0F172A" strokeWidth="2" />
@@ -61,7 +61,7 @@ export const IllBilingual: Ill = ({ className }) => (
   </svg>
 );
 
-/** Instant start — play / launch. */
+/** Instant start, play / launch. */
 export const IllInstant: Ill = ({ className }) => (
   <svg viewBox="0 0 88 88" fill="none" className={className} aria-hidden>
     <circle cx="44" cy="44" r="26" stroke="#0F172A" strokeWidth="2" />
@@ -70,7 +70,7 @@ export const IllInstant: Ill = ({ className }) => (
   </svg>
 );
 
-/** Partnership — handshake abstract. */
+/** Partnership, handshake abstract. */
 export const IllPartner: Ill = ({ className }) => (
   <svg viewBox="0 0 88 88" fill="none" className={className} aria-hidden>
     <path d="M18 48c8-8 16-10 26-8 6 1 10 4 14 8" stroke="#0F172A" strokeWidth="2" strokeLinecap="round" />
@@ -80,7 +80,7 @@ export const IllPartner: Ill = ({ className }) => (
   </svg>
 );
 
-/** Regulations — scroll with seal. */
+/** Regulations, scroll with seal. */
 export const IllRegulations: Ill = ({ className }) => (
   <svg viewBox="0 0 88 88" fill="none" className={className} aria-hidden>
     <path d="M28 16h24v56H28V16z" stroke="#0F172A" strokeWidth="2" />
@@ -91,7 +91,7 @@ export const IllRegulations: Ill = ({ className }) => (
   </svg>
 );
 
-/** Verified reference — stamped document. */
+/** Verified reference, stamped document. */
 export const IllVerified: Ill = ({ className }) => (
   <svg viewBox="0 0 88 88" fill="none" className={className} aria-hidden>
     <path d="M24 16h32l10 10v46H24V16z" stroke="#0F172A" strokeWidth="2" strokeLinejoin="round" />

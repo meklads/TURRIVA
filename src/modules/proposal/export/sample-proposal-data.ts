@@ -36,7 +36,7 @@ function fitOutClauses(locale: Locale) {
       text: isAr
         ? "يلتزم العميل بأن جميع الأعمال تتوافق مع كود البناء السعودي SBC 1101 للمباني السكنية. لا يتحمل المقاول مسؤولية مخالفات طلبات العميل التي تخرق الكود."
         : "The Client ensures all works comply with Saudi Building Code SBC 1101 for residential buildings. The Contractor is not liable for violations from Client requests that breach the Code.",
-      sourceRef: "SBC 1101 — Residential Buildings",
+      sourceRef: "SBC 1101, Residential Buildings",
     },
     {
       category: "permits",
@@ -44,7 +44,7 @@ function fitOutClauses(locale: Locale) {
       text: isAr
         ? "استخراج رخص البناء والترميم والحفر على عاتق العميل ما لم يُنص صراحة على خلاف ذلك. التأخير البلدي لا يُعد تأخيراً من المقاول."
         : "Building, renovation, and excavation permits are the Client's responsibility unless explicitly stated otherwise. Municipal delay is not contractor delay.",
-      sourceRef: "Balady — Municipal Permits",
+      sourceRef: "Balady, Municipal Permits",
     },
     {
       category: "vat",
@@ -52,7 +52,7 @@ function fitOutClauses(locale: Locale) {
       text: isAr
         ? "الأسعار خاضعة لضريبة القيمة المضافة حيث ينطبق. يلتزم المقاول بإصدار فواتير ضريبية وفق متطلبات هيئة الزكاة والضريبة والجمارك."
         : "Prices are subject to VAT where applicable. The Contractor issues tax invoices per Zakat, Tax and Customs Authority requirements.",
-      sourceRef: "ZATCA — VAT Regulations",
+      sourceRef: "ZATCA, VAT Regulations",
     },
     {
       category: "scope_change",
@@ -60,7 +60,7 @@ function fitOutClauses(locale: Locale) {
       text: isAr
         ? "لا يُنفَّذ أي عمل خارج النطاق المعتمد إلا بأمر تغيير مكتوب يحدد التكلفة والمدة. العمل الإضافي الشفهي غير ملزم."
         : "No out-of-scope work without a written change order defining cost and time. Verbal extras are not binding.",
-      sourceRef: "FIDIC-inspired — Change Order",
+      sourceRef: "FIDIC-inspired, Change Order",
     },
   ];
 }
@@ -73,10 +73,10 @@ function buildRuwaqClassicSample(locale: Locale, base: string): ProposalExportDa
     platformBranding: true,
     templateId: "ruwaq",
     appBaseUrl: base,
-    projectName: isAr ? "تشطيب فيلا سكنية — حي الملقا" : "Residential villa fit-out — Al Malqa",
+    projectName: isAr ? "تشطيب فيلا سكنية، حي الملقا" : "Residential villa fit-out, Al Malqa",
     clientName: isAr ? "أ. محمد العتيبي" : "Mr. Mohammed Al-Otaibi",
     companyName: isAr ? "شركة النخيل للتشطيب" : "Al Nakheel Fit-out Co.",
-    address: isAr ? "الرياض — حي العليا" : "Riyadh — Al Olaya",
+    address: isAr ? "الرياض، حي العليا" : "Riyadh، Al Olaya",
     about: isAr
       ? "مكتب تشطيب عقاري متخصص في المشاريع السكنية والتجارية منذ 2012."
       : "Real estate fit-out firm specializing in residential and commercial projects since 2012.",
@@ -91,7 +91,7 @@ function buildRuwaqClassicSample(locale: Locale, base: string): ProposalExportDa
       : "We are pleased to submit our proposal for your villa fit-out in line with the agreed specifications, quality standards, and timeline below.",
     date,
     validityDate,
-    projectLocation: isAr ? "الرياض — حي الملقا" : "Riyadh — Al Malqa",
+    projectLocation: isAr ? "الرياض، حي الملقا" : "Riyadh، Al Malqa",
     propertyType: "villa",
     areaSqm: 450,
     commercialMode: "fixed_price",
@@ -179,11 +179,11 @@ function buildRuwaqExecutiveSample(locale: Locale, base: string): ProposalExport
     templateId: "ruwaq_executive",
     appBaseUrl: base,
     projectName: isAr
-      ? "إشراف هندسي — برج مكاتب حي العليا"
-      : "Engineering supervision — Al Olaya office tower",
+      ? "إشراف هندسي، برج مكاتب حي العليا"
+      : "Engineering supervision, Al Olaya office tower",
     clientName: isAr ? "شركة الأفق العقارية" : "Al Ofuq Real Estate Co.",
     companyName: isAr ? "مكتب البيان للاستشارات الهندسية" : "Al Bayan Engineering Consultants",
-    address: isAr ? "الرياض — طريق الملك فهد" : "Riyadh — King Fahd Road",
+    address: isAr ? "الرياض، طريق الملك فهد" : "Riyadh، King Fahd Road",
     about: isAr
       ? "مكتب استشارات هندسية مرخّص يقدّم إشرافاً ميدانياً وتقارير جودة لمشاريع المكاتب والتجزئة."
       : "Licensed engineering consultancy providing site supervision and quality reporting for office and retail projects.",
@@ -198,7 +198,7 @@ function buildRuwaqExecutiveSample(locale: Locale, base: string): ProposalExport
       : "We submit our engineering supervision proposal for the tower project per the scope and timeline below, including periodic reports and signed handover minutes.",
     date,
     validityDate,
-    projectLocation: isAr ? "الرياض — حي العليا" : "Riyadh — Al Olaya",
+    projectLocation: isAr ? "الرياض، حي العليا" : "Riyadh، Al Olaya",
     propertyType: "office",
     areaSqm: 12000,
     commercialMode: "fixed_price",
@@ -295,11 +295,11 @@ function buildGraphicsHouseSample(locale: Locale, base: string): ProposalExportD
     appBaseUrl: base,
     logoUrl: `${base}/brand/graphics-house/logo-mark.png`,
     projectName: isAr
-      ? "حزمة تصور ثلاثي الأبعاد — مشروع سكني فاخر"
-      : "3D visualization package — luxury residential project",
+      ? "حزمة تصور ثلاثي الأبعاد، مشروع سكني فاخر"
+      : "3D visualization package, luxury residential project",
     clientName: isAr ? "مجموعة الرؤية للتطوير العقاري" : "Al Ru'ya Development Group",
     companyName: "Graphics House",
-    address: isAr ? "جدة — المملكة العربية السعودية" : "Jeddah — Saudi Arabia",
+    address: isAr ? "جدة، المملكة العربية السعودية" : "Jeddah، Saudi Arabia",
     about: isAr
       ? "استوديو تصميم وتصوير معماري يقدّم عروضاً بصرية احترافية للمطورين والمكاتب الهندسية منذ أكثر من 15 عاماً."
       : "Design and architectural visualization studio serving developers and engineering firms for over 15 years.",
@@ -312,7 +312,7 @@ function buildGraphicsHouseSample(locale: Locale, base: string): ProposalExportD
       : "We propose a complete 3D visualization package for the residential project, including exterior and interior renders plus an interactive sales presentation.",
     date,
     validityDate,
-    projectLocation: isAr ? "الرياض — حي الياسمين" : "Riyadh — Al Yasmin",
+    projectLocation: isAr ? "الرياض، حي الياسمين" : "Riyadh، Al Yasmin",
     propertyType: "villa",
     areaSqm: 680,
     commercialMode: "fixed_price",

@@ -23,7 +23,7 @@ type Props = {
 /**
  * Interactive 30/70 template chooser: a compact style list on one side, a
  * full live proposal preview (real header + real sample body + real
- * footer) on the other — same HTML the exported PDF uses, rendered via
+ * footer) on the other, same HTML the exported PDF uses, rendered via
  * `/api/templates/samples/ruwaq-classic`, so nothing here can drift from
  * what a visitor actually gets. Selecting a style and clicking the CTA
  * carries the choice (via `/style/[id]` → cookie) straight into Company
@@ -58,7 +58,7 @@ export function HeaderFooterShowcase({
       </p>
 
       <div className="mt-8 flex flex-col gap-4 lg:flex-row">
-        {/* 30% — style list */}
+        {/* 30%, style list */}
         <div className="lg:w-[30%] lg:shrink-0">
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-1">
             {HEADER_FOOTER_STYLE_ORDER.map((id) => {
@@ -102,7 +102,7 @@ export function HeaderFooterShowcase({
           </p>
         </div>
 
-        {/* 70% — live full-proposal preview */}
+        {/* 70%, live full-proposal preview */}
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center justify-between gap-2 rounded-t-xl border border-b-0 border-ruwaq-stone/60 bg-white px-4 py-2.5">
             <div className="flex items-center gap-2">

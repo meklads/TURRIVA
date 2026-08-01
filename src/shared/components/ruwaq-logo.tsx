@@ -35,11 +35,11 @@ const MOTIF_HEIGHT = 887;
 const RASTER_WIDTH = 2304;
 const RASTER_HEIGHT = 1536;
 
-/** Shared site chrome logo — header & footer match. */
+/** Shared site chrome logo, header & footer match. */
 export const SITE_LOGO_SIZE_CLASS =
   "h-48 w-auto sm:h-[13.5rem] lg:h-60 xl:h-[15.75rem]";
 
-/** Design marketing header — 3× previous ~1.65rem shell size */
+/** Design marketing header, 3× previous ~1.65rem shell size */
 export const DESIGN_LOGO_SIZE_CLASS = "h-20 w-auto sm:h-[5.25rem]";
 
 export function RuwaqLogo({
@@ -98,7 +98,7 @@ export function RuwaqLogo({
     <Link
       href={href}
       className="inline-flex shrink-0 items-center bg-transparent p-0 leading-none"
-      aria-label="توريفا العقارية — الصفحة الرئيسية"
+      aria-label="توريفا العقارية، الصفحة الرئيسية"
     >
       {logo}
     </Link>

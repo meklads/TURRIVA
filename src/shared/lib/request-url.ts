@@ -4,7 +4,7 @@ function isLocalHost(hostname: string): boolean {
   return hostname === "localhost" || hostname === "127.0.0.1" || hostname === "0.0.0.0";
 }
 
-/** Normalize browseable app URL — never https/0.0.0.0 for local dev. */
+/** Normalize browseable app URL, never https/0.0.0.0 for local dev. */
 export function normalizeAppUrl(url: string | undefined, fallback: string): string {
   if (!url?.trim()) return fallback;
 

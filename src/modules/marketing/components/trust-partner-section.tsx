@@ -9,7 +9,7 @@ type Props = {
   locale: Locale;
 };
 
-/** Contractor protection — approved clause pack showcase. */
+/** Contractor protection, approved clause pack showcase. */
 export function TrustPartnerSection({ trust, locale }: Props) {
   const arrow = locale === "ar" ? "←" : "→";
 

@@ -23,7 +23,7 @@ function HeroSkyBackdrop() {
   );
 }
 
-/** Optimistic sky hero — image left, copy right, animated clouds. */
+/** Optimistic sky hero, image left, copy right, animated clouds. */
 export function MarketingHero({ hero, locale }: Props) {
   const arrow = locale === "ar" ? "←" : "→";
   const textDir = locale === "ar" ? "rtl" : "ltr";

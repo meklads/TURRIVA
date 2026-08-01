@@ -119,7 +119,7 @@ export async function saveDesignBuffer(
   return url;
 }
 
-/** Best-effort persist — never throws; returns null if all backends fail. */
+/** Best-effort persist, never throws; returns null if all backends fail. */
 export async function trySaveDesignBuffer(
   buffer: Buffer,
   mime: string,

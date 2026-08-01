@@ -5,7 +5,7 @@ import { TURRIVA_PUBLIC_EMAIL, TURRIVA_PUBLIC_HOST, TURRIVA_PUBLIC_URL } from "@
 import { RuwaqLogo, SITE_LOGO_SIZE_CLASS } from "@/shared/components/ruwaq-logo";
 import { GraphicsHouseLogo } from "@/shared/components/graphics-house-logo";
 
-/** Minimal Turriva decor footer (workspace/auth shells — not the proposals platform). */
+/** Minimal Turriva decor footer (workspace/auth shells, not the proposals platform). */
 export async function SiteFooter() {
   const locale = await getLocale();
   const t = getMessages(locale);

@@ -43,7 +43,7 @@ export async function POST(
     const userId = session?.user?.id ?? null;
 
     if (!userId) {
-      // Anonymous guest — one free taste, then sign-in required. Always
+      // Anonymous guest, one free taste, then sign-in required. Always
       // enforced regardless of BILLING_ENABLED: this is cost protection,
       // not a monetization decision.
       const hasFreeUse = await guestHasFreeGenerationLeft();
@@ -57,7 +57,7 @@ export async function POST(
         );
       }
     } else {
-      // Registered user — profile must be complete enough to brand a real
+      // Registered user, profile must be complete enough to brand a real
       // proposal before we spend AI credits on it.
       const profile = await db.companyProfile.findUnique({
         where: { userId },

@@ -1,14 +1,14 @@
 /**
- * Preview / pre-launch gate — HTTP Basic Auth.
+ * Preview / pre-launch gate, HTTP Basic Auth.
  * Set APP_GATE_PASSWORD in env; when unset, gate is disabled (local dev).
  *
  * APP_GATE_FULL_SITE (default false): when password is set, only dashboard/API
- * routes are gated — marketing stays public. Set to "true" to lock the entire site.
+ * routes are gated, marketing stays public. Set to "true" to lock the entire site.
  */
 
 export const APP_GATE_REALM = "Turriva · Pre-launch";
 
-/** Static assets — never gated */
+/** Static assets, never gated */
 function isStaticAssetPath(pathname: string): boolean {
   if (pathname.startsWith("/_next")) return true;
   if (pathname.startsWith("/brand")) return true;
@@ -17,14 +17,14 @@ function isStaticAssetPath(pathname: string): boolean {
   return false;
 }
 
-/** Client-facing share links — stay public so contractors can send proposals */
+/** Client-facing share links, stay public so contractors can send proposals */
 function isClientSharePath(pathname: string): boolean {
   if (pathname === "/share" || pathname.startsWith("/share/")) return true;
   if (pathname.startsWith("/api/share/")) return true;
   return false;
 }
 
-/** Marketing & public assets — accessible when full-site gate is off */
+/** Marketing & public assets, accessible when full-site gate is off */
 export function isPublicAppPath(pathname: string): boolean {
   if (pathname === "/") return true;
 
@@ -47,7 +47,7 @@ export function isPublicAppPath(pathname: string): boolean {
   return false;
 }
 
-/** Public API — health only on marketing site (tools live on ruwaq.co) */
+/** Public API, health only on marketing site (tools live on ruwaq.co) */
 export function isPublicApiPath(pathname: string): boolean {
   if (pathname === "/api/health") return true;
   if (pathname.startsWith("/api/share/")) return true;
@@ -58,7 +58,7 @@ export function isGateEnabled(): boolean {
   return Boolean(process.env.APP_GATE_PASSWORD?.trim());
 }
 
-/** Default false — marketing public; only app routes gated when password is set. */
+/** Default false, marketing public; only app routes gated when password is set. */
 export function isFullSiteGate(): boolean {
   return process.env.APP_GATE_FULL_SITE?.trim().toLowerCase() === "true";
 }

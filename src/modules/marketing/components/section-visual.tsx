@@ -10,7 +10,7 @@ type Props = {
   offset?: boolean;
 };
 
-/** Section image — minimal border on light canvas. */
+/** Section image, minimal border on light canvas. */
 export function SectionVisual({
   src,
   alt,

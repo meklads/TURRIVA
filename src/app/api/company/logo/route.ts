@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
     const filename = `${session.user.id}-${Date.now()}.${ext}`;
     const buffer = Buffer.from(await file.arrayBuffer());
 
-    // Cloud storage first — survives redeploys. Local disk is a dev-only
+    // Cloud storage first, survives redeploys. Local disk is a dev-only
     // fallback: on most PaaS hosts (Coolify included) the container
     // filesystem is rebuilt on every deploy, silently losing local uploads.
     if (isCloudStorageConfigured()) {
@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
       success: true,
       url,
       warning:
-        "STORAGE_* env vars not set — logo saved to local disk and may be lost on the next deploy.",
+        "STORAGE_* env vars not set, logo saved to local disk and may be lost on the next deploy.",
     });
   } catch (error) {
     logServerError("logo upload", error);

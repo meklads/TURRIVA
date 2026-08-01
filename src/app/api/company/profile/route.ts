@@ -20,7 +20,7 @@ function str(value: unknown): string | null {
 }
 
 // The logo upload route falls back to a local-disk relative path
-// (/uploads/logos/...) when cloud storage isn't configured — that's a
+// (/uploads/logos/...) when cloud storage isn't configured, that's a
 // trusted value from our own endpoint, not free text, so it's allowed
 // alongside real http(s) URLs.
 function isValidLogoUrl(value: string): boolean {
@@ -39,7 +39,7 @@ export async function PUT(req: NextRequest) {
       select: { isPaid: true },
     });
     // During the free trial (BILLING_ENABLED=false) everyone is treated as
-    // entitled — no template is locked. Flip the env var when ready to charge.
+    // entitled, no template is locked. Flip the env var when ready to charge.
     const isPaid = (existing?.isPaid ?? false) || !isBillingEnabled();
 
     const body = await req.json();
@@ -60,7 +60,7 @@ export async function PUT(req: NextRequest) {
     const portfolioUrl = str(body.portfolioUrl);
     const catalogUrl = str(body.catalogUrl);
 
-    // Never trust the client — the form does the same checks for instant
+    // Never trust the client, the form does the same checks for instant
     // feedback, but a request can always bypass JS. Empty/omitted values
     // are fine (all these fields are optional); only a garbage non-empty
     // value is rejected.

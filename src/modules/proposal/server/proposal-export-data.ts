@@ -12,7 +12,7 @@ import {
 } from "./proposal-export-html";
 
 export type BuildProposalExportOptions = {
-  /** Default true — client name + date watermark on PDF/share exports. */
+  /** Default true, client name + date watermark on PDF/share exports. */
   watermarked?: boolean;
 };
 
@@ -133,7 +133,7 @@ export async function buildProposalExportHtmlForId(
     watermarkClientName: watermarked ? proposal.clientName : undefined,
     watermarkDate: watermarked ? issueDate : undefined,
     // Defense-in-depth: even if a stale/tampered profile row carries a
-    // premium templateId, never render it unless isPaid is true — except
+    // premium templateId, never render it unless isPaid is true, except
     // during the free trial (BILLING_ENABLED=false), when everyone is
     // entitled to every template.
     templateId: resolveEntitledExportTemplateId(

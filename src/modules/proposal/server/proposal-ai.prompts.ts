@@ -41,8 +41,8 @@ export function commercialContext(
 ): string {
   if (commercialMode === "estimate_only") {
     return locale === "ar"
-      ? `الوضع: تقدير أولي فقط — السعر النهائي يُؤكد بعد المعاينة.\n${budget > 0 ? `مبلغ إرشادي: ${budget} ريال (ليس سعراً نهائياً)` : "لم يُحدد مبلغ إرشادي بعد."}\nطريقة الدفع المفضلة: ${paymentType}`
-      : `Mode: preliminary estimate only — final price confirmed after site visit.\n${budget > 0 ? `Indicative amount: SAR ${budget} (not final)` : "No indicative amount provided yet."}\nPreferred payment: ${paymentType}`;
+      ? `الوضع: تقدير أولي فقط، السعر النهائي يُؤكد بعد المعاينة.\n${budget > 0 ? `مبلغ إرشادي: ${budget} ريال (ليس سعراً نهائياً)` : "لم يُحدد مبلغ إرشادي بعد."}\nطريقة الدفع المفضلة: ${paymentType}`
+      : `Mode: preliminary estimate only, final price confirmed after site visit.\n${budget > 0 ? `Indicative amount: SAR ${budget} (not final)` : "No indicative amount provided yet."}\nPreferred payment: ${paymentType}`;
   }
   return locale === "ar"
     ? `السعر المعتمد: ${budget} ريال\nطريقة الدفع: ${paymentType}`

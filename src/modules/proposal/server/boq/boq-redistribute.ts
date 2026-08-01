@@ -1,5 +1,5 @@
 /**
- * Pure math — Smart BOQ redistribution.
+ * Pure math, Smart BOQ redistribution.
  * Invariant: SUM(line.amount) === budget (within BOQ_SUM_TOLERANCE).
  */
 
@@ -152,7 +152,7 @@ function fixSumDrift(
 
   if (!targetId) {
     throw new TrustLayerValidationError(
-      "Cannot fix BOQ sum drift — all lines locked",
+      "Cannot fix BOQ sum drift, all lines locked",
       "BOQ_ALL_LOCKED"
     );
   }
@@ -168,7 +168,7 @@ function fixSumDrift(
 }
 
 /**
- * User edits one line amount — redistribute delta across unlocked peers.
+ * User edits one line amount, redistribute delta across unlocked peers.
  */
 export function redistributeAfterLineEdit(
   lines: BoqLineDraft[],
@@ -225,7 +225,7 @@ export function redistributeAfterLineEdit(
 }
 
 /**
- * Remove a line — merge its amount into the largest unlocked peer.
+ * Remove a line, merge its amount into the largest unlocked peer.
  */
 export function redistributeAfterLineDelete(
   lines: BoqLineDraft[],
@@ -261,7 +261,7 @@ export function redistributeAfterLineDelete(
 }
 
 /**
- * Add a line — take share proportionally from unlocked lines.
+ * Add a line, take share proportionally from unlocked lines.
  */
 export function redistributeAfterLineAdd(
   lines: BoqLineDraft[],

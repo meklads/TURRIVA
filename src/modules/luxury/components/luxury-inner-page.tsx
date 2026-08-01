@@ -17,7 +17,7 @@ export function LuxuryInnerPage({
   const content = t.pages[page];
 
   return (
-    <section className="lux-section">
+    <section className="lux-section lux-section--cream lux-inner-page">
       <div className="lux-container max-w-3xl text-center">
         <p className="lux-eyebrow">{t.brand.tagline}</p>
         <div className="lux-divider-gold" />

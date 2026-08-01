@@ -7,7 +7,7 @@ const ARCHETYPE_PACK_SLUG: Record<ProjectArchetype, string> = {
   other: "fit_out_v1",
 };
 
-/** Keyword classifier — deterministic; AI does not choose pack in Phase 1 */
+/** Keyword classifier, deterministic; AI does not choose pack in Phase 1 */
 export function inferProjectArchetype(input: {
   description: string;
   propertyType?: string | null;
@@ -38,7 +38,7 @@ export function packSlugForArchetype(archetype: ProjectArchetype): string {
   return ARCHETYPE_PACK_SLUG[archetype];
 }
 
-/** Default alternative when AI omits a group — contractor-protective picks */
+/** Default alternative when AI omits a group, contractor-protective picks */
 export const DEFAULT_ALTERNATIVE_BY_GROUP: Record<string, string> = {
   fit_out_materials_supply: "SA-FITOUT-MAT-SUPPLY-CONTRACTOR",
   fit_out_delay_penalty: "SA-FITOUT-DELAY-PENALTY-NONE",

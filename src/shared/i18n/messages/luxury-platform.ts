@@ -1,4 +1,4 @@
-/** Platform positioning copy — Livspace UX + Oppein manufacturing + Turriva execution */
+/** Platform positioning copy, Livspace UX + Oppein manufacturing + Turriva execution */
 import type { Locale } from "../locale";
 
 export type LuxuryPlatformMessages = {
@@ -96,7 +96,7 @@ const en: LuxuryPlatformMessages = {
     eyebrow: "What Turriva delivers",
     title: "The Turriva system: three pillars from drawing to handover",
     subtitle:
-      "Architectural design depth, automated global manufacturing, and Saudi field engineering — one integrated platform that solves contractor fragmentation, design-reality gaps, and weak warranty.",
+      "Architectural design depth, automated global manufacturing, and Saudi field engineering, one integrated platform that solves contractor fragmentation, design-reality gaps, and weak warranty.",
     pillars: [
       {
         brand: "turriva",
@@ -104,7 +104,7 @@ const en: LuxuryPlatformMessages = {
         title: "Laser survey, supply, and full local warranty",
         points: [
           "End-to-end field management: laser as-built surveys, customs clearance, SASO/SABER compliance.",
-          "Installation by specialist engineers and technicians — local warranty with fast spare-parts support.",
+          "Installation by specialist engineers and technicians, local warranty with fast spare-parts support.",
         ],
       },
       {
@@ -113,7 +113,7 @@ const en: LuxuryPlatformMessages = {
         title: "3D design with 100% site alignment",
         points: [
           "Plans become high-fidelity 3D and VR models using factory-approved engineering blocks.",
-          "Eliminates the gap between render and reality — full customization to your exact floor plan.",
+          "Eliminates the gap between render and reality, full customization to your exact floor plan.",
         ],
       },
       {
@@ -138,19 +138,19 @@ const en: LuxuryPlatformMessages = {
     turrivaHeader: "Turriva integrated",
     rows: [
       {
-        traditional: "Three separate parties: designer, factory, installer — blame shifts everywhere",
+        traditional: "Three separate parties: designer, factory, installer, blame shifts everywhere",
         turriva: "One accountable platform from approved drawing to keys",
       },
       {
         traditional: "Large gap between pretty images and delivered product",
-        turriva: "3D files feed manufacturing directly — design-to-reality alignment",
+        turriva: "3D files feed manufacturing directly, design-to-reality alignment",
       },
       {
         traditional: "Local workshop variance, delays, and quality drift",
         turriva: "Automated production at 0.1 mm precision with global standards",
       },
       {
-        traditional: "Weak warranty — who owns the defect?",
+        traditional: "Weak warranty, who owns the defect?",
         turriva: "Local product & installation warranty with spare parts support",
       },
     ],
@@ -176,7 +176,7 @@ const en: LuxuryPlatformMessages = {
       },
       {
         title: "Villas & residences",
-        description: "Full-home fit-out journey — 3D design through installation.",
+        description: "Full-home fit-out journey, 3D design through installation.",
         href: "/villas",
       },
       {
@@ -189,7 +189,7 @@ const en: LuxuryPlatformMessages = {
   inspiration: {
     eyebrow: "Ideas",
     title: "Inspiration by space",
-    subtitle: "Browse kitchens, wardrobes, and living spaces — or explore style directions by region, then book a design consultation.",
+    subtitle: "Browse kitchens, wardrobes, and living spaces, or explore style directions by region, then book a design consultation.",
     stylesLink: "Style directions",
     items: [
       {
@@ -197,7 +197,7 @@ const en: LuxuryPlatformMessages = {
         label: "Kitchen",
         title: "Modular kitchens",
         description:
-          "Custom cabinetry, countertops, and premium hardware from OPPEIN — visualized in 3D and installed on site by Turriva.",
+          "Custom cabinetry, countertops, and premium hardware from OPPEIN, visualized in 3D and installed on site by Turriva.",
         cta: "Explore kitchens",
         href: "/contact?intent=design",
       },
@@ -215,7 +215,7 @@ const en: LuxuryPlatformMessages = {
         label: "Living",
         title: "Living & dining",
         description:
-          "TV walls, shelving, and dining joinery in coordinated palettes — browse Italian, French, and contemporary style directions.",
+          "TV walls, shelving, and dining joinery in coordinated palettes, browse Italian, French, and contemporary style directions.",
         cta: "Explore style directions",
         href: "/styles",
       },
@@ -233,7 +233,7 @@ const en: LuxuryPlatformMessages = {
         label: "Bathroom",
         title: "Bathroom vanity",
         description:
-          "Vanity units, mirror cabinets, and moisture-rated boards — specified for Saudi climate and daily use.",
+          "Vanity units, mirror cabinets, and moisture-rated boards, specified for Saudi climate and daily use.",
         cta: "Explore bathrooms",
         href: "/contact",
       },
@@ -242,7 +242,7 @@ const en: LuxuryPlatformMessages = {
         label: "Hospitality",
         title: "Hotels & F&B",
         description:
-          "Bulk programmes for lobbies, suites, and restaurants — MOQ pricing, phased delivery, and site coordination.",
+          "Bulk programmes for lobbies, suites, and restaurants, MOQ pricing, phased delivery, and site coordination.",
         cta: "Explore hospitality",
         href: "/projects",
       },
@@ -251,7 +251,7 @@ const en: LuxuryPlatformMessages = {
   waysOfLiving: {
     title: "Different ways of living",
     subtitle:
-      "Kitchens, wardrobes, bathrooms, and whole-home joinery — visualized in 3D and delivered on site across Saudi Arabia.",
+      "Kitchens, wardrobes, bathrooms, and whole-home joinery, visualized in 3D and delivered on site across Saudi Arabia.",
   },
   beforeAfter: {
     eyebrow: "Project showcase",
@@ -268,7 +268,7 @@ const en: LuxuryPlatformMessages = {
     items: [
       {
         q: "What does Turriva offer end-to-end?",
-        a: "Architectural 3D design, OPPEIN-sourced modular joinery, import compliance, and local installation with warranty — one integrated system.",
+        a: "Architectural 3D design, OPPEIN-sourced modular joinery, import compliance, and local installation with warranty, one integrated system.",
       },
       {
         q: "Do you serve developers and villa owners?",
@@ -280,7 +280,7 @@ const en: LuxuryPlatformMessages = {
       },
       {
         q: "Can I request physical material samples?",
-        a: "Yes — order a sample kit and book a drawing review session. We ship finishes and hardware references to your office or villa.",
+        a: "Yes, order a sample kit and book a drawing review session. We ship finishes and hardware references to your office or villa.",
       },
       {
         q: "How do I start?",
@@ -290,7 +290,7 @@ const en: LuxuryPlatformMessages = {
   },
   partners: {
     title: "Standards & partners",
-    subtitle: "Global manufacturing and hardware — cleared for Saudi compliance before anything reaches your site.",
+    subtitle: "Global manufacturing and hardware, cleared for Saudi compliance before anything reaches your site.",
     groups: [
       {
         label: "Manufacturing",
@@ -312,7 +312,7 @@ const en: LuxuryPlatformMessages = {
   sampleKit: {
     title: "Request a physical sample kit & drawing review",
     subtitle:
-      "We send finishes, hinges, and board samples to your site — alongside a factory-aligned 3D review of your plans.",
+      "We send finishes, hinges, and board samples to your site, alongside a factory-aligned 3D review of your plans.",
     button: "Request sample kit",
   },
 };
@@ -329,7 +329,7 @@ const ar: LuxuryPlatformMessages = {
     eyebrow: "ما تقدمه توريفا",
     title: "منظومة توريفا: قوة ثلاثية تضمن نجاح مشروعك من المخطط إلى التسليم",
     subtitle:
-      "نجمع بين إبداع التصميم المعماري، دقة التصنيع الأوتوماتيكي العالمي، والاحترافية الهندسية في التنفيذ الميداني داخل المملكة — لحل تشتت المقاولين، وفجوة التصميم عن الواقع، وضعف الضمان.",
+      "نجمع بين إبداع التصميم المعماري، دقة التصنيع الأوتوماتيكي العالمي، والاحترافية الهندسية في التنفيذ الميداني داخل المملكة، لحل تشتت المقاولين، وفجوة التصميم عن الواقع، وضعف الضمان.",
     pillars: [
       {
         brand: "turriva",
@@ -371,19 +371,19 @@ const ar: LuxuryPlatformMessages = {
     turrivaHeader: "منظومة توريفا",
     rows: [
       {
-        traditional: "تشتت بين 3 أطراف: مصمم، مصنع، فني تركيب — واللوم يتنقل",
+        traditional: "تشتت بين 3 أطراف: مصمم، مصنع، فني تركيب، واللوم يتنقل",
         turriva: "جهة واحدة مسؤولة من المخطط المعتمد حتى التسليم",
       },
       {
         traditional: "فجوة كبيرة بين صورة التصميم والمنتج الواقعي",
-        turriva: "ملفات 3D تُرسل للتصنيع مباشرة — مطابقة التصميم للواقع",
+        turriva: "ملفات 3D تُرسل للتصنيع مباشرة، مطابقة التصميم للواقع",
       },
       {
         traditional: "تأخير وتفاوت جودة في الورش المحلية",
         turriva: "تصنيع أوتوماتيكي بدقة 0.1 مم وفق معايير عالمية",
       },
       {
-        traditional: "ضمان ضعيف — من يتحمل العيب؟",
+        traditional: "ضمان ضعيف، من يتحمل العيب؟",
         turriva: "ضمان محلي على المنتج والتركيب مع قطع غيار",
       },
     ],
@@ -409,7 +409,7 @@ const ar: LuxuryPlatformMessages = {
       },
       {
         title: "فلل ومساكن",
-        description: "رحلة تأثيث كاملة — من 3D حتى التركيب.",
+        description: "رحلة تأثيث كاملة، من 3D حتى التركيب.",
         href: "/villas",
       },
       {
@@ -422,7 +422,7 @@ const ar: LuxuryPlatformMessages = {
   inspiration: {
     eyebrow: "إلهام",
     title: "أفكار حسب المساحة",
-    subtitle: "استكشف المطابخ والخزائن وغرف المعيشة — أو اتجاهات الأنماط حسب المنطقة — ثم احجز استشارة تصميم.",
+    subtitle: "استكشف المطابخ والخزائن وغرف المعيشة، أو اتجاهات الأنماط حسب المنطقة، ثم احجز استشارة تصميم.",
     stylesLink: "اتجاهات الأنماط",
     items: [
       {
@@ -430,7 +430,7 @@ const ar: LuxuryPlatformMessages = {
         label: "مطبخ",
         title: "مطابخ معيارية",
         description:
-          "خزائن مخصصة وكونترتوب ومفصلات فاخرة من OPPEIN — إظهار ثلاثي الأبعاد وتركيب ميداني عبر توريفا.",
+          "خزائن مخصصة وكونترتوب ومفصلات فاخرة من OPPEIN، إظهار ثلاثي الأبعاد وتركيب ميداني عبر توريفا.",
         cta: "اكتشف المطابخ",
         href: "/contact?intent=design",
       },
@@ -439,7 +439,7 @@ const ar: LuxuryPlatformMessages = {
         label: "خزائن",
         title: "غرف ملابس",
         description:
-          "إضاءة مدمجة ومفصلات soft-close ووحدات بدقة المصنع — لغرف الملابس والجناح الرئيسي.",
+          "إضاءة مدمجة ومفصلات soft-close ووحدات بدقة المصنع، لغرف الملابس والجناح الرئيسي.",
         cta: "اكتشف الخزائن",
         href: "/villas#wardrobes",
       },
@@ -448,7 +448,7 @@ const ar: LuxuryPlatformMessages = {
         label: "معيشة",
         title: "معيشة وطعام",
         description:
-          "جدران تلفزيون ورفوف ونجارة طعام بلوحات متناسقة — استكشف اتجاهات إيطالية وفرنسية ومعاصرة.",
+          "جدران تلفزيون ورفوف ونجارة طعام بلوحات متناسقة، استكشف اتجاهات إيطالية وفرنسية ومعاصرة.",
         cta: "اتجاهات الأنماط",
         href: "/styles",
       },
@@ -466,7 +466,7 @@ const ar: LuxuryPlatformMessages = {
         label: "حمام",
         title: "تشطيبات الحمام",
         description:
-          "مغاسل وخزائن مرآة وألواح مقاومة للرطوبة — مواصفات مناسبة للمناخ السعودي والاستخدام اليومي.",
+          "مغاسل وخزائن مرآة وألواح مقاومة للرطوبة، مواصفات مناسبة للمناخ السعودي والاستخدام اليومي.",
         cta: "اكتشف الحمامات",
         href: "/contact",
       },
@@ -475,7 +475,7 @@ const ar: LuxuryPlatformMessages = {
         label: "ضيافة",
         title: "فنادق ومطاعم",
         description:
-          "برامج جماعية للردهات والأجنحة والمطاعم — تسعير MOQ وتسليم مرحلي وتنسيق ميداني.",
+          "برامج جماعية للردهات والأجنحة والمطاعم، تسعير MOQ وتسليم مرحلي وتنسيق ميداني.",
         cta: "اكتشف الضيافة",
         href: "/projects",
       },
@@ -484,12 +484,12 @@ const ar: LuxuryPlatformMessages = {
   waysOfLiving: {
     title: "طرق مختلفة للعيش",
     subtitle:
-      "مطابخ وخزائن وحمامات وتأثيث المنزل بالكامل — إظهار ثلاثي الأبعاد وتسليم ميداني في أنحاء المملكة.",
+      "مطابخ وخزائن وحمامات وتأثيث المنزل بالكامل، إظهار ثلاثي الأبعاد وتسليم ميداني في أنحاء المملكة.",
   },
   beforeAfter: {
     eyebrow: "عرض مشروع",
     title: "من الإظهار المعماري إلى واقع قابل للتنفيذ",
-    subtitleLine1: "إظهار ثلاثي الأبعاد، نجارة داخلية، وخشبيات — نماذج لمشاريع مطورين.",
+    subtitleLine1: "إظهار ثلاثي الأبعاد، نجارة داخلية، وخشبيات، نماذج لمشاريع مطورين.",
     subtitleLine2: "من التصور المعتمد مروراً بالتصنيع إلى التنفيذ الميداني.",
     projectName: "Rafal Pavilions",
     projectCredit: "إظهار وتصميم داخلي · Graphics House",
@@ -501,11 +501,11 @@ const ar: LuxuryPlatformMessages = {
     items: [
       {
         q: "ماذا تقدم توريفا من البداية للنهاية؟",
-        a: "تصميم 3D معماري، تشطيبات معيارية من OPPEIN، امتثال جمركي، وتركيب محلي بضمان — منظومة واحدة.",
+        a: "تصميم 3D معماري، تشطيبات معيارية من OPPEIN، امتثال جمركي، وتركيب محلي بضمان، منظومة واحدة.",
       },
       {
         q: "هل تخدمون المطورين وأصحاب الفلل؟",
-        a: "نعم. صفحة المشاريع للـ B2B وصفحة الفلل للأفراد — نفس العمود الفقري للتصنيع والتنفيذ.",
+        a: "نعم. صفحة المشاريع للـ B2B وصفحة الفلل للأفراد، نفس العمود الفقري للتصنيع والتنفيذ.",
       },
       {
         q: "هل يوجد ضمان؟",
@@ -513,7 +513,7 @@ const ar: LuxuryPlatformMessages = {
       },
       {
         q: "هل يمكن طلب عينات فيزيائية؟",
-        a: "نعم — اطلب حقيبة عينات وجلسة مراجعة مخططات. نرسل تشطيبات ومفصلات إلى موقعك.",
+        a: "نعم، اطلب حقيبة عينات وجلسة مراجعة مخططات. نرسل تشطيبات ومفصلات إلى موقعك.",
       },
       {
         q: "كيف أبدأ؟",
@@ -523,7 +523,7 @@ const ar: LuxuryPlatformMessages = {
   },
   partners: {
     title: "معايير وشركاء",
-    subtitle: "تصنيع عالمي ومفصلات فاخرة — مع امتثال سعودي كامل قبل وصول أي شحنة إلى موقعك.",
+    subtitle: "تصنيع عالمي ومفصلات فاخرة، مع امتثال سعودي كامل قبل وصول أي شحنة إلى موقعك.",
     groups: [
       {
         label: "التصنيع",
@@ -545,7 +545,7 @@ const ar: LuxuryPlatformMessages = {
   sampleKit: {
     title: "اطلب حقيبة العينات الفيزيائية وجلسة مراجعة المخططات",
     subtitle:
-      "نرسل التشطيبات والمفصلات والألواح إلى موقعك — مع مراجعة 3D متوافقة مع مقاسات المصنع.",
+      "نرسل التشطيبات والمفصلات والألواح إلى موقعك، مع مراجعة 3D متوافقة مع مقاسات المصنع.",
     button: "اطلب حقيبة العينات",
   },
 };

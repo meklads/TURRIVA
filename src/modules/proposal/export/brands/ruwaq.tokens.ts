@@ -1,4 +1,4 @@
-/** Turriva Real Estate brand tokens — export PDFs & proposals */
+/** Turriva Real Estate brand tokens, export PDFs & proposals */
 export const ruwaqBrand = {
   id: "ruwaq" as const,
   colors: {

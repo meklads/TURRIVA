@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 /**
  * Cost guard for anonymous (not-signed-in) visitors. A guest may generate
  * ONE full AI proposal to feel the product, then must sign in with Google
- * to continue — sign-in is one click, so this barely adds friction while
+ * to continue, sign-in is one click, so this barely adds friction while
  * closing the obvious "script hits the AI endpoint all day" abuse path.
  *
  * Cookie-based, not IP-based: good enough to stop casual abuse without
@@ -34,7 +34,7 @@ export async function recordGuestGeneration(): Promise<void> {
     httpOnly: true,
     sameSite: "lax",
     secure: process.env.NODE_ENV === "production",
-    // Long-lived on purpose — the point is to survive a normal browsing
+    // Long-lived on purpose, the point is to survive a normal browsing
     // session, not just one tab.
     maxAge: 60 * 60 * 24 * 365,
     path: "/",

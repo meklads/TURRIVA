@@ -1,23 +1,23 @@
 /**
  * A4 pagination + a real repeating header/footer for exported proposal
- * documents, via Paged.js (https://pagedjs.org) — a browser-side polyfill
+ * documents, via Paged.js (https://pagedjs.org), a browser-side polyfill
  * for the CSS Paged Media spec (the same @page / running-element CSS used
  * by professional print tooling).
  *
  * Why Paged.js and not a server-side Puppeteer render: Puppeteer needs a
  * full Chromium binary bundled into the Docker image, which meaningfully
  * grows the container and adds real deploy risk on top of an already
- * fragile Nixpacks/Coolify pipeline. Paged.js is a single <script> tag —
+ * fragile Nixpacks/Coolify pipeline. Paged.js is a single <script> tag ,
  * no new backend dependency, no image size change, nothing to break in
  * CI. It runs the moment the exported HTML loads (not just when the user
  * hits print), so the on-screen "export" view already looks exactly like
- * the printed/PDF'd result — no surprises at print time.
+ * the printed/PDF'd result, no surprises at print time.
  *
  * How it works: `.banner` and the footer are pulled out of normal flow
  * with `position: running(...)` and Paged.js re-inserts them into the
  * page margin boxes on every generated page. The @page margin has to be
  * large enough to fit the tallest banner/footer across every export
- * variant (10 header/footer skins × logo/no-logo × 1-2 line titles) —
+ * variant (10 header/footer skins × logo/no-logo × 1-2 line titles) ,
  * sized generously below. If a real print ever shows clipping or too
  * much empty space above/below the content, tighten/loosen these two
  * numbers first; nothing else needs to change.

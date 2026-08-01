@@ -13,7 +13,7 @@ export function parseDurationToDays(input: string | null | undefined): number | 
 
   const normalized = input
     .trim()
-    .replace(/[–—−]/g, "-")
+    .replace(/[–,−]/g, "-")
     .replace(/,/g, ".");
 
   const rangeMatch = normalized.match(

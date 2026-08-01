@@ -28,8 +28,8 @@ export const MATERIAL_CATALOG: CatalogMaterial[] = [
     category: "stone",
     nameAr: "رخام كالاكاتا كريمي",
     nameEn: "Calacatta cream marble",
-    supplierAr: "موردون معتمدون — الرياض",
-    supplierEn: "Approved suppliers — Riyadh",
+    supplierAr: "موردون معتمدون، الرياض",
+    supplierEn: "Approved suppliers, Riyadh",
     priceHintAr: "350–520 ر.س/م²",
     priceHintEn: "SAR 350–520/m²",
     image:

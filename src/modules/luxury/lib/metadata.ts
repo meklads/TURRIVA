@@ -12,8 +12,8 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
 
   const description =
     locale === "ar"
-      ? "توريفا — منصة تأثيث متكاملة: تصميم 3D، توريد OPPEIN، وتنفيذ محلي في السعودية للفلل والمشاريع."
-      : "Turriva — integrated fit-out platform: 3D design, OPPEIN supply, and local execution in Saudi Arabia.";
+      ? "توريفا، منصة تأثيث متكاملة: تصميم 3D، توريد OPPEIN، وتنفيذ محلي في السعودية للفلل والمشاريع."
+      : "Turriva، integrated fit-out platform: 3D design, OPPEIN supply, and local execution in Saudi Arabia.";
 
   return {
     title,

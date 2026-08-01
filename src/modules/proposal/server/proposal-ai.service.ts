@@ -210,8 +210,8 @@ export async function generateProposalContent(proposalId: string) {
     const priceLine =
       commercialMode === "estimate_only"
         ? locale === "en"
-          ? "Preliminary estimate — final price after site visit"
-          : "تقدير أولي — السعر النهائي بعد المعاينة"
+          ? "Preliminary estimate, final price after site visit"
+          : "تقدير أولي، السعر النهائي بعد المعاينة"
         : locale === "en"
           ? `Total: SAR ${proposal.budget}`
           : `الإجمالي: ${proposal.budget} ريال`;

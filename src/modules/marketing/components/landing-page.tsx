@@ -18,7 +18,7 @@ type Props = {
   locale: Locale;
 };
 
-/** Root landing — Apple minimalist light canvas. */
+/** Root landing, Apple minimalist light canvas. */
 export function LandingPage({ t, locale }: Props) {
   const s = t.sales;
   const arrow = locale === "ar" ? "←" : "→";

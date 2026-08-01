@@ -2,20 +2,20 @@
  * Header/footer "skins" for the free "ruwaq" classic export template.
  *
  * Deliberately code-only (no generated images): research on professional
- * letterhead design (2026) consistently favors restraint — 2-3 brand
+ * letterhead design (2026) consistently favors restraint, 2-3 brand
  * colors max, a single accent, subtle geometric texture rather than busy
  * imagery. CSS gradients + hairline patterns give print-sharp results at
  * any size and let the logo/company name sit on a guaranteed-readable
  * surface, which a raster background image can never fully guarantee.
  *
- * Only applies when exportTemplateId === "ruwaq" — the executive and
+ * Only applies when exportTemplateId === "ruwaq", the executive and
  * Graphics House templates keep their own fixed, premium-differentiated
  * looks untouched.
  */
 
 /** Carries a public showcase pick through sign-up (see /style/[id]/route.ts).
  * Lives here, not in the route file, because Next.js route.ts files may
- * only export HTTP method handlers + reserved config — any other export
+ * only export HTTP method handlers + reserved config, any other export
  * (like a plain constant) fails the build. */
 export const HEADER_FOOTER_PREF_COOKIE = "ruwaq_hf_pref";
 
@@ -49,7 +49,7 @@ export const HEADER_FOOTER_STYLES: Record<HeaderFooterStyleId, HeaderFooterStyle
     nameAr: "الأصيل الذهبي",
     nameEn: "Gold Classic",
     swatch: ["#F5F5F7", "#C9A063"],
-    // This IS the template's default look — no overrides needed.
+    // This IS the template's default look, no overrides needed.
     css: () => "",
   },
 
@@ -321,7 +321,7 @@ export function getHeaderFooterStyle(id: string | null | undefined): HeaderFoote
   return HEADER_FOOTER_STYLES.gold_classic;
 }
 
-/** Free forever — 3 of the 10 looks, enough variety for the free trial. */
+/** Free forever, 3 of the 10 looks, enough variety for the free trial. */
 export const FREE_HEADER_FOOTER_STYLE_IDS: readonly HeaderFooterStyleId[] = [
   "gold_classic",
   "desert_sand",
@@ -340,7 +340,7 @@ export function parseHeaderFooterStyleId(value: unknown): HeaderFooterStyleId {
   return "gold_classic";
 }
 
-/** Resolves the style a user is actually entitled to save/export with —
+/** Resolves the style a user is actually entitled to save/export with ,
  * mirrors resolveEntitledExportTemplateId. Free users requesting a premium
  * look are quietly dropped back to the default rather than blocked. */
 export function resolveEntitledHeaderFooterStyleId(
@@ -356,7 +356,7 @@ export function resolveEntitledHeaderFooterStyleId(
 
 /**
  * Builds a small self-contained HTML doc reusing the EXACT same CSS class
- * names and skin CSS as the real export template (ruwaq.template.ts) —
+ * names and skin CSS as the real export template (ruwaq.template.ts) ,
  * meant to be rendered in an <iframe srcDoc>. Single source of truth for
  * BOTH the live picker in Company Settings and the public marketing
  * showcase, so neither can visually drift from what actually gets exported.

@@ -9,7 +9,7 @@ type Props = {
   children?: ReactNode;
 };
 
-/** Compact app hero — breathing room below sticky header (PandaDoc / Linear pattern). */
+/** Compact app hero, breathing room below sticky header (PandaDoc / Linear pattern). */
 export function AppPageHero({ eyebrow, title, subtitle, children }: Props) {
   return (
     <section className="app-page-hero" aria-labelledby="app-page-title">

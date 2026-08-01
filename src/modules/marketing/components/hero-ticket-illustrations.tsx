@@ -2,7 +2,7 @@ type Props = { className?: string };
 
 type IllustrationComponent = (props: Props) => React.ReactElement;
 
-/** Scope of work — document with shield checkmarks. */
+/** Scope of work, document with shield checkmarks. */
 export function TicketIllustrationScope({ className }: Props) {
   return (
     <svg viewBox="0 0 88 88" fill="none" className={className} aria-hidden>
@@ -19,7 +19,7 @@ export function TicketIllustrationScope({ className }: Props) {
   );
 }
 
-/** Timeline — calendar with progress arc. */
+/** Timeline, calendar with progress arc. */
 export function TicketIllustrationTimeline({ className }: Props) {
   return (
     <svg viewBox="0 0 88 88" fill="none" className={className} aria-hidden>
@@ -36,7 +36,7 @@ export function TicketIllustrationTimeline({ className }: Props) {
   );
 }
 
-/** Payments — structured payment bars with coin. */
+/** Payments, structured payment bars with coin. */
 export function TicketIllustrationPayments({ className }: Props) {
   return (
     <svg viewBox="0 0 88 88" fill="none" className={className} aria-hidden>
@@ -50,7 +50,7 @@ export function TicketIllustrationPayments({ className }: Props) {
   );
 }
 
-/** PDF export — document ready to send. */
+/** PDF export, document ready to send. */
 export function TicketIllustrationPdf({ className }: Props) {
   return (
     <svg viewBox="0 0 88 88" fill="none" className={className} aria-hidden>

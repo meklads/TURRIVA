@@ -435,22 +435,22 @@ export const en: Messages = {
    eyebrow: "See for yourself",
    title: "Proposal sample gallery",
    body:
-    "Three live samples: villa fit-out, engineering supervision, and 3D visualization — Turriva and Graphics House designs.",
+    "Three live samples: villa fit-out, engineering supervision, and 3D visualization, Turriva and Graphics House designs.",
    cta: "Browse all three samples",
    comingSoon: "Coming soon",
    items: [
     {
-     title: "Villa fit-out — Turriva",
+     title: "Villa fit-out, Turriva",
      body: "Scope, BOQ, payments, and approved clause pack.",
      live: true,
     },
     {
-     title: "Engineering supervision — Turriva executive",
+     title: "Engineering supervision, Turriva executive",
      body: "Formal layout for engineering firms and site supervision.",
      live: true,
     },
     {
-     title: "3D visualization — Graphics House",
+     title: "3D visualization, Graphics House",
      body: "Design studio identity for architectural visualization.",
      live: true,
     },
@@ -515,28 +515,28 @@ export const en: Messages = {
      title: "Compliance with SBC 1101 for residential buildings",
      excerpt:
       "The client ensures works comply with Saudi Building Code. The contractor is not liable for violations from client requests that breach the code.",
-     source: "SBC 1101 — Residential Buildings",
+     source: "SBC 1101, Residential Buildings",
     },
     {
      category: "Permits & municipality",
      title: "Balady permits are the client's responsibility",
      excerpt:
       "Building and renovation permits sit with the client unless explicitly stated otherwise. Municipal delay is not contractor delay.",
-     source: "Balady — Municipal Permits",
+     source: "Balady, Municipal Permits",
     },
     {
      category: "Waste management",
      title: "Construction debris and municipal delays",
      excerpt:
       "Debris removal is on the client unless explicitly in scope. Municipal stops extend the schedule without penalties on the contractor.",
-     source: "Balady — Waste Management",
+     source: "Balady, Waste Management",
     },
     {
      category: "Soil & geotechnical",
      title: "Rock and unforeseen ground conditions excluded",
      excerpt:
       "Excavation assumes normal soil. Rock or groundwater discovery requires a change order and new pricing agreement.",
-     source: "Industry Standard — Geotechnical",
+     source: "Industry Standard, Geotechnical",
     },
     {
      category: "Materials",
@@ -550,14 +550,14 @@ export const en: Messages = {
      title: "VAT per Zakat, Tax and Customs Authority rules",
      excerpt:
       "Prices subject to VAT where applicable. Contractor issues tax invoices per ZATCA requirements.",
-     source: "ZATCA — VAT Regulations",
+     source: "ZATCA, VAT Regulations",
     },
     {
      category: "Change order",
      title: "Every change goes through a formal change order",
      excerpt:
       "No out-of-scope work without a written change order defining cost and time. Verbal extras are not binding.",
-     source: "FIDIC-inspired — Change Order",
+     source: "FIDIC-inspired, Change Order",
     },
    ],
    disclaimer:
@@ -607,7 +607,7 @@ export const en: Messages = {
   },
   footer: {
    tagline:
-    "Turriva Real Estate — Saudi decor and contracting: fixed finishing for villas, apartments, palaces & shops, plus exhibition booths in Jeddah and Makkah.",
+    "Turriva Real Estate, Saudi decor and contracting: fixed finishing for villas, apartments, palaces & shops, plus exhibition booths in Jeddah and Makkah.",
    address: "Jeddah, Al-Zahra District, Saudi Arabia",
    product: "Product",
    company: "Company",
@@ -718,7 +718,7 @@ export const en: Messages = {
    sections: [
     {
      title: "Service description",
-     body: "Turriva helps contractors and firms draft, review, and export professional proposals. AI-generated content is a starting point — you are responsible for reviewing accuracy before client delivery.",
+     body: "Turriva helps contractors and firms draft, review, and export professional proposals. AI-generated content is a starting point, you are responsible for reviewing accuracy before client delivery.",
     },
     {
      title: "Accounts & guest access",
@@ -747,12 +747,12 @@ export const en: Messages = {
    eyebrow: "Turriva guide",
    title: "Everything you need to know before you start",
    intro:
-    "Why Turriva is different, and exactly how the free trial and subscription work — no ambiguity, no surprises later.",
+    "Why Turriva is different, and exactly how the free trial and subscription work, no ambiguity, no surprises later.",
    differentiatorsTitle: "Why Turriva?",
    differentiators: [
     {
      title: "From idea to a ready proposal in minutes, not hours",
-     body: "Instead of drafting scope, commercial terms, and a timeline from scratch every time, AI writes a full draft in minutes — you review and edit before sending.",
+     body: "Instead of drafting scope, commercial terms, and a timeline from scratch every time, AI writes a full draft in minutes, you review and edit before sending.",
     },
     {
      title: "Built specifically for Saudi real estate & contracting",
@@ -760,11 +760,11 @@ export const en: Messages = {
     },
     {
      title: "Your full company identity on every proposal",
-     body: "Your logo, details, and commercial registration appear automatically on every exported document — giving even a solo operator the look of a large consultancy.",
+     body: "Your logo, details, and commercial registration appear automatically on every exported document, giving even a solo operator the look of a large consultancy.",
     },
     {
      title: "A live link your client can actually interact with",
-     body: "Your client opens a link, reviews the proposal section by section, and can approve or request a change directly — not a static PDF that gets lost in an inbox.",
+     body: "Your client opens a link, reviews the proposal section by section, and can approve or request a change directly, not a static PDF that gets lost in an inbox.",
     },
    ],
    subscriptionTitle: "How the trial and subscription work",
@@ -777,22 +777,22 @@ export const en: Messages = {
     },
     {
      title: "Sign in with Google (one step)",
-     body: "To create more proposals, sign in with Google — no new password to remember, just seconds.",
+     body: "To create more proposals, sign in with Google, no new password to remember, just seconds.",
     },
     {
      title: "Complete your company profile once",
-     body: "Your company name, logo, and contact details — filled in once, then applied automatically to every proposal after that.",
+     body: "Your company name, logo, and contact details, filled in once, then applied automatically to every proposal after that.",
     },
     {
      title: "Stay free or upgrade as you grow",
-     body: "The free plan covers occasional use. If your monthly volume grows, pick a plan that fits from the pricing page — no annual lock-in required.",
+     body: "The free plan covers occasional use. If your monthly volume grows, pick a plan that fits from the pricing page, no annual lock-in required.",
     },
    ],
    questionsTitle: "Frequently asked questions",
    questions: [
     {
      q: "Is Turriva really free?",
-     a: "Yes. The platform is currently in a fully free launch trial with no limits. Even after that trial ends, a permanent free plan covers a limited number of proposals per month — no card needed to start.",
+     a: "Yes. The platform is currently in a fully free launch trial with no limits. Even after that trial ends, a permanent free plan covers a limited number of proposals per month, no card needed to start.",
     },
     {
      q: "Do I need a credit card to sign up?",
@@ -800,7 +800,7 @@ export const en: Messages = {
     },
     {
      q: "Can I use my own company logo and details?",
-     a: "Absolutely — that's the whole point. Fill in your logo, company name, and commercial registration once in Company Profile, and they appear automatically on every proposal you export.",
+     a: "Absolutely, that's the whole point. Fill in your logo, company name, and commercial registration once in Company Profile, and they appear automatically on every proposal you export.",
     },
     {
      q: "Are the generated proposals legally binding contracts?",
@@ -808,15 +808,15 @@ export const en: Messages = {
     },
     {
      q: "How is this different from writing it myself in Word or using ChatGPT directly?",
-     a: "ChatGPT gives you generic text you have to format yourself from scratch every time. Turriva builds a structured, export-ready proposal — scope, timeline, payment terms, and your branding — with no manual formatting or copy-pasting.",
+     a: "ChatGPT gives you generic text you have to format yourself from scratch every time. Turriva builds a structured, export-ready proposal, scope, timeline, payment terms, and your branding, with no manual formatting or copy-pasting.",
     },
     {
      q: "Is there a limit on how many proposals I can create?",
-     a: "During the current launch trial: no limit at all. Afterward, the free plan includes a set number per month, and paid plans offer higher or unlimited volume — see the pricing page for details.",
+     a: "During the current launch trial: no limit at all. Afterward, the free plan includes a set number per month, and paid plans offer higher or unlimited volume, see the pricing page for details.",
     },
     {
      q: "How does my client view the final proposal?",
-     a: "You send them a direct link (or an exported PDF) — they open it on any device without needing to sign in, and can approve or request changes from the same page.",
+     a: "You send them a direct link (or an exported PDF), they open it on any device without needing to sign in, and can approve or request changes from the same page.",
     },
     {
      q: "Is my data or my clients' data shared or sold?",
@@ -824,11 +824,11 @@ export const en: Messages = {
     },
     {
      q: "Does the platform support both Arabic and English?",
-     a: "Yes, fully — you choose the language for each proposal when creating it, and the platform interface itself is available in both Arabic and English.",
+     a: "Yes, fully, you choose the language for each proposal when creating it, and the platform interface itself is available in both Arabic and English.",
     },
    ],
    ctaTitle: "Ready to try it yourself?",
-   ctaSubtitle: "Your first professional proposal is ready in minutes — no sign-up, no credit card.",
+   ctaSubtitle: "Your first professional proposal is ready in minutes, no sign-up, no credit card.",
    ctaButton: "Start a free proposal",
    ctaSecondary: "View pricing",
   },
@@ -852,8 +852,8 @@ export const en: Messages = {
    },
    {
     slug: "ruwaq-executive",
-    brand: "Turriva — Executive",
-    title: "Engineering supervision — office tower",
+    brand: "Turriva, Executive",
+    title: "Engineering supervision, office tower",
     body: "A more formal layout for engineering firms: supervision, reports, timeline.",
     badge: "Turriva sample 2",
    },
@@ -866,8 +866,8 @@ export const en: Messages = {
    },
   ],
   headerFooterShowcase: {
-   title: "Customize your proposal look — 10 ready-made color styles",
-   subtitle: "Pick a style from the list and see a full real proposal in it — header, body, and footer.",
+   title: "Customize your proposal look, 10 ready-made color styles",
+   subtitle: "Pick a style from the list and see a full real proposal in it, header, body, and footer.",
    selectCta: "Start my proposal in this style",
    premiumBadge: "Subscription",
    premiumNote: "3 styles are free for everyone; the other 7 unlock automatically with any paid plan.",
@@ -959,9 +959,9 @@ export const en: Messages = {
   marketingHint:
    "Optional links enrich your proposal and market your business, no ads inside client documents.",
   errors: {
-   invalidPhone: "Invalid phone number — digits only, with or without a country code (e.g. 0501234567).",
+   invalidPhone: "Invalid phone number, digits only, with or without a country code (e.g. 0501234567).",
    invalidEmail: "Invalid email address.",
-   invalidUrl: "Invalid link — must start with https:// or http://.",
+   invalidUrl: "Invalid link, must start with https:// or http://.",
   },
   companyName: "Company name",
   logoUrl: "Logo URL",
@@ -970,21 +970,21 @@ export const en: Messages = {
   logoUpload: "Upload logo",
   logoUploading: "Uploading...",
   logoUploadFailed: "Logo upload failed. Use PNG, JPEG, WebP, or SVG under 2 MB.",
-  logoStorageWarning: "Heads up: cloud storage isn't enabled yet — this logo is saved temporarily and may be lost on the next deploy.",
+  logoStorageWarning: "Heads up: cloud storage isn't enabled yet, this logo is saved temporarily and may be lost on the next deploy.",
   headerFooter: {
    title: "Header & footer style",
-   hint: "Pick the color scheme shown at the top and bottom of your proposal — the preview updates live with your real details.",
+   hint: "Pick the color scheme shown at the top and bottom of your proposal, the preview updates live with your real details.",
    previewBadge: "Proposal",
    previewCompanyFallback: "Your company name",
-   prefilledNotice: "This is the style you picked on the template gallery — adjust it or save as-is.",
+   prefilledNotice: "This is the style you picked on the template gallery, adjust it or save as-is.",
   },
   exportTemplate: "Proposal template",
   exportTemplateHint:
    "Choose the layout used when you export proposals. Preview samples in the template gallery.",
   exportTemplateOptions: {
-   ruwaq: "Turriva Classic — fit-out & general contracting",
-   ruwaq_executive: "Turriva Executive — engineering & supervision",
-   graphics_house: "Graphics House — visualization & creative",
+   ruwaq: "Turriva Classic, fit-out & general contracting",
+   ruwaq_executive: "Turriva Executive, engineering & supervision",
+   graphics_house: "Graphics House, visualization & creative",
   },
   address: "Address",
   addressPlaceholder: "e.g. Riyadh, Al Malqa",
@@ -1007,7 +1007,7 @@ export const en: Messages = {
  },
  upgrade: {
   title: "Unlock premium templates",
-  subtitle: "Turriva Executive and Graphics House templates — a higher-end look for your proposals.",
+  subtitle: "Turriva Executive and Graphics House templates, a higher-end look for your proposals.",
   price: "$15 one-time",
   priceNote: "Paid via PayPal for now (a Saudi payment gateway is coming soon). The base template stays free forever.",
   cta: "Upgrade now",
@@ -1025,9 +1025,9 @@ export const en: Messages = {
   cta: "See Graphics House services",
  },
  gates: {
-  signInRequired: "You tried Turriva for free — nice! Sign in with Google (one click) to create more proposals.",
+  signInRequired: "You tried Turriva for free, nice! Sign in with Google (one click) to create more proposals.",
   signInCta: "Sign in with Google",
-  profileIncomplete: "Complete your company name and logo in Company Profile first — they appear on every exported proposal.",
+  profileIncomplete: "Complete your company name and logo in Company Profile first, they appear on every exported proposal.",
   profileIncompleteCta: "Complete company profile",
   quotaExceeded: "You've reached this month's proposal limit for your current plan.",
   quotaExceededCta: "View plans",
@@ -1041,7 +1041,7 @@ export const en: Messages = {
   unlimitedLabel: "Unlimited",
   proposalsPerMonth: "proposals / month",
   currentPlanNote: "Your current plan",
-  trialActiveNote: "The launch trial is live right now — everything is free and unlimited for a limited time.",
+  trialActiveNote: "The launch trial is live right now, everything is free and unlimited for a limited time.",
   contactCta: "Contact us to subscribe",
   mostPopular: "Most popular",
  },

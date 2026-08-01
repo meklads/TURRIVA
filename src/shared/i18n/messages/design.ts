@@ -315,33 +315,33 @@ const en: DesignMessages = {
     contact: "Contact",
   },
   hero: {
-    badge: "Turriva Real Estate — Decor & Contracting",
+    badge: "Turriva Real Estate, Decor & Contracting",
     title: "We design and build premium spaces",
     subtitle:
-      "A Saudi contracting and decor company — fixed finishing for villas, apartments, palaces & shops, plus advertising booths and exhibitions.",
-    services: "Interior · Exterior · Booths & exhibitions — Jeddah & Makkah",
+      "A Saudi contracting and decor company, fixed finishing for villas, apartments, palaces & shops, plus advertising booths and exhibitions.",
+    services: "Interior · Exterior · Booths & exhibitions, Jeddah & Makkah",
     ctaTryTool: "Try the AI preview",
-    ctaBespoke: "Bespoke design — contact us",
+    ctaBespoke: "Bespoke design, contact us",
     noteTryToolLabel: "Quick preview?",
-    noteTryTool: "Upload a photo below — your first AI design is free, no sign-in required.",
+    noteTryTool: "Upload a photo below, your first AI design is free, no sign-in required.",
     noteBespokeLabel: "Signature project?",
     noteBespoke: "Our design engineers craft a fully custom concept and Turriva executes it on site.",
     imageAlt: "Luxury palace interior designed and finished by Turriva",
   },
   studioSection: {
     eyebrow: "Try it yourself",
-    title: "Free AI preview — then we build it for real",
+    title: "Free AI preview, then we build it for real",
     subtitle:
-      "Upload your space, get one free design instantly. Unlock two more after a quick project profile — then Turriva turns it into real execution.",
+      "Upload your space, get one free design instantly. Unlock two more after a quick project profile, then Turriva turns it into real execution.",
   },
   paths: {
     eyebrow: "Two ways to start",
     title: "Fast preview or fully bespoke",
-    subtitle: "Choose the path that fits your project — both lead to Turriva execution.",
+    subtitle: "Choose the path that fits your project, both lead to Turriva execution.",
     toolTitle: "Explore with the AI studio",
     toolBody: "Ideal when you want a fast visual before committing.",
     toolPoints: [
-      "Upload your space — interior, exterior, or booth",
+      "Upload your space, interior, exterior, or booth",
       "Pick a style and city",
       "3 free watermarked previews after sign-in",
     ],
@@ -349,7 +349,7 @@ const en: DesignMessages = {
     bespokeTitle: "Bespoke design with our engineers",
     bespokeBody: "For villas, palaces, flagship stores, and exhibition builds that need a human touch.",
     bespokePoints: [
-      "Senior Turriva design engineers — not AI alone",
+      "Senior Turriva design engineers, not AI alone",
       "Custom drawings and material boards",
       "Formal execution quote via Turriva workspace",
     ],
@@ -358,9 +358,9 @@ const en: DesignMessages = {
   studio: {
     title: "Create your design",
     promptInterior:
-      "Upload a photo of the interior space you want to finish — villa, apartment, palace, shop, majlis, or room.",
+      "Upload a photo of the interior space you want to finish, villa, apartment, palace, shop, majlis, or room.",
     promptExterior:
-      "Upload a photo of the exterior you want to finish — villa facade, building, shop front, or courtyard.",
+      "Upload a photo of the exterior you want to finish, villa facade, building, shop front, or courtyard.",
     promptBooth:
       "Upload a photo of your booth, stand, or temporary exhibition space you want to redesign.",
     spaceInterior: "Interior",
@@ -371,34 +371,34 @@ const en: DesignMessages = {
     projectType: "Project type",
     boothType: "Booth / stand type",
     uploadTitle: "Click or drag and drop",
-    uploadHintInterior: "Villa, apartment, palace, empty room, shop, majlis — JPG, PNG or WEBP",
-    uploadHintExterior: "Facade, building, shop front, courtyard — JPG, PNG or WEBP",
-    uploadHintBooth: "Exhibition booth, stand, pop-up, showroom — JPG, PNG or WEBP",
+    uploadHintInterior: "Villa, apartment, palace, empty room, shop, majlis, JPG, PNG or WEBP",
+    uploadHintExterior: "Facade, building, shop front, courtyard, JPG, PNG or WEBP",
+    uploadHintBooth: "Exhibition booth, stand, pop-up, showroom, JPG, PNG or WEBP",
     uploadButton: "Upload",
     uploadDrag: "Drop your image here",
     styleTitle: "Choose a style",
     generate: "Generate design",
     generating: "Generating…",
     creditsLeft: "{count} credits left",
-    creditsUnlimited: "Open testing — no generation limit",
+    creditsUnlimited: "Open testing, no generation limit",
     noCredits: "No credits left",
     signInForCredits: "Sign in to get 3 free credits",
     before: "Your photo",
     after: "New design",
-    compareHint: "Drag the handle — right: your photo · left: AI design",
+    compareHint: "Drag the handle, right: your photo · left: AI design",
     mockNotice:
-      "Basic preview only — AI redesign did not run. Our team can deliver a full bespoke design on request.",
+      "Basic preview only, AI redesign did not run. Our team can deliver a full bespoke design on request.",
     tryAnother: "Try another style",
     previewBadge: "TURRIVA PREVIEW",
     previewNotice:
-      "Low-resolution preview with Turriva watermark — full quality unlocks with execution or a pro subscription.",
+      "Low-resolution preview with Turriva watermark, full quality unlocks with execution or a pro subscription.",
     executionContact:
-      "Love the design? Contact us — we'll discuss execution, location, and project details together.",
-    likeExecutionCta: "I love it — contact us for execution",
+      "Love the design? Contact us, we'll discuss execution, location, and project details together.",
+    likeExecutionCta: "I love it, contact us for execution",
   },
   welcome: {
     title: "Welcome to Turriva",
-    subtitle: "A decor & contracting company — try a quick AI preview or book a bespoke session.",
+    subtitle: "A decor & contracting company, try a quick AI preview or book a bespoke session.",
     credits: "3 free credits have been added to your account",
     start: "Start",
     skip: "Skip",
@@ -406,7 +406,7 @@ const en: DesignMessages = {
   consultation: {
     title: "Free consultation & execution quote",
     subtitle:
-      "Love your design? Book a free call with Turriva — we'll turn it into a real project with executable materials.",
+      "Love your design? Book a free call with Turriva, we'll turn it into a real project with executable materials.",
     freeBadge: "Free consultation",
     name: "Your name",
     phone: "Phone number",
@@ -419,7 +419,7 @@ const en: DesignMessages = {
     executionContactTitle: "Contact us about execution",
     executionContactSubtitle:
       "Leave your details and we'll call you to discuss the design, site visit, and a formal quote.",
-    executionContactCta: "Send — we'll contact you",
+    executionContactCta: "Send, we'll contact you",
     interestLabel: "What do you need?",
     interestExecution: "Execute my AI preview",
     interestBespoke: "Private design with our engineers",
@@ -433,9 +433,9 @@ const en: DesignMessages = {
     eyebrow: "Beyond the AI preview",
     title: "Want something truly one-of-a-kind?",
     subtitle:
-      "Love the preview? Turriva can build it in Jeddah & Makkah. For a fully bespoke interior — our design engineers are ready to meet you.",
+      "Love the preview? Turriva can build it in Jeddah & Makkah. For a fully bespoke interior, our design engineers are ready to meet you.",
     points: [
-      "Senior Turriva design engineers — human-led, not AI",
+      "Senior Turriva design engineers, human-led, not AI",
       "Custom concepts for villas, palaces, shops, and exhibition booths",
       "From mood boards to executable drawings",
       "Free introductory meeting to understand your vision",
@@ -449,11 +449,11 @@ const en: DesignMessages = {
       {
         title: "Upload your photo",
         description:
-          "Any interior room, building exterior, or exhibition booth. JPG, PNG or WEBP — any angle works.",
+          "Any interior room, building exterior, or exhibition booth. JPG, PNG or WEBP, any angle works.",
       },
       {
         title: "Pick a style",
-        description: "Choose from curated presets — modern, neoclassic, Islamic geometric, and more.",
+        description: "Choose from curated presets, modern, neoclassic, Islamic geometric, and more.",
       },
       {
         title: "Get a photoreal redesign",
@@ -473,7 +473,7 @@ const en: DesignMessages = {
     otherAi: "Other AI tools",
     ruwaq: "Turriva Real Estate",
     otherNotes: [
-      "Different room — generated from scratch",
+      "Different room, generated from scratch",
       "Geometry and openings ignored",
       "Cartoonish, unrealistic feel",
     ],
@@ -482,24 +482,24 @@ const en: DesignMessages = {
       "Photoreal materials and lighting",
       "Designer-grade composition",
     ],
-    footnote: "Powered by top-tier image AI — premium quality on every render",
+    footnote: "Powered by top-tier image AI, premium quality on every render",
   },
   rooms: {
     eyebrow: "AI design",
     title: "AI Design for Every Project",
     subtitle:
-      "Fixed finishing for villas, apartments, palaces & shops — or temporary booths and exhibitions",
+      "Fixed finishing for villas, apartments, palaces & shops, or temporary booths and exhibitions",
     items: [
       {
         id: "living",
-        title: "Interior finishing — living & majlis",
+        title: "Interior finishing, living & majlis",
         description:
           "See your villa, apartment, or majlis completely reimagined with finishes, furniture layout, and decor.",
         cta: "Design my interior",
       },
       {
         id: "shop",
-        title: "Interior finishing — retail & shops",
+        title: "Interior finishing, retail & shops",
         description: "Visualize shop and showroom interiors with premium materials and layout.",
         cta: "Design my shop",
       },
@@ -523,9 +523,9 @@ const en: DesignMessages = {
     badge: "Only on Turriva",
     title: "From AI design to real execution",
     subtitle:
-      "Fixed decor and advertising booths — Turriva doesn't stop at the image. We build with real materials and premium contracting.",
+      "Fixed decor and advertising booths, Turriva doesn't stop at the image. We build with real materials and premium contracting.",
     points: [
-      "Real material catalogs — wood, marble, glass, furniture",
+      "Real material catalogs, wood, marble, glass, furniture",
       "Free consultation with our design team",
       "Formal execution quote via Turriva workspace",
     ],
@@ -535,19 +535,19 @@ const en: DesignMessages = {
     stepBuild: "Turriva Builds",
   },
   ctaBottom: {
-    badge: "3 free credits — no card required",
+    badge: "3 free credits, no card required",
     title: "Ready to see your space transformed?",
-    subtitle: "Start free — sign in to get 3 credits. Then book execution with Turriva.",
+    subtitle: "Start free, sign in to get 3 credits. Then book execution with Turriva.",
     cta: "Redesign my room for free",
     note: "No credit card · Free consultation · Real execution",
   },
   materials: {
-    title: "Design components — executable materials",
+    title: "Design components, executable materials",
     subtitle:
-      "Materials detected in your design, matched to Turriva's real supplier catalog — ready for quoting and execution.",
+      "Materials detected in your design, matched to Turriva's real supplier catalog, ready for quoting and execution.",
     executableBadge: "Executable by Turriva",
     fallbackNotice:
-      "Material suggestions based on your style — AI vision matching activates with production API.",
+      "Material suggestions based on your style, AI vision matching activates with production API.",
     available: "Available",
     quoteHint: "Want a formal quote with these materials? Book a free consultation.",
     quoteCta: "Request execution quote",
@@ -555,10 +555,10 @@ const en: DesignMessages = {
   furniture: {
     title: "AI Furniture Finder",
     subtitle:
-      "We detected furniture in your design and matched it to real products — swap alternatives with one click.",
+      "We detected furniture in your design and matched it to real products, swap alternatives with one click.",
     badge: "Smart detection",
     fallbackNotice:
-      "Suggested pieces based on your room type — AI pin detection activates with production API.",
+      "Suggested pieces based on your room type, AI pin detection activates with production API.",
     tapPins: "Tap numbered pins to explore each piece",
     match: "match",
     showDetected: "Detected",
@@ -568,12 +568,12 @@ const en: DesignMessages = {
     quoteCta: "Get furniture quote",
   },
   furnitureFeature: {
-    eyebrow: "Like Zory — but we build it",
+    eyebrow: "Like Zory, but we build it",
     title: "Upload your room. Discover every piece. We execute.",
     subtitle:
-      "Our AI furniture finder identifies sofas, tables, lighting, and decor — then Turriva supplies and installs them with the same quality as your design.",
+      "Our AI furniture finder identifies sofas, tables, lighting, and decor, then Turriva supplies and installs them with the same quality as your design.",
     points: [
-      "Numbered pins on your design — tap to explore",
+      "Numbered pins on your design, tap to explore",
       "Real partner brands: Pan Home, Home Center, and more",
       "One-click swap to alternative products",
       "Formal quote + installation by Turriva contracting",
@@ -582,13 +582,13 @@ const en: DesignMessages = {
   },
   footer: {
     about:
-      "Turriva combines AI design visualization with premium decor and contracting — from concept to execution.",
+      "Turriva combines AI design visualization with premium decor and contracting, from concept to execution.",
     product: "Product",
     company: "Company",
     support: "Support",
     solutions: "Solutions",
     workspaceDesc:
-      "AI-powered proposals, BOQ, and project quotes — the Turriva workspace your team already uses.",
+      "AI-powered proposals, BOQ, and project quotes, the Turriva workspace your team already uses.",
     workspaceCta: "Open proposals platform",
     workspaceBadge: "Existing app",
     copyright: "© Turriva. All rights reserved.",
@@ -598,9 +598,9 @@ const en: DesignMessages = {
     poweredByLink: "Graphics House",
   },
   conversion: {
-    uploadPrompt: "Upload your space photo, pick a room type and style — your first design is completely free.",
+    uploadPrompt: "Upload your space photo, pick a room type and style, your first design is completely free.",
     spaceTitle: "Which space is this?",
-    uploadHint: "Living room, bedroom, kitchen, bathroom, majlis, or exterior — JPG, PNG, WEBP",
+    uploadHint: "Living room, bedroom, kitchen, bathroom, majlis, or exterior, JPG, PNG, WEBP",
     emptyHint: "Choose a space, upload a photo, pick a style, then generate your free design.",
     generateFree: "Generate free design",
     spaces: {
@@ -613,9 +613,9 @@ const en: DesignMessages = {
     },
     unlockTitle: "Like the result?",
     unlockBody:
-      "Complete a quick 30-second project profile to unlock 2 more AI designs — plus a review from Turriva's design team.",
+      "Complete a quick 30-second project profile to unlock 2 more AI designs, plus a review from Turriva's design team.",
     unlockCta: "Continue",
-    unlockNote: "No spam — we only use your number to follow up on your project.",
+    unlockNote: "No spam, we only use your number to follow up on your project.",
     successTitle: "Your 2 free designs are unlocked",
     successBody:
       "Our design consultant will contact you shortly to help turn your vision into a real Turriva project.",
@@ -674,7 +674,7 @@ const en: DesignMessages = {
     eyebrow: "Inspiration",
     title: "Spaces we love to design & build",
     subtitle:
-      "Interiors, villas, palaces, shops, and exhibition booths — explore the quality Turriva delivers on site.",
+      "Interiors, villas, palaces, shops, and exhibition booths, explore the quality Turriva delivers on site.",
     tabInterior: "Interiors",
     tabExterior: "Exteriors",
     tabExhibition: "Exhibitions",
@@ -720,30 +720,30 @@ const ar: DesignMessages = {
     badge: "توريفا العقارية للديكور والمقاولات",
     title: "نصمّم وننفّذ مساحات فاخرة",
     subtitle:
-      "شركة سعودية للديكور والمقاولات — تشطيبات ثابتة للفلل والشقق والقصور والمحلات، وديكور إعلاني للبوث والمعارض المؤقتة.",
-    services: "داخلي · خارجي · بوث ومعارض — جدة ومكة",
+      "شركة سعودية للديكور والمقاولات، تشطيبات ثابتة للفلل والشقق والقصور والمحلات، وديكور إعلاني للبوث والمعارض المؤقتة.",
+    services: "داخلي · خارجي · بوث ومعارض، جدة ومكة",
     ctaTryTool: "جرّب معاينة الذكاء الاصطناعي",
-    ctaBespoke: "تصميم خاص — تواصل معنا",
+    ctaBespoke: "تصميم خاص، تواصل معنا",
     noteTryToolLabel: "معاينة سريعة؟",
-    noteTryTool: "ارفع صورتك بالأسفل — تصميمك الأول مجاني بدون تسجيل.",
+    noteTryTool: "ارفع صورتك بالأسفل، تصميمك الأول مجاني بدون تسجيل.",
     noteBespokeLabel: "مشروع مميز؟",
     noteBespoke: "مهندسو التصميم في توريفا العقارية يعدّون مفهوماً خاصاً وننفّذه في الموقع بمواد حقيقية.",
-    imageAlt: "داخل قصر فاخر — ديكور وتشطيبات توريفا العقارية",
+    imageAlt: "داخل قصر فاخر، ديكور وتشطيبات توريفا العقارية",
   },
   studioSection: {
     eyebrow: "جرّب بنفسك",
-    title: "معاينة مجانية — ثم ننفّذها حقيقياً",
+    title: "معاينة مجانية، ثم ننفّذها حقيقياً",
     subtitle:
-      "ارفع مساحتك واحصل على تصميم مجاني فوراً. افتح تصميمين إضافيين بعد ملف مشروع سريع — ثم توريفا العقارية يحوّلها إلى تنفيذ فعلي.",
+      "ارفع مساحتك واحصل على تصميم مجاني فوراً. افتح تصميمين إضافيين بعد ملف مشروع سريع، ثم توريفا العقارية يحوّلها إلى تنفيذ فعلي.",
   },
   paths: {
     eyebrow: "طريقتان للبدء",
     title: "معاينة سريعة أو تصميم خاص بالكامل",
-    subtitle: "اختر ما يناسب مشروعك — كلاهما يقود إلى تنفيذ توريفا العقارية.",
+    subtitle: "اختر ما يناسب مشروعك، كلاهما يقود إلى تنفيذ توريفا العقارية.",
     toolTitle: "استكشف عبر الاستوديو الذكي",
     toolBody: "مناسب عندما تريد رؤية بصرية سريعة قبل الالتزام.",
     toolPoints: [
-      "ارفع مساحتك — داخلية، خارجية، أو بوث",
+      "ارفع مساحتك، داخلية، خارجية، أو بوث",
       "اختر النمط والمدينة",
       "3 معاينات مجانية بعلامة مائية بعد التسجيل",
     ],
@@ -751,7 +751,7 @@ const ar: DesignMessages = {
     bespokeTitle: "تصميم خاص مع مهندسينا",
     bespokeBody: "للفلل والقصور والمحلات الرائدة ومعارض البوث التي تحتاج لمسة بشرية فاخرة.",
     bespokePoints: [
-      "مهندسو تصميم توريفا العقارية — ليس ذكاءً اصطناعياً وحده",
+      "مهندسو تصميم توريفا العقارية، ليس ذكاءً اصطناعياً وحده",
       "مخططات ومزاج بصري ومواد مخصصة",
       "عرض تنفيذ رسمي عبر منصة توريفا العقارية",
     ],
@@ -760,9 +760,9 @@ const ar: DesignMessages = {
   studio: {
     title: "أنشئ تصميمك",
     promptInterior:
-      "ارفع صورة للمساحة الداخلية التي تريد تشطيبها — فيلا، شقة، قصر، محل، مجلس، أو غرفة.",
+      "ارفع صورة للمساحة الداخلية التي تريد تشطيبها، فيلا، شقة، قصر، محل، مجلس، أو غرفة.",
     promptExterior:
-      "ارفع صورة للخارج الذي تريد تشطيبه — واجهة فيلا، مبنى، واجهة محل، أو فناء خارجي.",
+      "ارفع صورة للخارج الذي تريد تشطيبه، واجهة فيلا، مبنى، واجهة محل، أو فناء خارجي.",
     promptBooth:
       "ارفع صورة للبوث أو الستاند أو المعرض المؤقت الذي تريد إعادة تصميمه.",
     spaceInterior: "داخلي",
@@ -773,34 +773,34 @@ const ar: DesignMessages = {
     projectType: "نوع المشروع",
     boothType: "نوع البوث / المعرض",
     uploadTitle: "انقر أو اسحب وأفلت",
-    uploadHintInterior: "فيلا، شقة، قصر، غرفة فاضية، محل، مجلس — JPG أو PNG أو WEBP",
-    uploadHintExterior: "واجهة، مبنى، محل، فناء — JPG أو PNG أو WEBP",
-    uploadHintBooth: "جناح معرض، ستاند، متجر مؤقت، صالة عرض — JPG أو PNG أو WEBP",
+    uploadHintInterior: "فيلا، شقة، قصر، غرفة فاضية، محل، مجلس، JPG أو PNG أو WEBP",
+    uploadHintExterior: "واجهة، مبنى، محل، فناء، JPG أو PNG أو WEBP",
+    uploadHintBooth: "جناح معرض، ستاند، متجر مؤقت، صالة عرض، JPG أو PNG أو WEBP",
     uploadButton: "رفع",
     uploadDrag: "أفلت صورتك هنا",
     styleTitle: "اختر النمط",
     generate: "توليد التصميم",
     generating: "جاري التوليد…",
     creditsLeft: "{count} رصيد متبقي",
-    creditsUnlimited: "تجربة مفتوحة — بدون حد للتوليد",
+    creditsUnlimited: "تجربة مفتوحة، بدون حد للتوليد",
     noCredits: "لا توجد أرصدة",
     signInForCredits: "سجّل الدخول للحصول على 3 أرصدة مجانية",
     before: "صورتك الأصلية",
     after: "التصميم الجديد",
-    compareHint: "اسحب المقبض للمقارنة — يمين: صورتك · يسار: التصميم بالذكاء الاصطناعي",
+    compareHint: "اسحب المقبض للمقارنة، يمين: صورتك · يسار: التصميم بالذكاء الاصطناعي",
     mockNotice:
-      "معاينة بسيطة فقط — لم يعمل إعادة التصميم بالذكاء الاصطناعي. فريق توريفا العقارية يقدّم تصميماً مخصصاً كاملاً عند الطلب.",
+      "معاينة بسيطة فقط، لم يعمل إعادة التصميم بالذكاء الاصطناعي. فريق توريفا العقارية يقدّم تصميماً مخصصاً كاملاً عند الطلب.",
     tryAnother: "جرّب نمطاً آخر",
     previewBadge: "معاينة توريفا العقارية",
     previewNotice:
-      "معاينة بدقة منخفضة وعلامة توريفا العقارية المائية — الجودة الكاملة مع التنفيذ أو اشتراك احترافي.",
+      "معاينة بدقة منخفضة وعلامة توريفا العقارية المائية، الجودة الكاملة مع التنفيذ أو اشتراك احترافي.",
     executionContact:
-      "أعجبك التصميم؟ تواصل معنا — نتفاهم معك حول التنفيذ والموقع وتفاصيل المشروع.",
-    likeExecutionCta: "أعجبني — تواصل للتنفيذ",
+      "أعجبك التصميم؟ تواصل معنا، نتفاهم معك حول التنفيذ والموقع وتفاصيل المشروع.",
+    likeExecutionCta: "أعجبني، تواصل للتنفيذ",
   },
   welcome: {
     title: "مرحباً بك في توريفا العقارية",
-    subtitle: "شركة ديكور ومقاولات — جرّب معاينة سريعة أو احجز جلسة تصميم خاص.",
+    subtitle: "شركة ديكور ومقاولات، جرّب معاينة سريعة أو احجز جلسة تصميم خاص.",
     credits: "تمت إضافة 3 أرصدة مجانية إلى حسابك",
     start: "ابدأ",
     skip: "تخطي",
@@ -808,7 +808,7 @@ const ar: DesignMessages = {
   consultation: {
     title: "استشارة مجانية وعرض تنفيذ",
     subtitle:
-      "أعجبك التصميم؟ احجز مكالمة مجانية مع توريفا العقارية — نحوّله إلى مشروع حقيقي بمواد قابلة للتنفيذ.",
+      "أعجبك التصميم؟ احجز مكالمة مجانية مع توريفا العقارية، نحوّله إلى مشروع حقيقي بمواد قابلة للتنفيذ.",
     freeBadge: "استشارة مجانية",
     name: "اسمك",
     phone: "رقم الجوال",
@@ -821,7 +821,7 @@ const ar: DesignMessages = {
     executionContactTitle: "تواصل معنا بخصوص التنفيذ",
     executionContactSubtitle:
       "اترك بياناتك وسنتصل بك لمناقشة التصميم وزيارة الموقع وعرض التنفيذ.",
-    executionContactCta: "إرسال — سنتواصل معك",
+    executionContactCta: "إرسال، سنتواصل معك",
     interestLabel: "ماذا تحتاج؟",
     interestExecution: "تنفيذ ما أعجبني من المعاينة",
     interestBespoke: "تصميم خاص مع مهندسينا",
@@ -835,9 +835,9 @@ const ar: DesignMessages = {
     eyebrow: "أبعد من المعاينة الذكية",
     title: "تريد تصميماً خاصاً لا يشبه أحداً؟",
     subtitle:
-      "أعجبتك المعاينة؟ توريفا العقارية تنفّذها في جدة ومكة. ولتصميم بشري فاخر ومخصص بالكامل — مهندسو التصميم في توريفا العقارية جاهزون للاجتماع معك.",
+      "أعجبتك المعاينة؟ توريفا العقارية تنفّذها في جدة ومكة. ولتصميم بشري فاخر ومخصص بالكامل، مهندسو التصميم في توريفا العقارية جاهزون للاجتماع معك.",
     points: [
-      "مهندسو تصميم توريفا العقارية — خبرة بشرية عالية، ليس ذكاءً اصطناعياً",
+      "مهندسو تصميم توريفا العقارية، خبرة بشرية عالية، ليس ذكاءً اصطناعياً",
       "مفاهيم خاصة للفلل والقصور والمحلات وبوث المعارض",
       "من الفكرة إلى مخططات قابلة للتنفيذ",
       "اجتماع تعريفي مجاني لفهم رؤيتك",
@@ -851,11 +851,11 @@ const ar: DesignMessages = {
       {
         title: "ارفع صورتك",
         description:
-          "أي غرفة داخلية، واجهة خارجية، أو بوث معرض. JPG أو PNG أو WEBP — أي زاوية تناسب.",
+          "أي غرفة داخلية، واجهة خارجية، أو بوث معرض. JPG أو PNG أو WEBP، أي زاوية تناسب.",
       },
       {
         title: "اختر أسلوباً",
-        description: "اختر من أنماط جاهزة — عصري، نيوكلاسيك، هندسي إسلامي، والمزيد.",
+        description: "اختر من أنماط جاهزة، عصري، نيوكلاسيك، هندسي إسلامي، والمزيد.",
       },
       {
         title: "احصل على تصميم فائق الواقعية",
@@ -875,7 +875,7 @@ const ar: DesignMessages = {
     otherAi: "أدوات AI أخرى",
     ruwaq: "توريفا العقارية",
     otherNotes: [
-      "غرفة مختلفة — مُولّدة من الصفر",
+      "غرفة مختلفة، مُولّدة من الصفر",
       "تجاهل الهندسة والفتحات",
       "مظهر كاريكاتوري وغير واقعي",
     ],
@@ -884,24 +884,24 @@ const ar: DesignMessages = {
       "مواد وإضاءة واقعية",
       "تركيب بمستوى مصمّم",
     ],
-    footnote: "مدعوم بأحدث ذكاء اصطناعي للصور — جودة ممتازة في كل صورة",
+    footnote: "مدعوم بأحدث ذكاء اصطناعي للصور، جودة ممتازة في كل صورة",
   },
   rooms: {
     eyebrow: "تصميم بالذكاء الاصطناعي",
     title: "تصميم ذكي لكل نوع مشروع",
     subtitle:
-      "تشطيبات ثابتة للفلل والشقق والقصور والمحلات — أو بوث ومعارض مؤقتة إعلانية",
+      "تشطيبات ثابتة للفلل والشقق والقصور والمحلات، أو بوث ومعارض مؤقتة إعلانية",
     items: [
       {
         id: "living",
-        title: "تشطيب داخلي — معيشة ومجلس",
+        title: "تشطيب داخلي، معيشة ومجلس",
         description:
-          "شاهد فيلاك أو شقتك أو مجلسك بمواد وتشطيبات وأثاث جديد — ديكور ثابت فاخر.",
+          "شاهد فيلاك أو شقتك أو مجلسك بمواد وتشطيبات وأثاث جديد، ديكور ثابت فاخر.",
         cta: "صمّم الداخل",
       },
       {
         id: "shop",
-        title: "تشطيب داخلي — محلات ومعارض",
+        title: "تشطيب داخلي، محلات ومعارض",
         description: "تصوّر محلاتك وصالات العرض بمواد وتخطيط احترافي.",
         cta: "صمّم المحل",
       },
@@ -923,9 +923,9 @@ const ar: DesignMessages = {
     badge: "حصري في توريفا العقارية",
     title: "من تصميم AI إلى تنفيذ حقيقي",
     subtitle:
-      "ديكور ثابت وبوث إعلاني — توريفا العقارية لا تتوقف عند الصورة. ننفّذها بمواد حقيقية ومقاولات فاخرة.",
+      "ديكور ثابت وبوث إعلاني، توريفا العقارية لا تتوقف عند الصورة. ننفّذها بمواد حقيقية ومقاولات فاخرة.",
     points: [
-      "كتالوجات مواد حقيقية — خشب، رخام، زجاج، أثاث",
+      "كتالوجات مواد حقيقية، خشب، رخام، زجاج، أثاث",
       "استشارة مجانية مع فريق التصميم",
       "عرض تنفيذ رسمي عبر منصة توريفا العقارية",
     ],
@@ -935,19 +935,19 @@ const ar: DesignMessages = {
     stepBuild: "تنفيذ توريفا العقارية",
   },
   ctaBottom: {
-    badge: "3 أرصدة مجانية — بدون بطاقة",
+    badge: "3 أرصدة مجانية، بدون بطاقة",
     title: "مستعد لرؤية مساحتك بشكل جديد؟",
-    subtitle: "ابدأ مجاناً — سجّل الدخول للحصول على 3 أرصدة. ثم احجز التنفيذ مع توريفا العقارية.",
+    subtitle: "ابدأ مجاناً، سجّل الدخول للحصول على 3 أرصدة. ثم احجز التنفيذ مع توريفا العقارية.",
     cta: "أعد تصميم غرفتي مجاناً",
     note: "بدون بطاقة · استشارة مجانية · تنفيذ حقيقي",
   },
   materials: {
-    title: "مكوّنات التصميم — خامات قابلة للتنفيذ",
+    title: "مكوّنات التصميم، خامات قابلة للتنفيذ",
     subtitle:
-      "خامات مُستخرجة من تصميمك ومطابقة لكتالوج موردي توريفا العقارية — جاهزة للتسعير والتنفيذ.",
+      "خامات مُستخرجة من تصميمك ومطابقة لكتالوج موردي توريفا العقارية، جاهزة للتسعير والتنفيذ.",
     executableBadge: "قابل للتنفيذ من توريفا العقارية",
     fallbackNotice:
-      "اقتراحات خامات بناءً على النمط — التعرف بالذكاء الاصطناعي يُفعّل مع API الإنتاج.",
+      "اقتراحات خامات بناءً على النمط، التعرف بالذكاء الاصطناعي يُفعّل مع API الإنتاج.",
     available: "متوفر",
     quoteHint: "تريد عرض سعر رسمي بهذه الخامات؟ احجز استشارة مجانية.",
     quoteCta: "اطلب عرض تنفيذ",
@@ -955,10 +955,10 @@ const ar: DesignMessages = {
   furniture: {
     title: "مكتشف الأثاث بالذكاء الاصطناعي",
     subtitle:
-      "حدّدنا قطع الأثاث في تصميمك وطابقناها مع منتجات حقيقية — بدّل البدائل بنقرة واحدة.",
+      "حدّدنا قطع الأثاث في تصميمك وطابقناها مع منتجات حقيقية، بدّل البدائل بنقرة واحدة.",
     badge: "اكتشاف ذكي",
     fallbackNotice:
-      "قطع مقترحة حسب نوع الغرفة — التعرف بالدبابيس يُفعّل مع API الإنتاج.",
+      "قطع مقترحة حسب نوع الغرفة، التعرف بالدبابيس يُفعّل مع API الإنتاج.",
     tapPins: "اضغط على الدبابيس المرقّمة لاستكشاف كل قطعة",
     match: "تطابق",
     showDetected: "المكتشف",
@@ -968,12 +968,12 @@ const ar: DesignMessages = {
     quoteCta: "احصل على عرض أثاث",
   },
   furnitureFeature: {
-    eyebrow: "مثل زوري — لكننا ننفّذ",
+    eyebrow: "مثل زوري، لكننا ننفّذ",
     title: "ارفع غرفتك. اكتشف كل قطعة. ونحن ننفّذ.",
     subtitle:
-      "مكتشف الأثاث يحدد الكنب والطاولات والإضاءة والديكور — ثم توريفا العقارية توردها وتركّبها بنفس جودة التصميم.",
+      "مكتشف الأثاث يحدد الكنب والطاولات والإضاءة والديكور، ثم توريفا العقارية توردها وتركّبها بنفس جودة التصميم.",
     points: [
-      "دبابيس مرقّمة على تصميمك — اضغط للاستكشاف",
+      "دبابيس مرقّمة على تصميمك، اضغط للاستكشاف",
       "علامات شريكة حقيقية: بان هوم، هوم سنتر، والمزيد",
       "تبديل بنقرة لمنتج بديل",
       "عرض رسمي + تركيب من مقاولات توريفا العقارية",
@@ -982,13 +982,13 @@ const ar: DesignMessages = {
   },
   footer: {
     about:
-      "توريفا العقارية تجمع بين تصور التصميم بالذكاء الاصطناعي والديكور والمقاولات الفاخرة — من الفكرة إلى التنفيذ.",
+      "توريفا العقارية تجمع بين تصور التصميم بالذكاء الاصطناعي والديكور والمقاولات الفاخرة، من الفكرة إلى التنفيذ.",
     product: "المنتج",
     company: "الشركة",
     support: "الدعم",
     solutions: "الحلول",
     workspaceDesc:
-      "عروض أسعار ذكية، جداول كميات، وإدارة مشاريع — منصة توريفا العقارية التي يستخدمها فريقك.",
+      "عروض أسعار ذكية، جداول كميات، وإدارة مشاريع، منصة توريفا العقارية التي يستخدمها فريقك.",
     workspaceCta: "الدخول إلى المنصة",
     workspaceBadge: "التطبيق الحالي",
     copyright: "© توريفا العقارية. جميع الحقوق محفوظة.",
@@ -998,9 +998,9 @@ const ar: DesignMessages = {
     poweredByLink: "جرافيكس هاوس",
   },
   conversion: {
-    uploadPrompt: "ارفع صورة مساحتك، اختر نوع الغرفة والنمط — تصميمك الأول مجاني بالكامل.",
+    uploadPrompt: "ارفع صورة مساحتك، اختر نوع الغرفة والنمط، تصميمك الأول مجاني بالكامل.",
     spaceTitle: "ما نوع هذه المساحة؟",
-    uploadHint: "معيشة، نوم، مطبخ، حمام، مجلس، أو خارجي — JPG أو PNG أو WEBP",
+    uploadHint: "معيشة، نوم، مطبخ، حمام، مجلس، أو خارجي، JPG أو PNG أو WEBP",
     emptyHint: "اختر المساحة، ارفع صورة، اختر نمطاً، ثم ولّد تصميمك المجاني.",
     generateFree: "توليد تصميم مجاني",
     spaces: {
@@ -1013,9 +1013,9 @@ const ar: DesignMessages = {
     },
     unlockTitle: "أعجبك النتيجة؟",
     unlockBody:
-      "أكمل ملف مشروعك في 30 ثانية لفتح تصميمين إضافيين — مع مراجعة من فريق تصميم توريفا العقارية.",
+      "أكمل ملف مشروعك في 30 ثانية لفتح تصميمين إضافيين، مع مراجعة من فريق تصميم توريفا العقارية.",
     unlockCta: "متابعة",
-    unlockNote: "لن نزعجك — نستخدم رقمك فقط لمتابعة مشروعك.",
+    unlockNote: "لن نزعجك، نستخدم رقمك فقط لمتابعة مشروعك.",
     successTitle: "تم فتح تصميمين مجانيين إضافيين",
     successBody: "سيتواصل معك مستشار التصميم قريباً لتحويل رؤيتك إلى مشروع توريفا العقارية حقيقي.",
     successCta: "توليد التصميم التالي",
@@ -1071,7 +1071,7 @@ const ar: DesignMessages = {
   inspiration: {
     eyebrow: "إلهام",
     title: "مساحات نحب تصميمها وتنفيذها",
-    subtitle: "داخلي، فلل، قصور، محلات، ومعارض — جودة توريفا العقارية على أرض الواقع.",
+    subtitle: "داخلي، فلل، قصور، محلات، ومعارض، جودة توريفا العقارية على أرض الواقع.",
     tabInterior: "داخلي",
     tabExterior: "خارجي",
     tabExhibition: "معارض",

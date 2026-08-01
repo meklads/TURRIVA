@@ -21,14 +21,14 @@ const envSchema = z.object({
   STRIPE_SECRET_KEY: z.string().optional(),
   NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: z.string().optional(),
   STRIPE_WEBHOOK_SECRET: z.string().optional(),
-  /** PayPal — temporary payment rail for premium templates unlock (USD only) */
+  /** PayPal, temporary payment rail for premium templates unlock (USD only) */
   PAYPAL_CLIENT_ID: z.string().optional(),
   PAYPAL_CLIENT_SECRET: z.string().optional(),
   NEXT_PUBLIC_PAYPAL_CLIENT_ID: z.string().optional(),
   PAYPAL_ENV: z.string().optional().default("sandbox"),
   /** Master switch for the premium-templates paywall. "false" = everything
    *  free (launch trial month). Flip to "true" in Coolify when ready to
-   *  charge — no code change needed, the PayPal flow is already wired. */
+   *  charge, no code change needed, the PayPal flow is already wired. */
   BILLING_ENABLED: z.string().optional().default("false"),
   NEXT_PUBLIC_APP_URL: z.string().optional().default("http://localhost:3000"),
   NEXT_PUBLIC_APP_NAME: z.string().default("Turriva Real Estate"),
@@ -98,7 +98,7 @@ function parseEnv(): Env {
 
 export const env = parseEnv();
 
-/** Google OAuth — supports Auth.js and common alternate env names */
+/** Google OAuth, supports Auth.js and common alternate env names */
 export function getGoogleOAuthCredentials(): {
   clientId: string;
   clientSecret: string;

@@ -30,7 +30,7 @@ export default async function CompanySettingsPage() {
   });
 
   // A style picked on the public showcase (before sign-up) travels here via
-  // cookie and pre-fills the picker — but only for a brand-new profile.
+  // cookie and pre-fills the picker, but only for a brand-new profile.
   // Once a real profile exists, their saved choice always wins.
   let preferredStyleId: HeaderFooterStyleId | undefined;
   if (!profile) {

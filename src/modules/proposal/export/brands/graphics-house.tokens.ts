@@ -1,4 +1,4 @@
-/** Graphics House brand tokens — from official logo assets */
+/** Graphics House brand tokens, from official logo assets */
 export const graphicsHouseBrand = {
   id: "graphics_house" as const,
   colors: {

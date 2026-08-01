@@ -1,6 +1,6 @@
 /**
  * S3-compatible object storage (Cloudflare R2 or AWS S3) for user uploads
- * (currently: company logos). Falls back gracefully — callers should check
+ * (currently: company logos). Falls back gracefully, callers should check
  * isCloudStorageConfigured() and keep a local-disk fallback for dev/unset.
  *
  * Why this exists: local disk storage (public/uploads/...) does not survive
@@ -19,7 +19,7 @@ function getConfig() {
   if (!accessKeyId || !secretAccessKey || !bucket || !endpoint) return null;
 
   const region = process.env.STORAGE_REGION?.trim() || "auto";
-  // Public base for constructing object URLs — a Cloudflare R2 custom domain
+  // Public base for constructing object URLs, a Cloudflare R2 custom domain
   // or r2.dev URL, or (for AWS S3) usually https://{bucket}.s3.{region}.amazonaws.com.
   // Falls back to "{endpoint}/{bucket}" which works for path-style buckets.
   const publicBaseUrl =
@@ -54,7 +54,7 @@ async function getClient() {
 
 /**
  * Uploads a buffer to the configured bucket and returns its public URL.
- * Throws if cloud storage isn't configured — callers should fall back to
+ * Throws if cloud storage isn't configured, callers should fall back to
  * local disk in that case (see api/company/logo/route.ts).
  */
 export async function uploadPublicObject(

@@ -11,7 +11,7 @@ export async function SiteHeader({ variant = "marketing" }: { variant?: Variant 
   const locale = await getLocale();
   const t = getMessages(locale);
 
-  // Kept deliberately short — this is the conversion path (understand →
+  // Kept deliberately short, this is the conversion path (understand →
   // see a real sample → see the price → start). Deeper/trust pages (about,
   // services, FAQ) live in the footer, not the primary nav.
   const marketingLinks = [

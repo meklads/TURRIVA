@@ -2,7 +2,7 @@ import { Prisma } from "@prisma/client";
 import { db } from "@/shared/lib/db";
 
 /**
- * In-house, zero-dependency usage tracking — no Sentry/PostHog account
+ * In-house, zero-dependency usage tracking, no Sentry/PostHog account
  * needed to start seeing real traffic numbers. Every call is fire-and-forget
  * and swallows its own errors: a logging failure must never break the
  * actual user-facing action it's attached to.
@@ -23,7 +23,7 @@ export function logUsageEvent(
     metadata?: Record<string, unknown>;
   } = {}
 ): void {
-  // Intentionally not awaited by callers — never delay the real response
+  // Intentionally not awaited by callers, never delay the real response
   // waiting on an analytics write.
   db.usageEvent
     .create({
@@ -40,7 +40,7 @@ export function logUsageEvent(
 }
 
 /**
- * In-house error tracking — no Sentry account needed. Logs a "server_error"
+ * In-house error tracking, no Sentry account needed. Logs a "server_error"
  * UsageEvent (visible in /admin/metrics) AND still prints to console so
  * platform logs (Coolify) keep the full stack trace. Fire-and-forget, same
  * as logUsageEvent: a logging failure must never break the real response.

@@ -1,5 +1,5 @@
 /**
- * Approved placeholder defaults — single source of truth for seed + clause renderer.
+ * Approved placeholder defaults, single source of truth for seed + clause renderer.
  */
 export const PLACEHOLDER_DEFAULTS = {
   escalation_threshold_percent: "10",

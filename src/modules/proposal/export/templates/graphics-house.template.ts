@@ -283,7 +283,7 @@ export function renderGraphicsHouseTemplate(
 <html dir="${dir}" lang="${locale}">
 <head>
   <meta charset="utf-8">
-  <title>${escapeHtml(data.projectName)} — ${docTitle}</title>
+  <title>${escapeHtml(data.projectName)}, ${docTitle}</title>
   ${fontLink}
   <style>
     @media print {
@@ -716,7 +716,7 @@ export function renderGraphicsHouseTemplate(
 
     <!-- Rendered here (not at the end of the document) so Paged.js's
          position: running(pageFooter) captures it before laying out
-         page 1 — a running element only repeats on pages generated AFTER
+         page 1, a running element only repeats on pages generated AFTER
          its source appears in the DOM, so this must sit near the top,
          right alongside the header, even though it visually renders in
          the page's bottom margin box on every page. -->
@@ -772,7 +772,7 @@ export function renderGraphicsHouseTemplate(
           ? `${sectionTitle(labels.deliverables)}<ul>${data.deliverables
               .map(
                 (d) =>
-                  `<li><strong>${escapeHtml(d.name)}</strong> — ${escapeHtml(d.description)}</li>`
+                  `<li><strong>${escapeHtml(d.name)}</strong>, ${escapeHtml(d.description)}</li>`
               )
               .join("")}</ul>`
           : ""
@@ -828,7 +828,7 @@ export function renderGraphicsHouseTemplate(
       <p style="font-size:13px;color:${colors.textMuted};margin-bottom:8px;">${escapeHtml(labels.acceptanceText)}</p>
       <div class="signature">
         <div class="signature-box"><strong style="color:${colors.navy};">${escapeHtml(labels.clientSignature)}</strong><br>${escapeHtml(data.clientName)}</div>
-        <div class="signature-box"><strong style="color:${colors.navy};">${escapeHtml(labels.providerSignature)}</strong><br>${escapeHtml(data.companyName ?? "—")}</div>
+        <div class="signature-box"><strong style="color:${colors.navy};">${escapeHtml(labels.providerSignature)}</strong><br>${escapeHtml(data.companyName ?? "…")}</div>
       </div>
     </main>
   </div>

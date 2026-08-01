@@ -40,7 +40,7 @@ function applyLabelOverrides(
 
 /**
  * Generate initial Smart BOQ lines from archetype weights.
- * AI may override labels/notes only — amounts are always system-allocated.
+ * AI may override labels/notes only, amounts are always system-allocated.
  */
 export function allocateBoqLines(input: BoqAllocateInput): BoqAllocateResult {
   const budget = input.budget;

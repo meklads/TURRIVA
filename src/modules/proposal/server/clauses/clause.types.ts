@@ -1,14 +1,14 @@
 import { z } from "zod";
 import type { CommercialMode, ProjectArchetype } from "@/shared/types";
 
-/** AI output — keys and placeholder values ONLY. No legal prose. */
+/** AI output, keys and placeholder values ONLY. No legal prose. */
 export const clauseAiSelectionSchema = z.object({
   optionalClauseKeys: z.array(z.string()).default([]),
   /** alternativeGroup → chosen clauseKey */
   alternativeChoices: z.record(z.string(), z.string()).default({}),
   /** Only keys allowed on matched templates */
   placeholderOverrides: z.record(z.string(), z.string()).default({}),
-  /** UX tooltips — not rendered as legal text */
+  /** UX tooltips, not rendered as legal text */
   selectionReasons: z.record(z.string(), z.string()).default({}),
 });
 
@@ -49,7 +49,7 @@ export type ClausePackRecord = {
 export type ClauseRenderContext = {
   commercialMode: CommercialMode;
   estimateVariancePercent: number;
-  /** Strictly from duration-parser — never guessed by AI */
+  /** Strictly from duration-parser, never guessed by AI */
   projectDurationDays: number | null;
   budget?: number;
   clientName?: string;

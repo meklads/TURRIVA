@@ -1,5 +1,5 @@
 // ============================================================
-// Canonical Proposal Types — Single Source of Truth
+// Canonical Proposal Types, Single Source of Truth
 // ============================================================
 
 export type ProposalStatus =

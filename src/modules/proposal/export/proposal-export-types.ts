@@ -32,7 +32,7 @@ export type ProposalExportData = {
   areaSqm?: number;
   appBaseUrl: string;
   templateId?: "ruwaq" | "ruwaq_executive" | "graphics_house";
-  /** Header/footer color skin — only applied when templateId is "ruwaq". */
+  /** Header/footer color skin, only applied when templateId is "ruwaq". */
   headerFooterStyleId?: string;
   /** When true, shows Ruwaq platform branding (sample preview only). */
   platformBranding?: boolean;
@@ -43,7 +43,7 @@ export type ProposalExportData = {
   clausePackName?: string | null;
   clausePackVersion?: string | null;
   estimateVariancePercent?: number;
-  /** Hard watermark — client name + issue date on every page. */
+  /** Hard watermark, client name + issue date on every page. */
   watermarkClientName?: string;
   watermarkDate?: string;
 };

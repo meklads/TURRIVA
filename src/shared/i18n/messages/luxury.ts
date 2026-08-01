@@ -189,7 +189,7 @@ const en: LuxuryMessages = {
     eyebrow: "Saudi Arabia · Design · OPPEIN supply · Local execution",
     title: "An integrated system to design, supply, and deliver premium spaces",
     subtitle:
-      "We unite architectural 3D precision, automated global manufacturing through OPPEIN, and Turriva engineering on the ground — so developers and villa owners get one accountable partner from drawing to handover.",
+      "We unite architectural 3D precision, automated global manufacturing through OPPEIN, and Turriva engineering on the ground, so developers and villa owners get one accountable partner from drawing to handover.",
     servicesLine: "Kitchens · Wardrobes · Joinery · Villas · Projects",
     tags: ["3D design", "OPPEIN supply", "Local install", "B2B & villas"],
     ctaPrimary: "Book design consultation",
@@ -198,9 +198,9 @@ const en: LuxuryMessages = {
   },
   intro: {
     eyebrow: "How we work",
-    title: "Design that reads the room — execution that respects your name",
+    title: "Design that reads the room, execution that respects your name",
     body:
-      "Leading decor brands earn trust by showing real materials and believable spaces. We do the same for Gulf homes and businesses: contemporary lines, warm hospitality, and details that suit majlis life as well as modern living. One studio from concept and samples to site teams and handover — with open updates so you are never guessing.",
+      "Leading decor brands earn trust by showing real materials and believable spaces. We do the same for Gulf homes and businesses: contemporary lines, warm hospitality, and details that suit majlis life as well as modern living. One studio from concept and samples to site teams and handover, with open updates so you are never guessing.",
   },
   stats: {
     items: [
@@ -212,7 +212,7 @@ const en: LuxuryMessages = {
   },
   execution: {
     badge: "Design & site delivery",
-    title: "The drawing is a promise — the handover is our reputation",
+    title: "The drawing is a promise, the handover is our reputation",
     subtitle:
       "Joinery, stone, lighting, and furnishings are procured against approved boards. Trades are coordinated on site until the space matches what you signed. Exhibition builds follow the same care as a family villa.",
     points: [
@@ -229,7 +229,7 @@ const en: LuxuryMessages = {
       {
         title: "Villas & palaces",
         description:
-          "Majlis, dining, bedrooms, and kitchens — contemporary Gulf character with materials chosen for daily use and Saudi climate.",
+          "Majlis, dining, bedrooms, and kitchens, contemporary Gulf character with materials chosen for daily use and Saudi climate.",
       },
       {
         title: "Retail & hospitality",
@@ -239,7 +239,7 @@ const en: LuxuryMessages = {
       {
         title: "Facades & arrival",
         description:
-          "Street presence and entry sequences for villas and commercial buildings — consistent from gate to lobby.",
+          "Street presence and entry sequences for villas and commercial buildings, consistent from gate to lobby.",
       },
       {
         title: "Exhibitions & brand spaces",
@@ -255,7 +255,7 @@ const en: LuxuryMessages = {
       {
         title: "Interior design & decor",
         description:
-          "Layout, materials, lighting, and styling for villas, apartments, palaces, and majlis — from first sketch to installation.",
+          "Layout, materials, lighting, and styling for villas, apartments, palaces, and majlis, from first sketch to installation.",
         cta: "Interior design",
         href: "/interior-design",
       },
@@ -281,7 +281,7 @@ const en: LuxuryMessages = {
     items: [
       {
         title: "Contemporary, place-aware design",
-        description: "A global design language adapted to Gulf hospitality and daily life — never a template lifted from elsewhere.",
+        description: "A global design language adapted to Gulf hospitality and daily life, never a template lifted from elsewhere.",
       },
       {
         title: "Materials you can trust",
@@ -289,7 +289,7 @@ const en: LuxuryMessages = {
       },
       {
         title: "One accountable team",
-        description: "Designers and site leads who stay with your file — fewer handoffs, clearer decisions.",
+        description: "Designers and site leads who stay with your file, fewer handoffs, clearer decisions.",
       },
       {
         title: "Commitment through handover",
@@ -301,7 +301,7 @@ const en: LuxuryMessages = {
     eyebrow: "Portfolio",
     title: "From 3D approval to installed reality",
     subtitle:
-      "Modular kitchens, wardrobes, and joinery for villas, compounds, and hospitality — documented before and after handover.",
+      "Modular kitchens, wardrobes, and joinery for villas, compounds, and hospitality, documented before and after handover.",
     cta: "Full portfolio",
     items: [
       { title: "Villa kitchen · modular joinery", category: "Residential · Jeddah" },
@@ -315,7 +315,7 @@ const en: LuxuryMessages = {
     steps: [
       {
         title: "Listen & brief",
-        description: "We visit or workshop your needs — lifestyle, programme, and how you measure success.",
+        description: "We visit or workshop your needs, lifestyle, programme, and how you measure success.",
       },
       {
         title: "Design & approve",
@@ -337,13 +337,13 @@ const en: LuxuryMessages = {
     items: [
       {
         quote:
-          "The 3D kitchen matched what arrived — same finishes, same dimensions. One team from approval to installation, with no blame game between designer and installer.",
+          "The 3D kitchen matched what arrived, same finishes, same dimensions. One team from approval to installation, with no blame game between designer and installer.",
         author: "Private client",
         role: "Villa · Jeddah",
       },
       {
         quote:
-          "For our compound batch, shop drawings and delivery phases were clear. Turriva handled import and site teams — we tracked units, not excuses.",
+          "For our compound batch, shop drawings and delivery phases were clear. Turriva handled import and site teams, we tracked units, not excuses.",
         author: "Development manager",
         role: "B2B · Western Region",
       },
@@ -357,7 +357,7 @@ const en: LuxuryMessages = {
   },
   footer: {
     about:
-      "Turriva — integrated fit-out platform in Saudi Arabia: architectural 3D, OPPEIN modular supply, and local engineering from survey to warranty.",
+      "Turriva, integrated fit-out platform in Saudi Arabia: architectural 3D, OPPEIN modular supply, and local engineering from survey to warranty.",
     quickLinks: "Quick Links",
     importantLinks: "Important Links",
     servicesLinks: "Services",
@@ -375,7 +375,7 @@ const en: LuxuryMessages = {
     affiliation: "Turriva is part of",
     affiliationLink: "Graphics House Co",
     affiliationSuffix:
-      " — the dedicated fit-out and contracting arm for decor and interior execution.",
+      ", the dedicated fit-out and contracting arm for decor and interior execution.",
     legalNotice: "© 2026 Turriva. All rights reserved | CR: 7054412114 | VAT: 314808998900003",
     privacy: "Privacy Policy",
     terms: "Terms of Use",
@@ -388,7 +388,7 @@ const en: LuxuryMessages = {
     interiorDesign: {
       title: "Interior design & decor",
       intro:
-        "Contemporary interiors for villas, palaces, apartments, and majlis in Jeddah and Makkah — concept, materials, and installation with Turriva designers and site teams.",
+        "Contemporary interiors for villas, palaces, apartments, and majlis in Jeddah and Makkah, concept, materials, and installation with Turriva designers and site teams.",
     },
     construction: {
       title: "Delivery & build on site",
@@ -398,12 +398,12 @@ const en: LuxuryMessages = {
     ourWork: {
       title: "Our work",
       intro:
-        "Selected modular kitchens, wardrobes, and joinery programmes — each documented from approved 3D through installation and handover.",
+        "Selected modular kitchens, wardrobes, and joinery programmes, each documented from approved 3D through installation and handover.",
     },
     about: {
       title: "About Turriva",
       intro:
-        "Turriva is the master brand for an integrated fit-out system — design visualization, OPPEIN manufacturing access, and Saudi field execution under one accountable platform.",
+        "Turriva is the master brand for an integrated fit-out system, design visualization, OPPEIN manufacturing access, and Saudi field execution under one accountable platform.",
     },
     contact: {
       title: "Contact Turriva",
@@ -414,7 +414,7 @@ const en: LuxuryMessages = {
       formProjectType: "Project type",
       formMessage: "Tell us about your project",
       formSubmit: "Send request",
-      formSuccess: "Thank you — we will contact you within one business day.",
+      formSuccess: "Thank you, we will contact you within one business day.",
       formError: "Something went wrong. Please try again or WhatsApp us.",
       projectTypes: [
         { value: "villa", label: "Private villa" },
@@ -427,9 +427,9 @@ const en: LuxuryMessages = {
     villas: {
       title: "Villas & private residences",
       intro:
-        "A Livspace-grade journey for luxury homes — free 3D visualization, OPPEIN kitchens and wardrobes, and Turriva installation with local warranty.",
+        "A Livspace-grade journey for luxury homes, free 3D visualization, OPPEIN kitchens and wardrobes, and Turriva installation with local warranty.",
       steps: [
-        { title: "3D design session", description: "Upload your plan or book a visit — factory-module layouts in days." },
+        { title: "3D design session", description: "Upload your plan or book a visit, factory-module layouts in days." },
         { title: "Samples & sign-off", description: "Physical finishes and hardware references before we order." },
         { title: "Manufacture & import", description: "Automated OPPEIN production with SASO / SABER clearance." },
         { title: "Install & warranty", description: "Laser-verified install and local after-sales support." },
@@ -440,7 +440,7 @@ const en: LuxuryMessages = {
     projects: {
       title: "Developers & B2B projects",
       intro:
-        "Oppein-grade supply for multi-unit programmes — competitive direct pricing without showroom overhead, shop drawings SLA, and phased logistics.",
+        "Oppein-grade supply for multi-unit programmes, competitive direct pricing without showroom overhead, shop drawings SLA, and phased logistics.",
       highlights: [
         { title: "MOQ & volume pricing", description: "Structured discounts for residential towers, compounds, and hospitality batches." },
         { title: "Shop drawings SLA", description: "Execution drawings aligned to factory modules within agreed timelines." },
@@ -461,14 +461,14 @@ const en: LuxuryMessages = {
     },
     design: {
       title: "Design consultation",
-      intro: "Share your floor plan — our studio team prepares factory-aligned layouts and a sample review session. No online uploads required.",
+      intro: "Share your floor plan, our studio team prepares factory-aligned layouts and a sample review session. No online uploads required.",
     },
     styles: {
       title: "Style directions",
       intro:
-        "Italian, French, and contemporary whole-home palettes — reference boards for veneers, lacquers, stone-look panels, and joinery we can specify and deliver on your plan.",
+        "Italian, French, and contemporary whole-home palettes, reference boards for veneers, lacquers, stone-look panels, and joinery we can specify and deliver on your plan.",
       disclaimer:
-        "Illustrative references for material direction and spatial quality — not a product catalogue. Your project is fully custom to approved drawings.",
+        "Illustrative references for material direction and spatial quality, not a product catalogue. Your project is fully custom to approved drawings.",
       filters: {
         all: "All",
         italian: "Italian",
@@ -482,70 +482,70 @@ const en: LuxuryMessages = {
           id: "italian-polynesia-house",
           category: "italian",
           title: "Italian · warm wood veneer",
-          description: "Whole-home programme — living, dining, and built-ins in natural veneer with soft neutral walls.",
+          description: "Whole-home programme, living, dining, and built-ins in natural veneer with soft neutral walls.",
           materials: "Wood veneer · integrated lighting · stone-look accents",
         },
         {
           id: "italian-polynesia-kitchen",
           category: "italian",
           title: "Italian · island kitchen",
-          description: "Central island layout with wood fronts and concealed storage — suited to open villa plans.",
+          description: "Central island layout with wood fronts and concealed storage, suited to open villa plans.",
           materials: "Wood cabinetry · quartz worktop · premium hardware",
         },
         {
           id: "italian-sylva-house",
           category: "italian",
           title: "Italian · dark wood suite",
-          description: "Rich timber palette across living zones — strong lines with layered ambient light.",
+          description: "Rich timber palette across living zones, strong lines with layered ambient light.",
           materials: "Dark wood veneer · metal trim · feature wall panels",
         },
         {
           id: "italian-sylva-kitchen",
           category: "italian",
           title: "Italian · grey & timber kitchen",
-          description: "Two-tone kitchen combining grey lacquer with dark wood — high contrast for large kitchens.",
+          description: "Two-tone kitchen combining grey lacquer with dark wood, high contrast for large kitchens.",
           materials: "Lacquer · wood veneer · under-cabinet lighting",
         },
         {
           id: "italian-titian",
           category: "italian",
           title: "Italian · gloss accent kitchen",
-          description: "Bold high-gloss fronts with refined hardware — for statement entertaining spaces.",
+          description: "Bold high-gloss fronts with refined hardware, for statement entertaining spaces.",
           materials: "High-gloss lacquer · soft-close systems · island seating",
         },
         {
           id: "french-sicily",
           category: "french",
           title: "French · elegant cream",
-          description: "Soft cream palette with classical proportion — living, dining, and bedroom coordination.",
+          description: "Soft cream palette with classical proportion, living, dining, and bedroom coordination.",
           materials: "Painted fronts · brass details · moulded panels",
         },
         {
           id: "contemporary-tahiti",
           category: "contemporary",
           title: "Contemporary · cream & white oak",
-          description: "Light whole-house scheme — open planning with oak warmth and clean sightlines.",
+          description: "Light whole-house scheme, open planning with oak warmth and clean sightlines.",
           materials: "White oak · matte lacquer · integrated handles",
         },
         {
           id: "contemporary-golden-years",
           category: "contemporary",
           title: "Contemporary · warm white & walnut",
-          description: "Living and dining joinery with walnut feature walls — ideal for family villas.",
+          description: "Living and dining joinery with walnut feature walls, ideal for family villas.",
           materials: "Walnut veneer · warm white lacquer · TV wall system",
         },
         {
           id: "contemporary-seville",
           category: "contemporary",
           title: "Contemporary · walnut & grey",
-          description: "Balanced neutral kitchen with island — light walnut paired with warm grey tones.",
+          description: "Balanced neutral kitchen with island, light walnut paired with warm grey tones.",
           materials: "Walnut · grey lacquer · waterfall edge option",
         },
         {
           id: "minimal-urban-glow",
           category: "minimal",
           title: "Minimal · white & gold accent",
-          description: "Crisp minimalist kitchen with subtle metallic highlights — for urban apartments and penthouses.",
+          description: "Crisp minimalist kitchen with subtle metallic highlights, for urban apartments and penthouses.",
           materials: "Matte white · brushed gold trim · handle-less fronts",
         },
       ],
@@ -571,7 +571,7 @@ const ar: LuxuryMessages = {
     eyebrow: "السعودية · تصميم · توريد OPPEIN · تنفيذ محلي",
     title: "منظومة متكاملة لتصميم وتوريد وتنفيذ المساحات الفاخرة",
     subtitle:
-      "نجمع بين دقة التصميم المعماري ثلاثي الأبعاد، التصنيع الأوتوماتيكي العالمي عبر OPPEIN، والهندسة الميدانية لتوريفا — جهة واحدة مسؤولة من المخطط حتى التسليم للمطورين وأصحاب الفلل.",
+      "نجمع بين دقة التصميم المعماري ثلاثي الأبعاد، التصنيع الأوتوماتيكي العالمي عبر OPPEIN، والهندسة الميدانية لتوريفا، جهة واحدة مسؤولة من المخطط حتى التسليم للمطورين وأصحاب الفلل.",
     servicesLine: "مطابخ · خزائن · تكسيات · فلل · مشاريع",
     tags: ["تصميم 3D", "توريد OPPEIN", "تركيب محلي", "B2B وفلل"],
     ctaPrimary: "احجز استشارة تصميم",
@@ -582,7 +582,7 @@ const ar: LuxuryMessages = {
     eyebrow: "منهجنا",
     title: "تصميم يقرأ أسلوب حياتك… وتنفيذ يحترم اسمك",
     body:
-      "العلامات الرائدة في الديكور تبني الثقة عبر خامات حقيقية ومساحات مقنعة. نطبّق ذلك على المشاريع السكنية والتجارية: خطوط معاصرة، ضيافة راقية، وتفاصيل تناسب المجلس والمعيشة اليومية. استوديو واحد من المفهوم والعينات إلى فرق الموقع والتسليم — مع متابعة شفافة في كل مرحلة.",
+      "العلامات الرائدة في الديكور تبني الثقة عبر خامات حقيقية ومساحات مقنعة. نطبّق ذلك على المشاريع السكنية والتجارية: خطوط معاصرة، ضيافة راقية، وتفاصيل تناسب المجلس والمعيشة اليومية. استوديو واحد من المفهوم والعينات إلى فرق الموقع والتسليم، مع متابعة شفافة في كل مرحلة.",
   },
   stats: {
     items: [
@@ -611,17 +611,17 @@ const ar: LuxuryMessages = {
       {
         title: "فلل وقصور",
         description:
-          "مجلس وضيافة وغرف نوم ومطابخ — طابع خليجي معاصر وخامات تُختار للاستخدام اليومي ومناخ المملكة.",
+          "مجلس وضيافة وغرف نوم ومطابخ، طابع خليجي معاصر وخامات تُختار للاستخدام اليومي ومناخ المملكة.",
       },
       {
         title: "تجزئة وضيافة",
         description:
-          "محلات وصالات عرض ومساحات استقبال الزوار — حضور للعلامة ومتانة أمام الزحام الحقيقي.",
+          "محلات وصالات عرض ومساحات استقبال الزوار، حضور للعلامة ومتانة أمام الزحام الحقيقي.",
       },
       {
         title: "واجهات ومداخل",
         description:
-          "حضور الشارع وتسلسل الدخول للفلل والمباني التجارية — من البوابة إلى الردهة.",
+          "حضور الشارع وتسلسل الدخول للفلل والمباني التجارية، من البوابة إلى الردهة.",
       },
       {
         title: "معارض ومساحات العلامات",
@@ -637,7 +637,7 @@ const ar: LuxuryMessages = {
       {
         title: "التصميم الداخلي والديكور",
         description:
-          "توزيع وخامات وإضاءة وتنسيق للفلل والشقق والقصور والمجالس — من المفهوم الأول إلى التركيب.",
+          "توزيع وخامات وإضاءة وتنسيق للفلل والشقق والقصور والمجالس، من المفهوم الأول إلى التركيب.",
         cta: "التصميم الداخلي",
         href: "/interior-design",
       },
@@ -663,7 +663,7 @@ const ar: LuxuryMessages = {
     items: [
       {
         title: "رؤية معاصرة للمساحات",
-        description: "لغة تصميم عالمية تُكيَّف لتفاصيل الإقامة والضيافة في المملكة — دون قوالب جاهزة.",
+        description: "لغة تصميم عالمية تُكيَّف لتفاصيل الإقامة والضيافة في المملكة، دون قوالب جاهزة.",
       },
       {
         title: "خامات موثوقة",
@@ -671,7 +671,7 @@ const ar: LuxuryMessages = {
       },
       {
         title: "فريق واحد متتابع",
-        description: "مصممون ومسؤولون ميدانيون يتابعون ملف مشروعك — قرارات أوضح وتسليمات أقل.",
+        description: "مصممون ومسؤولون ميدانيون يتابعون ملف مشروعك، قرارات أوضح وتسليمات أقل.",
       },
       {
         title: "التزام حتى التسليم",
@@ -683,7 +683,7 @@ const ar: LuxuryMessages = {
     eyebrow: "معرض الأعمال",
     title: "من اعتماد 3D إلى واقع منفّذ",
     subtitle:
-      "مطابخ وخزائن وتشطيبات معيارية للفلل والمجمعات والضيافة — موثّقة قبل وبعد التسليم.",
+      "مطابخ وخزائن وتشطيبات معيارية للفلل والمجمعات والضيافة، موثّقة قبل وبعد التسليم.",
     cta: "كل الأعمال",
     items: [
       { title: "مطبخ فيلا · تشطيب معياري", category: "سكني · جدة" },
@@ -697,7 +697,7 @@ const ar: LuxuryMessages = {
     steps: [
       {
         title: "نستمع ونفهم",
-        description: "زيارة أو ورشة عمل — أسلوب حياتك، الجدول، وكيف تقيس نجاح المشروع.",
+        description: "زيارة أو ورشة عمل، أسلوب حياتك، الجدول، وكيف تقيس نجاح المشروع.",
       },
       {
         title: "تصميم واعتماد",
@@ -719,13 +719,13 @@ const ar: LuxuryMessages = {
     items: [
       {
         quote:
-          "مطبخ الـ 3D طابق ما وصل — نفس التشطيبات ونفس المقاسات. فريق واحد من الاعتماد حتى التركيب، بلا لوم بين مصمم ومورد ومُركّب.",
+          "مطبخ الـ 3D طابق ما وصل، نفس التشطيبات ونفس المقاسات. فريق واحد من الاعتماد حتى التركيب، بلا لوم بين مصمم ومورد ومُركّب.",
         author: "عميل خاص",
         role: "فيلا · جدة",
       },
       {
         quote:
-          "في دفعة المجمع، المخططات التنفيذية والتسليم المرحلي كانا واضحين. توريفا تولّت الاستيراد وفرق الموقع — نتابع الوحدات لا الأعذار.",
+          "في دفعة المجمع، المخططات التنفيذية والتسليم المرحلي كانا واضحين. توريفا تولّت الاستيراد وفرق الموقع، نتابع الوحدات لا الأعذار.",
         author: "مدير تطوير",
         role: "B2B · الغربية",
       },
@@ -739,7 +739,7 @@ const ar: LuxuryMessages = {
   },
   footer: {
     about:
-      "توريفا — منصة تأثيث متكاملة في السعودية: إظهار معماري 3D، توريد معياري OPPEIN، وهندسة ميدانية من الرفع المساحي حتى الضمان.",
+      "توريفا، منصة تأثيث متكاملة في السعودية: إظهار معماري 3D، توريد معياري OPPEIN، وهندسة ميدانية من الرفع المساحي حتى الضمان.",
     quickLinks: "روابط سريعة",
     importantLinks: "أهم الروابط",
     servicesLinks: "الخدمات",
@@ -756,7 +756,7 @@ const ar: LuxuryMessages = {
     followUs: "تابعنا على:",
     affiliation: "توريفا جزء من",
     affiliationLink: "Graphics House Co",
-    affiliationSuffix: " — الذراع التنفيذي للديكور والمقاولات والتشطيبات الداخلية في المملكة.",
+    affiliationSuffix: "، الذراع التنفيذي للديكور والمقاولات والتشطيبات الداخلية في المملكة.",
     legalNotice: "© 2026 Turriva. All rights reserved | CR: 7054412114 | VAT: 314808998900003",
     privacy: "سياسة الخصوصية",
     terms: "شروط الاستخدام",
@@ -769,7 +769,7 @@ const ar: LuxuryMessages = {
     interiorDesign: {
       title: "التصميم الداخلي والديكور",
       intro:
-        "داخليات معاصرة للفلل والقصور والشقق والمجالس في جدة ومكة — من المفهوم والخامات إلى التركيب مع مصممي وفرق توريفا.",
+        "داخليات معاصرة للفلل والقصور والشقق والمجالس في جدة ومكة، من المفهوم والخامات إلى التركيب مع مصممي وفرق توريفا.",
     },
     construction: {
       title: "التنفيذ في الموقع",
@@ -779,12 +779,12 @@ const ar: LuxuryMessages = {
     ourWork: {
       title: "أعمالنا",
       intro:
-        "نماذج من فلل ومشاريع تجارية نفّذتها توريفا — من التصميم ثلاثي الأبعاد إلى التوريد والتسليم في الموقع.",
+        "نماذج من فلل ومشاريع تجارية نفّذتها توريفا، من التصميم ثلاثي الأبعاد إلى التوريد والتسليم في الموقع.",
     },
     about: {
       title: "عن توريفا",
       intro:
-        "توريفا العلامة الرئيسية لمنظومة تأثيث متكاملة — إظهار 3D، توريد OPPEIN، وتنفيذ ميداني سعودي تحت منصة واحدة.",
+        "توريفا العلامة الرئيسية لمنظومة تأثيث متكاملة، إظهار 3D، توريد OPPEIN، وتنفيذ ميداني سعودي تحت منصة واحدة.",
     },
     contact: {
       title: "تواصل مع توريفا",
@@ -795,7 +795,7 @@ const ar: LuxuryMessages = {
       formProjectType: "نوع المشروع",
       formMessage: "أخبرنا عن مشروعك",
       formSubmit: "إرسال الطلب",
-      formSuccess: "شكراً — سنتواصل خلال يوم عمل.",
+      formSuccess: "شكراً، سنتواصل خلال يوم عمل.",
       formError: "حدث خطأ. جرّب مرة أخرى أو راسلنا على واتساب.",
       projectTypes: [
         { value: "villa", label: "فيلا خاصة" },
@@ -808,9 +808,9 @@ const ar: LuxuryMessages = {
     villas: {
       title: "الفلل والمساكن الخاصة",
       intro:
-        "رحلة تأثيث فاخرة — تصور 3D مجاني، مطابخ وخزائن OPPEIN، وتركيب توريفا بضمان محلي.",
+        "رحلة تأثيث فاخرة، تصور 3D مجاني، مطابخ وخزائن OPPEIN، وتركيب توريفا بضمان محلي.",
       steps: [
-        { title: "جلسة تصميم 3D", description: "ارفع مخططك أو احجز زيارة — تخطيطات بمقاسات المصنع." },
+        { title: "جلسة تصميم 3D", description: "ارفع مخططك أو احجز زيارة، تخطيطات بمقاسات المصنع." },
         { title: "عينات واعتماد", description: "تشطيبات ومفصلات فيزيائية قبل أمر التصنيع." },
         { title: "تصنيع واستيراد", description: "إنتاج OPPEIN أوتوماتيكي مع SASO / SABER." },
         { title: "تركيب وضمان", description: "تركيب بالليزر ودعم ما بعد البيع محلياً." },
@@ -821,7 +821,7 @@ const ar: LuxuryMessages = {
     projects: {
       title: "المطورون ومشاريع B2B",
       intro:
-        "توريد بمواصفات Oppein للمشاريع متعددة الوحدات — أسعار مباشرة دون أعباء معارض، SLA للمخططات، ولوجستيات مرحلية.",
+        "توريد بمواصفات Oppein للمشاريع متعددة الوحدات، أسعار مباشرة دون أعباء معارض، SLA للمخططات، ولوجستيات مرحلية.",
       highlights: [
         { title: "تسعير MOQ", description: "خصومات هيكلية للأبراج والمجمعات والضيافة." },
         { title: "SLA للمخططات", description: "مخططات تنفيذ متوافقة مع وحدات المصنع." },
@@ -842,14 +842,14 @@ const ar: LuxuryMessages = {
     },
     design: {
       title: "استشارة تصميم",
-      intro: "شاركنا مخططك — فريق الاستوديو يُعد تخطيطات متوافقة مع المصنع وجلسة مراجعة للعينات. بدون رفع صور أونلاين.",
+      intro: "شاركنا مخططك، فريق الاستوديو يُعد تخطيطات متوافقة مع المصنع وجلسة مراجعة للعينات. بدون رفع صور أونلاين.",
     },
     styles: {
       title: "اتجاهات الأنماط",
       intro:
-        "لوحات إيطالية وفرنسية ومعاصرة للمنزل الكامل — مراجع للقشور والlacquer وتكسيات بديل الرخام والنجارة التي نحدّدها وننفّذها على مخططك.",
+        "لوحات إيطالية وفرنسية ومعاصرة للمنزل الكامل، مراجع للقشور والlacquer وتكسيات بديل الرخام والنجارة التي نحدّدها وننفّذها على مخططك.",
       disclaimer:
-        "مراجع توضيحية لجودة الخامات والمساحة — وليست كتالوج منتجات. مشروعك مخصص بالكامل وفق المخططات المعتمدة.",
+        "مراجع توضيحية لجودة الخامات والمساحة، وليست كتالوج منتجات. مشروعك مخصص بالكامل وفق المخططات المعتمدة.",
       filters: {
         all: "الكل",
         italian: "إيطالي",
@@ -863,70 +863,70 @@ const ar: LuxuryMessages = {
           id: "italian-polynesia-house",
           category: "italian",
           title: "إيطالي · قشرة خشب دافئة",
-          description: "برنامج منزل كامل — معيشة وطعام ونجارة مدمجة بقشرة طبيعية وجدران محايدة.",
+          description: "برنامج منزل كامل، معيشة وطعام ونجارة مدمجة بقشرة طبيعية وجدران محايدة.",
           materials: "قشرة خشب · إضاءة مدمجة · لمسات بديل رخام",
         },
         {
           id: "italian-polynesia-kitchen",
           category: "italian",
           title: "إيطالي · مطبخ جزيرة",
-          description: "تخطيط جزيرة مركزية بواجهات خشبية وتخزين مخفي — يناسب الفلل المفتوحة.",
+          description: "تخطيط جزيرة مركزية بواجهات خشبية وتخزين مخفي، يناسب الفلل المفتوحة.",
           materials: "خزائن خشب · كونترتوب · مفصلات فاخرة",
         },
         {
           id: "italian-sylva-house",
           category: "italian",
           title: "إيطالي · خشب داكن",
-          description: "لوحة خشبية غنية في zones المعيشة — خطوط قوية مع إضاءة محيطية متعددة الطبقات.",
+          description: "لوحة خشبية غنية في zones المعيشة، خطوط قوية مع إضاءة محيطية متعددة الطبقات.",
           materials: "قشرة خشب داكن · حواف معدنية · تكسيات جدار",
         },
         {
           id: "italian-sylva-kitchen",
           category: "italian",
           title: "إيطالي · مطبخ رمادي وخشب",
-          description: "مطبخ ثنائي اللون يجمع lacquer رمادي مع خشب داكن — تباين عالٍ للمطابخ الكبيرة.",
+          description: "مطبخ ثنائي اللون يجمع lacquer رمادي مع خشب داكن، تباين عالٍ للمطابخ الكبيرة.",
           materials: "Lacquer · قشرة خشب · إضاءة تحت الخزائن",
         },
         {
           id: "italian-titian",
           category: "italian",
           title: "إيطالي · لمعان جريء",
-          description: "واجهات lacquer لامعة مع مفصلات ر refined — لمساحات استقبال مميزة.",
+          description: "واجهات lacquer لامعة مع مفصلات ر refined، لمساحات استقبال مميزة.",
           materials: "Lacquer لامع · soft-close · جلسة جزيرة",
         },
         {
           id: "french-sicily",
           category: "french",
           title: "فرنسي · كريم أنيق",
-          description: "لوحة كريمية ناعمة بنسب كلاسيكية — تنسيق معيشة وطعام وغرف نوم.",
+          description: "لوحة كريمية ناعمة بنسب كلاسيكية، تنسيق معيشة وطعام وغرف نوم.",
           materials: "واجهات مطلية · تفاصيل نحاس · ألواح زخرفية",
         },
         {
           id: "contemporary-tahiti",
           category: "contemporary",
           title: "معاصر · كريم وبلوط أبيض",
-          description: "مخطط منزل فاتح — فتحات واسعة مع دفء البلوط وخطوط نظيفة.",
+          description: "مخطط منزل فاتح، فتحات واسعة مع دفء البلوط وخطوط نظيفة.",
           materials: "بلوط أبيض · lacquer مطفي · مقابض مدمجة",
         },
         {
           id: "contemporary-golden-years",
           category: "contemporary",
           title: "معاصر · أبيض دافئ وجوز",
-          description: "نجارة معيشة وطعام مع جدران جوز — مناسب للفلل العائلية.",
+          description: "نجارة معيشة وطعام مع جدران جوز، مناسب للفلل العائلية.",
           materials: "قشرة جوز · lacquer أبيض دافئ · جدار تلفزيون",
         },
         {
           id: "contemporary-seville",
           category: "contemporary",
           title: "معاصر · جوز ورمادي",
-          description: "مطبخ محايد متوازن مع جزيرة — جوز فاتح مع رمادي دافئ.",
+          description: "مطبخ محايد متوازن مع جزيرة، جوز فاتح مع رمادي دافئ.",
           materials: "جوز · lacquer رمادي · حافة waterfall اختيارية",
         },
         {
           id: "minimal-urban-glow",
           category: "minimal",
           title: "Minimal · أبيض ولمسة ذهب",
-          description: "مطبخ minimal نظيف مع لمسات معدنية خفيفة — للشقق والpenthouse الحضرية.",
+          description: "مطبخ minimal نظيف مع لمسات معدنية خفيفة، للشقق والpenthouse الحضرية.",
           materials: "أبيض مطفي · حواف ذهبية · واجهات بدون مقابض",
         },
       ],
@@ -938,7 +938,7 @@ export function getLuxuryMessages(locale: Locale): LuxuryMessages {
   return locale === "ar" ? ar : en;
 }
 
-/** Gulf-leaning interiors & architecture — Unsplash (replace with Turriva project photos). */
+/** Gulf-leaning interiors & architecture, Unsplash (replace with Turriva project photos). */
 const IMG_Q = "auto=format&fit=crop&q=90";
 export const LUXURY_IMAGES = {
   hero: "/brand/luxury/hero-villa.jpg",
@@ -952,7 +952,7 @@ export const LUXURY_IMAGES = {
   cap2: "/brand/turriva/hero-turriva.png",
   cap3: `https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?${IMG_Q}&w=900`,
   cap4: `https://images.unsplash.com/photo-1600047509358-9dc75507daeb?${IMG_Q}&w=900`,
-  /** Portfolio gallery — cropped local assets (no third-party watermark) */
+  /** Portfolio gallery, cropped local assets (no third-party watermark) */
   project1: "/brand/turriva/projects/project-kitchen-jeddah.webp",
   project2: "/brand/turriva/projects/project-walk-in-makkah.webp",
   project3: "/brand/turriva/projects/project-joinery-b2b.webp",

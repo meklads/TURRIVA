@@ -3,7 +3,7 @@ import { CLAUSE_PACKS } from "@/shared/constants/clause-pack-seed";
 
 let seedPromise: Promise<void> | null = null;
 
-/** Idempotent — creates any missing clause packs (fit_out_v1, etc.). */
+/** Idempotent, creates any missing clause packs (fit_out_v1, etc.). */
 export async function ensureClausePacksSeeded(): Promise<void> {
   const existing = await db.clausePack.findMany({ select: { slug: true } });
   const have = new Set(existing.map((p) => p.slug));
@@ -56,7 +56,7 @@ async function runClausePackSeed(): Promise<void> {
     });
 
     console.log(
-      `[clause-pack-seed] ✓ ${pack.slug} — ${pack.clauses.length} clauses`
+      `[clause-pack-seed] ✓ ${pack.slug}, ${pack.clauses.length} clauses`
     );
   }
 }
