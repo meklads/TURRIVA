@@ -84,6 +84,25 @@ export type LuxuryMessages = LuxuryPlatformMessages & {
     subtitle: string;
     button: string;
   };
+  quoteForm: {
+    title: string;
+    subtitle: string;
+    formName: string;
+    formEmail: string;
+    formPhone: string;
+    formCity: string;
+    formCountry: string;
+    formProducts: string;
+    formQuantity: string;
+    formFile: string;
+    formFileHint: string;
+    formMessage: string;
+    formSubmit: string;
+    formSuccess: string;
+    formError: string;
+    products: readonly { value: string; label: string }[];
+    countries: readonly { value: string; label: string }[];
+  };
   footer: {
     about: string;
     quickLinks: string;
@@ -366,6 +385,42 @@ const en: LuxuryMessages = {
     subtitle:
       "Request a sample kit, book a 3D session, or send your B2B floor plan. We respond within one business day.",
     button: "Talk to Turriva",
+  },
+  quoteForm: {
+    title: "Get a free quote",
+    subtitle:
+      "Send your project details and floor plan. We will contact you within 24 hours.",
+    formName: "Name",
+    formEmail: "Email",
+    formPhone: "Phone / WhatsApp",
+    formCity: "City",
+    formCountry: "Country",
+    formProducts: "Products required",
+    formQuantity: "Quantity / area",
+    formFile: "Upload file",
+    formFileHint: "Floor plans, PDFs, or images (optional)",
+    formMessage:
+      "Message: Is this for a commercial project or a home? Please share project details or floor plans.",
+    formSubmit: "Submit",
+    formSuccess: "Thank you. We will contact you within 24 hours.",
+    formError: "Something went wrong. Please try again or WhatsApp us.",
+    products: [
+      { value: "whole-home", label: "Whole-home fit-out" },
+      { value: "kitchens", label: "Modular kitchens" },
+      { value: "wardrobes", label: "Wardrobes & walk-ins" },
+      { value: "bathroom", label: "Bathroom joinery" },
+      { value: "wall-panels", label: "Wall panels & doors" },
+      { value: "b2b", label: "Developer / B2B programme" },
+      { value: "other", label: "Other" },
+    ],
+    countries: [
+      { value: "sa", label: "Saudi Arabia" },
+      { value: "ae", label: "United Arab Emirates" },
+      { value: "om", label: "Oman" },
+      { value: "bh", label: "Bahrain" },
+      { value: "eg", label: "Egypt" },
+      { value: "other", label: "Other" },
+    ],
   },
   footer: {
     about:
@@ -760,6 +815,42 @@ const ar: LuxuryMessages = {
     subtitle:
       "اطلب حقيبة العينات، احجز جلسة 3D، أو أرسل مخطط مشروع B2B. نرد خلال يوم عمل.",
     button: "تواصل مع توريفا",
+  },
+  quoteForm: {
+    title: "احصل على عرض سعر مجاني",
+    subtitle:
+      "أرسل تفاصيل مشروعك ومخطط الطابق. سنتواصل معك خلال 24 ساعة.",
+    formName: "الاسم",
+    formEmail: "البريد الإلكتروني",
+    formPhone: "هاتف / واتساب",
+    formCity: "المدينة",
+    formCountry: "الدولة",
+    formProducts: "المنتج المطلوب",
+    formQuantity: "الكمية / المساحة",
+    formFile: "تحميل الملف",
+    formFileHint: "مخططات أو PDF أو صور (اختياري)",
+    formMessage:
+      "رسالة: هل المشروع تجاري أم سكني؟ يرجى تزويدنا بتفاصيل المشروع أو مخططات الطابق.",
+    formSubmit: "إرسال",
+    formSuccess: "شكراً. سنتواصل معك خلال 24 ساعة.",
+    formError: "حدث خطأ. جرّب مرة أخرى أو راسلنا على واتساب.",
+    products: [
+      { value: "whole-home", label: "حلول منزلية متكاملة" },
+      { value: "kitchens", label: "خزائن المطبخ" },
+      { value: "wardrobes", label: "خزائن الملابس" },
+      { value: "bathroom", label: "خزائن الحمام" },
+      { value: "wall-panels", label: "تكسيات وأبواب داخلية" },
+      { value: "b2b", label: "مطور / مشروع B2B" },
+      { value: "other", label: "أخرى" },
+    ],
+    countries: [
+      { value: "sa", label: "السعودية" },
+      { value: "ae", label: "الإمارات" },
+      { value: "om", label: "عُمان" },
+      { value: "bh", label: "البحرين" },
+      { value: "eg", label: "مصر" },
+      { value: "other", label: "أخرى" },
+    ],
   },
   footer: {
     about:

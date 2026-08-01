@@ -1,10 +1,13 @@
-import Image from "next/image";
-import Link from "next/link";
-import { getLuxuryMessages, LUXURY_IMAGES } from "@/shared/i18n/messages/luxury";
+import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import type { Locale } from "@/shared/i18n/locale";
-import { LuxuryLeadForm } from "./luxury-lead-form";
+import { LuxuryQuoteSection } from "./luxury-quote-section";
 
 type PageKey = "interiorDesign" | "construction" | "ourWork" | "about" | "contact";
+
+const QUOTE_PAGES: Partial<Record<PageKey, string>> = {
+  contact: "marketing_contact",
+  ourWork: "marketing_our_work",
+};
 
 export function LuxuryInnerPage({
   locale,
@@ -15,6 +18,7 @@ export function LuxuryInnerPage({
 }) {
   const t = getLuxuryMessages(locale);
   const content = t.pages[page];
+  const quoteSource = QUOTE_PAGES[page];
 
   return (
     <section className="lux-section lux-section--cream lux-inner-page">
@@ -25,30 +29,9 @@ export function LuxuryInnerPage({
         <p className="lux-body mx-auto mt-6">{content.intro}</p>
       </div>
 
-      {page === "contact" ? (
-        <div className="lux-container mt-10 max-w-6xl sm:mt-12 lux-editorial-split lux-editorial-split--reverse lux-contact-split">
-          <div className="lux-editorial-media lux-editorial-media--tall lux-contact-media">
-            <Image
-              src={LUXURY_IMAGES.contact}
-              alt=""
-              fill
-              className="object-contain object-center sm:object-cover sm:object-center"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              quality={92}
-              priority
-            />
-          </div>
-          <div className="lux-editorial-copy lux-editorial-copy--panel text-start">
-            <LuxuryLeadForm messages={t} locale={locale} source="marketing_contact" />
-          </div>
-        </div>
-      ) : (
-        <div className="lux-container max-w-3xl text-center">
-          <Link href="/contact" className="lux-btn-primary mt-10 inline-flex">
-            {t.cta.button}
-          </Link>
-        </div>
-      )}
+      {quoteSource ? (
+        <LuxuryQuoteSection messages={t} locale={locale} source={quoteSource} />
+      ) : null}
     </section>
   );
 }

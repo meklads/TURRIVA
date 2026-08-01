@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { luxuryPageMetadata } from "@/modules/luxury/lib/metadata";
+import { LuxuryQuoteSection } from "@/modules/luxury/components/luxury-quote-section";
 import {
   getLuxuryMessages,
   LUXURY_IMAGES,
@@ -50,11 +50,7 @@ export default async function OurWorkPage() {
           </div>
         ))}
       </div>
-      <div className="lux-container mt-12 text-center">
-        <Link href="/contact" className="lux-btn-primary">
-          {t.cta.button}
-        </Link>
-      </div>
+      <LuxuryQuoteSection messages={t} locale={locale} source="marketing_our_work" />
     </section>
   );
 }

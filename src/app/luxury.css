@@ -3357,3 +3357,256 @@
   right: 0.75rem;
 }
 
+/* Quote form — Oppein-style lead capture */
+.lux-quote-section {
+  display: grid;
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--lux-sand) 85%, transparent);
+  border-radius: 0.25rem;
+  background: #ffffff;
+  box-shadow: 0 16px 48px color-mix(in srgb, var(--lux-ink) 6%, transparent);
+}
+
+.lux-quote-section__media {
+  position: relative;
+  min-height: 14rem;
+  background: var(--lux-stone);
+}
+
+.lux-quote-section__media img {
+  display: block;
+}
+
+.lux-quote-section__panel {
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: var(--lux-cream);
+}
+
+@media (min-width: 900px) {
+  .lux-quote-section {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  }
+
+  .lux-quote-section__media {
+    min-height: 100%;
+    min-height: 36rem;
+  }
+
+  .lux-quote-section__panel {
+    padding: clamp(2rem, 3.5vw, 2.75rem);
+  }
+}
+
+.lux-quote-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.lux-quote-form__head {
+  margin-bottom: 0.35rem;
+}
+
+.lux-quote-form__title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0;
+  font-family: var(--font-inter), var(--font-latin), system-ui, sans-serif;
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-weight: 600;
+  color: var(--lux-ink);
+}
+
+[dir="rtl"] .lux-quote-form__title {
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
+  font-weight: 700;
+}
+
+.lux-quote-form__title-accent {
+  display: inline-block;
+  width: 3px;
+  height: 1.35em;
+  flex-shrink: 0;
+  background: var(--lux-gold);
+  border-radius: 1px;
+}
+
+.lux-quote-form__subtitle {
+  margin: 0.65rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--lux-ink-muted);
+}
+
+[dir="rtl"] .lux-quote-form__subtitle {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+}
+
+.lux-quote-form__row {
+  display: grid;
+  gap: 0.85rem;
+}
+
+@media (min-width: 640px) {
+  .lux-quote-form__row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.lux-quote-form__input {
+  width: 100%;
+  border: 1px solid color-mix(in srgb, var(--lux-sand) 90%, transparent);
+  border-radius: 0.125rem;
+  background: #ffffff;
+  padding: 0.8rem 0.95rem;
+  font-size: 0.875rem;
+  color: var(--lux-ink);
+}
+
+.lux-quote-form__input::placeholder {
+  color: var(--lux-ink-muted);
+}
+
+.lux-quote-form__input:focus {
+  border-color: var(--lux-gold);
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--lux-gold) 15%, transparent);
+}
+
+.lux-quote-form__input--full {
+  grid-column: 1 / -1;
+}
+
+.lux-quote-form__select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--lux-ink-muted) 50%),
+    linear-gradient(135deg, var(--lux-ink-muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 1.1rem) calc(50% - 2px),
+    calc(100% - 0.85rem) calc(50% - 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-inline-end: 2rem;
+}
+
+[dir="rtl"] .lux-quote-form__select {
+  background-position:
+    0.85rem calc(50% - 2px),
+    1.1rem calc(50% - 2px);
+  padding-inline-start: 2rem;
+  padding-inline-end: 0.95rem;
+}
+
+.lux-quote-form__textarea {
+  min-height: 6.5rem;
+  resize: vertical;
+}
+
+.lux-quote-form__legend {
+  margin-bottom: 0.55rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--lux-ink-soft);
+}
+
+.lux-quote-form__checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1rem;
+}
+
+.lux-quote-form__check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  color: var(--lux-ink-soft);
+  cursor: pointer;
+}
+
+[dir="rtl"] .lux-quote-form__check {
+  font-size: 0.875rem;
+}
+
+.lux-quote-form__check input {
+  accent-color: var(--lux-gold);
+}
+
+.lux-quote-form__file {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  justify-content: center;
+  min-height: 2.85rem;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid color-mix(in srgb, var(--lux-sand) 90%, transparent);
+  border-radius: 0.125rem;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.lux-quote-form__file-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--lux-ink-muted);
+}
+
+.lux-quote-form__file-input {
+  display: none;
+}
+
+.lux-quote-form__file-name {
+  font-size: 0.75rem;
+  color: var(--lux-ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lux-quote-form__submit {
+  align-self: center;
+  margin-top: 0.35rem;
+  min-width: 10rem;
+  border: none;
+  border-radius: 0.125rem;
+  background: var(--lux-ink);
+  padding: 0.85rem 2.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+[dir="rtl"] .lux-quote-form__submit {
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
+  font-size: 0.9375rem;
+}
+
+.lux-quote-form__submit:hover:not(:disabled) {
+  background: var(--lux-charcoal);
+}
+
+.lux-quote-form__submit:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.lux-quote-form__success {
+  margin: 0;
+  border-radius: 0.25rem;
+  background: color-mix(in srgb, var(--lux-gold-muted) 55%, white);
+  padding: 1rem 1.15rem;
+  font-size: 0.9375rem;
+  color: var(--lux-ink);
+}
+
+.lux-quote-form__error {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #b42318;
+}
+
