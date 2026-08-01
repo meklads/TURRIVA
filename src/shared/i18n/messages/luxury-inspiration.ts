@@ -12,6 +12,6 @@ export const LUXURY_INSPIRATION_IMAGES: Record<string, string> = {
   bedroom: `https://images.unsplash.com/photo-1616594039964-ae9021a400a0?${IMG_Q}&w=1800`,
   /** Oppein — bathroom vanity programme */
   bathroom: `${OPPEIN}/bathroom-cabinets.webp`,
-  /** Oppein global project — hospitality joinery */
-  hospitality: `${OPPEIN}/case4.webp`,
+  /** Luxury F&B interior — lobbies & restaurant joinery reference */
+  hospitality: `https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?${IMG_Q}&w=1800`,
 };
