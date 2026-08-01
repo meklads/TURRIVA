@@ -16,6 +16,7 @@ import { LuxuryProductGrid } from "./luxury-product-grid";
 import { LuxurySampleKitBand } from "./luxury-sample-kit-band";
 import { LuxuryTrustBar } from "./luxury-trust-bar";
 import { LuxuryTrustStats } from "./luxury-trust-stats";
+import { LuxuryValueOffersSection } from "./luxury-value-offers-section";
 import { LuxuryWaysOfLivingSection } from "./luxury-ways-of-living-section";
 
 type Props = {
@@ -71,6 +72,7 @@ export function LuxuryHomePage({ locale }: Props) {
       <LuxuryWaysOfLivingSection messages={t} />
       <LuxuryProductGrid messages={t} locale={locale} />
       <LuxuryBeforeAfterSection messages={t} />
+      <LuxuryValueOffersSection messages={t} />
       <LuxuryTrustStats messages={t} />
       <LuxuryPartnersStrip messages={t} />
 

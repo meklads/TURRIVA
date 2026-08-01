@@ -82,6 +82,18 @@ export type LuxuryPlatformMessages = {
     subtitle: string;
     button: string;
   };
+  valueOffers: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    items: readonly {
+      icon: "warranty" | "quality" | "design" | "service";
+      title: string;
+      points: readonly string[];
+    }[];
+    cta: string;
+    ctaHref: string;
+  };
 };
 
 const en: LuxuryPlatformMessages = {
@@ -315,6 +327,48 @@ const en: LuxuryPlatformMessages = {
       "We send finishes, hinges, and board samples to your site, alongside a factory-aligned 3D review of your plans.",
     button: "Request sample kit",
   },
+  valueOffers: {
+    eyebrow: "The Turriva promise",
+    title: "What Turriva delivers for your project",
+    subtitle:
+      "An integrated fit-out platform that combines architectural design, global manufacturing, and Saudi field execution. A clear path from approved drawings to handover, not theoretical promises.",
+    items: [
+      {
+        icon: "warranty",
+        title: "Trusted warranty",
+        points: [
+          "Local warranty on products and installation with spare-parts support.",
+          "After-sales follow-through and dedicated snagging before sign-off.",
+        ],
+      },
+      {
+        icon: "quality",
+        title: "Built to global standards",
+        points: [
+          "Automated OPPEIN production at 0.1 mm precision on every module.",
+          "E0 boards plus Blum and Hettich hardware specified for daily use.",
+        ],
+      },
+      {
+        icon: "design",
+        title: "Design aligned to reality",
+        points: [
+          "High-fidelity 3D and VR using factory-approved engineering blocks.",
+          "Full customization to your floor plan before anything is cut.",
+        ],
+      },
+      {
+        icon: "service",
+        title: "One team, end to end",
+        points: [
+          "Laser survey, import compliance, and installation under one platform.",
+          "Phased logistics for villas, compounds, and developer programmes.",
+        ],
+      },
+    ],
+    cta: "Request a free quote",
+    ctaHref: "/contact?intent=quote",
+  },
 };
 
 const ar: LuxuryPlatformMessages = {
@@ -547,6 +601,48 @@ const ar: LuxuryPlatformMessages = {
     subtitle:
       "نرسل التشطيبات والمفصلات والألواح إلى موقعك، مع مراجعة 3D متوافقة مع مقاسات المصنع.",
     button: "اطلب حقيبة العينات",
+  },
+  valueOffers: {
+    eyebrow: "وعد توريفا",
+    title: "ما الذي يقدمه لك توريفا",
+    subtitle:
+      "منصة تأثيث متكاملة تجمع التصميم المعماري، التصنيع العالمي، والتنفيذ الميداني في المملكة. مسار واضح من المخطط المعتمد إلى التسليم، لا وعود نظرية.",
+    items: [
+      {
+        icon: "warranty",
+        title: "ضمان موثوق",
+        points: [
+          "ضمان محلي على المنتج والتركيب مع توفير قطع الغيار.",
+          "متابعة ما بعد التسليم وإغلاق ملاحظات قبل الاستلام.",
+        ],
+      },
+      {
+        icon: "quality",
+        title: "جودة فائقة",
+        points: [
+          "إنتاج أوتوماتيكي بدقة 0.1 مم عبر OPPEIN في كل وحدة.",
+          "ألواح E0 ومفصلات Blum وHettich لاستخدام يومي متين.",
+        ],
+      },
+      {
+        icon: "design",
+        title: "تصميم منتقى بعناية",
+        points: [
+          "إظهار 3D وVR ببلوكات هندسية معتمدة للمصنع.",
+          "تخصيص كامل حسب مخططك قبل أي عملية قطع.",
+        ],
+      },
+      {
+        icon: "service",
+        title: "خدمة شاملة",
+        points: [
+          "جهة واحدة من الرفع المساحي حتى التركيب والتسليم.",
+          "امتثال SASO/SABER ولوجستيات مرحلية للفلل والمشاريع.",
+        ],
+      },
+    ],
+    cta: "احصل على عرض سعر مجاني",
+    ctaHref: "/contact?intent=quote",
   },
 };
 

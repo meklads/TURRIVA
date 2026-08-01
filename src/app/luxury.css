@@ -2372,6 +2372,128 @@
   box-shadow: 0 12px 28px color-mix(in srgb, var(--lux-gold) 12%, transparent);
 }
 
+/* Value offers — Oppein-style benefit grid */
+.lux-value-offers {
+  background: #ffffff;
+}
+
+.lux-value-offers__grid {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: clamp(2.75rem, 5vw, 3.75rem);
+}
+
+@media (min-width: 640px) {
+  .lux-value-offers__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lux-value-offers__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.35rem;
+  }
+}
+
+.lux-value-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 2rem 1.35rem 1.85rem;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid color-mix(in srgb, var(--lux-sand) 72%, transparent);
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--lux-ink) 4%, transparent);
+  transition:
+    border-color 0.28s ease,
+    box-shadow 0.28s ease,
+    transform 0.28s ease;
+}
+
+.lux-value-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--lux-gold) 38%, var(--lux-sand));
+  box-shadow: 0 16px 40px color-mix(in srgb, var(--lux-gold) 10%, transparent);
+}
+
+.lux-value-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-bottom: 1.15rem;
+  color: var(--lux-gold);
+}
+
+.lux-value-card__icon svg {
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.lux-value-card__title {
+  margin: 0;
+  font-family: var(--font-inter), var(--font-latin), system-ui, sans-serif;
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--lux-gold);
+}
+
+[dir="rtl"] .lux-value-card__title {
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
+}
+
+.lux-value-card__points {
+  margin: 1.1rem 0 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  text-align: start;
+}
+
+[dir="rtl"] .lux-value-card__points {
+  text-align: start;
+}
+
+.lux-value-card__points li {
+  position: relative;
+  padding-inline-start: 1rem;
+  font-size: 0.8125rem;
+  line-height: 1.75;
+  color: var(--lux-ink-soft);
+}
+
+.lux-value-card__points li + li {
+  margin-top: 0.65rem;
+}
+
+.lux-value-card__points li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.62em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--lux-gold);
+  opacity: 0.85;
+}
+
+[dir="rtl"] .lux-value-card__points li {
+  font-size: 0.875rem;
+  line-height: 1.85;
+}
+
+.lux-value-offers__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(2.5rem, 4.5vw, 3.25rem);
+}
+
 .lux-partners-strip {
   padding-block: 1rem;
   background: var(--lux-charcoal);
