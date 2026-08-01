@@ -40,7 +40,8 @@ export function LuxuryLeadForm({
         body: JSON.stringify({
           name,
           phone: phone || email,
-          message: [`Email: ${email}`, `Type: ${projectType}`, message].filter(Boolean).join("\n"),
+          email: email || undefined,
+          message: [`Type: ${projectType}`, message].filter(Boolean).join("\n"),
           locale,
           source,
           interest: projectType === "developer" ? "bespoke" : "execution",

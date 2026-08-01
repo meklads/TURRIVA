@@ -4,6 +4,7 @@ import { getSession } from "@/modules/auth/server/session";
 import { isDesignCity } from "@/modules/design/lib/city";
 import { isConsultationInterest } from "@/modules/design/lib/consultation-interest";
 import { db } from "@/shared/lib/db";
+import { sendLeadNotification } from "@/shared/lib/email/send-lead-notification";
 import { logServerError } from "@/shared/lib/usage-events";
 
 export const dynamic = "force-dynamic";
@@ -11,12 +12,13 @@ export const dynamic = "force-dynamic";
 const bodySchema = z.object({
   name: z.string().min(2).max(120),
   phone: z.string().min(8).max(20),
-  message: z.string().max(2000).optional(),
+  email: z.string().email().max(200).optional(),
+  message: z.string().max(4000).optional(),
   locale: z.enum(["ar", "en"]).optional(),
   city: z.enum(["jeddah", "makkah", "other"]).optional(),
   interest: z.enum(["execution", "bespoke", "both"]).optional(),
   source: z.string().max(64).optional(),
-  projectType: z.string().max(64).optional(),
+  projectType: z.string().max(256).optional(),
   generationId: z.string().cuid().optional(),
 });
 
@@ -29,7 +31,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid input" }, { status: 400 });
     }
 
-    const { name, phone, message, locale, city, interest, generationId, source, projectType } =
+    const { name, phone, email, message, locale, city, interest, generationId, source, projectType } =
       parsed.data;
 
     if (city && !isDesignCity(city)) {
@@ -53,6 +55,18 @@ export async function POST(req: NextRequest) {
         projectType: projectType ?? null,
       },
     });
+
+    void sendLeadNotification({
+      name,
+      phone,
+      email,
+      message,
+      locale,
+      city,
+      interest,
+      source,
+      projectType,
+    }).catch((err) => logServerError("lead notification email", err));
 
     return NextResponse.json({ success: true });
   } catch (error) {

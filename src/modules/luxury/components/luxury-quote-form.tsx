@@ -60,6 +60,7 @@ export function LuxuryQuoteForm({ messages, locale, source = "marketing_quote" }
         body: JSON.stringify({
           name,
           phone: phone || email,
+          email,
           message: payloadMessage,
           locale,
           source,
