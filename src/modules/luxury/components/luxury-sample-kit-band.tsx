@@ -14,7 +14,7 @@ export function LuxurySampleKitBand({ messages }: { messages: LuxuryMessages }) 
               src={LUXURY_IMAGES.sampleKit}
               alt=""
               fill
-              className="object-cover object-center"
+              className="object-cover object-[center_30%]"
               sizes="(max-width: 900px) 100vw, 52vw"
             />
           </div>
