@@ -1883,6 +1883,35 @@
   color: var(--lux-gold);
 }
 
+.lux-offer-card__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+  min-height: 4.5rem;
+  margin-bottom: 0.15rem;
+}
+
+.lux-offer-card__logo-img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.lux-offer-card__logo--gh .lux-offer-card__logo-img {
+  max-height: 4.25rem;
+}
+
+.lux-offer-card__logo--oppein .lux-offer-card__logo-img {
+  max-height: 2rem;
+}
+
+.lux-offer-card__logo--turriva .lux-offer-card__logo-img {
+  max-height: 2.35rem;
+}
+
 .lux-offer-card__icon svg {
   width: 2.75rem;
   height: 2.75rem;

@@ -10,7 +10,7 @@ export type LuxuryPlatformMessages = {
     title: string;
     subtitle: string;
     pillars: readonly {
-      icon: string;
+      brand: "graphicsHouse" | "oppein" | "turriva";
       badge: string;
       title: string;
       points: readonly string[];
@@ -97,8 +97,8 @@ const en: LuxuryPlatformMessages = {
       "Architectural design depth, automated global manufacturing, and Saudi field engineering — one integrated platform that solves contractor fragmentation, design-reality gaps, and weak warranty.",
     pillars: [
       {
-        icon: "design",
-        badge: "Design & visualization · Graphics House heritage",
+        brand: "graphicsHouse",
+        badge: "Design & visualization studio",
         title: "3D design with 100% site alignment",
         points: [
           "Plans become high-fidelity 3D and VR models using factory-approved engineering blocks.",
@@ -106,8 +106,8 @@ const en: LuxuryPlatformMessages = {
         ],
       },
       {
-        icon: "factory",
-        badge: "Manufacturing & technology · Powered by OPPEIN",
+        brand: "oppein",
+        badge: "Global manufacturing · Powered by OPPEIN",
         title: "Automated quality & German production tech",
         points: [
           "World-scale automated lines with German HOMAG cutting at 0.1 mm precision.",
@@ -115,8 +115,8 @@ const en: LuxuryPlatformMessages = {
         ],
       },
       {
-        icon: "build",
-        badge: "Engineering & execution · Turriva on the ground",
+        brand: "turriva",
+        badge: "Local engineering & field execution",
         title: "Laser survey, supply, and full local warranty",
         points: [
           "End-to-end field management: laser as-built surveys, customs clearance, SASO/SABER compliance.",
@@ -329,8 +329,8 @@ const ar: LuxuryPlatformMessages = {
       "نجمع بين إبداع التصميم المعماري، دقة التصنيع الأوتوماتيكي العالمي، والاحترافية الهندسية في التنفيذ الميداني داخل المملكة — لحل تشتت المقاولين، وفجوة التصميم عن الواقع، وضعف الضمان.",
     pillars: [
       {
-        icon: "design",
-        badge: "استوديو التصميم والإظهار · Graphics House",
+        brand: "graphicsHouse",
+        badge: "استوديو التصميم والإظهار",
         title: "تصميم ثلاثي الأبعاد بمطابقة واقعية 100%",
         points: [
           "تحويل المخططات إلى مجسمات 3D و VR بدقة فائقة باستخدام البلوكات الهندسية المعتمدة للمصنع.",
@@ -338,8 +338,8 @@ const ar: LuxuryPlatformMessages = {
         ],
       },
       {
-        icon: "factory",
-        badge: "التصنيع والتقنية العالمية · Powered by OPPEIN",
+        brand: "oppein",
+        badge: "التصنيع العالمي · Powered by OPPEIN",
         title: "جودة أوتوماتيكية وتقنيات إنتاج ألمانية",
         points: [
           "تصنيع في أضخم خطوط إنتاج أوتوماتيكية عالمياً باستخدام ماكينات HOMAG الألمانية بدقة قطع 0.1 مم.",
@@ -347,8 +347,8 @@ const ar: LuxuryPlatformMessages = {
         ],
       },
       {
-        icon: "build",
-        badge: "الهندسة والتنفيذ المحلي · توريفا",
+        brand: "turriva",
+        badge: "الهندسة والتنفيذ المحلي",
         title: "رفع مساحي، توريد، وضمان محلي شامل",
         points: [
           "إدارة ميدانية كاملة: رفع المقاسات بالليزر، التخليص الجمركي وإصدار شهادات المطابقة (SASO/SABER).",

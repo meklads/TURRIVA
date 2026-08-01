@@ -1,12 +1,7 @@
 import Link from "next/link";
-import { Factory, HardHat, Layers3 } from "lucide-react";
+import Image from "next/image";
 import type { LuxuryMessages } from "@/shared/i18n/messages/luxury";
-
-const ICONS = {
-  design: Layers3,
-  factory: Factory,
-  build: HardHat,
-} as const;
+import { ECOSYSTEM_BRAND_LOGOS } from "../lib/ecosystem-logos";
 
 export function LuxuryEcosystemSection({ messages }: { messages: LuxuryMessages }) {
   const t = messages.ecosystem;
@@ -22,11 +17,18 @@ export function LuxuryEcosystemSection({ messages }: { messages: LuxuryMessages 
 
       <div className="lux-container mt-14 grid gap-6 lg:grid-cols-3 lg:gap-7">
         {t.pillars.map((pillar) => {
-          const Icon = ICONS[pillar.icon as keyof typeof ICONS] ?? Layers3;
+          const logo = ECOSYSTEM_BRAND_LOGOS[pillar.brand];
           return (
             <article key={pillar.title} className="lux-offer-card">
-              <div className="lux-offer-card__icon" aria-hidden>
-                <Icon strokeWidth={1.35} />
+              <div className={`lux-offer-card__logo ${logo.className}`}>
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={220}
+                  height={80}
+                  className="lux-offer-card__logo-img"
+                  unoptimized
+                />
               </div>
               <p className="lux-offer-card__badge">{pillar.badge}</p>
               <h3 className="lux-offer-card__title">{pillar.title}</h3>
