@@ -19,7 +19,7 @@ export function LuxuryHomeHero({ locale }: Props) {
           <div className="lux-hero-copy">
             <div className="lux-hero-copy-inner lux-reveal">
               <p className="lux-eyebrow">{t.hero.eyebrow}</p>
-              <h1 className="lux-display lux-heading mt-4">{t.hero.title}</h1>
+              <h1 className="lux-display lux-heading mt-5 sm:mt-6">{t.hero.title}</h1>
               <div className="lux-flourish" aria-hidden />
               <p className="lux-body max-w-lg">{t.hero.subtitle}</p>
               <div className="lux-hero-tags" aria-label={t.hero.servicesLine}>
@@ -29,7 +29,7 @@ export function LuxuryHomeHero({ locale }: Props) {
                   </span>
                 ))}
               </div>
-              <div className="lux-hero-cta mt-8 flex flex-col gap-3 sm:mt-10">
+              <div className="lux-hero-cta mt-9 flex flex-col gap-3 sm:mt-10">
                 <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                   <Link href="/contact?intent=design" className="lux-btn-primary">
                     {t.hero.ctaPrimary}
@@ -53,11 +53,11 @@ export function LuxuryHomeHero({ locale }: Props) {
               <Image
                 src={LUXURY_HERO_IMAGE}
                 alt=""
-                width={1536}
-                height={1024}
+                fill
                 priority
                 unoptimized
-                className="lux-hero-media-img h-auto w-full object-contain object-center"
+                className="lux-hero-media-img object-cover object-[center_42%]"
+                sizes="(max-width: 1024px) 100vw, 55vw"
               />
             </div>
           </div>
