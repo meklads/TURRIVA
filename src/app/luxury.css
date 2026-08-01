@@ -2167,7 +2167,21 @@
 }
 
 .lux-inspiration-rows {
-  margin-top: 3rem;
+  margin-top: 2rem;
+}
+
+.lux-inspiration-rows--single {
+  margin-top: 1.75rem;
+}
+
+.lux-inspiration-rows--single .lux-inspiration-row {
+  padding-block: 1.5rem 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .lux-inspiration-rows--single .lux-inspiration-row {
+    padding-block: 2rem 3rem;
+  }
 }
 
 .lux-inspiration-row {

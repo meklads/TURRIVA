@@ -187,7 +187,7 @@ const en: LuxuryPlatformMessages = {
   inspiration: {
     eyebrow: "Ideas",
     title: "Inspiration by space",
-    subtitle: "Explore kitchens, wardrobes, and living spaces — then start your 3D session.",
+    subtitle: "Browse kitchens, wardrobes, and living spaces by category — then book a design consultation.",
     items: [
       {
         id: "kitchen",
@@ -419,7 +419,7 @@ const ar: LuxuryPlatformMessages = {
   inspiration: {
     eyebrow: "إلهام",
     title: "أفكار حسب المساحة",
-    subtitle: "استكشف المطابخ والخزائن وغرف المعيشة — ثم ابدأ جلسة 3D.",
+    subtitle: "استكشف المطابخ والخزائن وغرف المعيشة حسب الفئة — ثم احجز استشارة تصميم.",
     items: [
       {
         id: "kitchen",
