@@ -179,6 +179,8 @@ export type LuxuryMessages = LuxuryPlatformMessages & {
         minimal: string;
       };
       cta: string;
+      lightboxOpen: string;
+      lightboxClose: string;
       items: readonly {
         id: string;
         category: "italian" | "french" | "contemporary" | "minimal";
@@ -544,6 +546,8 @@ const en: LuxuryMessages = {
         minimal: "Minimal",
       },
       cta: "Book a style review",
+      lightboxOpen: "Enlarge image",
+      lightboxClose: "Close",
       items: [
         {
           id: "italian-polynesia-house",
@@ -973,6 +977,8 @@ const ar: LuxuryMessages = {
         minimal: "بسيط",
       },
       cta: "احجز مراجعة نمط",
+      lightboxOpen: "تكبير الصورة",
+      lightboxClose: "إغلاق",
       items: [
         {
           id: "italian-polynesia-house",

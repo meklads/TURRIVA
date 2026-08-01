@@ -6,14 +6,21 @@ import Link from "next/link";
 import type { Locale } from "@/shared/i18n/locale";
 import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import { LUXURY_STYLE_IMAGES } from "@/shared/i18n/messages/luxury-style-catalog";
+import { LuxuryStyleLightbox, LuxuryStyleZoomHint } from "./luxury-style-lightbox";
 
 type StyleCategory = "italian" | "french" | "contemporary" | "minimal";
 type FilterKey = "all" | StyleCategory;
+
+type LightboxState = {
+  src: string;
+  title: string;
+} | null;
 
 export function LuxuryStylesPage({ locale }: { locale: Locale }) {
   const t = getLuxuryMessages(locale);
   const p = t.pages.styles;
   const [filter, setFilter] = useState<FilterKey>("all");
+  const [lightbox, setLightbox] = useState<LightboxState>(null);
 
   const filters: { key: FilterKey; label: string }[] = [
     { key: "all", label: p.filters.all },
@@ -64,7 +71,12 @@ export function LuxuryStylesPage({ locale }: { locale: Locale }) {
 
               return (
                 <article key={item.id} className="group lux-style-card">
-                  <div className="lux-style-card__media">
+                  <button
+                    type="button"
+                    className="lux-style-card__media lux-style-card__media--zoom"
+                    aria-label={`${p.lightboxOpen}: ${item.title}`}
+                    onClick={() => setLightbox({ src: image, title: item.title })}
+                  >
                     <Image
                       src={image}
                       alt=""
@@ -73,7 +85,8 @@ export function LuxuryStylesPage({ locale }: { locale: Locale }) {
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       unoptimized
                     />
-                  </div>
+                    <LuxuryStyleZoomHint label={p.lightboxOpen} />
+                  </button>
                   <div className="lux-style-card__body">
                     <span className="lux-style-card__category">{p.filters[item.category]}</span>
                     <h2 className="lux-style-card__title">{item.title}</h2>
@@ -92,6 +105,14 @@ export function LuxuryStylesPage({ locale }: { locale: Locale }) {
           </div>
         </div>
       </section>
+
+      <LuxuryStyleLightbox
+        open={lightbox !== null}
+        src={lightbox?.src ?? ""}
+        title={lightbox?.title ?? ""}
+        closeLabel={p.lightboxClose}
+        onClose={() => setLightbox(null)}
+      />
     </>
   );
 }
