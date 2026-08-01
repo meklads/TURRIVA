@@ -27,13 +27,9 @@ export function LuxuryHomePage({ locale }: Props) {
 
   return (
     <>
-      {/* Narrative: hook → system → offer → justify → prove → aspire → convert */}
+      {/* Hook with visuals early, then system/offer, then rational close */}
       <LuxuryHomeHero locale={locale} />
       <LuxuryTrustBar messages={t} />
-      <LuxuryEcosystemSection messages={t} />
-      <LuxuryProductGrid messages={t} locale={locale} />
-      <LuxuryComparisonSection messages={t} />
-      <LuxuryBeforeAfterSection messages={t} />
 
       <section className="lux-section lux-section--white">
         <div className="lux-container max-w-3xl text-center">
@@ -70,8 +66,12 @@ export function LuxuryHomePage({ locale }: Props) {
         </div>
       </section>
 
-      <LuxuryInspirationSection messages={t} />
       <LuxuryWaysOfLivingSection messages={t} />
+      <LuxuryEcosystemSection messages={t} />
+      <LuxuryProductGrid messages={t} locale={locale} />
+      <LuxuryInspirationSection messages={t} />
+      <LuxuryBeforeAfterSection messages={t} />
+      <LuxuryComparisonSection messages={t} />
       <LuxuryTrustStats messages={t} />
       <LuxuryPartnersStrip messages={t} />
 
