@@ -26,6 +26,8 @@ GitHub Actions يبني الصورة ويرفعها تلقائياً إلى **GH
 5. Environment Variables (DATABASE_URL, AUTH_SECRET, …)
 6. **Deploy**
 
+> بعد أول push ناجح، تحقق من الصورة: GitHub → Packages → `turriva`
+
 ---
 
 ### الحل B: Dockerfile من المستودع
