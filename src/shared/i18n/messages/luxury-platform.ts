@@ -35,8 +35,14 @@ export type LuxuryPlatformMessages = {
     eyebrow: string;
     title: string;
     subtitle: string;
-    tabs: readonly { id: string; label: string }[];
-    cta: string;
+    items: readonly {
+      id: string;
+      label: string;
+      title: string;
+      description: string;
+      cta: string;
+      href: string;
+    }[];
   };
   beforeAfter: {
     eyebrow: string;
@@ -155,15 +161,62 @@ const en: LuxuryPlatformMessages = {
     eyebrow: "Ideas",
     title: "Inspiration by space",
     subtitle: "Explore kitchens, wardrobes, and living spaces — then start your 3D session.",
-    tabs: [
-      { id: "kitchen", label: "Kitchen" },
-      { id: "wardrobe", label: "Wardrobe" },
-      { id: "living", label: "Living" },
-      { id: "bedroom", label: "Bedroom" },
-      { id: "bathroom", label: "Bathroom" },
-      { id: "hospitality", label: "Hospitality" },
+    items: [
+      {
+        id: "kitchen",
+        label: "Kitchen",
+        title: "Modular kitchens",
+        description:
+          "Custom cabinetry, countertops, and premium hardware from OPPEIN — visualized in 3D and installed on site by Turriva.",
+        cta: "Explore kitchens",
+        href: "/design",
+      },
+      {
+        id: "wardrobe",
+        label: "Wardrobe",
+        title: "Walk-in closets",
+        description:
+          "Integrated lighting, soft-close hardware, and factory-precise modules for dressing rooms and master suites.",
+        cta: "Explore wardrobes",
+        href: "/villas#wardrobes",
+      },
+      {
+        id: "living",
+        label: "Living",
+        title: "Living & dining",
+        description:
+          "TV walls, shelving, and dining joinery in one coordinated palette — from concept board to handover.",
+        cta: "Explore living spaces",
+        href: "/design",
+      },
+      {
+        id: "bedroom",
+        label: "Bedroom",
+        title: "Bedroom suites",
+        description:
+          "Headboards, nightstands, and wardrobe systems matched to your floor plan and approved finish board.",
+        cta: "Explore bedrooms",
+        href: "/villas",
+      },
+      {
+        id: "bathroom",
+        label: "Bathroom",
+        title: "Bathroom vanity",
+        description:
+          "Vanity units, mirror cabinets, and moisture-rated boards — specified for Saudi climate and daily use.",
+        cta: "Explore bathrooms",
+        href: "/contact",
+      },
+      {
+        id: "hospitality",
+        label: "Hospitality",
+        title: "Hotels & F&B",
+        description:
+          "Bulk programmes for lobbies, suites, and restaurants — MOQ pricing, phased delivery, and site coordination.",
+        cta: "Explore hospitality",
+        href: "/projects",
+      },
     ],
-    cta: "Start 3D design session",
   },
   beforeAfter: {
     eyebrow: "Proof",
@@ -304,15 +357,62 @@ const ar: LuxuryPlatformMessages = {
     eyebrow: "إلهام",
     title: "أفكار حسب المساحة",
     subtitle: "استكشف المطابخ والخزائن وغرف المعيشة — ثم ابدأ جلسة 3D.",
-    tabs: [
-      { id: "kitchen", label: "مطبخ" },
-      { id: "wardrobe", label: "خزائن" },
-      { id: "living", label: "معيشة" },
-      { id: "bedroom", label: "نوم" },
-      { id: "bathroom", label: "حمام" },
-      { id: "hospitality", label: "ضيافة" },
+    items: [
+      {
+        id: "kitchen",
+        label: "مطبخ",
+        title: "مطابخ معيارية",
+        description:
+          "خزائن مخصصة وكونترتوب ومفصلات فاخرة من OPPEIN — إظهار ثلاثي الأبعاد وتركيب ميداني عبر توريفا.",
+        cta: "اكتشف المطابخ",
+        href: "/design",
+      },
+      {
+        id: "wardrobe",
+        label: "خزائن",
+        title: "غرف ملابس",
+        description:
+          "إضاءة مدمجة ومفصلات soft-close ووحدات بدقة المصنع — لغرف الملابس والجناح الرئيسي.",
+        cta: "اكتشف الخزائن",
+        href: "/villas#wardrobes",
+      },
+      {
+        id: "living",
+        label: "معيشة",
+        title: "معيشة وطعام",
+        description:
+          "جدران تلفزيون ورفوف ونجارة طعام بلوحة ألوان موحّدة — من لوحة المواد إلى التسليم.",
+        cta: "اكتشف المعيشة",
+        href: "/design",
+      },
+      {
+        id: "bedroom",
+        label: "نوم",
+        title: "غرف نوم",
+        description:
+          "رؤوس سرير وطاولات جانبية وخزائن متناسقة مع مخططك ولوحة التشطيبات المعتمدة.",
+        cta: "اكتشف غرف النوم",
+        href: "/villas",
+      },
+      {
+        id: "bathroom",
+        label: "حمام",
+        title: "تشطيبات الحمام",
+        description:
+          "مغاسل وخزائن مرآة وألواح مقاومة للرطوبة — مواصفات مناسبة للمناخ السعودي والاستخدام اليومي.",
+        cta: "اكتشف الحمامات",
+        href: "/contact",
+      },
+      {
+        id: "hospitality",
+        label: "ضيافة",
+        title: "فنادق ومطاعم",
+        description:
+          "برامج جماعية للردهات والأجنحة والمطاعم — تسعير MOQ وتسليم مرحلي وتنسيق ميداني.",
+        cta: "اكتشف الضيافة",
+        href: "/projects",
+      },
     ],
-    cta: "ابدأ جلسة تصميم 3D",
   },
   beforeAfter: {
     eyebrow: "إثبات",
