@@ -23,6 +23,18 @@ export function isLeadEmailProductionReady(): boolean {
   return Boolean(from) && !from.includes("@resend.dev");
 }
 
+/** Masked destination for /api/health — confirms what the running container reads. */
+export function getLeadNotificationDestinationMasked(): string {
+  const raw = process.env.LEAD_NOTIFICATION_EMAIL?.trim();
+  if (!raw) return `${TURRIVA_PUBLIC_EMAIL} (env unset — default)`;
+  const at = raw.indexOf("@");
+  if (at <= 0) return "invalid";
+  const local = raw.slice(0, at);
+  const domain = raw.slice(at + 1);
+  const masked = local.length <= 2 ? `${local[0] ?? ""}***` : `${local.slice(0, 3)}***`;
+  return `${masked}@${domain}`;
+}
+
 /** Sends a lead alert to info@turriva.com (or LEAD_NOTIFICATION_EMAIL). Returns false if skipped/failed. */
 export async function sendLeadNotification(payload: LeadNotificationPayload): Promise<boolean> {
   const apiKey = process.env.RESEND_API_KEY?.trim();
