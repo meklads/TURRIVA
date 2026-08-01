@@ -2085,76 +2085,39 @@
   font-size: 0.8125rem;
 }
 
-/* Delivery showcase — cinematic Graphics House project loop */
+/* Delivery showcase — project video band (copy above, full-width video below) */
 .lux-delivery-showcase {
   position: relative;
-  overflow: hidden;
-  min-height: 22rem;
-  color: color-mix(in srgb, var(--lux-ivory) 96%, white);
-}
-
-@media (min-width: 768px) {
-  .lux-delivery-showcase {
-    min-height: 28rem;
-  }
+  z-index: 6;
+  padding-top: 3rem;
+  padding-bottom: 0;
+  background: var(--lux-cream);
 }
 
 @media (min-width: 1024px) {
   .lux-delivery-showcase {
-    min-height: 32rem;
+    padding-top: 4rem;
   }
 }
 
-.lux-delivery-showcase__media {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+.lux-delivery-showcase__header {
+  max-width: 48rem;
+  margin-inline: auto;
+  margin-bottom: 2rem;
 }
 
-.lux-delivery-showcase__loop {
+@media (min-width: 1024px) {
+  .lux-delivery-showcase__header {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.lux-delivery-showcase__video {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 42%;
-}
-
-.lux-delivery-showcase__shade {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--lux-ink) 88%, transparent) 0%,
-    color-mix(in srgb, var(--lux-ink) 72%, transparent) 42%,
-    color-mix(in srgb, var(--lux-ink) 82%, transparent) 100%
-  );
-}
-
-.lux-delivery-showcase__content {
-  position: relative;
-  z-index: 1;
-  max-width: 48rem;
-  padding-block: 3.5rem 3.75rem;
-  text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .lux-delivery-showcase__content {
-    padding-block: 4.5rem 5rem;
-  }
-}
-
-.lux-delivery-showcase__content .lux-display,
-.lux-delivery-showcase__content .lux-heading {
-  color: #faf7f2;
-}
-
-.lux-delivery-showcase__content .lux-body {
-  color: color-mix(in srgb, var(--lux-ivory) 82%, transparent);
-}
-
-.lux-delivery-showcase__content .lux-eyebrow {
-  color: var(--lux-gold-light);
+  height: auto;
+  vertical-align: middle;
+  background: var(--lux-charcoal);
 }
 
 .lux-delivery-showcase__project {
@@ -2172,7 +2135,7 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--lux-gold-light);
+  color: var(--lux-gold);
 }
 
 [dir="rtl"] .lux-delivery-showcase__project-name {
@@ -2183,7 +2146,7 @@
 
 .lux-delivery-showcase__project-credit {
   font-size: 0.75rem;
-  color: color-mix(in srgb, var(--lux-ivory) 68%, transparent);
+  color: var(--lux-ink-muted);
 }
 
 [dir="rtl"] .lux-delivery-showcase__project-credit {
