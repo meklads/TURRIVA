@@ -1,15 +1,56 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import type { LuxuryMessages } from "@/shared/i18n/messages/luxury";
 
-const RAFAL_SHOWREEL = "/brand/graphics-house/rafal-pavilions.webp";
+const RAFAL_LOOP = "/brand/graphics-house/rafal-pavilions-loop.webm";
+const RAFAL_POSTER = "/brand/graphics-house/rafal-pavilions-poster.jpg";
 
 export function LuxuryBeforeAfterSection({ messages }: { messages: LuxuryMessages }) {
   const t = messages.beforeAfter;
+  const sectionRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const video = videoRef.current;
+    if (!section || !video) return;
+
+    const play = () => {
+      void video.play().catch(() => {});
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) play();
+        else video.pause();
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="lux-delivery-showcase" aria-labelledby="delivery-showcase-heading">
+    <section
+      ref={sectionRef}
+      className="lux-delivery-showcase"
+      aria-labelledby="delivery-showcase-heading"
+    >
       <div className="lux-delivery-showcase__media" aria-hidden>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={RAFAL_SHOWREEL} alt="" className="lux-delivery-showcase__loop" />
+        <video
+          ref={videoRef}
+          className="lux-delivery-showcase__loop"
+          muted
+          loop
+          playsInline
+          autoPlay
+          preload="metadata"
+          poster={RAFAL_POSTER}
+        >
+          <source src={RAFAL_LOOP} type="video/webm" />
+        </video>
         <div className="lux-delivery-showcase__shade" />
       </div>
 
