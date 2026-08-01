@@ -1,3 +1,4 @@
+# Fallback if Coolify is set to Nixpacks instead of Dockerfile.
 [phases.setup]
 nixPkgs = ["nodejs_22", "openssl"]
 
@@ -5,7 +6,7 @@ nixPkgs = ["nodejs_22", "openssl"]
 cmds = ["npm ci"]
 
 [phases.build]
-cmds = ["npx prisma generate", "npm run build"]
+cmds = ["NODE_OPTIONS=--max-old-space-size=4096 npm run build"]
 
 [start]
 cmd = "npm start"

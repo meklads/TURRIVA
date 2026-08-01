@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  eslint: {
+    // Lint runs in GitHub CI; skip during Docker/Coolify build to save memory.
+    ignoreDuringBuilds: true,
+  },
   experimental: {
     serverActions: {
       bodySizeLimit: "5mb",
