@@ -24,7 +24,7 @@ export async function LuxuryFooter() {
   const importantLinks = [
     { href: "/villas", label: t.nav.villas },
     { href: "/projects", label: t.nav.projects },
-    { href: "/design", label: t.nav.design3d },
+    { href: "/contact?intent=design", label: t.nav.design3d },
     { href: "/our-work", label: t.nav.ourWork },
     { href: "/contact", label: t.nav.contact },
   ];
@@ -32,7 +32,7 @@ export async function LuxuryFooter() {
   const servicesLinks = [
     { href: "/villas", label: t.nav.villas },
     { href: "/projects", label: t.nav.projects },
-    { href: "/design", label: t.nav.design3d },
+    { href: "/contact?intent=design", label: t.nav.design3d },
   ];
 
   const solutionLinks =

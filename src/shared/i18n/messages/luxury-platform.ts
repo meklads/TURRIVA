@@ -59,7 +59,7 @@ export type LuxuryPlatformMessages = {
     subtitle: string;
     beforeLabel: string;
     afterLabel: string;
-    hint: string;
+    caption: string;
   };
   faq: {
     eyebrow: string;
@@ -68,7 +68,12 @@ export type LuxuryPlatformMessages = {
   };
   partners: {
     title: string;
-    items: readonly string[];
+    subtitle: string;
+    groups: readonly {
+      label: string;
+      description: string;
+      items: readonly string[];
+    }[];
   };
   sampleKit: {
     title: string;
@@ -191,7 +196,7 @@ const en: LuxuryPlatformMessages = {
         description:
           "Custom cabinetry, countertops, and premium hardware from OPPEIN — visualized in 3D and installed on site by Turriva.",
         cta: "Explore kitchens",
-        href: "/design",
+        href: "/contact?intent=design",
       },
       {
         id: "wardrobe",
@@ -209,7 +214,7 @@ const en: LuxuryPlatformMessages = {
         description:
           "TV walls, shelving, and dining joinery in one coordinated palette — from concept board to handover.",
         cta: "Explore living spaces",
-        href: "/design",
+        href: "/contact?intent=design",
       },
       {
         id: "bedroom",
@@ -246,12 +251,13 @@ const en: LuxuryPlatformMessages = {
       "Kitchens, wardrobes, bathrooms, and whole-home joinery — visualized in 3D and delivered on site across Saudi Arabia.",
   },
   beforeAfter: {
-    eyebrow: "Proof",
-    title: "3D concept vs. delivered project",
-    subtitle: "Drag to compare the approved visualization with the finished installation.",
-    beforeLabel: "3D concept",
-    afterLabel: "Installed",
-    hint: "Drag the handle to compare",
+    eyebrow: "Delivery proof",
+    title: "From approved drawing to installed project",
+    subtitle:
+      "Real Turriva programmes — the layout you sign off in the design studio is what we manufacture, deliver, and install on site.",
+    beforeLabel: "Approved shop drawing",
+    afterLabel: "Delivered on site",
+    caption: "Villa kitchen programme — Western Region",
   },
   faq: {
     eyebrow: "FAQ",
@@ -275,13 +281,30 @@ const en: LuxuryPlatformMessages = {
       },
       {
         q: "How do I start?",
-        a: "Book a free 3D design session online, or submit a B2B brief with your floor plan for a formal proposal.",
+        a: "Send your floor plan for a design review and sample kit, or submit a B2B brief on /projects for a formal proposal.",
       },
     ],
   },
   partners: {
     title: "Standards & partners",
-    items: ["OPPEIN", "HOMAG", "Blum", "Hettich", "SASO", "SABER", "E0 boards"],
+    subtitle: "Global manufacturing and hardware — cleared for Saudi compliance before anything reaches your site.",
+    groups: [
+      {
+        label: "Manufacturing",
+        description: "Factory-scale production and precision cutting",
+        items: ["OPPEIN", "HOMAG"],
+      },
+      {
+        label: "Hardware & fittings",
+        description: "Premium hinges, runners, and soft-close systems",
+        items: ["Blum", "Hettich"],
+      },
+      {
+        label: "Saudi compliance",
+        description: "Board standards and product conformity for import",
+        items: ["SASO", "SABER", "E0 boards"],
+      },
+    ],
   },
   sampleKit: {
     title: "Request a physical sample kit & drawing review",
@@ -405,7 +428,7 @@ const ar: LuxuryPlatformMessages = {
         description:
           "خزائن مخصصة وكونترتوب ومفصلات فاخرة من OPPEIN — إظهار ثلاثي الأبعاد وتركيب ميداني عبر توريفا.",
         cta: "اكتشف المطابخ",
-        href: "/design",
+        href: "/contact?intent=design",
       },
       {
         id: "wardrobe",
@@ -423,7 +446,7 @@ const ar: LuxuryPlatformMessages = {
         description:
           "جدران تلفزيون ورفوف ونجارة طعام بلوحة ألوان موحّدة — من لوحة المواد إلى التسليم.",
         cta: "اكتشف المعيشة",
-        href: "/design",
+        href: "/contact?intent=design",
       },
       {
         id: "bedroom",
@@ -460,12 +483,13 @@ const ar: LuxuryPlatformMessages = {
       "مطابخ وخزائن وحمامات وتأثيث المنزل بالكامل — إظهار ثلاثي الأبعاد وتسليم ميداني في أنحاء المملكة.",
   },
   beforeAfter: {
-    eyebrow: "إثبات",
-    title: "مفهوم 3D مقابل مشروع منفّذ",
-    subtitle: "اسحب للمقارنة بين التصور المعتمد والتركيب الفعلي.",
-    beforeLabel: "تصميم 3D",
-    afterLabel: "منفّذ",
-    hint: "اسحب المؤشر للمقارنة",
+    eyebrow: "إثبات التسليم",
+    title: "من المخطط المعتمد إلى التركيب في الموقع",
+    subtitle:
+      "نماذج من مشاريع حقيقية — التخطيط الذي تعتمده في استوديو التصميم هو ما نصنعه ونوردُه ونركّبه ميدانياً.",
+    beforeLabel: "مخطط مصنع معتمد",
+    afterLabel: "بعد التركيب",
+    caption: "برنامج مطبخ فيلا — المنطقة الغربية",
   },
   faq: {
     eyebrow: "أسئلة شائعة",
@@ -489,13 +513,30 @@ const ar: LuxuryPlatformMessages = {
       },
       {
         q: "كيف أبدأ؟",
-        a: "احجز جلسة 3D مجانية أونلاين، أو أرسل ملف B2B مع المخطط لعرض سعر رسمي.",
+        a: "أرسل مخططك لمراجعة التصميم وطلب العينات، أو قدّم ملف B2B في صفحة المشاريع لعرض سعر رسمي.",
       },
     ],
   },
   partners: {
     title: "معايير وشركاء",
-    items: ["OPPEIN", "HOMAG", "Blum", "Hettich", "SASO", "SABER", "E0"],
+    subtitle: "تصنيع عالمي ومفصلات فاخرة — مع امتثال سعودي كامل قبل وصول أي شحنة إلى موقعك.",
+    groups: [
+      {
+        label: "التصنيع",
+        description: "إنتاج مصنعي وتقطيع بدقة صناعية",
+        items: ["OPPEIN", "HOMAG"],
+      },
+      {
+        label: "المفصلات والإكسسوارات",
+        description: "مفصلات وسوفت-كlose من العلامات العالمية",
+        items: ["Blum", "Hettich"],
+      },
+      {
+        label: "الامتثال السعودي",
+        description: "معايير الألواح ومطابقة المنتج للاستيراد",
+        items: ["SASO", "SABER", "E0"],
+      },
+    ],
   },
   sampleKit: {
     title: "اطلب حقيبة العينات الفيزيائية وجلسة مراجعة المخططات",

@@ -21,7 +21,7 @@ export async function LuxuryHeader() {
             </div>
             <LuxuryDesktopNav links={links} />
             <div className="lux-header-actions">
-              <Link href="/design" className="lux-btn-primary hidden xl:inline-flex !min-w-0 px-5 py-2.5 text-[10px]">
+              <Link href="/contact?intent=design" className="lux-btn-primary hidden xl:inline-flex !min-w-0 px-5 py-2.5 text-[10px]">
                 {t.hero.ctaPrimary}
               </Link>
               <LocaleSwitcher />

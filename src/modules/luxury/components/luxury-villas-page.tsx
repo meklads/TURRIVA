@@ -18,7 +18,7 @@ export function LuxuryVillasPage({ locale }: { locale: Locale }) {
           <h1 className="lux-display lux-heading mt-6">{p.title}</h1>
           <p className="lux-body mx-auto mt-4 max-w-2xl">{p.intro}</p>
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link href="/design" className="lux-btn-primary">
+            <Link href="/contact?intent=design" className="lux-btn-primary">
               {p.ctaDesign}
             </Link>
             <Link href="/contact" className="lux-btn-outline-gold">

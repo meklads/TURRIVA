@@ -105,7 +105,7 @@ export function LuxuryHomePage({ locale }: Props) {
             </h2>
             <p className="lux-body mx-auto mt-4 max-w-xl">{t.cta.subtitle}</p>
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link href="/design" className="lux-btn-primary">
+              <Link href="/contact?intent=design" className="lux-btn-primary">
                 {t.hero.ctaPrimary}
               </Link>
               <Link href="/contact" className="lux-btn-outline-gold">

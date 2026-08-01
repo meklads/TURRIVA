@@ -1998,6 +1998,112 @@
   color: var(--lux-ivory);
 }
 
+.lux-partners-section {
+  padding-block: 3.5rem;
+}
+
+.lux-partners-group {
+  border: 1px solid color-mix(in srgb, var(--lux-sand) 65%, transparent);
+  background: #ffffff;
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--lux-ink) 4%, transparent);
+}
+
+.lux-partners-group__label {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lux-gold);
+}
+
+[dir="rtl"] .lux-partners-group__label {
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 0.9375rem;
+}
+
+.lux-partners-group__desc {
+  margin-top: 0.5rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--lux-ink-muted);
+}
+
+.lux-partners-group__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 0.75rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lux-partners-group__list li {
+  border: 1px solid color-mix(in srgb, var(--lux-gold) 35%, var(--lux-sand));
+  background: color-mix(in srgb, var(--lux-gold-muted) 40%, white);
+  padding: 0.4rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--lux-ink-soft);
+}
+
+[dir="rtl"] .lux-partners-group__list li {
+  letter-spacing: 0;
+  font-size: 0.8125rem;
+}
+
+/* Delivery proof — static before/after panels */
+.lux-delivery-proof {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .lux-delivery-proof {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+}
+
+.lux-delivery-proof__panel {
+  margin: 0;
+}
+
+.lux-delivery-proof__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--lux-charcoal);
+}
+
+.lux-delivery-proof__label {
+  display: block;
+  margin-top: 0.75rem;
+  text-align: center;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--lux-gold-light);
+}
+
+[dir="rtl"] .lux-delivery-proof__label {
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 0.9375rem;
+}
+
+.lux-delivery-proof__caption {
+  margin-top: 1.25rem;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: color-mix(in srgb, var(--lux-ivory) 65%, transparent);
+}
+
 .lux-partners-title {
   font-size: 0.625rem;
   font-weight: 700;

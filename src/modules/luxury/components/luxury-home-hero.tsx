@@ -31,7 +31,7 @@ export function LuxuryHomeHero({ locale }: Props) {
               </div>
               <div className="lux-hero-cta mt-8 flex flex-col gap-3 sm:mt-10">
                 <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                  <Link href="/design" className="lux-btn-primary">
+                  <Link href="/contact?intent=design" className="lux-btn-primary">
                     {t.hero.ctaPrimary}
                   </Link>
                   <Link href="/projects" className="lux-btn-outline-gold">

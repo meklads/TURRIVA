@@ -8,7 +8,6 @@ export function getLuxuryNavLinks(locale: Locale) {
     { href: "/villas", label: t.nav.villas },
     { href: "/projects", label: t.nav.projects },
     { href: "/our-work", label: t.nav.ourWork },
-    { href: "/design", label: t.nav.design3d },
     { href: "/contact", label: t.nav.contact },
   ] as const;
 }
