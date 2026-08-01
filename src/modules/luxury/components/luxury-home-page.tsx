@@ -27,7 +27,7 @@ export function LuxuryHomePage({ locale }: Props) {
 
   return (
     <>
-      {/* Hook with visuals early, then system/offer, then rational close */}
+      {/* Visual hook → system/offer → social proof → rational comparison → convert */}
       <LuxuryHomeHero locale={locale} />
       <LuxuryTrustBar messages={t} />
 
@@ -71,7 +71,6 @@ export function LuxuryHomePage({ locale }: Props) {
       <LuxuryProductGrid messages={t} locale={locale} />
       <LuxuryInspirationSection messages={t} />
       <LuxuryBeforeAfterSection messages={t} />
-      <LuxuryComparisonSection messages={t} />
       <LuxuryTrustStats messages={t} />
       <LuxuryPartnersStrip messages={t} />
 
@@ -94,6 +93,7 @@ export function LuxuryHomePage({ locale }: Props) {
         </div>
       </section>
 
+      <LuxuryComparisonSection messages={t} />
       <LuxurySampleKitBand messages={t} />
       <LuxuryFaqSection messages={t} />
 
