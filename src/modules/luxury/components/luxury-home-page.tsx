@@ -97,20 +97,30 @@ export function LuxuryHomePage({ locale }: Props) {
 
       <section className="lux-cta-band" aria-labelledby="home-cta-heading">
         <div className="lux-container">
-          <div className="lux-cta-band-panel text-center">
-            <p className="lux-eyebrow">{t.brand.tagline}</p>
-            <div className="lux-divider-gold" />
-            <h2 id="home-cta-heading" className="lux-display lux-heading mt-6">
-              {t.cta.title}
-            </h2>
-            <p className="lux-body mx-auto mt-4 max-w-xl">{t.cta.subtitle}</p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link href="/contact?intent=design" className="lux-btn-primary">
-                {t.hero.ctaPrimary}
-              </Link>
-              <Link href="/contact" className="lux-btn-outline-gold">
-                {t.cta.button}
-              </Link>
+          <div className="lux-cta-band-grid">
+            <div className="lux-cta-band-media">
+              <img
+                src={LUXURY_IMAGES.ctaBand}
+                alt=""
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="lux-cta-band-panel">
+              <p className="lux-eyebrow">{t.brand.tagline}</p>
+              <div className="lux-divider-gold" />
+              <h2 id="home-cta-heading" className="lux-display lux-heading mt-6">
+                {t.cta.title}
+              </h2>
+              <p className="lux-body mt-4">{t.cta.subtitle}</p>
+              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+                <Link href="/contact?intent=design" className="lux-btn-primary">
+                  {t.hero.ctaPrimary}
+                </Link>
+                <Link href="/contact" className="lux-btn-outline-gold">
+                  {t.cta.button}
+                </Link>
+              </div>
             </div>
           </div>
         </div>

@@ -952,9 +952,14 @@ export const LUXURY_IMAGES = {
   cap2: "/brand/turriva/hero-turriva.png",
   cap3: `https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?${IMG_Q}&w=900`,
   cap4: `https://images.unsplash.com/photo-1600047509358-9dc75507daeb?${IMG_Q}&w=900`,
-  project1: `https://images.unsplash.com/photo-1600607687644-c7171b42498f?${IMG_Q}&w=1200`,
-  project2: `https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?${IMG_Q}&w=1200`,
-  project3: `https://images.unsplash.com/photo-1700306692751-1fd5f2b88443?${IMG_Q}&w=1200`,
+  /** Portfolio gallery — Oppein product references (page 2) */
+  project1:
+    "https://www.oppeinhome.com/upload/image/product/thumb/20251023/modern-luxury-straight-grain-walnut-veneer-kitchen-cabinets-with-island.webp",
+  project2:
+    "https://www.oppeinhome.com/upload/image/product/thumb/20260612/modern-luxury-walnut-walk-in-wardrobe-system-1.webp",
+  project3:
+    "https://www.oppeinhome.com/upload/image/product/thumb/20260612/premium-whole-house-customization-walnut-and-warm-grey-collection.webp",
+  ctaBand: "/brand/turriva/turriva-sign-facade.png",
   project4: `https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?${IMG_Q}&w=1200`,
 } as const;
 

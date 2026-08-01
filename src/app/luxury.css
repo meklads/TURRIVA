@@ -1158,22 +1158,51 @@
   color: var(--lux-gold);
 }
 
-.lux-cta-band-panel {
-  margin-inline: auto;
-  max-width: 40rem;
-  padding: 2.5rem 1.75rem;
+.lux-cta-band-grid {
+  display: grid;
+  gap: 0;
+  overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--lux-gold) 22%, var(--lux-sand));
+  border-radius: 1rem;
+  background: #ffffff;
+  box-shadow: 0 20px 60px color-mix(in srgb, var(--lux-gold) 10%, transparent);
+}
+
+.lux-cta-band-media {
+  position: relative;
+  min-height: 14rem;
+  overflow: hidden;
+}
+
+.lux-cta-band-media img {
+  display: block;
+}
+
+.lux-cta-band-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem 1.75rem;
   background: linear-gradient(
     180deg,
     #ffffff 0%,
     color-mix(in srgb, var(--lux-gold-muted) 35%, white) 100%
   );
-  box-shadow: 0 20px 60px color-mix(in srgb, var(--lux-gold) 10%, transparent);
 }
 
 @media (min-width: 640px) {
   .lux-cta-band-panel {
     padding: 3rem 2.5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .lux-cta-band-grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  }
+
+  .lux-cta-band-media {
+    min-height: 100%;
   }
 }
 
