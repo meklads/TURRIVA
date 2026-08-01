@@ -57,9 +57,8 @@ export type LuxuryPlatformMessages = {
     eyebrow: string;
     title: string;
     subtitle: string;
-    beforeLabel: string;
-    afterLabel: string;
-    caption: string;
+    projectName: string;
+    projectCredit: string;
   };
   faq: {
     eyebrow: string;
@@ -251,13 +250,12 @@ const en: LuxuryPlatformMessages = {
       "Kitchens, wardrobes, bathrooms, and whole-home joinery — visualized in 3D and delivered on site across Saudi Arabia.",
   },
   beforeAfter: {
-    eyebrow: "Delivery proof",
-    title: "From approved drawing to installed project",
+    eyebrow: "Project showcase",
+    title: "From visualization to build-ready reality",
     subtitle:
-      "Real Turriva programmes — the layout you sign off in the design studio is what we manufacture, deliver, and install on site.",
-    beforeLabel: "Approved shop drawing",
-    afterLabel: "Delivered on site",
-    caption: "Villa kitchen programme — Western Region",
+      "Architectural 3D, interior joinery, and woodwork — demonstrated on developer programmes before manufacturing and site execution.",
+    projectName: "Rafal Pavilions",
+    projectCredit: "Visualization & interior design · Graphics House",
   },
   faq: {
     eyebrow: "FAQ",
@@ -483,13 +481,12 @@ const ar: LuxuryPlatformMessages = {
       "مطابخ وخزائن وحمامات وتأثيث المنزل بالكامل — إظهار ثلاثي الأبعاد وتسليم ميداني في أنحاء المملكة.",
   },
   beforeAfter: {
-    eyebrow: "إثبات التسليم",
-    title: "من المخطط المعتمد إلى التركيب في الموقع",
+    eyebrow: "عرض مشروع",
+    title: "من الإظهار المعماري إلى واقع قابل للتنفيذ",
     subtitle:
-      "نماذج من مشاريع حقيقية — التخطيط الذي تعتمده في استوديو التصميم هو ما نصنعه ونوردُه ونركّبه ميدانياً.",
-    beforeLabel: "مخطط مصنع معتمد",
-    afterLabel: "بعد التركيب",
-    caption: "برنامج مطبخ فيلا — المنطقة الغربية",
+      "إظهار ثلاثي الأبعاد، نجارة داخلية، وخشبيات — نماذج لمشاريع مطورين قبل التصنيع والتنفيذ الميداني.",
+    projectName: "Rafal Pavilions",
+    projectCredit: "إظهار وتصميم داخلي · Graphics House",
   },
   faq: {
     eyebrow: "أسئلة شائعة",
