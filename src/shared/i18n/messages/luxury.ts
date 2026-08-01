@@ -195,8 +195,8 @@ const en: LuxuryMessages = {
   brand: { name: "Turriva", tagline: "Integrated fit-out platform" },
   nav: {
     home: "HOME",
-    villas: "VILLAS",
-    projects: "PROJECTS",
+    villas: "Private homes",
+    projects: "Developers & companies",
     design3d: "Design consultation",
     interiorDesign: "INTERIOR DESIGN",
     construction: "DELIVERY & BUILD",
@@ -625,8 +625,8 @@ const ar: LuxuryMessages = {
   brand: { name: "توريفا", tagline: "منصة تأثيث متكاملة" },
   nav: {
     home: "الرئيسية",
-    villas: "الفلل",
-    projects: "المشاريع",
+    villas: "مساكن خاصة",
+    projects: "مطورون وشركات",
     design3d: "استشارة تصميم",
     interiorDesign: "التصميم الداخلي",
     construction: "التنفيذ في الموقع",
