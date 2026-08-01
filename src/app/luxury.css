@@ -1196,6 +1196,31 @@
   display: block;
 }
 
+/* Turriva facade sign — never crop; always show full frame */
+.lux-brand-facade-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1024 / 682;
+  min-height: 12rem;
+  overflow: hidden;
+  background: linear-gradient(
+    165deg,
+    color-mix(in srgb, var(--lux-cream) 88%, white) 0%,
+    var(--lux-stone) 100%
+  );
+}
+
+.lux-brand-facade-media--fill {
+  aspect-ratio: auto;
+  height: 100%;
+  min-height: 14rem;
+}
+
+.lux-brand-facade-media__img {
+  object-fit: contain;
+  object-position: center;
+}
+
 .lux-cta-band-panel {
   display: flex;
   flex-direction: column;
@@ -3323,10 +3348,6 @@
   position: relative;
   min-height: 14rem;
   background: var(--lux-stone);
-}
-
-.lux-quote-section__media img {
-  display: block;
 }
 
 .lux-quote-section__panel {

@@ -1,7 +1,7 @@
 import Link from "next/link";
+import { LuxuryFacadeImage } from "./luxury-facade-image";
 import {
   getLuxuryMessages,
-  LUXURY_IMAGES,
   LUXURY_PROJECT_IMAGES,
 } from "@/shared/i18n/messages/luxury";
 import type { Locale } from "@/shared/i18n/locale";
@@ -84,14 +84,11 @@ export function LuxuryHomePage({ locale }: Props) {
       <section className="lux-cta-band" aria-labelledby="home-cta-heading">
         <div className="lux-container">
           <div className="lux-cta-band-grid">
-            <div className="lux-cta-band-media">
-              <img
-                src={LUXURY_IMAGES.ctaBand}
-                alt=""
-                className="h-full w-full object-cover"
-                loading="lazy"
-              />
-            </div>
+            <LuxuryFacadeImage
+              className="lux-cta-band-media"
+              fillHeight
+              sizes="(max-width: 900px) 100vw, 52vw"
+            />
             <div className="lux-cta-band-panel">
               <p className="lux-eyebrow">{t.brand.tagline}</p>
               <div className="lux-divider-gold" />
