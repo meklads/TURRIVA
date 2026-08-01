@@ -61,6 +61,7 @@ export type LuxuryPlatformMessages = {
     subtitleLine2: string;
     projectName: string;
     projectCredit: string;
+    cta: string;
   };
   faq: {
     eyebrow: string;
@@ -259,6 +260,7 @@ const en: LuxuryPlatformMessages = {
     subtitleLine2: "From approved visualization through manufacturing to site execution.",
     projectName: "Rafal Pavilions",
     projectCredit: "Visualization & interior design · Graphics House",
+    cta: "Learn more",
   },
   faq: {
     eyebrow: "FAQ",
@@ -491,6 +493,7 @@ const ar: LuxuryPlatformMessages = {
     subtitleLine2: "من التصور المعتمد مروراً بالتصنيع إلى التنفيذ الميداني.",
     projectName: "Rafal Pavilions",
     projectCredit: "إظهار وتصميم داخلي · Graphics House",
+    cta: "اعرف المزيد",
   },
   faq: {
     eyebrow: "أسئلة شائعة",

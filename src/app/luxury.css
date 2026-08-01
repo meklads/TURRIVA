@@ -2143,38 +2143,22 @@
   font-size: 0.8125rem;
 }
 
-/* Delivery showcase — copy above, compact video band */
+/* Delivery showcase — editorial split (framed video + copy) */
 .lux-delivery-showcase {
   position: relative;
   z-index: 6;
-  padding-top: 3rem;
-  padding-bottom: 2rem;
-  background: var(--lux-cream);
+}
+
+.lux-delivery-showcase__media {
+  position: relative;
+  min-height: clamp(16rem, 72vw, 24rem);
+  background: var(--lux-charcoal);
 }
 
 @media (min-width: 1024px) {
-  .lux-delivery-showcase {
-    padding-top: 4rem;
-    padding-bottom: 2.5rem;
+  .lux-delivery-showcase__media {
+    min-height: 26rem;
   }
-}
-
-.lux-delivery-showcase__header {
-  max-width: 42rem;
-  margin-inline: auto;
-  margin-bottom: 1.75rem;
-}
-
-@media (min-width: 1024px) {
-  .lux-delivery-showcase__header {
-    margin-bottom: 2rem;
-  }
-}
-
-.lux-delivery-showcase__copy {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
 }
 
 .lux-delivery-showcase__copy .lux-body {
@@ -2188,48 +2172,36 @@
   line-height: 1.75;
 }
 
-.lux-delivery-showcase__video-frame {
-  width: 100%;
-  /* +30% vs prior band; rem floor keeps mobile from feeling cramped */
-  height: clamp(27.25rem, 59vh, 35rem);
-  overflow: hidden;
-  background: var(--lux-charcoal);
-}
-
-@media (min-width: 768px) {
-  .lux-delivery-showcase__video-frame {
-    height: clamp(31.25rem, 62vh, 38rem);
-  }
-}
-
-@media (min-width: 1024px) {
-  .lux-delivery-showcase__video-frame {
-    height: clamp(35rem, 66vh, 42rem);
-  }
-}
-
 .lux-delivery-showcase__video {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 42%;
-  vertical-align: middle;
   background: var(--lux-charcoal);
-}
-
-.lux-delivery-showcase__caption {
-  margin-top: 1rem;
 }
 
 .lux-delivery-showcase__project {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.35rem;
-  margin: 0;
-  padding-top: 0;
-  border-top: none;
+  margin: 1.75rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid color-mix(in srgb, var(--lux-sand) 80%, transparent);
+}
+
+.lux-delivery-showcase__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.75rem;
+}
+
+[dir="rtl"] .lux-delivery-showcase__cta span[aria-hidden] {
+  transform: scaleX(-1);
 }
 
 .lux-delivery-showcase__project-name {
