@@ -1,4 +1,19 @@
-# Coolify — إعداد قاعدة البيانات (خطوة بخطوة)
+# Coolify — إعداد قاعدة البيانات والنشر
+
+## فشل النشر (Deployment Failed)
+
+إذا ظهر **Generating nixpacks configuration** في السجل، Coolify ما زال يستخدم **Nixpacks** وليس **Dockerfile**.
+
+### الحل (دقيقة واحدة)
+1. افتح تطبيق **turriva.com** في Coolify
+2. **Configuration → General → Build Pack**
+3. غيّر من **Nixpacks** إلى **Dockerfile**
+4. **Port** = `3000`
+5. **Save** ثم **Redeploy**
+
+المستودع يحتوي `Dockerfile` و`coolify.json` — بعد التبديل يُبنى من Dockerfile مباشرة.
+
+---
 
 ## المشكلة
 ```

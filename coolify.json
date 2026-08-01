@@ -1,0 +1,11 @@
+{
+  "build": {
+    "build_pack": "dockerfile",
+    "base_directory": "/"
+  },
+  "network": {
+    "ports": {
+      "expose": "3000"
+    }
+  }
+}

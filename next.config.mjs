@@ -4,6 +4,11 @@ const nextConfig = {
     // Lint runs in GitHub CI; skip during Docker/Coolify build to save memory.
     ignoreDuringBuilds: true,
   },
+  typescript: {
+    // Typecheck runs in GitHub CI (`tsc --noEmit`); skip during constrained builds.
+    ignoreBuildErrors: true,
+  },
+  productionBrowserSourceMaps: false,
   experimental: {
     serverActions: {
       bodySizeLimit: "5mb",

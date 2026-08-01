@@ -19,7 +19,7 @@ ENV DATABASE_URL="postgresql://build:build@localhost:5432/build?schema=public"
 ENV AUTH_SECRET="build-placeholder-do-not-use-in-production"
 ENV AUTH_URL="https://turriva.com"
 ENV NEXT_PUBLIC_APP_URL="https://turriva.com"
-RUN NODE_OPTIONS="--max-old-space-size=4096" npm run build
+RUN NODE_OPTIONS="--max-old-space-size=1536" npm run build
 
 FROM base AS runner
 ENV NODE_ENV=production
