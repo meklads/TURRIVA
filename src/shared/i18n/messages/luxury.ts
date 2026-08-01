@@ -1079,6 +1079,7 @@ export const LUXURY_IMAGES = {
   project3: "/brand/turriva/projects/project-joinery-b2b.webp",
   ctaBand: "/brand/turriva/turriva-sign-facade.png",
   heroInterior: "/brand/turriva/hero-interior.webp",
+  heroBranded: "/brand/turriva/hero-branded.jpg",
   sampleKit: "/brand/turriva/sample-kit-showroom.webp",
   project4: `https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?${IMG_Q}&w=1200`,
 } as const;

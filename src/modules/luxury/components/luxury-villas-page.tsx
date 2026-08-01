@@ -3,7 +3,7 @@ import type { Locale } from "@/shared/i18n/locale";
 import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import { LuxuryEcosystemSection } from "./luxury-ecosystem-section";
 import { LuxuryFormSplitSection } from "./luxury-form-split-section";
-import { LuxuryInteriorImage } from "./luxury-interior-image";
+import { LuxuryBrandHeroImage } from "./luxury-brand-hero-image";
 import { LuxuryLeadForm } from "./luxury-lead-form";
 import { LuxuryMarketingHero } from "./luxury-marketing-hero";
 import { LuxurySampleKitBand } from "./luxury-sample-kit-band";
@@ -43,14 +43,13 @@ export function LuxuryVillasPage({ locale }: { locale: Locale }) {
 
       <LuxuryFormSplitSection
         id="wardrobes"
-        portrait
         tone="white"
         image={
-          <LuxuryInteriorImage
+          <LuxuryBrandHeroImage
             className="lux-quote-section__media"
             fillHeight
             priority
-            sizes="(max-width: 900px) 100vw, 48vw"
+            sizes="(max-width: 900px) 100vw, 52vw"
           />
         }
       >
