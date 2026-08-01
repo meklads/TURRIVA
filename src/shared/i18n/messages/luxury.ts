@@ -332,19 +332,31 @@ const en: LuxuryMessages = {
     ],
   },
   testimonials: {
-    eyebrow: "Clients",
-    title: "When design, supply, and install align",
+    eyebrow: "From the field",
+    title: "Notes from recent projects",
     items: [
       {
         quote:
-          "The 3D kitchen matched what arrived, same finishes, same dimensions. One team from approval to installation, with no blame game between designer and installer.",
-        author: "Private client",
-        role: "Villa · Jeddah",
+          "We reviewed the plan twice before manufacturing. Sample boards arrived two weeks ahead of install, which helped us lock the wood tone on site, not from a screen.",
+        author: "S. A.",
+        role: "Villa owner · North Jeddah",
       },
       {
         quote:
-          "For our compound batch, shop drawings and delivery phases were clear. Turriva handled import and site teams, we tracked units, not excuses.",
-        author: "Development manager",
+          "The walk-in wardrobe was installed in two visits to match our schedule. One door alignment note was logged and closed on the second site visit.",
+        author: "N. H.",
+        role: "Apartment · Makkah",
+      },
+      {
+        quote:
+          "For a 12-unit batch, we received numbered shop drawings per floor. Import and site coordination was documented, even when the programme shifted by a week.",
+        author: "Development office",
+        role: "Residential batch · Jeddah",
+      },
+      {
+        quote:
+          "We specify Turriva for OPPEIN supply on client fit-outs. Phased delivery fits finishing schedules when unit handover order changes mid-project.",
+        author: "Fit-out consultant",
         role: "B2B · Western Region",
       },
     ],
@@ -714,20 +726,32 @@ const ar: LuxuryMessages = {
     ],
   },
   testimonials: {
-    eyebrow: "عملاؤنا",
-    title: "حين يتوافق التصميم والتوريد والتركيب",
+    eyebrow: "من الميدان",
+    title: "ملاحظات من مشاريع حديثة",
     items: [
       {
         quote:
-          "مطبخ الـ 3D طابق ما وصل، نفس التشطيبات ونفس المقاسات. فريق واحد من الاعتماد حتى التركيب، بلا لوم بين مصمم ومورد ومُركّب.",
-        author: "عميل خاص",
-        role: "فيلا · جدة",
+          "راجعنا المخطط مرتين قبل التصنيع. وصلت العينات قبل أسبوعين من التركيب، وساعدتنا نثبت لون الخشب في الموقع لا على الشاشة فقط.",
+        author: "م. س.",
+        role: "مالك فيلا · شمال جدة",
       },
       {
         quote:
-          "في دفعة المجمع، المخططات التنفيذية والتسليم المرحلي كانا واضحين. توريفا تولّت الاستيراد وفرق الموقع، نتابع الوحدات لا الأعذار.",
-        author: "مدير تطوير",
-        role: "B2B · الغربية",
+          "رُكّبت غرفة الملابس على زيارتين حسب جدولنا. سُجّلت ملاحظة بسيطة على باب واحد، وأُغلقت في الزيارة الثانية للموقع.",
+        author: "ن. ح.",
+        role: "شقة · مكة",
+      },
+      {
+        quote:
+          "في دفعة ١٢ وحدة، استلمنا مخططات تنفيذية مرقّمة لكل طابق. التنسيق مع الاستيراد والموقع كان موثّقاً، حتى عندما تأخر برنامج التسليم أسبوعاً.",
+        author: "مكتب تطوير",
+        role: "دفعة سكنية · جدة",
+      },
+      {
+        quote:
+          "نوصي بتوريفا لتوريد مطابخ OPPEIN في مشاريع عملائنا. التسليم المرحلي يناسب جدول التشطيب حين يتغيّر ترتيب تسليم الوحدات.",
+        author: "استشاري تشطيبات",
+        role: "B2B · المنطقة الغربية",
       },
     ],
   },

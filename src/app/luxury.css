@@ -2494,6 +2494,123 @@
   margin-top: clamp(2.5rem, 4.5vw, 3.25rem);
 }
 
+/* Testimonials — horizontal ticket strip on white */
+.lux-testimonials {
+  background: #ffffff;
+}
+
+.lux-testimonial-tickets {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0.25rem 0 0.5rem;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--lux-gold) 45%, var(--lux-sand)) transparent;
+}
+
+.lux-testimonial-tickets::-webkit-scrollbar {
+  height: 6px;
+}
+
+.lux-testimonial-tickets::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--lux-gold) 40%, var(--lux-sand));
+}
+
+.lux-testimonial-ticket {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 0 min(88vw, 19.5rem);
+  min-height: 13.5rem;
+  margin: 0;
+  padding: 1.35rem 1.25rem 1.15rem;
+  scroll-snap-align: start;
+  background: #ffffff;
+  border: 1px solid color-mix(in srgb, var(--lux-sand) 85%, transparent);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--lux-ink) 4%, transparent);
+}
+
+.lux-testimonial-ticket::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--lux-gold) 25%,
+    var(--lux-gold-light) 50%,
+    var(--lux-gold) 75%,
+    transparent
+  );
+}
+
+.lux-testimonial-ticket__quote {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: var(--lux-ink-soft);
+  font-style: normal;
+}
+
+[dir="rtl"] .lux-testimonial-ticket__quote {
+  font-size: 0.9375rem;
+  line-height: 1.85;
+}
+
+.lux-testimonial-ticket__footer {
+  margin-top: 1.15rem;
+  padding-top: 0.95rem;
+  border-top: 1px solid color-mix(in srgb, var(--lux-sand) 90%, transparent);
+  font-style: normal;
+}
+
+.lux-testimonial-ticket__author {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--lux-ink);
+  font-style: normal;
+}
+
+.lux-testimonial-ticket__role {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.75rem;
+  color: var(--lux-ink-muted);
+}
+
+@media (min-width: 1024px) {
+  .lux-testimonial-tickets {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.15rem;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+
+  .lux-testimonial-ticket {
+    flex: initial;
+    min-height: 14.5rem;
+    padding: 1.5rem 1.35rem 1.25rem;
+  }
+
+  .lux-testimonial-ticket__quote {
+    font-size: 0.8125rem;
+  }
+
+  [dir="rtl"] .lux-testimonial-ticket__quote {
+    font-size: 0.875rem;
+  }
+}
+
 .lux-partners-strip {
   padding-block: 1rem;
   background: var(--lux-charcoal);
