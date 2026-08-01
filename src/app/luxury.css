@@ -1526,6 +1526,35 @@
   transform: translateY(-1px);
 }
 
+.lux-footer-legal-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  max-width: 42rem;
+}
+
+.lux-footer-affiliation {
+  margin: 0;
+  font-size: 0.6875rem;
+  line-height: 1.65;
+  color: color-mix(in srgb, var(--lux-ivory) 62%, transparent);
+}
+
+.lux-footer-affiliation a {
+  color: color-mix(in srgb, var(--lux-ivory) 82%, transparent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.lux-footer-affiliation a:hover {
+  color: var(--lux-sand);
+}
+
+[dir="rtl"] .lux-footer-affiliation {
+  font-size: 0.75rem;
+  line-height: 1.75;
+}
+
 .lux-footer-bottom {
   margin-top: 0;
   display: flex;

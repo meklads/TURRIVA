@@ -190,16 +190,18 @@ export async function LuxuryFooter() {
         </div>
 
         <div className="lux-footer-bottom">
-          <p className="lux-footer-legal">
-            {t.footer.copyright}{" "}
-            <span className="lux-footer-legal-sep">|</span>{" "}
-            <span className="lux-powered-by">
-              {t.footer.poweredByPrefix}{" "}
+          <div className="lux-footer-legal-block">
+            <p className="lux-footer-affiliation">
+              {t.footer.affiliation}{" "}
               <a href={GRAPHICS_HOUSE_URL} target="_blank" rel="noopener noreferrer">
-                {t.footer.poweredByLink}
+                {t.footer.affiliationLink}
               </a>
-            </span>
-          </p>
+              {t.footer.affiliationSuffix}
+            </p>
+            <p className="lux-footer-legal" dir="ltr">
+              {t.footer.legalNotice}
+            </p>
+          </div>
           <div className="lux-footer-legal-links">
             <Link href="/privacy">{t.footer.privacy}</Link>
             <Link href="/terms">{t.footer.terms}</Link>

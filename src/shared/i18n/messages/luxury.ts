@@ -100,14 +100,15 @@ export type LuxuryMessages = LuxuryPlatformMessages & {
     contact: string;
     callNow: string;
     followUs: string;
-    copyright: string;
+    affiliation: string;
+    affiliationLink: string;
+    affiliationSuffix: string;
+    legalNotice: string;
     privacy: string;
     terms: string;
     address: string;
     email: string;
     phone: string;
-    poweredByPrefix: string;
-    poweredByLink: string;
     sponsoredBy: string;
   };
   pages: {
@@ -371,14 +372,16 @@ const en: LuxuryMessages = {
     contact: "Contact",
     callNow: "Call now",
     followUs: "Follow us",
-    copyright: "© Turriva. All rights reserved.",
+    affiliation: "Turriva is part of",
+    affiliationLink: "Graphics House Co",
+    affiliationSuffix:
+      " — the dedicated fit-out and contracting arm for decor and interior execution.",
+    legalNotice: "© 2026 Turriva. All rights reserved | CR: 7054412114 | VAT: 314808998900003",
     privacy: "Privacy Policy",
     terms: "Terms of Use",
     address: "Jeddah, Al-Zahra District, Saudi Arabia",
     email: "hello@turriva.co",
     phone: "+966 50 278 6513",
-    poweredByPrefix: "Design studio heritage ·",
-    poweredByLink: "Graphics House",
     sponsoredBy: "Turriva integrated fit-out platform",
   },
   pages: {
@@ -751,14 +754,15 @@ const ar: LuxuryMessages = {
     contact: "تواصل معنا",
     callNow: "اتصل الآن",
     followUs: "تابعنا على:",
-    copyright: "© توريفا. جميع الحقوق محفوظة.",
+    affiliation: "توريفا جزء من",
+    affiliationLink: "Graphics House Co",
+    affiliationSuffix: " — الذراع التنفيذي للديكور والمقاولات والتشطيبات الداخلية في المملكة.",
+    legalNotice: "© 2026 Turriva. All rights reserved | CR: 7054412114 | VAT: 314808998900003",
     privacy: "سياسة الخصوصية",
     terms: "شروط الاستخدام",
     address: "جدة، حي الزهراء، المملكة العربية السعودية",
     email: "hello@turriva.co",
     phone: "+966 50 278 6513",
-    poweredByPrefix: "تراث استوديو التصميم ·",
-    poweredByLink: "جرافيكس هاوس",
     sponsoredBy: "منصة توريفا للتأثيث المتكامل",
   },
   pages: {
