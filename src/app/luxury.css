@@ -1003,20 +1003,32 @@
   display: grid;
   gap: 2rem;
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  max-width: 56rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.lux-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 14rem;
 }
 
 @media (min-width: 640px) {
   .lux-stats-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem 2.5rem;
   }
 }
 
 @media (min-width: 1024px) {
   .lux-stats-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.75rem 2rem;
+    max-width: 72rem;
   }
 }
 
@@ -1040,6 +1052,7 @@
   font-size: 0.8125rem;
   line-height: 1.5;
   color: color-mix(in srgb, white 72%, transparent);
+  text-wrap: balance;
 }
 
 .lux-cap-tile {
