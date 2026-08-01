@@ -99,6 +99,15 @@ const en: LuxuryPlatformMessages = {
       "Architectural design depth, automated global manufacturing, and Saudi field engineering — one integrated platform that solves contractor fragmentation, design-reality gaps, and weak warranty.",
     pillars: [
       {
+        brand: "turriva",
+        badge: "Local engineering & field execution",
+        title: "Laser survey, supply, and full local warranty",
+        points: [
+          "End-to-end field management: laser as-built surveys, customs clearance, SASO/SABER compliance.",
+          "Installation by specialist engineers and technicians — local warranty with fast spare-parts support.",
+        ],
+      },
+      {
         brand: "graphicsHouse",
         badge: "Design & visualization studio",
         title: "3D design with 100% site alignment",
@@ -114,15 +123,6 @@ const en: LuxuryPlatformMessages = {
         points: [
           "World-scale automated lines with German HOMAG cutting at 0.1 mm precision.",
           "E0/ENF formaldehyde-free boards and laser edge-banding engineered for humidity resistance.",
-        ],
-      },
-      {
-        brand: "turriva",
-        badge: "Local engineering & field execution",
-        title: "Laser survey, supply, and full local warranty",
-        points: [
-          "End-to-end field management: laser as-built surveys, customs clearance, SASO/SABER compliance.",
-          "Installation by specialist engineers and technicians — local warranty with fast spare-parts support.",
         ],
       },
     ],
@@ -332,6 +332,15 @@ const ar: LuxuryPlatformMessages = {
       "نجمع بين إبداع التصميم المعماري، دقة التصنيع الأوتوماتيكي العالمي، والاحترافية الهندسية في التنفيذ الميداني داخل المملكة — لحل تشتت المقاولين، وفجوة التصميم عن الواقع، وضعف الضمان.",
     pillars: [
       {
+        brand: "turriva",
+        badge: "الهندسة والتنفيذ المحلي",
+        title: "رفع مساحي، توريد، وضمان محلي شامل",
+        points: [
+          "إدارة ميدانية كاملة: رفع المقاسات بالليزر، التخليص الجمركي وإصدار شهادات المطابقة (SASO/SABER).",
+          "تركيب بأيدي مهندسين وفنيين متخصصين مع ضمان محلي شامل وسرعة توفير قطع الغيار.",
+        ],
+      },
+      {
         brand: "graphicsHouse",
         badge: "استوديو التصميم والإظهار",
         title: "تصميم ثلاثي الأبعاد بمطابقة واقعية 100%",
@@ -347,15 +356,6 @@ const ar: LuxuryPlatformMessages = {
         points: [
           "تصنيع في أضخم خطوط إنتاج أوتوماتيكية عالمياً باستخدام ماكينات HOMAG الألمانية بدقة قطع 0.1 مم.",
           "خامات صديقة للبيئة وخالية من الفرمالدهيد (معيار E0/ENF)، وتقنيات تقفيل الحواف بالليزر المقاومة للرطوبة.",
-        ],
-      },
-      {
-        brand: "turriva",
-        badge: "الهندسة والتنفيذ المحلي",
-        title: "رفع مساحي، توريد، وضمان محلي شامل",
-        points: [
-          "إدارة ميدانية كاملة: رفع المقاسات بالليزر، التخليص الجمركي وإصدار شهادات المطابقة (SASO/SABER).",
-          "تركيب بأيدي مهندسين وفنيين متخصصين مع ضمان محلي شامل وسرعة توفير قطع الغيار.",
         ],
       },
     ],
