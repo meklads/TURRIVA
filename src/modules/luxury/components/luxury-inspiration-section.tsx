@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { LuxuryMessages } from "@/shared/i18n/messages/luxury";
@@ -15,12 +15,16 @@ type Props = {
 export function LuxuryInspirationSection({ messages }: Props) {
   const t = messages.inspiration;
   const items = t.items;
+  const sectionRef = useRef<HTMLElement>(null);
   const [active, setActive] = useState(items[0]?.id ?? "kitchen");
   const [autoPlay, setAutoPlay] = useState(true);
+  const [inView, setInView] = useState(false);
+  const [animTick, setAnimTick] = useState(0);
 
   const selectTab = useCallback((id: string) => {
     setAutoPlay(false);
     setActive(id);
+    setAnimTick((n) => n + 1);
   }, []);
 
   useEffect(() => {
@@ -32,6 +36,7 @@ export function LuxuryInspirationSection({ messages }: Props) {
         const next = items[(index + 1) % items.length];
         return next?.id ?? current;
       });
+      setAnimTick((n) => n + 1);
     }, AUTO_INTERVAL_MS);
 
     return () => window.clearInterval(timer);
@@ -48,12 +53,32 @@ export function LuxuryInspirationSection({ messages }: Props) {
     return () => reducedMotion.removeEventListener("change", onChange);
   }, []);
 
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) setInView(true);
+      },
+      { threshold: 0.18 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
   const activeIndex = Math.max(0, items.findIndex((item) => item.id === active));
   const item = items[activeIndex] ?? items[0]!;
   const image = LUXURY_INSPIRATION_IMAGES[item.id] ?? LUXURY_INSPIRATION_IMAGES.kitchen!;
+  const reverse = activeIndex % 2 === 1;
 
   return (
-    <section id="inspiration" className="lux-section lux-section--white lux-inspiration scroll-mt-24">
+    <section
+      ref={sectionRef}
+      id="inspiration"
+      className={`lux-section lux-section--linen lux-inspiration scroll-mt-24${inView ? " lux-inspiration--in-view" : ""}`}
+    >
       <div className="lux-container max-w-3xl text-center">
         <p className="lux-eyebrow">{t.eyebrow}</p>
         <div className="lux-divider-gold" />
@@ -79,15 +104,18 @@ export function LuxuryInspirationSection({ messages }: Props) {
       </div>
 
       <div className="lux-inspiration-rows lux-inspiration-rows--single">
-        <article key={item.id} className="lux-inspiration-row lux-inspiration-row--overlay">
+        <article
+          key={`${item.id}-${animTick}`}
+          className={`lux-inspiration-row lux-inspiration-row--animate${reverse ? " lux-inspiration-row--reverse" : ""}`}
+        >
           <div className="lux-container lux-inspiration-row__inner">
             <div className="lux-inspiration-row__media">
               <Image
                 src={image}
                 alt=""
                 fill
-                className="lux-inspiration-row__img object-cover"
-                sizes="(max-width: 1023px) 100vw, 84rem"
+                className="object-cover"
+                sizes="(max-width: 1023px) 100vw, 78vw"
                 priority={activeIndex === 0}
                 unoptimized
               />
