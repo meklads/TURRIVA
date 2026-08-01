@@ -56,7 +56,7 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    void sendLeadNotification({
+    const emailSent = await sendLeadNotification({
       name,
       phone,
       email,
@@ -66,9 +66,12 @@ export async function POST(req: NextRequest) {
       interest,
       source,
       projectType,
-    }).catch((err) => logServerError("lead notification email", err));
+    }).catch((err) => {
+      logServerError("lead notification email", err);
+      return false;
+    });
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, emailSent });
   } catch (error) {
     logServerError("consultation lead", error);
     return NextResponse.json({ error: "Failed to submit" }, { status: 500 });

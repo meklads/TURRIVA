@@ -96,7 +96,7 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    void sendLeadNotification({
+    const emailSent = await sendLeadNotification({
       name: data.name.trim(),
       phone,
       message: [
@@ -111,10 +111,14 @@ export async function POST(req: NextRequest) {
       source: "design_conversion",
       projectType: data.projectType,
       interest: "execution",
-    }).catch((err) => logServerError("lead notification email", err));
+    }).catch((err) => {
+      logServerError("lead notification email", err);
+      return false;
+    });
 
     const response = NextResponse.json({
       success: true,
+      emailSent,
       qualified,
       bonusCredits,
       bonusRemaining: bonusCredits,
