@@ -2634,15 +2634,16 @@
 .lux-ways-of-living__video {
   display: block;
   width: 100%;
-  height: auto;
+  height: min(39.375vw, 42vh, 19.6rem);
+  object-fit: cover;
+  object-position: center;
   vertical-align: middle;
   background: var(--lux-charcoal);
 }
 
-@media (max-width: 1023px) {
+@media (min-width: 1024px) {
   .lux-ways-of-living__video {
-    height: min(60vh, 28rem);
-    object-fit: cover;
+    height: min(39.375vw, 49vh, 22.4rem);
   }
 }
 
