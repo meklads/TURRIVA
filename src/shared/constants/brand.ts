@@ -1,4 +1,4 @@
-/** Public Turriva Real Estate contact, shown in footer, legal pages, and exports. */
+/** Public Turriva contact — receives mail at info@turriva.com (Cloudflare Email Routing). */
 export const TURRIVA_PUBLIC_HOST = "turriva.co";
-export const TURRIVA_PUBLIC_EMAIL = `hello@${TURRIVA_PUBLIC_HOST}`;
+export const TURRIVA_PUBLIC_EMAIL = "info@turriva.com";
 export const TURRIVA_PUBLIC_URL = `https://${TURRIVA_PUBLIC_HOST}`;

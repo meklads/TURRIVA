@@ -1019,7 +1019,7 @@ export const ar = {
   inlineTitle: "قوالب أعلى مستوى متاحة",
   inlineBody: "افتح قالبي \"توريفا العقارية تنفيذي\" و\"Graphics House\" بدفعة واحدة صغيرة.",
   lockedSuffix: "مقفل",
-  notConfigured: "الدفع غير مفعّل حالياً. تواصل معنا على hello@turriva.co.",
+  notConfigured: "الدفع غير مفعّل حالياً. تواصل معنا على info@turriva.com.",
   close: "إغلاق",
   error: "تعذّر إتمام الدفع. حاول مرة أخرى أو تواصل معنا.",
   trialNotice: "كل القوالب متاحة مجاناً حالياً خلال فترة التجربة.",

@@ -3858,6 +3858,23 @@
   color: #b42318;
 }
 
+.lux-quote-form__direct-email {
+  margin: 0;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--lux-ink-muted);
+}
+
+.lux-quote-form__direct-email a {
+  font-weight: 600;
+  color: var(--lux-gold);
+  text-decoration: none;
+}
+
+.lux-quote-form__direct-email a:hover {
+  text-decoration: underline;
+}
+
 /* Villas sales page — product & segment blocks */
 .lux-villas-product__grid {
   display: grid;

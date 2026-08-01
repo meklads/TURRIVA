@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSession } from "@/modules/auth/server/session";
 import { capturePremiumTemplatesOrder } from "@/modules/billing/server/paypal.service";
+import { TURRIVA_PUBLIC_EMAIL } from "@/shared/constants/brand";
 import { logServerError } from "@/shared/lib/usage-events";
 
 export async function POST(req: NextRequest) {
@@ -21,7 +22,7 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     logServerError("paypal capture-order", error);
     return NextResponse.json(
-      { error: "Payment could not be confirmed. If you were charged, contact hello@turriva.co." },
+      { error: `Payment could not be confirmed. If you were charged, contact ${TURRIVA_PUBLIC_EMAIL}.` },
       { status: 500 }
     );
   }

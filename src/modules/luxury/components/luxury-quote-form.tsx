@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { LuxuryMessages } from "@/shared/i18n/messages/luxury";
 import type { Locale } from "@/shared/i18n/locale";
+import { TURRIVA_PUBLIC_EMAIL } from "@/shared/constants/brand";
 
 type Props = {
   messages: LuxuryMessages;
@@ -192,6 +193,10 @@ export function LuxuryQuoteForm({ messages, locale, source = "marketing_quote" }
       <button type="submit" disabled={status === "loading"} className="lux-quote-form__submit">
         {status === "loading" ? "…" : q.formSubmit}
       </button>
+      <p className="lux-quote-form__direct-email">
+        {locale === "ar" ? "أو راسلنا مباشرة:" : "Or email us directly:"}{" "}
+        <a href={`mailto:${TURRIVA_PUBLIC_EMAIL}`}>{TURRIVA_PUBLIC_EMAIL}</a>
+      </p>
     </form>
   );
 }

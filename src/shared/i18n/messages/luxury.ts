@@ -441,7 +441,7 @@ const en: LuxuryMessages = {
       "Message: Is this for a commercial project or a home? Please share project details or floor plans.",
     formSubmit: "Submit",
     formSuccess: "Thank you. We will contact you within 24 hours.",
-    formError: "Something went wrong. Please try again or WhatsApp us.",
+    formError: "Something went wrong. Please try again, WhatsApp us, or email info@turriva.com.",
     products: [
       { value: "whole-home", label: "Whole-home fit-out" },
       { value: "kitchens", label: "Modular kitchens" },
@@ -485,7 +485,7 @@ const en: LuxuryMessages = {
     privacy: "Privacy Policy",
     terms: "Terms of Use",
     address: "Jeddah, Al-Zahra District, Saudi Arabia",
-    email: "hello@turriva.co",
+    email: "info@turriva.com",
     phone: "+966 50 278 6513",
     sponsoredBy: "Turriva integrated fit-out platform",
   },
@@ -520,7 +520,7 @@ const en: LuxuryMessages = {
       formMessage: "Tell us about your project",
       formSubmit: "Send request",
       formSuccess: "Thank you, we will contact you within one business day.",
-      formError: "Something went wrong. Please try again or WhatsApp us.",
+      formError: "Something went wrong. Please try again, WhatsApp us, or email info@turriva.com.",
       projectTypes: [
         { value: "villa", label: "Private villa" },
         { value: "developer", label: "Developer / B2B project" },
@@ -983,7 +983,7 @@ const ar: LuxuryMessages = {
       "رسالة: هل المشروع تجاري أم سكني؟ يرجى تزويدنا بتفاصيل المشروع أو مخططات الطابق.",
     formSubmit: "إرسال",
     formSuccess: "شكراً. سنتواصل معك خلال 24 ساعة.",
-    formError: "حدث خطأ. جرّب مرة أخرى أو راسلنا على واتساب.",
+    formError: "حدث خطأ. جرّب مرة أخرى، أو راسلنا على واتساب أو info@turriva.com.",
     products: [
       { value: "whole-home", label: "حلول منزلية متكاملة" },
       { value: "kitchens", label: "خزائن المطبخ" },
@@ -1026,7 +1026,7 @@ const ar: LuxuryMessages = {
     privacy: "سياسة الخصوصية",
     terms: "شروط الاستخدام",
     address: "جدة، حي الزهراء، المملكة العربية السعودية",
-    email: "hello@turriva.co",
+    email: "info@turriva.com",
     phone: "+966 50 278 6513",
     sponsoredBy: "منصة توريفا للتأثيث المتكامل",
   },
@@ -1061,7 +1061,7 @@ const ar: LuxuryMessages = {
       formMessage: "أخبرنا عن مشروعك",
       formSubmit: "إرسال الطلب",
       formSuccess: "شكراً، سنتواصل خلال يوم عمل.",
-      formError: "حدث خطأ. جرّب مرة أخرى أو راسلنا على واتساب.",
+      formError: "حدث خطأ. جرّب مرة أخرى، أو راسلنا على واتساب أو info@turriva.com.",
       projectTypes: [
         { value: "villa", label: "فيلا خاصة" },
         { value: "developer", label: "مطور / مشروع B2B" },

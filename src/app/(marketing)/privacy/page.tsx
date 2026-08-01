@@ -1,5 +1,6 @@
 import { getMessages } from "@/shared/i18n";
 import { getLocale } from "@/shared/i18n/server";
+import { TURRIVA_PUBLIC_EMAIL } from "@/shared/constants/brand";
 
 export default async function PrivacyPage() {
   const locale = await getLocale();
@@ -30,10 +31,10 @@ export default async function PrivacyPage() {
       <p className="mt-12 text-sm text-ruwaq-navy-soft">
         {t.pages.privacy.contact}{" "}
         <a
-          href="mailto:hello@turriva.co"
+          href={`mailto:${TURRIVA_PUBLIC_EMAIL}`}
           className="font-semibold text-ruwaq-gold hover:underline"
         >
-          hello@turriva.co
+          {TURRIVA_PUBLIC_EMAIL}
         </a>
       </p>
     </div>

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getSession } from "@/modules/auth/server/session";
 import { createPremiumTemplatesOrder, isPaypalConfigured } from "@/modules/billing/server/paypal.service";
+import { TURRIVA_PUBLIC_EMAIL } from "@/shared/constants/brand";
 
 export async function POST() {
   try {
@@ -10,7 +11,7 @@ export async function POST() {
     }
     if (!isPaypalConfigured()) {
       return NextResponse.json(
-        { error: "Payments are not configured yet. Contact hello@turriva.co." },
+        { error: `Payments are not configured yet. Contact ${TURRIVA_PUBLIC_EMAIL}.` },
         { status: 503 }
       );
     }

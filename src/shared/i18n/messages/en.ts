@@ -1014,7 +1014,7 @@ export const en: Messages = {
   inlineTitle: "Premium templates available",
   inlineBody: "Unlock the \"Turriva Executive\" and \"Graphics House\" templates with a single small payment.",
   lockedSuffix: "locked",
-  notConfigured: "Payments aren't enabled yet. Contact hello@turriva.co.",
+  notConfigured: "Payments aren't enabled yet. Contact info@turriva.com.",
   close: "Close",
   error: "Payment could not be completed. Try again or contact us.",
   trialNotice: "All templates are free for now during the trial period.",
