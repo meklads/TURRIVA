@@ -194,12 +194,38 @@ export type LuxuryMessages = LuxuryPlatformMessages & {
     projects: {
       title: string;
       intro: string;
+      ctaBrief: string;
+      ctaSample: string;
+      segments: {
+        eyebrow: string;
+        title: string;
+        subtitle: string;
+        items: readonly { title: string; description: string; tag: string }[];
+      };
+      steps: readonly { title: string; description: string }[];
       highlights: readonly { title: string; description: string }[];
+      programme: {
+        eyebrow: string;
+        title: string;
+        intro: string;
+        highlights: readonly { title: string; description: string }[];
+        cta: string;
+      };
+      formSection: {
+        title: string;
+        subtitle: string;
+      };
+      faq: {
+        eyebrow: string;
+        title: string;
+        items: readonly { q: string; a: string }[];
+      };
       formTitle: string;
       formCompany: string;
       formUnits: string;
       formProducts: string;
       formSubmit: string;
+      formEmail: string;
       productOptions: readonly { value: string; label: string }[];
     };
     design: { title: string; intro: string };
@@ -653,20 +679,103 @@ const en: LuxuryMessages = {
       },
     },
     projects: {
-      title: "Developers & B2B projects",
+      title: "Developers & B2B programmes",
       intro:
-        "Oppein-grade supply for multi-unit programmes, competitive direct pricing without showroom overhead, shop drawings SLA, and phased logistics.",
+        "Oppein-grade modular supply for towers, compounds, and hospitality batches — direct pricing, shop-drawing SLA, SASO / SABER clearance, and phased site delivery under one Turriva programme lead.",
+      ctaBrief: "Submit B2B brief",
+      ctaSample: "Request sample kit",
+      segments: {
+        eyebrow: "Who we partner with",
+        title: "Built for multi-unit programmes",
+        subtitle:
+          "Whether you are a developer, main contractor, or hospitality operator scaling fit-out across dozens or hundreds of units — we structure supply, drawings, and install to your programme.",
+        items: [
+          {
+            tag: "Developers",
+            title: "Residential towers & compounds",
+            description:
+              "Volume MOQ pricing, repeatable module specs, and phased logistics aligned to your handover schedule.",
+          },
+          {
+            tag: "Contractors",
+            title: "Main contractors & GCs",
+            description:
+              "Factory-aligned shop drawings, import compliance, and dedicated Turriva site supervision through snagging.",
+          },
+          {
+            tag: "Hospitality",
+            title: "Hotels & F&B chains",
+            description:
+              "Batch production for guest rooms, back-of-house, and public areas with consistent finishes across properties.",
+          },
+        ],
+      },
+      steps: [
+        { title: "Programme brief", description: "Unit mix, BOQ scope, sample boards, and delivery phasing agreed upfront." },
+        { title: "Shop drawings", description: "Execution drawings aligned to OPPEIN modules within signed SLA timelines." },
+        { title: "Manufacture & import", description: "Automated production, SASO / SABER, and staged warehousing." },
+        { title: "Phased install", description: "Turriva site teams, snagging lists, and handover documentation per phase." },
+      ],
       highlights: [
         { title: "MOQ & volume pricing", description: "Structured discounts for residential towers, compounds, and hospitality batches." },
         { title: "Shop drawings SLA", description: "Execution drawings aligned to factory modules within agreed timelines." },
         { title: "Customs & storage", description: "Import, SASO / SABER, and staged delivery to your programme." },
         { title: "Site teams", description: "Turriva supervisors through snagging and handover documentation." },
       ],
+      programme: {
+        eyebrow: "Phased delivery",
+        title: "One programme lead from factory to floor plate",
+        intro:
+          "Multi-tower and hospitality programmes need more than product — they need predictable phasing, compliant import, and install teams that show up when your slab is ready.",
+        highlights: [
+          {
+            title: "Staged shipments",
+            description: "Kitchen and wardrobe batches released per tower, floor, or zone — not one overwhelming delivery.",
+          },
+          {
+            title: "Compliance pack",
+            description: "SASO / SABER documentation and conformity certificates bundled for your procurement team.",
+          },
+          {
+            title: "Snagging & sign-off",
+            description: "Phase-by-phase punch lists and handover records your client and consultant can audit.",
+          },
+        ],
+        cta: "Discuss your programme",
+      },
+      formSection: {
+        title: "Request a B2B proposal",
+        subtitle:
+          "Share company details, unit count, and product scope. We respond within one business day with next steps for drawings, pricing, or a sample review.",
+      },
+      faq: {
+        eyebrow: "FAQ",
+        title: "B2B & developer questions",
+        items: [
+          {
+            q: "What is the typical MOQ?",
+            a: "It varies by product line and finish tier. Share your unit count and we structure volume pricing — often from 10+ kitchens or equivalent joinery batches.",
+          },
+          {
+            q: "Do you work with our architect's drawings?",
+            a: "Yes. We produce factory-aligned shop drawings from your design intent, or adapt our OPPEIN modules to your consultant's layouts within the agreed SLA.",
+          },
+          {
+            q: "How is B2B different from /villas?",
+            a: "/villas covers single-owner projects. This page is for developers, contractors, and multi-unit hospitality programmes with MOQ, phasing, and formal proposals.",
+          },
+          {
+            q: "How do we start?",
+            a: "Submit the brief below with unit count and product scope, or email info@turriva.com with your programme schedule.",
+          },
+        ],
+      },
       formTitle: "Request B2B proposal",
       formCompany: "Company / developer name",
       formUnits: "Approx. units or area (sqm)",
       formProducts: "Products needed",
       formSubmit: "Submit B2B brief",
+      formEmail: "Work email",
       productOptions: [
         { value: "kitchens", label: "Kitchens" },
         { value: "wardrobes", label: "Wardrobes" },
@@ -1194,20 +1303,103 @@ const ar: LuxuryMessages = {
       },
     },
     projects: {
-      title: "المطورون ومشاريع B2B",
+      title: "المطورون وبرامج B2B",
       intro:
-        "توريد بمواصفات Oppein للمشاريع متعددة الوحدات، أسعار مباشرة دون أعباء معارض، SLA للمخططات، ولوجستيات مرحلية.",
+        "توريد معياري بمواصفات Oppein للأبراج والمجمعات ودفعات الضيافة — تسعير مباشر، SLA للمخططات، SASO / SABER، وتسليم مرحلي بإشراف توريفا واحد.",
+      ctaBrief: "أرسل ملخص B2B",
+      ctaSample: "اطلب حقيبة عينات",
+      segments: {
+        eyebrow: "من نتشارك معهم",
+        title: "مبني لبرامج متعددة الوحدات",
+        subtitle:
+          "سواء كنت مطوراً، مقاولاً رئيسياً، أو مشغّل ضيافة يوسّع التأثيث على عشرات أو مئات الوحدات — نُهيكل التوريد والمخططات والتركيب حسب برنامجك.",
+        items: [
+          {
+            tag: "مطورون",
+            title: "أبراج سكنية ومجمعات",
+            description:
+              "تسعير MOQ للحجم، مواصفات وحدات متكررة، ولوجستيات مرحلية متوافقة مع جدول التسليم.",
+          },
+          {
+            tag: "مقاولون",
+            title: "مقاولون رئيسيون",
+            description:
+              "مخططات تنفيذ متوافقة مع المصنع، امتثال استيراد، وإشراف ميداني توريفa حتى الملاحظات.",
+          },
+          {
+            tag: "ضيافة",
+            title: "فنادق وسلاسل F&B",
+            description:
+              "إنتاج دفعي لغرف الضيوف والخدمات والمناطق العامة بتشطيبات متسقة عبر الفروع.",
+          },
+        ],
+      },
+      steps: [
+        { title: "ملخص البرنامج", description: "مزيج الوحدات، نطاق BOQ، لوحات العينات، وجدول التسليم." },
+        { title: "مخططات تنفيذ", description: "رسومات متوافقة مع وحدات OPPEIN ضمن SLA متفق عليه." },
+        { title: "تصنيع واستيراد", description: "إنتاج أوتوماتيكي، SASO / SABER، وتخزين مرحلي." },
+        { title: "تركيب مرحلي", description: "فرق موقع توريفa، قوائم ملاحظات، ووثائق تسليم لكل مرحلة." },
+      ],
       highlights: [
         { title: "تسعير MOQ", description: "خصومات هيكلية للأبراج والمجمعات والضيافة." },
         { title: "SLA للمخططات", description: "مخططات تنفيذ متوافقة مع وحدات المصنع." },
         { title: "جمارك وتخزين", description: "استيراد SASO / SABER وتسليم مرحلي." },
-        { title: "فرق موقع", description: "إشراف توريفا حتى الملاحظات والتسليم." },
+        { title: "فرق موقع", description: "إشراف توريفa حتى الملاحظات والتسليم." },
       ],
+      programme: {
+        eyebrow: "تسليم مرحلي",
+        title: "قائد برنامج واحد — من المصنع إلى الطابق",
+        intro:
+          "برامج الأبراج والضيافة تحتاج أكثر من منتج — تحتاج مراحل متوقعة، استيراداً متوافقاً، وفرق تركيب تصل عند جاهزية البلاطة.",
+        highlights: [
+          {
+            title: "شحنات مرحلية",
+            description: "دفعات مطابخ وخزائن لكل برج أو طابق أو منطقة — دون توريد واحد مُربك.",
+          },
+          {
+            title: "حزمة امتثال",
+            description: "وثائق SASO / SABER وشهادات مطابقة جاهزة لفريق المشتريات.",
+          },
+          {
+            title: "ملاحظات وتسليم",
+            description: "قوائم punch list ومحاضر تسليم لكل مرحلة — قابلة للمراجعة من الاستشاري.",
+          },
+        ],
+        cta: "ناقش برنامجك",
+      },
+      formSection: {
+        title: "اطلب عرض B2B",
+        subtitle:
+          "شاركنا بيانات الشركة وعدد الوحدات ونطاق المنتجات. نرد خلال يوم عمل بخطوات المخططات أو التسعير أو مراجعة العينات.",
+      },
+      faq: {
+        eyebrow: "أسئلة شائعة",
+        title: "أسئلة المطورين و B2B",
+        items: [
+          {
+            q: "ما الحد الأدنى للطلب MOQ؟",
+            a: "يختلف حسب خط الإنتاج والتشطيب. شاركنا عدد الوحدات ونُهيكل التسعير — غالباً من 10+ مطابخ أو ما يعادلها من النجارة.",
+          },
+          {
+            q: "هل تعملون مع مخططات مهندسنا؟",
+            a: "نعم. نُنتج مخططات تنفيذ متوافقة مع المصنع من تصميمكم، أو نُكيّف وحدات OPPEIN مع مخططات الاستشاري ضمن SLA.",
+          },
+          {
+            q: "ما الفرق عن /villas؟",
+            a: "/villas للمالك الفردي. هذه الصفحة للمطورين والمقاولين وبرامج الضيافة متعددة الوحدات مع MOQ وتسليم مرحلي.",
+          },
+          {
+            q: "كيف نبدأ؟",
+            a: "أرسل الملخص أدناه مع عدد الوحدات، أو راسل info@turriva.com مع جدول البرنامج.",
+          },
+        ],
+      },
       formTitle: "طلب عرض B2B",
       formCompany: "اسم الشركة / المطور",
       formUnits: "عدد الوحدات أو المساحة (م²)",
       formProducts: "المنتجات المطلوبة",
       formSubmit: "إرسال ملخص B2B",
+      formEmail: "البريد الوظيفي",
       productOptions: [
         { value: "kitchens", label: "مطابخ" },
         { value: "wardrobes", label: "خزائن" },

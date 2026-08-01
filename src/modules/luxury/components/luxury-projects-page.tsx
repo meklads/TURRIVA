@@ -1,71 +1,71 @@
-"use client";
-
-import { useState } from "react";
-import type { LuxuryMessages } from "@/shared/i18n/messages/luxury";
+import Link from "next/link";
 import type { Locale } from "@/shared/i18n/locale";
-import { TURRIVA_PUBLIC_EMAIL } from "@/shared/constants/brand";
-import { LuxuryEcosystemSection } from "./luxury-ecosystem-section";
+import { getLuxuryMessages, LUXURY_IMAGES } from "@/shared/i18n/messages/luxury";
+import { LuxuryFaqSection } from "./luxury-faq-section";
 import { LuxuryFormSplitSection } from "./luxury-form-split-section";
 import { LuxuryBrandHeroImage } from "./luxury-brand-hero-image";
 import { LuxuryMarketingHero } from "./luxury-marketing-hero";
 import { LuxuryPartnersStrip } from "./luxury-partners-strip";
+import { LuxuryProjectsB2bForm } from "./luxury-projects-b2b-form";
+import { LuxuryProjectsSegmentsSection } from "./luxury-projects-segments-section";
+import { LuxuryTrustBar } from "./luxury-trust-bar";
+import { LuxuryVillasProductSection } from "./luxury-villas-product-section";
 
 type Props = {
-  messages: LuxuryMessages;
+  messages: ReturnType<typeof getLuxuryMessages>;
   locale: Locale;
 };
 
 export function LuxuryProjectsPage({ messages: t, locale }: Props) {
   const p = t.pages.projects;
-  const c = t.pages.contact;
-
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [company, setCompany] = useState("");
-  const [units, setUnits] = useState("");
-  const [products, setProducts] = useState<string[]>([]);
-  const [message, setMessage] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-
-  async function onSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setStatus("loading");
-    try {
-      const res = await fetch("/api/design/consultation", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,
-          phone,
-          message: [
-            `Company: ${company}`,
-            `Units/area: ${units}`,
-            `Products: ${products.join(", ")}`,
-            message,
-          ].join("\n"),
-          locale,
-          source: "b2b_projects",
-          interest: "bespoke",
-          projectType: "developer",
-        }),
-      });
-      if (!res.ok) throw new Error("fail");
-      setStatus("success");
-    } catch {
-      setStatus("error");
-    }
-  }
 
   return (
     <>
-      <LuxuryMarketingHero eyebrow={t.brand.tagline} title={p.title} intro={p.intro} />
+      <LuxuryMarketingHero eyebrow={t.brand.tagline} title={p.title} intro={p.intro}>
+        <Link href="#brief" className="lux-btn-primary">
+          {p.ctaBrief}
+        </Link>
+        <Link href="/contact?intent=sample" className="lux-btn-outline-gold">
+          {p.ctaSample}
+        </Link>
+      </LuxuryMarketingHero>
 
-      <section id="joinery" className="lux-section lux-section--linen scroll-mt-24">
-        <div className="lux-container max-w-6xl">
+      <LuxuryTrustBar messages={t} />
+
+      <LuxuryProjectsSegmentsSection messages={t} />
+
+      <section className="lux-section lux-section--cream scroll-mt-24">
+        <div className="lux-container max-w-3xl text-center">
+          <p className="lux-eyebrow">{t.process.eyebrow}</p>
+          <div className="lux-divider-gold" />
+          <h2 className="lux-display lux-heading mt-6">{t.process.title}</h2>
+        </div>
+        <div className="lux-container mt-12 max-w-6xl">
+          <div className="lux-marketing-grid sm:grid-cols-2 lg:grid-cols-4">
+            {p.steps.map((step, i) => (
+              <div key={step.title} className="lux-process-step">
+                <span className="lux-process-index">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="lux-display mt-4 text-lg">{step.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-lux-ink-soft">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="joinery" className="lux-section lux-section--white scroll-mt-24">
+        <div className="lux-container max-w-3xl text-center">
+          <p className="lux-eyebrow">{locale === "ar" ? "قدرات B2B" : "B2B capabilities"}</p>
+          <div className="lux-divider-gold" />
+          <h2 className="lux-display lux-heading mt-6">
+            {locale === "ar" ? "ما الذي نقدمه للبرامج" : "What we deliver at scale"}
+          </h2>
+        </div>
+        <div className="lux-container mt-12 max-w-6xl">
           <div className="lux-marketing-grid sm:grid-cols-2 lg:grid-cols-4">
             {p.highlights.map((item) => (
               <div key={item.title} className="lux-pillar-card">
-                <h2 className="lux-display text-lg">{item.title}</h2>
+                <h3 className="lux-display text-lg">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-lux-ink-soft">{item.description}</p>
               </div>
             ))}
@@ -73,10 +73,25 @@ export function LuxuryProjectsPage({ messages: t, locale }: Props) {
         </div>
       </section>
 
+      <LuxuryVillasProductSection
+        id="programme"
+        imageSrc={LUXURY_IMAGES.project3}
+        eyebrow={p.programme.eyebrow}
+        title={p.programme.title}
+        intro={p.programme.intro}
+        highlights={p.programme.highlights}
+        cta={p.programme.cta}
+        ctaHref="#brief"
+        tone="linen"
+      />
+
       <LuxuryPartnersStrip messages={t} />
-      <LuxuryEcosystemSection messages={t} />
+
+      <LuxuryFaqSection messages={t} faq={p.faq} />
 
       <LuxuryFormSplitSection
+        id="brief"
+        tone="white"
         image={
           <LuxuryBrandHeroImage
             className="lux-quote-section__media"
@@ -85,79 +100,11 @@ export function LuxuryProjectsPage({ messages: t, locale }: Props) {
           />
         }
       >
-        <h2 className="lux-display text-2xl sm:text-3xl">{p.formTitle}</h2>
-        {status === "success" ? (
-          <p className="mt-6 rounded-xl bg-lux-gold-muted/50 px-4 py-3 text-sm">{c.formSuccess}</p>
-        ) : (
-          <form onSubmit={onSubmit} className="mt-8 space-y-4">
-            <input
-              required
-              placeholder={c.formName}
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="lux-input"
-            />
-            <input
-              required
-              dir="ltr"
-              placeholder={c.formPhone}
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              className="lux-input"
-            />
-            <input
-              required
-              placeholder={p.formCompany}
-              value={company}
-              onChange={(e) => setCompany(e.target.value)}
-              className="lux-input"
-            />
-            <input
-              placeholder={p.formUnits}
-              value={units}
-              onChange={(e) => setUnits(e.target.value)}
-              className="lux-input"
-            />
-            <fieldset>
-              <legend className="mb-2 text-xs font-semibold uppercase tracking-wider text-lux-ink-muted">
-                {p.formProducts}
-              </legend>
-              <div className="flex flex-wrap gap-2">
-                {p.productOptions.map((opt) => (
-                  <label key={opt.value} className="lux-chip-check">
-                    <input
-                      type="checkbox"
-                      checked={products.includes(opt.value)}
-                      onChange={(e) =>
-                        setProducts((prev) =>
-                          e.target.checked ? [...prev, opt.value] : prev.filter((v) => v !== opt.value)
-                        )
-                      }
-                    />
-                    {opt.label}
-                  </label>
-                ))}
-              </div>
-            </fieldset>
-            <textarea
-              rows={4}
-              placeholder={c.formMessage}
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              className="lux-input min-h-[7rem]"
-            />
-            {status === "error" && <p className="text-sm text-red-700">{c.formError}</p>}
-            <button type="submit" disabled={status === "loading"} className="lux-btn-primary">
-              {status === "loading" ? "…" : p.formSubmit}
-            </button>
-            <p className="text-center text-xs text-lux-ink-muted sm:text-start">
-              {locale === "ar" ? "أو راسلنا مباشرة:" : "Or email us directly:"}{" "}
-              <a href={`mailto:${TURRIVA_PUBLIC_EMAIL}`} className="font-medium text-lux-gold hover:underline">
-                {TURRIVA_PUBLIC_EMAIL}
-              </a>
-            </p>
-          </form>
-        )}
+        <h2 className="lux-display text-2xl sm:text-3xl">{p.formSection.title}</h2>
+        <p className="lux-body mt-3 text-sm sm:text-base text-lux-ink-muted">{p.formSection.subtitle}</p>
+        <div className="mt-8">
+          <LuxuryProjectsB2bForm messages={t} locale={locale} />
+        </div>
       </LuxuryFormSplitSection>
     </>
   );
