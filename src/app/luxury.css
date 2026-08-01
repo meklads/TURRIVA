@@ -1196,7 +1196,32 @@
   display: block;
 }
 
-/* Turriva facade sign — never crop; always show full frame */
+/* Full-frame brand / editorial images — never crop (object-fit: contain) */
+.lux-contain-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--lux-contain-aspect);
+  min-height: 12rem;
+  overflow: hidden;
+  background: linear-gradient(
+    165deg,
+    color-mix(in srgb, var(--lux-cream) 88%, white) 0%,
+    var(--lux-stone) 100%
+  );
+}
+
+.lux-contain-image--fill {
+  aspect-ratio: auto;
+  height: 100%;
+  min-height: 14rem;
+}
+
+.lux-contain-image__img {
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Turriva facade sign — alias for legacy class names */
 .lux-brand-facade-media {
   position: relative;
   width: 100%;
@@ -3523,6 +3548,10 @@
     grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   }
 
+  .lux-quote-section--portrait {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  }
+
   .lux-quote-section__media {
     min-height: 100%;
     min-height: 36rem;
@@ -3531,6 +3560,35 @@
   .lux-quote-section__panel {
     padding: clamp(2rem, 3.5vw, 2.75rem);
   }
+}
+
+/* Marketing inner pages — unified hero rhythm */
+.lux-marketing-hero__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: clamp(2rem, 4vw, 2.5rem);
+}
+
+@media (min-width: 640px) {
+  .lux-marketing-hero__actions {
+    flex-direction: row;
+  }
+}
+
+.lux-marketing-grid {
+  display: grid;
+  gap: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+.lux-marketing-gallery {
+  padding-block: clamp(3.5rem, 6vw, 5rem);
+}
+
+.lux-form-split .lux-quote-section__panel > .lux-display:first-child {
+  margin-bottom: 0;
 }
 
 .lux-quote-form {

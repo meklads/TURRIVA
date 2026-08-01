@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { luxuryPageMetadata } from "@/modules/luxury/lib/metadata";
+import { LuxuryMarketingHero } from "@/modules/luxury/components/luxury-marketing-hero";
 import { LuxuryQuoteSection } from "@/modules/luxury/components/luxury-quote-section";
 import {
   getLuxuryMessages,
@@ -27,30 +28,35 @@ export default async function OurWorkPage() {
   ];
 
   return (
-    <section className="lux-section">
-      <div className="lux-container text-center">
-        <p className="lux-eyebrow">{t.projects.eyebrow}</p>
-        <div className="lux-divider-gold" />
-        <h1 className="lux-display mt-6 text-4xl sm:text-5xl">{t.pages.ourWork.title}</h1>
-        <p className="lux-body mx-auto mt-6 max-w-2xl">{t.pages.ourWork.intro}</p>
-      </div>
-      <div className="lux-container mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((src) => (
-          <div
-            key={src}
-            className="group relative aspect-[4/5] overflow-hidden rounded-xl shadow-lux-card"
-          >
-            <Image
-              src={src}
-              alt=""
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="(max-width: 768px) 100vw, 33vw"
-            />
+    <>
+      <LuxuryMarketingHero
+        eyebrow={t.projects.eyebrow}
+        title={t.pages.ourWork.title}
+        intro={t.pages.ourWork.intro}
+      />
+
+      <section className="lux-section lux-section--linen lux-marketing-gallery scroll-mt-24">
+        <div className="lux-container max-w-6xl">
+          <div className="lux-marketing-grid sm:grid-cols-2 lg:grid-cols-3">
+            {projects.map((src) => (
+              <div
+                key={src}
+                className="group relative aspect-[4/5] overflow-hidden rounded-xl shadow-lux-card"
+              >
+                <Image
+                  src={src}
+                  alt=""
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      </section>
+
       <LuxuryQuoteSection messages={t} locale={locale} source="marketing_our_work" />
-    </section>
+    </>
   );
 }

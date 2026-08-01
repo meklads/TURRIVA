@@ -1,8 +1,8 @@
 import { LUXURY_IMAGES } from "@/shared/i18n/messages/luxury";
 import { LuxuryContainImage } from "./luxury-contain-image";
 
-/** Intrinsic aspect ratio of turriva-sign-facade.png */
-export const LUXURY_FACADE_ASPECT = 1024 / 682;
+/** hero-interior.webp — portrait interior showcase */
+export const LUXURY_INTERIOR_ASPECT = 861 / 993;
 
 type Props = {
   priority?: boolean;
@@ -11,11 +11,11 @@ type Props = {
   fillHeight?: boolean;
 };
 
-export function LuxuryFacadeImage(props: Props) {
+export function LuxuryInteriorImage(props: Props) {
   return (
     <LuxuryContainImage
-      src={LUXURY_IMAGES.ctaBand}
-      aspectRatio={LUXURY_FACADE_ASPECT}
+      src={LUXURY_IMAGES.heroInterior}
+      aspectRatio={LUXURY_INTERIOR_ASPECT}
       {...props}
     />
   );
