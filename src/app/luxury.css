@@ -2143,7 +2143,7 @@
   font-size: 0.8125rem;
 }
 
-/* Delivery showcase — copy above, half-height video band */
+/* Delivery showcase — copy above, compact video band */
 .lux-delivery-showcase {
   position: relative;
   z-index: 6;
@@ -2190,20 +2190,20 @@
 
 .lux-delivery-showcase__video-frame {
   width: 100%;
-  height: min(30vh, 14rem);
+  height: min(45vh, 21rem);
   overflow: hidden;
   background: var(--lux-charcoal);
 }
 
 @media (min-width: 768px) {
   .lux-delivery-showcase__video-frame {
-    height: min(32vh, 16rem);
+    height: min(48vh, 24rem);
   }
 }
 
 @media (min-width: 1024px) {
   .lux-delivery-showcase__video-frame {
-    height: min(34vh, 18rem);
+    height: min(51vh, 27rem);
   }
 }
 
@@ -2663,7 +2663,7 @@
 .lux-ways-of-living__video {
   display: block;
   width: 100%;
-  height: min(39.375vw, 42vh, 19.6rem);
+  height: min(59.375vw, 63vh, 29.4rem);
   object-fit: cover;
   object-position: center;
   vertical-align: middle;
@@ -2672,7 +2672,7 @@
 
 @media (min-width: 1024px) {
   .lux-ways-of-living__video {
-    height: min(39.375vw, 49vh, 22.4rem);
+    height: min(59.375vw, 73.5vh, 33.6rem);
   }
 }
 
