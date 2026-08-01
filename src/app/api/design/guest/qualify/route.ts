@@ -12,6 +12,7 @@ import {
 } from "@/modules/design/server/design-guest.service";
 import { db } from "@/shared/lib/db";
 import { getSession } from "@/modules/auth/server/session";
+import { sendLeadNotification } from "@/shared/lib/email/send-lead-notification";
 import { logServerError } from "@/shared/lib/usage-events";
 
 export const dynamic = "force-dynamic";
@@ -84,8 +85,33 @@ export async function POST(req: NextRequest) {
         qualified,
         interest: "execution",
         source: "design_conversion",
+        message: [
+          `Project: ${data.projectType}`,
+          `Scope: ${data.executionScope}`,
+          `Budget: ${data.budget}`,
+          `Timeline: ${data.timeline}`,
+          `Qualified: ${qualified}`,
+          `Score: ${score}`,
+        ].join("\n"),
       },
     });
+
+    void sendLeadNotification({
+      name: data.name.trim(),
+      phone,
+      message: [
+        `Project: ${data.projectType}`,
+        `Scope: ${data.executionScope}`,
+        `Budget: ${data.budget}`,
+        `Timeline: ${data.timeline}`,
+        `Qualified: ${qualified}`,
+        `Score: ${score}`,
+      ].join("\n"),
+      locale: data.locale,
+      source: "design_conversion",
+      projectType: data.projectType,
+      interest: "execution",
+    }).catch((err) => logServerError("lead notification email", err));
 
     const response = NextResponse.json({
       success: true,

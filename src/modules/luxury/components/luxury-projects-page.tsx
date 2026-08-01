@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { LuxuryMessages } from "@/shared/i18n/messages/luxury";
 import type { Locale } from "@/shared/i18n/locale";
+import { TURRIVA_PUBLIC_EMAIL } from "@/shared/constants/brand";
 import { LuxuryEcosystemSection } from "./luxury-ecosystem-section";
 import { LuxuryFormSplitSection } from "./luxury-form-split-section";
 import { LuxuryBrandHeroImage } from "./luxury-brand-hero-image";
@@ -149,6 +150,12 @@ export function LuxuryProjectsPage({ messages: t, locale }: Props) {
             <button type="submit" disabled={status === "loading"} className="lux-btn-primary">
               {status === "loading" ? "…" : p.formSubmit}
             </button>
+            <p className="text-center text-xs text-lux-ink-muted sm:text-start">
+              {locale === "ar" ? "أو راسلنا مباشرة:" : "Or email us directly:"}{" "}
+              <a href={`mailto:${TURRIVA_PUBLIC_EMAIL}`} className="font-medium text-lux-gold hover:underline">
+                {TURRIVA_PUBLIC_EMAIL}
+              </a>
+            </p>
           </form>
         )}
       </LuxuryFormSplitSection>
