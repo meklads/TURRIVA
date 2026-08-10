@@ -17,19 +17,21 @@ export function LuxuryEcosystemSection({ messages }: { messages: LuxuryMessages 
 
       <div className="lux-container mt-14 grid gap-6 lg:grid-cols-3 lg:gap-7">
         {t.pillars.map((pillar) => {
-          const logo = ECOSYSTEM_BRAND_LOGOS[pillar.brand];
+          const logo = pillar.brand ? ECOSYSTEM_BRAND_LOGOS[pillar.brand] : null;
           return (
             <article key={pillar.title} className="lux-offer-card">
-              <div className={`lux-offer-card__logo ${logo.className}`}>
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={220}
-                  height={80}
-                  className="lux-offer-card__logo-img"
-                  unoptimized
-                />
-              </div>
+              {logo ? (
+                <div className={`lux-offer-card__logo ${logo.className}`}>
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={220}
+                    height={80}
+                    className="lux-offer-card__logo-img"
+                    unoptimized
+                  />
+                </div>
+              ) : null}
               <p className="lux-offer-card__badge">{pillar.badge}</p>
               <h3 className="lux-offer-card__title">{pillar.title}</h3>
               <ul className="lux-offer-card__points">

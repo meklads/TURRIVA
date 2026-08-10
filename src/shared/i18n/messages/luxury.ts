@@ -269,12 +269,12 @@ const en: LuxuryMessages = {
     contact: "CONTACT",
   },
   hero: {
-    eyebrow: "Saudi Arabia · Design · OPPEIN supply · Local execution",
+    eyebrow: "Saudi Arabia · Design · Modular supply · Local execution",
     title: "An integrated system to design, supply, and deliver premium spaces",
     subtitle:
-      "We unite architectural 3D precision, automated global manufacturing through OPPEIN, and Turriva engineering on the ground, so developers and villa owners get one accountable partner from drawing to handover.",
+      "We unite architectural 3D precision, automated global manufacturing, and Turriva engineering on the ground, so developers and villa owners get one accountable partner from drawing to handover.",
     servicesLine: "Kitchens · Wardrobes · Joinery · Villas · Projects",
-    tags: ["3D design", "OPPEIN supply", "Local install", "B2B & villas"],
+    tags: ["3D design", "Modular supply", "Local install", "B2B & villas"],
     ctaPrimary: "Book design consultation",
     ctaSecondary: "B2B project catalog",
     ctaSample: "Request sample kit",
@@ -288,7 +288,7 @@ const en: LuxuryMessages = {
   stats: {
     items: [
       { value: "3D", label: "Factory-aligned design studio" },
-      { value: "OPPEIN", label: "Global manufacturing partner" },
+      { value: "0.1 mm", label: "Factory precision cutting" },
       { value: "1 team", label: "Survey through warranty" },
       { value: "SASO", label: "Local compliance & install" },
     ],
@@ -438,7 +438,7 @@ const en: LuxuryMessages = {
       },
       {
         quote:
-          "We specify Turriva for OPPEIN supply on client fit-outs. Phased delivery fits finishing schedules when unit handover order changes mid-project.",
+          "We specify Turriva for modular joinery supply on client fit-outs. Phased delivery fits finishing schedules when unit handover order changes mid-project.",
         author: "Fit-out consultant",
         role: "B2B · Western Region",
       },
@@ -488,7 +488,7 @@ const en: LuxuryMessages = {
   },
   footer: {
     about:
-      "Turriva, integrated fit-out platform in Saudi Arabia: architectural 3D, OPPEIN modular supply, and local engineering from survey to warranty.",
+      "Turriva, integrated fit-out platform in Saudi Arabia: architectural 3D, modular supply, and local engineering from survey to warranty.",
     quickLinks: "Quick Links",
     importantLinks: "Important Links",
     servicesLinks: "Services",
@@ -534,7 +534,7 @@ const en: LuxuryMessages = {
     about: {
       title: "About Turriva",
       intro:
-        "Turriva is the master brand for an integrated fit-out system, design visualization, OPPEIN manufacturing access, and Saudi field execution under one accountable platform.",
+        "Turriva is the master brand for an integrated fit-out system, design visualization, factory-grade manufacturing access, and Saudi field execution under one accountable platform.",
     },
     contact: {
       title: "Contact Turriva",
@@ -558,11 +558,11 @@ const en: LuxuryMessages = {
     villas: {
       title: "Villas, hospitality & commercial spaces",
       intro:
-        "An integrated fit-out journey for villas, boutique hotels, restaurants, and premium retail — free 3D visualization, OPPEIN kitchens and wardrobes, and Turriva installation with local warranty.",
+        "An integrated fit-out journey for villas, boutique hotels, restaurants, and premium retail — free 3D visualization, modular kitchens and wardrobes, and Turriva installation with local warranty.",
       steps: [
         { title: "3D design session", description: "Upload your plan or book a visit, factory-module layouts in days." },
         { title: "Samples & sign-off", description: "Physical finishes and hardware references before we order." },
-        { title: "Manufacture & import", description: "Automated OPPEIN production with SASO / SABER clearance." },
+        { title: "Manufacture & import", description: "Automated factory production with SASO / SABER clearance." },
         { title: "Install & warranty", description: "Laser-verified install and local after-sales support." },
       ],
       ctaDesign: "Start 3D design",
@@ -597,7 +597,7 @@ const en: LuxuryMessages = {
         eyebrow: "Modular kitchens",
         title: "Factory-precise kitchens, built for Gulf homes and hospitality",
         intro:
-          "OPPEIN modular systems with moisture-resistant cores, PET and lacquer finishes, and Blum soft-close hardware — specified in 3D, sampled on site, then cut to 0.1 mm tolerance.",
+          "Factory-grade modular systems with moisture-resistant cores, PET and lacquer finishes, and Blum soft-close hardware — specified in 3D, sampled on site, then cut to 0.1 mm tolerance.",
         highlights: [
           {
             title: "Island & galley layouts",
@@ -630,7 +630,7 @@ const en: LuxuryMessages = {
           },
           {
             title: "Factory-aligned modules",
-            description: "Every elevation feeds OPPEIN production directly — fewer site adjustments, cleaner handover.",
+            description: "Every elevation feeds factory production directly — fewer site adjustments, cleaner handover.",
           },
         ],
         cta: "Plan your wardrobes",
@@ -669,7 +669,7 @@ const en: LuxuryMessages = {
           },
           {
             q: "What warranty do you offer?",
-            a: "Local warranty on products and installation, with spare-parts support. OPPEIN boards meet E0 standards; hardware is specified from Blum and Hettich.",
+            a: "Local warranty on products and installation, with spare-parts support. E0 boards meet international standards; hardware is specified from Blum and Hettich.",
           },
           {
             q: "How do I start?",
@@ -681,7 +681,7 @@ const en: LuxuryMessages = {
     projects: {
       title: "Developers & B2B programmes",
       intro:
-        "Oppein-grade modular supply for towers, compounds, and hospitality batches — direct pricing, shop-drawing SLA, SASO / SABER clearance, and phased site delivery under one Turriva programme lead.",
+        "Factory-grade modular supply for towers, compounds, and hospitality batches — direct pricing, shop-drawing SLA, SASO / SABER clearance, and phased site delivery under one Turriva programme lead.",
       ctaBrief: "Submit B2B brief",
       ctaSample: "Request sample kit",
       segments: {
@@ -712,7 +712,7 @@ const en: LuxuryMessages = {
       },
       steps: [
         { title: "Programme brief", description: "Unit mix, BOQ scope, sample boards, and delivery phasing agreed upfront." },
-        { title: "Shop drawings", description: "Execution drawings aligned to OPPEIN modules within signed SLA timelines." },
+        { title: "Shop drawings", description: "Execution drawings aligned to factory modules within signed SLA timelines." },
         { title: "Manufacture & import", description: "Automated production, SASO / SABER, and staged warehousing." },
         { title: "Phased install", description: "Turriva site teams, snagging lists, and handover documentation per phase." },
       ],
@@ -758,7 +758,7 @@ const en: LuxuryMessages = {
           },
           {
             q: "Do you work with our architect's drawings?",
-            a: "Yes. We produce factory-aligned shop drawings from your design intent, or adapt our OPPEIN modules to your consultant's layouts within the agreed SLA.",
+            a: "Yes. We produce factory-aligned shop drawings from your design intent, or adapt our modular systems to your consultant's layouts within the agreed SLA.",
           },
           {
             q: "How is B2B different from /villas?",
@@ -894,12 +894,12 @@ const ar: LuxuryMessages = {
     contact: "تواصل",
   },
   hero: {
-    eyebrow: "السعودية · تصميم · توريد OPPEIN · تنفيذ محلي",
+    eyebrow: "السعودية · تصميم · توريد معياري · تنفيذ محلي",
     title: "منظومة متكاملة لتصميم وتوريد وتنفيذ المساحات الفاخرة",
     subtitle:
-      "نجمع بين دقة التصميم المعماري ثلاثي الأبعاد، التصنيع الأوتوماتيكي العالمي عبر OPPEIN، والهندسة الميدانية لتوريفا، جهة واحدة مسؤولة من المخطط حتى التسليم للمطورين وأصحاب الفلل.",
+      "نجمع بين دقة التصميم المعماري ثلاثي الأبعاد، التصنيع الأوتوماتيكي العالمي، والهندسة الميدانية لتوريفا، جهة واحدة مسؤولة من المخطط حتى التسليم للمطورين وأصحاب الفلل.",
     servicesLine: "مطابخ · خزائن · تكسيات · فلل · مشاريع",
-    tags: ["تصميم 3D", "توريد OPPEIN", "تركيب محلي", "B2B وفلل"],
+    tags: ["تصميم 3D", "توريد معياري", "تركيب محلي", "B2B وفلل"],
     ctaPrimary: "احجز استشارة تصميم",
     ctaSecondary: "كتالوج مشاريع B2B",
     ctaSample: "اطلب حقيبة العينات",
@@ -913,7 +913,7 @@ const ar: LuxuryMessages = {
   stats: {
     items: [
       { value: "3D", label: "استوديو تصميم بمقاسات المصنع" },
-      { value: "OPPEIN", label: "شريك تصنيع عالمي" },
+      { value: "0.1 مم", label: "دقة قطع مصنعية" },
       { value: "فريق واحد", label: "من الرفع المساحي حتى الضمان" },
       { value: "SASO", label: "امتثال وتركيب محلي" },
     ],
@@ -1063,7 +1063,7 @@ const ar: LuxuryMessages = {
       },
       {
         quote:
-          "نوصي بتوريفا لتوريد مطابخ OPPEIN في مشاريع عملائنا. التسليم المرحلي يناسب جدول التشطيب حين يتغيّر ترتيب تسليم الوحدات.",
+          "نوصي بتوريفا لتوريد مطابخ معيارية في مشاريع عملائنا. التسليم المرحلي يناسب جدول التشطيب حين يتغيّر ترتيب تسليم الوحدات.",
         author: "استشاري تشطيبات",
         role: "B2B · المنطقة الغربية",
       },
@@ -1113,7 +1113,7 @@ const ar: LuxuryMessages = {
   },
   footer: {
     about:
-      "توريفا، منصة تأثيث متكاملة في السعودية: إظهار معماري 3D، توريد معياري OPPEIN، وهندسة ميدانية من الرفع المساحي حتى الضمان.",
+      "توريفا، منصة تأثيث متكاملة في السعودية: إظهار معماري 3D، توريد معياري، وهندسة ميدانية من الرفع المساحي حتى الضمان.",
     quickLinks: "روابط سريعة",
     importantLinks: "أهم الروابط",
     servicesLinks: "الخدمات",
@@ -1158,7 +1158,7 @@ const ar: LuxuryMessages = {
     about: {
       title: "عن توريفا",
       intro:
-        "توريفا العلامة الرئيسية لمنظومة تأثيث متكاملة، إظهار 3D، توريد OPPEIN، وتنفيذ ميداني سعودي تحت منصة واحدة.",
+        "توريفا العلامة الرئيسية لمنظومة تأثيث متكاملة، إظهار 3D، توريد معياري، وتنفيذ ميداني سعودي تحت منصة واحدة.",
     },
     contact: {
       title: "تواصل مع توريفا",
@@ -1182,11 +1182,11 @@ const ar: LuxuryMessages = {
     villas: {
       title: "الفلل والفنادق والمساحات التجارية",
       intro:
-        "رحلة تأثيث متكاملة للفلل والضيافة والمساحات التجارية الفاخرة — تصور 3D مجاني، مطابخ وخزائن OPPEIN، وتركيب توريفا بضمان محلي.",
+        "رحلة تأثيث متكاملة للفلل والضيافة والمساحات التجارية الفاخرة — تصور 3D مجاني، مطابخ وخزائن معيارية، وتركيب توريفا بضمان محلي.",
       steps: [
         { title: "جلسة تصميم 3D", description: "ارفع مخططك أو احجز زيارة، تخطيطات بمقاسات المصنع." },
         { title: "عينات واعتماد", description: "تشطيبات ومفصلات فيزيائية قبل أمر التصنيع." },
-        { title: "تصنيع واستيراد", description: "إنتاج OPPEIN أوتوماتيكي مع SASO / SABER." },
+        { title: "تصنيع واستيراد", description: "إنتاج مصنعي أوتوماتيكي مع SASO / SABER." },
         { title: "تركيب وضمان", description: "تركيب بالليزر ودعم ما بعد البيع محلياً." },
       ],
       ctaDesign: "ابدأ تصميم 3D",
@@ -1221,7 +1221,7 @@ const ar: LuxuryMessages = {
         eyebrow: "المطابخ المعيارية",
         title: "مطابخ بدقة المصنع — للفلل والضيافة",
         intro:
-          "أنظمة OPPEIN بقلب مقاوم للرطوبة، تشطيبات PET وطلاء عالي الجودة، ومفصلات Blum — تُحدَّد في 3D، تُعتمد بعينات فيزيائية، ثم تُقطع بدقة 0.1 مم.",
+          "أنظمة معيارية بقلب مقاوم للرطوبة، تشطيبات PET وطلاء عالي الجودة، ومفصلات Blum — تُحدَّد في 3D، تُعتمد بعينات فيزيائية، ثم تُقطع بدقة 0.1 مم.",
         highlights: [
           {
             title: "جزيرة وممرات عمل",
@@ -1254,7 +1254,7 @@ const ar: LuxuryMessages = {
           },
           {
             title: "وحدات متوافقة مع المصنع",
-            description: "كل واجهة تُغذّي إنتاج OPPEIN مباشرة — تعديلات أقل في الموقع وتسليم أنظف.",
+            description: "كل واجهة تُغذّي الإنتاج المصنعي مباشرة — تعديلات أقل في الموقع وتسليم أنظف.",
           },
         ],
         cta: "خطّط خزائنك",
@@ -1293,7 +1293,7 @@ const ar: LuxuryMessages = {
           },
           {
             q: "ما الضمان المقدّم؟",
-            a: "ضمان محلي على المنتج والتركيب مع دعم قطع الغيار. ألواح OPPEIN بمعيار E0؛ مفصلات من Blum وHettich.",
+            a: "ضمان محلي على المنتج والتركيب مع دعم قطع الغيار. ألواح E0 بمعايير دولية؛ مفصلات من Blum وHettich.",
           },
           {
             q: "كيف أبدأ؟",
@@ -1305,7 +1305,7 @@ const ar: LuxuryMessages = {
     projects: {
       title: "المطورون وبرامج B2B",
       intro:
-        "توريد معياري بمواصفات Oppein للأبراج والمجمعات ودفعات الضيافة — تسعير مباشر، SLA للمخططات، SASO / SABER، وتسليم مرحلي بإشراف توريفا واحد.",
+        "توريد معياري بمواصفات مصنعية للأبراج والمجمعات ودفعات الضيافة — تسعير مباشر، SLA للمخططات، SASO / SABER، وتسليم مرحلي بإشراف توريفا واحد.",
       ctaBrief: "أرسل ملخص B2B",
       ctaSample: "اطلب حقيبة عينات",
       segments: {
@@ -1336,7 +1336,7 @@ const ar: LuxuryMessages = {
       },
       steps: [
         { title: "ملخص البرنامج", description: "مزيج الوحدات، نطاق BOQ، لوحات العينات، وجدول التسليم." },
-        { title: "مخططات تنفيذ", description: "رسومات متوافقة مع وحدات OPPEIN ضمن SLA متفق عليه." },
+        { title: "مخططات تنفيذ", description: "رسومات متوافقة مع وحدات المصنع ضمن SLA متفق عليه." },
         { title: "تصنيع واستيراد", description: "إنتاج أوتوماتيكي، SASO / SABER، وتخزين مرحلي." },
         { title: "تركيب مرحلي", description: "فرق موقع توريفa، قوائم ملاحظات، ووثائق تسليم لكل مرحلة." },
       ],
@@ -1382,7 +1382,7 @@ const ar: LuxuryMessages = {
           },
           {
             q: "هل تعملون مع مخططات مهندسنا؟",
-            a: "نعم. نُنتج مخططات تنفيذ متوافقة مع المصنع من تصميمكم، أو نُكيّف وحدات OPPEIN مع مخططات الاستشاري ضمن SLA.",
+            a: "نعم. نُنتج مخططات تنفيذ متوافقة مع المصنع من تصميمكم، أو نُكيّف وحداتنا المعيارية مع مخططات الاستشاري ضمن SLA.",
           },
           {
             q: "ما الفرق عن /villas؟",

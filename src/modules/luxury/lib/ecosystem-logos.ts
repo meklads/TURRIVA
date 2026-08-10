@@ -5,11 +5,6 @@ export const ECOSYSTEM_BRAND_LOGOS = {
     alt: "Graphics House",
     className: "lux-offer-card__logo--gh",
   },
-  oppein: {
-    src: "/brand/oppein/logo.png",
-    alt: "OPPEIN",
-    className: "lux-offer-card__logo--oppein",
-  },
   turriva: {
     src: "/brand/turriva/turriva-logo.png",
     alt: "Turriva",

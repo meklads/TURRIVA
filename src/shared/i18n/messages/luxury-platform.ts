@@ -10,7 +10,7 @@ export type LuxuryPlatformMessages = {
     title: string;
     subtitle: string;
     pillars: readonly {
-      brand: "graphicsHouse" | "oppein" | "turriva";
+      brand?: "graphicsHouse" | "turriva";
       badge: string;
       title: string;
       points: readonly string[];
@@ -101,7 +101,7 @@ const en: LuxuryPlatformMessages = {
     items: [
       { icon: "build", label: "Local engineering & field execution · Turriva" },
       { icon: "design", label: "Architectural design & 3D studio heritage" },
-      { icon: "factory", label: "Global manufacturing partnership · Powered by OPPEIN" },
+      { icon: "factory", label: "Automated global manufacturing · factory-grade precision" },
     ],
   },
   ecosystem: {
@@ -129,8 +129,7 @@ const en: LuxuryPlatformMessages = {
         ],
       },
       {
-        brand: "oppein",
-        badge: "Global manufacturing · Powered by OPPEIN",
+        badge: "Global manufacturing",
         title: "Automated quality & German production tech",
         points: [
           "World-scale automated lines with German HOMAG cutting at 0.1 mm precision.",
@@ -209,7 +208,7 @@ const en: LuxuryPlatformMessages = {
         label: "Kitchen",
         title: "Modular kitchens",
         description:
-          "Custom cabinetry, countertops, and premium hardware from OPPEIN, visualized in 3D and installed on site by Turriva.",
+          "Custom cabinetry, countertops, and premium hardware, visualized in 3D and installed on site by Turriva.",
         cta: "Explore kitchens",
         href: "/contact?intent=design",
       },
@@ -280,7 +279,7 @@ const en: LuxuryPlatformMessages = {
     items: [
       {
         q: "What does Turriva offer end-to-end?",
-        a: "Architectural 3D design, OPPEIN-sourced modular joinery, import compliance, and local installation with warranty, one integrated system.",
+        a: "Architectural 3D design, factory-grade modular joinery, import compliance, and local installation with warranty, one integrated system.",
       },
       {
         q: "Do you serve developers and villa owners?",
@@ -288,7 +287,7 @@ const en: LuxuryPlatformMessages = {
       },
       {
         q: "Is there a warranty?",
-        a: "We provide local warranty on products and installation. OPPEIN hardware and board specs meet international E0 and factory QC standards.",
+        a: "We provide local warranty on products and installation. Specified hardware and board grades meet international E0 and factory QC standards.",
       },
       {
         q: "Can I request physical material samples?",
@@ -307,7 +306,7 @@ const en: LuxuryPlatformMessages = {
       {
         label: "Manufacturing",
         description: "Factory-scale production and precision cutting",
-        items: ["OPPEIN", "HOMAG"],
+        items: ["HOMAG"],
       },
       {
         label: "Hardware & fittings",
@@ -345,7 +344,7 @@ const en: LuxuryPlatformMessages = {
         icon: "quality",
         title: "Built to global standards",
         points: [
-          "Automated OPPEIN production at 0.1 mm precision on every module.",
+          "Automated factory production at 0.1 mm precision on every module.",
           "E0 boards plus Blum and Hettich hardware specified for daily use.",
         ],
       },
@@ -376,7 +375,7 @@ const ar: LuxuryPlatformMessages = {
     items: [
       { icon: "build", label: "هندسة وتنفيذ محلي · توريفا" },
       { icon: "design", label: "استوديو تصميم معماري وإظهار ثلاثي الأبعاد" },
-      { icon: "factory", label: "شراكة تصنيع عالمية · Powered by OPPEIN" },
+      { icon: "factory", label: "تصنيع عالمي أوتوماتيكي · دقة مصنعية" },
     ],
   },
   ecosystem: {
@@ -404,8 +403,7 @@ const ar: LuxuryPlatformMessages = {
         ],
       },
       {
-        brand: "oppein",
-        badge: "التصنيع العالمي · Powered by OPPEIN",
+        badge: "التصنيع العالمي",
         title: "جودة أوتوماتيكية وتقنيات إنتاج ألمانية",
         points: [
           "تصنيع في أضخم خطوط إنتاج أوتوماتيكية عالمياً باستخدام ماكينات HOMAG الألمانية بدقة قطع 0.1 مم.",
@@ -484,7 +482,7 @@ const ar: LuxuryPlatformMessages = {
         label: "مطبخ",
         title: "مطابخ معيارية",
         description:
-          "خزائن مخصصة وكونترتوب ومفصلات فاخرة من OPPEIN، إظهار ثلاثي الأبعاد وتركيب ميداني عبر توريفا.",
+          "خزائن مخصصة وكونترتوب ومفصلات فاخرة، إظهار ثلاثي الأبعاد وتركيب ميداني عبر توريفا.",
         cta: "اكتشف المطابخ",
         href: "/contact?intent=design",
       },
@@ -555,7 +553,7 @@ const ar: LuxuryPlatformMessages = {
     items: [
       {
         q: "ماذا تقدم توريفا من البداية للنهاية؟",
-        a: "تصميم 3D معماري، تشطيبات معيارية من OPPEIN، امتثال جمركي، وتركيب محلي بضمان، منظومة واحدة.",
+        a: "تصميم 3D معماري، تشطيبات معيارية بمواصفات مصنعية، امتثال جمركي، وتركيب محلي بضمان، منظومة واحدة.",
       },
       {
         q: "هل تخدمون المطورين وأصحاب الفلل؟",
@@ -563,7 +561,7 @@ const ar: LuxuryPlatformMessages = {
       },
       {
         q: "هل يوجد ضمان؟",
-        a: "ضمان محلي على المنتج والتركيب. مواصفات OPPEIN و E0 وفحص المصنع وفق معايير دولية.",
+        a: "ضمان محلي على المنتج والتركيب. مواصفات E0 وفحص المصنع وفق معايير دولية.",
       },
       {
         q: "هل يمكن طلب عينات فيزيائية؟",
@@ -582,7 +580,7 @@ const ar: LuxuryPlatformMessages = {
       {
         label: "التصنيع",
         description: "إنتاج مصنعي وتقطيع بدقة صناعية",
-        items: ["OPPEIN", "HOMAG"],
+        items: ["HOMAG"],
       },
       {
         label: "المفصلات والإكسسوارات",
@@ -620,7 +618,7 @@ const ar: LuxuryPlatformMessages = {
         icon: "quality",
         title: "جودة فائقة",
         points: [
-          "إنتاج أوتوماتيكي بدقة 0.1 مم عبر OPPEIN في كل وحدة.",
+          "إنتاج أوتوماتيكي بدقة 0.1 مم في كل وحدة.",
           "ألواح E0 ومفصلات Blum وHettich لاستخدام يومي متين.",
         ],
       },
