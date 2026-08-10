@@ -112,7 +112,7 @@ export function LuxuryInspirationSection({ messages }: Props) {
             <div className="lux-inspiration-row__media">
               <Image
                 src={image}
-                alt=""
+                alt={item.title}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1023px) 100vw, 78vw"
