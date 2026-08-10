@@ -10,7 +10,7 @@ export type LuxuryPlatformMessages = {
     title: string;
     subtitle: string;
     pillars: readonly {
-      brand?: "graphicsHouse" | "turriva";
+      brand?: "graphicsHouse" | "oppein" | "turriva";
       badge: string;
       title: string;
       points: readonly string[];
@@ -129,6 +129,7 @@ const en: LuxuryPlatformMessages = {
         ],
       },
       {
+        brand: "oppein",
         badge: "Global manufacturing",
         title: "Automated quality & German production tech",
         points: [
@@ -403,6 +404,7 @@ const ar: LuxuryPlatformMessages = {
         ],
       },
       {
+        brand: "oppein",
         badge: "التصنيع العالمي",
         title: "جودة أوتوماتيكية وتقنيات إنتاج ألمانية",
         points: [
