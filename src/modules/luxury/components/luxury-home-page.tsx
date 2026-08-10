@@ -49,7 +49,7 @@ export function LuxuryHomePage({ locale }: Props) {
                 <div className="lux-gallery-media">
                   <img
                     src={src}
-                    alt=""
+                    alt={item.title}
                     className="h-full w-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.02]"
                     loading="lazy"
                   />

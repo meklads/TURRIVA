@@ -21,7 +21,7 @@ export function LuxuryVillasGallerySection({ messages }: { messages: LuxuryMessa
               <div className="lux-gallery-media">
                 <Image
                   src={src}
-                  alt=""
+                  alt={item.title}
                   fill
                   className="object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.02]"
                   sizes="(max-width: 768px) 100vw, 33vw"
