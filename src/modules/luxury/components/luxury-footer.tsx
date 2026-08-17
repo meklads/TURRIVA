@@ -7,6 +7,7 @@ import { TURRIVA_LOGO_SRC, TURRIVA_LOGO_HEIGHT, TURRIVA_LOGO_WIDTH } from "./lux
 import { TURRIVA_PUBLIC_EMAIL, TURRIVA_PUBLIC_HOST, TURRIVA_PUBLIC_URL } from "@/shared/constants/brand";
 
 const WHATSAPP_SA = "966502786513";
+const TASAMI_GROUP_URL = "https://www.tasamify.com/";
 
 const SOCIAL = [
   { label: "Facebook", href: "https://web.facebook.com/3dghouse", abbr: "FB" },
@@ -191,7 +192,10 @@ export async function LuxuryFooter() {
         <div className="lux-footer-bottom">
           <div className="lux-footer-legal-block">
             <p className="lux-footer-affiliation">
-              {t.footer.affiliation} {t.footer.affiliationLink}
+              {t.footer.affiliation}{" "}
+              <a href={TASAMI_GROUP_URL} target="_blank" rel="noopener noreferrer">
+                {t.footer.affiliationLink}
+              </a>
               {t.footer.affiliationSuffix}
             </p>
             <p className="lux-footer-legal" dir="ltr">
