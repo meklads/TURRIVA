@@ -158,13 +158,13 @@ const en: LuxuryPlatformMessages = {
     eyebrow: "Part of Tasami Group",
     title: "Specialists working together, with Turriva accountable for execution",
     body:
-      "Turriva is a specialized execution company within Tasami Group. It works alongside sister companies across creative, marketing, and execution disciplines. Graphics House may lead creative and experience design; Turriva turns the approved direction into physical reality through technical development, fabrication, installation, and delivery.",
+      "Turriva is the specialized spatial execution and physical delivery company within Tasami Group. It works alongside sister companies across creative, marketing, and execution disciplines. For selected projects, Graphics House may lead creative and visual development; Turriva turns the approved direction into physical reality through technical development, furnishing, fabrication, installation, and delivery.",
     flow: "Creative → Execution",
     groupLink: "Discover Tasami Group",
     companies: [
       { name: "Graphics House", role: "Creative · Visual · Experience Design" },
       { name: "Bees Motion", role: "Marketing · Content · AI" },
-      { name: "Turriva", role: "Execution · Interiors · Exhibitions · Delivery", active: true },
+      { name: "Turriva", role: "Execution · Interiors · Exhibitions · Furnishing · Delivery", active: true },
     ],
   },
   comparison: {
@@ -445,13 +445,13 @@ const ar: LuxuryPlatformMessages = {
     eyebrow: "جزء من مجموعة تسامي",
     title: "تخصصات تعمل معاً، وتوريفا مسؤولة عن التنفيذ",
     body:
-      "توريفا شركة تنفيذ متخصصة ضمن مجموعة تسامي، وتعمل إلى جانب شركات شقيقة في مجالات الإبداع والتسويق والتنفيذ. قد تتولى Graphics House التصميم الإبداعي وتصميم التجربة، بينما تحوّل توريفا التوجه المعتمد إلى واقع مادي عبر التطوير الفني والتصنيع والتركيب والتسليم.",
+      "توريفا هي شركة تنفيذ المساحات والتسليم الميداني المتخصصة ضمن مجموعة تسامي، وتعمل إلى جانب شركات شقيقة في مجالات الإبداع والتسويق والتنفيذ. في مشاريع مختارة، قد تتولى Graphics House التطوير الإبداعي والبصري، بينما تحوّل توريفا التوجه المعتمد إلى واقع مادي عبر التطوير الفني والتأثيث والتصنيع والتركيب والتسليم.",
     flow: "الإبداع ← التنفيذ",
     groupLink: "اكتشف مجموعة تسامي",
     companies: [
       { name: "Graphics House", role: "إبداع · تصميم بصري · تصميم تجارب" },
       { name: "Bees Motion", role: "تسويق · محتوى · ذكاء اصطناعي" },
-      { name: "Turriva", role: "تنفيذ · مساحات داخلية · معارض · تسليم", active: true },
+      { name: "Turriva", role: "تنفيذ · مساحات داخلية · معارض · تأثيث · تسليم", active: true },
     ],
   },
   comparison: {

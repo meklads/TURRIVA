@@ -272,9 +272,9 @@ const en: LuxuryMessages = {
     eyebrow: "A Tasami Group company · Saudi Arabia",
     title: "From concept to physical reality.",
     subtitle:
-      "Turriva is a specialized execution company delivering interiors, exhibitions, branded environments, fabrication, installation, and turnkey physical experiences.",
-    servicesLine: "Interior execution · Exhibitions · Fabrication · Installation",
-    tags: ["Interior execution", "Exhibition execution", "Fabrication", "Turnkey delivery"],
+      "Turriva is a specialized spatial execution and physical delivery company delivering interiors, exhibitions, furnishing, fabrication, installation, and turnkey physical experiences.",
+    servicesLine: "Interior execution · Exhibitions · Furnishing · Fabrication · Installation",
+    tags: ["Interior execution", "Exhibition execution", "Furnishing", "Fabrication", "Turnkey delivery"],
     ctaPrimary: "Discuss your project",
     ctaSecondary: "Execution portfolio",
     ctaSample: "Request sample kit",
@@ -488,7 +488,7 @@ const en: LuxuryMessages = {
   },
   footer: {
     about:
-      "Turriva is a Tasami Group company specializing in spatial execution and physical delivery, from technical development and fabrication to installation and handover.",
+      "Turriva is a Tasami Group company specializing in spatial execution, furnishing, and physical delivery, from technical development and fabrication to installation and handover.",
     quickLinks: "Quick Links",
     importantLinks: "Important Links",
     servicesLinks: "Services",
@@ -533,7 +533,7 @@ const en: LuxuryMessages = {
     about: {
       title: "About Turriva",
       intro:
-        "Turriva is a specialized execution company within Tasami Group. We turn approved creative concepts into physical reality through technical development, fabrication, installation, and turnkey delivery for interiors, exhibitions, and branded environments.",
+        "Turriva is a specialized spatial execution and physical delivery company within Tasami Group. We turn approved creative concepts into reality through technical development, furnishing, fabrication, installation, and turnkey delivery for interiors, exhibitions, and branded environments.",
     },
     contact: {
       title: "Contact Turriva",
@@ -896,9 +896,9 @@ const ar: LuxuryMessages = {
     eyebrow: "إحدى شركات مجموعة تسامي · المملكة العربية السعودية",
     title: "من الفكرة إلى واقع ملموس.",
     subtitle:
-      "توريفا شركة تنفيذ متخصصة في المساحات الداخلية والمعارض وبيئات العلامات والتصنيع والتركيب والتجارب المادية المتكاملة.",
-    servicesLine: "تنفيذ داخلي · معارض · تصنيع · تركيب",
-    tags: ["تنفيذ داخلي", "تنفيذ معارض", "تصنيع", "تسليم متكامل"],
+      "توريفا شركة متخصصة في تنفيذ المساحات والتسليم الميداني، وتشمل أعمالها المساحات الداخلية والمعارض والتأثيث والتصنيع والتركيب والتجارب المادية المتكاملة.",
+    servicesLine: "تنفيذ داخلي · معارض · تأثيث · تصنيع · تركيب",
+    tags: ["تنفيذ داخلي", "تنفيذ معارض", "تأثيث", "تصنيع", "تسليم متكامل"],
     ctaPrimary: "ناقش مشروعك",
     ctaSecondary: "أعمال التنفيذ",
     ctaSample: "اطلب حقيبة العينات",
@@ -1112,7 +1112,7 @@ const ar: LuxuryMessages = {
   },
   footer: {
     about:
-      "توريفا إحدى شركات مجموعة تسامي، متخصصة في تنفيذ المساحات والتسليم الميداني من التطوير الفني والتصنيع إلى التركيب والتسليم.",
+      "توريفا إحدى شركات مجموعة تسامي، متخصصة في تنفيذ المساحات والتأثيث والتسليم الميداني من التطوير الفني والتصنيع إلى التركيب والتسليم.",
     quickLinks: "روابط سريعة",
     importantLinks: "أهم الروابط",
     servicesLinks: "الخدمات",
@@ -1157,7 +1157,7 @@ const ar: LuxuryMessages = {
     about: {
       title: "عن توريفا",
       intro:
-        "توريفا شركة تنفيذ متخصصة ضمن مجموعة تسامي. نحوّل المفاهيم الإبداعية المعتمدة إلى واقع مادي عبر التطوير الفني والتصنيع والتركيب والتسليم المتكامل للمساحات الداخلية والمعارض وبيئات العلامات.",
+        "توريفا شركة متخصصة في تنفيذ المساحات والتسليم الميداني ضمن مجموعة تسامي. نحوّل المفاهيم الإبداعية المعتمدة إلى واقع مادي عبر التطوير الفني والتأثيث والتصنيع والتركيب والتسليم المتكامل للمساحات الداخلية والمعارض وبيئات العلامات.",
     },
     contact: {
       title: "تواصل مع توريفا",

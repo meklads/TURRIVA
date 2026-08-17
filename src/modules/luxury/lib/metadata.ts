@@ -12,8 +12,8 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
 
   const description =
     locale === "ar"
-      ? "توريفا إحدى شركات مجموعة تسامي، متخصصة في تنفيذ المساحات الداخلية والمعارض والتصنيع والتركيب والتسليم الميداني في السعودية."
-      : "Turriva is a Tasami Group company specializing in interior execution, exhibitions, fabrication, installation, and physical delivery in Saudi Arabia.";
+      ? "توريفا إحدى شركات مجموعة تسامي، متخصصة في تنفيذ المساحات الداخلية والمعارض والتأثيث والتصنيع والتركيب والتسليم الميداني في السعودية."
+      : "Turriva is a Tasami Group company specializing in spatial execution, fit-out, exhibitions, furnishing, fabrication, installation, and physical delivery in Saudi Arabia.";
 
   return {
     title,
@@ -25,6 +25,7 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
             "تنفيذ ديكور",
             "تنفيذ معارض",
             "تنفيذ مساحات",
+            "تأثيث",
             "تصنيع وتركيب",
             "ديكور فلل",
             "شركة ديكور جدة",
@@ -36,6 +37,7 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
             "fit-out contractor Jeddah",
             "exhibition execution",
             "spatial fabrication",
+            "furnishing",
             "turnkey physical experiences",
             "Turriva",
           ],

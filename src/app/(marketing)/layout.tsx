@@ -10,7 +10,7 @@ const organizationSchema = {
   email: "info@turriva.com",
   telephone: "+966502786513",
   description:
-    "Specialized execution company delivering interiors, exhibitions, fabrication, installation, and turnkey physical experiences.",
+    "Specialized spatial execution and physical delivery company delivering interiors, exhibitions, furnishing, fabrication, installation, and turnkey physical experiences.",
   parentOrganization: {
     "@type": "Organization",
     name: "Tasami Group",
@@ -22,6 +22,7 @@ const organizationSchema = {
     "Exhibition execution",
     "Spatial execution",
     "Fit-out",
+    "Furnishing",
     "Fabrication",
     "Installation",
     "Turnkey physical experiences",
