@@ -9,14 +9,6 @@ import { TURRIVA_PUBLIC_EMAIL, TURRIVA_PUBLIC_HOST, TURRIVA_PUBLIC_URL } from "@
 const WHATSAPP_SA = "966502786513";
 const TASAMI_GROUP_URL = "https://www.tasamify.com/";
 
-const SOCIAL = [
-  { label: "Facebook", href: "https://web.facebook.com/3dghouse", abbr: "FB" },
-  { label: "X", href: "https://twitter.com/GraphicsHouse2", abbr: "X" },
-  { label: "Instagram", href: "https://www.instagram.com/3dgraphicshouse/", abbr: "IG" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/graphics-house-gh/", abbr: "IN" },
-  { label: "YouTube", href: "https://www.youtube.com/user/3dghouse/videos", abbr: "YT" },
-] as const;
-
 export async function LuxuryFooter() {
   const locale = await getLocale();
   const t = getLuxuryMessages(locale);
@@ -198,24 +190,6 @@ export async function LuxuryFooter() {
                   <span>{t.footer.callNow}</span>
                 </a>
               </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="lux-footer-social">
-          <span className="lux-footer-follow">{t.footer.followUs}</span>
-          <div className="lux-footer-social-icons">
-            {SOCIAL.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="lux-footer-social-btn"
-                aria-label={item.label}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {item.abbr}
-              </a>
             ))}
           </div>
         </div>

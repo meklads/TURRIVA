@@ -10,7 +10,7 @@ export type LuxuryPlatformMessages = {
     title: string;
     subtitle: string;
     pillars: readonly {
-      brand?: "graphicsHouse" | "oppein" | "turriva";
+      brand?: "oppein" | "turriva";
       badge: string;
       title: string;
       points: readonly string[];
@@ -19,6 +19,18 @@ export type LuxuryPlatformMessages = {
     ctaB2c: string;
     ctaB2bHref: string;
     ctaB2cHref: string;
+  };
+  brandRelationship: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    flow: string;
+    groupLink: string;
+    companies: readonly {
+      name: string;
+      role: string;
+      active?: boolean;
+    }[];
   };
   comparison: {
     eyebrow: string;
@@ -99,42 +111,41 @@ export type LuxuryPlatformMessages = {
 const en: LuxuryPlatformMessages = {
   trustBar: {
     items: [
-      { icon: "build", label: "Local engineering & field execution · Turriva" },
-      { icon: "design", label: "Architectural design & 3D studio heritage" },
-      { icon: "factory", label: "Automated global manufacturing · factory-grade precision" },
+      { icon: "build", label: "Spatial execution & installation · Turriva" },
+      { icon: "design", label: "Concept-to-build technical development" },
+      { icon: "factory", label: "Fabrication, procurement & physical delivery" },
     ],
   },
   ecosystem: {
-    eyebrow: "What Turriva delivers",
-    title: "The Turriva system: three pillars from drawing to handover",
+    eyebrow: "How Turriva delivers",
+    title: "From approved creative direction to physical delivery",
     subtitle:
-      "Architectural design depth, automated global manufacturing, and Saudi field engineering, one integrated platform that solves contractor fragmentation, design-reality gaps, and weak warranty.",
+      "Turriva owns the execution path: technical development, coordinated fabrication, site installation, quality control, and handover under one accountable delivery team.",
     pillars: [
       {
-        brand: "turriva",
-        badge: "Local engineering & field execution",
-        title: "Laser survey, supply, and full local warranty",
+        badge: "01 · Technical development",
+        title: "Translate concepts into build-ready scope",
         points: [
-          "End-to-end field management: laser as-built surveys, customs clearance, SASO/SABER compliance.",
-          "Installation by specialist engineers and technicians, local warranty with fast spare-parts support.",
-        ],
-      },
-      {
-        brand: "graphicsHouse",
-        badge: "Design & visualization studio",
-        title: "3D design with 100% site alignment",
-        points: [
-          "Plans become high-fidelity 3D and VR models using factory-approved engineering blocks.",
-          "Eliminates the gap between render and reality, full customization to your exact floor plan.",
+          "Site surveys, material specifications, shop drawings, mockups, and coordinated approvals.",
+          "A precise bridge between the creative intent and what can be fabricated and installed.",
         ],
       },
       {
         brand: "oppein",
-        badge: "Global manufacturing",
-        title: "Automated quality & German production tech",
+        badge: "02 · Fabrication & procurement",
+        title: "Build, source, and quality-check every element",
         points: [
-          "World-scale automated lines with German HOMAG cutting at 0.1 mm precision.",
-          "E0/ENF formaldehyde-free boards and laser edge-banding engineered for humidity resistance.",
+          "Coordinated joinery, finishes, fixtures, and specialist fabrication through verified supply channels.",
+          "Production tracking, Saudi compliance, logistics, and staged delivery aligned to the site programme.",
+        ],
+      },
+      {
+        brand: "turriva",
+        badge: "03 · Execution & handover",
+        title: "Install, coordinate, and deliver the finished experience",
+        points: [
+          "Specialist site teams manage installation, interfaces, snagging, and final quality control.",
+          "One Turriva lead remains accountable through opening, handover, and local aftercare.",
         ],
       },
     ],
@@ -143,15 +154,28 @@ const en: LuxuryPlatformMessages = {
     ctaB2bHref: "/projects",
     ctaB2cHref: "/contact?intent=sample",
   },
+  brandRelationship: {
+    eyebrow: "Part of Tasami Group",
+    title: "Specialists working together, with Turriva accountable for execution",
+    body:
+      "Turriva is a specialized execution company within Tasami Group. It works alongside sister companies across creative, marketing, and execution disciplines. Graphics House may lead creative and experience design; Turriva turns the approved direction into physical reality through technical development, fabrication, installation, and delivery.",
+    flow: "Creative → Execution",
+    groupLink: "Discover Tasami Group",
+    companies: [
+      { name: "Graphics House", role: "Creative · Visual · Experience Design" },
+      { name: "Bees Motion", role: "Marketing · Content · AI" },
+      { name: "Turriva", role: "Execution · Interiors · Exhibitions · Delivery", active: true },
+    ],
+  },
   comparison: {
     eyebrow: "Why Turriva",
-    title: "Traditional market vs. the Turriva integrated system",
+    title: "Fragmented delivery vs. accountable execution",
     traditionalHeader: "Traditional approach",
-    turrivaHeader: "Turriva integrated",
+    turrivaHeader: "Turriva execution",
     rows: [
       {
         traditional: "Three separate parties: designer, factory, installer, blame shifts everywhere",
-        turriva: "One accountable platform from approved drawing to keys",
+        turriva: "One accountable Turriva team from approved concept to handover",
       },
       {
         traditional: "Large gap between pretty images and delivered product",
@@ -267,9 +291,9 @@ const en: LuxuryPlatformMessages = {
   },
   beforeAfter: {
     eyebrow: "Project showcase",
-    title: "From visualization to build-ready reality",
+    title: "Creative direction prepared for physical delivery",
     subtitleLine1: "Architectural 3D, interior joinery, and woodwork on developer programmes.",
-    subtitleLine2: "From approved visualization through manufacturing to site execution.",
+    subtitleLine2: "A project-specific example of creative work by our sister company Graphics House.",
     projectName: "Rafal Pavilions",
     projectCredit: "Visualization & interior design · Graphics House",
     cta: "Learn more",
@@ -280,7 +304,7 @@ const en: LuxuryPlatformMessages = {
     items: [
       {
         q: "What does Turriva offer end-to-end?",
-        a: "Architectural 3D design, factory-grade modular joinery, import compliance, and local installation with warranty, one integrated system.",
+        a: "Technical development, fabrication and procurement coordination, import compliance, installation, handover, and local warranty under one accountable Turriva team.",
       },
       {
         q: "Do you serve developers and villa owners?",
@@ -301,8 +325,8 @@ const en: LuxuryPlatformMessages = {
     ],
   },
   partners: {
-    title: "Standards & partners",
-    subtitle: "Global manufacturing and hardware, cleared for Saudi compliance before anything reaches your site.",
+    title: "Specified components & compliance",
+    subtitle: "Production technology, selected hardware, and Saudi compliance references coordinated for physical delivery.",
     groups: [
       {
         label: "Manufacturing",
@@ -331,7 +355,7 @@ const en: LuxuryPlatformMessages = {
     eyebrow: "The Turriva promise",
     title: "What Turriva delivers for your project",
     subtitle:
-      "An integrated fit-out platform that combines architectural design, global manufacturing, and Saudi field execution. A clear path from approved drawings to handover, not theoretical promises.",
+      "A specialized execution company that turns approved concepts into completed interiors, exhibitions, and branded environments through disciplined physical delivery.",
     items: [
       {
         icon: "warranty",
@@ -361,7 +385,7 @@ const en: LuxuryPlatformMessages = {
         icon: "service",
         title: "One team, end to end",
         points: [
-          "Laser survey, import compliance, and installation under one platform.",
+          "Laser survey, procurement coordination, compliance, and installation under one Turriva lead.",
           "Phased logistics for villas, compounds, and developer programmes.",
         ],
       },
@@ -374,42 +398,41 @@ const en: LuxuryPlatformMessages = {
 const ar: LuxuryPlatformMessages = {
   trustBar: {
     items: [
-      { icon: "build", label: "هندسة وتنفيذ محلي · توريفا" },
-      { icon: "design", label: "استوديو تصميم معماري وإظهار ثلاثي الأبعاد" },
-      { icon: "factory", label: "تصنيع عالمي أوتوماتيكي · دقة مصنعية" },
+      { icon: "build", label: "تنفيذ المساحات والتركيب · توريفا" },
+      { icon: "design", label: "تطوير فني من المفهوم إلى التنفيذ" },
+      { icon: "factory", label: "تصنيع وتوريد وتسليم ميداني" },
     ],
   },
   ecosystem: {
-    eyebrow: "ما تقدمه توريفا",
-    title: "منظومة توريفا: قوة ثلاثية تضمن نجاح مشروعك من المخطط إلى التسليم",
+    eyebrow: "كيف تنفّذ توريفا",
+    title: "من التوجه الإبداعي المعتمد إلى التسليم على أرض الواقع",
     subtitle:
-      "نجمع بين إبداع التصميم المعماري، دقة التصنيع الأوتوماتيكي العالمي، والاحترافية الهندسية في التنفيذ الميداني داخل المملكة، لحل تشتت المقاولين، وفجوة التصميم عن الواقع، وضعف الضمان.",
+      "تتولى توريفا مسار التنفيذ: التطوير الفني، وتنسيق التصنيع، والتركيب الميداني، وضبط الجودة، والتسليم عبر فريق تنفيذ واحد مسؤول.",
     pillars: [
       {
-        brand: "turriva",
-        badge: "الهندسة والتنفيذ المحلي",
-        title: "رفع مساحي، توريد، وضمان محلي شامل",
+        badge: "01 · التطوير الفني",
+        title: "تحويل المفهوم إلى نطاق جاهز للتنفيذ",
         points: [
-          "إدارة ميدانية كاملة: رفع المقاسات بالليزر، التخليص الجمركي وإصدار شهادات المطابقة (SASO/SABER).",
-          "تركيب بأيدي مهندسين وفنيين متخصصين مع ضمان محلي شامل وسرعة توفير قطع الغيار.",
-        ],
-      },
-      {
-        brand: "graphicsHouse",
-        badge: "استوديو التصميم والإظهار",
-        title: "تصميم ثلاثي الأبعاد بمطابقة واقعية 100%",
-        points: [
-          "تحويل المخططات إلى مجسمات 3D و VR بدقة فائقة باستخدام البلوكات الهندسية المعتمدة للمصنع.",
-          "إلغاء الفجوة بين صورة التصميم والواقع الميداني، مع إمكانية التخصيص الكامل حسب مساحة مشروعك.",
+          "رفع مساحي، مواصفات خامات، مخططات تنفيذ، نماذج واعتمادات منسّقة.",
+          "جسر دقيق بين الرؤية الإبداعية وما يمكن تصنيعه وتركيبه فعلياً.",
         ],
       },
       {
         brand: "oppein",
-        badge: "التصنيع العالمي",
-        title: "جودة أوتوماتيكية وتقنيات إنتاج ألمانية",
+        badge: "02 · التصنيع والتوريد",
+        title: "تصنيع وتوريد وفحص جودة كل عنصر",
         points: [
-          "تصنيع في أضخم خطوط إنتاج أوتوماتيكية عالمياً باستخدام ماكينات HOMAG الألمانية بدقة قطع 0.1 مم.",
-          "خامات صديقة للبيئة وخالية من الفرمالدهيد (معيار E0/ENF)، وتقنيات تقفيل الحواف بالليزر المقاومة للرطوبة.",
+          "تنسيق النجارة والتشطيبات والتجهيزات والتصنيع المتخصص عبر قنوات توريد موثوقة.",
+          "متابعة الإنتاج والامتثال السعودي واللوجستيات والتسليم المرحلي وفق برنامج الموقع.",
+        ],
+      },
+      {
+        brand: "turriva",
+        badge: "03 · التنفيذ والتسليم",
+        title: "تركيب وتنسيق وتسليم التجربة المكتملة",
+        points: [
+          "فرق ميدانية متخصصة تدير التركيب والتقاطعات وإغلاق الملاحظات وضبط الجودة النهائي.",
+          "يبقى مسؤول توريفا جهة المحاسبة الواحدة حتى الافتتاح والتسليم وخدمة ما بعد التنفيذ.",
         ],
       },
     ],
@@ -418,15 +441,28 @@ const ar: LuxuryPlatformMessages = {
     ctaB2bHref: "/projects",
     ctaB2cHref: "/contact?intent=sample",
   },
+  brandRelationship: {
+    eyebrow: "جزء من مجموعة تسامي",
+    title: "تخصصات تعمل معاً، وتوريفا مسؤولة عن التنفيذ",
+    body:
+      "توريفا شركة تنفيذ متخصصة ضمن مجموعة تسامي، وتعمل إلى جانب شركات شقيقة في مجالات الإبداع والتسويق والتنفيذ. قد تتولى Graphics House التصميم الإبداعي وتصميم التجربة، بينما تحوّل توريفا التوجه المعتمد إلى واقع مادي عبر التطوير الفني والتصنيع والتركيب والتسليم.",
+    flow: "الإبداع ← التنفيذ",
+    groupLink: "اكتشف مجموعة تسامي",
+    companies: [
+      { name: "Graphics House", role: "إبداع · تصميم بصري · تصميم تجارب" },
+      { name: "Bees Motion", role: "تسويق · محتوى · ذكاء اصطناعي" },
+      { name: "Turriva", role: "تنفيذ · مساحات داخلية · معارض · تسليم", active: true },
+    ],
+  },
   comparison: {
     eyebrow: "لماذا توريفا",
-    title: "السوق التقليدي مقابل منظومة توريفا الموحدة",
+    title: "تنفيذ مشتت مقابل مسؤولية واضحة",
     traditionalHeader: "الطريقة التقليدية",
     turrivaHeader: "منظومة توريفا",
     rows: [
       {
         traditional: "تشتت بين 3 أطراف: مصمم، مصنع، فني تركيب، واللوم يتنقل",
-        turriva: "جهة واحدة مسؤولة من المخطط المعتمد حتى التسليم",
+        turriva: "فريق توريفا واحد مسؤول من المفهوم المعتمد حتى التسليم",
       },
       {
         traditional: "فجوة كبيرة بين صورة التصميم والمنتج الواقعي",
@@ -542,9 +578,9 @@ const ar: LuxuryPlatformMessages = {
   },
   beforeAfter: {
     eyebrow: "عرض مشروع",
-    title: "من الإظهار المعماري إلى واقع قابل للتنفيذ",
+    title: "توجه إبداعي مُعدّ للتسليم الميداني",
     subtitleLine1: "إظهار ثلاثي الأبعاد، نجارة داخلية، وخشبيات، نماذج لمشاريع مطورين.",
-    subtitleLine2: "من التصور المعتمد مروراً بالتصنيع إلى التنفيذ الميداني.",
+    subtitleLine2: "مثال محدد على عمل إبداعي نفذته شركتنا الشقيقة Graphics House.",
     projectName: "Rafal Pavilions",
     projectCredit: "إظهار وتصميم داخلي · Graphics House",
     cta: "اعرف المزيد",
@@ -555,7 +591,7 @@ const ar: LuxuryPlatformMessages = {
     items: [
       {
         q: "ماذا تقدم توريفا من البداية للنهاية؟",
-        a: "تصميم 3D معماري، تشطيبات معيارية بمواصفات مصنعية، امتثال جمركي، وتركيب محلي بضمان، منظومة واحدة.",
+        a: "تطوير فني وتنسيق تصنيع وتوريد وامتثال جمركي وتركيب وتسليم وضمان محلي تحت مسؤولية فريق توريفا واحد.",
       },
       {
         q: "هل تخدمون المطورين وأصحاب الفلل؟",
@@ -576,8 +612,8 @@ const ar: LuxuryPlatformMessages = {
     ],
   },
   partners: {
-    title: "معايير وشركاء",
-    subtitle: "تصنيع عالمي ومفصلات فاخرة، مع امتثال سعودي كامل قبل وصول أي شحنة إلى موقعك.",
+    title: "المكونات المحددة ومراجع الامتثال",
+    subtitle: "تقنيات إنتاج ومفصلات مختارة ومراجع امتثال سعودي تُنسّق لخدمة التسليم الميداني.",
     groups: [
       {
         label: "التصنيع",
@@ -606,7 +642,7 @@ const ar: LuxuryPlatformMessages = {
     eyebrow: "وعد توريفا",
     title: "ما الذي يقدمه لك فريق توريفا",
     subtitle:
-      "منصة تأثيث متكاملة تجمع التصميم المعماري، التصنيع العالمي، والتنفيذ الميداني في المملكة. مسار واضح من المخطط المعتمد إلى التسليم، لا وعود نظرية.",
+      "شركة تنفيذ متخصصة تحوّل المفاهيم المعتمدة إلى مساحات داخلية ومعارض وبيئات للعلامات عبر تسليم ميداني منضبط.",
     items: [
       {
         icon: "warranty",
@@ -636,7 +672,7 @@ const ar: LuxuryPlatformMessages = {
         icon: "service",
         title: "خدمة شاملة",
         points: [
-          "جهة واحدة من الرفع المساحي حتى التركيب والتسليم.",
+          "رفع مساحي وتنسيق توريد وامتثال وتركيب تحت مسؤول توريفا واحد.",
           "امتثال SASO/SABER ولوجستيات مرحلية للفلل والمشاريع.",
         ],
       },

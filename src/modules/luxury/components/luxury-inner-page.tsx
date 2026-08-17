@@ -1,6 +1,7 @@
 import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import type { Locale } from "@/shared/i18n/locale";
 import { LuxuryMarketingHero } from "./luxury-marketing-hero";
+import { LuxuryBrandRelationshipSection } from "./luxury-brand-relationship-section";
 import { LuxuryQuoteSection } from "./luxury-quote-section";
 
 type PageKey = "interiorDesign" | "construction" | "ourWork" | "about" | "contact";
@@ -24,6 +25,7 @@ export function LuxuryInnerPage({
   return (
     <>
       <LuxuryMarketingHero eyebrow={t.brand.tagline} title={content.title} intro={content.intro} />
+      {page === "about" ? <LuxuryBrandRelationshipSection messages={t} /> : null}
       {quoteSource ? <LuxuryQuoteSection messages={t} locale={locale} source={quoteSource} /> : null}
     </>
   );

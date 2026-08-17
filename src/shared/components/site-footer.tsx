@@ -3,7 +3,8 @@ import { getMessages } from "@/shared/i18n";
 import { getLocale } from "@/shared/i18n/server";
 import { TURRIVA_PUBLIC_EMAIL, TURRIVA_PUBLIC_HOST, TURRIVA_PUBLIC_URL } from "@/shared/constants/brand";
 import { RuwaqLogo, SITE_LOGO_SIZE_CLASS } from "@/shared/components/ruwaq-logo";
-import { GraphicsHouseLogo } from "@/shared/components/graphics-house-logo";
+
+const TASAMI_GROUP_URL = "https://www.tasamify.com/";
 
 /** Minimal Turriva decor footer (workspace/auth shells, not the proposals platform). */
 export async function SiteFooter() {
@@ -31,7 +32,9 @@ export async function SiteFooter() {
             <p className="mt-4 text-xs text-ruwaq-ink-muted">{t.site.footer.address}</p>
             <p className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-2 text-xs text-ruwaq-ink-muted">
               <span>{t.site.footer.sponsoredBy}</span>
-              <GraphicsHouseLogo variant="light" />
+              <a href={TASAMI_GROUP_URL} target="_blank" rel="noopener noreferrer" className="ruwaq-link-gold">
+                {t.site.footer.sponsoredByLink}
+              </a>
             </p>
           </div>
 

@@ -20,7 +20,7 @@ const amiri = Amiri({
   display: "swap",
 });
 
-/** Graphics House ProjectLaunch™, Inter (EN) */
+/** Shared Latin UI stack */
 const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -60,14 +60,15 @@ const ibmPlexArabic = IBM_Plex_Sans_Arabic({
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   return {
+    metadataBase: new URL("https://turriva.com"),
     title:
       locale === "ar"
-        ? "توريفا العقارية · تصميم وتنفيذ الديكور"
-        : "Turriva Real Estate · Design & build decor",
+        ? "توريفا · تنفيذ المساحات والتسليم الميداني"
+        : "Turriva · Spatial execution & physical delivery",
     description:
       locale === "ar"
-        ? "شركة سعودية لتصميم وتنفيذ الديكور، فلل وقصور ومحلات وأجنحة معارض في جدة ومكة. أسلوب حديث، جودة، ورضا العميل."
-        : "Saudi design and on-site decor delivery for villas, palaces, retail, and exhibitions in Jeddah & Makkah.",
+        ? "توريفا إحدى شركات مجموعة تسامي، متخصصة في تنفيذ المساحات الداخلية والمعارض والتصنيع والتركيب والتجارب المادية المتكاملة."
+        : "A Tasami Group company specializing in interior execution, exhibitions, fabrication, installation, and turnkey physical experiences.",
   };
 }
 

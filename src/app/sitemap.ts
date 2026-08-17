@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
-import { env } from "@/shared/lib/env";
+import { TURRIVA_PUBLIC_URL } from "@/shared/constants/brand";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = env.NEXT_PUBLIC_APP_URL;
+  const base = TURRIVA_PUBLIC_URL;
   const now = new Date();
 
   const routes = [
@@ -10,7 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/styles", priority: 0.9, changeFrequency: "monthly" as const },
     { path: "/villas", priority: 0.95, changeFrequency: "weekly" as const },
     { path: "/projects", priority: 0.95, changeFrequency: "weekly" as const },
-    { path: "/design", priority: 0.92, changeFrequency: "weekly" as const },
     { path: "/interior-design", priority: 0.85, changeFrequency: "monthly" as const },
     { path: "/construction", priority: 0.85, changeFrequency: "monthly" as const },
     { path: "/our-work", priority: 0.85, changeFrequency: "weekly" as const },

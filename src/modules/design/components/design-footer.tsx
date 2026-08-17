@@ -5,7 +5,7 @@ import { getDesignMessages } from "@/shared/i18n/messages/design";
 import { getLocale } from "@/shared/i18n/server";
 import { DESIGN_LOGO_SIZE_CLASS, RuwaqLogo } from "@/shared/components/ruwaq-logo";
 
-const GRAPHICS_HOUSE_URL = "https://3dgraphicshouse.com/";
+const TASAMI_GROUP_URL = "https://www.tasamify.com/";
 
 export async function DesignFooter() {
   const locale = await getLocale();
@@ -75,7 +75,7 @@ export async function DesignFooter() {
           <p>
             {t.footer.copyright}{" "}
             <span>·</span> {t.footer.poweredByPrefix}{" "}
-            <a href={GRAPHICS_HOUSE_URL} target="_blank" rel="noopener noreferrer">
+            <a href={TASAMI_GROUP_URL} target="_blank" rel="noopener noreferrer">
               {t.footer.poweredByLink}
             </a>
           </p>

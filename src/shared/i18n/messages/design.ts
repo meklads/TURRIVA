@@ -594,8 +594,8 @@ const en: DesignMessages = {
     copyright: "© Turriva. All rights reserved.",
     privacy: "Privacy Policy",
     terms: "Terms of Use",
-    poweredByPrefix: "Turriva by",
-    poweredByLink: "Graphics House",
+    poweredByPrefix: "Turriva is part of",
+    poweredByLink: "Tasami Group",
   },
   conversion: {
     uploadPrompt: "Upload your space photo, pick a room type and style, your first design is completely free.",
@@ -994,8 +994,8 @@ const ar: DesignMessages = {
     copyright: "© توريفا العقارية. جميع الحقوق محفوظة.",
     privacy: "سياسة الخصوصية",
     terms: "شروط الاستخدام",
-    poweredByPrefix: "توريفا العقارية بواسطة",
-    poweredByLink: "جرافيكس هاوس",
+    poweredByPrefix: "توريفا جزء من",
+    poweredByLink: "مجموعة تسامي",
   },
   conversion: {
     uploadPrompt: "ارفع صورة مساحتك، اختر نوع الغرفة والنمط، تصميمك الأول مجاني بالكامل.",

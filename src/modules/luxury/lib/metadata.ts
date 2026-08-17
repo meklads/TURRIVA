@@ -12,8 +12,8 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
 
   const description =
     locale === "ar"
-      ? "توريفا، منصة تأثيث متكاملة: تصميم 3D، توريد معياري، وتنفيذ محلي في السعودية للفلل والمشاريع."
-      : "Turriva، integrated fit-out platform: 3D design, modular supply, and local execution in Saudi Arabia.";
+      ? "توريفا إحدى شركات مجموعة تسامي، متخصصة في تنفيذ المساحات الداخلية والمعارض والتصنيع والتركيب والتسليم الميداني في السعودية."
+      : "Turriva is a Tasami Group company specializing in interior execution, exhibitions, fabrication, installation, and physical delivery in Saudi Arabia.";
 
   return {
     title,
@@ -23,22 +23,26 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
         ? [
             "تصميم داخلي",
             "تنفيذ ديكور",
+            "تنفيذ معارض",
+            "تنفيذ مساحات",
+            "تصنيع وتركيب",
             "ديكور فلل",
-            "تشطيب قصور",
             "شركة ديكور جدة",
-            "توريفا العقارية",
+            "توريفا",
           ]
         : [
             "interior design Saudi Arabia",
-            "decor fit-out Jeddah",
-            "villa interior design",
-            "exhibition booth build",
+            "interior execution Saudi Arabia",
+            "fit-out contractor Jeddah",
+            "exhibition execution",
+            "spatial fabrication",
+            "turnkey physical experiences",
             "Turriva",
           ],
     openGraph: {
       title,
       description,
-      url: "https://turriva.co",
+      url: "https://turriva.com",
       siteName: t.brand.name,
       locale: locale === "ar" ? "ar_SA" : "en_US",
       type: "website",
@@ -66,7 +70,7 @@ export function luxuryPageMetadata(
   intro: string
 ): Metadata {
   const base = luxurySiteMetadata(locale);
-  const brand = locale === "ar" ? "توريفا العقارية" : "Turriva";
+  const brand = locale === "ar" ? "توريفا" : "Turriva";
   const title = `${pageTitle} · ${brand}`;
 
   return {

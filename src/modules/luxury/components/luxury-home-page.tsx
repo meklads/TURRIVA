@@ -6,6 +6,7 @@ import {
 } from "@/shared/i18n/messages/luxury";
 import type { Locale } from "@/shared/i18n/locale";
 import { LuxuryBeforeAfterSection } from "./luxury-before-after-section";
+import { LuxuryBrandRelationshipSection } from "./luxury-brand-relationship-section";
 import { LuxuryComparisonSection } from "./luxury-comparison-section";
 import { LuxuryEcosystemSection } from "./luxury-ecosystem-section";
 import { LuxuryFaqSection } from "./luxury-faq-section";
@@ -70,6 +71,7 @@ export function LuxuryHomePage({ locale }: Props) {
       </section>
 
       <LuxuryEcosystemSection messages={t} />
+      <LuxuryBrandRelationshipSection messages={t} compact />
       <LuxuryWaysOfLivingSection messages={t} />
       <LuxuryProductGrid messages={t} locale={locale} />
       <LuxuryBeforeAfterSection messages={t} />

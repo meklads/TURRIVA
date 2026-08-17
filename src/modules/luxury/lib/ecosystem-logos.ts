@@ -1,10 +1,5 @@
 /** Pillar brand lockups for the ecosystem offer section */
 export const ECOSYSTEM_BRAND_LOGOS = {
-  graphicsHouse: {
-    src: "/brand/graphics-house/logo-on-light.png",
-    alt: "Graphics House",
-    className: "lux-offer-card__logo--gh",
-  },
   oppein: {
     src: "/brand/oppein/logo.png",
     alt: "OPPEIN",

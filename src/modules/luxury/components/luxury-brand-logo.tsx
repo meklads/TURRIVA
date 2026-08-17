@@ -32,7 +32,7 @@ export function LuxuryBrandLogo({
   const logo = (
     <Image
       src={TURRIVA_LOGO_SRC}
-      alt="توريفا العقارية، Turriva Real Estate"
+      alt="توريفا، Turriva"
       width={LOGO_WIDTH}
       height={LOGO_HEIGHT}
       className={`lux-header-logo-img block w-auto object-contain object-start ${className}`}
@@ -49,7 +49,7 @@ export function LuxuryBrandLogo({
     <Link
       href={href}
       className="lux-header-logo-link inline-flex shrink-0 items-center bg-transparent p-0 leading-none"
-      aria-label="توريفا العقارية، الصفحة الرئيسية"
+      aria-label="توريفا، الصفحة الرئيسية"
     >
       {logo}
     </Link>

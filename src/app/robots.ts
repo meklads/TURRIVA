@@ -1,9 +1,7 @@
 import type { MetadataRoute } from "next";
-import { env } from "@/shared/lib/env";
+import { TURRIVA_PUBLIC_URL } from "@/shared/constants/brand";
 
 export default function robots(): MetadataRoute.Robots {
-  const base = env.NEXT_PUBLIC_APP_URL;
-
   return {
     rules: [
       {
@@ -21,6 +19,6 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: `${base}/sitemap.xml`,
+    sitemap: `${TURRIVA_PUBLIC_URL}/sitemap.xml`,
   };
 }

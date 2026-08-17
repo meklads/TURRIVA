@@ -256,12 +256,12 @@ export type LuxuryMessages = LuxuryPlatformMessages & {
 
 const en: LuxuryMessages = {
   ...getLuxuryPlatformMessages("en"),
-  brand: { name: "Turriva", tagline: "Integrated fit-out platform" },
+  brand: { name: "Turriva", tagline: "Spatial execution & physical delivery" },
   nav: {
     home: "HOME",
-    villas: "Private homes",
-    projects: "Developers & companies",
-    design3d: "Design consultation",
+    villas: "Residential execution",
+    projects: "Commercial & exhibitions",
+    design3d: "Discuss a project",
     interiorDesign: "INTERIOR DESIGN",
     construction: "DELIVERY & BUILD",
     ourWork: "OUR WORK",
@@ -269,14 +269,14 @@ const en: LuxuryMessages = {
     contact: "CONTACT",
   },
   hero: {
-    eyebrow: "Saudi Arabia · Design · Modular supply · Local execution",
-    title: "An integrated system to design, supply, and deliver premium spaces",
+    eyebrow: "A Tasami Group company · Saudi Arabia",
+    title: "From concept to physical reality.",
     subtitle:
-      "We unite architectural 3D precision, automated global manufacturing, and Turriva engineering on the ground, so developers and villa owners get one accountable partner from drawing to handover.",
-    servicesLine: "Kitchens · Wardrobes · Joinery · Villas · Projects",
-    tags: ["3D design", "Modular supply", "Local install", "B2B & villas"],
-    ctaPrimary: "Book design consultation",
-    ctaSecondary: "B2B project catalog",
+      "Turriva is a specialized execution company delivering interiors, exhibitions, branded environments, fabrication, installation, and turnkey physical experiences.",
+    servicesLine: "Interior execution · Exhibitions · Fabrication · Installation",
+    tags: ["Interior execution", "Exhibition execution", "Fabrication", "Turnkey delivery"],
+    ctaPrimary: "Discuss your project",
+    ctaSecondary: "Execution portfolio",
     ctaSample: "Request sample kit",
   },
   intro: {
@@ -488,7 +488,7 @@ const en: LuxuryMessages = {
   },
   footer: {
     about:
-      "Turriva, integrated fit-out platform in Saudi Arabia: architectural 3D, modular supply, and local engineering from survey to warranty.",
+      "Turriva is a Tasami Group company specializing in spatial execution and physical delivery, from technical development and fabrication to installation and handover.",
     quickLinks: "Quick Links",
     importantLinks: "Important Links",
     servicesLinks: "Services",
@@ -512,18 +512,18 @@ const en: LuxuryMessages = {
     address: "Jeddah, Al-Zahra District, Saudi Arabia",
     email: "info@turriva.com",
     phone: "+966 50 278 6513",
-    sponsoredBy: "Turriva integrated fit-out platform",
+    sponsoredBy: "Turriva spatial execution company",
   },
   pages: {
     interiorDesign: {
-      title: "Interior design & decor",
+      title: "Interior execution",
       intro:
-        "Contemporary interiors for villas, palaces, apartments, and majlis in Jeddah and Makkah, concept, materials, and installation with Turriva designers and site teams.",
+        "Turriva develops approved interior concepts into technical details, material packages, fabrication scopes, coordinated installation, and completed spaces.",
     },
     construction: {
-      title: "Delivery & build on site",
+      title: "Spatial execution & delivery",
       intro:
-        "Turriva coordinates trades, protects approved finishes, and delivers handover documentation for residential and commercial programmes.",
+        "Turriva manages physical delivery on site, coordinating fabrication, trades, installation, quality control, snagging, and documented handover.",
     },
     ourWork: {
       title: "Our work",
@@ -533,7 +533,7 @@ const en: LuxuryMessages = {
     about: {
       title: "About Turriva",
       intro:
-        "Turriva is the master brand for an integrated fit-out system, design visualization, factory-grade manufacturing access, and Saudi field execution under one accountable platform.",
+        "Turriva is a specialized execution company within Tasami Group. We turn approved creative concepts into physical reality through technical development, fabrication, installation, and turnkey delivery for interiors, exhibitions, and branded environments.",
     },
     contact: {
       title: "Contact Turriva",
@@ -555,9 +555,9 @@ const en: LuxuryMessages = {
       ],
     },
     villas: {
-      title: "Villas, hospitality & commercial spaces",
+      title: "Residential, hospitality & retail execution",
       intro:
-        "An integrated fit-out journey for villas, boutique hotels, restaurants, and premium retail — free 3D visualization, modular kitchens and wardrobes, and Turriva installation with local warranty.",
+        "Turriva manages physical delivery for villas, boutique hotels, restaurants, and premium retail — from technical development and material approval through fabrication, installation, and local warranty.",
       steps: [
         { title: "3D design session", description: "Upload your plan or book a visit, factory-module layouts in days." },
         { title: "Samples & sign-off", description: "Physical finishes and hardware references before we order." },
@@ -570,7 +570,7 @@ const en: LuxuryMessages = {
         eyebrow: "Who we serve",
         title: "One journey for private homes and premium spaces",
         subtitle:
-          "Whether you are finishing a family villa, a boutique hotel suite, or a flagship store, the same Turriva system applies: design, samples, factory production, and accountable install.",
+          "Whether you are finishing a family villa, a boutique hotel suite, or a flagship store, one Turriva execution team manages samples, fabrication, installation, and handover.",
         items: [
           {
             tag: "Residential",
@@ -678,13 +678,13 @@ const en: LuxuryMessages = {
       },
     },
     projects: {
-      title: "Developers & B2B programmes",
+      title: "Commercial, exhibition & B2B execution",
       intro:
-        "Factory-grade modular supply for towers, compounds, and hospitality batches — direct pricing, shop-drawing SLA, SASO / SABER clearance, and phased site delivery under one Turriva programme lead.",
+        "Turriva delivers commercial interiors, exhibition environments, developer programmes, and hospitality rollouts through coordinated technical development, fabrication, installation, and phased handover.",
       ctaBrief: "Submit B2B brief",
       ctaSample: "Request sample kit",
       segments: {
-        eyebrow: "Who we partner with",
+        eyebrow: "Who we serve",
         title: "Built for multi-unit programmes",
         subtitle:
           "Whether you are a developer, main contractor, or hospitality operator scaling fit-out across dozens or hundreds of units — we structure supply, drawings, and install to your programme.",
@@ -880,12 +880,12 @@ const en: LuxuryMessages = {
 
 const ar: LuxuryMessages = {
   ...getLuxuryPlatformMessages("ar"),
-  brand: { name: "توريفا", tagline: "منصة تأثيث متكاملة" },
+  brand: { name: "توريفا", tagline: "تنفيذ المساحات والتسليم الميداني" },
   nav: {
     home: "الرئيسية",
-    villas: "مساكن خاصة",
-    projects: "مطورون وشركات",
-    design3d: "استشارة تصميم",
+    villas: "تنفيذ سكني",
+    projects: "مشاريع ومعارض",
+    design3d: "ناقش مشروعك",
     interiorDesign: "التصميم الداخلي",
     construction: "التنفيذ في الموقع",
     ourWork: "أعمالنا",
@@ -893,14 +893,14 @@ const ar: LuxuryMessages = {
     contact: "تواصل",
   },
   hero: {
-    eyebrow: "السعودية · تصميم · توريد معياري · تنفيذ محلي",
-    title: "منظومة متكاملة لتصميم وتوريد وتنفيذ المساحات الفاخرة",
+    eyebrow: "إحدى شركات مجموعة تسامي · المملكة العربية السعودية",
+    title: "من الفكرة إلى واقع ملموس.",
     subtitle:
-      "نجمع بين دقة التصميم المعماري ثلاثي الأبعاد، التصنيع الأوتوماتيكي العالمي، والهندسة الميدانية لتوريفا، جهة واحدة مسؤولة من المخطط حتى التسليم للمطورين وأصحاب الفلل.",
-    servicesLine: "مطابخ · خزائن · تكسيات · فلل · مشاريع",
-    tags: ["تصميم 3D", "توريد معياري", "تركيب محلي", "B2B وفلل"],
-    ctaPrimary: "احجز استشارة تصميم",
-    ctaSecondary: "كتالوج مشاريع B2B",
+      "توريفا شركة تنفيذ متخصصة في المساحات الداخلية والمعارض وبيئات العلامات والتصنيع والتركيب والتجارب المادية المتكاملة.",
+    servicesLine: "تنفيذ داخلي · معارض · تصنيع · تركيب",
+    tags: ["تنفيذ داخلي", "تنفيذ معارض", "تصنيع", "تسليم متكامل"],
+    ctaPrimary: "ناقش مشروعك",
+    ctaSecondary: "أعمال التنفيذ",
     ctaSample: "اطلب حقيبة العينات",
   },
   intro: {
@@ -1112,7 +1112,7 @@ const ar: LuxuryMessages = {
   },
   footer: {
     about:
-      "توريفا، منصة تأثيث متكاملة في السعودية: إظهار معماري 3D، توريد معياري، وهندسة ميدانية من الرفع المساحي حتى الضمان.",
+      "توريفا إحدى شركات مجموعة تسامي، متخصصة في تنفيذ المساحات والتسليم الميداني من التطوير الفني والتصنيع إلى التركيب والتسليم.",
     quickLinks: "روابط سريعة",
     importantLinks: "أهم الروابط",
     servicesLinks: "الخدمات",
@@ -1136,18 +1136,18 @@ const ar: LuxuryMessages = {
     address: "جدة، حي الزهراء، المملكة العربية السعودية",
     email: "info@turriva.com",
     phone: "+966 50 278 6513",
-    sponsoredBy: "منصة توريفا للتأثيث المتكامل",
+    sponsoredBy: "شركة توريفا لتنفيذ المساحات",
   },
   pages: {
     interiorDesign: {
-      title: "التصميم الداخلي والديكور",
+      title: "التنفيذ الداخلي",
       intro:
-        "داخليات معاصرة للفلل والقصور والشقق والمجالس في جدة ومكة، من المفهوم والخامات إلى التركيب مع مصممي وفرق توريفا.",
+        "تطوّر توريفا المفاهيم الداخلية المعتمدة إلى تفاصيل فنية وحزم خامات ونطاقات تصنيع وتركيب منسّق ومساحات مكتملة.",
     },
     construction: {
-      title: "التنفيذ في الموقع",
+      title: "تنفيذ المساحات والتسليم",
       intro:
-        "تنسّق توريفا التخصصات، تحمي التشطيبات المعتمدة، وتسلّم مشروعك بتوثيق واضح للسكني والتجاري.",
+        "تدير توريفا التسليم الميداني، وتنسّق التصنيع والتخصصات والتركيب وضبط الجودة وإغلاق الملاحظات والتسليم الموثق.",
     },
     ourWork: {
       title: "أعمالنا",
@@ -1157,7 +1157,7 @@ const ar: LuxuryMessages = {
     about: {
       title: "عن توريفا",
       intro:
-        "توريفا العلامة الرئيسية لمنظومة تأثيث متكاملة، إظهار 3D، توريد معياري، وتنفيذ ميداني سعودي تحت منصة واحدة.",
+        "توريفا شركة تنفيذ متخصصة ضمن مجموعة تسامي. نحوّل المفاهيم الإبداعية المعتمدة إلى واقع مادي عبر التطوير الفني والتصنيع والتركيب والتسليم المتكامل للمساحات الداخلية والمعارض وبيئات العلامات.",
     },
     contact: {
       title: "تواصل مع توريفا",
@@ -1179,9 +1179,9 @@ const ar: LuxuryMessages = {
       ],
     },
     villas: {
-      title: "الفلل والفنادق والمساحات التجارية",
+      title: "تنفيذ المساكن والضيافة والتجزئة",
       intro:
-        "رحلة تأثيث متكاملة للفلل والضيافة والمساحات التجارية الفاخرة — تصور 3D مجاني، مطابخ وخزائن معيارية، وتركيب توريفا بضمان محلي.",
+        "تدير توريفا التسليم الميداني للفلل والفنادق والمطاعم والتجزئة الفاخرة، من التطوير الفني واعتماد الخامات إلى التصنيع والتركيب والضمان المحلي.",
       steps: [
         { title: "جلسة تصميم 3D", description: "ارفع مخططك أو احجز زيارة، تخطيطات بمقاسات المصنع." },
         { title: "عينات واعتماد", description: "تشطيبات ومفصلات فيزيائية قبل أمر التصنيع." },
@@ -1194,7 +1194,7 @@ const ar: LuxuryMessages = {
         eyebrow: "من نخدم",
         title: "رحلة واحدة للمساكن والمساحات الفاخرة",
         subtitle:
-          "سواء كنت تُنهي فيلا عائلية، جناح فندق boutique، أو محل flagship — نفس منظومة توريفa: تصميم، عينات، تصنيع مصنعي، وتركيب بمسؤولية واحدة.",
+          "سواء كنت تُنهي فيلا عائلية أو جناح فندق أو متجراً رئيسياً، يدير فريق تنفيذ توريفا العينات والتصنيع والتركيب والتسليم بمسؤولية واحدة.",
         items: [
           {
             tag: "سكني",
@@ -1302,13 +1302,13 @@ const ar: LuxuryMessages = {
       },
     },
     projects: {
-      title: "المطورون وبرامج B2B",
+      title: "تنفيذ المشاريع التجارية والمعارض وB2B",
       intro:
-        "توريد معياري بمواصفات مصنعية للأبراج والمجمعات ودفعات الضيافة — تسعير مباشر، SLA للمخططات، SASO / SABER، وتسليم مرحلي بإشراف توريفا واحد.",
+        "تنفّذ توريفا المساحات التجارية وبيئات المعارض وبرامج المطورين والضيافة عبر تطوير فني وتصنيع وتركيب وتسليم مرحلي منسّق.",
       ctaBrief: "أرسل ملخص B2B",
       ctaSample: "اطلب حقيبة عينات",
       segments: {
-        eyebrow: "من نتشارك معهم",
+        eyebrow: "من نخدم",
         title: "مبني لبرامج متعددة الوحدات",
         subtitle:
           "سواء كنت مطوراً، مقاولاً رئيسياً، أو مشغّل ضيافة يوسّع التأثيث على عشرات أو مئات الوحدات — نُهيكل التوريد والمخططات والتركيب حسب برنامجك.",
