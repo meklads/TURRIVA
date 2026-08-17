@@ -1,7 +1,7 @@
 /** Inspiration carousel — Unsplash (free license), matched to space titles */
 const IMG_Q = "auto=format&fit=crop&q=90";
 
-export const LUXURY_INSPIRATION_IMAGES: Record<string, string> = {
+export const LUXURY_INSPIRATION_IMAGES = {
   /** Modular kitchens */
   kitchen: `https://images.unsplash.com/photo-1565538810643-b5bdb714032a?${IMG_Q}&w=1800`,
   /** Walk-in closets & dressing rooms */
@@ -14,4 +14,6 @@ export const LUXURY_INSPIRATION_IMAGES: Record<string, string> = {
   bathroom: `https://images.unsplash.com/photo-1620626011761-996317b8d101?${IMG_Q}&w=1800`,
   /** Hotels & F&B */
   hospitality: `https://images.unsplash.com/photo-1414235077428-338989a2e8c0?${IMG_Q}&w=1800`,
-};
+} satisfies Record<string, string>;
+
+export type LuxuryInspirationSpace = keyof typeof LUXURY_INSPIRATION_IMAGES;

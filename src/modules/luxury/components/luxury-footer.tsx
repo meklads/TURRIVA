@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, MessageCircle, Phone } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import { getLocale } from "@/shared/i18n/server";
 import { TURRIVA_LOGO_SRC, TURRIVA_LOGO_HEIGHT, TURRIVA_LOGO_WIDTH } from "./luxury-brand-logo";
@@ -21,18 +21,13 @@ export async function LuxuryFooter() {
   const locale = await getLocale();
   const t = getLuxuryMessages(locale);
 
-  const importantLinks = [
+  const exploreLinks = [
     { href: "/villas", label: t.nav.villas },
     { href: "/projects", label: t.nav.projects },
     { href: "/contact?intent=design", label: t.nav.design3d },
     { href: "/our-work", label: t.nav.ourWork },
+    { href: "/about", label: t.nav.about },
     { href: "/contact", label: t.nav.contact },
-  ];
-
-  const servicesLinks = [
-    { href: "/villas", label: t.nav.villas },
-    { href: "/projects", label: t.nav.projects },
-    { href: "/contact?intent=design", label: t.nav.design3d },
   ];
 
   const solutionLinks =
@@ -51,7 +46,8 @@ export async function LuxuryFooter() {
   const offices = [
     {
       title: t.footer.countries.saudiArabia,
-      lines: [locale === "ar" ? "جدة" : "Jeddah", "P.O.Box 136972", "CR 4030502306"],
+      lines: [locale === "ar" ? "جدة" : "Jeddah", "P.O.Box 136972"],
+      registry: "CR 4030502306",
       phone: "+966502786513",
     },
     {
@@ -59,8 +55,8 @@ export async function LuxuryFooter() {
       lines: [
         locale === "ar" ? "الخوض، السيب" : "Al Khod, Al Seeb",
         locale === "ar" ? "مسقط" : "Muscat",
-        "CR 1460078",
       ],
+      registry: "CR 1460078",
       phone: "+96891326735",
     },
     {
@@ -68,8 +64,8 @@ export async function LuxuryFooter() {
       lines: [
         locale === "ar" ? "مجمع 316" : "Block 316",
         locale === "ar" ? "المنامة" : "Manama",
-        "CR 15571301",
       ],
+      registry: "CR 15571301",
       phone: "+97332150369",
     },
     {
@@ -79,6 +75,7 @@ export async function LuxuryFooter() {
         locale === "ar" ? "برج فيكتوريا سيتي" : "Victoria City Tower",
         locale === "ar" ? "القاهرة" : "Cairo",
       ],
+      registry: null,
       phone: "+201032955089",
     },
   ];
@@ -118,24 +115,17 @@ export async function LuxuryFooter() {
               />
             </Link>
             <p className="lux-footer-about">{t.footer.about}</p>
+            <p className="lux-footer-address">
+              <MapPin className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} aria-hidden />
+              <span>{t.footer.address}</span>
+            </p>
           </div>
 
           <div className="lux-footer-col">
             <h3 className="lux-footer-col-title">{t.footer.importantLinks}</h3>
             <nav className="lux-footer-links" aria-label={t.footer.importantLinks}>
-              {importantLinks.map((link) => (
+              {exploreLinks.map((link) => (
                 <Link key={link.href + link.label} href={link.href}>
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-
-          <div className="lux-footer-col">
-            <h3 className="lux-footer-col-title">{t.footer.servicesLinks}</h3>
-            <nav className="lux-footer-links" aria-label={t.footer.servicesLinks}>
-              {servicesLinks.map((link) => (
-                <Link key={link.href} href={link.href}>
                   {link.label}
                 </Link>
               ))}
@@ -152,23 +142,64 @@ export async function LuxuryFooter() {
               ))}
             </nav>
           </div>
+
+          <div className="lux-footer-col">
+            <h3 className="lux-footer-col-title">{t.footer.contact}</h3>
+            <div className="lux-footer-contact">
+              <a href={`mailto:${TURRIVA_PUBLIC_EMAIL}`} className="lux-footer-contact-item">
+                <span className="lux-footer-contact-icon" aria-hidden>
+                  <Mail className="h-3.5 w-3.5" strokeWidth={1.75} />
+                </span>
+                <span dir="ltr">{TURRIVA_PUBLIC_EMAIL}</span>
+              </a>
+              <a href={`tel:${t.footer.phone.replace(/\s/g, "")}`} className="lux-footer-contact-item">
+                <span className="lux-footer-contact-icon" aria-hidden>
+                  <Phone className="h-3.5 w-3.5" strokeWidth={1.75} />
+                </span>
+                <span dir="ltr">{t.footer.phone}</span>
+              </a>
+              <a
+                href={`https://wa.me/${WHATSAPP_SA}`}
+                className="lux-footer-contact-item"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="lux-footer-contact-icon" aria-hidden>
+                  <MessageCircle className="h-3.5 w-3.5" strokeWidth={1.75} />
+                </span>
+                <span>WhatsApp</span>
+              </a>
+            </div>
+            <Link href="/contact?intent=design" className="lux-footer-cta">
+              <span>{t.hero.ctaPrimary}</span>
+              <ArrowUpRight className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
+            </Link>
+          </div>
         </div>
 
         <div className="lux-footer-offices">
-          {offices.map((office) => (
-            <div key={office.title} className="lux-footer-office">
-              <h4 className="lux-footer-office-title">{office.title}</h4>
-              <div className="lux-footer-office-lines">
-                {office.lines.map((line) => (
-                  <p key={line}>{line}</p>
-                ))}
+          <h3 className="lux-footer-offices-title">{t.footer.offices}</h3>
+          <div className="lux-footer-offices-grid">
+            {offices.map((office) => (
+              <div key={office.title} className="lux-footer-office">
+                <h4 className="lux-footer-office-title">{office.title}</h4>
+                <div className="lux-footer-office-lines">
+                  {office.lines.map((line) => (
+                    <p key={line}>{line}</p>
+                  ))}
+                </div>
+                {office.registry ? (
+                  <p className="lux-footer-office-registry" dir="ltr">
+                    {office.registry}
+                  </p>
+                ) : null}
+                <a href={`tel:${office.phone}`} className="lux-footer-call">
+                  <Phone className="h-3 w-3 shrink-0" strokeWidth={2} aria-hidden />
+                  <span>{t.footer.callNow}</span>
+                </a>
               </div>
-              <a href={`tel:${office.phone}`} className="lux-footer-call">
-                <Phone className="h-3 w-3 shrink-0" strokeWidth={2} aria-hidden />
-                <span>{t.footer.callNow}</span>
-              </a>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <div className="lux-footer-social">
@@ -195,6 +226,7 @@ export async function LuxuryFooter() {
               {t.footer.affiliation}{" "}
               <a href={TASAMI_GROUP_URL} target="_blank" rel="noopener noreferrer">
                 {t.footer.affiliationLink}
+                <ArrowUpRight className="h-3 w-3 shrink-0" strokeWidth={2} aria-hidden />
               </a>
               {t.footer.affiliationSuffix}
             </p>
@@ -209,17 +241,6 @@ export async function LuxuryFooter() {
               {TURRIVA_PUBLIC_HOST}
             </a>
           </div>
-          <Link href="/" className="lux-footer-mark" aria-label="Turriva">
-            <Image
-              src={TURRIVA_LOGO_SRC}
-              alt=""
-              width={TURRIVA_LOGO_WIDTH}
-              height={TURRIVA_LOGO_HEIGHT}
-              className="lux-footer-mark-img"
-              quality={100}
-              unoptimized
-            />
-          </Link>
         </div>
       </div>
     </footer>

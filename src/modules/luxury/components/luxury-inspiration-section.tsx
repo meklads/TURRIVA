@@ -4,7 +4,10 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { LuxuryMessages } from "@/shared/i18n/messages/luxury";
-import { LUXURY_INSPIRATION_IMAGES } from "@/shared/i18n/messages/luxury-inspiration";
+import {
+  LUXURY_INSPIRATION_IMAGES,
+  type LuxuryInspirationSpace,
+} from "@/shared/i18n/messages/luxury-inspiration";
 
 const AUTO_INTERVAL_MS = 6000;
 
@@ -70,7 +73,8 @@ export function LuxuryInspirationSection({ messages }: Props) {
 
   const activeIndex = Math.max(0, items.findIndex((item) => item.id === active));
   const item = items[activeIndex] ?? items[0]!;
-  const image = LUXURY_INSPIRATION_IMAGES[item.id] ?? LUXURY_INSPIRATION_IMAGES.kitchen!;
+  const image =
+    LUXURY_INSPIRATION_IMAGES[item.id as LuxuryInspirationSpace] ?? LUXURY_INSPIRATION_IMAGES.kitchen;
   const reverse = activeIndex % 2 === 1;
 
   return (
