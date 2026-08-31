@@ -19,6 +19,7 @@ import { LuxuryTestimonialsSection } from "./luxury-testimonials-section";
 import { LuxuryTrustBar } from "./luxury-trust-bar";
 import { LuxuryTrustStats } from "./luxury-trust-stats";
 import { LuxuryValueOffersSection } from "./luxury-value-offers-section";
+import { LuxuryWaysOfLivingSection } from "./luxury-ways-of-living-section";
 import { LuxuryGroupEcosystemSection } from "./luxury-group-ecosystem-section";
 import { localizePath } from "@/shared/i18n/path";
 
