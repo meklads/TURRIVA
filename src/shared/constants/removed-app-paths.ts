@@ -5,9 +5,6 @@ const REMOVED_APP_PREFIXES = [
   "/how-it-works",
   "/pricing",
   "/templates",
-  "/faq",
-  "/services",
-  "/insights",
   "/login",
   "/share",
 ] as const;

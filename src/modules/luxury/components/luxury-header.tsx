@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getLocale } from "@/shared/i18n/server";
+import { localizePath } from "@/shared/i18n/path";
 import { LocaleSwitcher } from "@/shared/i18n/locale-switcher";
 import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import { LuxuryBrandLogo } from "./luxury-brand-logo";
@@ -10,6 +11,7 @@ export async function LuxuryHeader() {
   const locale = await getLocale();
   const links = getLuxuryNavLinks(locale);
   const t = getLuxuryMessages(locale);
+  const homeHref = localizePath("/", locale);
 
   return (
     <header className="lux-header">
@@ -17,11 +19,11 @@ export async function LuxuryHeader() {
         <div className="lux-container lux-header-shell">
           <div className="lux-header-bar">
             <div className="lux-header-brand">
-              <LuxuryBrandLogo href="/" priority />
+              <LuxuryBrandLogo href={homeHref} priority />
             </div>
             <LuxuryDesktopNav links={links} />
             <div className="lux-header-actions">
-              <Link href="/contact?intent=design" className="lux-btn-primary hidden lg:inline-flex !min-w-0 px-5 py-2.5 text-[10px]">
+              <Link href={localizePath("/contact?intent=design", locale)} className="lux-btn-primary hidden lg:inline-flex !min-w-0 px-5 py-2.5 text-[10px]">
                 {t.hero.ctaPrimary}
               </Link>
               <LocaleSwitcher />

@@ -1,13 +1,18 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { ShareButton } from "@/shared/components/share-button";
 import type { LuxuryMessages } from "@/shared/i18n/messages/luxury";
 
 type Props = {
   messages: LuxuryMessages;
+  shareLabel: string;
+  copyLabel: string;
+  copiedLabel: string;
+  shareUrl: string;
 };
 
-export function LuxuryPortfolioViewer({ messages }: Props) {
+export function LuxuryPortfolioViewer({ messages, shareLabel, copyLabel, copiedLabel, shareUrl }: Props) {
   const p = messages.pages.portfolio;
   const viewerRef = useRef<HTMLDivElement>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -83,6 +88,13 @@ export function LuxuryPortfolioViewer({ messages }: Props) {
               <button type="button" onClick={() => void enterFullscreen()} className="lux-btn-primary shrink-0">
                 {p.fullscreenCta}
               </button>
+              <ShareButton
+                url={shareUrl}
+                title={p.viewerTitle}
+                shareLabel={shareLabel}
+                copyLabel={copyLabel}
+                copiedLabel={copiedLabel}
+              />
               <a
                 href="/api/portfolio/file"
                 download="Turriva-Folio-2026.pdf"

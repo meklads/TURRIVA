@@ -2,37 +2,52 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
+import { getLuxurySeoMessages } from "@/shared/i18n/messages/luxury-seo-pages";
 import { getLocale } from "@/shared/i18n/server";
+import { localizePath } from "@/shared/i18n/path";
 import { TURRIVA_LOGO_SRC, TURRIVA_LOGO_HEIGHT, TURRIVA_LOGO_WIDTH } from "./luxury-brand-logo";
 import { TURRIVA_PUBLIC_EMAIL, TURRIVA_PUBLIC_HOST, TURRIVA_PUBLIC_URL } from "@/shared/constants/brand";
 
 const WHATSAPP_SA = "966502786513";
 const TASAMI_GROUP_URL = "https://www.tasamify.com/";
+const LINKEDIN_URL = "https://www.linkedin.com/company/turriva";
+const INSTAGRAM_URL = "https://www.instagram.com/turriva";
 
 export async function LuxuryFooter() {
   const locale = await getLocale();
   const t = getLuxuryMessages(locale);
+  const seo = getLuxurySeoMessages(locale);
+  const lp = (path: string) => localizePath(path, locale);
 
   const exploreLinks = [
-    { href: "/villas", label: t.nav.villas },
-    { href: "/projects", label: t.nav.projects },
-    { href: "/contact?intent=design", label: t.nav.design3d },
-    { href: "/our-work", label: t.nav.ourWork },
-    { href: "/about", label: t.nav.about },
-    { href: "/contact", label: t.nav.contact },
+    { href: lp("/villas"), label: t.nav.villas },
+    { href: lp("/projects"), label: t.nav.projects },
+    { href: lp("/services"), label: seo.nav.services },
+    { href: lp("/portfolio"), label: seo.nav.portfolio },
+    { href: lp("/our-work"), label: t.nav.ourWork },
+    { href: lp("/insights"), label: seo.nav.insights },
+    { href: lp("/faq"), label: seo.nav.faq },
+    { href: lp("/about"), label: t.nav.about },
+    { href: lp("/contact"), label: t.nav.contact },
   ];
 
   const solutionLinks =
     locale === "ar"
       ? [
-          { href: "/villas#kitchens", label: "مطابخ معيارية" },
-          { href: "/villas#wardrobes", label: "خزائن وغرف ملابس" },
-          { href: "/projects#joinery", label: "تشطيبات B2B" },
+          { href: lp("/villas#kitchens"), label: "مطابخ معيارية" },
+          { href: lp("/villas#wardrobes"), label: "خزائن وغرف ملابس" },
+          { href: lp("/projects#joinery"), label: "تشطيبات B2B" },
+          { href: lp("/styles"), label: seo.nav.styles },
+          { href: lp("/interior-design"), label: t.pages.interiorDesign.title },
+          { href: lp("/construction"), label: t.pages.construction.title },
         ]
       : [
-          { href: "/villas#kitchens", label: "Modular kitchens" },
-          { href: "/villas#wardrobes", label: "Wardrobes & walk-ins" },
-          { href: "/projects#joinery", label: "B2B joinery" },
+          { href: lp("/villas#kitchens"), label: "Modular kitchens" },
+          { href: lp("/villas#wardrobes"), label: "Wardrobes & walk-ins" },
+          { href: lp("/projects#joinery"), label: "B2B joinery" },
+          { href: lp("/styles"), label: seo.nav.styles },
+          { href: lp("/interior-design"), label: t.pages.interiorDesign.title },
+          { href: lp("/construction"), label: t.pages.construction.title },
         ];
 
   const offices = [
@@ -95,10 +110,10 @@ export async function LuxuryFooter() {
       <div className="lux-container lux-footer-inner">
         <div className="lux-footer-top">
           <div className="lux-footer-brand">
-            <Link href="/" className="lux-footer-logo-link" aria-label={t.brand.name}>
+            <Link href={lp("/")} className="lux-footer-logo-link" aria-label={t.brand.name}>
               <Image
                 src={TURRIVA_LOGO_SRC}
-                alt=""
+                alt={locale === "ar" ? "توريفا" : "Turriva"}
                 width={TURRIVA_LOGO_WIDTH}
                 height={TURRIVA_LOGO_HEIGHT}
                 className="lux-footer-logo"
@@ -111,6 +126,26 @@ export async function LuxuryFooter() {
               <MapPin className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} aria-hidden />
               <span>{t.footer.address}</span>
             </p>
+            <div className="lux-footer-social mt-4">
+              <p className="text-xs font-semibold uppercase tracking-wider text-lux-ink-muted">{seo.social.followUs}</p>
+              <div className="mt-2 flex flex-wrap gap-3">
+                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-lux-gold hover:underline">
+                  {seo.social.linkedin}
+                </a>
+                <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-lux-gold hover:underline">
+                  {seo.social.instagram}
+                </a>
+                <a href="https://3dgraphicshouse.com" target="_blank" rel="noopener noreferrer" className="text-sm text-lux-ink-muted hover:text-lux-gold">
+                  Graphics House
+                </a>
+                <a href="https://beesmotion.com" target="_blank" rel="noopener noreferrer" className="text-sm text-lux-ink-muted hover:text-lux-gold">
+                  Bees Motion
+                </a>
+                <a href="https://ruwaq.co" target="_blank" rel="noopener noreferrer" className="text-sm text-lux-ink-muted hover:text-lux-gold">
+                  Ruwaq
+                </a>
+              </div>
+            </div>
           </div>
 
           <div className="lux-footer-col">
@@ -162,7 +197,7 @@ export async function LuxuryFooter() {
                 <span>WhatsApp</span>
               </a>
             </div>
-            <Link href="/contact?intent=design" className="lux-footer-cta">
+            <Link href={lp("/contact?intent=design")} className="lux-footer-cta">
               <span>{t.hero.ctaPrimary}</span>
               <ArrowUpRight className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
             </Link>
@@ -209,8 +244,8 @@ export async function LuxuryFooter() {
             </p>
           </div>
           <div className="lux-footer-legal-links">
-            <Link href="/privacy">{t.footer.privacy}</Link>
-            <Link href="/terms">{t.footer.terms}</Link>
+            <Link href={lp("/privacy")}>{t.footer.privacy}</Link>
+            <Link href={lp("/terms")}>{t.footer.terms}</Link>
             <a href={TURRIVA_PUBLIC_URL} dir="ltr">
               {TURRIVA_PUBLIC_HOST}
             </a>

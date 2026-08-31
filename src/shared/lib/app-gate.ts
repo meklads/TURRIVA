@@ -37,6 +37,14 @@ export function isPublicAppPath(pathname: string): boolean {
     "/portfolio",
     "/privacy",
     "/terms",
+    "/villas",
+    "/projects",
+    "/styles",
+    "/design",
+    "/faq",
+    "/services",
+    "/insights",
+    "/locations",
   ];
 
   if (publicPrefixes.some((p) => pathname === p || pathname.startsWith(`${p}/`))) {

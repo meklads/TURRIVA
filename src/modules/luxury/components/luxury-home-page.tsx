@@ -19,7 +19,8 @@ import { LuxuryTestimonialsSection } from "./luxury-testimonials-section";
 import { LuxuryTrustBar } from "./luxury-trust-bar";
 import { LuxuryTrustStats } from "./luxury-trust-stats";
 import { LuxuryValueOffersSection } from "./luxury-value-offers-section";
-import { LuxuryWaysOfLivingSection } from "./luxury-ways-of-living-section";
+import { LuxuryGroupEcosystemSection } from "./luxury-group-ecosystem-section";
+import { localizePath } from "@/shared/i18n/path";
 
 type Props = {
   locale: Locale;
@@ -27,6 +28,7 @@ type Props = {
 
 export function LuxuryHomePage({ locale }: Props) {
   const t = getLuxuryMessages(locale);
+  const lp = (path: string) => localizePath(path, locale);
 
   return (
     <>
@@ -64,13 +66,14 @@ export function LuxuryHomePage({ locale }: Props) {
           })}
         </div>
         <div className="lux-container mt-12 text-center">
-          <Link href="/portfolio" className="lux-btn-outline">
+          <Link href={lp("/portfolio")} className="lux-btn-outline">
             {t.projects.cta}
           </Link>
         </div>
       </section>
 
       <LuxuryEcosystemSection messages={t} />
+      <LuxuryGroupEcosystemSection locale={locale} />
       <LuxuryBrandRelationshipSection messages={t} compact />
       <LuxuryWaysOfLivingSection messages={t} />
       <LuxuryProductGrid messages={t} locale={locale} />

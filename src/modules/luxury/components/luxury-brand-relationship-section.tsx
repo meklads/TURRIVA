@@ -1,7 +1,12 @@
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import type { LuxuryMessages } from "@/shared/i18n/messages/luxury";
+import { GROUP_LINKS } from "@/shared/lib/seo-schema";
 
-const TASAMI_URL = "https://www.tasamify.com/";
+const COMPANY_URLS: Record<string, string> = {
+  "Graphics House": GROUP_LINKS.graphicsHouse,
+  "Bees Motion": GROUP_LINKS.beesMotion,
+  Turriva: GROUP_LINKS.tasami,
+};
 
 export function LuxuryBrandRelationshipSection({
   messages,
@@ -31,7 +36,7 @@ export function LuxuryBrandRelationshipSection({
           </div>
           <div>
             <p className="lux-body text-lux-ink-muted">{t.body}</p>
-            <a href={TASAMI_URL} target="_blank" rel="noopener noreferrer" className="lux-brand-relationship__link">
+            <a href={GROUP_LINKS.tasami} target="_blank" rel="noopener noreferrer" className="lux-brand-relationship__link">
               {t.groupLink}
               <ExternalLink className="h-4 w-4" strokeWidth={1.8} aria-hidden />
             </a>
@@ -40,19 +45,33 @@ export function LuxuryBrandRelationshipSection({
 
         <div className="lux-brand-relationship__flow" aria-label={t.flow}>
           <span>{t.flow}</span>
-          <ArrowRight className="h-4 w-4" strokeWidth={1.6} aria-hidden />
         </div>
 
         <div className="lux-brand-relationship__companies">
-          {t.companies.map((company) => (
-            <article
-              key={company.name}
-              className={`lux-brand-relationship__company${company.active ? " is-active" : ""}`}
-            >
-              <p>{company.name}</p>
-              <span>{company.role}</span>
-            </article>
-          ))}
+          {t.companies.map((company) => {
+            const href = COMPANY_URLS[company.name];
+            const inner = (
+              <>
+                <p>{company.name}</p>
+                <span>{company.role}</span>
+              </>
+            );
+
+            return (
+              <article
+                key={company.name}
+                className={`lux-brand-relationship__company${company.active ? " is-active" : ""}`}
+              >
+                {href && !company.active ? (
+                  <a href={href} target="_blank" rel="noopener noreferrer" className="block hover:text-lux-gold">
+                    {inner}
+                  </a>
+                ) : (
+                  inner
+                )}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

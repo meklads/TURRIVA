@@ -1,45 +1,23 @@
 import "@/app/luxury.css";
 import { LuxuryFooter } from "@/modules/luxury/components/luxury-footer";
 import { LuxuryHeader } from "@/modules/luxury/components/luxury-header";
+import { MarketingJsonLd } from "@/modules/luxury/components/marketing-json-ld";
+import { MarketingAnalytics } from "@/shared/components/marketing-analytics";
+import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
+import { getLocale } from "@/shared/i18n/server";
 
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Turriva",
-  url: "https://turriva.com",
-  email: "info@turriva.com",
-  telephone: "+966502786513",
-  description:
-    "Specialized spatial execution and physical delivery company delivering interiors, exhibitions, furnishing, fabrication, installation, and turnkey physical experiences.",
-  parentOrganization: {
-    "@type": "Organization",
-    name: "Tasami Group",
-    url: "https://www.tasamify.com/",
-  },
-  areaServed: ["Saudi Arabia", "Oman", "Bahrain", "Egypt"],
-  knowsAbout: [
-    "Interior execution",
-    "Exhibition execution",
-    "Spatial execution",
-    "Fit-out",
-    "Furnishing",
-    "Fabrication",
-    "Installation",
-    "Turnkey physical experiences",
-  ],
-};
-
-export default function MarketingLayout({
+export default async function MarketingLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const locale = await getLocale();
+  const t = getLuxuryMessages(locale);
+
   return (
     <div className="lux-shell flex min-h-screen flex-col">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
+      <MarketingJsonLd locale={locale} messages={t} />
+      <MarketingAnalytics />
       <LuxuryHeader />
       <main id="main" className="flex-1">
         {children}

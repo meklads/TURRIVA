@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import type { Locale } from "@/shared/i18n/locale";
+import { localizePath } from "@/shared/i18n/path";
 import { LUXURY_HERO_IMAGE } from "../lib/nav";
 
 type Props = {
@@ -11,6 +12,7 @@ type Props = {
 export function LuxuryHomeHero({ locale }: Props) {
   const t = getLuxuryMessages(locale);
   const tags = t.hero.tags;
+  const lp = (path: string) => localizePath(path, locale);
 
   return (
     <>
@@ -31,15 +33,15 @@ export function LuxuryHomeHero({ locale }: Props) {
               </div>
               <div className="lux-hero-cta mt-9 flex flex-col gap-3 sm:mt-10">
                 <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                  <Link href="/contact?intent=design" className="lux-btn-primary">
+                  <Link href={lp("/contact?intent=design")} className="lux-btn-primary">
                     {t.hero.ctaPrimary}
                   </Link>
-                  <Link href="/portfolio" className="lux-btn-outline-gold">
+                  <Link href={lp("/portfolio")} className="lux-btn-outline-gold">
                     {t.hero.ctaSecondary}
                   </Link>
                 </div>
                 <Link
-                  href="/contact?intent=sample"
+                  href={lp("/contact?intent=sample")}
                   className="text-sm font-semibold text-lux-gold transition-colors hover:text-lux-gold-light"
                 >
                   {t.hero.ctaSample} →
@@ -52,7 +54,7 @@ export function LuxuryHomeHero({ locale }: Props) {
             <div className="lux-hero-media-frame">
               <Image
                 src={LUXURY_HERO_IMAGE}
-                alt=""
+                alt={locale === "ar" ? "تنفيذ داخلي فاخر — توريفا" : "Luxury interior execution by Turriva"}
                 fill
                 priority
                 unoptimized

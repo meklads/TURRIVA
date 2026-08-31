@@ -69,6 +69,10 @@ export async function generateMetadata(): Promise<Metadata> {
       locale === "ar"
         ? "توريفا إحدى شركات مجموعة تسامي، متخصصة في تنفيذ المساحات الداخلية والمعارض والتأثيث والتصنيع والتركيب والتجارب المادية المتكاملة."
         : "A Tasami Group company specializing in spatial execution, fit-out, exhibitions, furnishing, fabrication, installation, and turnkey physical experiences.",
+    icons: {
+      icon: "/brand/turriva/turriva-logo.png",
+      apple: "/brand/turriva/turriva-logo.png",
+    },
   };
 }
 
