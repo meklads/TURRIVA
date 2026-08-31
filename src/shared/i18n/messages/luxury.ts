@@ -160,6 +160,8 @@ export type LuxuryMessages = LuxuryPlatformMessages & {
       viewerEyebrow: string;
       viewerTitle: string;
       downloadCta: string;
+      fullscreenCta: string;
+      exitFullscreenCta: string;
       footerNote: string;
       footerContact: string;
     };
@@ -586,6 +588,8 @@ const en: LuxuryMessages = {
       viewerEyebrow: "Turriva Folio 2026",
       viewerTitle: "Execution portfolio",
       downloadCta: "Download PDF",
+      fullscreenCta: "Full screen",
+      exitFullscreenCta: "Exit full screen",
       footerNote: "Need a printed copy or a walkthrough with our team?",
       footerContact: "Contact Turriva",
     },
@@ -1240,6 +1244,8 @@ const ar: LuxuryMessages = {
       viewerEyebrow: "فوليو توريفا 2026",
       viewerTitle: "بورتفوليو التنفيذ",
       downloadCta: "تحميل PDF",
+      fullscreenCta: "ملء الشاشة",
+      exitFullscreenCta: "خروج من ملء الشاشة",
       footerNote: "تحتاج نسخة مطبوعة أو جولة مع فريقنا؟",
       footerContact: "تواصل مع توريفا",
     },
