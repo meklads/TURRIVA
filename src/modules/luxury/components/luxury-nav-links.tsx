@@ -2,17 +2,26 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { stripLocalePrefix } from "@/shared/i18n/path";
 
 type NavLink = {
   href: string;
   label: string;
 };
 
+function normalizeNavPath(pathname: string) {
+  const { pathname: bare } = stripLocalePrefix(pathname);
+  return bare.replace(/\/$/, "") || "/";
+}
+
 function useActivePath() {
   const pathname = usePathname();
+  const current = normalizeNavPath(pathname);
+
   return (href: string) => {
-    if (href === "/") return pathname === "/";
-    return pathname === href || pathname.startsWith(`${href}/`);
+    const target = normalizeNavPath(href);
+    if (target === "/") return current === "/";
+    return current === target || current.startsWith(`${target}/`);
   };
 }
 
@@ -21,7 +30,7 @@ export function LuxuryDesktopNav({ links }: { links: readonly NavLink[] }) {
 
   return (
     <nav
-      className="hidden min-w-0 items-center justify-center gap-5 lg:flex xl:gap-7"
+      className="lux-header-nav hidden min-w-0 items-center justify-center lg:flex"
       aria-label="Main"
     >
       {links.map((link) => (

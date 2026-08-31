@@ -5,11 +5,12 @@ import { LocaleSwitcher } from "@/shared/i18n/locale-switcher";
 import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import { LuxuryBrandLogo } from "./luxury-brand-logo";
 import { LuxuryDesktopNav, LuxuryMobileNav } from "./luxury-nav-links";
-import { getLuxuryNavLinks } from "../lib/nav";
+import { getLuxuryHeaderNavLinks, getLuxuryNavLinks } from "../lib/nav";
 
 export async function LuxuryHeader() {
   const locale = await getLocale();
-  const links = getLuxuryNavLinks(locale);
+  const headerLinks = getLuxuryHeaderNavLinks(locale);
+  const mobileLinks = getLuxuryNavLinks(locale);
   const t = getLuxuryMessages(locale);
   const homeHref = localizePath("/", locale);
 
@@ -21,15 +22,19 @@ export async function LuxuryHeader() {
             <div className="lux-header-brand">
               <LuxuryBrandLogo href={homeHref} priority />
             </div>
-            <LuxuryDesktopNav links={links} />
+            <LuxuryDesktopNav links={headerLinks} />
             <div className="lux-header-actions">
-              <Link href={localizePath("/contact?intent=design", locale)} className="lux-btn-primary hidden lg:inline-flex !min-w-0 px-5 py-2.5 text-[10px]">
-                {t.hero.ctaPrimary}
+              <Link
+                href={localizePath("/contact?intent=design", locale)}
+                className="lux-btn-primary lux-header-cta hidden lg:inline-flex"
+              >
+                <span className="lux-header-cta-short">{t.nav.contact}</span>
+                <span className="lux-header-cta-full">{t.hero.ctaPrimary}</span>
               </Link>
-              <LocaleSwitcher />
+              <LocaleSwitcher variant="luxury" />
             </div>
           </div>
-          <LuxuryMobileNav links={links} />
+          <LuxuryMobileNav links={mobileLinks} />
         </div>
       </div>
     </header>
