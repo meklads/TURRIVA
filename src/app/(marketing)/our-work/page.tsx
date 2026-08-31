@@ -27,17 +27,6 @@ export default async function OurWorkPage() {
         intro={t.pages.ourWork.intro}
       />
 
-      <section className="lux-section border-b border-lux-sand bg-white">
-        <div className="lux-container max-w-3xl text-center">
-          <p className="lux-eyebrow">{t.pages.ourWork.folioEyebrow}</p>
-          <h2 className="lux-display mt-4 text-2xl sm:text-3xl">{t.pages.ourWork.folioTitle}</h2>
-          <p className="lux-body mx-auto mt-4 max-w-2xl text-lux-ink-soft">{t.pages.ourWork.folioIntro}</p>
-          <Link href={lp("/portfolio")} className="lux-btn-primary mt-8 inline-flex">
-            {t.pages.ourWork.folioCta}
-          </Link>
-        </div>
-      </section>
-
       <section className="lux-section lux-section--linen scroll-mt-24">
         <div className="lux-container max-w-6xl">
           <h2 className="lux-display text-center text-2xl">{locale === "ar" ? "مشاريع مختارة" : "Selected projects"}</h2>

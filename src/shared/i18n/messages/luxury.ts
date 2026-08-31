@@ -136,10 +136,7 @@ export type LuxuryMessages = LuxuryPlatformMessages & {
     ourWork: {
       title: string;
       intro: string;
-      folioEyebrow: string;
-      folioTitle: string;
-      folioIntro: string;
-      folioCta: string;
+      caseStudyContactCta: string;
     };
     portfolio: {
       eyebrow: string;
@@ -559,18 +556,14 @@ const en: LuxuryMessages = {
     ourWork: {
       title: "Our work",
       intro:
-        "Selected modular kitchens, wardrobes, and joinery programmes, each documented from approved 3D through installation and handover.",
-      folioEyebrow: "2026 folio",
-      folioTitle: "Turriva execution portfolio",
-      folioIntro:
-        "Our full 2026 folio covers interiors, exhibitions, furnishing, and turnkey delivery. Access is reserved for professionals with a company email address.",
-      folioCta: "Request portfolio access",
+        "Public project highlights — selected kitchens, wardrobes, and joinery programmes documented from approved 3D through installation and handover.",
+      caseStudyContactCta: "Discuss a similar project",
     },
     portfolio: {
       eyebrow: "Execution portfolio",
       title: "Turriva Folio 2026",
       intro:
-        "A curated selection of spatial execution programmes — interiors, exhibitions, furnishing, fabrication, and handover documentation.",
+        "The complete 2026 folio PDF is available on this page only. Register with your company work email to view or download — the document stays hidden until access is verified. Personal email providers are not accepted.",
       gateEyebrow: "Professional access",
       gateTitle: "View the Turriva folio",
       gateIntro:
@@ -1215,18 +1208,14 @@ const ar: LuxuryMessages = {
     ourWork: {
       title: "أعمالنا",
       intro:
-        "نماذج من فلل ومشاريع تجارية نفّذتها توريفا، من التصميم ثلاثي الأبعاد إلى التوريد والتسليم في الموقع.",
-      folioEyebrow: "فوليو 2026",
-      folioTitle: "بورتفوليو تنفيذ توريفا",
-      folioIntro:
-        "يغطي فوليو 2026 الكامل مشاريعنا في التنفيذ الداخلي والمعارض والتأثيث والتسليم المتكامل. الوصول مخصص للمهنيين ببريد إلكتروني تابع لشركة.",
-      folioCta: "طلب الوصول للبورتفوليو",
+        "نماذج عامة من مشاريع مختارة — مطابخ وخزائن وأعمال نجارة، موثّقة من التصميم ثلاثي الأبعاد المعتمد حتى التسليم.",
+      caseStudyContactCta: "ناقش مشروعاً مشابهاً",
     },
     portfolio: {
       eyebrow: "بورتفوليو التنفيذ",
       title: "فوليو توريفا 2026",
       intro:
-        "مجموعة مختارة من برامج تنفيذ المساحات — التنفيذ الداخلي، المعارض، التأثيث، التصنيع، وتوثيق التسليم.",
+        "ملف PDF الكامل لعام 2026 متاح في هذه الصفحة فقط. سجّل ببريد شركتك الوظيفي للعرض أو التحميل — الملف يبقى مخفياً حتى يتم التحقق. لا نقبل البريد الشخصي.",
       gateEyebrow: "وصول مهني",
       gateTitle: "عرض فوليو توريفا",
       gateIntro:
