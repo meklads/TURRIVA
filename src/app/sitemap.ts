@@ -52,6 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           ar: `${TURRIVA_PUBLIC_URL}${localizePath(route.path, "ar")}`,
           en: `${TURRIVA_PUBLIC_URL}${localizePath(route.path, "en")}`,
+          "x-default": `${TURRIVA_PUBLIC_URL}${localizePath(route.path, "ar")}`,
         },
       },
     }))

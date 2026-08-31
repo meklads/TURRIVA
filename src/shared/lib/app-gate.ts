@@ -8,8 +8,14 @@
 
 export const APP_GATE_REALM = "Turriva · Pre-launch";
 
+/** SEO / crawler files — always public, never locale-redirected or gated */
+export function isSeoPublicPath(pathname: string): boolean {
+  return pathname === "/sitemap.xml" || pathname === "/robots.txt";
+}
+
 /** Static assets, never gated */
 function isStaticAssetPath(pathname: string): boolean {
+  if (isSeoPublicPath(pathname)) return true;
   if (pathname.startsWith("/_next")) return true;
   if (pathname.startsWith("/brand")) return true;
   if (pathname.startsWith("/uploads")) return true;

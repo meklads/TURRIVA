@@ -60,8 +60,14 @@ function handleLocaleRouting(request: NextRequest): NextResponse | null {
 }
 
 export function middleware(request: NextRequest) {
-  const localeResponse = handleLocaleRouting(request);
   const { pathname } = request.nextUrl;
+
+  // Crawlers must reach sitemap/robots without auth or locale redirects.
+  if (pathname === "/sitemap.xml" || pathname === "/robots.txt") {
+    return NextResponse.next();
+  }
+
+  const localeResponse = handleLocaleRouting(request);
   const { pathname: gatePath } = stripLocalePrefix(pathname);
 
   if (isRemovedAppPath(gatePath)) {
@@ -99,6 +105,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!_next/static|_next/image|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|pdf)$).*)",
+    "/((?!_next/static|_next/image|sitemap\\.xml|robots\\.txt|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|pdf)$).*)",
   ],
 };
