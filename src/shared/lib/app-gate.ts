@@ -34,6 +34,7 @@ export function isPublicAppPath(pathname: string): boolean {
     "/construction",
     "/interior-design",
     "/our-work",
+    "/portfolio",
     "/privacy",
     "/terms",
   ];
@@ -47,10 +48,11 @@ export function isPublicAppPath(pathname: string): boolean {
   return false;
 }
 
-/** Public API, health only on marketing site (tools live on ruwaq.co) */
+/** Public API — health, share links, portfolio gate */
 export function isPublicApiPath(pathname: string): boolean {
   if (pathname === "/api/health") return true;
   if (pathname.startsWith("/api/share/")) return true;
+  if (pathname.startsWith("/api/portfolio/")) return true;
   return false;
 }
 

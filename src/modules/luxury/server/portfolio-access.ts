@@ -1,0 +1,77 @@
+import { createHmac, timingSafeEqual } from "crypto";
+import { cookies } from "next/headers";
+import type { NextRequest } from "next/server";
+import path from "path";
+
+export const PORTFOLIO_COOKIE = "turriva_portfolio_access";
+export const PORTFOLIO_PDF_FILENAME = "turriva-folio-2026.pdf";
+
+const TOKEN_TTL_SECONDS = 60 * 60 * 24 * 30;
+
+export function getPortfolioPdfPath(): string {
+  return path.join(process.cwd(), "content", "portfolio", PORTFOLIO_PDF_FILENAME);
+}
+
+function getSecret(): string {
+  return process.env.AUTH_SECRET || "portfolio-dev-only";
+}
+
+export function createPortfolioAccessToken(email: string): string {
+  const normalized = email.trim().toLowerCase();
+  const exp = Math.floor(Date.now() / 1000) + TOKEN_TTL_SECONDS;
+  const payload = `${normalized}:${exp}`;
+  const sig = createHmac("sha256", getSecret()).update(payload).digest("base64url");
+  return `${Buffer.from(payload).toString("base64url")}.${sig}`;
+}
+
+export function verifyPortfolioAccessToken(token: string): string | null {
+  const parts = token.split(".");
+  if (parts.length !== 2) return null;
+
+  const [payloadB64, sig] = parts;
+  let payload: string;
+  try {
+    payload = Buffer.from(payloadB64, "base64url").toString("utf8");
+  } catch {
+    return null;
+  }
+
+  const expectedSig = createHmac("sha256", getSecret()).update(payload).digest("base64url");
+  try {
+    const a = Buffer.from(sig);
+    const b = Buffer.from(expectedSig);
+    if (a.length !== b.length || !timingSafeEqual(a, b)) return null;
+  } catch {
+    return null;
+  }
+
+  const colon = payload.lastIndexOf(":");
+  if (colon <= 0) return null;
+  const email = payload.slice(0, colon);
+  const exp = parseInt(payload.slice(colon + 1), 10);
+  if (!email || !Number.isFinite(exp) || exp < Math.floor(Date.now() / 1000)) return null;
+  return email;
+}
+
+export async function hasPortfolioAccessFromCookies(): Promise<boolean> {
+  const store = await cookies();
+  const token = store.get(PORTFOLIO_COOKIE)?.value;
+  if (!token) return false;
+  return verifyPortfolioAccessToken(token) !== null;
+}
+
+export function verifyPortfolioAccessFromRequest(req: NextRequest): string | null {
+  const token = req.cookies.get(PORTFOLIO_COOKIE)?.value;
+  if (!token) return null;
+  return verifyPortfolioAccessToken(token);
+}
+
+export function portfolioCookieOptions() {
+  return {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax" as const,
+    path: "/",
+    maxAge: TOKEN_TTL_SECONDS,
+  };
+}

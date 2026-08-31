@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/interior-design", priority: 0.85, changeFrequency: "monthly" as const },
     { path: "/construction", priority: 0.85, changeFrequency: "monthly" as const },
     { path: "/our-work", priority: 0.85, changeFrequency: "weekly" as const },
+    { path: "/portfolio", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/about", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/contact", priority: 0.88, changeFrequency: "monthly" as const },
     { path: "/privacy", priority: 0.3, changeFrequency: "yearly" as const },

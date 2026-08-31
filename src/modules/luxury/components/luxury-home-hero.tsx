@@ -34,7 +34,7 @@ export function LuxuryHomeHero({ locale }: Props) {
                   <Link href="/contact?intent=design" className="lux-btn-primary">
                     {t.hero.ctaPrimary}
                   </Link>
-                  <Link href="/projects" className="lux-btn-outline-gold">
+                  <Link href="/portfolio" className="lux-btn-outline-gold">
                     {t.hero.ctaSecondary}
                   </Link>
                 </div>

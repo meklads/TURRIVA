@@ -64,7 +64,7 @@ export function LuxuryHomePage({ locale }: Props) {
           })}
         </div>
         <div className="lux-container mt-12 text-center">
-          <Link href="/our-work" className="lux-btn-outline">
+          <Link href="/portfolio" className="lux-btn-outline">
             {t.projects.cta}
           </Link>
         </div>

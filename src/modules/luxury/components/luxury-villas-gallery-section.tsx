@@ -36,7 +36,7 @@ export function LuxuryVillasGallerySection({ messages }: { messages: LuxuryMessa
         })}
       </div>
       <div className="lux-container mt-12 text-center">
-        <Link href="/our-work" className="lux-btn-outline-gold">
+        <Link href="/portfolio" className="lux-btn-outline-gold">
           {g.cta}
         </Link>
       </div>

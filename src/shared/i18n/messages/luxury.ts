@@ -133,7 +133,36 @@ export type LuxuryMessages = LuxuryPlatformMessages & {
   pages: {
     interiorDesign: { title: string; intro: string };
     construction: { title: string; intro: string };
-    ourWork: { title: string; intro: string };
+    ourWork: {
+      title: string;
+      intro: string;
+      folioEyebrow: string;
+      folioTitle: string;
+      folioIntro: string;
+      folioCta: string;
+    };
+    portfolio: {
+      eyebrow: string;
+      title: string;
+      intro: string;
+      gateEyebrow: string;
+      gateTitle: string;
+      gateIntro: string;
+      gateNote: string;
+      formName: string;
+      formCompany: string;
+      formWorkEmail: string;
+      formWorkEmailPlaceholder: string;
+      formSubmit: string;
+      formError: string;
+      formErrorPersonal: string;
+      formErrorInvalid: string;
+      viewerEyebrow: string;
+      viewerTitle: string;
+      downloadCta: string;
+      footerNote: string;
+      footerContact: string;
+    };
     about: { title: string; intro: string };
     contact: {
       title: string;
@@ -529,6 +558,36 @@ const en: LuxuryMessages = {
       title: "Our work",
       intro:
         "Selected modular kitchens, wardrobes, and joinery programmes, each documented from approved 3D through installation and handover.",
+      folioEyebrow: "2026 folio",
+      folioTitle: "Turriva execution portfolio",
+      folioIntro:
+        "Our full 2026 folio covers interiors, exhibitions, furnishing, and turnkey delivery. Access is reserved for professionals with a company email address.",
+      folioCta: "Request portfolio access",
+    },
+    portfolio: {
+      eyebrow: "Execution portfolio",
+      title: "Turriva Folio 2026",
+      intro:
+        "A curated selection of spatial execution programmes — interiors, exhibitions, furnishing, fabrication, and handover documentation.",
+      gateEyebrow: "Professional access",
+      gateTitle: "View the Turriva folio",
+      gateIntro:
+        "Enter your details to open the PDF. We verify that your email belongs to a company domain — personal addresses (Gmail, Hotmail, iCloud, etc.) are not accepted.",
+      gateNote: "Your information is used only to follow up on relevant B2B opportunities.",
+      formName: "Full name",
+      formCompany: "Company / organisation",
+      formWorkEmail: "Work email",
+      formWorkEmailPlaceholder: "you@yourcompany.com",
+      formSubmit: "Open portfolio",
+      formError: "Something went wrong. Please try again or contact us directly.",
+      formErrorPersonal:
+        "Please use your company email address. Personal providers such as Gmail, Yahoo, Hotmail, and iCloud cannot be accepted.",
+      formErrorInvalid: "Please enter a valid work email address.",
+      viewerEyebrow: "Turriva Folio 2026",
+      viewerTitle: "Execution portfolio",
+      downloadCta: "Download PDF",
+      footerNote: "Need a printed copy or a walkthrough with our team?",
+      footerContact: "Contact Turriva",
     },
     about: {
       title: "About Turriva",
@@ -1153,6 +1212,36 @@ const ar: LuxuryMessages = {
       title: "أعمالنا",
       intro:
         "نماذج من فلل ومشاريع تجارية نفّذتها توريفا، من التصميم ثلاثي الأبعاد إلى التوريد والتسليم في الموقع.",
+      folioEyebrow: "فوليو 2026",
+      folioTitle: "بورتفوليو تنفيذ توريفا",
+      folioIntro:
+        "يغطي فوليو 2026 الكامل مشاريعنا في التنفيذ الداخلي والمعارض والتأثيث والتسليم المتكامل. الوصول مخصص للمهنيين ببريد إلكتروني تابع لشركة.",
+      folioCta: "طلب الوصول للبورتفوليو",
+    },
+    portfolio: {
+      eyebrow: "بورتفوليو التنفيذ",
+      title: "فوليو توريفا 2026",
+      intro:
+        "مجموعة مختارة من برامج تنفيذ المساحات — التنفيذ الداخلي، المعارض، التأثيث، التصنيع، وتوثيق التسليم.",
+      gateEyebrow: "وصول مهني",
+      gateTitle: "عرض فوليو توريفا",
+      gateIntro:
+        "أدخل بياناتك لفتح ملف PDF. نتحقق أن بريدك الإلكتروني تابع لنطاق شركة — لا نقبل عناوين شخصية (Gmail، Hotmail، iCloud، وغيرها).",
+      gateNote: "نستخدم معلوماتك فقط للمتابعة مع فرص B2B ذات الصلة.",
+      formName: "الاسم الكامل",
+      formCompany: "الشركة / المؤسسة",
+      formWorkEmail: "البريد الوظيفي",
+      formWorkEmailPlaceholder: "you@yourcompany.com",
+      formSubmit: "فتح البورتفوليو",
+      formError: "حدث خطأ. يرجى المحاولة مرة أخرى أو التواصل معنا مباشرة.",
+      formErrorPersonal:
+        "يرجى استخدام بريد شركتك الإلكتروني. لا نقبل مزودي البريد الشخصي مثل Gmail وYahoo وHotmail وiCloud.",
+      formErrorInvalid: "يرجى إدخال بريد وظيفي صحيح.",
+      viewerEyebrow: "فوليو توريفا 2026",
+      viewerTitle: "بورتفوليو التنفيذ",
+      downloadCta: "تحميل PDF",
+      footerNote: "تحتاج نسخة مطبوعة أو جولة مع فريقنا؟",
+      footerContact: "تواصل مع توريفا",
     },
     about: {
       title: "عن توريفا",
