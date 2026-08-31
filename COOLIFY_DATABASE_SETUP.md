@@ -34,6 +34,9 @@ ghcr.io/meklads/turriva:latest
    - `AUTH_SECRET`
    - `AUTH_URL` = `https://turriva.com`
    - `NEXT_PUBLIC_APP_URL` = `https://turriva.com`
+   - `GOOGLE_SITE_VERIFICATION` = *(from Search Console)*
+   - `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` = `turriva.com` *(or `NEXT_PUBLIC_GA_MEASUREMENT_ID`)*
+   - `RESEND_API_KEY` + `RESEND_FROM_EMAIL` *(lead + portfolio notifications)*
 6. إذا ظهر `unauthorized`: GitHub → **Packages → turriva → Package settings → Change visibility → Public**  
    أو أضف Registry في Coolify (PAT مع `read:packages`)
 7. **Deploy** — يسحب الصورة فقط (بدون build)

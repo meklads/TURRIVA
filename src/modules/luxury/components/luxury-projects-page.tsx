@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Locale } from "@/shared/i18n/locale";
 import { getLuxuryMessages, LUXURY_IMAGES } from "@/shared/i18n/messages/luxury";
+import { localizePath } from "@/shared/i18n/path";
 import { LuxuryFaqSection } from "./luxury-faq-section";
 import { LuxuryFormSplitSection } from "./luxury-form-split-section";
 import { LuxuryBrandHeroImage } from "./luxury-brand-hero-image";
@@ -18,6 +19,7 @@ type Props = {
 
 export function LuxuryProjectsPage({ messages: t, locale }: Props) {
   const p = t.pages.projects;
+  const lp = (path: string) => localizePath(path, locale);
 
   return (
     <>
@@ -25,7 +27,7 @@ export function LuxuryProjectsPage({ messages: t, locale }: Props) {
         <Link href="#brief" className="lux-btn-primary">
           {p.ctaBrief}
         </Link>
-        <Link href="/contact?intent=sample" className="lux-btn-outline-gold">
+        <Link href={lp("/contact?intent=sample")} className="lux-btn-outline-gold">
           {p.ctaSample}
         </Link>
       </LuxuryMarketingHero>

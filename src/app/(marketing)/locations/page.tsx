@@ -16,7 +16,11 @@ export default async function LocationsPage() {
 
   return (
     <>
-      <LuxuryMarketingHero title={seo.locationsPage.title} intro={seo.locationsPage.intro} eyebrow="Turriva" />
+      <LuxuryMarketingHero
+        title={seo.locationsPage.title}
+        intro={seo.locationsPage.intro}
+        eyebrow={locale === "ar" ? "توريفا" : "Turriva"}
+      />
 
       <section className="lux-section lux-section--linen">
         <div className="lux-container max-w-5xl grid gap-6 sm:grid-cols-3">

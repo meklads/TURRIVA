@@ -253,6 +253,13 @@ const en: LuxurySeoMessages = {
         summary: "Moisture-resistant cores, hardware selection, and factory tolerance for Jeddah and Makkah villas.",
         readMinutes: 7,
       },
+      {
+        slug: "portfolio-access-for-professionals",
+        tag: "Portfolio",
+        title: "Why Turriva gates the 2026 folio behind a company email",
+        summary: "How verified B2B access protects confidential project documentation while keeping public case highlights open.",
+        readMinutes: 4,
+      },
     ],
   },
   locationsPage: {
@@ -349,7 +356,7 @@ const ar: LuxurySeoMessages = {
       sections: [
         {
           title: "المعلومات التي نجمعها",
-          body: "الاسم والشركة والبريد الوظيفي والجوال وتفاصيل المشروع عبر النماذج أو بوابة البورتفوليو. بيانات تقنية مثل نوع المتصفح والصفحات الم visited عند تفعيل التحليلات.",
+          body: "الاسم والشركة والبريد الوظيفي والجوال وتفاصيل المشروع عبر النماذج أو بوابة البورتفوليو. بيانات تقنية مثل نوع المتصفح والصفحات التي تمت زيارتها عند تفعيل التحليلات.",
         },
         {
           title: "كيف نستخدم المعلومات",
@@ -381,7 +388,7 @@ const ar: LuxurySeoMessages = {
       sections: [
         {
           title: "غرض الموقع",
-          body: "يعرض قدرات توريفa في التنفيذ ونماذج المشاريع وقنوات التواصل. ملفات البورتفوليو تُشارك مع جهات اتصال تجارية موثّقة للتقييم فقط.",
+          body: "يعرض قدرات توريفا في التنفيذ ونماذج المشاريع وقنوات التواصل. ملفات البورتفوليو تُشارك مع جهات اتصال تجارية موثّقة للتقييم فقط.",
         },
         {
           title: "مواد البورتفوليو",
@@ -393,7 +400,7 @@ const ar: LuxurySeoMessages = {
         },
         {
           title: "الملكية الفكرية",
-          body: "محتوى الموقع والصور ودراسات الحالة ملك لتوريفa أو شركاء م credited (مثل Graphics House للتصور). العلامات التجارية للشركاء ملك لأصحابها.",
+          body: "محتوى الموقع والصور ودراسات الحالة ملك لتوريفا أو شركاء م credited (مثل Graphics House للتصور). العلامات التجارية للشركاء ملك لأصحابها.",
         },
         {
           title: "إخلاء مسؤولية",
@@ -409,18 +416,18 @@ const ar: LuxurySeoMessages = {
   },
   faqPage: {
     title: "الأسئلة الشائعة",
-    intro: "إجابات عن نموذج تنفيذ توريفa والخدمات والبورتفوليو والعمل مع شركات مجموعة تسامي.",
+    intro: "إجابات عن نموذج تنفيذ توريفا والخدمات والبورتفوليو والعمل مع شركات مجموعة تسامي.",
     sections: [
       {
         title: "عن توريفا",
         items: [
           {
-            q: "ماذا تفعل توريفa؟",
-            a: "توريفa شركة تنفيذ المساحات ضمن مجموعة تسامي — تشطيب داخلي، معارض، تأثيث، تصنيع، تركيب، وتسليم ميداني في السعودية والخليج.",
+            q: "ماذا تفعل توريفا؟",
+            a: "توريفا شركة تنفيذ المساحات ضمن مجموعة تسامي — تشطيب داخلي، معارض، تأثيث، تصنيع، تركيب، وتسليم ميداني في السعودية والخليج.",
           },
           {
-            q: "ما الفرق بين توريفa وGraphics House؟",
-            a: "Graphics House تقود التصور الإبداعي وCGI والماكيت الذكي (3dgraphicshouse.com). توريفa تحوّل التوجه المعتمد إلى واقع مادي في الموقع.",
+            q: "ما الفرق بين توريفا وGraphics House؟",
+            a: "Graphics House تقود التصور الإبداعي وCGI والماكيت الذكي (3dgraphicshouse.com). توريفا تحوّل التوجه المعتمد إلى واقع مادي في الموقع.",
           },
           {
             q: "هل Bees Motion تتولى التسويق؟",
@@ -449,7 +456,7 @@ const ar: LuxurySeoMessages = {
   },
   servicesPage: {
     title: "خدمات التنفيذ",
-    intro: "توريفa تسلّم الطبقة المادية — من المفهوم المعتمد إلى التصنيع والتركيب والتسليم الموثق.",
+    intro: "توريفا تسلّم الطبقة المادية — من المفهوم المعتمد إلى التصنيع والتركيب والتسليم الموثق.",
     items: [
       {
         slug: "interior-execution",
@@ -484,7 +491,7 @@ const ar: LuxurySeoMessages = {
       {
         slug: "before-design-to-handover",
         tag: "العملية",
-        title: "من 3D المعتمد إلى التسليم: مسار تنفيذ توريفa",
+        title: "من 3D المعتمد إلى التسليم: مسار تنفيذ توريفا",
         summary: "كيف يرتبط التطوير الفني والعينات والتصنيع والتركيب تحت فريق واحد.",
         readMinutes: 6,
       },
@@ -492,7 +499,7 @@ const ar: LuxurySeoMessages = {
         slug: "exhibition-launch-with-graphics-house",
         tag: "مجموعة تسامي",
         title: "عندما يحتاج الإطلاق CGI وتسليم مادي معاً",
-        summary: "كيف يكمل تصور Graphics House والتنفيذ الميداني لتوريفa في برامج المطورين.",
+        summary: "كيف يكمل تصور Graphics House والتنفيذ الميداني لتوريفا في برامج المطورين.",
         readMinutes: 5,
       },
       {
@@ -501,6 +508,13 @@ const ar: LuxurySeoMessages = {
         title: "مطابخ معيارية لمناخ الخليج: مواد تتحمل الحياة اليومية",
         summary: "نوى مقاومة للرطوبة واختيار hardware ودقة مصنع لفلل جدة ومكة.",
         readMinutes: 7,
+      },
+      {
+        slug: "portfolio-access-for-professionals",
+        tag: "البورتفوليو",
+        title: "لماذا يتطلب فوليو 2026 بريداً وظيفياً",
+        summary: "كيف يحمي الوصول المهني الموثّق وثائق المشاريع السرية مع إبقاء النماذج العامة متاحة.",
+        readMinutes: 4,
       },
     ],
   },
@@ -532,7 +546,7 @@ const ar: LuxurySeoMessages = {
     eyebrow: "منظومة مجموعة تسامي",
     title: "مجموعة واحدة. تخصصات متكاملة.",
     intro:
-      "توريفa تنفّذ في الموقع. الشركات الشقيقة تغطي التصور والتسويق واكتشاف العقار ومحتوى الأسرة — تُربط عندما يحتاج مشروعك أكثر من تخصص.",
+      "توريفا تنفّذ في الموقع. الشركات الشقيقة تغطي التصور والتسويق واكتشاف العقار ومحتوى الأسرة — تُربط عندما يحتاج مشروعك أكثر من تخصص.",
     companies: [
       {
         name: "Graphics House",
@@ -551,7 +565,7 @@ const ar: LuxurySeoMessages = {
       {
         name: "Ruwaq",
         tagline: "دليل العقار والتصميم",
-        description: "محترفون موثّقون وجولات مشاريع وأدلة تشطيب في جدة ومكة والمدينة — توريفa على Ruwaq PRO.",
+        description: "محترفون موثّقون وجولات مشاريع وأدلة تشطيب في جدة ومكة والمدينة — توريفا على Ruwaq PRO.",
         href: "https://ruwaq.co",
         cta: "زيارة Ruwaq",
       },
@@ -563,11 +577,11 @@ const ar: LuxurySeoMessages = {
         cta: "استكشف DotForLife",
       },
     ],
-    ruwaqNote: "شاهد توريفa في جولات Ruwaq PRO وقوائم التشطيب الموثّقة.",
+    ruwaqNote: "شاهد توريفا في جولات Ruwaq PRO وقوائم التشطيب الموثّقة.",
     dotForLifeNote: "أدلة تجديد المنزل تصل لصناع قرار الأسرة.",
   },
   social: {
-    followUs: "تابع توريفa",
+    followUs: "تابع توريفا",
     linkedin: "LinkedIn",
     instagram: "Instagram",
     sharePortfolio: "شارك مع زميل",

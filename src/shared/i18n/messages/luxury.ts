@@ -129,6 +129,11 @@ export type LuxuryMessages = LuxuryPlatformMessages & {
     email: string;
     phone: string;
     sponsoredBy: string;
+    solutions: {
+      modularKitchens: string;
+      wardrobes: string;
+      b2bJoinery: string;
+    };
   };
   pages: {
     interiorDesign: { title: string; intro: string };
@@ -151,6 +156,7 @@ export type LuxuryMessages = LuxuryPlatformMessages & {
       formWorkEmail: string;
       formWorkEmailPlaceholder: string;
       formSubmit: string;
+      formLoading: string;
       formError: string;
       formErrorPersonal: string;
       formErrorInvalid: string;
@@ -541,6 +547,11 @@ const en: LuxuryMessages = {
     email: "info@turriva.com",
     phone: "+966 50 278 6513",
     sponsoredBy: "Turriva spatial execution company",
+    solutions: {
+      modularKitchens: "Modular kitchens",
+      wardrobes: "Wardrobes & walk-ins",
+      b2bJoinery: "B2B joinery",
+    },
   },
   pages: {
     interiorDesign: {
@@ -574,6 +585,7 @@ const en: LuxuryMessages = {
       formWorkEmail: "Work email",
       formWorkEmailPlaceholder: "you@yourcompany.com",
       formSubmit: "Open portfolio",
+      formLoading: "Verifying access…",
       formError: "Something went wrong. Please try again or contact us directly.",
       formErrorPersonal:
         "Please use your company email address. Personal providers such as Gmail, Yahoo, Hotmail, and iCloud cannot be accepted.",
@@ -1193,6 +1205,11 @@ const ar: LuxuryMessages = {
     email: "info@turriva.com",
     phone: "+966 50 278 6513",
     sponsoredBy: "شركة توريفا لتنفيذ المساحات",
+    solutions: {
+      modularKitchens: "مطابخ معيارية",
+      wardrobes: "خزائن وغرف ملابس",
+      b2bJoinery: "تشطيبات B2B",
+    },
   },
   pages: {
     interiorDesign: {
@@ -1226,6 +1243,7 @@ const ar: LuxuryMessages = {
       formWorkEmail: "البريد الوظيفي",
       formWorkEmailPlaceholder: "you@yourcompany.com",
       formSubmit: "فتح البورتفوليو",
+      formLoading: "جاري التحقق…",
       formError: "حدث خطأ. يرجى المحاولة مرة أخرى أو التواصل معنا مباشرة.",
       formErrorPersonal:
         "يرجى استخدام بريد شركتك الإلكتروني. لا نقبل مزودي البريد الشخصي مثل Gmail وYahoo وHotmail وiCloud.",
@@ -1407,7 +1425,7 @@ const ar: LuxuryMessages = {
             tag: "مقاولون",
             title: "مقاولون رئيسيون",
             description:
-              "مخططات تنفيذ متوافقة مع المصنع، امتثال استيراد، وإشراف ميداني توريفa حتى الملاحظات.",
+              "مخططات تنفيذ متوافقة مع المصنع، امتثال استيراد، وإشراف ميداني توريفا حتى الملاحظات.",
           },
           {
             tag: "ضيافة",
@@ -1421,13 +1439,13 @@ const ar: LuxuryMessages = {
         { title: "ملخص البرنامج", description: "مزيج الوحدات، نطاق BOQ، لوحات العينات، وجدول التسليم." },
         { title: "مخططات تنفيذ", description: "رسومات متوافقة مع وحدات المصنع ضمن SLA متفق عليه." },
         { title: "تصنيع واستيراد", description: "إنتاج أوتوماتيكي، SASO / SABER، وتخزين مرحلي." },
-        { title: "تركيب مرحلي", description: "فرق موقع توريفa، قوائم ملاحظات، ووثائق تسليم لكل مرحلة." },
+        { title: "تركيب مرحلي", description: "فرق موقع توريفا، قوائم ملاحظات، ووثائق تسليم لكل مرحلة." },
       ],
       highlights: [
         { title: "تسعير MOQ", description: "خصومات هيكلية للأبراج والمجمعات والضيافة." },
         { title: "SLA للمخططات", description: "مخططات تنفيذ متوافقة مع وحدات المصنع." },
         { title: "جمارك وتخزين", description: "استيراد SASO / SABER وتسليم مرحلي." },
-        { title: "فرق موقع", description: "إشراف توريفa حتى الملاحظات والتسليم." },
+        { title: "فرق موقع", description: "إشراف توريفا حتى الملاحظات والتسليم." },
       ],
       programme: {
         eyebrow: "تسليم مرحلي",

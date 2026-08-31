@@ -1,14 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { LuxuryMessages } from "@/shared/i18n/messages/luxury";
+import type { Locale } from "@/shared/i18n/locale";
+import { localizePath } from "@/shared/i18n/path";
 import { LUXURY_IMAGES } from "@/shared/i18n/messages/luxury";
 
 type Props = {
   messages: LuxuryMessages;
+  locale: Locale;
 };
 
-export function LuxuryExecutionSection({ messages }: Props) {
+export function LuxuryExecutionSection({ messages, locale }: Props) {
   const e = messages.execution;
+  const contactHref = localizePath("/contact", locale);
 
   return (
     <section className="lux-section lux-section--cream">
@@ -34,7 +38,7 @@ export function LuxuryExecutionSection({ messages }: Props) {
               </li>
             ))}
           </ul>
-          <Link href="/contact" className="lux-btn-primary mt-10">
+          <Link href={contactHref} className="lux-btn-primary mt-10">
             {e.cta}
           </Link>
         </div>

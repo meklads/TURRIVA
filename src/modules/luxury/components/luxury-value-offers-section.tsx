@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Award, Home, LayoutGrid, ShieldCheck, type LucideIcon } from "lucide-react";
 import type { LuxuryMessages } from "@/shared/i18n/messages/luxury";
+import type { Locale } from "@/shared/i18n/locale";
+import { localizePath } from "@/shared/i18n/path";
 
 const ICONS: Record<
   LuxuryMessages["valueOffers"]["items"][number]["icon"],
@@ -14,10 +16,12 @@ const ICONS: Record<
 
 type Props = {
   messages: LuxuryMessages;
+  locale: Locale;
 };
 
-export function LuxuryValueOffersSection({ messages }: Props) {
+export function LuxuryValueOffersSection({ messages, locale }: Props) {
   const t = messages.valueOffers;
+  const lp = (path: string) => localizePath(path, locale);
 
   return (
     <section
@@ -54,7 +58,7 @@ export function LuxuryValueOffersSection({ messages }: Props) {
       </div>
 
       <div className="lux-container lux-value-offers__cta">
-        <Link href={t.ctaHref} className="lux-btn-outline-gold">
+        <Link href={lp(t.ctaHref)} className="lux-btn-outline-gold">
           {t.cta}
         </Link>
       </div>

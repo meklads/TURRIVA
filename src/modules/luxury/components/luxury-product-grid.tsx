@@ -1,15 +1,17 @@
 import Link from "next/link";
 import type { LuxuryMessages } from "@/shared/i18n/messages/luxury";
 import type { Locale } from "@/shared/i18n/locale";
+import { localizePath } from "@/shared/i18n/path";
 
 export function LuxuryProductGrid({
   messages,
-  locale: _locale,
+  locale,
 }: {
   messages: LuxuryMessages;
   locale: Locale;
 }) {
   const t = messages.products;
+  const lp = (path: string) => localizePath(path, locale);
   return (
     <section id="products" className="lux-section lux-section--cream scroll-mt-24">
       <div className="lux-container max-w-3xl text-center">
@@ -19,7 +21,7 @@ export function LuxuryProductGrid({
       </div>
       <div className="lux-container mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
         {t.items.map((item) => (
-          <Link key={item.title} href={item.href} className="lux-product-card group">
+          <Link key={item.title} href={lp(item.href)} className="lux-product-card group">
             <h3 className="lux-display text-lg">{item.title}</h3>
             <p className="mt-2 text-sm leading-relaxed text-lux-ink-soft">{item.description}</p>
             <span className="mt-4 text-xs font-semibold text-lux-gold group-hover:underline">→</span>

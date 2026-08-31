@@ -25,18 +25,24 @@ export function LuxuryFaqSection({ messages, faq }: Props) {
       <div className="lux-container mt-10 max-w-2xl space-y-2">
         {t.items.map((item, i) => {
           const isOpen = open === i;
+          const answerId = `faq-answer-${i}`;
           return (
             <div key={item.q} className="lux-faq-item">
               <button
                 type="button"
                 className="lux-faq-trigger"
                 aria-expanded={isOpen}
+                aria-controls={answerId}
                 onClick={() => setOpen(isOpen ? null : i)}
               >
                 <span>{item.q}</span>
                 <ChevronDown className={`h-4 w-4 shrink-0 transition-transform${isOpen ? " rotate-180" : ""}`} />
               </button>
-              {isOpen && <p className="lux-faq-answer">{item.a}</p>}
+              {isOpen && (
+                <p id={answerId} className="lux-faq-answer">
+                  {item.a}
+                </p>
+              )}
             </div>
           );
         })}

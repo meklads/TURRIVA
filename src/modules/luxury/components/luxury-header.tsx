@@ -26,7 +26,7 @@ export async function LuxuryHeader() {
             <div className="lux-header-actions">
               <Link
                 href={localizePath("/contact?intent=design", locale)}
-                className="lux-btn-primary lux-header-cta hidden lg:inline-flex"
+                className="lux-btn-primary lux-header-cta inline-flex"
               >
                 <span className="lux-header-cta-short">{t.nav.contact}</span>
                 <span className="lux-header-cta-full">{t.hero.ctaPrimary}</span>

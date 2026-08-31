@@ -1,9 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { LUXURY_PROJECT_IMAGES, type LuxuryMessages } from "@/shared/i18n/messages/luxury";
+import type { Locale } from "@/shared/i18n/locale";
+import { localizePath } from "@/shared/i18n/path";
 
-export function LuxuryVillasGallerySection({ messages }: { messages: LuxuryMessages }) {
+export function LuxuryVillasGallerySection({ messages, locale }: { messages: LuxuryMessages; locale: Locale }) {
   const g = messages.pages.villas.gallery;
+  const portfolioHref = localizePath("/portfolio", locale);
 
   return (
     <section className="lux-section lux-section--cream">
@@ -36,7 +39,7 @@ export function LuxuryVillasGallerySection({ messages }: { messages: LuxuryMessa
         })}
       </div>
       <div className="lux-container mt-12 text-center">
-        <Link href="/portfolio" className="lux-btn-outline-gold">
+        <Link href={portfolioHref} className="lux-btn-outline-gold">
           {g.cta}
         </Link>
       </div>

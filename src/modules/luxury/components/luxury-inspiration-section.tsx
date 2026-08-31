@@ -1,8 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import { ClientLocalizedLink } from "@/shared/components/client-localized-link";
 import type { LuxuryMessages } from "@/shared/i18n/messages/luxury";
 import {
   LUXURY_INSPIRATION_IMAGES,
@@ -88,9 +88,9 @@ export function LuxuryInspirationSection({ messages }: Props) {
         <div className="lux-divider-gold" />
         <h2 className="lux-display lux-heading mt-6">{t.title}</h2>
         <p className="lux-body mx-auto mt-4 max-w-2xl text-lux-ink-muted">{t.subtitle}</p>
-        <Link href="/styles" className="lux-inspiration-ghost-btn mt-8 inline-flex">
+        <ClientLocalizedLink href="/styles" className="lux-inspiration-ghost-btn mt-8 inline-flex">
           {t.stylesLink}
-        </Link>
+        </ClientLocalizedLink>
       </div>
 
       <div className="lux-container mt-10 flex flex-wrap justify-center gap-2">
@@ -130,9 +130,9 @@ export function LuxuryInspirationSection({ messages }: Props) {
                 <h3 className="lux-inspiration-card__title">{item.title}</h3>
                 <p className="lux-inspiration-card__desc">{item.description}</p>
               </div>
-              <Link href={item.href} className="lux-inspiration-ghost-btn lux-inspiration-row__cta">
+              <ClientLocalizedLink href={item.href} className="lux-inspiration-ghost-btn lux-inspiration-row__cta">
                 {item.cta}
-              </Link>
+              </ClientLocalizedLink>
             </div>
           </div>
         </article>

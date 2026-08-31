@@ -1,10 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { LuxuryMessages } from "@/shared/i18n/messages/luxury";
+import type { Locale } from "@/shared/i18n/locale";
+import { localizePath } from "@/shared/i18n/path";
 import { ECOSYSTEM_BRAND_LOGOS } from "../lib/ecosystem-logos";
 
-export function LuxuryEcosystemSection({ messages }: { messages: LuxuryMessages }) {
+export function LuxuryEcosystemSection({ messages, locale }: { messages: LuxuryMessages; locale: Locale }) {
   const t = messages.ecosystem;
+  const lp = (path: string) => localizePath(path, locale);
 
   return (
     <section id="ecosystem" className="lux-section lux-section--linen lux-ecosystem-offer scroll-mt-24">
@@ -45,10 +48,10 @@ export function LuxuryEcosystemSection({ messages }: { messages: LuxuryMessages 
       </div>
 
       <div className="lux-container lux-ecosystem-offer__ctas">
-        <Link href={t.ctaB2bHref} className="lux-inspiration-ghost-btn">
+        <Link href={lp(t.ctaB2bHref)} className="lux-inspiration-ghost-btn">
           {t.ctaB2b}
         </Link>
-        <Link href={t.ctaB2cHref} className="lux-btn-primary">
+        <Link href={lp(t.ctaB2cHref)} className="lux-btn-primary">
           {t.ctaB2c}
         </Link>
       </div>

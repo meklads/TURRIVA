@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef } from "react";
+import { ClientLocalizedLink } from "@/shared/components/client-localized-link";
 import type { LuxuryMessages } from "@/shared/i18n/messages/luxury";
 
 const RAFAL_LOOP_MP4 = "/brand/graphics-house/rafal-pavilions-loop.mp4";
@@ -73,10 +73,10 @@ export function LuxuryBeforeAfterSection({ messages }: { messages: LuxuryMessage
             <span className="lux-delivery-showcase__project-name">{t.projectName}</span>
             <span className="lux-delivery-showcase__project-credit">{t.projectCredit}</span>
           </p>
-          <Link href="/our-work" className="lux-btn-outline lux-delivery-showcase__cta">
+          <ClientLocalizedLink href="/our-work" className="lux-btn-outline lux-delivery-showcase__cta">
             {t.cta}
             <span aria-hidden>→</span>
-          </Link>
+          </ClientLocalizedLink>
         </div>
       </div>
     </section>

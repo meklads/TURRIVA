@@ -17,6 +17,16 @@ export async function GET() {
   const leadEmailProduction = isLeadEmailProductionReady();
   const leadEmailTo = getLeadNotificationDestinationMasked();
   const leadEmailProvider = getLeadEmailProvider();
+  const analyticsPlausible = Boolean(process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN?.trim());
+  const analyticsGa = Boolean(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim());
+  const googleSiteVerification = Boolean(process.env.GOOGLE_SITE_VERIFICATION?.trim());
+
+  const marketingOps = {
+    analytics: analyticsPlausible || analyticsGa,
+    analyticsPlausible,
+    analyticsGa,
+    googleSiteVerification,
+  };
 
   if (!process.env.DATABASE_URL) {
     return NextResponse.json({
@@ -29,6 +39,7 @@ export async function GET() {
       leadEmailProduction,
       leadEmailTo,
       leadEmailProvider,
+      ...marketingOps,
       error: "DATABASE_URL is not set",
       timestamp: new Date().toISOString(),
     });
@@ -65,6 +76,7 @@ export async function GET() {
       leadEmailProduction,
       leadEmailTo,
       leadEmailProvider,
+      ...marketingOps,
       timestamp: new Date().toISOString(),
     });
   } catch (error) {
@@ -81,6 +93,7 @@ export async function GET() {
       leadEmailProduction,
       leadEmailTo,
       leadEmailProvider,
+      ...marketingOps,
       error: message,
       timestamp: new Date().toISOString(),
     });

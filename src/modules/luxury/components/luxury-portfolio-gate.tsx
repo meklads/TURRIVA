@@ -105,7 +105,7 @@ export function LuxuryPortfolioGate({ messages, locale }: Props) {
             )}
 
             <button type="submit" disabled={status === "loading"} className="lux-btn-primary w-full sm:w-auto">
-              {status === "loading" ? "…" : p.formSubmit}
+              {status === "loading" ? p.formLoading : p.formSubmit}
             </button>
           </form>
         </div>

@@ -29,7 +29,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     titleEn: "Humanity Exhibition · Muslim World League",
     titleAr: "معرض الإنسانية · رابطة العالم الإسلامي",
     locationEn: "Jeddah Hilton, Saudi Arabia",
-    locationAr: "فندق هilton جدة، السعودية",
+    locationAr: "فندق Hilton جدة، السعودية",
     summaryEn:
       "Spatial execution for the League headquarters experience — interior fit-out, smart maquette integration, and interactive zones delivered as one field programme.",
     summaryAr:
@@ -37,7 +37,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     bodyEn:
       "Turriva coordinated physical delivery for the Humanity Exhibition at the Muslim World League headquarters in Jeddah. The programme combined interior fit-out, exhibition décor, and installation of interactive touchpoints developed with Graphics House. From approved creative concepts through fabrication, site coordination, and documented handover, one execution team managed the spatial layer while sister companies handled visualization and software layers.",
     bodyAr:
-      "نسّقت توريفا التسليم الميداني لمعرض الإنسانية في مقر رابطة العالم الإسلامي بجeddah. جمع البرنامج التشطيب الداخلي وديكور المعرض وتركيب نقاط تفاعل طوّرت مع جرافيكس هاوس. من المفاهيم الإبداعية المعتمدة إلى التصنيع والتنسيق الميداني والتسليم الموثق، أدار فريق تنفيذ واحد الطبقة المكانية بينما تولت الشركات الشقيقة التصور والبرمجيات.",
+      "نسّقت توريفا التسليم الميداني لمعرض الإنسانية في مقر رابطة العالم الإسلامي بجدة. جمع البرنامج التشطيب الداخلي وديكور المعرض وتركيب نقاط تفاعل طوّرت مع جرافيكس هاوس. من المفاهيم الإبداعية المعتمدة إلى التصنيع والتنسيق الميداني والتسليم الموثق، أدار فريق تنفيذ واحد الطبقة المكانية بينما تولت الشركات الشقيقة التصور والبرمجيات.",
     servicesEn: ["Interior fit-out", "Exhibition execution", "Installation", "Handover"],
     servicesAr: ["تشطيب داخلي", "تنفيذ معارض", "تركيب", "تسليم"],
     partner: {

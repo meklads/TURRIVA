@@ -7,11 +7,12 @@ import { getLocale } from "@/shared/i18n/server";
 import { localizePath } from "@/shared/i18n/path";
 import { TURRIVA_LOGO_SRC, TURRIVA_LOGO_HEIGHT, TURRIVA_LOGO_WIDTH } from "./luxury-brand-logo";
 import { TURRIVA_PUBLIC_EMAIL, TURRIVA_PUBLIC_HOST, TURRIVA_PUBLIC_URL } from "@/shared/constants/brand";
+import { TURRIVA_SOCIAL_LINKS } from "@/shared/lib/seo-schema";
 
 const WHATSAPP_SA = "966502786513";
 const TASAMI_GROUP_URL = "https://www.tasamify.com/";
-const LINKEDIN_URL = "https://www.linkedin.com/company/turriva";
-const INSTAGRAM_URL = "https://www.instagram.com/turriva";
+const LINKEDIN_URL = TURRIVA_SOCIAL_LINKS.linkedin;
+const INSTAGRAM_URL = TURRIVA_SOCIAL_LINKS.instagram;
 
 export async function LuxuryFooter() {
   const locale = await getLocale();
@@ -31,24 +32,14 @@ export async function LuxuryFooter() {
     { href: lp("/contact"), label: t.nav.contact },
   ];
 
-  const solutionLinks =
-    locale === "ar"
-      ? [
-          { href: lp("/villas#kitchens"), label: "مطابخ معيارية" },
-          { href: lp("/villas#wardrobes"), label: "خزائن وغرف ملابس" },
-          { href: lp("/projects#joinery"), label: "تشطيبات B2B" },
-          { href: lp("/styles"), label: seo.nav.styles },
-          { href: lp("/interior-design"), label: t.pages.interiorDesign.title },
-          { href: lp("/construction"), label: t.pages.construction.title },
-        ]
-      : [
-          { href: lp("/villas#kitchens"), label: "Modular kitchens" },
-          { href: lp("/villas#wardrobes"), label: "Wardrobes & walk-ins" },
-          { href: lp("/projects#joinery"), label: "B2B joinery" },
-          { href: lp("/styles"), label: seo.nav.styles },
-          { href: lp("/interior-design"), label: t.pages.interiorDesign.title },
-          { href: lp("/construction"), label: t.pages.construction.title },
-        ];
+  const solutionLinks = [
+    { href: lp("/villas#kitchens"), label: t.footer.solutions.modularKitchens },
+    { href: lp("/villas#wardrobes"), label: t.footer.solutions.wardrobes },
+    { href: lp("/projects#joinery"), label: t.footer.solutions.b2bJoinery },
+    { href: lp("/styles"), label: seo.nav.styles },
+    { href: lp("/interior-design"), label: t.pages.interiorDesign.title },
+    { href: lp("/construction"), label: t.pages.construction.title },
+  ];
 
   const offices = [
     {

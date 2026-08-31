@@ -32,7 +32,6 @@ export default async function FaqPage() {
         />
       ))}
 
-      <LuxuryFaqSection messages={t} />
     </>
   );
 }

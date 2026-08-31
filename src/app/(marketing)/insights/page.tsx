@@ -1,8 +1,10 @@
 import { luxuryPageMetadata } from "@/modules/luxury/lib/metadata";
 import { LuxuryMarketingHero } from "@/modules/luxury/components/luxury-marketing-hero";
 import { LocalizedLink } from "@/shared/components/localized-link";
+import { JsonLd } from "@/shared/components/json-ld";
 import { getLuxurySeoMessages } from "@/shared/i18n/messages/luxury-seo-pages";
 import { getLocale } from "@/shared/i18n/server";
+import { breadcrumbSchema } from "@/shared/lib/seo-schema";
 
 export async function generateMetadata() {
   const locale = await getLocale();
@@ -16,6 +18,9 @@ export default async function InsightsPage() {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema(locale, [{ name: seo.insightsPage.title, path: "/insights" }])}
+      />
       <LuxuryMarketingHero title={seo.insightsPage.title} intro={seo.insightsPage.intro} eyebrow={seo.nav.insights} />
 
       <section className="lux-section lux-section--linen">

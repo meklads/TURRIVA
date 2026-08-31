@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Locale } from "@/shared/i18n/locale";
 import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
+import { localizePath } from "@/shared/i18n/path";
 import { LUXURY_INSPIRATION_IMAGES } from "@/shared/i18n/messages/luxury-inspiration";
 import { LuxuryBeforeAfterSection } from "./luxury-before-after-section";
 import { LuxuryComparisonSection } from "./luxury-comparison-section";
@@ -20,11 +21,12 @@ import { LuxuryVillasSegmentsSection } from "./luxury-villas-segments-section";
 export function LuxuryVillasPage({ locale }: { locale: Locale }) {
   const t = getLuxuryMessages(locale);
   const p = t.pages.villas;
+  const lp = (path: string) => localizePath(path, locale);
 
   return (
     <>
       <LuxuryMarketingHero eyebrow={t.brand.tagline} title={p.title} intro={p.intro}>
-        <Link href="/contact?intent=design" className="lux-btn-primary">
+        <Link href={lp("/contact?intent=design")} className="lux-btn-primary">
           {p.ctaDesign}
         </Link>
         <Link href="#consultation" className="lux-btn-outline-gold">
@@ -80,11 +82,11 @@ export function LuxuryVillasPage({ locale }: { locale: Locale }) {
         tone="linen"
       />
 
-      <LuxuryVillasGallerySection messages={t} />
+      <LuxuryVillasGallerySection messages={t} locale={locale} />
 
-      <LuxuryEcosystemSection messages={t} />
+      <LuxuryEcosystemSection messages={t} locale={locale} />
       <LuxuryBeforeAfterSection messages={t} />
-      <LuxuryValueOffersSection messages={t} />
+      <LuxuryValueOffersSection messages={t} locale={locale} />
       <LuxuryComparisonSection messages={t} />
       <LuxuryPartnersStrip messages={t} />
 

@@ -3,9 +3,11 @@ import { luxuryPageMetadata } from "@/modules/luxury/lib/metadata";
 import { LuxuryMarketingHero } from "@/modules/luxury/components/luxury-marketing-hero";
 import { getInsightArticle, insightText, INSIGHT_ARTICLES } from "@/modules/luxury/lib/insights-content";
 import { ShareButton } from "@/shared/components/share-button";
+import { JsonLd } from "@/shared/components/json-ld";
 import { getLuxurySeoMessages } from "@/shared/i18n/messages/luxury-seo-pages";
 import { getLocale } from "@/shared/i18n/server";
 import { localizePath } from "@/shared/i18n/path";
+import { articleSchema, breadcrumbSchema } from "@/shared/lib/seo-schema";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -30,9 +32,24 @@ export default async function InsightArticlePage({ params }: Props) {
 
   const text = insightText(article, locale);
   const social = getLuxurySeoMessages(locale).social;
+  const insightsLabel = locale === "ar" ? "رؤى" : "Insights";
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema(locale, [
+          { name: insightsLabel, path: "/insights" },
+          { name: text.title, path: `/insights/${slug}` },
+        ])}
+      />
+      <JsonLd
+        data={articleSchema(locale, {
+          title: text.title,
+          description: text.summary,
+          path: `/insights/${slug}`,
+          readMinutes: article.readMinutes,
+        })}
+      />
       <LuxuryMarketingHero eyebrow={text.tag} title={text.title} intro={text.summary} />
 
       <section className="lux-section lux-section--linen">

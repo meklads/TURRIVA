@@ -10,6 +10,11 @@ export const GROUP_LINKS = {
   dotForLife: "https://dotforlife.com",
 } as const;
 
+export const TURRIVA_SOCIAL_LINKS = {
+  linkedin: "https://www.linkedin.com/company/turriva",
+  instagram: "https://www.instagram.com/turriva",
+} as const;
+
 export function organizationSchema(locale: Locale) {
   const isAr = locale === "ar";
   return {
@@ -41,7 +46,14 @@ export function organizationSchema(locale: Locale) {
       "Fabrication",
       "Installation",
     ],
-    sameAs: [GROUP_LINKS.tasami, GROUP_LINKS.graphicsHouse, GROUP_LINKS.beesMotion],
+    sameAs: [
+      TURRIVA_SOCIAL_LINKS.linkedin,
+      TURRIVA_SOCIAL_LINKS.instagram,
+      GROUP_LINKS.tasami,
+      GROUP_LINKS.graphicsHouse,
+      GROUP_LINKS.beesMotion,
+      GROUP_LINKS.ruwaq,
+    ],
   };
 }
 
@@ -131,5 +143,43 @@ export function serviceSchema(
     },
     areaServed: "Saudi Arabia",
     url: `${TURRIVA_PUBLIC_URL}${localizePath(service.path, locale)}`,
+  };
+}
+
+export function articleSchema(
+  locale: Locale,
+  article: {
+    title: string;
+    description: string;
+    path: string;
+    datePublished?: string;
+    readMinutes?: number;
+  }
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.description,
+    datePublished: article.datePublished ?? "2026-01-15",
+    author: {
+      "@type": "Organization",
+      name: "Turriva",
+      url: TURRIVA_PUBLIC_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Turriva",
+      url: TURRIVA_PUBLIC_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${TURRIVA_PUBLIC_URL}/brand/turriva/turriva-logo.png`,
+      },
+    },
+    inLanguage: locale === "ar" ? "ar-SA" : "en-US",
+    mainEntityOfPage: `${TURRIVA_PUBLIC_URL}${localizePath(article.path, locale)}`,
+    ...(article.readMinutes
+      ? { timeRequired: `PT${article.readMinutes}M` }
+      : {}),
   };
 }

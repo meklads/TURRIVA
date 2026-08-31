@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { LuxuryFacadeImage } from "./luxury-facade-image";
 import {
   getLuxuryMessages,
@@ -51,11 +52,12 @@ export function LuxuryHomePage({ locale }: Props) {
             return (
               <figure key={item.title} className="lux-gallery-figure group">
                 <div className="lux-gallery-media">
-                  <img
+                  <Image
                     src={src}
                     alt={item.title}
-                    className="h-full w-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.02]"
-                    loading="lazy"
+                    fill
+                    className="object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.02]"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
                 <figcaption className="lux-gallery-caption">
@@ -73,18 +75,18 @@ export function LuxuryHomePage({ locale }: Props) {
         </div>
       </section>
 
-      <LuxuryEcosystemSection messages={t} />
+      <LuxuryEcosystemSection messages={t} locale={locale} />
       <LuxuryGroupEcosystemSection locale={locale} />
       <LuxuryBrandRelationshipSection messages={t} compact />
       <LuxuryWaysOfLivingSection messages={t} />
       <LuxuryProductGrid messages={t} locale={locale} />
       <LuxuryBeforeAfterSection messages={t} />
-      <LuxuryValueOffersSection messages={t} />
+      <LuxuryValueOffersSection messages={t} locale={locale} />
       <LuxuryTrustStats messages={t} />
       <LuxuryPartnersStrip messages={t} />
       <LuxuryTestimonialsSection messages={t} />
       <LuxuryComparisonSection messages={t} />
-      <LuxurySampleKitBand messages={t} />
+      <LuxurySampleKitBand messages={t} locale={locale} />
       <LuxuryFaqSection messages={t} />
 
       <section className="lux-cta-band" aria-labelledby="home-cta-heading">
@@ -103,10 +105,10 @@ export function LuxuryHomePage({ locale }: Props) {
               </h2>
               <p className="lux-body mt-4">{t.cta.subtitle}</p>
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-                <Link href="/contact?intent=design" className="lux-btn-primary">
+                <Link href={lp("/contact?intent=design")} className="lux-btn-primary">
                   {t.hero.ctaPrimary}
                 </Link>
-                <Link href="/contact" className="lux-btn-outline-gold">
+                <Link href={lp("/contact")} className="lux-btn-outline-gold">
                   {t.cta.button}
                 </Link>
               </div>

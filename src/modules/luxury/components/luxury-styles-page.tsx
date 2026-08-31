@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Locale } from "@/shared/i18n/locale";
 import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
+import { localizePath } from "@/shared/i18n/path";
 import { LUXURY_STYLE_IMAGES } from "@/shared/i18n/messages/luxury-style-catalog";
 import { LuxuryMarketingHero } from "./luxury-marketing-hero";
 import { LuxuryStyleLightbox, LuxuryStyleZoomHint } from "./luxury-style-lightbox";
@@ -94,7 +95,7 @@ export function LuxuryStylesPage({ locale }: { locale: Locale }) {
           </div>
 
           <div className="mt-14 text-center">
-            <Link href="/contact?intent=design" className="lux-btn-primary inline-flex">
+            <Link href={localizePath("/contact?intent=design", locale)} className="lux-btn-primary inline-flex">
               {p.cta}
             </Link>
           </div>
