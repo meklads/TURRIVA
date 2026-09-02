@@ -23,7 +23,7 @@
   --lux-space-hero-y: clamp(2.75rem, 6vh, 4.5rem);
   --lux-space-block: clamp(1.5rem, 2.8vw, 2.35rem);
   --lux-measure-copy: 34rem;
-  --lux-header-pad-y: clamp(0.8rem, 1.4vw, 1.15rem);
+  --lux-header-pad-y: 0.9rem;
   position: relative;
   isolation: isolate;
   color: var(--lux-ink);
@@ -298,21 +298,20 @@
 }
 
 .lux-nav-link {
-  @apply relative pb-2.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-lux-ink transition-colors duration-200 hover:text-lux-ink-soft lg:text-[11px];
+  @apply relative pb-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-lux-ink transition-colors duration-200 hover:text-lux-ink-soft lg:text-[11px] lg:tracking-[0.15em];
   font-family: var(--font-inter), system-ui, sans-serif;
 }
 
 .lux-nav-link::after {
   content: "";
   position: absolute;
-  inset-inline: 0;
+  inset-inline: 8%;
   bottom: 0;
-  height: 1px;
+  height: 1.5px;
   transform: scaleX(0);
   transform-origin: center;
-  background: linear-gradient(90deg, transparent, var(--lux-gold), transparent);
-  box-shadow: 0 0 8px color-mix(in srgb, var(--lux-amber) 35%, transparent);
-  transition: transform 0.28s cubic-bezier(0.25, 0.1, 0.25, 1);
+  background: var(--lux-gold);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .lux-nav-link:hover::after,
@@ -427,11 +426,9 @@
 .lux-header--elevated {
   position: sticky;
   top: 0;
-  background: color-mix(in srgb, #ffffff 96%, transparent);
-  border-bottom: 1px solid color-mix(in srgb, var(--lux-sand) 80%, transparent);
-  box-shadow: 0 6px 32px color-mix(in srgb, #000000 5%, transparent);
-  backdrop-filter: blur(12px) saturate(1.05);
-  -webkit-backdrop-filter: blur(12px) saturate(1.05);
+  background: #ffffff;
+  border-bottom: 1px solid color-mix(in srgb, var(--lux-sand) 65%, transparent);
+  box-shadow: 0 8px 28px color-mix(in srgb, #000000 3.5%, transparent);
 }
 
 .lux-header-bar {
@@ -439,14 +436,38 @@
   align-items: center;
   justify-content: flex-end;
   flex-wrap: wrap;
-  gap: 0.625rem 0.875rem;
+  gap: 0.5rem 0.75rem;
+  min-height: 3.75rem;
   padding-block: var(--lux-header-pad-y);
 }
 
 .lux-header-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
   flex-shrink: 0;
   line-height: 0;
   margin-inline-end: auto;
+}
+
+.lux-header-tagline {
+  margin: 0;
+  max-width: 14rem;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--lux-ink-muted) 88%, transparent);
+}
+
+[dir="rtl"] .lux-header-tagline {
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  font-size: 0.625rem;
 }
 
 .lux-header-logo-link {
@@ -470,22 +491,23 @@
     grid-template-columns: minmax(0, auto) minmax(0, 1fr) minmax(0, auto);
     align-items: center;
     flex-wrap: nowrap;
-    column-gap: clamp(0.75rem, 1.5vw, 1.75rem);
+    column-gap: clamp(0.85rem, 1.6vw, 2rem);
     row-gap: 0;
-    padding-block: var(--lux-header-pad-y);
+    min-height: 4.5rem;
+    padding-block: 0.85rem 0.95rem;
   }
 
   .lux-header-brand {
     margin-inline-end: 0;
     justify-self: start;
-    max-width: min(100%, 11.5rem);
+    max-width: min(100%, 12.5rem);
   }
 
   .lux-header-bar > nav {
     flex: none;
     justify-self: center;
     width: 100%;
-    max-width: 42rem;
+    max-width: 46rem;
     margin-inline: auto;
   }
 
@@ -495,23 +517,23 @@
 }
 
 .lux-header-nav {
-  gap: clamp(0.65rem, 1.1vw, 1.35rem);
+  gap: clamp(0.7rem, 1.2vw, 1.4rem);
 }
 
 .lux-header-nav .lux-nav-link {
   font-size: 0.625rem;
-  letter-spacing: 0.12em;
-  padding-inline: 0.1rem;
+  letter-spacing: 0.14em;
+  padding-inline: 0.05rem;
 }
 
 @media (min-width: 1280px) {
   .lux-header-nav {
-    gap: clamp(0.85rem, 1.35vw, 1.65rem);
+    gap: clamp(0.9rem, 1.4vw, 1.7rem);
   }
 
   .lux-header-nav .lux-nav-link {
     font-size: 0.6875rem;
-    letter-spacing: 0.13em;
+    letter-spacing: 0.15em;
   }
 }
 
@@ -523,10 +545,13 @@
 
 .lux-header-cta {
   min-width: 0;
-  padding: 0.55rem 1rem;
+  min-height: 2.45rem;
+  padding: 0.6rem 1.05rem;
+  border-radius: 0;
   font-size: 0.625rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   white-space: nowrap;
+  box-shadow: none !important;
 }
 
 .lux-header-cta-full {
@@ -535,7 +560,7 @@
 
 @media (min-width: 1280px) {
   .lux-header-cta {
-    padding-inline: 1.15rem;
+    padding-inline: 1.2rem;
   }
 
   .lux-header-cta-short {
@@ -548,9 +573,9 @@
 }
 
 .lux-locale-switch {
-  border-color: var(--lux-sand);
-  background: color-mix(in srgb, white 92%, var(--lux-cream));
-  box-shadow: 0 1px 2px color-mix(in srgb, var(--lux-ink) 5%, transparent);
+  border-color: color-mix(in srgb, var(--lux-sand) 85%, transparent);
+  background: color-mix(in srgb, #f4f4f2 92%, white);
+  box-shadow: none;
   flex-shrink: 0;
 }
 
@@ -559,21 +584,29 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 0.45rem;
+  gap: 0.5rem;
 }
 
 .lux-header .lux-btn-primary {
-  padding-block: 0.55rem;
+  padding-block: 0.6rem;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.lux-header .lux-btn-primary:hover {
+  box-shadow: none;
+  transform: none;
+  background: #111111;
 }
 
 .lux-header-mobile {
   margin-top: 0;
-  padding-block: 0.45rem 0.55rem;
+  padding-block: 0.4rem 0.5rem;
   border-top: 1px solid color-mix(in srgb, var(--lux-sand) 35%, transparent);
 }
 
 .lux-shell main {
-  scroll-padding-top: 5.5rem;
+  scroll-padding-top: 5.25rem;
 }
 
 /* Only strip top padding on non-section first children (home uses .lux-hero spacing). */
@@ -583,23 +616,14 @@
 
 @media (min-width: 640px) {
   .lux-header-actions {
-    gap: 0.625rem;
+    gap: 0.65rem;
   }
 }
 
 .lux-header-actions [role="group"] {
-  border-color: var(--lux-sand);
-  background: color-mix(in srgb, white 92%, var(--lux-cream));
-  box-shadow: 0 1px 2px color-mix(in srgb, var(--lux-ink) 5%, transparent);
-}
-
-.lux-header .lux-btn-primary {
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--lux-ink) 18%, transparent);
-}
-
-.lux-header .lux-btn-primary:hover {
-  box-shadow: 0 10px 28px color-mix(in srgb, var(--lux-ink) 22%, transparent);
-  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--lux-sand) 85%, transparent);
+  background: color-mix(in srgb, #f4f4f2 92%, white);
+  box-shadow: none;
 }
 
 .lux-header-mobile {
@@ -1483,21 +1507,17 @@
   text-transform: none;
 }
 
-/* Footer — GH grid layout, Turriva ink/ivory palette */
+/* Footer — light professional chrome matching header mockup */
 .lux-footer {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(
-    168deg,
-    var(--lux-teal-deep) 0%,
-    var(--lux-ink) 38%,
-    color-mix(in srgb, var(--lux-teal-mid) 92%, #1a1510) 100%
-  );
-  color: color-mix(in srgb, var(--lux-ivory) 94%, white);
+  background: #ffffff;
+  color: var(--lux-ink);
+  border-top: 1px solid color-mix(in srgb, var(--lux-sand) 70%, transparent);
 }
 
 .lux-footer :is(h1, h2, h3, h4, .lux-display, .lux-heading) {
-  color: var(--lux-ivory);
+  color: var(--lux-ink);
 }
 
 .lux-footer::after {
@@ -1505,22 +1525,22 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(
-    ellipse 70% 55% at 50% 0%,
-    color-mix(in srgb, var(--lux-amber) 18%, transparent) 0%,
-    transparent 52%
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--lux-cream) 55%, transparent) 0%,
+    transparent 28%
   );
 }
 
 .lux-footer-inner {
   position: relative;
   z-index: 1;
-  padding-block: 3.25rem 0;
+  padding-block: 2.75rem 0;
 }
 
 @media (min-width: 1024px) {
   .lux-footer-inner {
-    padding-block: 3.5rem 0;
+    padding-block: 3.15rem 0;
   }
 }
 
@@ -1529,17 +1549,17 @@
   inset-inline: 0;
   top: 0;
   z-index: 2;
-  height: 3px;
+  height: 2px;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    color-mix(in srgb, var(--lux-gold) 35%, transparent) 12%,
-    var(--lux-gold-light) 50%,
-    color-mix(in srgb, var(--lux-gold) 35%, transparent) 88%,
+    color-mix(in srgb, var(--lux-gold) 40%, transparent) 18%,
+    var(--lux-gold) 50%,
+    color-mix(in srgb, var(--lux-gold) 40%, transparent) 82%,
     transparent 100%
   );
-  box-shadow: 0 0 20px color-mix(in srgb, var(--lux-amber) 45%, transparent);
-  opacity: 0.95;
+  box-shadow: none;
+  opacity: 1;
   pointer-events: none;
 }
 
@@ -1548,22 +1568,22 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: url("/brand/turriva/turriva-logo.png") no-repeat center 58% / min(78%, 56rem);
-  opacity: 0.05;
-  filter: sepia(0.35) brightness(0) invert(1);
+  background: url("/brand/turriva/turriva-logo.png") no-repeat center 58% / min(72%, 48rem);
+  opacity: 0.035;
+  filter: none;
 }
 
 .lux-footer-top {
   display: grid;
-  gap: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid color-mix(in srgb, var(--lux-gold) 22%, transparent);
+  gap: 1.75rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--lux-sand) 75%, transparent);
 }
 
 @media (min-width: 768px) {
   .lux-footer-top {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2rem 1.75rem;
+    gap: 1.75rem 1.5rem;
   }
 
   .lux-footer-brand {
@@ -1576,9 +1596,9 @@
     grid-template-columns:
       minmax(0, 1.5fr) minmax(0, 0.95fr)
       minmax(0, 0.95fr) minmax(0, 1.15fr);
-    gap: 2.5rem 2.25rem;
+    gap: 2.25rem 2rem;
     align-items: start;
-    padding-bottom: 2.75rem;
+    padding-bottom: 2.25rem;
   }
 
   .lux-footer-brand {
@@ -1603,47 +1623,47 @@
   display: block;
   height: auto;
   width: auto;
-  max-height: 2.325rem;
-  max-width: min(100%, 7.84rem);
+  max-height: 2.15rem;
+  max-width: min(100%, 7.5rem);
   object-fit: contain;
   object-position: start;
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 
 .lux-footer-about {
-  margin-top: 1.15rem;
+  margin-top: 1rem;
   max-width: 22rem;
   font-size: 0.8125rem;
-  line-height: 1.85;
-  color: color-mix(in srgb, var(--lux-ivory) 72%, transparent);
+  line-height: 1.8;
+  color: var(--lux-ink-muted);
 }
 
 .lux-footer-address {
-  margin-top: 1.15rem;
+  margin-top: 1rem;
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
   max-width: 22rem;
   font-size: 0.75rem;
   line-height: 1.7;
-  color: color-mix(in srgb, var(--lux-ivory) 58%, transparent);
+  color: color-mix(in srgb, var(--lux-ink-muted) 92%, transparent);
 }
 
 .lux-footer-address svg {
   margin-top: 0.2rem;
-  color: color-mix(in srgb, var(--lux-gold-light) 80%, transparent);
+  color: var(--lux-gold);
 }
 
 .lux-footer-col-title {
   position: relative;
-  margin: 0 0 1.25rem;
-  padding-bottom: 0.65rem;
+  margin: 0 0 1.1rem;
+  padding-bottom: 0.55rem;
   border-bottom: none;
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: none;
-  color: var(--lux-ivory);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lux-ink);
 }
 
 .lux-footer-col-title::after {
@@ -1651,26 +1671,26 @@
   position: absolute;
   inset-inline-start: 0;
   bottom: 0;
-  height: 2px;
-  width: 1.75rem;
-  border-radius: 9999px;
-  background: linear-gradient(90deg, var(--lux-gold-light), transparent);
+  height: 1.5px;
+  width: 1.5rem;
+  border-radius: 0;
+  background: var(--lux-gold);
 }
 
 [dir="rtl"] .lux-footer-col-title::after {
-  background: linear-gradient(270deg, var(--lux-gold-light), transparent);
+  background: var(--lux-gold);
 }
 
 [dir="rtl"] .lux-footer-col-title {
   letter-spacing: 0;
   text-transform: none;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
 }
 
 .lux-footer-links {
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 0.65rem;
   margin: 0;
   padding: 0;
 }
@@ -1681,9 +1701,9 @@
   padding: 0;
   font-size: 0.8125rem;
   line-height: 1.55;
-  color: color-mix(in srgb, var(--lux-ivory) 78%, transparent);
+  color: var(--lux-ink-muted);
   text-decoration: none;
-  background-image: linear-gradient(90deg, var(--lux-gold-light), var(--lux-gold-light));
+  background-image: linear-gradient(90deg, var(--lux-gold), var(--lux-gold));
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: 0% 1px;
@@ -1697,25 +1717,25 @@
 }
 
 .lux-footer-links a:hover {
-  color: var(--lux-gold-light);
+  color: var(--lux-ink);
   background-size: 100% 1px;
 }
 
 .lux-footer-contact {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.55rem;
 }
 
 .lux-footer-contact-item {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.55rem;
   width: fit-content;
   max-width: 100%;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: color-mix(in srgb, var(--lux-ivory) 78%, transparent);
+  color: var(--lux-ink-muted);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -1731,48 +1751,56 @@
   flex: none;
   align-items: center;
   justify-content: center;
-  border-radius: 9999px;
-  border: 1px solid color-mix(in srgb, var(--lux-gold) 32%, transparent);
-  background: color-mix(in srgb, var(--lux-gold) 10%, transparent);
-  color: var(--lux-gold-light);
+  border-radius: 0;
+  border: 1px solid color-mix(in srgb, var(--lux-gold) 45%, transparent);
+  background: color-mix(in srgb, var(--lux-gold) 8%, white);
+  color: var(--lux-gold);
   transition:
     background 0.2s ease,
     border-color 0.2s ease;
 }
 
 .lux-footer-contact-item:hover {
-  color: var(--lux-ivory);
+  color: var(--lux-ink);
 }
 
 .lux-footer-contact-item:hover .lux-footer-contact-icon {
-  background: color-mix(in srgb, var(--lux-gold) 22%, transparent);
-  border-color: color-mix(in srgb, var(--lux-gold-light) 70%, transparent);
+  background: color-mix(in srgb, var(--lux-gold) 14%, white);
+  border-color: var(--lux-gold);
 }
 
 .lux-footer-cta {
-  margin-top: 1.35rem;
+  margin-top: 1.15rem;
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.65rem;
   width: fit-content;
   max-width: 100%;
-  border-radius: 9999px;
-  border: 1px solid color-mix(in srgb, var(--lux-gold-light) 55%, transparent);
-  padding: 0.6rem 1.1rem;
-  font-size: 0.75rem;
+  border-radius: 0;
+  border: 1px solid var(--lux-ink);
+  background: var(--lux-ink);
+  padding: 0.65rem 1.1rem;
+  font-size: 0.6875rem;
   font-weight: 700;
-  color: var(--lux-ivory);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
   text-decoration: none;
   transition:
     background 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
+    border-color 0.2s ease;
 }
 
 .lux-footer-cta svg {
-  color: var(--lux-gold-light);
+  color: #ffffff;
   transition: transform 0.2s ease;
+}
+
+[dir="rtl"] .lux-footer-cta {
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 0.8125rem;
 }
 
 [dir="rtl"] .lux-footer-cta svg {
@@ -1780,9 +1808,9 @@
 }
 
 .lux-footer-cta:hover {
-  background: color-mix(in srgb, var(--lux-gold) 16%, transparent);
-  border-color: var(--lux-gold-light);
-  transform: translateY(-1px);
+  background: #111111;
+  border-color: #111111;
+  transform: none;
 }
 
 .lux-footer-cta:hover svg {
@@ -1806,18 +1834,18 @@
 }
 
 .lux-footer-offices {
-  padding: 2.25rem 0 2.5rem;
-  border-bottom: 1px solid color-mix(in srgb, var(--lux-gold) 18%, transparent);
+  padding: 1.85rem 0 2rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--lux-sand) 75%, transparent);
 }
 
 .lux-footer-offices-title {
   position: relative;
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.25rem;
   font-size: 0.6875rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--lux-gold-light) 88%, transparent);
+  color: var(--lux-ink);
 }
 
 [dir="rtl"] .lux-footer-offices-title {
@@ -1828,7 +1856,7 @@
 
 .lux-footer-offices-grid {
   display: grid;
-  gap: 0.85rem;
+  gap: 0.75rem;
 }
 
 @media (min-width: 640px) {
@@ -1840,7 +1868,7 @@
 @media (min-width: 1024px) {
   .lux-footer-offices-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1rem;
+    gap: 0.85rem;
   }
 }
 
@@ -1849,19 +1877,19 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-  padding: 1.15rem 1.25rem 1.25rem;
-  border-radius: 0.875rem;
-  border: 1px solid color-mix(in srgb, var(--lux-ivory) 12%, transparent);
-  background: color-mix(in srgb, var(--lux-ivory) 4%, transparent);
+  padding: 1.05rem 1.1rem 1.15rem;
+  border-radius: 0;
+  border: 1px solid color-mix(in srgb, var(--lux-sand) 80%, transparent);
+  background: color-mix(in srgb, var(--lux-cream) 55%, white);
   transition:
     border-color 0.25s ease,
     background 0.25s ease,
-    transform 0.25s ease;
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .lux-footer-office:hover {
-  border-color: color-mix(in srgb, var(--lux-gold) 42%, transparent);
-  background: color-mix(in srgb, var(--lux-gold) 7%, transparent);
+  border-color: color-mix(in srgb, var(--lux-gold) 55%, transparent);
+  background: #ffffff;
   transform: translateY(-2px);
 }
 
@@ -1869,14 +1897,14 @@
   margin: 0;
   font-size: 0.875rem;
   font-weight: 700;
-  color: var(--lux-ivory);
+  color: var(--lux-ink);
 }
 
 .lux-footer-office-lines {
-  margin-top: 0.6rem;
+  margin-top: 0.55rem;
   font-size: 0.8125rem;
   line-height: 1.7;
-  color: color-mix(in srgb, var(--lux-ivory) 62%, transparent);
+  color: var(--lux-ink-muted);
 }
 
 .lux-footer-office-lines p {
@@ -1884,10 +1912,10 @@
 }
 
 .lux-footer-office-registry {
-  margin: 0.5rem 0 0;
+  margin: 0.45rem 0 0;
   font-size: 0.6875rem;
   letter-spacing: 0.04em;
-  color: color-mix(in srgb, var(--lux-ivory) 45%, transparent);
+  color: color-mix(in srgb, var(--lux-ink-muted) 85%, transparent);
 }
 
 [dir="rtl"] .lux-footer-office-registry {
@@ -1896,7 +1924,7 @@
 
 /* Keeps the call button flush to the card bottom whatever the address length */
 .lux-footer-office > *:nth-last-child(2) {
-  padding-bottom: 1.15rem;
+  padding-bottom: 1rem;
 }
 
 .lux-footer-call {
@@ -1906,23 +1934,33 @@
   align-items: center;
   justify-content: center;
   gap: 0.45rem;
-  border: 1px solid color-mix(in srgb, var(--lux-ivory) 32%, transparent);
-  border-radius: 9999px;
-  padding: 0.5rem 1.15rem;
-  font-size: 0.75rem;
+  border: 1px solid var(--lux-ink);
+  border-radius: 0;
+  padding: 0.45rem 1rem;
+  font-size: 0.6875rem;
   font-weight: 700;
-  color: var(--lux-ivory);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lux-ink);
   text-decoration: none;
   white-space: nowrap;
+  background: transparent;
   transition:
     border-color 0.2s ease,
-    color 0.2s ease;
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+[dir="rtl"] .lux-footer-call {
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 0.75rem;
 }
 
 .lux-footer-call:hover {
-  border-color: var(--lux-gold-light);
-  color: var(--lux-gold-light);
-  background: transparent;
+  border-color: var(--lux-ink);
+  color: #ffffff;
+  background: var(--lux-ink);
 }
 
 .lux-footer-social {
@@ -1930,8 +1968,8 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 0.875rem 1rem;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--lux-gold) 18%, transparent);
+  padding: 1.35rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--lux-sand) 75%, transparent);
 }
 
 .lux-footer-social-icons {
@@ -1944,22 +1982,22 @@
   margin: 0;
   font-size: 0.875rem;
   font-weight: 600;
-  color: color-mix(in srgb, var(--lux-ivory) 85%, transparent);
+  color: var(--lux-ink);
 }
 
 .lux-footer-social-btn {
   display: flex;
-  height: 2.375rem;
-  width: 2.375rem;
+  height: 2.25rem;
+  width: 2.25rem;
   align-items: center;
   justify-content: center;
-  border-radius: 9999px;
-  border: 1.5px solid color-mix(in srgb, var(--lux-sand) 55%, transparent);
-  background: color-mix(in srgb, var(--lux-sand) 12%, transparent);
+  border-radius: 0;
+  border: 1px solid color-mix(in srgb, var(--lux-sand) 85%, transparent);
+  background: #ffffff;
   font-size: 0.5625rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  color: var(--lux-ivory);
+  color: var(--lux-ink);
   text-decoration: none;
   transition:
     background 0.2s ease,
@@ -1968,8 +2006,8 @@
 }
 
 .lux-footer-social-btn:hover {
-  background: color-mix(in srgb, var(--lux-gold) 18%, transparent);
-  border-color: color-mix(in srgb, var(--lux-gold-light) 65%, transparent);
+  background: color-mix(in srgb, var(--lux-gold) 10%, white);
+  border-color: color-mix(in srgb, var(--lux-gold) 55%, transparent);
   transform: translateY(-1px);
 }
 
@@ -1987,13 +2025,13 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 0.35rem;
-  border-radius: 9999px;
-  border: 1px solid color-mix(in srgb, var(--lux-gold) 26%, transparent);
-  background: color-mix(in srgb, var(--lux-gold) 8%, transparent);
-  padding: 0.4rem 0.9rem;
+  border-radius: 0;
+  border: 1px solid color-mix(in srgb, var(--lux-sand) 80%, transparent);
+  background: color-mix(in srgb, var(--lux-cream) 70%, white);
+  padding: 0.45rem 0.9rem;
   font-size: 0.75rem;
   line-height: 1.6;
-  color: color-mix(in srgb, var(--lux-ivory) 70%, transparent);
+  color: var(--lux-ink-muted);
 }
 
 .lux-footer-affiliation a {
@@ -2001,7 +2039,7 @@
   align-items: center;
   gap: 0.2rem;
   font-weight: 700;
-  color: var(--lux-gold-light);
+  color: var(--lux-ink);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -2015,7 +2053,7 @@
 }
 
 .lux-footer-affiliation a:hover {
-  color: var(--lux-ivory);
+  color: var(--lux-gold);
 }
 
 [dir="rtl"] .lux-footer-affiliation {
@@ -2029,32 +2067,32 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 1.25rem 1.5rem;
-  padding: 1.5rem 0 2rem;
+  gap: 1.1rem 1.5rem;
+  padding: 1.35rem 0 1.75rem;
 }
 
 .lux-footer-legal {
   margin: 0;
   font-size: 0.6875rem;
   line-height: 1.6;
-  color: color-mix(in srgb, var(--lux-ivory) 55%, transparent);
+  color: color-mix(in srgb, var(--lux-ink-muted) 90%, transparent);
 }
 
 .lux-footer-legal a {
-  color: color-mix(in srgb, var(--lux-ivory) 78%, transparent);
+  color: var(--lux-ink-muted);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
 .lux-footer-legal a:hover {
-  color: var(--lux-sand);
+  color: var(--lux-ink);
 }
 
 .lux-footer-legal-links a:hover {
-  color: var(--lux-sand);
+  color: var(--lux-ink);
 }
 
-/* Fixed quick contact — GH-style float stack */
+/* Fixed quick contact — soft rectangular stack */
 .lux-footer-float {
   position: fixed;
   z-index: 45;
@@ -2062,38 +2100,43 @@
   bottom: 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 0.55rem;
 }
 
 .lux-footer-float-btn {
   display: flex;
-  height: 3rem;
-  width: 3rem;
+  height: 2.85rem;
+  width: 2.85rem;
   align-items: center;
   justify-content: center;
-  border-radius: 9999px;
-  border: 1px solid color-mix(in srgb, var(--lux-sand) 50%, transparent);
-  background: color-mix(in srgb, var(--lux-ink) 92%, #0a0a0a);
-  color: var(--lux-ivory);
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--lux-ink) 35%, transparent);
+  border-radius: 0.35rem;
+  border: 1px solid color-mix(in srgb, var(--lux-sand) 70%, transparent);
+  background: #ffffff;
+  color: var(--lux-ink);
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--lux-ink) 10%, transparent);
   transition:
-    transform 0.2s ease,
-    border-color 0.2s ease;
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.2s ease,
+    background 0.2s ease;
 }
 
 .lux-footer-float-btn:hover {
   transform: translateY(-2px);
-  border-color: var(--lux-sand);
+  border-color: var(--lux-ink);
+  background: var(--lux-ink);
+  color: #ffffff;
 }
 
 .lux-footer-float-btn--wa {
   background: #128c7e;
-  border-color: color-mix(in srgb, white 25%, #128c7e);
+  border-color: color-mix(in srgb, white 20%, #128c7e);
   color: white;
 }
 
 .lux-footer-float-btn--wa:hover {
-  border-color: white;
+  border-color: #0f7a6e;
+  background: #0f7a6e;
+  color: white;
 }
 
 @media (min-width: 1024px) {
@@ -2120,12 +2163,12 @@
 }
 
 .lux-footer-legal-links a {
-  color: color-mix(in srgb, var(--lux-ivory) 65%, transparent);
+  color: var(--lux-ink-muted);
   transition: color 0.2s ease;
 }
 
 .lux-footer-legal-links a:hover {
-  color: var(--lux-ivory);
+  color: var(--lux-ink);
 }
 
 .lux-footer .lux-powered-by {
