@@ -7,7 +7,7 @@ import { LuxuryFormSplitSection } from "./luxury-form-split-section";
 import { LuxuryBrandHeroImage } from "./luxury-brand-hero-image";
 import { LuxuryMarketingHero } from "./luxury-marketing-hero";
 import { LuxuryPartnersStrip } from "./luxury-partners-strip";
-import { LuxuryProjectsB2bForm } from "./luxury-projects-b2b-form";
+import { LuxuryProjectFunnelForm } from "./luxury-project-funnel-form";
 import { LuxuryProjectsSegmentsSection } from "./luxury-projects-segments-section";
 import { LuxuryTrustBar } from "./luxury-trust-bar";
 import { LuxuryVillasProductSection } from "./luxury-villas-product-section";
@@ -105,7 +105,7 @@ export function LuxuryProjectsPage({ messages: t, locale }: Props) {
         <h2 className="lux-display text-2xl sm:text-3xl">{p.formSection.title}</h2>
         <p className="lux-body mt-3 text-sm sm:text-base text-lux-ink-muted">{p.formSection.subtitle}</p>
         <div className="mt-8">
-          <LuxuryProjectsB2bForm messages={t} locale={locale} />
+          <LuxuryProjectFunnelForm locale={locale} source="b2b_projects" initialProjectType="developer" />
         </div>
       </LuxuryFormSplitSection>
     </>

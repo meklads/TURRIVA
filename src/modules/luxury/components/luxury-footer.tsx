@@ -8,8 +8,9 @@ import { localizePath } from "@/shared/i18n/path";
 import { TURRIVA_LOGO_SRC, TURRIVA_LOGO_HEIGHT, TURRIVA_LOGO_WIDTH } from "./luxury-brand-logo";
 import { TURRIVA_PUBLIC_EMAIL, TURRIVA_PUBLIC_HOST, TURRIVA_PUBLIC_URL } from "@/shared/constants/brand";
 import { TURRIVA_SOCIAL_LINKS } from "@/shared/lib/seo-schema";
+import { TrackedWhatsAppLink } from "@/shared/components/tracked-whatsapp-link";
+import { withUtm } from "@/shared/lib/whatsapp";
 
-const WHATSAPP_SA = "966502786513";
 const TASAMI_GROUP_URL = "https://www.tasamify.com/";
 const LINKEDIN_URL = TURRIVA_SOCIAL_LINKS.linkedin;
 const INSTAGRAM_URL = TURRIVA_SOCIAL_LINKS.instagram;
@@ -84,15 +85,13 @@ export async function LuxuryFooter() {
       <div className="lux-footer-watermark" aria-hidden />
 
       <div className="lux-footer-float" aria-label={t.footer.contact}>
-        <a
-          href={`https://wa.me/${WHATSAPP_SA}`}
+        <TrackedWhatsAppLink
+          message={locale === "ar" ? "مرحباً توريفا — أود مناقشة مشروع تنفيذ." : "Hello Turriva — I would like to discuss an execution project."}
+          source="footer_float"
           className="lux-footer-float-btn lux-footer-float-btn--wa"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="WhatsApp"
         >
           <MessageCircle className="h-5 w-5" strokeWidth={1.75} aria-hidden />
-        </a>
+        </TrackedWhatsAppLink>
         <a href={`mailto:${TURRIVA_PUBLIC_EMAIL}`} className="lux-footer-float-btn" aria-label="Email">
           <Mail className="h-5 w-5" strokeWidth={1.75} aria-hidden />
         </a>
@@ -126,13 +125,13 @@ export async function LuxuryFooter() {
                 <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-lux-gold hover:underline">
                   {seo.social.instagram}
                 </a>
-                <a href="https://3dgraphicshouse.com" target="_blank" rel="noopener noreferrer" className="text-sm text-lux-ink-muted hover:text-lux-gold">
+                <a href={withUtm("https://3dgraphicshouse.com", "footer_graphics_house")} target="_blank" rel="noopener noreferrer" className="text-sm text-lux-ink-muted hover:text-lux-gold">
                   Graphics House
                 </a>
-                <a href="https://beesmotion.com" target="_blank" rel="noopener noreferrer" className="text-sm text-lux-ink-muted hover:text-lux-gold">
+                <a href={withUtm("https://beesmotion.com", "footer_bees_motion")} target="_blank" rel="noopener noreferrer" className="text-sm text-lux-ink-muted hover:text-lux-gold">
                   Bees Motion
                 </a>
-                <a href="https://ruwaq.co" target="_blank" rel="noopener noreferrer" className="text-sm text-lux-ink-muted hover:text-lux-gold">
+                <a href={withUtm("https://ruwaq.co", "footer_ruwaq")} target="_blank" rel="noopener noreferrer" className="text-sm text-lux-ink-muted hover:text-lux-gold">
                   Ruwaq
                 </a>
               </div>
@@ -176,17 +175,16 @@ export async function LuxuryFooter() {
                 </span>
                 <span dir="ltr">{t.footer.phone}</span>
               </a>
-              <a
-                href={`https://wa.me/${WHATSAPP_SA}`}
+              <TrackedWhatsAppLink
+                message={locale === "ar" ? "مرحباً توريفا — أود مناقشة مشروع تنفيذ." : "Hello Turriva — I would like to discuss an execution project."}
+                source="footer_contact"
                 className="lux-footer-contact-item"
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 <span className="lux-footer-contact-icon" aria-hidden>
                   <MessageCircle className="h-3.5 w-3.5" strokeWidth={1.75} />
                 </span>
                 <span>WhatsApp</span>
-              </a>
+              </TrackedWhatsAppLink>
             </div>
             <Link href={lp("/contact?intent=design")} className="lux-footer-cta">
               <span>{t.hero.ctaPrimary}</span>

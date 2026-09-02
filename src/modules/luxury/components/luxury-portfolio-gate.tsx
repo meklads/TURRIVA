@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackMarketingEvent } from "@/shared/lib/marketing-events";
 import type { LuxuryMessages } from "@/shared/i18n/messages/luxury";
 import type { Locale } from "@/shared/i18n/locale";
 
@@ -36,6 +37,7 @@ export function LuxuryPortfolioGate({ messages, locale }: Props) {
         return;
       }
 
+      trackMarketingEvent("Portfolio Unlock", { locale });
       window.location.reload();
     } catch {
       setErrorKey("server_error");

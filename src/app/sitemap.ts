@@ -4,6 +4,7 @@ import { localizePath } from "@/shared/i18n/path";
 import type { Locale } from "@/shared/i18n/locale";
 import { CASE_STUDIES } from "@/modules/luxury/lib/case-studies";
 import { INSIGHT_ARTICLES } from "@/modules/luxury/lib/insights-content";
+import { SERVICE_LANDINGS } from "@/modules/luxury/lib/service-landings";
 
 const LOCALES: Locale[] = ["ar", "en"];
 
@@ -15,6 +16,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/villas", priority: 0.95, changeFrequency: "weekly" as const },
     { path: "/projects", priority: 0.95, changeFrequency: "weekly" as const },
     { path: "/services", priority: 0.9, changeFrequency: "monthly" as const },
+    ...SERVICE_LANDINGS.map((s) => ({
+      path: `/services/${s.slug}`,
+      priority: 0.92,
+      changeFrequency: "monthly" as const,
+    })),
     { path: "/styles", priority: 0.9, changeFrequency: "monthly" as const },
     { path: "/our-work", priority: 0.88, changeFrequency: "weekly" as const },
     { path: "/portfolio", priority: 0.85, changeFrequency: "monthly" as const },

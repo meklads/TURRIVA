@@ -18,6 +18,7 @@ export type CaseStudy = {
   servicesAr: readonly string[];
   partner?: { name: string; url: string; roleEn: string; roleAr: string };
   videoUrl?: string;
+  metrics?: readonly { labelEn: string; labelAr: string; valueEn: string; valueAr: string }[];
 };
 
 export const CASE_STUDIES: readonly CaseStudy[] = [
@@ -40,6 +41,11 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       "نسّقت توريفا التسليم الميداني لمعرض الإنسانية في مقر رابطة العالم الإسلامي بجدة. جمع البرنامج التشطيب الداخلي وديكور المعرض وتركيب نقاط تفاعل طوّرت مع جرافيكس هاوس. من المفاهيم الإبداعية المعتمدة إلى التصنيع والتنسيق الميداني والتسليم الموثق، أدار فريق تنفيذ واحد الطبقة المكانية بينما تولت الشركات الشقيقة التصور والبرمجيات.",
     servicesEn: ["Interior fit-out", "Exhibition execution", "Installation", "Handover"],
     servicesAr: ["تشطيب داخلي", "تنفيذ معارض", "تركيب", "تسليم"],
+    metrics: [
+      { labelEn: "Programme", labelAr: "البرنامج", valueEn: "Institutional exhibition", valueAr: "معرض مؤسسي" },
+      { labelEn: "Partner", labelAr: "الشريك", valueEn: "Graphics House", valueAr: "Graphics House" },
+      { labelEn: "Delivery", labelAr: "التسليم", valueEn: "Single field team", valueAr: "فريق ميداني واحد" },
+    ],
     partner: {
       name: "Graphics House",
       url: GROUP_LINKS.graphicsHouse,
@@ -66,6 +72,11 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       "نفّذت توريفا الطبقة المادية لبافيلions الراف في الدرعية — نجارة معيارية وهياكل معرض وتركيب ميداني متسق مع أصول الإطلاق السينمائي من جرافيكس هاوس. يُظهر المشروع نموذج مجموعة تسامي: التصور الإبداعي من GH والتسليم المادي من توريفا.",
     servicesEn: ["Exhibition execution", "Fabrication", "Installation"],
     servicesAr: ["تنفيذ معارض", "تصنيع", "تركيب"],
+    metrics: [
+      { labelEn: "Location", labelAr: "الموقع", valueEn: "Diriyah, Riyadh", valueAr: "الدرعية، الرياض" },
+      { labelEn: "Scope", labelAr: "النطاق", valueEn: "Sales pavilions", valueAr: "بافيلions مبيعات" },
+      { labelEn: "Launch", labelAr: "الإطلاق", valueEn: "CGI + physical", valueAr: "CGI + ميداني" },
+    ],
     partner: {
       name: "Graphics House",
       url: GROUP_LINKS.graphicsHouse,
@@ -93,6 +104,11 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       "تنفيذ مطبخ معياري كامل لفيلا خاصة في شمال جدة: نوى مقاومة للرطوبة، مفصلات soft-close، وتشطيبات PET محددة في 3D، معاينة ميدانية، ثم تصنيع وتركيب من فريق توريفا. موثّق على Ruwaq PRO كجولة مرجعية لجودة التشطيب في المنطقة الغربية.",
     servicesEn: ["Modular kitchens", "Sampling", "Installation", "Warranty"],
     servicesAr: ["مطابخ معيارية", "عينات", "تركيب", "ضمان"],
+    metrics: [
+      { labelEn: "Type", labelAr: "النوع", valueEn: "Modular kitchen", valueAr: "مطبخ معياري" },
+      { labelEn: "Tolerance", labelAr: "الدقة", valueEn: "0.1 mm factory", valueAr: "0.1 مم مصنع" },
+      { labelEn: "Region", labelAr: "المنطقة", valueEn: "North Jeddah", valueAr: "شمال جدة" },
+    ],
     partner: {
       name: "Ruwaq",
       url: GROUP_LINKS.ruwaq,
@@ -119,6 +135,11 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       "أدارت توريفا تصنيع نجارة على دفعات وتركيباً مرحلياً لبرنامج ضيافة في مكة — جبس acoustic، بورسلان مقاوم للرطوبة في المناطق الرطبة، وتسليم منسّق لكل طابق. نطاق التنفيذ متوافق مع جداول المطور وإغلاق ملاحظات موثّق قبل الافتتاح.",
     servicesEn: ["Hospitality fit-out", "Joinery batching", "Snagging"],
     servicesAr: ["تشطيب ضيافة", "نجارة على دفعات", "إغلاق ملاحظات"],
+    metrics: [
+      { labelEn: "Units", labelAr: "الوحدات", valueEn: "120+ guest units", valueAr: "120+ وحدة ضيافة" },
+      { labelEn: "City", labelAr: "المدينة", valueEn: "Makkah", valueAr: "مكة" },
+      { labelEn: "Handover", labelAr: "التسليم", valueEn: "Phased by floor", valueAr: "مرحلي لكل طابق" },
+    ],
   },
   {
     slug: "developer-joinery-batch",
@@ -139,6 +160,11 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       "سلّمت توريفا وحدات نجارة موحّدة عبر برنامج برج مطور: مطابخ وخزائن وعناصر مناطق مشتركة مصنّعة وفق رسومات معتمدة، مع نقاط فحص جودة وتسليم ميداني مرحلي يتوافق مع مراحل البناء.",
     servicesEn: ["B2B joinery", "Modular systems", "Phased delivery"],
     servicesAr: ["نجارة B2B", "أنظمة معيارية", "تسليم مرحلي"],
+    metrics: [
+      { labelEn: "Model", labelAr: "النموذج", valueEn: "Repeatable modules", valueAr: "وحدات قابلة للتكرار" },
+      { labelEn: "Region", labelAr: "المنطقة", valueEn: "Western Region", valueAr: "المنطقة الغربية" },
+      { labelEn: "QC", labelAr: "الجودة", valueEn: "Factory checkpoints", valueAr: "نقاط فحص مصنع" },
+    ],
   },
 ] as const;
 

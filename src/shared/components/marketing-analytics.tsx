@@ -9,7 +9,7 @@ export function MarketingAnalytics() {
       <Script
         defer
         data-domain={PLAUSIBLE_DOMAIN}
-        src="https://plausible.io/js/script.js"
+        src="https://plausible.io/js/script.tagged-events.js"
         strategy="afterInteractive"
       />
     );

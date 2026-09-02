@@ -9,7 +9,7 @@ import { LuxuryEcosystemSection } from "./luxury-ecosystem-section";
 import { LuxuryFaqSection } from "./luxury-faq-section";
 import { LuxuryFormSplitSection } from "./luxury-form-split-section";
 import { LuxuryBrandHeroImage } from "./luxury-brand-hero-image";
-import { LuxuryLeadForm } from "./luxury-lead-form";
+import { LuxuryProjectFunnelForm } from "./luxury-project-funnel-form";
 import { LuxuryMarketingHero } from "./luxury-marketing-hero";
 import { LuxuryPartnersStrip } from "./luxury-partners-strip";
 import { LuxuryTrustBar } from "./luxury-trust-bar";
@@ -106,13 +106,7 @@ export function LuxuryVillasPage({ locale }: { locale: Locale }) {
         <h2 className="lux-display text-2xl sm:text-3xl">{p.formSection.title}</h2>
         <p className="lux-body mt-3 text-sm sm:text-base text-lux-ink-muted">{p.formSection.subtitle}</p>
         <div className="mt-8">
-          <LuxuryLeadForm
-            messages={t}
-            locale={locale}
-            source="villas_page"
-            defaultProjectType="villa"
-            submitLabel={p.ctaContact}
-          />
+          <LuxuryProjectFunnelForm locale={locale} source="villas_page" initialProjectType="villa" />
         </div>
       </LuxuryFormSplitSection>
     </>

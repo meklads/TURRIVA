@@ -67,6 +67,7 @@ export function isPublicApiPath(pathname: string): boolean {
   if (pathname === "/api/health") return true;
   if (pathname.startsWith("/api/share/")) return true;
   if (pathname.startsWith("/api/portfolio/")) return true;
+  if (pathname.startsWith("/api/leads/")) return true;
   return false;
 }
 

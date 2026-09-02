@@ -1,6 +1,7 @@
 import { ExternalLink } from "lucide-react";
 import { getLuxurySeoMessages } from "@/shared/i18n/messages/luxury-seo-pages";
 import type { Locale } from "@/shared/i18n/locale";
+import { withUtm } from "@/shared/lib/whatsapp";
 
 export function LuxuryGroupEcosystemSection({ locale }: { locale: Locale }) {
   const t = getLuxurySeoMessages(locale).groupEcosystem;
@@ -24,7 +25,7 @@ export function LuxuryGroupEcosystemSection({ locale }: { locale: Locale }) {
               <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-lux-gold">{company.tagline}</p>
               <p className="lux-body mt-3 text-sm text-lux-ink-soft">{company.description}</p>
               <a
-                href={company.href}
+                href={withUtm(company.href, `group_${company.name.toLowerCase().replace(/\s+/g, "_")}`)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-lux-gold hover:underline"

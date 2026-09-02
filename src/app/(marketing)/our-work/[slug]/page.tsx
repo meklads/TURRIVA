@@ -3,7 +3,9 @@ import { notFound } from "next/navigation";
 import { luxuryPageMetadata } from "@/modules/luxury/lib/metadata";
 import { CASE_STUDIES, getCaseStudy } from "@/modules/luxury/lib/case-studies";
 import { LuxuryMarketingHero } from "@/modules/luxury/components/luxury-marketing-hero";
-import { LuxuryQuoteSection } from "@/modules/luxury/components/luxury-quote-section";
+import { LuxuryProjectFunnelForm } from "@/modules/luxury/components/luxury-project-funnel-form";
+import { LuxuryFormSplitSection } from "@/modules/luxury/components/luxury-form-split-section";
+import { LuxuryStickyCta } from "@/modules/luxury/components/luxury-sticky-cta";
 import { LocalizedLink } from "@/shared/components/localized-link";
 import { ShareButton } from "@/shared/components/share-button";
 import { JsonLd } from "@/shared/components/json-ld";
@@ -77,6 +79,19 @@ export default async function CaseStudyPage({ params }: Props) {
 
           <p className="lux-body mt-8 leading-relaxed text-lux-ink-soft">{body}</p>
 
+          {study.metrics && study.metrics.length > 0 ? (
+            <dl className="mt-8 grid gap-4 sm:grid-cols-3">
+              {study.metrics.map((m) => (
+                <div key={m.labelEn} className="rounded-xl border border-lux-sand bg-white px-4 py-3 shadow-sm">
+                  <dt className="text-xs font-semibold uppercase tracking-wider text-lux-gold">
+                    {isAr ? m.labelAr : m.labelEn}
+                  </dt>
+                  <dd className="lux-display mt-1 text-base">{isAr ? m.valueAr : m.valueEn}</dd>
+                </div>
+              ))}
+            </dl>
+          ) : null}
+
           <ul className="mt-6 flex flex-wrap gap-2">
             {services.map((s) => (
               <li key={s} className="rounded-full bg-lux-gold-muted/50 px-3 py-1 text-xs font-semibold text-lux-ink">
@@ -94,13 +109,30 @@ export default async function CaseStudyPage({ params }: Props) {
             </p>
           ) : null}
 
-          <LocalizedLink href="/contact?intent=design" className="lux-btn-primary mt-10 inline-flex">
+          <LocalizedLink href="/contact?intent=quote" className="lux-btn-primary mt-10 inline-flex">
             {t.pages.ourWork.caseStudyContactCta}
           </LocalizedLink>
         </div>
       </section>
 
-      <LuxuryQuoteSection messages={t} locale={locale} source={`case_${slug}`} />
+      <LuxuryFormSplitSection
+        id="brief"
+        tone="white"
+        image={
+          <div className="relative min-h-[18rem] w-full overflow-hidden rounded-xl">
+            <Image src={study.image} alt="" fill className="object-cover" sizes="(max-width: 900px) 100vw, 50vw" />
+          </div>
+        }
+      >
+        <LuxuryProjectFunnelForm locale={locale} source={`case_${slug}`} />
+      </LuxuryFormSplitSection>
+
+      <LuxuryStickyCta
+        locale={locale}
+        label={t.pages.ourWork.caseStudyContactCta}
+        href={localizePath(`/our-work/${slug}`, locale) + "#brief"}
+        source={`case_${slug}`}
+      />
     </>
   );
 }
