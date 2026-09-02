@@ -16,6 +16,7 @@ export type LuxuryMessages = LuxuryPlatformMessages & {
     ourWork: string;
     about: string;
     contact: string;
+    professionals: string;
   };
   hero: {
     eyebrow: string;
@@ -301,6 +302,7 @@ const en: LuxuryMessages = {
     ourWork: "Our work",
     about: "About",
     contact: "Contact",
+    professionals: "For professionals",
   },
   hero: {
     eyebrow: "A Tasami Group company · Saudi Arabia",
@@ -959,6 +961,7 @@ const ar: LuxuryMessages = {
     ourWork: "أعمالنا",
     about: "من نحن",
     contact: "تواصل",
+    professionals: "للمهندسين",
   },
   hero: {
     eyebrow: "إحدى شركات مجموعة تسامي · المملكة العربية السعودية",

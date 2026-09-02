@@ -26,6 +26,7 @@ export async function LuxuryFooter() {
     { href: lp("/projects"), label: t.nav.projects },
     { href: lp("/services"), label: seo.nav.services },
     { href: lp("/portfolio"), label: seo.nav.portfolio },
+    { href: lp("/professionals"), label: t.nav.professionals },
     { href: lp("/our-work"), label: t.nav.ourWork },
     { href: lp("/insights"), label: seo.nav.insights },
     { href: lp("/faq"), label: seo.nav.faq },

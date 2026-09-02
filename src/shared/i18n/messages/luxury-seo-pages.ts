@@ -85,6 +85,42 @@ export type LuxurySeoMessages = {
     insights: string;
     portfolio: string;
   };
+  professionalsPage: ProfessionalsPageCopy;
+};
+
+export type ProfessionalsPageCopy = {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  audienceEyebrow: string;
+  audienceTitle: string;
+  audiences: readonly { title: string; description: string }[];
+  includesEyebrow: string;
+  includesTitle: string;
+  includes: readonly string[];
+  lockHint: string;
+  gateEyebrow: string;
+  gateTitle: string;
+  gateIntro: string;
+  gateNote: string;
+  formName: string;
+  formCompany: string;
+  formEmail: string;
+  formRole: string;
+  formSubmit: string;
+  formLoading: string;
+  formError: string;
+  formErrorPersonal: string;
+  formErrorInvalid: string;
+  resourcesEyebrow: string;
+  resourcesTitle: string;
+  downloadLabel: string;
+  nextStepsTitle: string;
+  nextStepsIntro: string;
+  nextStepsBrief: string;
+  nextStepsPortfolio: string;
+  groupNote: string;
+  groupLink: string;
 };
 
 const en: LuxurySeoMessages = {
@@ -360,6 +396,51 @@ const en: LuxurySeoMessages = {
     insights: "Insights",
     portfolio: "Portfolio",
   },
+  professionalsPage: {
+    eyebrow: "Turriva · Technical resources",
+    title: "For professionals",
+    intro:
+      "Specification sheets, programme guides, and compliance notes for architects, interior designers, developers, and contractors — from the Turriva execution team.",
+    audienceEyebrow: "Who this is for",
+    audienceTitle: "Built for project specifiers",
+    audiences: [
+      { title: "Architects", description: "Typical details, tolerance bands, and handover documentation for joinery packages." },
+      { title: "Interior designers", description: "Factory-to-site coordination notes and modular kitchen logic." },
+      { title: "Developers", description: "Batch programme guides for towers, hospitality, and sales environments." },
+      { title: "Contractors", description: "QC checkpoints, phased delivery, and Gulf environment specifications." },
+    ],
+    includesEyebrow: "What's inside",
+    includesTitle: "Downloadable technical briefs",
+    includes: [
+      "Joinery specification overview — tolerance, QC, and handover",
+      "Modular kitchen typical details — modules, wet zones, coordination",
+      "Hospitality batch programme guide — phased delivery and snagging",
+      "Gulf compliance & environment notes — moisture, SASO references, markets served",
+    ],
+    lockHint: "Register with your work email to unlock downloads.",
+    gateEyebrow: "Professional access",
+    gateTitle: "Unlock technical resources",
+    gateIntro: "Enter your details to download Turriva specification briefs. We use work email to keep resources oriented to active project teams.",
+    gateNote: "Personal email addresses (Gmail, Hotmail, etc.) cannot be used. Use your company domain.",
+    formName: "Full name",
+    formCompany: "Company / studio",
+    formEmail: "Work email",
+    formRole: "Role (optional) — e.g. Architect, PM",
+    formSubmit: "Unlock resources",
+    formLoading: "Verifying…",
+    formError: "Something went wrong. Please try again or contact us.",
+    formErrorPersonal: "Please use your company work email, not a personal address.",
+    formErrorInvalid: "Please check your details and try again.",
+    resourcesEyebrow: "Your downloads",
+    resourcesTitle: "Technical briefs",
+    downloadLabel: "Download",
+    nextStepsTitle: "Ready to specify a programme?",
+    nextStepsIntro: "Send drawings or a structured brief — our execution team responds within one business day.",
+    nextStepsBrief: "Submit project brief",
+    nextStepsPortfolio: "View gated portfolio",
+    groupNote: "Turriva is a Tasami Group company. Learn about the wider ecosystem at",
+    groupLink: "Tasami Group",
+  },
 };
 
 const ar: LuxurySeoMessages = {
@@ -627,6 +708,51 @@ const ar: LuxurySeoMessages = {
     faq: "الأسئلة الشائعة",
     insights: "رؤى",
     portfolio: "البورتفوليو",
+  },
+  professionalsPage: {
+    eyebrow: "توريفا · موارد فنية",
+    title: "للمهندسين",
+    intro:
+      "ملفات مواصفات وأدلة برامج وملاحظات مطابقة — للمهندسين المعماريين ومصممي الداخل والمطورين والمقاولين — من فريق تنفيذ توريفا.",
+    audienceEyebrow: "لمن هذه البوابة",
+    audienceTitle: "مصممة لتحديد مواصفات المشاريع",
+    audiences: [
+      { title: "مهندسون معماريون", description: "تفاصيل typicals ونطاقات التسامح وتوثيق التسليم لحزم النجارة." },
+      { title: "مصممو داخل", description: "ملاحظات تنسيق المصنع مع الموقع ومنطق المطبخ المعياري." },
+      { title: "مطورون", description: "أدلة برامج على دفعات للأبراج والضيافة وبيئات المبيعات." },
+      { title: "مقاولون", description: "نقاط فحص الجودة والتسليم المرحلي ومواصفات بيئة الخليج." },
+    ],
+    includesEyebrow: "ما بداخل البوابة",
+    includesTitle: "ملخصات فنية للتحميل",
+    includes: [
+      "نظرة عامة على مواصفات النجارة — التسامح والجودة والتسليم",
+      "تفاصيل typicals للمطبخ المعياري — الوحدات والمناطق الرطبة والتنسيق",
+      "دليل برامج الضيافة على دفعات — تسليم مرحلي وإغلاق ملاحظات",
+      "ملاحظات المطابقة وبيئة الخليج — الرطوبة ومراجع SASO والأسواق",
+    ],
+    lockHint: "سجّل ببريدك الوظيفي لفتح التحميلات.",
+    gateEyebrow: "وصول مهني",
+    gateTitle: "افتح الموارد الفنية",
+    gateIntro: "أدخل بياناتك لتحميل ملخصات مواصفات توريفا. نستخدم البريد الوظيفي لتوجيه الموارد لفرق المشاريع النشطة.",
+    gateNote: "لا يمكن استخدام بريد شخصي (Gmail، Hotmail، إلخ). استخدم نطاق شركتك.",
+    formName: "الاسم الكامل",
+    formCompany: "الشركة / المكتب",
+    formEmail: "البريد الوظيفي",
+    formRole: "الدور (اختياري) — مثال: مهندس، PM",
+    formSubmit: "فتح الموارد",
+    formLoading: "جاري التحقق…",
+    formError: "حدث خطأ. يرجى المحاولة مرة أخرى أو التواصل معنا.",
+    formErrorPersonal: "يرجى استخدام بريد شركتك الوظيفي وليس بريداً شخصياً.",
+    formErrorInvalid: "يرجى التحقق من البيانات والمحاولة مرة أخرى.",
+    resourcesEyebrow: "تحميلاتك",
+    resourcesTitle: "الملخصات الفنية",
+    downloadLabel: "تحميل",
+    nextStepsTitle: "جاهز لتحديد برنامج؟",
+    nextStepsIntro: "أرسل الرسومات أو ملخصاً منظماً — يرد فريق التنفيذ خلال يوم عمل.",
+    nextStepsBrief: "قدّم ملخص المشروع",
+    nextStepsPortfolio: "عرض البورتفوليو",
+    groupNote: "توريفا شركة تنفيذ ضمن مجموعة تسامي. تعرّف على المنظومة الأوسع في",
+    groupLink: "مجموعة تسامي",
   },
 };
 
