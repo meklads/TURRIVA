@@ -52,6 +52,8 @@ export function isPublicAppPath(pathname: string): boolean {
     "/insights",
     "/locations",
     "/professionals",
+    "/launch",
+    "/markets",
   ];
 
   if (publicPrefixes.some((p) => pathname === p || pathname.startsWith(`${p}/`))) {

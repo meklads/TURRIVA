@@ -4532,6 +4532,23 @@
   color: var(--lux-ink-soft);
 }
 
+.lux-funnel-success__steps {
+  margin-top: 1rem;
+  padding-inline-start: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  color: var(--lux-ink-soft);
+}
+
+.lux-funnel-success__actions {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
 .lux-sticky-cta {
   position: fixed;
   inset-inline: 0;

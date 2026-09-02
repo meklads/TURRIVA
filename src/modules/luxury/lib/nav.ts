@@ -12,6 +12,7 @@ function buildLuxuryNavLinks(locale: Locale) {
     home: { href: lp("/"), label: t.nav.home },
     villas: { href: lp("/villas"), label: t.nav.villas },
     projects: { href: lp("/projects"), label: t.nav.projects },
+    services: { href: lp("/services"), label: seo.nav.services },
     ourWork: { href: lp("/our-work"), label: t.nav.ourWork },
     portfolio: { href: lp("/portfolio"), label: seo.nav.portfolio },
     professionals: { href: lp("/professionals"), label: t.nav.professionals },
@@ -27,6 +28,7 @@ export function getLuxuryNavLinks(locale: Locale) {
     links.home,
     links.villas,
     links.projects,
+    links.services,
     links.ourWork,
     links.portfolio,
     links.professionals,
@@ -38,7 +40,7 @@ export function getLuxuryNavLinks(locale: Locale) {
 /** Compact desktop bar — logo covers home; CTA covers contact. */
 export function getLuxuryHeaderNavLinks(locale: Locale) {
   const links = buildLuxuryNavLinks(locale);
-  return [links.villas, links.projects, links.ourWork, links.portfolio, links.professionals, links.about] as const;
+  return [links.villas, links.projects, links.services, links.ourWork, links.portfolio, links.about] as const;
 }
 
 export const LUXURY_HERO_IMAGE = "/brand/turriva/hero-interior.webp";

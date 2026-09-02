@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import type { Locale } from "@/shared/i18n/locale";
 import type { BudgetRange, Timeline } from "@/modules/design/lib/lead-scoring";
 import { getFunnelCopy } from "../lib/contact-intents";
@@ -11,6 +12,7 @@ import {
 } from "../lib/marketing-lead-scoring";
 import { trackMarketingEvent } from "@/shared/lib/marketing-events";
 import { buildWhatsAppHref } from "@/shared/lib/whatsapp";
+import { localizePath } from "@/shared/i18n/path";
 import { TURRIVA_PUBLIC_EMAIL } from "@/shared/constants/brand";
 
 type Props = {
@@ -44,7 +46,6 @@ export function LuxuryProjectFunnelForm({ locale, source, initialProjectType, wh
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [city, setCity] = useState("");
   const [message, setMessage] = useState("");
   const [file, setFile] = useState<File | null>(null);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -87,7 +88,6 @@ export function LuxuryProjectFunnelForm({ locale, source, initialProjectType, wh
       const payloadMessage = [
         `Email: ${email}`,
         company ? `Company: ${company}` : null,
-        `City: ${city}`,
         `Area/units: ${area}`,
         attachmentUrl ? `Attachment: ${attachmentUrl}` : file ? `Attachment: ${file.name} (upload failed)` : null,
         message,
@@ -105,7 +105,6 @@ export function LuxuryProjectFunnelForm({ locale, source, initialProjectType, wh
           message: payloadMessage,
           locale,
           source,
-          city: "other",
           interest: projectType === "developer" ? "bespoke" : "execution",
           projectType,
           executionScope,
@@ -135,10 +134,36 @@ export function LuxuryProjectFunnelForm({ locale, source, initialProjectType, wh
   }
 
   if (status === "success") {
+    const waHref = buildWhatsAppHref(
+      whatsappMessage ??
+        (locale === "ar"
+          ? `مرحباً توريفا — أرسلت ملخص مشروع عبر الموقع. الاسم: ${name}. أود متابعة الخطوة التالية.`
+          : `Hello Turriva — I submitted a project brief online. Name: ${name}. I would like to continue to the next step.`)
+    );
+
     return (
       <div className="lux-funnel-success">
         <p>{copy.success}</p>
         {qualified ? <p className="lux-funnel-success__note">{copy.qualifiedNote}</p> : null}
+        <ol className="lux-funnel-success__steps">
+          {copy.nextSteps.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ol>
+        <div className="lux-funnel-success__actions">
+          <a
+            href={waHref}
+            className="lux-btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackMarketingEvent("WhatsApp Click", { source: `${source}_post_lead` })}
+          >
+            {copy.nextWhatsApp}
+          </a>
+          <Link href={localizePath("/portfolio", locale)} className="lux-btn-outline-gold">
+            {copy.nextPortfolio}
+          </Link>
+        </div>
       </div>
     );
   }
@@ -150,7 +175,9 @@ export function LuxuryProjectFunnelForm({ locale, source, initialProjectType, wh
           <span key={label} className={`lux-funnel__dot${i <= step ? " lux-funnel__dot--active" : ""}`} title={label} />
         ))}
       </div>
-      <p className="lux-funnel__step-label">{copy.stepOf(step + 1, totalSteps)} · {stepLabels[step]}</p>
+      <p className="lux-funnel__step-label">
+        {copy.stepOf(step + 1, totalSteps)} · {stepLabels[step]}
+      </p>
 
       {step === 0 && (
         <div className="lux-funnel__grid">
@@ -248,7 +275,6 @@ export function LuxuryProjectFunnelForm({ locale, source, initialProjectType, wh
             placeholder={copy.phoneLabel}
             className="lux-input"
           />
-          <input required value={city} onChange={(e) => setCity(e.target.value)} placeholder={copy.cityLabel} className="lux-input" />
           <label className="lux-funnel__file">
             <span className="text-xs font-semibold uppercase tracking-wider text-lux-ink-muted">{copy.fileLabel}</span>
             <input

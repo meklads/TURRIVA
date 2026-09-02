@@ -84,6 +84,8 @@ export type LuxurySeoMessages = {
     faq: string;
     insights: string;
     portfolio: string;
+    launch: string;
+    markets: string;
   };
   professionalsPage: ProfessionalsPageCopy;
 };
@@ -395,6 +397,8 @@ const en: LuxurySeoMessages = {
     faq: "FAQ",
     insights: "Insights",
     portfolio: "Portfolio",
+    launch: "Launch path",
+    markets: "Markets",
   },
   professionalsPage: {
     eyebrow: "Turriva · Technical resources",
@@ -708,6 +712,8 @@ const ar: LuxurySeoMessages = {
     faq: "الأسئلة الشائعة",
     insights: "رؤى",
     portfolio: "البورتفوليو",
+    launch: "مسار الإطلاق",
+    markets: "الأسواق",
   },
   professionalsPage: {
     eyebrow: "توريفا · موارد فنية",

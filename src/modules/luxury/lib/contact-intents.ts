@@ -96,7 +96,6 @@ export type FunnelCopy = {
   nameLabel: string;
   emailLabel: string;
   phoneLabel: string;
-  cityLabel: string;
   messageLabel: string;
   fileLabel: string;
   fileHint: string;
@@ -107,6 +106,9 @@ export type FunnelCopy = {
   success: string;
   error: string;
   qualifiedNote: string;
+  nextSteps: readonly string[];
+  nextWhatsApp: string;
+  nextPortfolio: string;
   stepOf: (current: number, total: number) => string;
 };
 
@@ -178,7 +180,6 @@ export function getFunnelCopy(locale: Locale): FunnelCopy {
     nameLabel: isAr ? "الاسم الكامل" : "Full name",
     emailLabel: isAr ? "البريد الإلكتروني" : "Work email",
     phoneLabel: isAr ? "الجوال" : "Mobile",
-    cityLabel: isAr ? "المدينة" : "City",
     messageLabel: isAr ? "ملاحظات إضافية" : "Additional notes",
     fileLabel: isAr ? "مخططات أو ملفات (اختياري)" : "Plans or files (optional)",
     fileHint: isAr ? "PDF، صور، DWG — حتى 12 م.ب" : "PDF, images, DWG — up to 12 MB",
@@ -193,6 +194,19 @@ export function getFunnelCopy(locale: Locale): FunnelCopy {
     qualifiedNote: isAr
       ? "ملخصك يبدو جاهزاً للمتابعة — سنخصص مستشاراً لتنفيذك."
       : "Your brief looks ready for follow-up — we will assign a dedicated execution contact.",
+    nextSteps: isAr
+      ? [
+          "مراجعة الملخص والمرفقات خلال يوم عمل",
+          "اتصال أو واتساب لتأكيد النطاق والجدول",
+          "اقتراح زيارة موقع أو جلسة مراجعة مخططات عند الحاجة",
+        ]
+      : [
+          "We review your brief and attachments within one business day",
+          "A call or WhatsApp to confirm scope and timeline",
+          "Site visit or drawing review when needed",
+        ],
+    nextWhatsApp: isAr ? "تابع عبر واتساب" : "Continue on WhatsApp",
+    nextPortfolio: isAr ? "اطلع على البورتفوليو" : "View portfolio",
     stepOf: (current, total) => (isAr ? `الخطوة ${current} من ${total}` : `Step ${current} of ${total}`),
   };
 }

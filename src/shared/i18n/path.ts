@@ -22,6 +22,8 @@ export const LOCALIZED_MARKETING_PREFIXES = [
   "/insights",
   "/locations",
   "/professionals",
+  "/launch",
+  "/markets",
 ] as const;
 
 const SKIP_LOCALE_PREFIX = ["/api", "/workspace", "/share", "/_next", "/brand", "/uploads", "/favicon"];
