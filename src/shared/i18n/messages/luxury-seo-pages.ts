@@ -67,7 +67,6 @@ export type LuxurySeoMessages = {
       cta: string;
     }[];
     ruwaqNote: string;
-    dotForLifeNote: string;
   };
   social: {
     followUs: string;
@@ -151,7 +150,7 @@ const en: LuxurySeoMessages = {
         },
         {
           title: "Group companies",
-          body: "Turriva is part of Tasami Group. Related sites (Graphics House, Bees Motion, Ruwaq, DotForLife) have their own policies. We may refer you to sister companies when a project requires complementary capabilities.",
+          body: "Turriva is part of Tasami Group. Related sites (Graphics House, Bees Motion, Ruwaq) have their own policies. We may refer you to sister companies when a project requires complementary capabilities.",
         },
         {
           title: "Your rights",
@@ -344,7 +343,7 @@ const en: LuxurySeoMessages = {
     eyebrow: "Tasami Group ecosystem",
     title: "One group. Complementary specialists.",
     intro:
-      "Turriva executes on site. Sister companies cover creative visualization, marketing, property discovery, and family lifestyle content — connected when your project needs more than one discipline.",
+      "Turriva executes on site. Sister companies cover creative visualization, marketing, and property discovery — connected when your project needs more than one discipline.",
     companies: [
       {
         name: "Graphics House",
@@ -370,17 +369,8 @@ const en: LuxurySeoMessages = {
         href: "https://ruwaq.co",
         cta: "Visit Ruwaq",
       },
-      {
-        name: "DotForLife",
-        tagline: "Family lifestyle platform",
-        description:
-          "Calm guides for Gulf families on home, finance, and life decisions — editorial content that reaches homeowners planning renovations.",
-        href: "https://dotforlife.com",
-        cta: "Explore DotForLife",
-      },
     ],
     ruwaqNote: "See Turriva on Ruwaq PRO tours and verified fit-out listings.",
-    dotForLifeNote: "Home renovation guides connect family decision-makers to execution partners.",
   },
   social: {
     followUs: "Follow Turriva",
@@ -473,7 +463,7 @@ const ar: LuxurySeoMessages = {
         },
         {
           title: "شركات المجموعة",
-          body: "توريفا جزء من مجموعة تسامي. للمواقع الشقيقة (Graphics House, Bees Motion, Ruwaq, DotForLife) سياساتها الخاصة. قد نحيلك لشركة شقيقة عند الحاجة.",
+          body: "توريفا جزء من مجموعة تسامي. للمواقع الشقيقة (Graphics House, Bees Motion, Ruwaq) سياساتها الخاصة. قد نحيلك لشركة شقيقة عند الحاجة.",
         },
         {
           title: "حقوقك",
@@ -663,7 +653,7 @@ const ar: LuxurySeoMessages = {
     eyebrow: "منظومة مجموعة تسامي",
     title: "مجموعة واحدة. تخصصات متكاملة.",
     intro:
-      "توريفا تنفّذ في الموقع. الشركات الشقيقة تغطي التصور والتسويق واكتشاف العقار ومحتوى الأسرة — تُربط عندما يحتاج مشروعك أكثر من تخصص.",
+      "توريفا تنفّذ في الموقع. الشركات الشقيقة تغطي التصور والتسويق واكتشاف العقار — تُربط عندما يحتاج مشروعك أكثر من تخصص.",
     companies: [
       {
         name: "Graphics House",
@@ -686,16 +676,8 @@ const ar: LuxurySeoMessages = {
         href: "https://ruwaq.co",
         cta: "زيارة Ruwaq",
       },
-      {
-        name: "DotForLife",
-        tagline: "منصة أسلوب حياة للأسرة",
-        description: "أدلة هادئة للعائلات الخليجية عن المنزل والمال — محتوى يصل لمن يخطط للتجديد.",
-        href: "https://dotforlife.com",
-        cta: "استكشف DotForLife",
-      },
     ],
     ruwaqNote: "شاهد توريفا في جولات Ruwaq PRO وقوائم التشطيب الموثّقة.",
-    dotForLifeNote: "أدلة تجديد المنزل تصل لصناع قرار الأسرة.",
   },
   social: {
     followUs: "تابع توريفا",

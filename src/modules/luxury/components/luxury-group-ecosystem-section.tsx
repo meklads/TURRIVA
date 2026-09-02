@@ -37,9 +37,8 @@ export function LuxuryGroupEcosystemSection({ locale }: { locale: Locale }) {
           ))}
         </div>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+        <div className="mt-8">
           <p className="rounded-lg bg-lux-gold-muted/40 px-4 py-3 text-sm text-lux-ink-soft">{t.ruwaqNote}</p>
-          <p className="rounded-lg bg-lux-gold-muted/40 px-4 py-3 text-sm text-lux-ink-soft">{t.dotForLifeNote}</p>
         </div>
       </div>
     </section>
