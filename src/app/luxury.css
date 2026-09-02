@@ -360,6 +360,56 @@
   box-shadow: 0 8px 24px color-mix(in srgb, var(--lux-ink) 25%, transparent);
 }
 
+.lux-route-loading {
+  position: relative;
+  height: 2px;
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+
+.lux-route-loading--fixed {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 80;
+}
+
+.lux-route-loading__bar {
+  height: 100%;
+  width: 40%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--lux-gold) 30%,
+    color-mix(in srgb, var(--lux-gold) 70%, white) 70%,
+    transparent
+  );
+  animation: lux-route-loading 0.85s ease-in-out infinite;
+}
+
+@keyframes lux-route-loading {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(320%);
+  }
+}
+
+[dir="rtl"] .lux-route-loading__bar {
+  animation-name: lux-route-loading-rtl;
+}
+
+@keyframes lux-route-loading-rtl {
+  0% {
+    transform: translateX(120%);
+  }
+  100% {
+    transform: translateX(-320%);
+  }
+}
+
 .lux-header {
   position: relative;
   z-index: 50;

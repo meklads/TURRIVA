@@ -13,6 +13,11 @@ const nextConfig = {
     serverActions: {
       bodySizeLimit: "5mb",
     },
+    // Keep recently visited marketing pages warm so menu clicks feel instant.
+    staleTimes: {
+      dynamic: 60,
+      static: 300,
+    },
   },
   images: {
     remotePatterns: [
