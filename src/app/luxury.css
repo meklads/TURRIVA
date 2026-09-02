@@ -1373,6 +1373,18 @@
   );
 }
 
+.lux-cta-band-form {
+  margin-top: 1.75rem;
+}
+
+.lux-cta-band-form .lux-funnel {
+  gap: 1rem;
+}
+
+.lux-quote-section__panel .lux-quote-form__head + .lux-funnel {
+  margin-top: 0.5rem;
+}
+
 @media (min-width: 640px) {
   .lux-cta-band-panel {
     padding: 3rem 2.5rem;

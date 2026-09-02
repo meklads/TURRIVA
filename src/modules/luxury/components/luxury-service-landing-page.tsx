@@ -7,7 +7,7 @@ import { LocalizedLink } from "@/shared/components/localized-link";
 import { getServiceLanding, serviceLandingText } from "../lib/service-landings";
 import type { Locale } from "@/shared/i18n/locale";
 import { localizePath } from "@/shared/i18n/path";
-import { buildWhatsAppHref } from "@/shared/lib/whatsapp";
+import { TrackedWhatsAppLink } from "@/shared/components/tracked-whatsapp-link";
 import { LuxuryStickyCta } from "./luxury-sticky-cta";
 
 type Props = {
@@ -28,14 +28,9 @@ export function LuxuryServiceLandingPage({ locale, slug }: Props) {
         <Link href={`#brief`} className="lux-btn-primary">
           {locale === "ar" ? "قدّم ملخص المشروع" : "Submit project brief"}
         </Link>
-        <a
-          href={buildWhatsAppHref(text.whatsapp)}
-          className="lux-btn-outline-gold"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <TrackedWhatsAppLink message={text.whatsapp} source={landing.source} className="lux-btn-outline-gold">
           WhatsApp
-        </a>
+        </TrackedWhatsAppLink>
       </LuxuryMarketingHero>
 
       <section className="lux-section lux-section--linen">

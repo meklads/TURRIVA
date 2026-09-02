@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { LuxuryFacadeImage } from "./luxury-facade-image";
+import { LuxuryProjectFunnelForm } from "./luxury-project-funnel-form";
+import { LuxuryStickyCta } from "./luxury-sticky-cta";
 import {
   getLuxuryMessages,
   LUXURY_PROJECT_IMAGES,
@@ -89,7 +91,7 @@ export function LuxuryHomePage({ locale }: Props) {
       <LuxurySampleKitBand messages={t} locale={locale} />
       <LuxuryFaqSection messages={t} />
 
-      <section className="lux-cta-band" aria-labelledby="home-cta-heading">
+      <section id="brief" className="lux-cta-band" aria-labelledby="home-cta-heading">
         <div className="lux-container">
           <div className="lux-cta-band-grid">
             <LuxuryFacadeImage
@@ -104,18 +106,20 @@ export function LuxuryHomePage({ locale }: Props) {
                 {t.cta.title}
               </h2>
               <p className="lux-body mt-4">{t.cta.subtitle}</p>
-              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-                <Link href={lp("/contact?intent=design")} className="lux-btn-primary">
-                  {t.hero.ctaPrimary}
-                </Link>
-                <Link href={lp("/contact")} className="lux-btn-outline-gold">
-                  {t.cta.button}
-                </Link>
+              <div className="lux-cta-band-form">
+                <LuxuryProjectFunnelForm locale={locale} source="marketing_home" initialProjectType="villa" />
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <LuxuryStickyCta
+        locale={locale}
+        label={t.hero.ctaPrimary}
+        href={`${lp("/")}#brief`}
+        source="marketing_home"
+      />
     </>
   );
 }
