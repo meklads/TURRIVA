@@ -37,10 +37,10 @@ export function getLuxuryNavLinks(locale: Locale) {
   ] as const;
 }
 
-/** Compact desktop bar — CTA covers contact; home included to match mockup. */
+/** Compact desktop bar — logo covers home; CTA covers contact. */
 export function getLuxuryHeaderNavLinks(locale: Locale) {
   const links = buildLuxuryNavLinks(locale);
-  return [links.home, links.villas, links.projects, links.ourWork, links.portfolio, links.professionals] as const;
+  return [links.villas, links.projects, links.services, links.ourWork, links.portfolio, links.professionals] as const;
 }
 
 export const LUXURY_HERO_IMAGE = "/brand/turriva/hero-interior.webp";

@@ -120,12 +120,12 @@ export async function LuxuryFooter() {
               <span>{t.footer.address}</span>
             </p>
             <div className="lux-footer-social mt-4">
-              <p className="lux-footer-follow">{seo.social.followUs}</p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-lux-ink-muted">{seo.social.followUs}</p>
               <div className="mt-2 flex flex-wrap gap-3">
-                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-lux-ink hover:text-lux-gold">
+                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-lux-gold hover:underline">
                   {seo.social.linkedin}
                 </a>
-                <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-lux-ink hover:text-lux-gold">
+                <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-lux-gold hover:underline">
                   {seo.social.instagram}
                 </a>
                 <a href={withUtm("https://3dgraphicshouse.com", "footer_graphics_house")} target="_blank" rel="noopener noreferrer" className="text-sm text-lux-ink-muted hover:text-lux-gold">
