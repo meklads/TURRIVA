@@ -625,6 +625,82 @@
   background: transparent;
 }
 
+/* One comfortable stage: brand + message + CTA + image fill the first screen */
+.lux-hero--stage {
+  min-height: calc(100dvh - 5.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lux-hero--stage .lux-hero-inner {
+  flex: 1;
+  width: 100%;
+}
+
+.lux-hero--stage .lux-hero-tags {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .lux-hero--stage {
+    min-height: calc(100dvh - 4.25rem);
+  }
+
+  .lux-hero--stage .lux-hero-inner {
+    min-height: calc(100dvh - 4.25rem);
+    padding-block: clamp(1.5rem, 4vh, 3rem);
+  }
+
+  .lux-hero--stage .lux-hero-media {
+    min-height: 0;
+    height: 100%;
+    padding-block: clamp(1rem, 3vh, 2rem);
+  }
+
+  .lux-hero--stage .lux-hero-media-frame {
+    height: 100%;
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: auto;
+  }
+
+  .lux-hero--stage .lux-heading {
+    font-size: clamp(2.1rem, 3.6vw, 3.35rem);
+  }
+
+  .lux-hero--stage .lux-body {
+    font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+  }
+
+  .lux-hero--stage .lux-hero-cta {
+    margin-top: 1.75rem;
+  }
+}
+
+.lux-home-path-card {
+  display: block;
+  border-radius: 0.9rem;
+  border: 1px solid color-mix(in srgb, var(--lux-sand) 85%, transparent);
+  background: white;
+  padding: 1.25rem 1.35rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.lux-home-path-card:hover {
+  border-color: color-mix(in srgb, var(--lux-gold) 45%, var(--lux-sand));
+  box-shadow: 0 12px 32px color-mix(in srgb, var(--lux-ink) 6%, transparent);
+  transform: translateY(-1px);
+}
+
+.lux-home-proof .lux-gallery-media {
+  aspect-ratio: 4 / 3;
+}
+
+.lux-home-paths {
+  padding-block: clamp(2.75rem, 6vh, 4rem);
+}
+
 .lux-hero::before {
   content: "";
   position: absolute;

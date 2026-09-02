@@ -1625,15 +1625,15 @@ export const LUXURY_IMAGES = {
   cap2: "/brand/turriva/hero-turriva.png",
   cap3: `https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?${IMG_Q}&w=900`,
   cap4: `https://images.unsplash.com/photo-1600047509358-9dc75507daeb?${IMG_Q}&w=900`,
-  /** Portfolio gallery — Unsplash (free license), matched to project titles */
-  project1: `https://images.unsplash.com/photo-1565538810643-b5bdb714032a?${IMG_Q}&w=1200`,
-  project2: `https://images.unsplash.com/photo-1649361811423-a55616f7ab11?${IMG_Q}&w=1200`,
-  project3: `https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?${IMG_Q}&w=1200`,
+  /** Portfolio gallery — local brand photography */
+  project1: "/brand/turriva/projects/project-kitchen-jeddah.webp",
+  project2: "/brand/turriva/projects/project-walk-in-makkah.webp",
+  project3: "/brand/turriva/projects/project-joinery-b2b.webp",
   ctaBand: "/brand/turriva/turriva-sign-facade.png",
   heroInterior: "/brand/turriva/hero-interior.webp",
   heroBranded: "/brand/turriva/hero-branded.jpg",
   sampleKit: "/brand/turriva/sample-kit-showroom.webp",
-  project4: `https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?${IMG_Q}&w=1200`,
+  project4: "/brand/turriva/projects/project-joinery-b2b.webp",
 } as const;
 
 export const LUXURY_PROJECT_IMAGES = [
