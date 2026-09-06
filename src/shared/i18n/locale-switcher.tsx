@@ -1,8 +1,6 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
-import { useTransition } from "react";
-import { setLocaleAction } from "./actions";
+import { usePathname } from "next/navigation";
 import type { Locale } from "./locale";
 import { useLocale } from "./context";
 import { localizePath, stripLocalePrefix } from "./path";
@@ -11,21 +9,23 @@ type LocaleSwitcherProps = {
   variant?: "default" | "luxury";
 };
 
+function targetHref(pathname: string, next: Locale): string {
+  const { pathname: bare } = stripLocalePrefix(pathname);
+  const qs = typeof window !== "undefined" ? window.location.search : "";
+  const hash = typeof window !== "undefined" ? window.location.hash : "";
+  return `${localizePath(bare, next)}${qs}${hash}`;
+}
+
 export function LocaleSwitcher({ variant = "default" }: LocaleSwitcherProps) {
   const locale = useLocale();
   const pathname = usePathname();
-  const router = useRouter();
-  const [pending, startTransition] = useTransition();
   const isLuxury = variant === "luxury";
 
   const switchTo = (next: Locale) => {
-    if (next === locale || pending) return;
-    startTransition(async () => {
-      await setLocaleAction(next);
-      const { pathname: bare } = stripLocalePrefix(pathname);
-      router.push(localizePath(bare, next));
-      router.refresh();
-    });
+    if (next === locale) return;
+    // Full navigation: path prefix is the source of truth (middleware sets cookie).
+    // Avoid awaiting a server action — that was hanging the switcher while Link nav worked.
+    window.location.assign(targetHref(pathname, next));
   };
 
   const shellClass = isLuxury
@@ -45,7 +45,7 @@ export function LocaleSwitcher({ variant = "default" }: LocaleSwitcherProps) {
       <button
         type="button"
         onClick={() => switchTo("ar")}
-        disabled={pending}
+        aria-pressed={locale === "ar"}
         className={`rounded-full px-2.5 py-1.5 transition-all duration-300 ease-apple sm:px-3 ${
           locale === "ar" ? activeClass : idleClass
         }`}
@@ -55,7 +55,7 @@ export function LocaleSwitcher({ variant = "default" }: LocaleSwitcherProps) {
       <button
         type="button"
         onClick={() => switchTo("en")}
-        disabled={pending}
+        aria-pressed={locale === "en"}
         className={`rounded-full px-2.5 py-1.5 transition-all duration-300 ease-apple sm:px-3 ${
           locale === "en" ? activeClass : idleClass
         }`}

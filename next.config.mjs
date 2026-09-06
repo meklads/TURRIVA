@@ -13,10 +13,10 @@ const nextConfig = {
     serverActions: {
       bodySizeLimit: "5mb",
     },
-    // Keep recently visited marketing pages warm so menu clicks feel instant.
+    // Short client cache so locale switches (/ar ↔ /en) and menu hops stay fresh.
     staleTimes: {
-      dynamic: 60,
-      static: 300,
+      dynamic: 30,
+      static: 120,
     },
   },
   images: {

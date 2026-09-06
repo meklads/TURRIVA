@@ -26,6 +26,31 @@ function withLocaleCookie(response: NextResponse, locale: string): NextResponse 
   return response;
 }
 
+/** Pass locale to Server Components via request headers (response headers alone are not enough). */
+function rewriteWithLocale(request: NextRequest, barePath: string, locale: string): NextResponse {
+  const rewriteUrl = request.nextUrl.clone();
+  rewriteUrl.pathname = barePath;
+
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set(LOCALE_HEADER, locale);
+
+  const response = NextResponse.rewrite(rewriteUrl, {
+    request: { headers: requestHeaders },
+  });
+  response.headers.set(LOCALE_HEADER, locale);
+  return withLocaleCookie(response, locale);
+}
+
+function nextWithLocale(request: NextRequest, locale: string): NextResponse {
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set(LOCALE_HEADER, locale);
+  const response = NextResponse.next({
+    request: { headers: requestHeaders },
+  });
+  response.headers.set(LOCALE_HEADER, locale);
+  return response;
+}
+
 function handleLocaleRouting(request: NextRequest): NextResponse | null {
   const { pathname } = request.nextUrl;
   const cookieLocale = request.cookies.get(LOCALE_COOKIE)?.value ?? null;
@@ -33,11 +58,7 @@ function handleLocaleRouting(request: NextRequest): NextResponse | null {
   const { pathname: barePath } = stripLocalePrefix(pathname);
 
   if (pathLocale) {
-    const rewriteUrl = request.nextUrl.clone();
-    rewriteUrl.pathname = barePath;
-    const response = NextResponse.rewrite(rewriteUrl);
-    response.headers.set(LOCALE_HEADER, pathLocale);
-    return withLocaleCookie(response, pathLocale);
+    return rewriteWithLocale(request, barePath, pathLocale);
   }
 
   if (shouldLocalizePath(barePath)) {
@@ -49,14 +70,10 @@ function handleLocaleRouting(request: NextRequest): NextResponse | null {
   }
 
   if (isLocale(cookieLocale)) {
-    const response = NextResponse.next();
-    response.headers.set(LOCALE_HEADER, cookieLocale);
-    return response;
+    return nextWithLocale(request, cookieLocale);
   }
 
-  const response = NextResponse.next();
-  response.headers.set(LOCALE_HEADER, defaultLocale);
-  return response;
+  return nextWithLocale(request, defaultLocale);
 }
 
 export function middleware(request: NextRequest) {

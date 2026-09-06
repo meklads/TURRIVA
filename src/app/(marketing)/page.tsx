@@ -11,17 +11,14 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     ...base,
-    title:
-      locale === "ar"
-        ? `${t.brand.name} · ${t.brand.tagline}`
-        : `${t.brand.name} · ${t.brand.tagline}`,
+    title: `${t.brand.name} · ${t.brand.tagline}`,
     description: t.hero.subtitle,
     openGraph: {
       ...base.openGraph,
       title: t.hero.title.replace("\n", " "),
       description: t.hero.subtitle,
       locale: locale === "ar" ? "ar_SA" : "en_US",
-      url: "https://turriva.com",
+      url: base.openGraph?.url,
     },
   };
 }

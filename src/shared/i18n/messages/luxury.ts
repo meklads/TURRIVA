@@ -308,7 +308,7 @@ const en: LuxuryMessages = {
     eyebrow: "A Tasami Group company · Saudi Arabia",
     title: "From concept to physical reality.",
     subtitle:
-      "Turriva is a specialized spatial execution and physical delivery company delivering interiors, exhibitions, furnishing, fabrication, installation, and turnkey physical experiences.",
+      "Turriva executes interiors, exhibitions, furnishing, fabrication, and installation — turning approved designs into spaces you can walk into, on schedule and on site.",
     servicesLine: "Interior execution · Exhibitions · Furnishing · Fabrication · Installation",
     tags: ["Interior execution", "Exhibition execution", "Furnishing", "Fabrication", "Turnkey delivery"],
     ctaPrimary: "Discuss your project",
@@ -319,7 +319,7 @@ const en: LuxuryMessages = {
     eyebrow: "How we work",
     title: "Design that reads the room, execution that respects your name",
     body:
-      "Leading decor brands earn trust by showing real materials and believable spaces. We do the same for Gulf homes and businesses: contemporary lines, warm hospitality, and details that suit majlis life as well as modern living. One studio from concept and samples to site teams and handover, with open updates so you are never guessing.",
+      "Trust in decor is earned with real materials and believable spaces. We bring that standard to Gulf homes and businesses: contemporary lines, warm hospitality, and details that suit majlis life as well as modern living — one team from samples to site handover, with clear updates at every stage.",
   },
   stats: {
     items: [
@@ -417,15 +417,15 @@ const en: LuxuryMessages = {
     ],
   },
   projects: {
-    eyebrow: "Portfolio",
-    title: "From 3D approval to installed reality",
+    eyebrow: "Proof of delivery",
+    title: "Approved in 3D. Delivered on site.",
     subtitle:
-      "Modular kitchens, wardrobes, and joinery for villas, compounds, and hospitality, documented before and after handover.",
-    cta: "Full portfolio",
+      "Kitchens, wardrobes, and joinery for villas, compounds, and hospitality — photographed and documented from approval through handover.",
+    cta: "View execution portfolio",
     items: [
       { title: "Villa kitchen · modular joinery", category: "Residential · Jeddah" },
       { title: "Walk-in wardrobe suite", category: "Residential · Makkah" },
-      { title: "Developer tower joinery batch", category: "B2B · Western Region" },
+      { title: "Developer tower joinery batch", category: "Developers · Western Region" },
     ],
   },
   process: {
@@ -726,7 +726,7 @@ const en: LuxuryMessages = {
         items: [
           {
             q: "Do you only work on villas?",
-            a: "No. This page covers single-owner projects: villas, apartments, boutique hotels, restaurants, and premium retail. Multi-unit developer programmes sit on /projects.",
+            a: "No. This page covers single-owner projects: villas, apartments, boutique hotels, restaurants, and premium retail. Multi-unit developer programmes are on Commercial & exhibitions.",
           },
           {
             q: "How long from design to install?",
@@ -830,8 +830,8 @@ const en: LuxuryMessages = {
             a: "Yes. We produce factory-aligned shop drawings from your design intent, or adapt our modular systems to your consultant's layouts within the agreed SLA.",
           },
           {
-            q: "How is B2B different from /villas?",
-            a: "/villas covers single-owner projects. This page is for developers, contractors, and multi-unit hospitality programmes with MOQ, phasing, and formal proposals.",
+            q: "How is this different from Residential?",
+            a: "Residential covers single-owner projects. This page is for developers, contractors, and multi-unit hospitality programmes with MOQ, phasing, and formal proposals.",
           },
           {
             q: "How do we start?",
@@ -967,7 +967,7 @@ const ar: LuxuryMessages = {
     eyebrow: "إحدى شركات مجموعة تسامي · المملكة العربية السعودية",
     title: "من الفكرة إلى واقع ملموس.",
     subtitle:
-      "توريفا شركة متخصصة في تنفيذ المساحات والتسليم الميداني، وتشمل أعمالها المساحات الداخلية والمعارض والتأثيث والتصنيع والتركيب والتجارب المادية المتكاملة.",
+      "توريفا تنفّذ المساحات الداخلية والمعارض والتأثيث والتصنيع والتركيب — نحوّل التصاميم المعتمدة إلى مساحات تدخلها بثقة، وفق جدول ميداني واضح.",
     servicesLine: "تنفيذ داخلي · معارض · تأثيث · تصنيع · تركيب",
     tags: ["تنفيذ داخلي", "تنفيذ معارض", "تأثيث", "تصنيع", "تسليم متكامل"],
     ctaPrimary: "ناقش مشروعك",
@@ -978,7 +978,7 @@ const ar: LuxuryMessages = {
     eyebrow: "منهجنا",
     title: "تصميم يقرأ أسلوب حياتك… وتنفيذ يحترم اسمك",
     body:
-      "العلامات الرائدة في الديكور تبني الثقة عبر خامات حقيقية ومساحات مقنعة. نطبّق ذلك على المشاريع السكنية والتجارية: خطوط معاصرة، ضيافة راقية، وتفاصيل تناسب المجلس والمعيشة اليومية. استوديو واحد من المفهوم والعينات إلى فرق الموقع والتسليم، مع متابعة شفافة في كل مرحلة.",
+      "الثقة في الديكور تُبنى بخامات حقيقية ومساحات مقنعة. نطبّق ذلك على المشاريع السكنية والتجارية: خطوط معاصرة، ضيافة راقية، وتفاصيل تناسب المجلس والمعيشة اليومية — فريق واحد من العينات إلى التسليم الميداني، مع متابعة واضحة في كل مرحلة.",
   },
   stats: {
     items: [
@@ -1076,15 +1076,15 @@ const ar: LuxuryMessages = {
     ],
   },
   projects: {
-    eyebrow: "معرض الأعمال",
-    title: "من اعتماد 3D إلى واقع منفّذ",
+    eyebrow: "إثبات التنفيذ",
+    title: "اعتُمد في 3D… وسُلّم في الموقع.",
     subtitle:
-      "مطابخ وخزائن وتشطيبات معيارية للفلل والمجمعات والضيافة، موثّقة قبل وبعد التسليم.",
-    cta: "كل الأعمال",
+      "مطابخ وخزائن وتشطيبات معيارية للفلل والمجمعات والضيافة — موثّقة من الاعتماد حتى التسليم.",
+    cta: "عرض أعمال التنفيذ",
     items: [
       { title: "مطبخ فيلا · تشطيب معياري", category: "سكني · جدة" },
-      { title: "غرفة ملابس walk-in", category: "سكني · مكة" },
-      { title: "دفعة joinery برج سكني", category: "B2B · الغربية" },
+      { title: "غرفة ملابس كاملة", category: "سكني · مكة" },
+      { title: "دفعة نجارة لبرج سكني", category: "مطورون · الغربية" },
     ],
   },
   process: {
@@ -1385,7 +1385,7 @@ const ar: LuxuryMessages = {
         items: [
           {
             q: "هل تعملون على الفلل فقط؟",
-            a: "لا. هذه الصفحة لمشاريع مالك واحد: فلل، شقق، فنادق boutique، مطاعم، وتجزئة فاخرة. برامج المطورين متعددة الوحدات في /projects.",
+            a: "لا. هذه الصفحة لمشاريع مالك واحد: فلل، شقق، فنادق بوتيك، مطاعم، وتجزئة فاخرة. برامج المطورين متعددة الوحدات في صفحة المشاريع والمعارض.",
           },
           {
             q: "كم يستغرق من التصميم إلى التركيب؟",
@@ -1489,8 +1489,8 @@ const ar: LuxuryMessages = {
             a: "نعم. نُنتج مخططات تنفيذ متوافقة مع المصنع من تصميمكم، أو نُكيّف وحداتنا المعيارية مع مخططات الاستشاري ضمن SLA.",
           },
           {
-            q: "ما الفرق عن /villas؟",
-            a: "/villas للمالك الفردي. هذه الصفحة للمطورين والمقاولين وبرامج الضيافة متعددة الوحدات مع MOQ وتسليم مرحلي.",
+            q: "ما الفرق عن صفحة التنفيذ السكني؟",
+            a: "صفحة التنفيذ السكني للمالك الفردي. هذه الصفحة للمطورين والمقاولين وبرامج الضيافة متعددة الوحدات مع حد أدنى للكميات وتسليم مرحلي.",
           },
           {
             q: "كيف نبدأ؟",

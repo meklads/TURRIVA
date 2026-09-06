@@ -548,6 +548,9 @@
 }
 
 .lux-locale-switch {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
   border-color: var(--lux-sand);
   background: color-mix(in srgb, white 92%, var(--lux-cream));
   box-shadow: 0 1px 2px color-mix(in srgb, var(--lux-ink) 5%, transparent);
@@ -555,11 +558,18 @@
 }
 
 .lux-header-actions {
+  position: relative;
+  z-index: 2;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 0.45rem;
+}
+
+.lux-header-actions button {
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .lux-header .lux-btn-primary {

@@ -219,11 +219,11 @@ const en: LuxurySeoMessages = {
         items: [
           {
             q: "Do you work on villas and developer projects?",
-            a: "Yes. Private villas and hospitality programmes are covered on /villas. Multi-unit developer and B2B programmes are on /projects.",
+            a: "Yes. Private villas and hospitality programmes are on the Residential page. Multi-unit developer programmes are on Commercial & exhibitions.",
           },
           {
             q: "How do I access the full portfolio?",
-            a: "Visit /portfolio and register with your company work email. Personal email providers (Gmail, Hotmail, etc.) are not accepted.",
+            a: "Open the Portfolio page and register with your company work email. Personal email providers (Gmail, Hotmail, etc.) are not accepted.",
           },
           {
             q: "What is the typical timeline?",
@@ -491,7 +491,7 @@ const ar: LuxurySeoMessages = {
         },
         {
           title: "الملكية الفكرية",
-          body: "محتوى الموقع والصور ودراسات الحالة ملك لتوريفا أو شركاء م credited (مثل Graphics House للتصور). العلامات التجارية للشركاء ملك لأصحابها.",
+          body: "محتوى الموقع والصور ودراسات الحالة ملك لتوريفا أو شركاء منسوبين (مثل Graphics House للتصور). العلامات التجارية للشركاء ملك لأصحابها.",
         },
         {
           title: "إخلاء مسؤولية",
@@ -531,11 +531,11 @@ const ar: LuxurySeoMessages = {
         items: [
           {
             q: "هل تعملون على الفلل ومشاريع المطورين؟",
-            a: "نعم. الفلل والضيافة في /villas. مشاريع المطورين B2B في /projects.",
+            a: "نعم. الفلل والضيافة عبر صفحة التنفيذ السكني. مشاريع المطورين عبر صفحة المشاريع والمعارض.",
           },
           {
             q: "كيف أصل للبورتفوليو الكامل؟",
-            a: "زر /portfolio وسجّل ببريد شركتك. لا نقبل البريد الشخصي.",
+            a: "افتح صفحة البورتفوليو وسجّل ببريد شركتك. لا نقبل البريد الشخصي.",
           },
           {
             q: "ما المدة المتوقعة؟",
@@ -553,7 +553,7 @@ const ar: LuxurySeoMessages = {
         slug: "interior-execution",
         title: "تشطيب الفلل والسكني",
         intro: "مطابخ وخزائن معيارية وتنفيذ عقار كامل — اعتماد 3D وعينات وإنتاج مصنع وتركيب بتحقق ليزري.",
-        points: ["رسومات تنفيذية وmockups", "مطابخ وخزائن معيارية", "إغلاق ملاحظات وتسليم"],
+        points: ["رسومات تنفيذية ونماذج اعتماد", "مطابخ وخزائن معيارية", "إغلاق ملاحظات وتسليم"],
         cta: "تنفيذ سكني",
         href: "/villas",
       },
@@ -567,7 +567,7 @@ const ar: LuxurySeoMessages = {
       },
       {
         slug: "exhibition-execution",
-        title: "تنفيذ المعارض والبافيلions",
+        title: "تنفيذ المعارض والأجنحة",
         intro: "معارض مبيعات ومؤسسية — منسّقة مع أصول إطلاق Graphics House.",
         points: ["هياكل معارض", "نجارة وديكور", "تسليم جاهز للافتتاح"],
         cta: "تنفيذ معارض",
@@ -577,14 +577,14 @@ const ar: LuxurySeoMessages = {
         slug: "developer-joinery",
         title: "نجارة المطورين",
         intro: "حزم معيارية قابلة للتكرار عبر الأبراج — مواصفات وتصنيع وتسليم مرحلي.",
-        points: ["دفعات B2B", "فحص جودة مصنع", "تركيب متوافق مع المراحل"],
+        points: ["دفعات للمطورين", "فحص جودة مصنع", "تركيب متوافق مع المراحل"],
         cta: "نجارة مطورين",
         href: "/services/developer-joinery",
       },
       {
         slug: "commercial-fitout",
         title: "تشطيب تجاري وتجزئة",
-        intro: "تجزئة premium ومكاتب وبيئات علامات — من المفهوم المعتمد إلى التسليم.",
+        intro: "تجزئة راقية ومكاتب وبيئات علامات — من المفهوم المعتمد إلى التسليم.",
         points: ["تطوير فني", "نجارة مميزة", "إغلاق ملاحظات موثّق"],
         cta: "تشطيب تجاري",
         href: "/services/commercial-fitout",
@@ -605,7 +605,7 @@ const ar: LuxurySeoMessages = {
       {
         slug: "exhibition-launch-with-graphics-house",
         tag: "مجموعة تسامي",
-        title: "عندما يحتاج الإطلاق CGI وتسليم مادي معاً",
+        title: "عندما يحتاج الإطلاق تصوراً بصرياً وتسليماً مادياً معاً",
         summary: "كيف يكمل تصور Graphics House والتنفيذ الميداني لتوريفا في برامج المطورين.",
         readMinutes: 5,
       },
@@ -613,7 +613,7 @@ const ar: LuxurySeoMessages = {
         slug: "modular-kitchen-gulf-homes",
         tag: "سكني",
         title: "مطابخ معيارية لمناخ الخليج: مواد تتحمل الحياة اليومية",
-        summary: "نوى مقاومة للرطوبة واختيار hardware ودقة مصنع لفلل جدة ومكة.",
+        summary: "نوى مقاومة للرطوبة واختيار المفصّلات والأجهزة ودقة مصنع لفلل جدة ومكة.",
         readMinutes: 7,
       },
       {
@@ -644,8 +644,8 @@ const ar: LuxurySeoMessages = {
       {
         slug: "riyadh",
         name: "الرياض",
-        summary: "بافيلions مطورين ودفعات نجارة B2B في الوسط.",
-        services: ["تنفيذ بافيلions", "تشطيب معارض مبيعات", "نجارة معيارية B2B"],
+        summary: "أجنحة مطورين ودفعات نجارة للمطورين في المنطقة الوسطى.",
+        services: ["تنفيذ أجنحة", "تشطيب معارض مبيعات", "نجارة معيارية للمطورين"],
       },
     ],
   },
@@ -658,7 +658,7 @@ const ar: LuxurySeoMessages = {
       {
         name: "Graphics House",
         tagline: "تجارب إبداعية وبصرية",
-        description: "CGI سينمائي، ماكيت ذكي، أدوات مبيعات تفاعلية، وتصميم مكاني لمطوري الخليج.",
+        description: "تصور سينمائي، ماكيت ذكي، أدوات مبيعات تفاعلية، وتصميم مكاني لمطوري الخليج.",
         href: "https://3dgraphicshouse.com",
         cta: "استكشف Graphics House",
       },

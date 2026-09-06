@@ -308,7 +308,7 @@ const en: LuxuryPlatformMessages = {
       },
       {
         q: "Do you serve developers and villa owners?",
-        a: "Yes. Use /projects for B2B programmes and /villas for private residences. Both paths share the same manufacturing and execution backbone.",
+        a: "Yes. Use Commercial & exhibitions for developer programmes and Residential for private homes. Both share the same manufacturing and execution backbone.",
       },
       {
         q: "Is there a warranty?",
@@ -320,7 +320,7 @@ const en: LuxuryPlatformMessages = {
       },
       {
         q: "How do I start?",
-        a: "Send your floor plan for a design review and sample kit, or submit a B2B brief on /projects for a formal proposal.",
+        a: "Send your floor plan for a design review and sample kit, or submit a developer brief on Commercial & exhibitions for a formal proposal.",
       },
     ],
   },
@@ -504,7 +504,7 @@ const ar: LuxuryPlatformMessages = {
       },
       {
         title: "مطورون وضيافة",
-        description: "تسعير MOQ، SLA للمخططات، لوجستيات وتسليم مرحلي.",
+        description: "تسعير بالكميات، مواعيد مخططات واضحة، لوجستيات وتسليم مرحلي.",
         href: "/projects",
       },
     ],
@@ -565,7 +565,7 @@ const ar: LuxuryPlatformMessages = {
         label: "ضيافة",
         title: "فنادق ومطاعم",
         description:
-          "برامج جماعية للردهات والأجنحة والمطاعم، تسعير MOQ وتسليم مرحلي وتنسيق ميداني.",
+          "برامج جماعية للردهات والأجنحة والمطاعم، تسعير بالكميات وتسليم مرحلي وتنسيق ميداني.",
         cta: "اكتشف الضيافة",
         href: "/projects",
       },
@@ -595,7 +595,7 @@ const ar: LuxuryPlatformMessages = {
       },
       {
         q: "هل تخدمون المطورين وأصحاب الفلل؟",
-        a: "نعم. صفحة المشاريع للـ B2B وصفحة الفلل للأفراد، نفس العمود الفقري للتصنيع والتنفيذ.",
+        a: "نعم. صفحة المشاريع والمعارض للمطورين، وصفحة التنفيذ السكني للملاك الأفراد — نفس العمود الفقري للتصنيع والتنفيذ.",
       },
       {
         q: "هل يوجد ضمان؟",
@@ -607,7 +607,7 @@ const ar: LuxuryPlatformMessages = {
       },
       {
         q: "كيف أبدأ؟",
-        a: "أرسل مخططك لمراجعة التصميم وطلب العينات، أو قدّم ملف B2B في صفحة المشاريع لعرض سعر رسمي.",
+        a: "أرسل مخططك لمراجعة التصميم وطلب العينات، أو قدّم ملخص مشروع مطور عبر صفحة المشاريع لعرض سعر رسمي.",
       },
     ],
   },
