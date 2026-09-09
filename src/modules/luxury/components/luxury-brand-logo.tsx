@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
-/** Black lockup for light surfaces (footer / sections) */
+/** Final black lockup for light surfaces */
 export const TURRIVA_LOGO_ON_LIGHT = "/brand/turriva/logo-lockup-black.png";
-/** White lockup for dark surfaces (footer) */
+/** Final white lockup for dark surfaces (footer) */
 export const TURRIVA_LOGO_ON_DARK = "/brand/turriva/logo-lockup-white.png";
-/** Header: mark + wordmark only (left-aligned), tagline rendered separately centered below */
+/** Header: mark + wordmark only; tagline rendered centered below */
 export const TURRIVA_LOGO_HEADER = "/brand/turriva/logo-header-black.png";
-/** Gold monogram — favicon / watermark brilliance */
+/** Icon mark cropped from above TURRIVA — favicon / watermark */
 export const TURRIVA_MARK_GOLD = "/brand/turriva/mark-gold-on-black.png";
 export const TURRIVA_MARK_GOLD_CLEAR = "/brand/turriva/mark-gold.png";
 export const TURRIVA_MARK_BLACK = "/brand/turriva/mark-black.png";
@@ -16,13 +16,13 @@ export const TURRIVA_MARK_WHITE = "/brand/turriva/mark-white.png";
 /** @deprecated Prefer TURRIVA_LOGO_ON_LIGHT / ON_DARK */
 export const TURRIVA_LOGO_SRC = TURRIVA_LOGO_ON_LIGHT;
 
-export const TURRIVA_LOGO_WIDTH = 1015;
-export const TURRIVA_LOGO_HEIGHT = 451;
+export const TURRIVA_LOGO_WIDTH = 925;
+export const TURRIVA_LOGO_HEIGHT = 563;
 
-export const TURRIVA_HEADER_LOGO_WIDTH = 975;
-export const TURRIVA_HEADER_LOGO_HEIGHT = 326;
+export const TURRIVA_HEADER_LOGO_WIDTH = 917;
+export const TURRIVA_HEADER_LOGO_HEIGHT = 480;
 
-/** Header mark+wordmark (+20% vs original stacked scale) */
+/** Header mark+wordmark (+20% scale preference) */
 export const LUXURY_HEADER_LOGO_CLASS =
   "h-[2.85rem] w-auto max-w-[9.5rem] sm:h-[3.1rem] sm:max-w-[10.5rem] md:h-[3.35rem] md:max-w-[11.5rem] lg:h-[3.6rem] lg:max-w-[12.5rem] xl:h-[3.85rem] xl:max-w-[13.5rem]";
 
@@ -30,12 +30,7 @@ type Props = {
   href?: string;
   className?: string;
   priority?: boolean;
-  /** light = black artwork; dark = white artwork — full lockup (e.g. footer) */
   surface?: "light" | "dark";
-  /**
-   * Header composition: left-aligned mark+wordmark, centered tagline under it.
-   * Footer should keep the full lockup PNG.
-   */
   layout?: "header" | "lockup";
   tagline?: string;
   /** @deprecated */

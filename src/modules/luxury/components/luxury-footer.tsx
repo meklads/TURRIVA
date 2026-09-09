@@ -5,7 +5,7 @@ import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import { getLuxurySeoMessages } from "@/shared/i18n/messages/luxury-seo-pages";
 import { getLocale } from "@/shared/i18n/server";
 import { localizePath } from "@/shared/i18n/path";
-import { TURRIVA_LOGO_ON_DARK, TURRIVA_LOGO_HEIGHT, TURRIVA_LOGO_WIDTH, TURRIVA_MARK_GOLD } from "./luxury-brand-logo";
+import { TURRIVA_LOGO_ON_DARK, TURRIVA_LOGO_HEIGHT, TURRIVA_LOGO_WIDTH, TURRIVA_MARK_WHITE } from "./luxury-brand-logo";
 import { TURRIVA_PUBLIC_EMAIL, TURRIVA_PUBLIC_HOST, TURRIVA_PUBLIC_URL } from "@/shared/constants/brand";
 import { TURRIVA_SOCIAL_LINKS } from "@/shared/lib/seo-schema";
 import { TrackedWhatsAppLink } from "@/shared/components/tracked-whatsapp-link";
@@ -115,10 +115,10 @@ export async function LuxuryFooter() {
               />
             </Link>
             <Image
-              src={TURRIVA_MARK_GOLD}
+              src={TURRIVA_MARK_WHITE}
               alt=""
-              width={793}
-              height={641}
+              width={257}
+              height={185}
               className="lux-footer-mark"
               quality={100}
               unoptimized

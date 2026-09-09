@@ -1595,17 +1595,17 @@
   inset: 0;
   z-index: 0;
   background:
-    url("/brand/turriva/mark-gold-on-black.png") no-repeat right 8% bottom 18% / min(42%, 22rem),
-    url("/brand/turriva/mark-gold-on-black.png") no-repeat left 4% top 42% / min(28%, 14rem);
-  opacity: 0.14;
+    url("/brand/turriva/mark-white.png") no-repeat right 8% bottom 18% / min(22%, 11rem),
+    url("/brand/turriva/mark-white.png") no-repeat left 4% top 42% / min(14%, 7rem);
+  opacity: 0.1;
   mix-blend-mode: screen;
-  filter: saturate(1.15);
+  filter: none;
 }
 
 [dir="rtl"] .lux-footer-watermark {
   background:
-    url("/brand/turriva/mark-gold-on-black.png") no-repeat left 8% bottom 18% / min(42%, 22rem),
-    url("/brand/turriva/mark-gold-on-black.png") no-repeat right 4% top 42% / min(28%, 14rem);
+    url("/brand/turriva/mark-white.png") no-repeat left 8% bottom 18% / min(22%, 11rem),
+    url("/brand/turriva/mark-white.png") no-repeat right 4% top 42% / min(14%, 7rem);
 }
 
 .lux-footer-top {
@@ -1670,12 +1670,12 @@
   margin-top: 1.1rem;
   height: auto;
   width: auto;
-  max-height: 2.75rem;
-  max-width: 5.5rem;
+  max-height: 2.35rem;
+  max-width: 3.25rem;
   object-fit: contain;
   object-position: start;
-  opacity: 0.92;
-  filter: drop-shadow(0 0 18px color-mix(in srgb, var(--lux-amber) 45%, transparent));
+  opacity: 0.88;
+  filter: drop-shadow(0 0 14px color-mix(in srgb, var(--lux-amber) 35%, transparent));
 }
 
 .lux-footer-about {
