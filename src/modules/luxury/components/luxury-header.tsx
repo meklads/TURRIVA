@@ -35,7 +35,7 @@ export async function LuxuryHeader() {
         <div className="lux-container lux-header-shell">
           <div className="lux-header-bar">
             <div className="lux-header-brand">
-              <LuxuryBrandLogo href={homeHref} priority />
+              <LuxuryBrandLogo href={homeHref} priority layout="header" tagline={t.brand.tagline} />
             </div>
             <LuxuryDesktopNav links={headerLinks} />
             <div className="lux-header-actions">

@@ -447,15 +447,51 @@
   flex-shrink: 0;
   line-height: 0;
   margin-inline-end: auto;
+  justify-self: start;
+  text-align: start;
+}
+
+.lux-header-brand-lockup {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.28rem;
+  max-width: 100%;
+}
+
+.lux-header-tagline {
+  display: block;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--lux-ink-muted) 92%, transparent);
+  white-space: nowrap;
+}
+
+[dir="rtl"] .lux-header-tagline {
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  font-size: 0.5625rem;
+  white-space: normal;
 }
 
 .lux-header-logo-link {
   display: inline-flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .lux-header-logo-img {
   image-rendering: auto;
   -webkit-font-smoothing: antialiased;
+  margin-inline-end: auto;
 }
 
 .lux-header-bar > nav {
