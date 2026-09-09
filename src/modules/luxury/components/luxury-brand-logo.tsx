@@ -1,26 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
 
-/** Official Turriva lockup, `public/brand/turriva/turriva logo 2.png` */
-export const TURRIVA_LOGO_SRC = "/brand/turriva/turriva-logo.png";
+/** Black lockup for light surfaces (header, light sections) */
+export const TURRIVA_LOGO_ON_LIGHT = "/brand/turriva/logo-lockup-black.png";
+/** White lockup for dark surfaces (footer) */
+export const TURRIVA_LOGO_ON_DARK = "/brand/turriva/logo-lockup-white.png";
+/** Gold monogram — favicon / watermark brilliance */
+export const TURRIVA_MARK_GOLD = "/brand/turriva/mark-gold-on-black.png";
+export const TURRIVA_MARK_GOLD_CLEAR = "/brand/turriva/mark-gold.png";
+export const TURRIVA_MARK_BLACK = "/brand/turriva/mark-black.png";
+export const TURRIVA_MARK_WHITE = "/brand/turriva/mark-white.png";
 
-export const TURRIVA_LOGO_WIDTH = 1254;
-export const TURRIVA_LOGO_HEIGHT = 249;
+/** @deprecated Prefer TURRIVA_LOGO_ON_LIGHT / ON_DARK */
+export const TURRIVA_LOGO_SRC = TURRIVA_LOGO_ON_LIGHT;
 
-const LOGO_WIDTH = TURRIVA_LOGO_WIDTH;
-const LOGO_HEIGHT = TURRIVA_LOGO_HEIGHT;
+export const TURRIVA_LOGO_WIDTH = 1015;
+export const TURRIVA_LOGO_HEIGHT = 451;
 
-/** Header lockup, in-flow display scale */
+/** Header lockup — stacked mark + wordmark + tagline */
 export const LUXURY_HEADER_LOGO_CLASS =
-  "h-[2.25rem] w-auto max-w-[6.75rem] sm:h-[2.5rem] sm:max-w-[7.25rem] md:h-[2.75rem] md:max-w-[8rem] lg:h-[3rem] lg:max-w-[9rem] xl:h-[3.35rem] xl:max-w-[10.25rem] 2xl:h-[3.75rem] 2xl:max-w-[11.5rem]";
+  "h-[2.65rem] w-auto max-w-[7.25rem] sm:h-[2.9rem] sm:max-w-[8rem] md:h-[3.15rem] md:max-w-[8.75rem] lg:h-[3.4rem] lg:max-w-[9.5rem] xl:h-[3.65rem] xl:max-w-[10.25rem]";
 
 type Props = {
   href?: string;
   className?: string;
   priority?: boolean;
-  /** @deprecated Use official raster only; kept for call-site compatibility */
+  /** light = black artwork; dark = white artwork */
+  surface?: "light" | "dark";
+  /** @deprecated */
   legacyRuwaqRaster?: boolean;
-  /** @deprecated Official logo is always used */
+  /** @deprecated */
   raster?: boolean;
 };
 
@@ -28,13 +37,16 @@ export function LuxuryBrandLogo({
   href = "/",
   className = LUXURY_HEADER_LOGO_CLASS,
   priority = false,
+  surface = "light",
 }: Props) {
+  const src = surface === "dark" ? TURRIVA_LOGO_ON_DARK : TURRIVA_LOGO_ON_LIGHT;
+
   const logo = (
     <Image
-      src={TURRIVA_LOGO_SRC}
+      src={src}
       alt="توريفا، Turriva"
-      width={LOGO_WIDTH}
-      height={LOGO_HEIGHT}
+      width={TURRIVA_LOGO_WIDTH}
+      height={TURRIVA_LOGO_HEIGHT}
       className={`lux-header-logo-img block w-auto object-contain object-start ${className}`}
       priority={priority}
       quality={100}

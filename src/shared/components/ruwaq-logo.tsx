@@ -21,8 +21,8 @@ const MOTIF_SRC = {
 } as const;
 
 const TURRIVA_RASTER_SRC = {
-  light: "/brand/turriva/turriva-logo.png",
-  dark: "/brand/turriva/turriva-logo.png",
+  light: "/brand/turriva/logo-lockup-black.png",
+  dark: "/brand/turriva/logo-lockup-white.png",
 } as const;
 
 const RUWQ_LEGACY_RASTER_SRC = {

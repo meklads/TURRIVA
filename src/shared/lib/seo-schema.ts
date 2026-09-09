@@ -77,7 +77,7 @@ export function localBusinessSchema(locale: Locale) {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Turriva",
-    image: `${TURRIVA_PUBLIC_URL}/brand/turriva/turriva-logo.png`,
+    image: `${TURRIVA_PUBLIC_URL}/brand/turriva/logo-lockup-black.png`,
     url: TURRIVA_PUBLIC_URL,
     telephone: "+966502786513",
     email: TURRIVA_PUBLIC_EMAIL,
@@ -173,7 +173,7 @@ export function articleSchema(
       url: TURRIVA_PUBLIC_URL,
       logo: {
         "@type": "ImageObject",
-        url: `${TURRIVA_PUBLIC_URL}/brand/turriva/turriva-logo.png`,
+        url: `${TURRIVA_PUBLIC_URL}/brand/turriva/logo-lockup-black.png`,
       },
     },
     inLanguage: locale === "ar" ? "ar-SA" : "en-US",

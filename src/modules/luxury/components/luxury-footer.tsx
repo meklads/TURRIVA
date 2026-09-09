@@ -5,7 +5,7 @@ import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import { getLuxurySeoMessages } from "@/shared/i18n/messages/luxury-seo-pages";
 import { getLocale } from "@/shared/i18n/server";
 import { localizePath } from "@/shared/i18n/path";
-import { TURRIVA_LOGO_SRC, TURRIVA_LOGO_HEIGHT, TURRIVA_LOGO_WIDTH } from "./luxury-brand-logo";
+import { TURRIVA_LOGO_ON_DARK, TURRIVA_LOGO_HEIGHT, TURRIVA_LOGO_WIDTH, TURRIVA_MARK_GOLD } from "./luxury-brand-logo";
 import { TURRIVA_PUBLIC_EMAIL, TURRIVA_PUBLIC_HOST, TURRIVA_PUBLIC_URL } from "@/shared/constants/brand";
 import { TURRIVA_SOCIAL_LINKS } from "@/shared/lib/seo-schema";
 import { TrackedWhatsAppLink } from "@/shared/components/tracked-whatsapp-link";
@@ -105,7 +105,7 @@ export async function LuxuryFooter() {
           <div className="lux-footer-brand">
             <Link href={lp("/")} className="lux-footer-logo-link" aria-label={t.brand.name}>
               <Image
-                src={TURRIVA_LOGO_SRC}
+                src={TURRIVA_LOGO_ON_DARK}
                 alt={locale === "ar" ? "توريفا" : "Turriva"}
                 width={TURRIVA_LOGO_WIDTH}
                 height={TURRIVA_LOGO_HEIGHT}
@@ -114,6 +114,16 @@ export async function LuxuryFooter() {
                 unoptimized
               />
             </Link>
+            <Image
+              src={TURRIVA_MARK_GOLD}
+              alt=""
+              width={793}
+              height={641}
+              className="lux-footer-mark"
+              quality={100}
+              unoptimized
+              aria-hidden
+            />
             <p className="lux-footer-about">{t.footer.about}</p>
             <p className="lux-footer-address">
               <MapPin className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} aria-hidden />

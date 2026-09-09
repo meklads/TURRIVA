@@ -6,7 +6,7 @@ export const ECOSYSTEM_BRAND_LOGOS = {
     className: "lux-offer-card__logo--oppein",
   },
   turriva: {
-    src: "/brand/turriva/turriva-logo.png",
+    src: "/brand/turriva/logo-lockup-black.png",
     alt: "Turriva",
     className: "lux-offer-card__logo--turriva",
   },
