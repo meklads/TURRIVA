@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-/** Final black lockup for light surfaces */
+/** Final black lockup (1200dpi master) for light surfaces */
 export const TURRIVA_LOGO_ON_LIGHT = "/brand/turriva/logo-lockup-black.png";
 /** Final white lockup for dark surfaces (footer) */
 export const TURRIVA_LOGO_ON_DARK = "/brand/turriva/logo-lockup-white.png";
@@ -16,13 +16,13 @@ export const TURRIVA_MARK_WHITE = "/brand/turriva/mark-white.png";
 /** @deprecated Prefer TURRIVA_LOGO_ON_LIGHT / ON_DARK */
 export const TURRIVA_LOGO_SRC = TURRIVA_LOGO_ON_LIGHT;
 
-export const TURRIVA_LOGO_WIDTH = 925;
-export const TURRIVA_LOGO_HEIGHT = 563;
+export const TURRIVA_LOGO_WIDTH = 1600;
+export const TURRIVA_LOGO_HEIGHT = 845;
 
-export const TURRIVA_HEADER_LOGO_WIDTH = 917;
-export const TURRIVA_HEADER_LOGO_HEIGHT = 480;
+export const TURRIVA_HEADER_LOGO_WIDTH = 995;
+export const TURRIVA_HEADER_LOGO_HEIGHT = 520;
 
-/** Header mark+wordmark (~+12% from previous header scale) */
+/** Header mark+wordmark */
 export const LUXURY_HEADER_LOGO_CLASS =
   "h-[3.2rem] w-auto max-w-[10.65rem] sm:h-[3.5rem] sm:max-w-[11.75rem] md:h-[3.75rem] md:max-w-[12.9rem] lg:h-[4.05rem] lg:max-w-[14rem] xl:h-[4.3rem] xl:max-w-[15.1rem]";
 

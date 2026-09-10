@@ -18,23 +18,27 @@ export function LuxuryEcosystemSection({ messages, locale }: { messages: LuxuryM
         <p className="lux-body mx-auto mt-4 max-w-3xl text-lux-ink-muted">{t.subtitle}</p>
       </div>
 
-      <div className="lux-container mt-14 grid gap-6 lg:grid-cols-3 lg:gap-7">
+      <div className="lux-container mt-14 grid gap-6 lg:grid-cols-3 lg:gap-7 lg:items-stretch">
         {t.pillars.map((pillar) => {
           const logo = pillar.brand ? ECOSYSTEM_BRAND_LOGOS[pillar.brand] : null;
           return (
             <article key={pillar.title} className="lux-offer-card">
-              {logo ? (
-                <div className={`lux-offer-card__logo ${logo.className}`}>
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={logo.className.includes("turriva") ? 280 : 220}
-                    height={logo.className.includes("turriva") ? 150 : 80}
-                    className="lux-offer-card__logo-img"
-                    unoptimized
-                  />
-                </div>
-              ) : null}
+              <div className="lux-offer-card__brand" aria-hidden={logo ? undefined : true}>
+                {logo ? (
+                  <div className={`lux-offer-card__logo ${logo.className}`}>
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      width={logo.className.includes("turriva") ? 280 : 220}
+                      height={logo.className.includes("turriva") ? 150 : 80}
+                      className="lux-offer-card__logo-img"
+                      unoptimized
+                    />
+                  </div>
+                ) : (
+                  <span className="lux-offer-card__brand-spacer" />
+                )}
+              </div>
               <p className="lux-offer-card__badge">{pillar.badge}</p>
               <h3 className="lux-offer-card__title">{pillar.title}</h3>
               <ul className="lux-offer-card__points">

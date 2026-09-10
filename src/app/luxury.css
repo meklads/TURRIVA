@@ -2568,8 +2568,9 @@
 }
 
 .lux-offer-card {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 5.25rem auto auto 1fr;
+  align-content: start;
   height: 100%;
   background: #ffffff;
   padding: 2.25rem 1.35rem 2rem;
@@ -2605,14 +2606,27 @@
   color: var(--lux-gold);
 }
 
+.lux-offer-card__brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 5.25rem;
+  min-height: 5.25rem;
+}
+
+.lux-offer-card__brand-spacer {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .lux-offer-card__logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  align-self: center;
   width: 100%;
-  min-height: 4.5rem;
-  margin-bottom: 0.15rem;
+  height: 100%;
 }
 
 .lux-offer-card__logo-img {
@@ -2623,21 +2637,17 @@
 }
 
 .lux-offer-card__logo--gh .lux-offer-card__logo-img {
-  max-height: 4.25rem;
+  max-height: 3.5rem;
 }
 
 .lux-offer-card__logo--oppein .lux-offer-card__logo-img {
-  max-height: 2rem;
-  max-width: 11rem;
-}
-
-.lux-offer-card__logo--turriva {
-  min-height: 5.25rem;
+  max-height: 1.85rem;
+  max-width: 10.5rem;
 }
 
 .lux-offer-card__logo--turriva .lux-offer-card__logo-img {
-  max-height: 5rem;
-  max-width: 11.5rem;
+  max-height: 3.75rem;
+  max-width: 11rem;
 }
 
 .lux-offer-card__icon svg {
@@ -2646,13 +2656,18 @@
 }
 
 .lux-offer-card__badge {
-  margin-top: 0.35rem;
+  margin: 0;
+  padding-top: 0.35rem;
   font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--lux-ink-muted);
   line-height: 1.5;
+  min-height: 2.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 [dir="rtl"] .lux-offer-card__badge {
@@ -2662,13 +2677,17 @@
 }
 
 .lux-offer-card__title {
-  margin-top: 1rem;
+  margin: 0.85rem 0 0;
   font-family: var(--font-inter), var(--font-latin), system-ui, sans-serif;
   font-size: clamp(1.0625rem, 1.8vw, 1.375rem);
   font-weight: 600;
   line-height: 1.35;
   letter-spacing: 0.02em;
   color: var(--lux-gold);
+  min-height: 3.6em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 [dir="rtl"] .lux-offer-card__title {
@@ -2679,7 +2698,7 @@
 }
 
 .lux-offer-card__points {
-  margin: 1.25rem 0 0;
+  margin: 1.15rem 0 0;
   padding: 0;
   list-style: none;
   text-align: start;
