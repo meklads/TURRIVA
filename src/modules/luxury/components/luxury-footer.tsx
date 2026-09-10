@@ -117,8 +117,8 @@ export async function LuxuryFooter() {
             <Image
               src={TURRIVA_MARK_WHITE}
               alt=""
-              width={290}
-              height={354}
+              width={441}
+              height={524}
               className="lux-footer-mark"
               quality={100}
               unoptimized

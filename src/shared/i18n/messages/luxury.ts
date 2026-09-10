@@ -291,7 +291,7 @@ export type LuxuryMessages = LuxuryPlatformMessages & {
 
 const en: LuxuryMessages = {
   ...getLuxuryPlatformMessages("en"),
-  brand: { name: "Turriva", tagline: "Architecture > Interior > Construction" },
+  brand: { name: "Turriva", tagline: "Architecture · Interior · Construction" },
   nav: {
     home: "Home",
     villas: "Residential",
@@ -950,7 +950,7 @@ const en: LuxuryMessages = {
 
 const ar: LuxuryMessages = {
   ...getLuxuryPlatformMessages("ar"),
-  brand: { name: "توريفا", tagline: "عمارة > تصميم داخلي > إنشاءات" },
+  brand: { name: "توريفا", tagline: "عمارة · تصميم داخلي · إنشاءات" },
   nav: {
     home: "الرئيسية",
     villas: "تنفيذ سكني",

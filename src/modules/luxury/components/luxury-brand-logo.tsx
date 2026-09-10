@@ -17,10 +17,10 @@ export const TURRIVA_MARK_WHITE = "/brand/turriva/mark-white.png";
 export const TURRIVA_LOGO_SRC = TURRIVA_LOGO_ON_LIGHT;
 
 export const TURRIVA_LOGO_WIDTH = 1600;
-export const TURRIVA_LOGO_HEIGHT = 845;
+export const TURRIVA_LOGO_HEIGHT = 964;
 
-export const TURRIVA_HEADER_LOGO_WIDTH = 995;
-export const TURRIVA_HEADER_LOGO_HEIGHT = 520;
+export const TURRIVA_HEADER_LOGO_WIDTH = 1586;
+export const TURRIVA_HEADER_LOGO_HEIGHT = 814;
 
 /** Header mark+wordmark */
 export const LUXURY_HEADER_LOGO_CLASS =
