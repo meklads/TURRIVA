@@ -22,9 +22,9 @@ export const TURRIVA_LOGO_HEIGHT = 563;
 export const TURRIVA_HEADER_LOGO_WIDTH = 917;
 export const TURRIVA_HEADER_LOGO_HEIGHT = 480;
 
-/** Header mark+wordmark (+20% scale preference) */
+/** Header mark+wordmark (~+12% from previous header scale) */
 export const LUXURY_HEADER_LOGO_CLASS =
-  "h-[2.85rem] w-auto max-w-[9.5rem] sm:h-[3.1rem] sm:max-w-[10.5rem] md:h-[3.35rem] md:max-w-[11.5rem] lg:h-[3.6rem] lg:max-w-[12.5rem] xl:h-[3.85rem] xl:max-w-[13.5rem]";
+  "h-[3.2rem] w-auto max-w-[10.65rem] sm:h-[3.5rem] sm:max-w-[11.75rem] md:h-[3.75rem] md:max-w-[12.9rem] lg:h-[4.05rem] lg:max-w-[14rem] xl:h-[4.3rem] xl:max-w-[15.1rem]";
 
 type Props = {
   href?: string;

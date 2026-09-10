@@ -514,7 +514,7 @@
   .lux-header-brand {
     margin-inline-end: 0;
     justify-self: start;
-    max-width: min(100%, 14.5rem);
+    max-width: min(100%, 16.5rem);
   }
 
   .lux-header-bar > nav {
