@@ -2628,10 +2628,16 @@
 
 .lux-offer-card__logo--oppein .lux-offer-card__logo-img {
   max-height: 2rem;
+  max-width: 11rem;
+}
+
+.lux-offer-card__logo--turriva {
+  min-height: 5.25rem;
 }
 
 .lux-offer-card__logo--turriva .lux-offer-card__logo-img {
-  max-height: 2.35rem;
+  max-height: 5rem;
+  max-width: 11.5rem;
 }
 
 .lux-offer-card__icon svg {

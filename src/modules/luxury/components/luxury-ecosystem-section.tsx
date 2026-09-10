@@ -28,8 +28,8 @@ export function LuxuryEcosystemSection({ messages, locale }: { messages: LuxuryM
                   <Image
                     src={logo.src}
                     alt={logo.alt}
-                    width={220}
-                    height={80}
+                    width={logo.className.includes("turriva") ? 280 : 220}
+                    height={logo.className.includes("turriva") ? 150 : 80}
                     className="lux-offer-card__logo-img"
                     unoptimized
                   />
