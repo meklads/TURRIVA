@@ -27,6 +27,7 @@ export async function LuxuryFooter() {
     { href: lp("/commercial-spaces"), label: locale === "ar" ? "المساحات التجارية" : "Commercial spaces" },
     { href: lp("/real-estate-experience"), label: t.nav.developers },
     { href: lp("/show-unit"), label: locale === "ar" ? "وحدة العرض" : "Show unit" },
+    { href: lp("/hospitality-spaces"), label: locale === "ar" ? "مساحات الضيافة" : "Hospitality spaces" },
     { href: lp("/villas"), label: t.nav.villas },
     { href: lp("/projects"), label: t.nav.projects },
     { href: lp("/services"), label: seo.nav.services },

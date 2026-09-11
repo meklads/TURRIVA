@@ -155,10 +155,11 @@ const en: CommercialSpacesCopy = {
   },
   related: {
     title: "Not every room is this product.",
-    body: "A private residence is design and build. An approved design that only needs execution is fit-out. A sales gallery for a development is the project experience.",
+    body: "A private residence is design and build. An approved design that only needs execution is fit-out. A sales gallery for a development is the project experience. A hotel or a guest stay is hospitality spaces.",
     links: [
       { href: "/fit-out", label: "Fit-out and execution" },
       { href: "/design-build", label: "Design and build" },
+      { href: "/hospitality-spaces", label: "Hospitality spaces" },
       { href: "/real-estate-experience", label: "Real estate project experience" },
     ],
   },
@@ -274,10 +275,11 @@ const ar: CommercialSpacesCopy = {
   },
   related: {
     title: "ليست كل غرفة هذا المنتج.",
-    body: "المسكن الخاص هو التصميم والتنفيذ. التصميم المعتمد الذي يحتاج تنفيذاً فقط هو التنفيذ والتجهيز. مركز بيع المشروع العقاري هو تجربة المشروع.",
+    body: "المسكن الخاص هو التصميم والتنفيذ. التصميم المعتمد الذي يحتاج تنفيذاً فقط هو التنفيذ والتجهيز. مركز بيع المشروع العقاري هو تجربة المشروع. الفندق أو إقامة الضيف هي مساحات الضيافة.",
     links: [
       { href: "/fit-out", label: "التنفيذ والتجهيز" },
       { href: "/design-build", label: "التصميم والتنفيذ" },
+      { href: "/hospitality-spaces", label: "مساحات الضيافة" },
       { href: "/real-estate-experience", label: "تجربة المشروع العقاري" },
     ],
   },
