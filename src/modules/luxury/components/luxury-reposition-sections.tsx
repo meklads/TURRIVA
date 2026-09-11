@@ -51,7 +51,7 @@ export function LuxuryDevelopersSection({ locale, compact = false }: Props & { c
           ))}
         </ul>
         {!compact ? (
-          <LocalizedLink href="/developers" className="lux-btn-primary mt-8 inline-flex">
+          <LocalizedLink href="/real-estate-experience" className="lux-btn-primary mt-8 inline-flex">
             {copy.developers.cta}
           </LocalizedLink>
         ) : null}

@@ -53,6 +53,21 @@ const nextConfig = {
         destination: "/workspace/admin/:path*",
         permanent: false,
       },
+      {
+        source: "/developers",
+        destination: "/real-estate-experience",
+        permanent: true,
+      },
+      {
+        source: "/ar/developers",
+        destination: "/ar/real-estate-experience",
+        permanent: true,
+      },
+      {
+        source: "/en/developers",
+        destination: "/en/real-estate-experience",
+        permanent: true,
+      },
     ];
   },
 };

@@ -301,7 +301,7 @@ const en: LuxuryMessages = {
     interiorDesign: "Interior design",
     construction: "Delivery & build",
     ourWork: "Our work",
-    developers: "Developers",
+    developers: "Project experience",
     about: "About",
     contact: "Contact",
     professionals: "For professionals",
@@ -314,7 +314,7 @@ const en: LuxuryMessages = {
     servicesLine: "Spatial design · Technical detailing · Fabrication · Installation · Sales environments",
     tags: ["Spatial design", "Technical detailing", "Fabrication", "Installation", "Sales environments"],
     ctaPrimary: "Discuss your project",
-    ctaSecondary: "For developers",
+    ctaSecondary: "Project experience",
     ctaSample: "Request sample kit",
   },
   intro: {
@@ -423,7 +423,7 @@ const en: LuxuryMessages = {
     title: "A finished space, not a furniture list.",
     subtitle:
       "Illustrative work — sales environments, hospitality, and fit-out. Named studies on Our work are labelled as team experience until a Turriva contract is confirmed.",
-    cta: "For developers",
+    cta: "Project experience",
     items: [
       { title: "Sales gallery and show villa", category: "Developers" },
       { title: "Hospitality reception and suites", category: "Hospitality" },
@@ -961,7 +961,7 @@ const ar: LuxuryMessages = {
     interiorDesign: "التصميم الداخلي",
     construction: "التنفيذ في الموقع",
     ourWork: "أعمالنا",
-    developers: "للمطورين",
+    developers: "تجربة المشروع",
     about: "من نحن",
     contact: "تواصل",
     professionals: "للمهندسين",
@@ -974,7 +974,7 @@ const ar: LuxuryMessages = {
     servicesLine: "تصميم مكاني · تفصيل فني · تصنيع · تركيب · بيئات مبيعات",
     tags: ["تصميم مكاني", "تفصيل فني", "تصنيع", "تركيب", "بيئات مبيعات"],
     ctaPrimary: "ناقش مشروعك",
-    ctaSecondary: "للمطورين",
+    ctaSecondary: "تجربة المشروع",
     ctaSample: "اطلب حقيبة العينات",
   },
   intro: {
@@ -1083,7 +1083,7 @@ const ar: LuxuryMessages = {
     title: "مكان مكتمل، لا قائمة أثاث.",
     subtitle:
       "أعمال توضيحية — بيئات مبيعات وضيافة وتشطيب. الدراسات المسماة في أعمالنا تُوسم كخبرة فريق حتى يُؤكد عقد باسم توريفا.",
-    cta: "للمطورين",
+    cta: "تجربة المشروع",
     items: [
       { title: "معرض مبيعات وفيلا عرض", category: "مطورون" },
       { title: "استقبال وأجنحة ضيافة", category: "ضيافة" },

@@ -33,7 +33,7 @@ export type RepositionCopy = {
 };
 
 const en: RepositionCopy = {
-  navDevelopers: "Developers",
+  navDevelopers: "Project experience",
   definition: {
     eyebrow: "What Turriva is",
     title: "Spatial design and execution — not a furniture shop, and not a tech company.",
@@ -46,9 +46,9 @@ const en: RepositionCopy = {
   },
   developers: {
     eyebrow: "For developers",
-    title: "A real-estate project needs more than a furnished apartment.",
+    title: "Your project is ready to sell. Is the way you show it ready?",
     intro:
-      "Sales galleries, show villas, and hospitality spaces have to look finished, stay true to the design, and open on a date. That is the work Turriva is set up to discuss.",
+      "We design and deliver the place where the project meets its clients — sales gallery, show unit, models, and fit-out. The scope follows the project. The first step is a conversation.",
     points: [
       {
         title: "Sales gallery and show villa",
@@ -63,8 +63,8 @@ const en: RepositionCopy = {
         body: "Design, detailing, supply, and site in one conversation, so the finished space matches what was approved.",
       },
     ],
-    cta: "For developers",
-    pageCta: "Discuss a development",
+    cta: "Real estate project experience",
+    pageCta: "Discuss your project",
   },
   scopes: {
     eyebrow: "How to engage",
@@ -96,7 +96,7 @@ const en: RepositionCopy = {
 };
 
 const ar: RepositionCopy = {
-  navDevelopers: "للمطورين",
+  navDevelopers: "تجربة المشروع",
   definition: {
     eyebrow: "ما هي توريفا",
     title: "تصميم مكاني وتنفيذ — ليست متجر ديكور، وليست شركة تقنية.",
@@ -109,9 +109,9 @@ const ar: RepositionCopy = {
   },
   developers: {
     eyebrow: "للمطورين",
-    title: "مشروع عقاري يحتاج أكثر من شقة مفروشة.",
+    title: "مشروعك جاهز للبيع. هل تجربة عرضه جاهزة؟",
     intro:
-      "معرض المبيعات، فيلا العرض، ومساحات الضيافة يجب أن تبدو مكتملة، تطابق التصميم، وتُفتح في موعد. هذا هو العمل الذي تُجهَّز توريفا لمناقشته.",
+      "نصمّم وننفّذ البيئة التي يستقبل فيها مشروعك عملاءه — مركز البيع ووحدة العرض والمجسمات والتجهيز. النطاق حسب المشروع. الخطوة الأولى محادثة.",
     points: [
       {
         title: "معرض مبيعات وفيلا عرض",
@@ -126,8 +126,8 @@ const ar: RepositionCopy = {
         body: "تصميم وتفصيل وتوريد وموقع في محادثة واحدة، حتى يطابق المكان ما تم اعتماده.",
       },
     ],
-    cta: "للمطورين",
-    pageCta: "ناقش مشروعًا تطويريًا",
+    cta: "تجربة المشروع العقاري",
+    pageCta: "ناقش مشروعك معنا",
   },
   scopes: {
     eyebrow: "كيف نبدأ",

@@ -14,7 +14,7 @@ function buildLuxuryNavLinks(locale: Locale) {
     projects: { href: lp("/projects"), label: t.nav.projects },
     services: { href: lp("/services"), label: seo.nav.services },
     ourWork: { href: lp("/our-work"), label: t.nav.ourWork },
-    developers: { href: lp("/developers"), label: t.nav.developers },
+    developers: { href: lp("/real-estate-experience"), label: t.nav.developers },
     portfolio: { href: lp("/portfolio"), label: seo.nav.portfolio },
     professionals: { href: lp("/professionals"), label: t.nav.professionals },
     about: { href: lp("/about"), label: t.nav.about },

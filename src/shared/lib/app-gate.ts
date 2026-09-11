@@ -53,6 +53,7 @@ export function isPublicAppPath(pathname: string): boolean {
     "/locations",
     "/professionals",
     "/developers",
+    "/real-estate-experience",
     "/launch",
     "/markets",
   ];
