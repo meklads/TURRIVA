@@ -118,47 +118,47 @@ const en: LuxuryPlatformMessages = {
   },
   ecosystem: {
     eyebrow: "How Turriva delivers",
-    title: "From approved creative direction to physical delivery",
+    title: "From design direction to delivery",
     subtitle:
-      "Turriva owns the execution path: technical development, coordinated fabrication, site installation, quality control, and handover under one accountable delivery team.",
+      "Turriva brings technical development, coordinated fabrication, site installation, quality control, and handover together under one delivery team.",
     pillars: [
       {
         badge: "01 · Technical development",
-        title: "Translate concepts into build-ready scope",
+        title: "Develop the design for delivery",
         points: [
-          "Site surveys, material specifications, shop drawings, mockups, and coordinated approvals.",
-          "A precise bridge between the creative intent and what can be fabricated and installed.",
+          "Site surveys, material specifications, shop drawings, mock-ups, and coordinated approvals.",
+          "A clear connection between the approved design and what will be fabricated and installed.",
         ],
       },
       {
         brand: "oppein",
         badge: "02 · Fabrication & procurement",
-        title: "Build, source, and quality-check every element",
+        title: "Coordinate fabrication and sourcing",
         points: [
-          "Coordinated joinery, finishes, fixtures, and specialist fabrication through verified supply channels.",
-          "Production tracking, Saudi compliance, logistics, and staged delivery aligned to the site programme.",
+          "Joinery, finishes, fixtures, and specialist fabrication coordinated through suitable supply partners.",
+          "Production tracking, compliance documentation, logistics, and phased delivery aligned with the site programme.",
         ],
       },
       {
         brand: "turriva",
         badge: "03 · Execution & handover",
-        title: "Install, coordinate, and deliver the finished experience",
+        title: "Deliver the finished space",
         points: [
-          "Specialist site teams manage installation, interfaces, snagging, and final quality control.",
-          "One Turriva lead remains accountable through opening, handover, and local aftercare.",
+          "Specialist site teams manage installation, trade interfaces, snagging, and final quality checks.",
+          "One Turriva lead coordinates the work through opening, handover, and aftercare.",
         ],
       },
     ],
-    ctaB2b: "Request project catalog & pricing",
-    ctaB2c: "Book a plan review & sample session",
+    ctaB2b: "Discuss your project",
+    ctaB2c: "Send your drawings",
     ctaB2bHref: "/projects",
     ctaB2cHref: "/contact?intent=sample",
   },
   brandRelationship: {
     eyebrow: "Part of Tasami Group",
-    title: "Hire Turriva. The group joins only when the project needs it.",
+    title: "Turriva, supported when needed",
     body:
-      "Turriva designs and builds spaces and experiences. Graphics House and Bees Motion join only when the brief needs visualization or a launch. You do not have to hire the group to hire Turriva.",
+      "Turriva designs and delivers spaces and experiences. Graphics House or Bees Motion can join when a brief also requires visualisation or launch support. Turriva can be appointed independently.",
     flow: "Creative → Execution",
     groupLink: "Discover Tasami Group",
     companies: [
@@ -169,55 +169,55 @@ const en: LuxuryPlatformMessages = {
   },
   comparison: {
     eyebrow: "Why Turriva",
-    title: "Fragmented delivery vs. accountable execution",
+    title: "A more connected delivery model",
     traditionalHeader: "Traditional approach",
     turrivaHeader: "Turriva execution",
     rows: [
       {
-        traditional: "Three separate parties: designer, factory, installer, blame shifts everywhere",
-        turriva: "One accountable Turriva team from approved concept to handover",
+        traditional: "Separate design, fabrication, and installation teams",
+        turriva: "One Turriva team coordinating the approved design through handover",
       },
       {
-        traditional: "Large gap between pretty images and delivered product",
-        turriva: "3D files feed manufacturing directly, design-to-reality alignment",
+        traditional: "A disconnect between design visuals and delivered work",
+        turriva: "Technical development connects the approved design with fabrication",
       },
       {
-        traditional: "Local workshop variance, delays, and quality drift",
+        traditional: "Variable fabrication, scheduling, and quality control",
         turriva: "Fabrication and installation against approved drawings",
       },
       {
-        traditional: "Weak warranty, who owns the defect?",
-        turriva: "Local product & installation warranty with spare parts support",
+        traditional: "Unclear responsibility after installation",
+        turriva: "Contract-defined product and installation warranty with local support",
       },
     ],
   },
   products: {
     eyebrow: "Solutions",
-    title: "Modular interiors & joinery for homes and projects",
+    title: "Interiors and joinery, made for place",
     items: [
       {
         title: "Modular kitchens",
-        description: "Specified when the room needs them. Hardware follows the drawings, not a house catalogue.",
+        description: "Cabinetry, worktops, and hardware developed around the room, its use, and the approved drawings.",
         href: "/villas#kitchens",
       },
       {
         title: "Wardrobes & walk-ins",
-        description: "Hidden lighting, glass inserts, hydraulic fittings, full custom layouts.",
+        description: "Tailored storage with integrated lighting, glass details, and hardware selected for daily use.",
         href: "/villas#wardrobes",
       },
       {
         title: "Wall panels & doors",
-        description: "Wood veneers and stone-look panels for villas and lobbies.",
+        description: "Doors and architectural wall finishes developed in timber veneer, stone-look, and complementary materials.",
         href: "/projects#joinery",
       },
       {
         title: "Villas & residences",
-        description: "Full-home fit-out journey, 3D design through installation.",
+        description: "Coordinated interior delivery for private homes, from design development to installation.",
         href: "/villas",
       },
       {
         title: "Developers & hospitality",
-        description: "MOQ pricing, shop drawings SLA, logistics, and phased delivery.",
+        description: "Technical packages, coordinated procurement, logistics, and phased delivery for larger programmes.",
         href: "/projects",
       },
     ],
@@ -225,7 +225,7 @@ const en: LuxuryPlatformMessages = {
   inspiration: {
     eyebrow: "Ideas",
     title: "Inspiration by space",
-    subtitle: "Browse kitchens, wardrobes, and living spaces, or explore style directions by region, then book a design consultation.",
+    subtitle: "Explore kitchens, wardrobes, living spaces, and considered style directions for your brief.",
     stylesLink: "Style directions",
     items: [
       {
@@ -233,8 +233,8 @@ const en: LuxuryPlatformMessages = {
         label: "Kitchen",
         title: "Modular kitchens",
         description:
-          "Custom cabinetry, countertops, and premium hardware, visualized in 3D and installed on site by Turriva.",
-        cta: "Explore kitchens",
+          "Custom cabinetry, worktops, and selected hardware, developed in 3D and installed on site by Turriva.",
+        cta: "Discuss your kitchen",
         href: "/contact?intent=design",
       },
       {
@@ -242,8 +242,8 @@ const en: LuxuryPlatformMessages = {
         label: "Wardrobe",
         title: "Walk-in closets",
         description:
-          "Integrated lighting, soft-close hardware, and factory-precise modules for dressing rooms and master suites.",
-        cta: "Explore wardrobes",
+          "Integrated lighting, soft-close hardware, and tailored modules for dressing rooms and principal suites.",
+        cta: "Send your drawings",
         href: "/villas#wardrobes",
       },
       {
@@ -251,7 +251,7 @@ const en: LuxuryPlatformMessages = {
         label: "Living",
         title: "Living & dining",
         description:
-          "TV walls, shelving, and dining joinery in coordinated palettes, browse Italian, French, and contemporary style directions.",
+          "Media walls, shelving, and dining joinery composed through a coordinated material palette.",
         cta: "Explore style directions",
         href: "/styles",
       },
@@ -260,8 +260,8 @@ const en: LuxuryPlatformMessages = {
         label: "Bedroom",
         title: "Bedroom suites",
         description:
-          "Headboards, nightstands, and wardrobe systems matched to your floor plan and approved finish board.",
-        cta: "Explore bedrooms",
+          "Headboards, bedside pieces, and wardrobe systems developed around your plan and approved finishes.",
+        cta: "Discuss your space",
         href: "/villas",
       },
       {
@@ -269,8 +269,8 @@ const en: LuxuryPlatformMessages = {
         label: "Bathroom",
         title: "Bathroom vanity",
         description:
-          "Vanity units, mirror cabinets, and moisture-rated boards, specified for Saudi climate and daily use.",
-        cta: "Explore bathrooms",
+          "Vanity units, mirrored storage, and moisture-suitable materials specified for daily use.",
+        cta: "Send your drawings",
         href: "/contact",
       },
       {
@@ -278,25 +278,25 @@ const en: LuxuryPlatformMessages = {
         label: "Hospitality",
         title: "Hotels & F&B",
         description:
-          "Bulk programmes for lobbies, suites, and restaurants, MOQ pricing, phased delivery, and site coordination.",
-        cta: "Explore hospitality",
+          "Coordinated programmes for lobbies, suites, and restaurants, with phased delivery and site coordination.",
+        cta: "Discuss your project",
         href: "/projects",
       },
     ],
   },
   waysOfLiving: {
-    title: "Different ways of living",
+    title: "Designed around daily life",
     subtitle:
-      "Kitchens, wardrobes, bathrooms, and whole-home joinery, visualized in 3D and delivered on site across Saudi Arabia.",
+      "Kitchens, wardrobes, bathrooms, and whole-home joinery, developed in 3D and delivered on site.",
   },
   beforeAfter: {
     eyebrow: "Project showcase",
-    title: "Creative direction prepared for physical delivery",
-    subtitleLine1: "Architectural 3D, interior joinery, and woodwork on developer programmes.",
-    subtitleLine2: "A project-specific example of creative work by our sister company Graphics House.",
+    title: "Visual direction for a built outcome",
+    subtitleLine1: "Architectural visualisation, interior joinery, and woodwork for developer programmes.",
+    subtitleLine2: "This project-specific creative work was produced by our sister company, Graphics House.",
     projectName: "Rafal Pavilions",
     projectCredit: "Visualization & interior design · Graphics House",
-    cta: "Learn more",
+    cta: "View the project",
   },
   faq: {
     eyebrow: "FAQ",
@@ -304,88 +304,88 @@ const en: LuxuryPlatformMessages = {
     items: [
       {
         q: "What does Turriva offer end-to-end?",
-        a: "Technical development, fabrication and procurement coordination, import compliance, installation, handover, and local warranty under one accountable Turriva team.",
+        a: "We coordinate technical development, fabrication, procurement, compliance documentation, installation, handover, and contract-defined aftercare through one Turriva team.",
       },
       {
         q: "Do you serve developers and villa owners?",
-        a: "Yes. Use Commercial & exhibitions for developer programmes and Residential for private homes. Both share the same manufacturing and execution backbone.",
+        a: "Yes. We work with developers, hospitality teams, and private homeowners. Each project follows a coordinated technical and delivery process suited to its scale.",
       },
       {
         q: "Is there a warranty?",
-        a: "Warranty follows the contract for the work we deliver. Board grade and hardware follow the specification. We do not publish a factory certificate we have not issued.",
+        a: "Yes, where included in the signed contract. Coverage reflects the agreed products and installation scope, with material grades and hardware defined in the specification.",
       },
       {
         q: "Can I request physical material samples?",
-        a: "Yes, order a sample kit and book a drawing review session. We ship finishes and hardware references to your office or villa.",
+        a: "Yes. Once we understand the scope, we can arrange relevant finish and hardware samples for review at your office or property.",
       },
       {
         q: "How do I start?",
-        a: "Send your floor plan for a design review and sample kit, or submit a developer brief on Commercial & exhibitions for a formal proposal.",
+        a: "Send your drawings or a clear project brief. We will review the requirements and arrange a conversation about scope, programme, and next steps.",
       },
     ],
   },
   partners: {
-    title: "How fabrication is specified",
-    subtitle: "We do not publish a factory tolerance, and we do not present a machine brand or a conformity mark as a Turriva certificate.",
+    title: "Specified for each project",
+    subtitle: "Fabrication methods, hardware, and compliance documentation are selected against the approved project specification.",
     groups: [
       {
         label: "Production",
-        description: "Made to the approved drawings, with the workshop the specification requires.",
-        items: ["Not claimed as a Turriva-owned line"],
+        description: "Produced to approved drawings through fabrication partners suited to the specification.",
+        items: ["Selected for the project"],
       },
       {
         label: "Hardware",
-        description: "Hinges and runners follow the specification. They are not a house catalogue.",
+        description: "Hinges, runners, and fittings are selected to meet the agreed performance and design requirements.",
         items: ["Specified per project"],
       },
       {
         label: "Conformity",
-        description: "Import and product marks stay with the supplier and the project.",
-        items: ["Not a Turriva certificate"],
+        description: "Product and import documentation is provided by the relevant supplier for the project.",
+        items: ["Documented by source"],
       },
     ],
   },
   sampleKit: {
-    title: "Samples come after the scope.",
+    title: "Review materials with purpose",
     subtitle:
-      "We send finishes and hardware references after the scope is clear. This is not a quote, and not a factory certificate.",
+      "Once the scope is clear, we prepare relevant finish and hardware references for an informed review.",
     button: "Send the drawings",
   },
   valueOffers: {
-    eyebrow: "The Turriva promise",
-    title: "What Turriva delivers for your project",
+    eyebrow: "Why Turriva",
+    title: "A considered path to delivery",
     subtitle:
-      "Design and execution of spaces and experiences. Execution is part of the product, not the whole identity.",
+      "Spatial design, experience, and build coordinated around one clear brief.",
     items: [
       {
         icon: "warranty",
-        title: "Trusted warranty",
+        title: "Defined aftercare",
         points: [
-          "Local warranty on products and installation with spare-parts support.",
-          "After-sales follow-through and dedicated snagging before sign-off.",
+          "Product and installation coverage defined in the project contract.",
+          "Structured snagging, handover, and local follow-through.",
         ],
       },
       {
         icon: "quality",
-        title: "Built to global standards",
+        title: "Specified quality",
         points: [
           "Fabrication against approved drawings, with samples signed off before production.",
-          "Board grade and hardware follow the specification. We do not publish a factory brand as ours.",
+          "Board grades, finishes, and hardware are selected against the approved specification.",
         ],
       },
       {
         icon: "design",
-        title: "Design aligned to reality",
+        title: "Design made buildable",
         points: [
-          "3D used to agree the room before fabrication, not as a factory certificate.",
-          "Full customization to your floor plan before anything is cut.",
+          "3D reviews help align the room, materials, and details before fabrication.",
+          "Layouts are developed to your floor plan before production begins.",
         ],
       },
       {
         icon: "service",
-        title: "One team, end to end",
+        title: "Coordinated delivery",
         points: [
-          "Laser survey, procurement coordination, compliance, and installation under one Turriva lead.",
+          "Site survey, procurement coordination, compliance documentation, and installation under one Turriva lead.",
           "Phased logistics for villas, compounds, and developer programmes.",
         ],
       },
@@ -405,47 +405,47 @@ const ar: LuxuryPlatformMessages = {
   },
   ecosystem: {
     eyebrow: "كيف تنفّذ توريفا",
-    title: "من التوجه الإبداعي المعتمد إلى التسليم على أرض الواقع",
+    title: "من التوجه التصميمي إلى التسليم",
     subtitle:
-      "تتولى توريفا مسار التنفيذ: التطوير الفني، وتنسيق التصنيع، والتركيب الميداني، وضبط الجودة، والتسليم عبر فريق تنفيذ واحد مسؤول.",
+      "تجمع توريفا التطوير الفني وتنسيق التصنيع والتركيب وضبط الجودة والتسليم ضمن فريق واحد يقود المشروع.",
     pillars: [
       {
         badge: "01 · التطوير الفني",
-        title: "تحويل المفهوم إلى نطاق جاهز للتنفيذ",
+        title: "تطوير التصميم للتنفيذ",
         points: [
           "رفع مساحي، مواصفات خامات، مخططات تنفيذ، نماذج واعتمادات منسّقة.",
-          "جسر دقيق بين الرؤية الإبداعية وما يمكن تصنيعه وتركيبه فعلياً.",
+          "ربط واضح بين التصميم المعتمد وما سيُصنّع ويُركّب فعلياً.",
         ],
       },
       {
         brand: "oppein",
         badge: "02 · التصنيع والتوريد",
-        title: "تصنيع وتوريد وفحص جودة كل عنصر",
+        title: "تنسيق التصنيع والتوريد",
         points: [
-          "تنسيق النجارة والتشطيبات والتجهيزات والتصنيع المتخصص عبر قنوات توريد موثوقة.",
-          "متابعة الإنتاج والامتثال السعودي واللوجستيات والتسليم المرحلي وفق برنامج الموقع.",
+          "تنسيق النجارة والتشطيبات والتجهيزات والأعمال المتخصصة عبر مورّدين مناسبين للمشروع.",
+          "متابعة الإنتاج ووثائق الامتثال واللوجستيات والتسليم المرحلي وفق برنامج الموقع.",
         ],
       },
       {
         brand: "turriva",
         badge: "03 · التنفيذ والتسليم",
-        title: "تركيب وتنسيق وتسليم التجربة المكتملة",
+        title: "تسليم المكان المكتمل",
         points: [
           "فرق ميدانية متخصصة تدير التركيب والتقاطعات وإغلاق الملاحظات وضبط الجودة النهائي.",
-          "يبقى مسؤول توريفا جهة المحاسبة الواحدة حتى الافتتاح والتسليم وخدمة ما بعد التنفيذ.",
+          "يقود مسؤول واحد من توريفا العمل حتى الافتتاح والتسليم وخدمة ما بعد التنفيذ.",
         ],
       },
     ],
-    ctaB2b: "اطلب كتالوج المشاريع وعرض الأسعار",
-    ctaB2c: "احجز جلسة مراجعة المخططات والعينات",
+    ctaB2b: "ناقش مشروعك",
+    ctaB2c: "أرسل مخططاتك",
     ctaB2bHref: "/projects",
     ctaB2cHref: "/contact?intent=sample",
   },
   brandRelationship: {
     eyebrow: "جزء من مجموعة تسامي",
-    title: "تعاقد مع توريفا. المجموعة تنضم عندما يحتاجها المشروع.",
+    title: "توريفا، بدعم عند الحاجة",
     body:
-      "توريفا تصمم وتنفذ المساحات والتجارب. جرافيكس هاوس وبيز موشن تنضمان فقط عندما يحتاج الموجز إلى تصور أو إطلاق. لا يلزم التعاقد مع المجموعة للتعاقد مع توريفا.",
+      "تصمم توريفا المساحات والتجارب وتنفذها. ويمكن أن تنضم Graphics House أو Bees Motion عندما يشمل الموجز التصور البصري أو دعم الإطلاق. كما يمكن التعاقد مع توريفا بصورة مستقلة.",
     flow: "الإبداع ← التنفيذ",
     groupLink: "اكتشف مجموعة تسامي",
     companies: [
@@ -456,55 +456,55 @@ const ar: LuxuryPlatformMessages = {
   },
   comparison: {
     eyebrow: "لماذا توريفا",
-    title: "تنفيذ مشتت مقابل مسؤولية واضحة",
+    title: "نموذج تنفيذ أكثر ترابطاً",
     traditionalHeader: "الطريقة التقليدية",
     turrivaHeader: "منظومة توريفا",
     rows: [
       {
-        traditional: "تشتت بين 3 أطراف: مصمم، مصنع، فني تركيب، واللوم يتنقل",
-        turriva: "فريق توريفا واحد مسؤول من المفهوم المعتمد حتى التسليم",
+        traditional: "فرق منفصلة للتصميم والتصنيع والتركيب",
+        turriva: "فريق توريفا واحد ينسّق التصميم المعتمد حتى التسليم",
       },
       {
-        traditional: "فجوة كبيرة بين صورة التصميم والمنتج الواقعي",
-        turriva: "ملفات 3D تُرسل للتصنيع مباشرة، مطابقة التصميم للواقع",
+        traditional: "فجوة بين التصور التصميمي والعمل المنفّذ",
+        turriva: "تطوير فني يربط التصميم المعتمد بالتصنيع",
       },
       {
-        traditional: "تأخير وتفاوت جودة في الورش المحلية",
+        traditional: "تفاوت في التصنيع والبرنامج وضبط الجودة",
         turriva: "تصنيع وتركيب وفق المخططات المعتمدة",
       },
       {
-        traditional: "ضمان ضعيف، من يتحمل العيب؟",
-        turriva: "ضمان محلي على المنتج والتركيب مع قطع غيار",
+        traditional: "مسؤولية غير واضحة بعد التركيب",
+        turriva: "ضمان محدد بالعقد على المنتج والتركيب مع دعم محلي",
       },
     ],
   },
   products: {
     eyebrow: "الحلول",
-    title: "تأثيث وتشطيبات معيارية للمنازل والمشاريع",
+    title: "تصميم داخلي ونجارة للمكان",
     items: [
       {
         title: "مطابخ معيارية",
-        description: "تُحدد عندما تحتاجها الغرفة. المفصلات تتبع المخططات، لا كتالوج الدار.",
+        description: "خزائن وأسطح وتجهيزات تُطوّر وفق المساحة وطريقة استخدامها والمخططات المعتمدة.",
         href: "/villas#kitchens",
       },
       {
         title: "خزائن وغرف ملابس",
-        description: "إضاءات مخفية، زجاج، توزيع هيدروليكي، تخطيط مخصص.",
+        description: "حلول تخزين مخصصة بإضاءة مدمجة وتفاصيل زجاجية وتجهيزات مناسبة للاستخدام اليومي.",
         href: "/villas#wardrobes",
       },
       {
         title: "تكسيات وأبواب",
-        description: "قشور خشب وتكسيات بديل الرخام للفلل والردهات.",
+        description: "أبواب وتكسيات معمارية بقشرة الخشب وبدائل الحجر وخامات متناسقة.",
         href: "/projects#joinery",
       },
       {
         title: "فلل ومساكن",
-        description: "رحلة تأثيث كاملة، من 3D حتى التركيب.",
+        description: "تنفيذ داخلي متكامل للمساكن الخاصة، من تطوير التصميم حتى التركيب.",
         href: "/villas",
       },
       {
         title: "مطورون وضيافة",
-        description: "تسعير بالكميات، مواعيد مخططات واضحة، لوجستيات وتسليم مرحلي.",
+        description: "حزم فنية وتوريد ولوجستيات وتسليم مرحلي للبرامج الأكبر حجماً.",
         href: "/projects",
       },
     ],
@@ -512,7 +512,7 @@ const ar: LuxuryPlatformMessages = {
   inspiration: {
     eyebrow: "إلهام",
     title: "أفكار حسب المساحة",
-    subtitle: "استكشف المطابخ والخزائن وغرف المعيشة، أو اتجاهات الأنماط حسب المنطقة، ثم احجز استشارة تصميم.",
+    subtitle: "استكشف المطابخ والخزائن ومساحات المعيشة واتجاهات تصميمية مدروسة لموجزك.",
     stylesLink: "اتجاهات الأنماط",
     items: [
       {
@@ -520,8 +520,8 @@ const ar: LuxuryPlatformMessages = {
         label: "مطبخ",
         title: "مطابخ معيارية",
         description:
-          "خزائن مخصصة وكونترتوب ومفصلات فاخرة، إظهار ثلاثي الأبعاد وتركيب ميداني عبر توريفا.",
-        cta: "اكتشف المطابخ",
+          "خزائن وأسطح وتجهيزات مختارة، تُطوّر ثلاثيّاً وتُركّب في الموقع عبر توريفا.",
+        cta: "ناقش مطبخك",
         href: "/contact?intent=design",
       },
       {
@@ -529,8 +529,8 @@ const ar: LuxuryPlatformMessages = {
         label: "خزائن",
         title: "غرف ملابس",
         description:
-          "إضاءة مدمجة ومفصلات إغلاق ناعم، لغرف الملابس والجناح الرئيسي، وفق المخططات.",
-        cta: "اكتشف الخزائن",
+          "إضاءة مدمجة وتجهيزات إغلاق هادئ ووحدات مخصصة لغرف الملابس والأجنحة الرئيسية.",
+        cta: "أرسل مخططاتك",
         href: "/villas#wardrobes",
       },
       {
@@ -538,7 +538,7 @@ const ar: LuxuryPlatformMessages = {
         label: "معيشة",
         title: "معيشة وطعام",
         description:
-          "جدران تلفزيون ورفوف ونجارة طعام بلوحات متناسقة، استكشف اتجاهات إيطالية وفرنسية ومعاصرة.",
+          "جدران وسائط ورفوف ونجارة لمساحات الطعام ضمن لوحة مواد متناسقة.",
         cta: "اتجاهات الأنماط",
         href: "/styles",
       },
@@ -547,8 +547,8 @@ const ar: LuxuryPlatformMessages = {
         label: "نوم",
         title: "غرف نوم",
         description:
-          "رؤوس سرير وطاولات جانبية وخزائن متناسقة مع مخططك ولوحة التشطيبات المعتمدة.",
-        cta: "اكتشف غرف النوم",
+          "ألواح خلفية وطاولات جانبية وخزائن تُطوّر وفق المخطط والتشطيبات المعتمدة.",
+        cta: "ناقش مساحتك",
         href: "/villas",
       },
       {
@@ -556,8 +556,8 @@ const ar: LuxuryPlatformMessages = {
         label: "حمام",
         title: "تشطيبات الحمام",
         description:
-          "مغاسل وخزائن مرآة وألواح مقاومة للرطوبة، مواصفات مناسبة للمناخ السعودي والاستخدام اليومي.",
-        cta: "اكتشف الحمامات",
+          "وحدات مغاسل وخزائن مرايا وخامات مناسبة للرطوبة والاستخدام اليومي.",
+        cta: "أرسل مخططاتك",
         href: "/contact",
       },
       {
@@ -565,115 +565,115 @@ const ar: LuxuryPlatformMessages = {
         label: "ضيافة",
         title: "فنادق ومطاعم",
         description:
-          "برامج جماعية للردهات والأجنحة والمطاعم، تسعير بالكميات وتسليم مرحلي وتنسيق ميداني.",
-        cta: "اكتشف الضيافة",
+          "برامج منسّقة للردهات والأجنحة والمطاعم، مع تسليم مرحلي وتنسيق ميداني.",
+        cta: "ناقش مشروعك",
         href: "/projects",
       },
     ],
   },
   waysOfLiving: {
-    title: "طرق مختلفة للعيش",
+    title: "مصمم للحياة اليومية",
     subtitle:
-      "مطابخ وخزائن وحمامات وتأثيث المنزل بالكامل، إظهار ثلاثي الأبعاد وتسليم ميداني في أنحاء المملكة.",
+      "مطابخ وخزائن وحمامات ونجارة متكاملة للمنزل، تُطوّر ثلاثيّاً وتُنفّذ في الموقع.",
   },
   beforeAfter: {
     eyebrow: "عرض مشروع",
-    title: "توجه إبداعي مُعدّ للتسليم الميداني",
-    subtitleLine1: "إظهار ثلاثي الأبعاد، نجارة داخلية، وخشبيات، نماذج لمشاريع مطورين.",
-    subtitleLine2: "مثال محدد على عمل إبداعي نفذته شركتنا الشقيقة Graphics House.",
+    title: "توجه بصري لنتيجة قابلة للتنفيذ",
+    subtitleLine1: "تصور معماري ونجارة داخلية وأعمال خشبية لبرامج المطورين.",
+    subtitleLine2: "أنتجت شركتنا الشقيقة Graphics House هذا العمل الإبداعي الخاص بالمشروع.",
     projectName: "Rafal Pavilions",
     projectCredit: "إظهار وتصميم داخلي · Graphics House",
-    cta: "اعرف المزيد",
+    cta: "شاهد المشروع",
   },
   faq: {
     eyebrow: "أسئلة شائعة",
-    title: "ما يتكرر سؤاله",
+    title: "أسئلة شائعة",
     items: [
       {
         q: "ماذا تقدم توريفا من البداية للنهاية؟",
-        a: "تطوير فني وتنسيق تصنيع وتوريد وامتثال جمركي وتركيب وتسليم وضمان محلي تحت مسؤولية فريق توريفا واحد.",
+        a: "ننسّق التطوير الفني والتصنيع والتوريد ووثائق الامتثال والتركيب والتسليم وخدمة ما بعد التنفيذ المحددة بالعقد عبر فريق توريفا واحد.",
       },
       {
         q: "هل تخدمون المطورين وأصحاب الفلل؟",
-        a: "نعم. صفحة المشاريع والمعارض للمطورين، وصفحة التنفيذ السكني للملاك. العمود نفسه في التصنيع والتنفيذ.",
+        a: "نعم. نعمل مع المطورين وفرق الضيافة وملاك المساكن الخاصة، مع تكييف المسار الفني والتنفيذي وفق حجم كل مشروع.",
       },
       {
         q: "هل يوجد ضمان؟",
-        a: "الضمان يتبع العقد على العمل الذي نسلّمه. درجة اللوح والمفصلات تتبع المواصفات. لا ننشر شهادة مصنع لم نصدرها.",
+        a: "نعم، عندما ينص عليه العقد الموقّع. وتُحدد التغطية وفق نطاق المنتجات والتركيب، فيما تُعتمد الخامات والتجهيزات ضمن المواصفات.",
       },
       {
         q: "هل يمكن طلب عينات فيزيائية؟",
-        a: "نعم، اطلب حقيبة عينات وجلسة مراجعة مخططات. نرسل تشطيبات ومفصلات إلى موقعك.",
+        a: "نعم. بعد فهم النطاق، يمكننا تجهيز عينات مناسبة من التشطيبات والتجهيزات لمراجعتها في مكتبك أو موقع المشروع.",
       },
       {
         q: "كيف أبدأ؟",
-        a: "أرسل المخططات أو صف المكان. نرد لمناقشة النطاق. التكلفة تتبع الكميات بعد المراجعة.",
+        a: "أرسل المخططات أو موجزاً واضحاً للمشروع. نراجع المتطلبات ثم نرتب نقاشاً حول النطاق والبرنامج والخطوات التالية.",
       },
     ],
   },
   partners: {
-    title: "كيف يُحدد التصنيع",
-    subtitle: "لا ننشر رقم دقة مصنع، ولا نعرض علامة آلة أو علامة مطابقة كشهادة باسم توريفا.",
+    title: "مواصفات لكل مشروع",
+    subtitle: "تُختار أساليب التصنيع والتجهيزات ووثائق المطابقة وفق المواصفات المعتمدة لكل مشروع.",
     groups: [
       {
         label: "الإنتاج",
-        description: "يُصنع وفق المخططات المعتمدة، ومع الورشة التي تتطلبها المواصفات.",
-        items: ["ليس خط إنتاج مملوكاً لتوريفا"],
+        description: "يتم الإنتاج وفق المخططات المعتمدة عبر شركاء تصنيع مناسبين للمواصفات.",
+        items: ["اختيار مناسب للمشروع"],
       },
       {
         label: "المفصلات",
-        description: "تتبع المواصفات. ليست كتالوج دار.",
+        description: "تُختار المفصلات والمسارات والتجهيزات لتلبي متطلبات الأداء والتصميم المتفق عليها.",
         items: ["تُحدد لكل مشروع"],
       },
       {
         label: "المطابقة",
-        description: "الاستيراد وعلامات المنتج تبقى لدى المورّد والمشروع.",
-        items: ["ليست شهادة باسم توريفا"],
+        description: "يقدم المورّد المعني وثائق المنتج والاستيراد الخاصة بالمشروع.",
+        items: ["موثقة من المصدر"],
       },
     ],
   },
   sampleKit: {
-    title: "العينات تأتي بعد وضوح النطاق.",
+    title: "راجع الخامات بوضوح",
     subtitle:
-      "نرسل مراجع التشطيب بعد وضوح النطاق. ليست عرض سعر، وليست شهادة مصنع.",
+      "بعد وضوح النطاق، نجهز مراجع مناسبة للتشطيبات والتجهيزات لمراجعة مدروسة.",
     button: "أرسل المخططات",
   },
   valueOffers: {
-    eyebrow: "وعد توريفا",
-    title: "ما الذي يقدمه لك فريق توريفا",
+    eyebrow: "لماذا توريفا",
+    title: "مسار مدروس نحو التسليم",
     subtitle:
-      "تصميم وتنفيذ المساحات والتجارب. التنفيذ جزء من المنتج، لا الهوية كلها.",
+      "تصميم مكاني وتجربة وتنفيذ، تتكامل حول موجز واضح.",
     items: [
       {
         icon: "warranty",
-        title: "ضمان موثوق",
+        title: "خدمة محددة بعد التسليم",
         points: [
-          "ضمان محلي على المنتج والتركيب مع توفير قطع الغيار.",
-          "متابعة ما بعد التسليم وإغلاق ملاحظات قبل الاستلام.",
+          "تغطية المنتجات والتركيب محددة في عقد المشروع.",
+          "إغلاق منظم للملاحظات وتسليم ومتابعة محلية.",
         ],
       },
       {
         icon: "quality",
-        title: "جودة فائقة",
+        title: "جودة محددة بالمواصفات",
         points: [
           "تصنيع وفق المخططات المعتمدة، مع اعتماد العينات قبل الإنتاج.",
-          "درجة اللوح والمفصلات تتبع المواصفات. ليست علامة مصنع باسم توريفا.",
+          "تُختار درجات الألواح والتشطيبات والتجهيزات وفق المواصفات المعتمدة.",
         ],
       },
       {
         icon: "design",
-        title: "تصميم منتقى بعناية",
+        title: "تصميم قابل للتنفيذ",
         points: [
-          "إظهار ثلاثي الأبعاد لاتفاق الغرفة قبل التصنيع، لا كشهادة مصنع.",
-          "تخصيص كامل حسب مخططك قبل أي عملية قطع.",
+          "تساعد المراجعة ثلاثية الأبعاد على تنسيق المساحة والخامات والتفاصيل قبل التصنيع.",
+          "تُطوّر الحلول وفق المخطط قبل بدء الإنتاج.",
         ],
       },
       {
         icon: "service",
-        title: "خدمة شاملة",
+        title: "تنفيذ منسّق",
         points: [
-          "رفع مساحي وتنسيق توريد وامتثال وتركيب تحت مسؤول توريفا واحد.",
-          "التوريد والتسليم المرحلي يتبعان البرنامج. علامات المطابقة تبقى لدى المورّد.",
+          "رفع مساحي وتنسيق توريد ووثائق امتثال وتركيب تحت مسؤول توريفا واحد.",
+          "لوجستيات مرحلية للفلل والمجمعات وبرامج المطورين.",
         ],
       },
     ],
