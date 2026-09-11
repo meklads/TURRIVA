@@ -22,6 +22,7 @@ type Props = {
   initialProjectType?: ExperienceProjectType;
   initialNeeds?: readonly ExperienceNeed[];
   unitTypes?: readonly UnitTypeOption[];
+  choiceLegend?: string;
   drawings?: { label: string; yes: string; no: string };
 };
 
@@ -39,6 +40,7 @@ export function LuxuryExperienceBriefForm({
   initialProjectType = "residential",
   initialNeeds = [],
   unitTypes,
+  choiceLegend,
   drawings,
 }: Props) {
   const copy = getExperienceCopy(locale).form;
@@ -164,7 +166,7 @@ export function LuxuryExperienceBriefForm({
 
       {unitTypes && unitTypes.length > 0 ? (
         <fieldset className="mt-6">
-          <legend className="lux-funnel__legend">{locale === "ar" ? "نوع الوحدة" : "Unit type"}</legend>
+          <legend className="lux-funnel__legend">{choiceLegend ?? (locale === "ar" ? "نوع الوحدة" : "Unit type")}</legend>
           <div className="lux-funnel__grid lux-funnel__grid--compact">
             {unitTypes.map((item) => (
               <button

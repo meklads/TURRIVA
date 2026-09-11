@@ -25,6 +25,7 @@ export const LOCALIZED_MARKETING_PREFIXES = [
   "/developers",
   "/real-estate-experience",
   "/show-unit",
+  "/design-build",
   "/launch",
   "/markets",
 ] as const;

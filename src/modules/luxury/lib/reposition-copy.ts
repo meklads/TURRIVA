@@ -7,6 +7,7 @@ export type RepositionCopy = {
     title: string;
     body: string;
     notes: readonly string[];
+    pathCta: string;
   };
   developers: {
     eyebrow: string;
@@ -40,9 +41,10 @@ const en: RepositionCopy = {
     body: "Turriva develops a space and delivers it: design, technical detailing, fabrication, installation, and handover. A finished room or sales environment is the work. Screens and campaigns can support it; they are not the product.",
     notes: [
       "Built for developers and hospitality operators, not catalogue decor.",
-      "You can start from a concept, or hand us drawings and we execute.",
+      "A new space can start from an idea, or from drawings you already have.",
       "Graphics House and Bees Motion join only when the project needs visualization or launch.",
     ],
+    pathCta: "From idea to a finished space",
   },
   developers: {
     eyebrow: "For developers",
@@ -103,9 +105,10 @@ const ar: RepositionCopy = {
     body: "توريفا تطوّر الفراغ وتسلّمه: تصميم، تفصيل فني، تصنيع، تركيب، وتسليم. المنتج مكان مكتمل. الشاشات والحملات قد تخدمه، لكنها ليست المنتج.",
     notes: [
       "للمطورين ومشغّلي الضيافة، لا لكتالوج الأثاث.",
-      "يمكن أن نبدأ من فكرة، أو ننفّذ مخططاتكم كما هي.",
+      "المساحة الجديدة يمكن أن تبدأ من فكرة، أو من مخططات لديكم.",
       "جرافيكس هاوس وبيزموشن يدخلان فقط عندما يحتاج المشروع تصورًا أو إطلاقًا.",
     ],
+    pathCta: "من الفكرة إلى مساحة جاهزة",
   },
   developers: {
     eyebrow: "للمطورين",
