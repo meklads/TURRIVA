@@ -25,8 +25,8 @@ export const LAUNCH_STEPS: readonly LaunchStep[] = [
     index: "02",
     titleEn: "Physical execution",
     titleAr: "التنفيذ المادي",
-    bodyEn: "Joinery, exhibition structures, and fit-out delivered under one Turriva lead — from shop drawings to opening-ready handover.",
-    bodyAr: "نجارة وهياكل معرض وتشطيب تحت قائد توريفا واحد — من الرسومات التنفيذية إلى التسليم الجاهز للافتتاح.",
+    bodyEn: "Joinery, exhibition structures, and fit-out under one Turriva lead, from shop drawings to handover ready for opening.",
+    bodyAr: "نجارة وهياكل معرض وتشطيب تحت قائد توريفا واحد، من الرسومات التنفيذية إلى التسليم الجاهز للافتتاح.",
     ownerEn: "Turriva",
     ownerAr: "توريفا",
   },
@@ -44,7 +44,7 @@ export const LAUNCH_STEPS: readonly LaunchStep[] = [
     titleEn: "Opening day",
     titleAr: "يوم الافتتاح",
     bodyEn: "Documented QC, snagging closure, and a single accountable programme so the space is ready when visitors arrive.",
-    bodyAr: "توثيق جودة وإغلاق ملاحظات وبرنامج ميداني واحد مسؤول — المساحة جاهزة عند وصول الزوار.",
+    bodyAr: "توثيق جودة وإغلاق ملاحظات وبرنامج ميداني واحد، حتى تكون المساحة جاهزة عند وصول الزوار.",
     ownerEn: "Turriva lead",
     ownerAr: "قائد توريفا",
   },
@@ -56,26 +56,26 @@ export function getLaunchPageCopy(locale: Locale) {
     eyebrow: isAr ? "مسار الإطلاق" : "Launch playbook",
     title: isAr ? "من الفكرة البصرية إلى التسليم المادي" : "From visual launch to physical delivery",
     intro: isAr
-      ? "عندما يحتاج المطور إثباتين معاً — سرد للمستثمرين وبيئة مبيعات يمشي فيها العميل — تربط مجموعة تسامي التخصصات دون تشتيت المسؤولية."
-      : "When a developer needs two proofs at once — investor storytelling and a walkable sales environment — Tasami Group connects the disciplines without splitting accountability.",
+      ? "عندما يحتاج المطور إثباتين معاً، سرداً للمستثمرين وبيئة مبيعات يمشي فيها العميل، تربط مجموعة تسامي التخصصات دون تشتيت المسؤولية."
+      : "When a developer needs two proofs at once, investor storytelling and a walkable sales environment, Tasami Group connects the disciplines without splitting accountability.",
     stepsEyebrow: isAr ? "المراحل" : "Stages",
     stepsTitle: isAr ? "أربع مراحل. مسؤولية واضحة." : "Four stages. Clear ownership.",
     whyTitle: isAr ? "لماذا هذا المسار؟" : "Why this path?",
     whyPoints: isAr
       ? [
-          "لا تعارض بين CGI والتنفيذ — نفس اللغة البصرية من الاستوديو إلى الموقع",
+          "لا تعارض بين التصوير والتنفيذ. اللغة البصرية واحدة من الاستوديو إلى الموقع",
           "قائد توريفا واحد للطبقة المادية حتى يوم الافتتاح",
           "إمكانية إضافة التسويق عند الحاجة دون إعادة بناء الفريق",
         ]
       : [
-          "No clash between CGI and execution — one visual language from studio to site",
+          "No clash between the visual work and execution. One visual language from studio to site",
           "One Turriva lead for the physical layer through opening day",
           "Marketing can join when needed without rebuilding the team",
         ],
     proofTitle: isAr ? "إثبات من المشاريع" : "Proof from projects",
     proofBody: isAr
-      ? "أجنحة الراف في الدرعية ومعرض الإنسانية في جدة يظهران كنموذج للمجموعة: العمل البصري من جرافيكس هاوس، والطبقة المكانية خبرة فريق تنفيذ — وليست عقودًا تاريخية باسم توريفا."
-      : "Rafal Pavilions in Diriyah and the Humanity Exhibition in Jeddah are shown as group examples: visual work from Graphics House, spatial layer as selected team experience — not historical Turriva contracts.",
+      ? "أجنحة الراف في الدرعية ومعرض الإنسانية في جدة يظهران كنموذج للمجموعة: العمل البصري من جرافيكس هاوس، والطبقة المكانية خبرة فريق تنفيذ، وليست عقوداً تاريخية باسم توريفا."
+      : "Rafal Pavilions in Diriyah and the Humanity Exhibition in Jeddah are shown as group examples: visual work from Graphics House, and the spatial layer as selected team experience, not historical Turriva contracts.",
     ctaBrief: isAr ? "قدّم ملخص إطلاق" : "Submit a launch brief",
     ctaWork: isAr ? "شاهد دراسات الحالة" : "View case studies",
     groupNote: isAr

@@ -34,13 +34,13 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     locationEn: "Jeddah Hilton, Saudi Arabia",
     locationAr: "فندق Hilton جدة، السعودية",
     summaryEn:
-      "Spatial execution for the League headquarters experience — interior fit-out, smart maquette integration, and interactive zones delivered as one field programme.",
+      "Spatial execution for the League headquarters experience: interior fit-out, model integration, and interactive zones delivered as one field programme.",
     summaryAr:
-      "تنفيذ مكاني لتجربة مقر الرابطة — تشطيب داخلي، تكامل الماكيت الذكي، ومناطق تفاعلية ضمن برنامج ميداني واحد.",
+      "تنفيذ مكاني لتجربة مقر الرابطة: تشطيب داخلي، ودمج المجسم، ومناطق تفاعلية ضمن برنامج ميداني واحد.",
     bodyEn:
-      "Selected team experience — not a historical Turriva-branded contract. A physical exhibition layer for an institutional headquarters programme: interior fit-out, exhibition décor, and installation of interactive touchpoints developed with Graphics House. Visualization and software sat with sister companies; the spatial layer was field delivery.",
+      "Selected team experience. Not a historical Turriva-branded contract. A physical exhibition layer for an institutional headquarters programme: interior fit-out, exhibition décor, and installation of interactive touchpoints developed with Graphics House. Visualization and software sat with sister companies; the spatial layer was field delivery.",
     bodyAr:
-      "خبرة فريق مختارة — ليست عقدًا تاريخيًا باسم توريفا. طبقة مكانية لمعرض مؤسسي في مقر: تشطيب داخلي وديكور معرض وتركيب نقاط تفاعل طُوّرت مع جرافيكس هاوس. التصور والبرمجيات لدى الشركات الشقيقة، والطبقة المكانية تسليم ميداني.",
+      "خبرة فريق مختارة. ليست عقدًا تاريخيًا باسم توريفا. طبقة مكانية لمعرض مؤسسي في مقر: تشطيب داخلي وديكور معرض وتركيب نقاط تفاعل طُوّرت مع جرافيكس هاوس. التصور والبرمجيات لدى الشركات الشقيقة، والطبقة المكانية تسليم ميداني.",
     servicesEn: ["Interior fit-out", "Exhibition execution", "Installation", "Handover"],
     servicesAr: ["تشطيب داخلي", "تنفيذ معارض", "تركيب", "تسليم"],
     metrics: [
@@ -66,13 +66,13 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     locationEn: "Diriyah, Riyadh",
     locationAr: "الدرعية، الرياض",
     summaryEn:
-      "Exhibition pavilions and sales environment execution — from approved 3D through fabrication, installation, and opening-ready handover.",
+      "Exhibition pavilions and a sales environment, from approved drawings through fabrication, installation, and handover ready for opening.",
     summaryAr:
-      "أجنحة معرض وبيئة مبيعات — من التصميم ثلاثي الأبعاد المعتمد إلى التصنيع والتركيب والتسليم الجاهز للافتتاح.",
+      "أجنحة معرض وبيئة مبيعات، من التصميم المعتمد إلى التصنيع والتركيب والتسليم الجاهز للافتتاح.",
     bodyEn:
-      "Selected team experience — not a historical Turriva-branded contract. Physical sales pavilions in Diriyah: modular joinery, exhibition structures, and installation aligned with Graphics House launch assets. Graphics House created the visual work; the field layer was spatial delivery.",
+      "Selected team experience. Not a historical Turriva-branded contract. Physical sales pavilions in Diriyah: modular joinery, exhibition structures, and installation aligned with Graphics House launch assets. Graphics House created the visual work; the field layer was spatial delivery.",
     bodyAr:
-      "خبرة فريق مختارة — ليست عقدًا تاريخيًا باسم توريفا. أجنحة مبيعات في الدرعية: نجارة معيارية وهياكل معرض وتركيب متسق مع أصول الإطلاق من جرافيكس هاوس. جرافيكس هاوس صنعت العمل البصري، والطبقة الميدانية تسليم مكاني.",
+      "خبرة فريق مختارة. ليست عقدًا تاريخيًا باسم توريفا. أجنحة مبيعات في الدرعية: نجارة معيارية وهياكل معرض وتركيب متسق مع أصول الإطلاق من جرافيكس هاوس. جرافيكس هاوس صنعت العمل البصري، والطبقة الميدانية تسليم مكاني.",
     servicesEn: ["Exhibition execution", "Fabrication", "Installation"],
     servicesAr: ["تنفيذ معارض", "تصنيع", "تركيب"],
     metrics: [
@@ -99,13 +99,13 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     locationEn: "Jeddah, Saudi Arabia",
     locationAr: "جدة، السعودية",
     summaryEn:
-      "A typical residential scope — modular kitchen from samples through fabrication and installation. Not a named Turriva contract listing.",
+      "A typical residential scope: a modular kitchen from samples through fabrication and installation. Not a named Turriva contract listing.",
     summaryAr:
-      "نطاق سكني معتاد — مطبخ معياري من العينات إلى التصنيع والتركيب. ليس عقدًا مسمى باسم توريفا.",
+      "نطاق سكني معتاد: مطبخ معياري من العينات إلى التصنيع والتركيب. ليس عقدًا مسمى باسم توريفا.",
     bodyEn:
-      "Selected team experience — a private villa kitchen in north Jeddah: samples agreed, then fabrication and installation. Shown as a residential scope type, not as a published Turriva contract or a factory-tolerance claim.",
+      "Selected team experience: a private villa kitchen in north Jeddah. Samples are agreed, then fabrication and installation follow. Shown as a residential scope, not as a published Turriva contract.",
     bodyAr:
-      "خبرة فريق مختارة — مطبخ فيلا خاصة في شمال جدة: عينات تُعتمد ثم تصنيع وتركيب. يُعرض كنطاق سكني، لا كعقد منشور باسم توريفا ولا كادعاء دقة مصنع.",
+      "خبرة فريق مختارة: مطبخ فيلا خاصة في شمال جدة. تُعتمد العينات ثم يأتي التصنيع والتركيب. يُعرض كنطاق سكني، لا كعقد منشور باسم توريفا.",
     servicesEn: ["Modular kitchens", "Sampling", "Installation", "Warranty"],
     servicesAr: ["مطابخ معيارية", "عينات", "تركيب", "ضمان"],
     metrics: [
@@ -131,13 +131,13 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     locationEn: "Makkah, Saudi Arabia",
     locationAr: "مكة المكرمة، السعودية",
     summaryEn:
-      "A hospitality fit-out scope — batch joinery and wet-area finishes for a Makkah programme. Unit counts are not published as a Turriva figure.",
+      "A hospitality fit-out scope: batch joinery and wet-area finishes for a Makkah programme. Unit counts are not published as a Turriva figure.",
     summaryAr:
-      "نطاق تشطيب ضيافة — نجارة على دفعات وتشطيب مناطق رطبة لبرنامج في مكة. أعداد الوحدات لا تُنشر كرقم لتوريفا.",
+      "نطاق تشطيب ضيافة: نجارة على دفعات وتشطيب مناطق رطبة لبرنامج في مكة. أعداد الوحدات لا تُنشر كرقم لتوريفا.",
     bodyEn:
-      "Selected team experience — hospitality joinery and phased installation in Makkah, including wet-area finishes and handover by floor. Shown as a scope type. No unit count is claimed as a Turriva contract figure.",
+      "Selected team experience: hospitality joinery and phased installation in Makkah, including wet-area finishes and handover by floor. Shown as a scope type. No unit count is claimed as a Turriva contract figure.",
     bodyAr:
-      "خبرة فريق مختارة — نجارة ضيافة وتركيب مرحلي في مكة، بما في ذلك تشطيب المناطق الرطبة والتسليم حسب الطابق. يُعرض كنطاق. لا يُدّعى عدد وحدات كرقم عقد لتوريفا.",
+      "خبرة فريق مختارة: نجارة ضيافة وتركيب مرحلي في مكة، بما في ذلك تشطيب المناطق الرطبة والتسليم حسب الطابق. يُعرض كنطاق. لا يُدّعى عدد وحدات كرقم عقد لتوريفا.",
     servicesEn: ["Hospitality fit-out", "Joinery batching", "Snagging"],
     servicesAr: ["تشطيب ضيافة", "نجارة على دفعات", "إغلاق ملاحظات"],
     metrics: [
@@ -157,13 +157,13 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     locationEn: "Western Region, Saudi Arabia",
     locationAr: "المنطقة الغربية، السعودية",
     summaryEn:
-      "Repeatable modular joinery packages for a multi-unit developer programme — specification, fabrication, and phased delivery.",
+      "Repeatable modular joinery packages for a multi-unit developer programme: specification, fabrication, and phased delivery.",
     summaryAr:
-      "حزم نجارة معيارية قابلة للتكرار لمشروع مطور متعدد الوحدات — مواصفات وتصنيع وتسليم مرحلي.",
+      "حزم نجارة معيارية قابلة للتكرار لمشروع مطور متعدد الوحدات: مواصفات وتصنيع وتسليم مرحلي.",
     bodyEn:
-      "Selected team experience — repeatable joinery modules for a multi-unit developer programme: kitchens, wardrobes, and common-area elements from approved drawings, with checkpoints and phased site delivery. A scope type, not a named tower contract.",
+      "Selected team experience: repeatable joinery modules for a multi-unit developer programme: kitchens, wardrobes, and common-area elements from approved drawings, with checkpoints and phased site delivery. A scope type, not a named tower contract.",
     bodyAr:
-      "خبرة فريق مختارة — وحدات نجارة قابلة للتكرار لبرنامج مطور متعدد الوحدات: مطابخ وخزائن وعناصر مناطق مشتركة من رسومات معتمدة، مع نقاط فحص وتسليم ميداني مرحلي. نطاق عمل، لا عقد برج مسمى.",
+      "خبرة فريق مختارة: وحدات نجارة قابلة للتكرار لبرنامج مطور متعدد الوحدات: مطابخ وخزائن وعناصر مناطق مشتركة من رسومات معتمدة، مع نقاط فحص وتسليم ميداني مرحلي. نطاق عمل، لا عقد برج مسمى.",
     servicesEn: ["B2B joinery", "Modular systems", "Phased delivery"],
     servicesAr: ["نجارة B2B", "أنظمة معيارية", "تسليم مرحلي"],
     metrics: [

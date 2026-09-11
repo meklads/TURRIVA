@@ -90,7 +90,7 @@ export async function LuxuryFooter() {
 
       <div className="lux-footer-float" aria-label={t.footer.contact}>
         <TrackedWhatsAppLink
-          message={locale === "ar" ? "مرحباً توريفا — أود مناقشة مشروع تنفيذ." : "Hello Turriva — I would like to discuss an execution project."}
+          message={locale === "ar" ? "مرحباً توريفا، أود مناقشة مشروع تنفيذ." : "Hello Turriva, I would like to discuss an execution project."}
           source="footer_float"
           className="lux-footer-float-btn lux-footer-float-btn--wa"
         >
@@ -190,7 +190,7 @@ export async function LuxuryFooter() {
                 <span dir="ltr">{t.footer.phone}</span>
               </a>
               <TrackedWhatsAppLink
-                message={locale === "ar" ? "مرحباً توريفا — أود مناقشة مشروع تنفيذ." : "Hello Turriva — I would like to discuss an execution project."}
+                message={locale === "ar" ? "مرحباً توريفا، أود مناقشة مشروع تنفيذ." : "Hello Turriva, I would like to discuss an execution project."}
                 source="footer_contact"
                 className="lux-footer-contact-item"
               >

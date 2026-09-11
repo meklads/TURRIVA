@@ -26,12 +26,12 @@ export const INSIGHT_ARTICLES: readonly InsightArticle[] = [
     bodyEn: [
       "Most fit-out failures happen in the handoff between design intent and site reality. Turriva closes that gap with a single execution programme: survey, shop drawings, material approval, factory production, logistics, installation, snagging, and documented handover.",
       "For villas, the journey often starts after a 3D session or imported plans. For developer and exhibition work, Graphics House may supply cinematic assets and smart maquette layers while Turriva owns everything that must be built, installed, and warrantied on site.",
-      "Sampling is not cosmetic — physical finishes and hardware references are signed off before procurement. Manufacturing runs to approved files; site teams install against laser-verified layouts. One Turriva lead remains accountable through opening day.",
+      "Sampling is not cosmetic. Physical finishes and hardware are signed off before procurement. Manufacturing follows the approved files, and site teams install against the approved layouts. One Turriva lead remains accountable through opening day.",
     ],
     bodyAr: [
       "تفشل كثير من مشاريع التشطيب في فجوة التسليم بين نية التصميم وواقع الموقع. تغلق توريفا هذه الفجوة ببرنامج تنفيذ واحد: معاينة، رسومات تنفيذية، اعتماد مواد، إنتاج مصنع، لوجستيات، تركيب، إغلاق ملاحظات، وتسليم موثق.",
       "في الفلل يبدأ المسار غالباً بعد جلسة 3D أو مخططات مستوردة. في مشاريع المطورين والمعارض قد تزوّد Graphics House أصولاً سينمائية وطبقات ماكيت ذكي بينما تتولى توريفا كل ما يُبنى ويُركّب ويُضمَن في الموقع.",
-      "العينات ليست شكلية — تُعتمد التشطيبات والـ hardware مادياً قبل الشراء. التصنيع وفق ملفات معتمدة؛ فرق الموقع تركّب وفق تخطيطات verified. قائد توريفا واحد مسؤول حتى يوم الافتتاح.",
+      "العينات ليست شكلية. تُعتمد التشطيبات والمفصلات مادياً قبل الشراء. التصنيع وفق ملفات معتمدة، وفرق الموقع تركّب وفق المخططات المعتمدة. قائد توريفا واحد مسؤول حتى يوم الافتتاح.",
     ],
   },
   {
@@ -44,12 +44,12 @@ export const INSIGHT_ARTICLES: readonly InsightArticle[] = [
     summaryAr: "كيف يكمل تصور Graphics House والتنفيذ الميداني لتوريفا في برامج المطورين.",
     readMinutes: 5,
     bodyEn: [
-      "Developer launches in Saudi Arabia often need two proofs at once: cinematic storytelling for investors and a physical sales environment buyers can walk through. Tasami Group splits these disciplines cleanly — Graphics House for visual launch systems, Turriva for spatial execution.",
+      "Developer launches in Saudi Arabia often need two proofs at once: cinematic storytelling for investors, and a physical sales environment buyers can walk through. Graphics House handles the visual launch. Turriva handles the space.",
       "On programmes such as Rafal Pavilions or the Humanity Exhibition, creative direction and CGI may come from Graphics House. Those pieces are shown as selected team experience, not as historical Turriva-branded contracts.",
       "The benefit for clients is coordination: aligned visual language from film to finished space, fewer vendor handoffs, and one group routing when scope spans creative and physical layers.",
     ],
     bodyAr: [
-      "إطلاقات المطورين في السعودية غالباً تحتاج إثباتين: سرد سينمائي للمستثمرين وبيئة مبيعات مادية. تقسّم مجموعة تسامي التخصصات — Graphics House لأنظمة الإطلاق البصرية، توريفا للتنفيذ المكاني.",
+      "إطلاقات المطورين في السعودية غالباً تحتاج إثباتين: سرداً بصرياً للمستثمرين، وبيئة مبيعات يمكن المشي فيها. جرافيكس هاوس تتولى الإطلاق البصري، وتوريفا تتولى المكان.",
       "في برامج مثل أجنحة الراف أو معرض الإنسانية، قد يأتي التوجه الإبداعي من Graphics House. تُعرض هذه القطع كخبرة فريق مختارة، لا كعقود تاريخية باسم توريفا.",
       "الفائدة للعميل: لغة بصرية متسقة من الفيلم إلى الفراغ المنجز، تقليل تسليمات الموردين، ومجموعة واحدة تنسّق عندما يمتد النطاق للطبقتين.",
     ],
@@ -65,12 +65,12 @@ export const INSIGHT_ARTICLES: readonly InsightArticle[] = [
     readMinutes: 7,
     bodyEn: [
       "Gulf villas demand kitchens that handle humidity, heavy daily use, and long warranty expectations. Turriva specifies moisture-resistant carcasses, PET and lacquer finishes tested for local conditions, and soft-close hardware from tier-one partners.",
-      "Samples are agreed before fabrication, which reduces site surprises. Layouts are approved, materials are checked on site, then modules are installed — without publishing a factory-tolerance figure we have not verified.",
+      "Samples are agreed before fabrication, which reduces site surprises. Layouts are approved, materials are checked on site, then modules are installed. We do not publish a factory-tolerance figure we have not verified.",
       "For hospitality batches, wet-zone finishes and acoustic treatment add operational durability. The same model can scale with phased handover. Unit counts are not published until a contract figure is confirmed.",
     ],
     bodyAr: [
       "فلل الخليج تحتاج مطابخ تتحمل الرطوبة والاستخدام اليومي وضمانات طويلة. تحدد توريفا هياكل مقاومة للرطوبة وتشطيبات PET وlacquer مختبرة وhardware soft-close من شركاء من الدرجة الأولى.",
-      "اعتماد العينات قبل التصنيع يقلل مفاجآت الموقع. تُعتمد المخططات وتُراجع الخامات في الموقع ثم تُركّب الوحدات — دون نشر رقم دقة مصنع لم يُتحقق منه.",
+      "اعتماد العينات قبل التصنيع يقلل مفاجآت الموقع. تُعتمد المخططات وتُراجع الخامات في الموقع ثم تُركّب الوحدات. ولا ننشر رقم دقة مصنع لم يُتحقق منه.",
       "في دفعات الضيافة، تشطيب المناطق الرطبة والمعالجة الصوتية يضيفان متانة تشغيلية. النموذج نفسه يمكن أن يتوسع بتسليم مرحلي. أعداد الوحدات لا تُنشر قبل تأكيد رقم العقد.",
     ],
   },
@@ -84,12 +84,12 @@ export const INSIGHT_ARTICLES: readonly InsightArticle[] = [
     summaryAr: "كيف يحمي الوصول المهني الموثّق وثائق المشاريع السرية مع إبقاء النماذج العامة متاحة.",
     readMinutes: 4,
     bodyEn: [
-      "Turriva publishes selected project highlights on Our work for public discovery. The full 2026 folio PDF — with deeper programme documentation — is available only on the Portfolio page after company email verification.",
+      "Turriva publishes selected project highlights on Our work. The full 2026 folio, with deeper programme documentation, is available only on the Portfolio page after company email verification.",
       "Work emails are validated against business domains. Personal providers such as Gmail, Hotmail, and iCloud are rejected so folio access stays aligned with architects, developers, contractors, and procurement teams evaluating fit-out partners.",
       "After verification, a secure session opens the in-browser viewer with download and full-screen options. Access events are logged so Turriva can follow up on relevant B2B opportunities without exposing the PDF to open indexing.",
     ],
     bodyAr: [
-      "تنشر توريفا نماذج مشاريع مختارة في صفحة أعمالنا للاكتشاف العام. ملف PDF الكامل لفوليو 2026 — مع توثيق أعمق للبرامج — متاح فقط في صفحة البورتفوليو بعد التحقق من البريد الوظيفي.",
+      "تنشر توريفا نماذج مشاريع مختارة في صفحة أعمالنا. ملف 2026 الكامل، مع توثيق أعمق للبرامج، متاح فقط في صفحة الأعمال بعد التحقق من البريد الوظيفي.",
       "يُتحقق من البريد مقابل نطاقات الشركات. لا نقبل مزودي البريد الشخصي مثل Gmail وHotmail وiCloud حتى يبقى الوصول موجهاً للمهندسين والمطورين والمقاولين وفرق المشتريات.",
       "بعد التحقق، تفتح جلسة آمنة العارض داخل المتصفح مع التحميل وملء الشاشة. تُسجّل طلبات الوصول لمتابعة فرص B2B دون تعريض PDF للفهرسة العامة.",
     ],

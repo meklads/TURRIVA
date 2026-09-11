@@ -310,7 +310,7 @@ const en: LuxuryMessages = {
     eyebrow: "A Tasami Group company · Saudi Arabia",
     title: "From concept to physical reality.",
     subtitle:
-      "Turriva designs and delivers finished spaces for developers and serious commercial work — sales galleries, show villas, hospitality, and fit-out. Not a furniture shop. Not a software company.",
+      "Turriva designs and delivers finished spaces for developers and serious commercial work: sales galleries, show villas, hospitality, and fit-out. Not a furniture shop. Not a software company.",
     servicesLine: "Spatial design · Technical detailing · Fabrication · Installation · Sales environments",
     tags: ["Spatial design", "Technical detailing", "Fabrication", "Installation", "Sales environments"],
     ctaPrimary: "Discuss your project",
@@ -321,7 +321,7 @@ const en: LuxuryMessages = {
     eyebrow: "How we work",
     title: "Design that reads the room, execution that respects your name",
     body:
-      "Trust in decor is earned with real materials and believable spaces. We bring that standard to Gulf homes and businesses: contemporary lines, warm hospitality, and details that suit majlis life as well as modern living — one team from samples to site handover, with clear updates at every stage.",
+      "Trust in interiors is earned with real materials and spaces you can believe. We bring that standard to Gulf homes and businesses: contemporary lines, warm hospitality, and details that suit majlis life as well as daily living. One team stays with the work from samples to handover, with clear updates at every stage.",
   },
   stats: {
     items: [
@@ -422,7 +422,7 @@ const en: LuxuryMessages = {
     eyebrow: "Typical scopes",
     title: "A finished space, not a furniture list.",
     subtitle:
-      "Illustrative work — sales environments, hospitality, and fit-out. Named studies on Our work are labelled as team experience until a Turriva contract is confirmed.",
+      "Illustrative work: sales environments, hospitality, and fit-out. Named studies on Our work are labelled as team experience until a Turriva contract is confirmed.",
     cta: "Project experience",
     items: [
       { title: "Sales gallery and show villa", category: "Developers" },
@@ -485,7 +485,7 @@ const en: LuxuryMessages = {
   cta: {
     title: "Tell us the space, the date, and what has to be finished.",
     subtitle:
-      "A short brief is enough. We reply within one business day — and we will say if the scope is not ours.",
+      "A short brief is enough. We reply within one business day, and we will say if the scope is not ours.",
     button: "Talk to Turriva",
   },
   quoteForm: {
@@ -578,11 +578,11 @@ const en: LuxuryMessages = {
       eyebrow: "Execution portfolio",
       title: "Turriva Folio 2026",
       intro:
-        "The complete 2026 folio PDF is available on this page only. Register with your company work email to view or download — the document stays hidden until access is verified. Personal email providers are not accepted.",
+        "The complete 2026 folio PDF is available on this page only. Register with your company work email to view or download. The document stays hidden until access is verified. Personal email providers are not accepted.",
       gateEyebrow: "Professional access",
       gateTitle: "View the Turriva folio",
       gateIntro:
-        "Enter your details to open the PDF. We verify that your email belongs to a company domain — personal addresses (Gmail, Hotmail, iCloud, etc.) are not accepted.",
+        "Enter your details to open the PDF. We verify that your email belongs to a company domain. Personal addresses (Gmail, Hotmail, iCloud, and similar) are not accepted.",
       gateNote: "Your information is used only to follow up on relevant B2B opportunities.",
       formName: "Full name",
       formCompany: "Company / organisation",
@@ -629,7 +629,7 @@ const en: LuxuryMessages = {
     villas: {
       title: "Residential, hospitality & retail execution",
       intro:
-        "Turriva manages physical delivery for villas, boutique hotels, restaurants, and premium retail — from technical development and material approval through fabrication, installation, and local warranty.",
+        "Turriva manages physical delivery for villas, hotels, restaurants, and retail, from technical development and material approval through fabrication, installation, and local warranty.",
       steps: [
         { title: "3D design session", description: "Upload your plan or book a visit, factory-module layouts in days." },
         { title: "Samples & sign-off", description: "Physical finishes and hardware references before we order." },
@@ -648,7 +648,7 @@ const en: LuxuryMessages = {
             tag: "Residential",
             title: "Villas & private homes",
             description:
-              "Majlis, kitchens, walk-ins, and whole-home joinery — contemporary Gulf character with materials chosen for climate and daily life.",
+              "Majlis, kitchens, walk-ins, and whole-home joinery, with a contemporary Gulf character and materials chosen for climate and daily life.",
           },
           {
             tag: "Hospitality",
@@ -668,7 +668,7 @@ const en: LuxuryMessages = {
         eyebrow: "Modular kitchens",
         title: "Factory-precise kitchens, built for Gulf homes and hospitality",
         intro:
-          "Modular systems with moisture-resistant cores, PET and lacquer finishes, and soft-close hardware — specified, sampled on site, then fabricated to the approved drawings.",
+          "Modular systems with moisture-resistant cores, PET and lacquer finishes, and soft-close hardware. They are specified, sampled on site, then fabricated to the approved drawings.",
         highlights: [
           {
             title: "Island & galley layouts",
@@ -676,7 +676,7 @@ const en: LuxuryMessages = {
           },
           {
             title: "Finishes you approve first",
-            description: "Physical boards and hardware references before manufacturing — no surprises at install.",
+            description: "Physical boards and hardware references before manufacturing, so installation does not start with surprises.",
           },
           {
             title: "Laser survey & install",
@@ -689,7 +689,7 @@ const en: LuxuryMessages = {
         eyebrow: "Wardrobes & walk-ins",
         title: "Walk-in closets and dressing rooms with hidden luxury",
         intro:
-          "Integrated lighting, glass inserts, and hydraulic fittings in layouts designed around how you dress, store, and live — not catalogue boxes forced into your space.",
+          "Integrated lighting, glass inserts, and hydraulic fittings in layouts designed around how you dress, store, and live, not catalogue boxes forced into your space.",
         highlights: [
           {
             title: "Master suite programmes",
@@ -701,7 +701,7 @@ const en: LuxuryMessages = {
           },
           {
             title: "Factory-aligned modules",
-            description: "Every elevation feeds factory production directly — fewer site adjustments, cleaner handover.",
+            description: "Every elevation feeds factory production directly, so there are fewer site adjustments and a cleaner handover.",
           },
         ],
         cta: "Plan your wardrobes",
@@ -732,7 +732,7 @@ const en: LuxuryMessages = {
           },
           {
             q: "How long from design to install?",
-            a: "Typical programmes run 8–14 weeks after sample sign-off, depending on scope, import lead times, and site readiness. We confirm a schedule at drawing approval.",
+            a: "Typical programmes run 8 to 14 weeks after sample sign-off, depending on scope, import lead times, and site readiness. We confirm a schedule at drawing approval.",
           },
           {
             q: "Can I see materials before ordering?",
@@ -744,7 +744,7 @@ const en: LuxuryMessages = {
           },
           {
             q: "How do I start?",
-            a: "Book a 3D design session, request a sample kit, or submit the form below with your plan — we route you to the right Turriva studio lead.",
+            a: "Book a 3D design session, request a sample kit, or submit the form below with your plan. We route you to the right Turriva studio lead.",
           },
         ],
       },
@@ -759,7 +759,7 @@ const en: LuxuryMessages = {
         eyebrow: "Who we serve",
         title: "Built for multi-unit programmes",
         subtitle:
-          "Whether you are a developer, main contractor, or hospitality operator scaling fit-out across dozens or hundreds of units — we structure supply, drawings, and install to your programme.",
+          "Whether you are a developer, main contractor, or hospitality operator scaling fit-out across many units, we structure supply, drawings, and installation to your programme.",
         items: [
           {
             tag: "Developers",
@@ -797,11 +797,11 @@ const en: LuxuryMessages = {
         eyebrow: "Phased delivery",
         title: "One programme lead from factory to floor plate",
         intro:
-          "Multi-tower and hospitality programmes need more than product — they need predictable phasing, compliant import, and install teams that show up when your slab is ready.",
+          "Multi-tower and hospitality programmes need more than a product. They need predictable phasing, compliant import, and install teams that show up when the slab is ready.",
         highlights: [
           {
             title: "Staged shipments",
-            description: "Kitchen and wardrobe batches released per tower, floor, or zone — not one overwhelming delivery.",
+            description: "Kitchen and wardrobe batches released per tower, floor, or zone, not one overwhelming delivery.",
           },
           {
             title: "Compliance pack",
@@ -825,7 +825,7 @@ const en: LuxuryMessages = {
         items: [
           {
             q: "What is the typical MOQ?",
-            a: "It varies by product line and finish tier. Share your unit count and we structure volume pricing — often from 10+ kitchens or equivalent joinery batches.",
+            a: "It varies by product line and finish. Share your unit count and we structure volume pricing, often from 10 kitchens or an equivalent joinery batch.",
           },
           {
             q: "Do you work with our architect's drawings?",
@@ -970,7 +970,7 @@ const ar: LuxuryMessages = {
     eyebrow: "إحدى شركات مجموعة تسامي · المملكة العربية السعودية",
     title: "من الفكرة إلى واقع ملموس.",
     subtitle:
-      "توريفا تصمّم وتسلّم أماكن مكتملة للمطورين والمشاريع التجارية الجادة — معارض مبيعات، فلل عرض، ضيافة، وتشطيب. ليست متجر أثاث. وليست شركة برمجيات.",
+      "توريفا تصمّم وتسلّم أماكن مكتملة للمطورين والمشاريع التجارية الجادة: معارض مبيعات، فلل عرض، ضيافة، وتشطيب. ليست متجر أثاث، وليست شركة برمجيات.",
     servicesLine: "تصميم مكاني · تفصيل فني · تصنيع · تركيب · بيئات مبيعات",
     tags: ["تصميم مكاني", "تفصيل فني", "تصنيع", "تركيب", "بيئات مبيعات"],
     ctaPrimary: "ناقش مشروعك",
@@ -981,7 +981,7 @@ const ar: LuxuryMessages = {
     eyebrow: "منهجنا",
     title: "تصميم يقرأ أسلوب حياتك… وتنفيذ يحترم اسمك",
     body:
-      "الثقة في الديكور تُبنى بخامات حقيقية ومساحات مقنعة. نطبّق ذلك على المشاريع السكنية والتجارية: خطوط معاصرة، ضيافة راقية، وتفاصيل تناسب المجلس والمعيشة اليومية — فريق واحد من العينات إلى التسليم الميداني، مع متابعة واضحة في كل مرحلة.",
+      "الثقة تُبنى بخامات حقيقية ومساحات مقنعة. نطبّق ذلك على المشاريع السكنية والتجارية: خطوط معاصرة، ضيافة راقية، وتفاصيل تناسب المجلس والمعيشة اليومية. فريق واحد يتابع العمل من العينات إلى التسليم، مع تحديث واضح في كل مرحلة.",
   },
   stats: {
     items: [
@@ -1082,7 +1082,7 @@ const ar: LuxuryMessages = {
     eyebrow: "نطاقات معتادة",
     title: "مكان مكتمل، لا قائمة أثاث.",
     subtitle:
-      "أعمال توضيحية — بيئات مبيعات وضيافة وتشطيب. الدراسات المسماة في أعمالنا تُوسم كخبرة فريق حتى يُؤكد عقد باسم توريفا.",
+      "أعمال توضيحية: بيئات مبيعات وضيافة وتشطيب. الدراسات المسماة في أعمالنا تُوسم كخبرة فريق حتى يُؤكد عقد باسم توريفا.",
     cta: "تجربة المشروع",
     items: [
       { title: "معرض مبيعات وفيلا عرض", category: "مطورون" },
@@ -1145,7 +1145,7 @@ const ar: LuxuryMessages = {
   cta: {
     title: "أخبرنا بالمكان، والموعد، وما يجب أن يُكتمل.",
     subtitle:
-      "موجز قصير يكفي. نرد خلال يوم عمل — ونقول بصراحة إن كان النطاق ليس لنا.",
+      "موجز قصير يكفي. نرد خلال يوم عمل، ونقول بصراحة إن كان النطاق ليس لنا.",
     button: "تواصل مع توريفا",
   },
   quoteForm: {
@@ -1238,11 +1238,11 @@ const ar: LuxuryMessages = {
       eyebrow: "بورتفوليو التنفيذ",
       title: "فوليو توريفا 2026",
       intro:
-        "ملف PDF الكامل لعام 2026 متاح في هذه الصفحة فقط. سجّل ببريد شركتك الوظيفي للعرض أو التحميل — الملف يبقى مخفياً حتى يتم التحقق. لا نقبل البريد الشخصي.",
+        "ملف PDF الكامل لعام 2026 متاح في هذه الصفحة فقط. سجّل ببريد شركتك الوظيفي للعرض أو التحميل. الملف يبقى مخفياً حتى يتم التحقق. لا نقبل البريد الشخصي.",
       gateEyebrow: "وصول مهني",
       gateTitle: "عرض فوليو توريفا",
       gateIntro:
-        "أدخل بياناتك لفتح ملف PDF. نتحقق أن بريدك الإلكتروني تابع لنطاق شركة — لا نقبل عناوين شخصية (Gmail، Hotmail، iCloud، وغيرها).",
+        "أدخل بياناتك لفتح ملف PDF. نتحقق أن بريدك الإلكتروني تابع لنطاق شركة. لا نقبل العناوين الشخصية مثل Gmail وHotmail وiCloud.",
       gateNote: "نستخدم معلوماتك فقط للمتابعة مع فرص B2B ذات الصلة.",
       formName: "الاسم الكامل",
       formCompany: "الشركة / المؤسسة",
@@ -1308,7 +1308,7 @@ const ar: LuxuryMessages = {
             tag: "سكني",
             title: "الفلل والمساكن الخاصة",
             description:
-              "مجالس، مطابخ، غرف ملابس، وتأثيث منزل كامل — أسلوب معاصر يناسب المناخ والحياة اليومية في الخليج.",
+              "مجالس ومطابخ وغرف ملابس وتأثيث منزل كامل، بأسلوب معاصر يناسب المناخ والحياة اليومية في الخليج.",
           },
           {
             tag: "ضيافة",
@@ -1326,9 +1326,9 @@ const ar: LuxuryMessages = {
       },
       kitchens: {
         eyebrow: "المطابخ المعيارية",
-        title: "مطابخ بدقة المصنع — للفلل والضيافة",
+        title: "مطابخ للفلل والضيافة",
         intro:
-          "أنظمة معيارية بقلب مقاوم للرطوبة، تشطيبات PET وطلاء، ومفصلات إغلاق ناعم — تُحدَّد وتُعتمد بعينات ثم تُصنَّع وفق المخططات المعتمدة.",
+          "أنظمة معيارية بقلب مقاوم للرطوبة، وتشطيبات PET وطلاء، ومفصلات إغلاق ناعم. تُحدَّد وتُعتمد بعينات ثم تُصنَّع وفق المخططات المعتمدة.",
         highlights: [
           {
             title: "جزيرة وممرات عمل",
@@ -1336,7 +1336,7 @@ const ar: LuxuryMessages = {
           },
           {
             title: "تشطيبات تعتمدها قبل التصنيع",
-            description: "لوحات خامات ومفصلات حقيقية قبل أمر الإنتاج — بلا مفاجآت يوم التركيب.",
+            description: "لوحات خامات ومفصلات حقيقية قبل أمر الإنتاج، حتى لا يبدأ التركيب بمفاجآت.",
           },
           {
             title: "رفع مساحي وتركيب",
@@ -1349,7 +1349,7 @@ const ar: LuxuryMessages = {
         eyebrow: "الخزائن وغرف الملابس",
         title: "غرف ملابس walk-in بفخامة هادئة",
         intro:
-          "إضاءة مدمجة، زجاج، ومفصلات هيدروليك في تخطيطات مبنية على طريقة عيشك — لا وحدات جاهزة تُفرض على مساحتك.",
+          "إضاءة مدمجة وزجاج ومفصلات هيدروليك في تخطيطات مبنية على طريقة عيشك، لا وحدات جاهزة تُفرض على مساحتك.",
         highlights: [
           {
             title: "برامج الجناح الرئيسي",
@@ -1361,7 +1361,7 @@ const ar: LuxuryMessages = {
           },
           {
             title: "وحدات متوافقة مع المصنع",
-            description: "كل واجهة تُغذّي الإنتاج المصنعي مباشرة — تعديلات أقل في الموقع وتسليم أنظف.",
+            description: "كل واجهة تُغذّي الإنتاج مباشرة، فتقل التعديلات في الموقع ويصبح التسليم أنظف.",
           },
         ],
         cta: "خطّط خزائنك",
@@ -1392,7 +1392,7 @@ const ar: LuxuryMessages = {
           },
           {
             q: "كم يستغرق من التصميم إلى التركيب؟",
-            a: "عادة 8–14 أسبوعاً بعد اعتماد العينات، حسب النطاق واستيراد المواد وجاهزية الموقع. نثبّت جدولاً عند اعتماد المخططات.",
+            a: "عادة من 8 إلى 14 أسبوعاً بعد اعتماد العينات، حسب النطاق واستيراد المواد وجاهزية الموقع. نثبّت جدولاً عند اعتماد المخططات.",
           },
           {
             q: "هل أرى الخامات قبل الطلب؟",
@@ -1404,7 +1404,7 @@ const ar: LuxuryMessages = {
           },
           {
             q: "كيف أبدأ؟",
-            a: "احجز جلسة 3D، اطلب حقيبة عينات، أو أرسل النموذج أدناه مع مخططك — نوجّهك لمسؤول الاستوديو المناسب.",
+            a: "احجز جلسة تصميم، اطلب حقيبة عينات، أو أرسل النموذج أدناه مع مخططك. نوجّهك لمسؤول الاستوديو المناسب.",
           },
         ],
       },
@@ -1419,7 +1419,7 @@ const ar: LuxuryMessages = {
         eyebrow: "من نخدم",
         title: "مبني لبرامج متعددة الوحدات",
         subtitle:
-          "سواء كنت مطوراً، مقاولاً رئيسياً، أو مشغّل ضيافة يوسّع التأثيث على عشرات أو مئات الوحدات — نُهيكل التوريد والمخططات والتركيب حسب برنامجك.",
+          "سواء كنت مطوراً أو مقاولاً أو مشغّل ضيافة يوسّع التأثيث على عدد كبير من الوحدات، نُهيكل التوريد والمخططات والتركيب حسب برنامجك.",
         items: [
           {
             tag: "مطورون",
@@ -1455,13 +1455,13 @@ const ar: LuxuryMessages = {
       ],
       programme: {
         eyebrow: "تسليم مرحلي",
-        title: "قائد برنامج واحد — من المصنع إلى الطابق",
+        title: "قائد برنامج واحد، من التصنيع إلى الطابق",
         intro:
-          "برامج الأبراج والضيافة تحتاج أكثر من منتج — تحتاج مراحل متوقعة، استيراداً متوافقاً، وفرق تركيب تصل عند جاهزية البلاطة.",
+          "برامج الأبراج والضيافة تحتاج أكثر من منتج. تحتاج مراحل متوقعة، واستيراداً متوافقاً، وفرق تركيب تصل عند جاهزية البلاطة.",
         highlights: [
           {
             title: "شحنات مرحلية",
-            description: "دفعات مطابخ وخزائن لكل برج أو طابق أو منطقة — دون توريد واحد مُربك.",
+            description: "دفعات مطابخ وخزائن لكل برج أو طابق أو منطقة، دون توريد واحد مربك.",
           },
           {
             title: "حزمة امتثال",
@@ -1469,7 +1469,7 @@ const ar: LuxuryMessages = {
           },
           {
             title: "ملاحظات وتسليم",
-            description: "قوائم punch list ومحاضر تسليم لكل مرحلة — قابلة للمراجعة من الاستشاري.",
+            description: "قوائم ملاحظات ومحاضر تسليم لكل مرحلة، قابلة للمراجعة من الاستشاري.",
           },
         ],
         cta: "ناقش برنامجك",
@@ -1485,7 +1485,7 @@ const ar: LuxuryMessages = {
         items: [
           {
             q: "ما الحد الأدنى للطلب MOQ؟",
-            a: "يختلف حسب خط الإنتاج والتشطيب. شاركنا عدد الوحدات ونُهيكل التسعير — غالباً من 10+ مطابخ أو ما يعادلها من النجارة.",
+            a: "يختلف حسب خط الإنتاج والتشطيب. شاركنا عدد الوحدات ونُهيكل التسعير، غالباً من عشرة مطابخ أو ما يعادلها من النجارة.",
           },
           {
             q: "هل تعملون مع مخططات مهندسنا؟",

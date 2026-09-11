@@ -36,7 +36,7 @@ const en: RepositionCopy = {
   navDevelopers: "Project experience",
   definition: {
     eyebrow: "What Turriva is",
-    title: "Spatial design and execution — not a furniture shop, and not a tech company.",
+    title: "Spatial design and execution. Not a furniture shop, and not a tech company.",
     body: "Turriva develops a space and delivers it: design, technical detailing, fabrication, installation, and handover. A finished room or sales environment is the work. Screens and campaigns can support it; they are not the product.",
     notes: [
       "Built for developers and hospitality operators, not catalogue decor.",
@@ -48,11 +48,11 @@ const en: RepositionCopy = {
     eyebrow: "For developers",
     title: "Your project is ready to sell. Is the way you show it ready?",
     intro:
-      "We design and deliver the place where the project meets its clients — sales gallery, show unit, models, and fit-out. The scope follows the project. The first step is a conversation.",
+      "We design and deliver the place where the project meets its clients: a sales gallery, a show unit, models, and fit-out. The scope follows the project. The first step is a conversation.",
     points: [
       {
         title: "Sales gallery and show villa",
-        body: "The physical space a buyer walks through — coordinated with the visual work, not a loose furniture list.",
+        body: "The physical space a buyer walks through, coordinated with the visual work, not a loose furniture list.",
       },
       {
         title: "Fit-out of the asset",
@@ -74,7 +74,7 @@ const en: RepositionCopy = {
       { title: "Design only", body: "Spatial concept and technical drawings, ready for a contractor you already have." },
       { title: "Execution of your design", body: "We fabricate and install from your approved drawings." },
       { title: "Design and execution", body: "From idea to a finished space, with one team accountable for the result." },
-      { title: "Real-estate experience", body: "Sales gallery, show unit, or launch space — built, and supported visually when needed." },
+      { title: "Real-estate experience", body: "A sales gallery, show unit, or launch space, built and supported visually when needed." },
       { title: "Full property delivery", body: "The fit-out and the experience around it, timed to a launch or opening." },
     ],
   },
@@ -85,9 +85,9 @@ const en: RepositionCopy = {
     steps: [
       { title: "Brief", body: "Site, drawings, opening date, and what the space has to do." },
       { title: "Scope", body: "What Turriva delivers, and what stays with your contractor or designer." },
-      { title: "Detail", body: "Materials and samples agreed before fabrication — not after the site is waiting." },
+      { title: "Detail", body: "Materials and samples are agreed before fabrication, not after the site is waiting." },
       { title: "Make and install", body: "Joinery, finishes, and installation against the approved drawings." },
-      { title: "Handover", body: "A space that can be shown, occupied, or opened — not a render left on a screen." },
+      { title: "Handover", body: "A space that can be shown, occupied, or opened, not a render left on a screen." },
     ],
   },
   teamExperience: "Selected team experience",
@@ -99,7 +99,7 @@ const ar: RepositionCopy = {
   navDevelopers: "تجربة المشروع",
   definition: {
     eyebrow: "ما هي توريفا",
-    title: "تصميم مكاني وتنفيذ — ليست متجر ديكور، وليست شركة تقنية.",
+    title: "تصميم مكاني وتنفيذ. ليست متجر ديكور، وليست شركة تقنية.",
     body: "توريفا تطوّر الفراغ وتسلّمه: تصميم، تفصيل فني، تصنيع، تركيب، وتسليم. المنتج مكان مكتمل. الشاشات والحملات قد تخدمه، لكنها ليست المنتج.",
     notes: [
       "للمطورين ومشغّلي الضيافة، لا لكتالوج الأثاث.",
@@ -111,11 +111,11 @@ const ar: RepositionCopy = {
     eyebrow: "للمطورين",
     title: "مشروعك جاهز للبيع. هل تجربة عرضه جاهزة؟",
     intro:
-      "نصمّم وننفّذ البيئة التي يستقبل فيها مشروعك عملاءه — مركز البيع ووحدة العرض والمجسمات والتجهيز. النطاق حسب المشروع. الخطوة الأولى محادثة.",
+      "نصمّم وننفّذ البيئة التي يستقبل فيها مشروعك عملاءه: مركز البيع ووحدة العرض والمجسمات والتجهيز. النطاق حسب المشروع. الخطوة الأولى محادثة.",
     points: [
       {
         title: "معرض مبيعات وفيلا عرض",
-        body: "المكان الذي يمشي فيه المشتري — منسَّق مع العمل البصري، لا قائمة أثاث منفصلة.",
+        body: "المكان الذي يمشي فيه المشتري، منسَّق مع العمل البصري، وليس قائمة أثاث منفصلة.",
       },
       {
         title: "تشطيب الأصل",
@@ -137,7 +137,7 @@ const ar: RepositionCopy = {
       { title: "تصميم فقط", body: "فكرة مكانية ومخططات فنية، جاهزة لمقاول لديكم." },
       { title: "تنفيذ تصميمكم", body: "نصنّع ونركّب من مخططاتكم المعتمدة." },
       { title: "تصميم وتنفيذ", body: "من الفكرة إلى مكان مكتمل، مع فريق واحد مسؤول عن النتيجة." },
-      { title: "تجربة عقارية", body: "معرض مبيعات أو وحدة عرض أو مساحة إطلاق — مبنية، ومدعومة بصريًا عند الحاجة." },
+      { title: "تجربة عقارية", body: "معرض مبيعات أو وحدة عرض أو مساحة إطلاق، مبنية ومدعومة بصريًا عند الحاجة." },
       { title: "تسليم عقاري كامل", body: "التشطيب والتجربة حوله، في توقيت الإطلاق أو الافتتاح." },
     ],
   },
@@ -148,9 +148,9 @@ const ar: RepositionCopy = {
     steps: [
       { title: "الموجز", body: "الموقع، المخططات، موعد الافتتاح، وما يجب أن يفعله المكان." },
       { title: "النطاق", body: "ما تسلّمه توريفا، وما يبقى لدى مقاولكم أو مصممكم." },
-      { title: "التفصيل", body: "مواد وعينات تُعتمد قبل التصنيع — لا بعد أن ينتظر الموقع." },
+      { title: "التفصيل", body: "مواد وعينات تُعتمد قبل التصنيع، لا بعد أن ينتظر الموقع." },
       { title: "التصنيع والتركيب", body: "أعمال خشبية وتشطيبات وتركيب وفق المخططات المعتمدة." },
-      { title: "التسليم", body: "مكان يمكن عرضه أو استخدامه أو افتتاحه — لا تصوّر يبقى على الشاشة." },
+      { title: "التسليم", body: "مكان يمكن عرضه أو استخدامه أو افتتاحه، لا تصوّر يبقى على الشاشة." },
     ],
   },
   teamExperience: "خبرة فريق مختارة",

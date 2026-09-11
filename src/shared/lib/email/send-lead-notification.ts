@@ -51,8 +51,8 @@ function buildEmailContent(payload: LeadNotificationPayload) {
   const sourceLabel = payload.source ?? "contact";
   const subject =
     payload.locale === "en"
-      ? `[Turriva] New inquiry — ${payload.name} (${sourceLabel})`
-      : `[توريفا] طلب جديد — ${payload.name} (${sourceLabel})`;
+      ? `[Turriva] New inquiry: ${payload.name} (${sourceLabel})`
+      : `[توريفا] طلب جديد: ${payload.name} (${sourceLabel})`;
 
   const text = [
     `الاسم / Name: ${payload.name}`,
@@ -64,7 +64,6 @@ function buildEmailContent(payload: LeadNotificationPayload) {
     payload.interest ? `Interest: ${payload.interest}` : null,
     payload.locale ? `Locale: ${payload.locale}` : null,
     "",
-    "—",
     payload.message ?? "",
   ]
     .filter((line) => line !== null)

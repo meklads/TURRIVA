@@ -202,7 +202,7 @@ const en: LuxurySeoMessages = {
         items: [
           {
             q: "What does Turriva do?",
-            a: "Turriva is Tasami Group's specialized spatial execution company — interior fit-out, exhibitions, furnishing, fabrication, installation, and turnkey physical delivery in Saudi Arabia and the Gulf.",
+            a: "Turriva is Tasami Group's specialized spatial execution company. The work is interior fit-out, exhibitions, furnishing, fabrication, installation, and physical delivery in Saudi Arabia and the Gulf.",
           },
           {
             q: "How is Turriva different from Graphics House?",
@@ -227,7 +227,7 @@ const en: LuxurySeoMessages = {
           },
           {
             q: "What is the typical timeline?",
-            a: "Residential programmes often run 8–14 weeks after sample sign-off. Exhibition and developer batches depend on scope — we confirm at drawing approval.",
+            a: "Residential programmes often run 8 to 14 weeks after sample sign-off. Exhibition and developer batches depend on scope. We confirm the schedule at drawing approval.",
           },
         ],
       },
@@ -236,12 +236,12 @@ const en: LuxurySeoMessages = {
   servicesPage: {
     title: "Execution services",
     intro:
-      "Turriva delivers the physical layer — from approved concept through fabrication, installation, and documented handover.",
+      "Turriva delivers the physical layer, from the approved concept through fabrication, installation, and documented handover.",
     items: [
       {
         slug: "interior-execution",
         title: "Villa & residential fit-out",
-        intro: "Modular kitchens, wardrobes, and full-property execution — 3D approval, sampling, factory production, and laser-verified install.",
+        intro: "Modular kitchens, wardrobes, and full-property execution: approval, sampling, production, and installation checked against the drawings.",
         points: ["Shop drawings & mockups", "Modular kitchens & wardrobes", "Snagging & handover"],
         cta: "Villa execution",
         href: "/villas",
@@ -249,7 +249,7 @@ const en: LuxurySeoMessages = {
       {
         slug: "hospitality-fitout",
         title: "Hospitality fit-out",
-        intro: "Hotels and serviced apartments — batch joinery, wet-area finishes, and phased handover.",
+        intro: "Hotels and serviced apartments: batch joinery, wet-area finishes, and phased handover.",
         points: ["Phased unit programmes", "Moisture-aware specifications", "Opening-ready delivery"],
         cta: "Hospitality programmes",
         href: "/services/hospitality-fitout",
@@ -257,7 +257,7 @@ const en: LuxurySeoMessages = {
       {
         slug: "exhibition-execution",
         title: "Exhibition & pavilion execution",
-        intro: "Sales galleries and institutional exhibitions — coordinated with Graphics House launch assets.",
+        intro: "Sales galleries and institutional exhibitions, coordinated with Graphics House launch assets when the project needs them.",
         points: ["Exhibition structures", "Joinery & décor", "Opening-ready delivery"],
         cta: "Exhibition execution",
         href: "/services/exhibition-execution",
@@ -265,7 +265,7 @@ const en: LuxurySeoMessages = {
       {
         slug: "developer-joinery",
         title: "Developer joinery programmes",
-        intro: "Repeatable modular packages across towers — specification, fabrication, phased site delivery.",
+        intro: "Repeatable modular packages across towers: specification, fabrication, and phased site delivery.",
         points: ["B2B batching", "Factory QC", "Milestone-aligned install"],
         cta: "Developer joinery",
         href: "/services/developer-joinery",
@@ -349,7 +349,7 @@ const en: LuxurySeoMessages = {
         name: "Graphics House",
         tagline: "CREATE · visual work",
         description:
-          "Cinematic CGI, smart maquettes, interactive sales tools, and spatial design for GCC developers — from concept to pre-sale launch.",
+          "Cinematic CGI, models, interactive sales tools, and spatial design for GCC developers, from concept to pre-sale launch.",
         href: "https://3dgraphicshouse.com",
         cta: "Explore Graphics House",
       },
@@ -357,7 +357,7 @@ const en: LuxurySeoMessages = {
         name: "Bees Motion",
         tagline: "GROW · launch and campaigns",
         description:
-          "Strategy, campaigns, film, motion, and healthcare/real-estate marketing — production built in, not bolted on.",
+          "Strategy, campaigns, film, and marketing for healthcare and real estate, with production included rather than added later.",
         href: "https://beesmotion.com",
         cta: "Explore Bees Motion",
       },
@@ -365,7 +365,7 @@ const en: LuxurySeoMessages = {
         name: "Ruwaq",
         tagline: "Property & design directory",
         description:
-          "Verified professionals, project tours, and fit-out guides for Jeddah, Makkah, and Madinah — Turriva is listed on Ruwaq PRO.",
+          "Verified professionals, project tours, and fit-out guides for Jeddah, Makkah, and Madinah. Turriva is listed on Ruwaq PRO.",
         href: "https://ruwaq.co",
         cta: "Visit Ruwaq",
       },
@@ -394,7 +394,7 @@ const en: LuxurySeoMessages = {
     eyebrow: "Turriva · Technical resources",
     title: "For professionals",
     intro:
-      "Specification sheets, programme guides, and compliance notes for architects, interior designers, developers, and contractors — from the Turriva execution team.",
+      "Specification sheets, programme guides, and compliance notes for architects, interior designers, developers, and contractors, from the Turriva execution team.",
     audienceEyebrow: "Who this is for",
     audienceTitle: "Built for project specifiers",
     audiences: [
@@ -406,10 +406,10 @@ const en: LuxurySeoMessages = {
     includesEyebrow: "What's inside",
     includesTitle: "Downloadable technical briefs",
     includes: [
-      "Joinery specification overview — tolerance, QC, and handover",
-      "Modular kitchen typical details — modules, wet zones, coordination",
-      "Hospitality batch programme guide — phased delivery and snagging",
-      "Gulf compliance & environment notes — moisture, SASO references, markets served",
+      "Joinery specification overview: quality checks and handover",
+      "Modular kitchen details: modules, wet zones, and coordination",
+      "Hospitality batch programme guide: phased delivery and snagging",
+      "Gulf compliance and environment notes: moisture, documentation, and markets served",
     ],
     lockHint: "Register with your work email to unlock downloads.",
     gateEyebrow: "Professional access",
@@ -419,7 +419,7 @@ const en: LuxurySeoMessages = {
     formName: "Full name",
     formCompany: "Company / studio",
     formEmail: "Work email",
-    formRole: "Role (optional) — e.g. Architect, PM",
+    formRole: "Role (optional), for example architect or project manager",
     formSubmit: "Unlock resources",
     formLoading: "Verifying…",
     formError: "Something went wrong. Please try again or contact us.",
@@ -429,7 +429,7 @@ const en: LuxurySeoMessages = {
     resourcesTitle: "Technical briefs",
     downloadLabel: "Download",
     nextStepsTitle: "Ready to specify a programme?",
-    nextStepsIntro: "Send drawings or a structured brief — our execution team responds within one business day.",
+    nextStepsIntro: "Send drawings or a structured brief. Our execution team responds within one business day.",
     nextStepsBrief: "Submit project brief",
     nextStepsPortfolio: "View gated portfolio",
     groupNote: "Turriva is a Tasami Group company. Learn about the wider ecosystem at",
@@ -514,7 +514,7 @@ const ar: LuxurySeoMessages = {
         items: [
           {
             q: "ماذا تفعل توريفا؟",
-            a: "توريفا شركة تنفيذ المساحات ضمن مجموعة تسامي — تشطيب داخلي، معارض، تأثيث، تصنيع، تركيب، وتسليم ميداني في السعودية والخليج.",
+            a: "توريفا شركة تنفيذ المساحات ضمن مجموعة تسامي. العمل تشطيب داخلي ومعارض وتأثيث وتصنيع وتركيب وتسليم ميداني في السعودية والخليج.",
           },
           {
             q: "ما الفرق بين توريفا وGraphics House؟",
@@ -539,7 +539,7 @@ const ar: LuxurySeoMessages = {
           },
           {
             q: "ما المدة المتوقعة؟",
-            a: "البرامج السكنية غالباً 8–14 أسبوعاً بعد اعتماد العينات. المعارض والمطورين حسب النطاق.",
+            a: "البرامج السكنية غالباً من 8 إلى 14 أسبوعاً بعد اعتماد العينات. المعارض والمطورون حسب النطاق.",
           },
         ],
       },
@@ -547,12 +547,12 @@ const ar: LuxurySeoMessages = {
   },
   servicesPage: {
     title: "خدمات التنفيذ",
-    intro: "توريفا تسلّم الطبقة المادية — من المفهوم المعتمد إلى التصنيع والتركيب والتسليم الموثق.",
+    intro: "توريفا تسلّم الطبقة المادية، من المفهوم المعتمد إلى التصنيع والتركيب والتسليم الموثق.",
     items: [
       {
         slug: "interior-execution",
         title: "تشطيب الفلل والسكني",
-        intro: "مطابخ وخزائن معيارية وتنفيذ عقار كامل — اعتماد 3D وعينات وإنتاج مصنع وتركيب بتحقق ليزري.",
+        intro: "مطابخ وخزائن معيارية وتنفيذ عقار كامل: اعتماد وعينات وإنتاج وتركيب يُراجع مقابل المخططات.",
         points: ["رسومات تنفيذية ونماذج اعتماد", "مطابخ وخزائن معيارية", "إغلاق ملاحظات وتسليم"],
         cta: "تنفيذ سكني",
         href: "/villas",
@@ -560,7 +560,7 @@ const ar: LuxurySeoMessages = {
       {
         slug: "hospitality-fitout",
         title: "تشطيب الضيافة",
-        intro: "فنادق وشقق فندقية — نجارة على دفعات وتشطيب مناطق رطبة وتسليم مرحلي.",
+        intro: "فنادق وشقق فندقية: نجارة على دفعات وتشطيب مناطق رطبة وتسليم مرحلي.",
         points: ["برامج وحدات مرحلية", "مواصفات مقاومة للرطوبة", "تسليم جاهز للافتتاح"],
         cta: "برامج ضيافة",
         href: "/services/hospitality-fitout",
@@ -568,7 +568,7 @@ const ar: LuxurySeoMessages = {
       {
         slug: "exhibition-execution",
         title: "تنفيذ المعارض والأجنحة",
-        intro: "معارض مبيعات ومؤسسية — منسّقة مع أصول إطلاق Graphics House.",
+        intro: "معارض مبيعات ومؤسسية، منسّقة مع أصول إطلاق جرافيكس هاوس عند الحاجة.",
         points: ["هياكل معارض", "نجارة وديكور", "تسليم جاهز للافتتاح"],
         cta: "تنفيذ معارض",
         href: "/services/exhibition-execution",
@@ -576,7 +576,7 @@ const ar: LuxurySeoMessages = {
       {
         slug: "developer-joinery",
         title: "نجارة المطورين",
-        intro: "حزم معيارية قابلة للتكرار عبر الأبراج — مواصفات وتصنيع وتسليم مرحلي.",
+        intro: "حزم معيارية قابلة للتكرار عبر الأبراج: مواصفات وتصنيع وتسليم مرحلي.",
         points: ["دفعات للمطورين", "فحص جودة مصنع", "تركيب متوافق مع المراحل"],
         cta: "نجارة مطورين",
         href: "/services/developer-joinery",
@@ -584,7 +584,7 @@ const ar: LuxurySeoMessages = {
       {
         slug: "commercial-fitout",
         title: "تشطيب تجاري وتجزئة",
-        intro: "تجزئة راقية ومكاتب وبيئات علامات — من المفهوم المعتمد إلى التسليم.",
+        intro: "تجزئة ومكاتب وبيئات علامات، من المفهوم المعتمد إلى التسليم.",
         points: ["تطوير فني", "نجارة مميزة", "إغلاق ملاحظات موثّق"],
         cta: "تشطيب تجاري",
         href: "/services/commercial-fitout",
@@ -627,7 +627,7 @@ const ar: LuxurySeoMessages = {
   },
   locationsPage: {
     title: "المناطق التي نخدمها",
-    intro: "تنفيذ في السعودية والخليج — مكاتب في جدة ومسقط والمنامة والقاهرة.",
+    intro: "تنفيذ في السعودية والخليج، ومكاتب في جدة ومسقط والمنامة والقاهرة.",
     cities: [
       {
         slug: "jeddah",
@@ -665,14 +665,14 @@ const ar: LuxurySeoMessages = {
       {
         name: "Bees Motion",
         tagline: "GROW · الإطلاق والحملات",
-        description: "استراتيجية وحملات وأفلام وmotion — تسويق صحي وعقاري بإنتاج مدمج.",
+        description: "استراتيجية وحملات وأفلام، وتسويق صحي وعقاري بإنتاج داخل العمل نفسه.",
         href: "https://beesmotion.com",
         cta: "استكشف Bees Motion",
       },
       {
         name: "Ruwaq",
         tagline: "دليل العقار والتصميم",
-        description: "محترفون موثّقون وجولات مشاريع وأدلة تشطيب في جدة ومكة والمدينة — توريفا على Ruwaq PRO.",
+        description: "محترفون موثّقون وجولات مشاريع وأدلة تشطيب في جدة ومكة والمدينة. توريفا مدرجة على Ruwaq PRO.",
         href: "https://ruwaq.co",
         cta: "زيارة Ruwaq",
       },
@@ -701,7 +701,7 @@ const ar: LuxurySeoMessages = {
     eyebrow: "توريفا · موارد فنية",
     title: "للمهندسين",
     intro:
-      "ملفات مواصفات وأدلة برامج وملاحظات مطابقة — للمهندسين المعماريين ومصممي الداخل والمطورين والمقاولين — من فريق تنفيذ توريفا.",
+      "ملفات مواصفات وأدلة برامج وملاحظات مطابقة، للمهندسين ومصممي الداخل والمطورين والمقاولين، من فريق تنفيذ توريفا.",
     audienceEyebrow: "لمن هذه البوابة",
     audienceTitle: "مصممة لتحديد مواصفات المشاريع",
     audiences: [
@@ -713,10 +713,10 @@ const ar: LuxurySeoMessages = {
     includesEyebrow: "ما بداخل البوابة",
     includesTitle: "ملخصات فنية للتحميل",
     includes: [
-      "نظرة عامة على مواصفات النجارة — التسامح والجودة والتسليم",
-      "تفاصيل typicals للمطبخ المعياري — الوحدات والمناطق الرطبة والتنسيق",
-      "دليل برامج الضيافة على دفعات — تسليم مرحلي وإغلاق ملاحظات",
-      "ملاحظات المطابقة وبيئة الخليج — الرطوبة ومراجع SASO والأسواق",
+      "نظرة عامة على مواصفات النجارة: الجودة والتسليم",
+      "تفاصيل المطبخ المعياري: الوحدات والمناطق الرطبة والتنسيق",
+      "دليل برامج الضيافة على دفعات: تسليم مرحلي وإغلاق ملاحظات",
+      "ملاحظات المطابقة وبيئة الخليج: الرطوبة والوثائق والأسواق",
     ],
     lockHint: "سجّل ببريدك الوظيفي لفتح التحميلات.",
     gateEyebrow: "وصول مهني",
@@ -726,7 +726,7 @@ const ar: LuxurySeoMessages = {
     formName: "الاسم الكامل",
     formCompany: "الشركة / المكتب",
     formEmail: "البريد الوظيفي",
-    formRole: "الدور (اختياري) — مثال: مهندس، PM",
+    formRole: "الدور (اختياري)، مثال: مهندس أو مدير مشروع",
     formSubmit: "فتح الموارد",
     formLoading: "جاري التحقق…",
     formError: "حدث خطأ. يرجى المحاولة مرة أخرى أو التواصل معنا.",
@@ -736,7 +736,7 @@ const ar: LuxurySeoMessages = {
     resourcesTitle: "الملخصات الفنية",
     downloadLabel: "تحميل",
     nextStepsTitle: "جاهز لتحديد برنامج؟",
-    nextStepsIntro: "أرسل الرسومات أو ملخصاً منظماً — يرد فريق التنفيذ خلال يوم عمل.",
+    nextStepsIntro: "أرسل الرسومات أو ملخصاً منظماً. يرد فريق التنفيذ خلال يوم عمل.",
     nextStepsBrief: "قدّم ملخص المشروع",
     nextStepsPortfolio: "عرض البورتفوليو",
     groupNote: "توريفا شركة تنفيذ ضمن مجموعة تسامي. تعرّف على المنظومة الأوسع في",

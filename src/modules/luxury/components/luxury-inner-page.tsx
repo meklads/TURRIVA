@@ -45,8 +45,8 @@ export function LuxuryInnerPage({
             <p className="lux-body text-lux-ink-soft">
               {page === "interiorDesign"
                 ? locale === "ar"
-                  ? "توريفا تنفّذ التشطيب الداخلي والنجارة المعيارية والتركيب — من الفلل إلى الضيافة والتجزئة. للتصور الإبداعي قبل التنفيذ، شريكنا Graphics House يقدّم CGI والماكيت الذكي."
-                  : "Turriva delivers interior fit-out, modular joinery, and installation — from villas to hospitality and retail. For creative visualization before execution, sister company Graphics House provides CGI and smart maquettes."
+                  ? "توريفا تنفّذ التشطيب الداخلي والنجارة والتركيب، من الفلل إلى الضيافة والتجزئة. للتصور قبل التنفيذ، يمكن لجرافيكس هاوس أن تقدّم التصوير والمجسم."
+                  : "Turriva delivers interior fit-out, modular joinery, and installation, from villas to hospitality and retail. For visualization before execution, Graphics House can provide the imagery and the model."
                 : locale === "ar"
                   ? "توريفا تدير التسليم الميداني: تنسيق التصنيع والتخصصات والتركيب وضبط الجودة والتسليم الموثق. للحملات والإطلاق، Bees Motion تقدّم التسويق والإنتاج الإبداعي."
                   : "Turriva manages field delivery: fabrication coordination, trades, installation, QC, and documented handover. For launch campaigns, Bees Motion provides marketing and creative production."}

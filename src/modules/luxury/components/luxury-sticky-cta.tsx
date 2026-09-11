@@ -27,7 +27,7 @@ export function LuxuryStickyCta({ locale, label, href, whatsappMessage, source }
   if (!visible) return null;
 
   const waDefault =
-    locale === "ar" ? "مرحباً توريفا — أود مناقشة مشروع تنفيذ." : "Hello Turriva — I would like to discuss an execution project.";
+    locale === "ar" ? "مرحباً توريفا، أود مناقشة مشروع تنفيذ." : "Hello Turriva, I would like to discuss an execution project.";
 
   return (
     <div className="lux-sticky-cta" role="region" aria-label={label}>

@@ -18,8 +18,8 @@ export const MARKETS: readonly Market[] = [
     slug: "saudi",
     titleEn: "Saudi Arabia",
     titleAr: "المملكة العربية السعودية",
-    summaryEn: "Primary execution market — villas, hospitality programmes, exhibitions, and developer joinery across the Kingdom.",
-    summaryAr: "سوق التنفيذ الأساسي — فلل وبرامج ضيافة ومعارض ونجارة مطورين في أنحاء المملكة.",
+    summaryEn: "Primary execution market: villas, hospitality programmes, exhibitions, and developer joinery across the Kingdom.",
+    summaryAr: "سوق التنفيذ الأساسي: فلل وبرامج ضيافة ومعارض ونجارة مطورين في أنحاء المملكة.",
     pointsEn: ["Jeddah HQ & Western Region hub", "Makkah hospitality programmes", "Central region developer & pavilion work"],
     pointsAr: ["المقر في جدة ومركز المنطقة الغربية", "برامج ضيافة في مكة", "مشاريع مطورين وأجنحة في الوسط"],
     intent: "quote",
@@ -28,8 +28,8 @@ export const MARKETS: readonly Market[] = [
     slug: "gcc",
     titleEn: "GCC",
     titleAr: "دول الخليج",
-    summaryEn: "Cross-border delivery with offices and coordination in Oman and Bahrain — same factory-aligned QC standards.",
-    summaryAr: "تسليم عبر الحدود مع مكاتب وتنسيق في عُمان والبحرين — نفس معايير جودة المصنع.",
+    summaryEn: "Cross-border delivery, with offices and coordination in Oman and Bahrain, held to the same quality standards.",
+    summaryAr: "تسليم عبر الحدود، مع مكاتب وتنسيق في عُمان والبحرين، وبمعايير الجودة نفسها.",
     pointsEn: ["Muscat office", "Manama office", "Shared programme language with Saudi HQ"],
     pointsAr: ["مكتب مسقط", "مكتب المنامة", "لغة برنامج موحّدة مع المقر في السعودية"],
     intent: "developer",
@@ -38,8 +38,8 @@ export const MARKETS: readonly Market[] = [
     slug: "international",
     titleEn: "International",
     titleAr: "الأسواق الدولية",
-    summaryEn: "Selected programmes beyond the GCC — Cairo office and project teams coordinated from Turriva HQ.",
-    summaryAr: "برامج مختارة خارج الخليج — مكتب القاهرة وفرق مشاريع منسّقة من مقر توريفا.",
+    summaryEn: "Selected programmes beyond the GCC, coordinated from the Cairo office and from Turriva.",
+    summaryAr: "برامج مختارة خارج الخليج، عبر مكتب القاهرة وفرق مشاريع منسّقة من مقر توريفا.",
     pointsEn: ["Cairo office", "Export-ready joinery packages", "Brief-led engagement for overseas developers"],
     pointsAr: ["مكتب القاهرة", "حزم نجارة جاهزة للتصدير", "تعامل مبني على الملخص للمطورين خارج المنطقة"],
     intent: "quote",
@@ -52,12 +52,12 @@ export function getMarketsPageCopy(locale: Locale) {
     eyebrow: isAr ? "الأسواق" : "Markets",
     title: isAr ? "أسواق نخدمها" : "Markets we serve",
     intro: isAr
-      ? "توريفا غير مقيدة بمدينة واحدة. ننفّذ في السعودية والخليج، ونخدم برامجاً دولية مختارة — نفس معايير المصنع والتسليم الميداني."
-      : "Turriva is not limited to one city. We execute across Saudi Arabia and the GCC, and support selected international programmes — with the same factory and field standards.",
+      ? "توريفا غير مقيدة بمدينة واحدة. ننفّذ في السعودية والخليج، ونخدم برامجاً دولية مختارة، بمعايير الجودة والتسليم نفسها."
+      : "Turriva is not limited to one city. We execute across Saudi Arabia and the GCC, and support selected international programmes, to the same quality and field standards.",
     hubsTitle: isAr ? "مكاتب التنسيق" : "Coordination offices",
     hubsIntro: isAr
-      ? "مكاتب في جدة ومسقط والمنامة والقاهرة — للتواصل والتنسيق، دون حصر نطاق الخدمة بمدينة واحدة."
-      : "Offices in Jeddah, Muscat, Manama, and Cairo — for coordination, not as a limit on where we deliver.",
+      ? "مكاتب في جدة ومسقط والمنامة والقاهرة، للتواصل والتنسيق، دون حصر نطاق الخدمة بمدينة واحدة."
+      : "Offices in Jeddah, Muscat, Manama, and Cairo, for coordination, not as a limit on where we deliver.",
     cta: isAr ? "ناقش مشروعك" : "Discuss your project",
   };
 }

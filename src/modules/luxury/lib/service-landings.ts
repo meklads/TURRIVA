@@ -32,14 +32,14 @@ export const SERVICE_LANDINGS: readonly ServiceLanding[] = [
     image: LUXURY_IMAGES.project3,
     projectType: "hospitality",
     source: "lp_hospitality_fitout",
-    whatsappEn: "Hello Turriva — I need hospitality fit-out execution. Please contact me.",
-    whatsappAr: "مرحباً توريفا — أحتاج تنفيذ تشطيب ضيافة. يرجى التواصل معي.",
+    whatsappEn: "Hello Turriva,  I need hospitality fit-out execution. Please contact me.",
+    whatsappAr: "مرحباً توريفا،  أحتاج تنفيذ تشطيب ضيافة. يرجى التواصل معي.",
     titleEn: "Hospitality fit-out execution",
     titleAr: "تنفيذ تشطيب الضيافة",
     introEn:
-      "Batch joinery, wet-area finishes, and phased handover for hotels and serviced apartments — engineered for operational wear in Makkah, Jeddah, and Riyadh.",
+      "Batch joinery, wet-area finishes, and phased handover for hotels and serviced apartments, specified for daily use in Makkah, Jeddah, and Riyadh.",
     introAr:
-      "نجارة على دفعات وتشطيب مناطق رطبة وتسليم مرحلي للفنادق والشقق الفندقية — مصمم لتحمل التشغيل في مكة وجدة والرياض.",
+      "نجارة على دفعات وتشطيب مناطق رطبة وتسليم مرحلي للفنادق والشقق الفندقية، بما يناسب التشغيل في مكة وجدة والرياض.",
     pointsEn: [
       "Phased programmes with floor-by-floor snagging",
       "Moisture-resistant wet zones & acoustic gypsum",
@@ -59,14 +59,14 @@ export const SERVICE_LANDINGS: readonly ServiceLanding[] = [
     image: "/brand/turriva/makkah-charter-04.jpeg",
     projectType: "exhibition",
     source: "lp_exhibition_execution",
-    whatsappEn: "Hello Turriva — we need exhibition / pavilion execution. Please contact me.",
-    whatsappAr: "مرحباً توريفا — نحتاج تنفيذ معرض أو جناح. يرجى التواصل.",
+    whatsappEn: "Hello Turriva,  we need exhibition / pavilion execution. Please contact me.",
+    whatsappAr: "مرحباً توريفا،  نحتاج تنفيذ معرض أو جناح. يرجى التواصل.",
     titleEn: "Exhibition & pavilion execution",
     titleAr: "تنفيذ المعارض والأجنحة",
     introEn:
-      "Physical delivery for sales galleries, institutional exhibitions, and developer pavilions — coordinated with Graphics House launch assets from approved 3D to opening day.",
+      "Physical delivery for sales galleries, institutional exhibitions, and developer pavilions, coordinated with Graphics House launch assets when the project needs them.",
     introAr:
-      "تسليم ميداني لمعارض المبيعات والمعارض المؤسسية وأجنحة المطورين — منسّق مع أصول إطلاق Graphics House من 3D المعتمد حتى الافتتاح.",
+      "تسليم ميداني لمعارض المبيعات والمعارض المؤسسية وأجنحة المطورين، منسّق مع أصول الإطلاق من جرافيكس هاوس عند الحاجة.",
     pointsEn: [
       "Joinery, décor, and interactive zone installation",
       "Single accountable field programme",
@@ -86,14 +86,14 @@ export const SERVICE_LANDINGS: readonly ServiceLanding[] = [
     image: LUXURY_IMAGES.project4,
     projectType: "developer",
     source: "lp_developer_joinery",
-    whatsappEn: "Hello Turriva — we are a developer seeking modular joinery execution. Please contact me.",
-    whatsappAr: "مرحباً توريفا — نحن مطور ونبحث عن تنفيذ نجارة معيارية. يرجى التواصل.",
+    whatsappEn: "Hello Turriva,  we are a developer seeking modular joinery execution. Please contact me.",
+    whatsappAr: "مرحباً توريفا،  نحن مطور ونبحث عن تنفيذ نجارة معيارية. يرجى التواصل.",
     titleEn: "Developer joinery programmes",
     titleAr: "برامج نجارة المطورين",
     introEn:
-      "Repeatable kitchen, wardrobe, and common-area packages manufactured to approved drawings — phased site delivery matched to construction milestones.",
+      "Repeatable kitchen, wardrobe, and common-area packages manufactured to approved drawings, with phased site delivery matched to construction milestones.",
     introAr:
-      "حزم مطابخ وخزائن ومناطق مشتركة قابلة للتكرار وفق رسومات معتمدة — تسليم ميداني مرحلي متوافق مع مراحل البناء.",
+      "حزم مطابخ وخزائن ومناطق مشتركة قابلة للتكرار وفق رسومات معتمدة، وتسليم ميداني مرحلي متوافق مع مراحل البناء.",
     pointsEn: [
       "Standardised modules with factory QC",
       "B2B pricing and batch scheduling",
@@ -113,14 +113,14 @@ export const SERVICE_LANDINGS: readonly ServiceLanding[] = [
     image: LUXURY_IMAGES.project1,
     projectType: "commercial",
     source: "lp_commercial_fitout",
-    whatsappEn: "Hello Turriva — we need commercial fit-out execution. Please contact me.",
-    whatsappAr: "مرحباً توريفا — نحتاج تنفيذ تشطيب تجاري. يرجى التواصل.",
+    whatsappEn: "Hello Turriva,  we need commercial fit-out execution. Please contact me.",
+    whatsappAr: "مرحباً توريفا،  نحتاج تنفيذ تشطيب تجاري. يرجى التواصل.",
     titleEn: "Commercial & retail fit-out",
     titleAr: "تشطيب تجاري وتجزئة",
     introEn:
-      "Premium retail, office, and branded environments — technical development, sampling, fabrication, and installation under one Turriva lead.",
+      "Retail, offices, and branded environments: technical development, sampling, fabrication, and installation under one Turriva lead.",
     introAr:
-      "تجزئة premium ومكاتب وبيئات علامات — تطوير فني وعينات وتصنيع وتركيب تحت قائد توريفا واحد.",
+      "تجزئة ومكاتب وبيئات علامات: تطوير فني وعينات وتصنيع وتركيب تحت قائد توريفا واحد.",
     pointsEn: [
       "Shop drawings and on-site mockups",
       "Modular joinery and feature walls",

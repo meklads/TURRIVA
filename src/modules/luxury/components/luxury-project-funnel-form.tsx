@@ -137,8 +137,8 @@ export function LuxuryProjectFunnelForm({ locale, source, initialProjectType, wh
     const waHref = buildWhatsAppHref(
       whatsappMessage ??
         (locale === "ar"
-          ? `مرحباً توريفا — أرسلت ملخص مشروع عبر الموقع. الاسم: ${name}. أود متابعة الخطوة التالية.`
-          : `Hello Turriva — I submitted a project brief online. Name: ${name}. I would like to continue to the next step.`)
+          ? `مرحباً توريفا، أرسلت ملخص مشروع عبر الموقع. الاسم: ${name}. أود متابعة الخطوة التالية.`
+          : `Hello Turriva, I submitted a project brief online. Name: ${name}. I would like to continue to the next step.`)
     );
 
     return (
@@ -327,7 +327,7 @@ export function LuxuryProjectFunnelForm({ locale, source, initialProjectType, wh
         <a
           href={buildWhatsAppHref(
             whatsappMessage ??
-              (locale === "ar" ? "مرحباً توريفا — أود مناقشة مشروع تنفيذ." : "Hello Turriva — I would like to discuss an execution project.")
+              (locale === "ar" ? "مرحباً توريفا، أود مناقشة مشروع تنفيذ." : "Hello Turriva, I would like to discuss an execution project.")
           )}
           target="_blank"
           rel="noopener noreferrer"

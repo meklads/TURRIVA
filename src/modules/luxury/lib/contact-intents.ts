@@ -27,8 +27,8 @@ export const CONTACT_INTENTS: Record<ContactIntent, FunnelPreset> = {
     source: "contact_intent_design",
     titleEn: "Discuss your villa project",
     titleAr: "ناقش مشروع فيلتك",
-    subtitleEn: "Share scope, timeline, and plans — our team responds within one business day.",
-    subtitleAr: "شاركنا النطاق والجدول والمخططات — يرد فريقنا خلال يوم عمل.",
+    subtitleEn: "Share scope, timeline, and plans. Our team responds within one business day.",
+    subtitleAr: "شاركنا النطاق والجدول والمخططات. يرد فريقنا خلال يوم عمل.",
   },
   sample: {
     projectType: "villa",
@@ -50,8 +50,8 @@ export const CONTACT_INTENTS: Record<ContactIntent, FunnelPreset> = {
     source: "contact_intent_hospitality",
     titleEn: "Hospitality fit-out brief",
     titleAr: "ملخص تشطيب ضيافة",
-    subtitleEn: "Hotels, serviced apartments, and F&B — batch joinery and wet-area execution.",
-    subtitleAr: "فنادق وشقق فندقية ومطاعم — نجارة على دفعات وتشطيب مناطق رطبة.",
+    subtitleEn: "Hotels, serviced apartments, and restaurants: batch joinery and wet-area execution.",
+    subtitleAr: "فنادق وشقق فندقية ومطاعم: نجارة على دفعات وتشطيب مناطق رطبة.",
   },
   exhibition: {
     projectType: "exhibition",
@@ -74,8 +74,8 @@ export const CONTACT_INTENTS: Record<ContactIntent, FunnelPreset> = {
     source: "contact_intent_commercial",
     titleEn: "Commercial fit-out brief",
     titleAr: "ملخص تشطيب تجاري",
-    subtitleEn: "Retail, offices, and branded environments — from shop drawings to handover.",
-    subtitleAr: "تجزئة ومكاتب وبيئات علامات — من الرسومات إلى التسليم.",
+    subtitleEn: "Retail, offices, and branded environments, from shop drawings to handover.",
+    subtitleAr: "تجزئة ومكاتب وبيئات علامات، من الرسومات إلى التسليم.",
   },
 };
 
@@ -151,27 +151,27 @@ export function getFunnelCopy(locale: Locale): FunnelCopy {
     budgets: isAr
       ? {
           under_30k: "أقل من 30 ألف ر.س",
-          "30_80k": "30 – 80 ألف ر.س",
-          "80_200k": "80 – 200 ألف ر.س",
+          "30_80k": "30 إلى 80 ألف ر.س",
+          "80_200k": "80 إلى 200 ألف ر.س",
           over_200k: "أكثر من 200 ألف ر.س",
         }
       : {
           under_30k: "Under SAR 30k",
-          "30_80k": "SAR 30k – 80k",
-          "80_200k": "SAR 80k – 200k",
+          "30_80k": "SAR 30k to 80k",
+          "80_200k": "SAR 80k to 200k",
           over_200k: "Over SAR 200k",
         },
     timelines: isAr
       ? {
           immediate: "فوري / خلال أسابيع",
           "1_month": "خلال شهر",
-          "3_months": "1 – 3 أشهر",
+          "3_months": "من شهر إلى 3 أشهر",
           exploring: "استكشاف فقط",
         }
       : {
           immediate: "Immediate / weeks",
           "1_month": "Within 1 month",
-          "3_months": "1 – 3 months",
+          "3_months": "1 to 3 months",
           exploring: "Exploring only",
         },
     areaLabel: isAr ? "المساحة أو عدد الوحدات" : "Area or unit count",
@@ -182,18 +182,18 @@ export function getFunnelCopy(locale: Locale): FunnelCopy {
     phoneLabel: isAr ? "الجوال" : "Mobile",
     messageLabel: isAr ? "ملاحظات إضافية" : "Additional notes",
     fileLabel: isAr ? "مخططات أو ملفات (اختياري)" : "Plans or files (optional)",
-    fileHint: isAr ? "PDF، صور، DWG — حتى 12 م.ب" : "PDF, images, DWG — up to 12 MB",
+    fileHint: isAr ? "PDF أو صور أو مخططات، حتى 12 م.ب" : "PDF, images, or drawings, up to 12 MB",
     next: isAr ? "التالي" : "Next",
     back: isAr ? "رجوع" : "Back",
     submit: isAr ? "إرسال الملخص" : "Submit brief",
     loading: isAr ? "جاري الإرسال…" : "Submitting…",
     success: isAr
-      ? "شكراً — استلمنا ملخص مشروعك. سيتواصل معك فريق توريفا خلال 24 ساعة."
-      : "Thank you — we received your project brief. The Turriva team will contact you within 24 hours.",
+      ? "شكراً. استلمنا ملخص مشروعك. سيتواصل معك فريق توريفا خلال 24 ساعة."
+      : "Thank you. We received your project brief. The Turriva team will contact you within 24 hours.",
     error: isAr ? "تعذر الإرسال. يرجى المحاولة مرة أخرى أو التواصل عبر واتساب." : "Could not submit. Please try again or contact us on WhatsApp.",
     qualifiedNote: isAr
-      ? "ملخصك يبدو جاهزاً للمتابعة — سنخصص مستشاراً لتنفيذك."
-      : "Your brief looks ready for follow-up — we will assign a dedicated execution contact.",
+      ? "الملخص جاهز للمتابعة. سنخصص مسؤولاً للتنفيذ."
+      : "Your brief looks ready for follow-up. We will assign a dedicated execution contact.",
     nextSteps: isAr
       ? [
           "مراجعة الملخص والمرفقات خلال يوم عمل",

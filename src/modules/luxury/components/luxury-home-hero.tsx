@@ -54,7 +54,7 @@ export function LuxuryHomeHero({ locale }: Props) {
             <div className="lux-hero-media-frame">
               <Image
                 src={LUXURY_HERO_IMAGE}
-                alt={locale === "ar" ? "تنفيذ داخلي فاخر — توريفا" : "Luxury interior execution by Turriva"}
+                alt={locale === "ar" ? "تنفيذ داخلي من توريفا" : "Luxury interior execution by Turriva"}
                 fill
                 priority
                 unoptimized

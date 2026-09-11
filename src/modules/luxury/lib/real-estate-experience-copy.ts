@@ -131,12 +131,12 @@ const en: ExperienceCopy = {
   nav: "Project experience",
   metaTitle: "Real estate project experience",
   metaDescription:
-    "We design and deliver the place where a real-estate project meets its clients — sales gallery, show unit, models, and fit-out. The first step is a conversation, not a price.",
+    "We design and deliver the place where a real-estate project meets its clients: a sales gallery, a show unit, models, and fit-out. The first step is a conversation, not a price.",
   hero: {
     eyebrow: "Real estate project experience",
     title: "Your project is ready to sell.",
     question: "Is the way you show it ready?",
-    body: "We design and deliver the place where your project meets its clients — from the sales gallery and show unit to models, interactive tools, and interior fit-out.",
+    body: "We design and deliver the place where your project meets its clients, from the sales gallery and show unit to models, interactive tools, and interior fit-out.",
     cta: "Discuss your project",
     secondary: "What the work includes",
   },
@@ -153,7 +153,7 @@ const en: ExperienceCopy = {
   definition: {
     eyebrow: "The product",
     title: "Real estate project experience",
-    body: "A defined scope to prepare the environment that presents a real-estate project. It starts from the project and what the sales team needs to show, then designs that space, details it, and delivers it — with visual and interactive elements only where they help.",
+    body: "A defined scope to prepare the environment that presents a real-estate project. It starts from the project and what the sales team needs to show, then designs that space, details it, and delivers it. Visual and interactive elements are used only where they help.",
     result:
       "We help the sales team present the project more clearly, and give the client a place to understand and explore it. We do not claim a sales result we cannot measure.",
   },
@@ -193,7 +193,7 @@ const en: ExperienceCopy = {
   flexible: {
     eyebrow: "How we start",
     title: "The solution follows the project.",
-    intro: "Not every project needs a large experience center. It may need one of these — or a combination.",
+    intro: "Not every project needs a large experience center. It may need one of these, or a combination.",
     options: [
       "A sales gallery only",
       "A sales gallery and a model",
@@ -279,12 +279,12 @@ const en: ExperienceCopy = {
     project: "A multi-unit residential project",
     needsTitle: "It needs",
     needs: ["A sales gallery", "A show unit", "A masterplan model", "An interactive screen", "Unit display", "Materials", "Visual content"],
-    turriva: "Turriva — design, execution, fit-out, and technology only where it explains the project.",
-    graphics: "Graphics House — CGI, film, model, and interactive content, if the project needs them.",
+    turriva: "Turriva: design, execution, fit-out, and technology only where it explains the project.",
+    graphics: "Graphics House: CGI, film, a model, and interactive content, if the project needs them.",
     result: "A sales environment ready to receive clients.",
   },
   close: {
-    line: "From the sales gallery to the show unit, and from the space to the way the client reads the project — we design and deliver the environment in which your project presents itself.",
+    line: "From the sales gallery to the show unit, and from the space to the way the client reads the project, we design and deliver the environment in which your project presents itself.",
     brand: "TURRIVA",
     tagline: "Spatial design and execution. From concept to physical reality.",
     title: "A project coming up?",
@@ -334,7 +334,7 @@ const ar: ExperienceCopy = {
   nav: "تجربة المشروع",
   metaTitle: "تجربة المشروع العقاري",
   metaDescription:
-    "نصمّم وننفّذ البيئة التي يستقبل فيها المشروع العقاري عملاءه — مركز البيع ووحدة العرض والمجسمات والتجهيز. الخطوة الأولى محادثة، لا سعر.",
+    "نصمّم وننفّذ البيئة التي يستقبل فيها المشروع العقاري عملاءه: مركز البيع ووحدة العرض والمجسمات والتجهيز. الخطوة الأولى محادثة، لا سعر.",
   hero: {
     eyebrow: "تجربة المشروع العقاري",
     title: "مشروعك جاهز للبيع.",
@@ -396,7 +396,7 @@ const ar: ExperienceCopy = {
   flexible: {
     eyebrow: "كيف نبدأ",
     title: "نحدد الحل حسب احتياج مشروعك.",
-    intro: "ليس كل مشروع يحتاج مركز تجربة كبيرًا. قد يحتاج إلى واحد من هذه — أو إلى أكثر من واحد.",
+    intro: "ليس كل مشروع يحتاج مركز تجربة كبيرًا. قد يحتاج إلى واحد من هذه، أو إلى أكثر من واحد.",
     options: [
       "مركز بيع فقط",
       "مركز بيع ومجسم",
@@ -470,7 +470,7 @@ const ar: ExperienceCopy = {
       },
       {
         title: "العمل البصري، عندما يحتاجه المشروع",
-        body: "جرافيكس هاوس تستطيع إضافة الهوية والتصوير ثلاثي الأبعاد والأفلام والمجسمات والمحتوى التفاعلي. لست مضطرًا للتعاقد مع هذه الطبقة منفصلاً إلا إذا أردت.",
+        body: "يمكن لجرافيكس هاوس أن تضيف الهوية والتصوير ثلاثي الأبعاد والأفلام والمجسمات والمحتوى التفاعلي. ولا يلزم التعاقد معها منفصلة إلا إذا رغبت.",
       },
     ],
     trust: "توريفا علامة متخصصة حديثة، مدعومة بفريق ذي خبرة في التصميم والتنفيذ والعمل البصري.",
@@ -482,12 +482,12 @@ const ar: ExperienceCopy = {
     project: "مشروع سكني متعدد الوحدات",
     needsTitle: "يحتاج إلى",
     needs: ["مركز مبيعات", "وحدة عرض", "مجسم للمخطط", "شاشة تفاعلية", "عرض للوحدات", "مواد المشروع", "محتوى بصري"],
-    turriva: "توريفا — تصميم وتنفيذ وتجهيز، وتقنية فقط حيث تشرح المشروع.",
-    graphics: "جرافيكس هاوس — تصور وأفلام ومجسم ومحتوى تفاعلي، إذا احتاجها المشروع.",
+    turriva: "توريفا: تصميم وتنفيذ وتجهيز، وتقنية فقط حيث تشرح المشروع.",
+    graphics: "جرافيكس هاوس: تصور وأفلام ومجسم ومحتوى تفاعلي، إذا احتاجها المشروع.",
     result: "بيئة بيع جاهزة لاستقبال العملاء.",
   },
   close: {
-    line: "من مركز البيع إلى وحدة العرض، ومن المساحة إلى الطريقة التي يقرأ بها العميل المشروع — نصمّم وننفّذ البيئة التي يقدّم فيها مشروعك نفسه.",
+    line: "من مركز البيع إلى وحدة العرض، ومن المساحة إلى الطريقة التي يقرأ بها العميل المشروع، نصمّم وننفّذ البيئة التي يقدّم فيها مشروعك نفسه.",
     brand: "TURRIVA",
     tagline: "تصميم وتنفيذ المساحات والتجارب. من الفكرة إلى الواقع.",
     title: "لديك مشروع قادم؟",
