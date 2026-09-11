@@ -6,6 +6,7 @@ import { LuxuryExperienceBriefForm } from "./luxury-experience-brief-form";
 import { LuxuryProductBriefSection } from "./luxury-product-brief-section";
 import { LuxuryProductHero } from "./luxury-product-hero";
 import { LuxuryProductVisualBand } from "./luxury-product-visual-band";
+import { LuxuryProductPager, LuxuryProductRelated } from "./luxury-product-related";
 import { LuxuryStickyCta } from "./luxury-sticky-cta";
 
 type Props = { locale: Locale };
@@ -148,20 +149,6 @@ export function LuxuryRenovationPage({ locale }: Props) {
               </li>
             ))}
           </ol>
-        </div>
-      </section>
-
-      <section className="lux-section lux-section--white">
-        <div className="lux-container max-w-3xl">
-          <h2 className="lux-display text-3xl leading-tight md:text-4xl">{copy.related.title}</h2>
-          <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.related.body}</p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            {copy.related.links.map((link) => (
-              <LocalizedLink key={link.href} href={link.href} className="text-sm font-semibold text-lux-gold">
-                {link.label}
-              </LocalizedLink>
-            ))}
-          </div>
         </div>
       </section>
 
