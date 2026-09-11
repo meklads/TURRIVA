@@ -6,7 +6,6 @@ import { LuxuryExperienceBriefForm } from "./luxury-experience-brief-form";
 import { LuxuryProductBriefSection } from "./luxury-product-brief-section";
 import { LuxuryProductHero } from "./luxury-product-hero";
 import { LuxuryProductVisualBand } from "./luxury-product-visual-band";
-import { LuxuryProductPager, LuxuryProductRelated } from "./luxury-product-related";
 import { LuxuryStickyCta } from "./luxury-sticky-cta";
 
 type Props = { locale: Locale };
@@ -24,7 +23,6 @@ export function LuxuryRenovationPage({ locale }: Props) {
         body={copy.hero.body}
         primaryCta={copy.hero.cta}
         secondaryCta={copy.hero.secondary}
-        secondaryHref="#brief"
         titleId="renovation-title"
       />
 
@@ -155,6 +153,20 @@ export function LuxuryRenovationPage({ locale }: Props) {
 
       <section className="lux-section lux-section--white">
         <div className="lux-container max-w-3xl">
+          <h2 className="lux-display text-3xl leading-tight md:text-4xl">{copy.related.title}</h2>
+          <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.related.body}</p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            {copy.related.links.map((link) => (
+              <LocalizedLink key={link.href} href={link.href} className="text-sm font-semibold text-lux-gold">
+                {link.label}
+              </LocalizedLink>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="lux-section lux-section--linen">
+        <div className="lux-container max-w-3xl">
           <p className="lux-eyebrow">{copy.audience.eyebrow}</p>
           <h2 className="lux-display mt-3 text-3xl leading-tight md:text-4xl">{copy.audience.title}</h2>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -167,8 +179,6 @@ export function LuxuryRenovationPage({ locale }: Props) {
           <p className="mt-6 text-sm leading-relaxed text-lux-ink-muted">{copy.audience.trust}</p>
         </div>
       </section>
-
-      <LuxuryProductRelated locale={locale} product="renovation" />
 
       <LuxuryProductBriefSection
         locale={locale}
@@ -188,8 +198,6 @@ export function LuxuryRenovationPage({ locale }: Props) {
           drawings={copy.form.drawings}
         />
       </LuxuryProductBriefSection>
-
-      <LuxuryProductPager locale={locale} product="renovation" />
 
       <LuxuryStickyCta
         locale={locale}

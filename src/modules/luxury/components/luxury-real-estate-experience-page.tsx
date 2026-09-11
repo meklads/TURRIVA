@@ -6,6 +6,7 @@ import { LuxuryExperienceBriefForm } from "./luxury-experience-brief-form";
 import { LuxuryProductBriefSection } from "./luxury-product-brief-section";
 import { LuxuryProductHero } from "./luxury-product-hero";
 import { LuxuryProductVisualBand } from "./luxury-product-visual-band";
+import { LuxuryProductPager, LuxuryProductRelated } from "./luxury-product-related";
 import { LuxuryStickyCta } from "./luxury-sticky-cta";
 
 type Props = { locale: Locale };
@@ -222,6 +223,8 @@ export function LuxuryRealEstateExperiencePage({ locale }: Props) {
         </div>
       </section>
 
+      <LuxuryProductRelated locale={locale} product="real-estate-experience" />
+
       <LuxuryProductBriefSection
         locale={locale}
         product="real-estate-experience"
@@ -231,6 +234,8 @@ export function LuxuryRealEstateExperiencePage({ locale }: Props) {
       >
         <LuxuryExperienceBriefForm locale={locale} />
       </LuxuryProductBriefSection>
+
+      <LuxuryProductPager locale={locale} product="real-estate-experience" />
 
       <LuxuryStickyCta locale={locale} label={copy.hero.cta} href={briefHref} source="real_estate_experience" />
     </>
