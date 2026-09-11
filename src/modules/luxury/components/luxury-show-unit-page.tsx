@@ -1,10 +1,12 @@
-import Image from "next/image";
-import { LUXURY_HERO_IMAGE } from "@/modules/luxury/lib/nav";
 import { SHOW_UNIT_PATH, getShowUnitCopy } from "@/modules/luxury/lib/show-unit-copy";
 import type { Locale } from "@/shared/i18n/locale";
 import { localizePath } from "@/shared/i18n/path";
 import { LocalizedLink } from "@/shared/components/localized-link";
 import { LuxuryExperienceBriefForm } from "./luxury-experience-brief-form";
+import { LuxuryProductBriefSection } from "./luxury-product-brief-section";
+import { LuxuryProductHero } from "./luxury-product-hero";
+import { LuxuryProductVisualBand } from "./luxury-product-visual-band";
+import { LuxuryProductPager, LuxuryProductRelated } from "./luxury-product-related";
 import { LuxuryStickyCta } from "./luxury-sticky-cta";
 
 type Props = { locale: Locale };
@@ -14,36 +16,17 @@ export function LuxuryShowUnitPage({ locale }: Props) {
 
   return (
     <>
-      <section className="lux-section lux-section--white" aria-labelledby="show-unit-title">
-        <div className="lux-container grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-          <div>
-            <p className="lux-eyebrow">{copy.hero.eyebrow}</p>
-            <h1 id="show-unit-title" className="lux-display mt-4 text-4xl leading-tight text-lux-ink md:text-5xl">
-              {copy.hero.title}
-              <span className="mt-2 block">{copy.hero.question}</span>
-            </h1>
-            <p className="lux-body mt-5 max-w-xl text-lg leading-relaxed text-lux-ink-soft">{copy.hero.body}</p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#brief" className="lux-btn-primary">
-                {copy.hero.cta}
-              </a>
-              <a href="#scope" className="lux-btn-outline">
-                {copy.hero.secondary}
-              </a>
-            </div>
-          </div>
-          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lux-card sm:aspect-[5/4] lg:aspect-[4/5]">
-            <Image
-              src={LUXURY_HERO_IMAGE}
-              alt={locale === "ar" ? "فراغ داخلي مكتمل" : "A finished interior space"}
-              fill
-              priority
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 46vw"
-            />
-          </div>
-        </div>
-      </section>
+      <LuxuryProductHero
+        locale={locale}
+        product="show-unit"
+        eyebrow={copy.hero.eyebrow}
+        title={copy.hero.title}
+        question={copy.hero.question}
+        body={copy.hero.body}
+        primaryCta={copy.hero.cta}
+        secondaryCta={copy.hero.secondary}
+        titleId="show-unit-title"
+      />
 
       <section className="lux-section lux-section--linen" aria-labelledby="show-unit-problem">
         <div className="lux-container max-w-4xl">
@@ -54,7 +37,7 @@ export function LuxuryShowUnitPage({ locale }: Props) {
           <p className="lux-body mt-4 text-lg leading-relaxed text-lux-ink-soft">{copy.problem.body}</p>
           <ul className="mt-8 grid gap-3 sm:grid-cols-3">
             {copy.problem.points.map((point) => (
-              <li key={point} className="rounded-xl border border-lux-sand bg-white px-4 py-4 text-sm leading-relaxed text-lux-ink">
+              <li key={point} className="lux-product-point">
                 {point}
               </li>
             ))}
@@ -72,6 +55,8 @@ export function LuxuryShowUnitPage({ locale }: Props) {
           <p className="mt-6 border-s-2 border-lux-gold ps-4 text-sm leading-relaxed text-lux-ink">{copy.definition.result}</p>
         </div>
       </section>
+
+      <LuxuryProductVisualBand locale={locale} product="show-unit" />
 
       <section className="lux-section lux-section--linen" aria-labelledby="show-unit-types">
         <div className="lux-container">
@@ -177,25 +162,27 @@ export function LuxuryShowUnitPage({ locale }: Props) {
         </div>
       </section>
 
-      <section id="brief" className="lux-section lux-section--white scroll-mt-24" aria-labelledby="show-unit-cta">
-        <div className="lux-container max-w-3xl">
-          <h2 id="show-unit-cta" className="lux-display text-3xl leading-tight md:text-4xl">
-            {copy.close.title}
-          </h2>
-          <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.close.body}</p>
-          <div className="mt-8 rounded-2xl border border-lux-sand bg-white p-5 shadow-lux-card sm:p-8">
-            <LuxuryExperienceBriefForm
-              locale={locale}
-              source="show_unit"
-              productLabel={copy.form.productLabel}
-              initialProjectType="show_unit"
-              initialNeeds={["show_unit", "design", "execution"]}
-              unitTypes={copy.form.unitTypes}
-              drawings={copy.form.drawings}
-            />
-          </div>
-        </div>
-      </section>
+      <LuxuryProductRelated locale={locale} product="show-unit" />
+
+      <LuxuryProductBriefSection
+        locale={locale}
+        product="show-unit"
+        title={copy.close.title}
+        body={copy.close.body}
+        titleId="show-unit-cta"
+      >
+        <LuxuryExperienceBriefForm
+          locale={locale}
+          source="show_unit"
+          productLabel={copy.form.productLabel}
+          initialProjectType="show_unit"
+          initialNeeds={["show_unit", "design", "execution"]}
+          unitTypes={copy.form.unitTypes}
+          drawings={copy.form.drawings}
+        />
+      </LuxuryProductBriefSection>
+
+      <LuxuryProductPager locale={locale} product="show-unit" />
 
       <LuxuryStickyCta
         locale={locale}

@@ -1,10 +1,12 @@
-import Image from "next/image";
-import { LUXURY_HERO_IMAGE } from "@/modules/luxury/lib/nav";
 import { EXPERIENCE_PATH, getExperienceCopy } from "@/modules/luxury/lib/real-estate-experience-copy";
 import { LocalizedLink } from "@/shared/components/localized-link";
 import type { Locale } from "@/shared/i18n/locale";
 import { localizePath } from "@/shared/i18n/path";
 import { LuxuryExperienceBriefForm } from "./luxury-experience-brief-form";
+import { LuxuryProductBriefSection } from "./luxury-product-brief-section";
+import { LuxuryProductHero } from "./luxury-product-hero";
+import { LuxuryProductVisualBand } from "./luxury-product-visual-band";
+import { LuxuryProductPager, LuxuryProductRelated } from "./luxury-product-related";
 import { LuxuryStickyCta } from "./luxury-sticky-cta";
 
 type Props = { locale: Locale };
@@ -15,36 +17,17 @@ export function LuxuryRealEstateExperiencePage({ locale }: Props) {
 
   return (
     <>
-      <section className="lux-section lux-section--white" aria-labelledby="experience-hero-title">
-        <div className="lux-container grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-          <div>
-            <p className="lux-eyebrow">{copy.hero.eyebrow}</p>
-            <h1 id="experience-hero-title" className="lux-display mt-4 text-4xl leading-tight text-lux-ink md:text-5xl">
-              {copy.hero.title}
-              <span className="mt-2 block">{copy.hero.question}</span>
-            </h1>
-            <p className="lux-body mt-5 max-w-xl text-lg leading-relaxed text-lux-ink-soft">{copy.hero.body}</p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#brief" className="lux-btn-primary">
-                {copy.hero.cta}
-              </a>
-              <a href="#scope" className="lux-btn-outline">
-                {copy.hero.secondary}
-              </a>
-            </div>
-          </div>
-          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lux-card sm:aspect-[5/4] lg:aspect-[4/5]">
-            <Image
-              src={LUXURY_HERO_IMAGE}
-              alt={locale === "ar" ? "فراغ داخلي مكتمل" : "A finished interior space"}
-              fill
-              priority
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 46vw"
-            />
-          </div>
-        </div>
-      </section>
+      <LuxuryProductHero
+        locale={locale}
+        product="real-estate-experience"
+        eyebrow={copy.hero.eyebrow}
+        title={copy.hero.title}
+        question={copy.hero.question}
+        body={copy.hero.body}
+        primaryCta={copy.hero.cta}
+        secondaryCta={copy.hero.secondary}
+        titleId="experience-hero-title"
+      />
 
       <section className="lux-section lux-section--linen" aria-labelledby="experience-problem-title">
         <div className="lux-container max-w-4xl">
@@ -55,7 +38,7 @@ export function LuxuryRealEstateExperiencePage({ locale }: Props) {
           <p className="lux-body mt-4 text-lg leading-relaxed text-lux-ink-soft">{copy.problem.body}</p>
           <ul className="mt-8 grid gap-3 sm:grid-cols-3">
             {copy.problem.points.map((point) => (
-              <li key={point} className="rounded-xl border border-lux-sand bg-white px-4 py-4 text-sm leading-relaxed text-lux-ink">
+              <li key={point} className="lux-product-point">
                 {point}
               </li>
             ))}
@@ -73,6 +56,8 @@ export function LuxuryRealEstateExperiencePage({ locale }: Props) {
           <p className="mt-6 border-s-2 border-lux-gold ps-4 text-sm leading-relaxed text-lux-ink">{copy.definition.result}</p>
         </div>
       </section>
+
+      <LuxuryProductVisualBand locale={locale} product="real-estate-experience" />
 
       <section id="scope" className="lux-section lux-section--linen scroll-mt-24" aria-labelledby="experience-scope-title">
         <div className="lux-container">
@@ -237,17 +222,19 @@ export function LuxuryRealEstateExperiencePage({ locale }: Props) {
         </div>
       </section>
 
-      <section id="brief" className="lux-section lux-section--linen scroll-mt-24" aria-labelledby="experience-cta-title">
-        <div className="lux-container max-w-3xl">
-          <h2 id="experience-cta-title" className="lux-display text-3xl leading-tight md:text-4xl">
-            {copy.close.title}
-          </h2>
-          <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.close.body}</p>
-          <div className="mt-8 rounded-2xl border border-lux-sand bg-white p-5 shadow-lux-card sm:p-8">
-            <LuxuryExperienceBriefForm locale={locale} />
-          </div>
-        </div>
-      </section>
+      <LuxuryProductRelated locale={locale} product="real-estate-experience" />
+
+      <LuxuryProductBriefSection
+        locale={locale}
+        product="real-estate-experience"
+        title={copy.close.title}
+        body={copy.close.body}
+        titleId="experience-cta-title"
+      >
+        <LuxuryExperienceBriefForm locale={locale} />
+      </LuxuryProductBriefSection>
+
+      <LuxuryProductPager locale={locale} product="real-estate-experience" />
 
       <LuxuryStickyCta locale={locale} label={copy.hero.cta} href={briefHref} source="real_estate_experience" />
     </>

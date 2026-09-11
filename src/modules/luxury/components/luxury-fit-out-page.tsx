@@ -1,10 +1,12 @@
-import Image from "next/image";
-import { LUXURY_HERO_IMAGE } from "@/modules/luxury/lib/nav";
 import { FIT_OUT_PATH, getFitOutCopy } from "@/modules/luxury/lib/fit-out-copy";
 import type { Locale } from "@/shared/i18n/locale";
 import { localizePath } from "@/shared/i18n/path";
 import { LocalizedLink } from "@/shared/components/localized-link";
 import { LuxuryExperienceBriefForm } from "./luxury-experience-brief-form";
+import { LuxuryProductBriefSection } from "./luxury-product-brief-section";
+import { LuxuryProductHero } from "./luxury-product-hero";
+import { LuxuryProductVisualBand } from "./luxury-product-visual-band";
+import { LuxuryProductPager, LuxuryProductRelated } from "./luxury-product-related";
 import { LuxuryStickyCta } from "./luxury-sticky-cta";
 
 type Props = { locale: Locale };
@@ -14,35 +16,16 @@ export function LuxuryFitOutPage({ locale }: Props) {
 
   return (
     <>
-      <section className="lux-section lux-section--white" aria-labelledby="fit-out-title">
-        <div className="lux-container grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-          <div>
-            <p className="lux-eyebrow">{copy.hero.eyebrow}</p>
-            <h1 id="fit-out-title" className="lux-display mt-4 text-4xl leading-tight text-lux-ink md:text-5xl">
-              {copy.hero.title}
-            </h1>
-            <p className="lux-body mt-5 max-w-xl text-lg leading-relaxed text-lux-ink-soft">{copy.hero.body}</p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#brief" className="lux-btn-primary">
-                {copy.hero.cta}
-              </a>
-              <a href="#scope" className="lux-btn-outline">
-                {copy.hero.secondary}
-              </a>
-            </div>
-          </div>
-          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lux-card sm:aspect-[5/4] lg:aspect-[4/5]">
-            <Image
-              src={LUXURY_HERO_IMAGE}
-              alt={locale === "ar" ? "فراغ داخلي مكتمل" : "A finished interior space"}
-              fill
-              priority
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 46vw"
-            />
-          </div>
-        </div>
-      </section>
+      <LuxuryProductHero
+        locale={locale}
+        product="fit-out"
+        eyebrow={copy.hero.eyebrow}
+        title={copy.hero.title}
+        body={copy.hero.body}
+        primaryCta={copy.hero.cta}
+        secondaryCta={copy.hero.secondary}
+        titleId="fit-out-title"
+      />
 
       <section className="lux-section lux-section--linen" aria-labelledby="fit-out-problem">
         <div className="lux-container max-w-4xl">
@@ -53,7 +36,7 @@ export function LuxuryFitOutPage({ locale }: Props) {
           <p className="lux-body mt-4 text-lg leading-relaxed text-lux-ink-soft">{copy.problem.body}</p>
           <ul className="mt-8 grid gap-3 sm:grid-cols-3">
             {copy.problem.points.map((point) => (
-              <li key={point} className="rounded-xl border border-lux-sand bg-white px-4 py-4 text-sm leading-relaxed text-lux-ink">
+              <li key={point} className="lux-product-point">
                 {point}
               </li>
             ))}
@@ -71,6 +54,8 @@ export function LuxuryFitOutPage({ locale }: Props) {
           <p className="mt-6 border-s-2 border-lux-gold ps-4 text-sm leading-relaxed text-lux-ink">{copy.definition.result}</p>
         </div>
       </section>
+
+      <LuxuryProductVisualBand locale={locale} product="fit-out" />
 
       <section className="lux-section lux-section--linen" aria-labelledby="fit-out-partner">
         <div className="lux-container max-w-3xl">
@@ -160,40 +145,28 @@ export function LuxuryFitOutPage({ locale }: Props) {
         </div>
       </section>
 
-      <section className="lux-section lux-section--white">
-        <div className="lux-container max-w-3xl">
-          <h2 className="lux-display text-3xl leading-tight md:text-4xl">{copy.related.title}</h2>
-          <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.related.body}</p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            {copy.related.links.map((link) => (
-              <LocalizedLink key={link.href} href={link.href} className="text-sm font-semibold text-lux-gold">
-                {link.label}
-              </LocalizedLink>
-            ))}
-          </div>
-        </div>
-      </section>
+      <LuxuryProductRelated locale={locale} product="fit-out" />
 
-      <section id="brief" className="lux-section lux-section--linen scroll-mt-24" aria-labelledby="fit-out-cta">
-        <div className="lux-container max-w-3xl">
-          <h2 id="fit-out-cta" className="lux-display text-3xl leading-tight md:text-4xl">
-            {copy.close.title}
-          </h2>
-          <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.close.body}</p>
-          <div className="mt-8 rounded-2xl border border-lux-sand bg-white p-5 shadow-lux-card sm:p-8">
-            <LuxuryExperienceBriefForm
-              locale={locale}
-              source="fit_out"
-              productLabel={copy.form.productLabel}
-              initialProjectType="other"
-              initialNeeds={["execution"]}
-              unitTypes={copy.form.roles}
-              choiceLegend={copy.form.choiceLegend}
-              drawings={copy.form.drawings}
-            />
-          </div>
-        </div>
-      </section>
+      <LuxuryProductBriefSection
+        locale={locale}
+        product="fit-out"
+        title={copy.close.title}
+        body={copy.close.body}
+        titleId="fit-out-cta"
+      >
+        <LuxuryExperienceBriefForm
+          locale={locale}
+          source="fit_out"
+          productLabel={copy.form.productLabel}
+          initialProjectType="other"
+          initialNeeds={["execution"]}
+          unitTypes={copy.form.roles}
+          choiceLegend={copy.form.choiceLegend}
+          drawings={copy.form.drawings}
+        />
+      </LuxuryProductBriefSection>
+
+      <LuxuryProductPager locale={locale} product="fit-out" />
 
       <LuxuryStickyCta
         locale={locale}

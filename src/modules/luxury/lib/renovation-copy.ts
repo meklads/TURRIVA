@@ -83,7 +83,7 @@ const en: RenovationCopy = {
     "The space already exists. Turriva assesses what to keep, what to change, and what to rebuild, then designs and builds a clearer use. The first step is a conversation.",
   hero: {
     eyebrow: "Renovation and upgrade",
-    title: "The space already exists. The use can change.",
+    title: "An existing space. New potential.",
     body: "We take an occupied or finished room and make it work better for how it is used now. This is not restoration, and it does not start by demolishing everything.",
     cta: "Discuss your project",
     secondary: "What the work includes",
@@ -203,7 +203,7 @@ const ar: RenovationCopy = {
     "المساحة قائمة. توريفا تقيّم ما يُبقى وما يُطوَّر وما يُعاد بناؤه، ثم تصمم وتبني استخداماً أوضح. الخطوة الأولى محادثة.",
   hero: {
     eyebrow: "التجديد والتطوير",
-    title: "المساحة قائمة. الاستخدام يمكن أن يتغير.",
+    title: "مساحة قائمة. إمكانات جديدة.",
     body: "نأخذ غرفة مشغولة أو مكتملة ونجعلها أنسب لطريقة استخدامها الآن. ليس هذا ترميمًا، ولا يبدأ بهدم كل شيء.",
     cta: "ناقش مشروعك معنا",
     secondary: "ماذا يشمل العمل",
