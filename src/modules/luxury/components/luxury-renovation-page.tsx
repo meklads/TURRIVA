@@ -6,6 +6,7 @@ import { LuxuryExperienceBriefForm } from "./luxury-experience-brief-form";
 import { LuxuryProductBriefSection } from "./luxury-product-brief-section";
 import { LuxuryProductHero } from "./luxury-product-hero";
 import { LuxuryProductVisualBand } from "./luxury-product-visual-band";
+import { LuxuryProductPager, LuxuryProductRelated } from "./luxury-product-related";
 import { LuxuryStickyCta } from "./luxury-sticky-cta";
 
 type Props = { locale: Locale };
@@ -23,6 +24,7 @@ export function LuxuryRenovationPage({ locale }: Props) {
         body={copy.hero.body}
         primaryCta={copy.hero.cta}
         secondaryCta={copy.hero.secondary}
+        secondaryHref="#brief"
         titleId="renovation-title"
       />
 
@@ -166,6 +168,8 @@ export function LuxuryRenovationPage({ locale }: Props) {
         </div>
       </section>
 
+      <LuxuryProductRelated locale={locale} product="renovation" />
+
       <LuxuryProductBriefSection
         locale={locale}
         product="renovation"
@@ -184,6 +188,8 @@ export function LuxuryRenovationPage({ locale }: Props) {
           drawings={copy.form.drawings}
         />
       </LuxuryProductBriefSection>
+
+      <LuxuryProductPager locale={locale} product="renovation" />
 
       <LuxuryStickyCta
         locale={locale}
