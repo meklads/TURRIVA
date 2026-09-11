@@ -28,7 +28,7 @@ export type DesignBuildCopy = {
   starts: {
     eyebrow: string;
     title: string;
-    items: readonly { title: string; body: string }[];
+    items: readonly { title: string; body: string; href?: string; cta?: string }[];
   };
   includes: {
     eyebrow: string;
@@ -99,7 +99,12 @@ const en: DesignBuildCopy = {
     title: "Two ways in. The same path after that.",
     items: [
       { title: "From an idea", body: "We develop the concept, the materials, and the details, then build them." },
-      { title: "From drawings you have", body: "If a designer has already approved the work, we develop it for site and execute it." },
+      {
+        title: "From drawings you have",
+        body: "If the design is already approved, that is a different job. We develop it for site and execute it, without replacing the designer.",
+        href: "/fit-out",
+        cta: "Fit-out and execution",
+      },
     ],
   },
   includes: {
@@ -196,7 +201,12 @@ const ar: DesignBuildCopy = {
     title: "مدخلان. المسار بعد ذلك واحد.",
     items: [
       { title: "من فكرة", body: "نطوّر الفكرة والمواد والتفاصيل، ثم نبنيها." },
-      { title: "من مخططات لديكم", body: "إذا كان التصميم معتمداً لدى مكتب، نطوّره للموقع وننفّذه." },
+      {
+        title: "من مخططات لديكم",
+        body: "إذا كان التصميم معتمداً، فذلك عمل مختلف. نطوّره للموقع وننفّذه، دون أن نحل محل المصمم.",
+        href: "/fit-out",
+        cta: "التنفيذ والتجهيز",
+      },
     ],
   },
   includes: {
