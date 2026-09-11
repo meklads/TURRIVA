@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { EXPERIENCE_PATH, getExperienceCopy } from "@/modules/luxury/lib/real-estate-experience-copy";
+import { getProductVisuals } from "@/modules/luxury/lib/product-visuals";
 import { LocalizedLink } from "@/shared/components/localized-link";
 import type { Locale } from "@/shared/i18n/locale";
 import { localizePath } from "@/shared/i18n/path";
@@ -14,8 +16,9 @@ type Props = { locale: Locale };
 
 export function LuxuryRealEstateExperiencePage({ locale }: Props) {
   const copy = getExperienceCopy(locale);
+  const visuals = getProductVisuals("real-estate-experience");
   const briefHref = `${localizePath(EXPERIENCE_PATH, locale)}#brief`;
-  const isAr = locale === "ar";
+  const alt = locale === "ar" ? visuals.altAr : visuals.altEn;
 
   return (
     <div className="lux-rx">
@@ -32,40 +35,40 @@ export function LuxuryRealEstateExperiencePage({ locale }: Props) {
         titleId="experience-hero-title"
       />
 
-      {/* Problem — editorial split */}
       <section className="lux-rx-section lux-rx-section--soft" aria-labelledby="experience-problem-title">
-        <div className="lux-container lux-rx-split">
-          <header className="lux-rx-split__lead">
-            <p className="lux-rx-eyebrow">{copy.problem.eyebrow}</p>
-            <h2 id="experience-problem-title" className="lux-rx-title">
+        <div className="lux-container lux-rx-problem">
+          <div className="lux-rx-problem__copy">
+            <p className="lux-rx-kicker">{copy.problem.eyebrow}</p>
+            <h2 id="experience-problem-title" className="lux-rx-display">
               {copy.problem.title}
             </h2>
-          </header>
-          <div className="lux-rx-split__body">
-            <p className="lux-rx-lede">{copy.problem.body}</p>
-            <ol className="lux-rx-insights">
-              {copy.problem.points.map((point, index) => (
-                <li key={point} className="lux-rx-insights__item">
-                  <span className="lux-rx-insights__num" aria-hidden="true">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ol>
+            <p className="lux-rx-copy">{copy.problem.body}</p>
           </div>
+          <ol className="lux-rx-problem__list">
+            {copy.problem.points.map((point, index) => (
+              <li key={point} className="lux-rx-problem__item">
+                <span className="lux-rx-num" aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <p>{point}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
-      {/* Definition — immersive dark */}
       <section className="lux-rx-section lux-rx-section--ink" aria-labelledby="experience-definition-title">
         <div className="lux-container lux-rx-define">
-          <p className="lux-rx-eyebrow lux-rx-eyebrow--on-dark">{copy.definition.eyebrow}</p>
-          <h2 id="experience-definition-title" className="lux-rx-title lux-rx-title--on-dark lux-rx-title--wide">
-            {copy.definition.title}
-          </h2>
-          <p className="lux-rx-lede lux-rx-lede--on-dark">{copy.definition.body}</p>
-          <p className="lux-rx-result">{copy.definition.result}</p>
+          <div className="lux-rx-define__main">
+            <p className="lux-rx-kicker lux-rx-kicker--light">{copy.definition.eyebrow}</p>
+            <h2 id="experience-definition-title" className="lux-rx-display lux-rx-display--light">
+              {copy.definition.title}
+            </h2>
+            <p className="lux-rx-copy lux-rx-copy--light">{copy.definition.body}</p>
+          </div>
+          <aside className="lux-rx-define__aside">
+            <p className="lux-rx-define__result">{copy.definition.result}</p>
+          </aside>
         </div>
       </section>
 
@@ -73,186 +76,196 @@ export function LuxuryRealEstateExperiencePage({ locale }: Props) {
 
       <LuxuryProductStoryStrip locale={locale} product="real-estate-experience" />
 
-      {/* Scope */}
-      <section id="scope" className="lux-rx-section lux-rx-section--white scroll-mt-24" aria-labelledby="experience-scope-title">
+      <section id="scope" className="lux-rx-section lux-rx-section--paper scroll-mt-24" aria-labelledby="experience-scope-title">
         <div className="lux-container">
-          <header className="lux-rx-head">
-            <p className="lux-rx-eyebrow">{copy.includes.eyebrow}</p>
-            <h2 id="experience-scope-title" className="lux-rx-title">
+          <header className="lux-rx-intro">
+            <p className="lux-rx-kicker">{copy.includes.eyebrow}</p>
+            <h2 id="experience-scope-title" className="lux-rx-display">
               {copy.includes.title}
             </h2>
-            <p className="lux-rx-lede">{copy.includes.intro}</p>
+            <p className="lux-rx-copy">{copy.includes.intro}</p>
           </header>
 
           <ol className="lux-rx-scope">
             {copy.includes.items.map((item, index) => (
-              <li key={item.title} className="lux-rx-scope__item">
-                <div className="lux-rx-scope__index" aria-hidden="true">
+              <li key={item.title} className="lux-rx-scope__row">
+                <span className="lux-rx-scope__index" aria-hidden="true">
                   {String(index + 1).padStart(2, "0")}
-                </div>
-                <div className="lux-rx-scope__content">
-                  <h3 className="lux-rx-scope__title">{item.title}</h3>
-                  <p className="lux-rx-scope__points">{item.points.join(isAr ? " · " : " · ")}</p>
-                  {item.more && item.moreHref ? (
-                    <LocalizedLink href={item.moreHref} className="lux-rx-link">
-                      {item.more}
-                    </LocalizedLink>
-                  ) : null}
+                </span>
+                <div className="lux-rx-scope__body">
+                  <div className="lux-rx-scope__top">
+                    <h3 className="lux-rx-scope__title">{item.title}</h3>
+                    {item.more && item.moreHref ? (
+                      <LocalizedLink href={item.moreHref} className="lux-rx-text-link">
+                        {item.more}
+                      </LocalizedLink>
+                    ) : null}
+                  </div>
+                  <ul className="lux-rx-chips">
+                    {item.points.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
                 </div>
               </li>
             ))}
           </ol>
-          <p className="lux-rx-note">{copy.includes.techNote}</p>
+          <p className="lux-rx-footnote">{copy.includes.techNote}</p>
         </div>
       </section>
 
-      {/* Flexible paths */}
       <section className="lux-rx-section lux-rx-section--warm" aria-labelledby="experience-flexible-title">
-        <div className="lux-container">
-          <header className="lux-rx-head lux-rx-head--center">
-            <p className="lux-rx-eyebrow">{copy.flexible.eyebrow}</p>
-            <h2 id="experience-flexible-title" className="lux-rx-title">
+        <div className="lux-container lux-rx-rail">
+          <header className="lux-rx-intro lux-rx-intro--center">
+            <p className="lux-rx-kicker">{copy.flexible.eyebrow}</p>
+            <h2 id="experience-flexible-title" className="lux-rx-display">
               {copy.flexible.title}
             </h2>
-            <p className="lux-rx-lede">{copy.flexible.intro}</p>
+            <p className="lux-rx-copy">{copy.flexible.intro}</p>
           </header>
-          <ul className="lux-rx-paths">
-            {copy.flexible.options.map((option) => (
-              <li key={option} className="lux-rx-paths__item">
-                {option}
+          <ul className="lux-rx-rail__items">
+            {copy.flexible.options.map((option, index) => (
+              <li key={option} className="lux-rx-rail__item">
+                <span className="lux-rx-num" aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span>{option}</span>
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      {/* Levels */}
-      <section className="lux-rx-section lux-rx-section--white" aria-labelledby="experience-levels-title">
+      <section className="lux-rx-section lux-rx-section--paper" aria-labelledby="experience-levels-title">
         <div className="lux-container">
-          <header className="lux-rx-head">
-            <p className="lux-rx-eyebrow">{copy.levels.eyebrow}</p>
-            <h2 id="experience-levels-title" className="lux-rx-title">
+          <header className="lux-rx-intro">
+            <p className="lux-rx-kicker">{copy.levels.eyebrow}</p>
+            <h2 id="experience-levels-title" className="lux-rx-display">
               {copy.levels.title}
             </h2>
-            <p className="lux-rx-lede">{copy.levels.note}</p>
+            <p className="lux-rx-copy">{copy.levels.note}</p>
           </header>
-          <ol className="lux-rx-levels">
+          <ol className="lux-rx-tiers">
             {copy.levels.items.map((level, index) => (
               <li
                 key={level.name}
-                className={`lux-rx-levels__card${index === 1 ? " lux-rx-levels__card--featured" : ""}`}
+                className={`lux-rx-tier${index === 1 ? " lux-rx-tier--featured" : ""}`}
               >
-                <p className="lux-rx-levels__num" aria-hidden="true">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <h3 className="lux-rx-levels__name">{level.name}</h3>
-                {level.nameAlt ? <p className="lux-rx-levels__alt">{level.nameAlt}</p> : null}
-                <p className="lux-rx-levels__body">{level.body}</p>
-                <p className="lux-rx-levels__points">{level.points.join(" · ")}</p>
+                <div className="lux-rx-tier__head">
+                  <span className="lux-rx-num" aria-hidden="true">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="lux-rx-tier__name">{level.name}</h3>
+                  {level.nameAlt ? <p className="lux-rx-tier__alt">{level.nameAlt}</p> : null}
+                </div>
+                <p className="lux-rx-tier__body">{level.body}</p>
+                <ul className="lux-rx-chips lux-rx-chips--on-tier">
+                  {level.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
               </li>
             ))}
           </ol>
         </div>
       </section>
 
-      {/* When */}
       <section className="lux-rx-section lux-rx-section--soft" aria-labelledby="experience-when-title">
-        <div className="lux-container">
-          <header className="lux-rx-head">
-            <p className="lux-rx-eyebrow">{copy.when.eyebrow}</p>
-            <h2 id="experience-when-title" className="lux-rx-title">
+        <div className="lux-container lux-rx-when">
+          <header className="lux-rx-intro">
+            <p className="lux-rx-kicker">{copy.when.eyebrow}</p>
+            <h2 id="experience-when-title" className="lux-rx-display">
               {copy.when.title}
             </h2>
           </header>
-          <ul className="lux-rx-signals">
+          <ul className="lux-rx-when__grid">
             {copy.when.items.map((item) => (
-              <li key={item} className="lux-rx-signals__item">
-                <span className="lux-rx-signals__mark" aria-hidden="true" />
-                <span>{item}</span>
+              <li key={item}>
+                <span className="lux-rx-when__dot" aria-hidden="true" />
+                {item}
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      {/* Journey */}
       <section className="lux-rx-section lux-rx-section--ink" aria-labelledby="experience-journey-title">
         <div className="lux-container">
-          <header className="lux-rx-head lux-rx-head--on-dark">
-            <p className="lux-rx-eyebrow lux-rx-eyebrow--on-dark">{copy.journey.eyebrow}</p>
-            <h2 id="experience-journey-title" className="lux-rx-title lux-rx-title--on-dark">
+          <header className="lux-rx-intro">
+            <p className="lux-rx-kicker lux-rx-kicker--light">{copy.journey.eyebrow}</p>
+            <h2 id="experience-journey-title" className="lux-rx-display lux-rx-display--light">
               {copy.journey.title}
             </h2>
           </header>
-          <ol className="lux-rx-journey">
+          <ol className="lux-rx-flow">
             {copy.journey.steps.map((step, index) => (
-              <li key={step} className="lux-rx-journey__step">
-                <span className="lux-rx-journey__num" aria-hidden="true">
+              <li key={step} className="lux-rx-flow__step">
+                <span className="lux-rx-flow__num" aria-hidden="true">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <span className="lux-rx-journey__label">{step}</span>
+                <span className="lux-rx-flow__label">{step}</span>
               </li>
             ))}
           </ol>
         </div>
       </section>
 
-      {/* Why */}
-      <section className="lux-rx-section lux-rx-section--white" aria-labelledby="experience-why-title">
+      <section className="lux-rx-section lux-rx-section--paper" aria-labelledby="experience-why-title">
         <div className="lux-container">
-          <header className="lux-rx-head">
-            <p className="lux-rx-eyebrow">{copy.why.eyebrow}</p>
-            <h2 id="experience-why-title" className="lux-rx-title">
+          <header className="lux-rx-intro">
+            <p className="lux-rx-kicker">{copy.why.eyebrow}</p>
+            <h2 id="experience-why-title" className="lux-rx-display">
               {copy.why.title}
             </h2>
           </header>
-          <ul className="lux-rx-why">
+          <ul className="lux-rx-pillars">
             {copy.why.items.map((item, index) => (
-              <li key={item.title} className="lux-rx-why__item">
-                <p className="lux-rx-why__num" aria-hidden="true">
+              <li key={item.title} className="lux-rx-pillars__item">
+                <span className="lux-rx-num" aria-hidden="true">
                   {String(index + 1).padStart(2, "0")}
-                </p>
-                <h3 className="lux-rx-why__title">{item.title}</h3>
-                <p className="lux-rx-why__body">{item.body}</p>
+                </span>
+                <h3 className="lux-rx-pillars__title">{item.title}</h3>
+                <p className="lux-rx-pillars__body">{item.body}</p>
               </li>
             ))}
           </ul>
-          <p className="lux-rx-note">{copy.why.trust}</p>
+          <p className="lux-rx-footnote">{copy.why.trust}</p>
         </div>
       </section>
 
-      {/* Scenario */}
       <section className="lux-rx-section lux-rx-section--warm" aria-labelledby="experience-scenario-title">
-        <div className="lux-container lux-rx-scenario">
-          <header className="lux-rx-scenario__head">
-            <p className="lux-rx-eyebrow">{copy.scenario.eyebrow}</p>
-            <h2 id="experience-scenario-title" className="lux-rx-title">
+        <div className="lux-container lux-rx-case">
+          <div className="lux-rx-case__media">
+            <Image src={visuals.form} alt={alt} fill className="object-cover" sizes="(max-width: 900px) 100vw, 42vw" />
+            <div className="lux-rx-case__shade" aria-hidden />
+          </div>
+          <div className="lux-rx-case__content">
+            <p className="lux-rx-kicker">{copy.scenario.eyebrow}</p>
+            <h2 id="experience-scenario-title" className="lux-rx-display">
               {copy.scenario.title}
             </h2>
-            <p className="lux-rx-scenario__label">{copy.scenario.label}</p>
-          </header>
-
-          <div className="lux-rx-scenario__panel">
-            <div className="lux-rx-scenario__project">
-              <p className="lux-rx-scenario__project-name">{copy.scenario.project}</p>
-              <p className="lux-rx-scenario__needs-label">{copy.scenario.needsTitle}</p>
-              <p className="lux-rx-scenario__needs">{copy.scenario.needs.join(" · ")}</p>
-            </div>
-            <div className="lux-rx-scenario__roles">
+            <p className="lux-rx-case__label">{copy.scenario.label}</p>
+            <p className="lux-rx-case__project">{copy.scenario.project}</p>
+            <p className="lux-rx-case__needs-label">{copy.scenario.needsTitle}</p>
+            <ul className="lux-rx-chips">
+              {copy.scenario.needs.map((need) => (
+                <li key={need}>{need}</li>
+              ))}
+            </ul>
+            <div className="lux-rx-case__roles">
               <p>{copy.scenario.turriva}</p>
               <p>{copy.scenario.graphics}</p>
-              <p className="lux-rx-scenario__result">{copy.scenario.result}</p>
+              <p className="lux-rx-case__result">{copy.scenario.result}</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Close statement */}
-      <section className="lux-rx-section lux-rx-section--ink lux-rx-close" aria-label={copy.close.brand}>
-        <div className="lux-container lux-rx-close__inner">
-          <p className="lux-rx-close__line">{copy.close.line}</p>
-          <p className="lux-rx-close__brand">{copy.close.brand}</p>
-          <p className="lux-rx-close__tagline">{copy.close.tagline}</p>
+      <section className="lux-rx-section lux-rx-section--ink lux-rx-finale" aria-label={copy.close.brand}>
+        <div className="lux-container lux-rx-finale__inner">
+          <p className="lux-rx-finale__line">{copy.close.line}</p>
+          <p className="lux-rx-finale__brand">{copy.close.brand}</p>
+          <p className="lux-rx-finale__tag">{copy.close.tagline}</p>
         </div>
       </section>
 
