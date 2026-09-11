@@ -5899,3 +5899,675 @@
   }
 }
 
+
+/* ═══════════════════════════════════════════════
+   Real Estate Experience — elevated page system
+   ═══════════════════════════════════════════════ */
+
+.lux-rx {
+  --rx-ink: #0c1c18;
+  --rx-ink-soft: #2a3a35;
+  --rx-cream: #f7f1e8;
+  --rx-warm: #efe6d8;
+  --rx-soft: #f4efe7;
+  --rx-line: color-mix(in srgb, var(--lux-sand) 70%, transparent);
+  --rx-gold: var(--lux-gold);
+}
+
+.lux-rx-section {
+  padding-block: clamp(3.5rem, 8vw, 6.5rem);
+}
+
+.lux-rx-section--white {
+  background: #fff;
+}
+
+.lux-rx-section--soft {
+  background:
+    radial-gradient(ellipse 80% 60% at 100% 0%, color-mix(in srgb, var(--lux-gold) 8%, transparent), transparent 55%),
+    var(--rx-soft);
+}
+
+.lux-rx-section--warm {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--rx-warm) 55%, white), var(--rx-warm));
+}
+
+.lux-rx-section--ink {
+  background:
+    radial-gradient(ellipse 70% 50% at 0% 100%, color-mix(in srgb, var(--lux-gold) 14%, transparent), transparent 50%),
+    linear-gradient(165deg, #0f221d 0%, var(--rx-ink) 55%, #081411 100%);
+  color: var(--rx-cream);
+}
+
+.lux-rx-eyebrow {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rx-gold);
+}
+
+.lux-rx-eyebrow--on-dark {
+  color: color-mix(in srgb, var(--rx-gold) 82%, white);
+}
+
+.lux-rx-title {
+  margin: 0.85rem 0 0;
+  max-width: 18ch;
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
+  font-size: clamp(1.85rem, 3.8vw, 2.85rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--rx-ink);
+  text-wrap: balance;
+}
+
+[dir="ltr"] .lux-rx-title {
+  font-family: var(--font-latin), Georgia, "Times New Roman", serif;
+  font-weight: 500;
+}
+
+.lux-rx-title--wide {
+  max-width: 22ch;
+}
+
+.lux-rx-title--on-dark {
+  color: var(--rx-cream);
+}
+
+.lux-rx-lede {
+  margin: 1rem 0 0;
+  max-width: 38rem;
+  font-size: clamp(0.98rem, 1.5vw, 1.1rem);
+  line-height: 1.7;
+  color: var(--rx-ink-soft);
+}
+
+.lux-rx-lede--on-dark {
+  color: color-mix(in srgb, var(--rx-cream) 78%, transparent);
+}
+
+.lux-rx-head {
+  max-width: 40rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.lux-rx-head--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.lux-rx-head--center .lux-rx-title,
+.lux-rx-head--center .lux-rx-lede {
+  margin-inline: auto;
+}
+
+.lux-rx-head--on-dark .lux-rx-title {
+  color: var(--rx-cream);
+}
+
+.lux-rx-note {
+  margin: clamp(1.75rem, 3vw, 2.5rem) 0 0;
+  max-width: 40rem;
+  padding-block-start: 1.15rem;
+  border-top: 1px solid var(--rx-line);
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  color: color-mix(in srgb, var(--rx-ink-soft) 75%, transparent);
+}
+
+.lux-rx-section--ink .lux-rx-note {
+  border-top-color: color-mix(in srgb, var(--rx-cream) 16%, transparent);
+  color: color-mix(in srgb, var(--rx-cream) 58%, transparent);
+}
+
+.lux-rx-link {
+  display: inline-flex;
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--rx-gold);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.lux-rx-link:hover {
+  opacity: 0.75;
+}
+
+/* Problem split */
+.lux-rx-split {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .lux-rx-split {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 4rem;
+  }
+}
+
+.lux-rx-split__lead .lux-rx-title {
+  max-width: 14ch;
+}
+
+.lux-rx-insights {
+  margin: 1.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--rx-line);
+}
+
+.lux-rx-insights__item {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 0.85rem;
+  align-items: baseline;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--rx-line);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--rx-ink);
+}
+
+.lux-rx-insights__num {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--rx-gold);
+}
+
+/* Definition */
+.lux-rx-define {
+  max-width: 46rem;
+}
+
+.lux-rx-result {
+  margin: 1.75rem 0 0;
+  max-width: 36rem;
+  padding: 1.15rem 0 0;
+  border-top: 1px solid color-mix(in srgb, var(--rx-gold) 35%, transparent);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--rx-cream) 88%, var(--rx-gold));
+}
+
+/* Scope — numbered rows, inline points */
+.lux-rx-scope {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--rx-line);
+}
+
+@media (min-width: 900px) {
+  .lux-rx-scope {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2.5rem;
+  }
+}
+
+.lux-rx-scope__item {
+  display: grid;
+  grid-template-columns: 2.75rem 1fr;
+  gap: 0.85rem;
+  padding-block: 1.35rem;
+  border-bottom: 1px solid var(--rx-line);
+}
+
+.lux-rx-scope__index {
+  padding-top: 0.2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--rx-gold);
+}
+
+.lux-rx-scope__title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--rx-ink);
+}
+
+.lux-rx-scope__points {
+  margin: 0.45rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--rx-ink-soft);
+}
+
+/* Paths — compact chips */
+.lux-rx-paths {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lux-rx-paths__item {
+  padding: 0.7rem 1.05rem;
+  border: 1px solid color-mix(in srgb, var(--lux-sand) 85%, var(--rx-gold));
+  border-radius: 999px;
+  background: color-mix(in srgb, white 70%, transparent);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--rx-ink);
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.25s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lux-rx-paths__item:hover {
+    border-color: var(--rx-gold);
+    background: #fff;
+    transform: translateY(-1px);
+  }
+}
+
+/* Levels */
+.lux-rx-levels {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 900px) {
+  .lux-rx-levels {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.15rem;
+    align-items: stretch;
+  }
+}
+
+.lux-rx-levels__card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.35rem 1.6rem;
+  border: 1px solid var(--rx-line);
+  border-radius: 0.15rem;
+  background: color-mix(in srgb, var(--rx-soft) 55%, white);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.lux-rx-levels__card--featured {
+  background: linear-gradient(165deg, #122820 0%, var(--rx-ink) 100%);
+  border-color: transparent;
+  color: var(--rx-cream);
+  box-shadow: 0 18px 40px color-mix(in srgb, var(--rx-ink) 18%, transparent);
+}
+
+@media (min-width: 900px) {
+  .lux-rx-levels__card--featured {
+    transform: translateY(-0.35rem);
+  }
+}
+
+.lux-rx-levels__num {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--rx-gold);
+}
+
+.lux-rx-levels__card--featured .lux-rx-levels__num {
+  color: color-mix(in srgb, var(--rx-gold) 85%, white);
+}
+
+.lux-rx-levels__name {
+  margin: 0.85rem 0 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--rx-ink);
+}
+
+.lux-rx-levels__card--featured .lux-rx-levels__name {
+  color: var(--rx-cream);
+}
+
+.lux-rx-levels__alt {
+  margin: 0.3rem 0 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: color-mix(in srgb, var(--rx-ink-soft) 70%, transparent);
+}
+
+.lux-rx-levels__card--featured .lux-rx-levels__alt {
+  color: color-mix(in srgb, var(--rx-cream) 55%, transparent);
+}
+
+.lux-rx-levels__body {
+  margin: 0.75rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--rx-ink-soft);
+}
+
+.lux-rx-levels__card--featured .lux-rx-levels__body {
+  color: color-mix(in srgb, var(--rx-cream) 78%, transparent);
+}
+
+.lux-rx-levels__points {
+  margin: 1.1rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rx-line);
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--rx-ink-soft) 85%, transparent);
+}
+
+.lux-rx-levels__card--featured .lux-rx-levels__points {
+  border-top-color: color-mix(in srgb, var(--rx-cream) 18%, transparent);
+  color: color-mix(in srgb, var(--rx-cream) 68%, transparent);
+}
+
+/* Signals */
+.lux-rx-signals {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.55rem 1.75rem;
+}
+
+@media (min-width: 700px) {
+  .lux-rx-signals {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.lux-rx-signals__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--rx-line);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--rx-ink);
+}
+
+.lux-rx-signals__mark {
+  flex: 0 0 auto;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-top: 0.45rem;
+  border-radius: 50%;
+  background: var(--rx-gold);
+}
+
+/* Journey — horizontal process */
+.lux-rx-journey {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 700px) {
+  .lux-rx-journey {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .lux-rx-journey {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+}
+
+.lux-rx-journey__step {
+  position: relative;
+  padding: 1rem 0.85rem 1.1rem;
+  border-top: 2px solid color-mix(in srgb, var(--rx-gold) 55%, transparent);
+  background: color-mix(in srgb, white 4%, transparent);
+  min-height: 5.5rem;
+}
+
+.lux-rx-journey__num {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: color-mix(in srgb, var(--rx-gold) 88%, white);
+}
+
+.lux-rx-journey__label {
+  display: block;
+  margin-top: 0.55rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--rx-cream);
+}
+
+/* Why */
+.lux-rx-why {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 800px) {
+  .lux-rx-why {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  .lux-rx-why__item {
+    padding-inline: 1.5rem;
+    border-inline-start: 1px solid var(--rx-line);
+  }
+
+  .lux-rx-why__item:first-child {
+    padding-inline-start: 0;
+    border-inline-start: 0;
+  }
+}
+
+.lux-rx-why__num {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--rx-gold);
+}
+
+.lux-rx-why__title {
+  margin: 0.7rem 0 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--rx-ink);
+}
+
+.lux-rx-why__body {
+  margin: 0.65rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--rx-ink-soft);
+}
+
+/* Scenario */
+.lux-rx-scenario__head {
+  max-width: 36rem;
+  margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.lux-rx-scenario__label {
+  margin: 0.75rem 0 0;
+  font-size: 0.8125rem;
+  color: color-mix(in srgb, var(--rx-ink-soft) 75%, transparent);
+}
+
+.lux-rx-scenario__panel {
+  display: grid;
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--lux-sand) 80%, var(--rx-gold));
+  border-radius: 0.2rem;
+  background: #fff;
+  box-shadow: 0 16px 40px color-mix(in srgb, var(--rx-ink) 6%, transparent);
+}
+
+@media (min-width: 860px) {
+  .lux-rx-scenario__panel {
+    grid-template-columns: 1.05fr 1fr;
+  }
+}
+
+.lux-rx-scenario__project {
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background:
+    linear-gradient(145deg, #122820 0%, var(--rx-ink) 100%);
+  color: var(--rx-cream);
+}
+
+.lux-rx-scenario__project-name {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.4vw, 1.65rem);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.lux-rx-scenario__needs-label {
+  margin: 1.35rem 0 0;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--rx-gold) 85%, white);
+}
+
+.lux-rx-scenario__needs {
+  margin: 0.55rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--rx-cream) 78%, transparent);
+}
+
+.lux-rx-scenario__roles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  font-size: 0.925rem;
+  line-height: 1.7;
+  color: var(--rx-ink-soft);
+}
+
+.lux-rx-scenario__roles p {
+  margin: 0;
+}
+
+.lux-rx-scenario__result {
+  padding-top: 1rem;
+  border-top: 1px solid var(--rx-line);
+  font-weight: 700;
+  color: var(--rx-ink);
+}
+
+/* Close */
+.lux-rx-close {
+  padding-block: clamp(4rem, 9vw, 7rem);
+  text-align: center;
+}
+
+.lux-rx-close__inner {
+  max-width: 38rem;
+  margin-inline: auto;
+}
+
+.lux-rx-close__line {
+  margin: 0;
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
+  font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--rx-cream);
+  text-wrap: balance;
+}
+
+[dir="ltr"] .lux-rx-close__line {
+  font-family: var(--font-latin), Georgia, serif;
+  font-weight: 500;
+}
+
+.lux-rx-close__brand {
+  margin: 2rem 0 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: color-mix(in srgb, var(--rx-gold) 88%, white);
+}
+
+.lux-rx-close__tagline {
+  margin: 0.55rem 0 0;
+  font-size: 0.8125rem;
+  color: color-mix(in srgb, var(--rx-cream) 55%, transparent);
+}
+
+/* Elevate shared chrome inside this page */
+.lux-rx .lux-product-story {
+  background:
+    linear-gradient(180deg, #fff 0%, var(--rx-soft) 100%);
+  padding-block: clamp(3rem, 6vw, 4.5rem);
+}
+
+.lux-rx .lux-product-story__media {
+  border-radius: 0.15rem;
+  aspect-ratio: 5 / 4;
+}
+
+.lux-rx .lux-product-story__caption {
+  font-weight: 600;
+}
+
+.lux-rx .lux-product-band__media {
+  min-height: clamp(16rem, 42vw, 30rem);
+}
+
+.lux-rx .lux-product-band__caption {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lux-rx-levels__card:not(.lux-rx-levels__card--featured):hover {
+    border-color: color-mix(in srgb, var(--rx-gold) 45%, var(--lux-sand));
+    box-shadow: 0 10px 28px color-mix(in srgb, var(--rx-ink) 6%, transparent);
+  }
+
+  .lux-rx-journey__step {
+    transition: background 0.25s ease;
+  }
+
+  .lux-rx-journey__step:hover {
+    background: color-mix(in srgb, var(--rx-gold) 10%, transparent);
+  }
+}
