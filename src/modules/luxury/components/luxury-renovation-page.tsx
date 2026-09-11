@@ -24,6 +24,7 @@ export function LuxuryRenovationPage({ locale }: Props) {
         body={copy.hero.body}
         primaryCta={copy.hero.cta}
         secondaryCta={copy.hero.secondary}
+        secondaryHref="#brief"
         titleId="renovation-title"
       />
 

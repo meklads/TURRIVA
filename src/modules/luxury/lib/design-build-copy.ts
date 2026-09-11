@@ -80,7 +80,7 @@ const en: DesignBuildCopy = {
     title: "From an idea to a space ready to use.",
     body: "Design, technical development, supply, installation, and handover, on one path. You do not have to manage a designer, a supplier, and a contractor as three separate jobs.",
     cta: "Discuss your project",
-    secondary: "What the path includes",
+    secondary: "Send drawings",
   },
   problem: {
     eyebrow: "The problem",
@@ -182,8 +182,8 @@ const ar: DesignBuildCopy = {
     eyebrow: "التصميم والتنفيذ",
     title: "من الفكرة إلى مساحة جاهزة للاستخدام.",
     body: "تصميم وتطوير فني وتوريد وتركيب وتسليم، في مسار واحد. لست مضطراً لإدارة مصمم ومورد ومنفذ كثلاث جهات منفصلة.",
-    cta: "ناقش مشروعك معنا",
-    secondary: "ماذا يشمل المسار",
+    cta: "ناقش مشروعك",
+    secondary: "أرسل المخططات",
   },
   problem: {
     eyebrow: "المشكلة",

@@ -79,9 +79,9 @@ const en: ShowUnitCopy = {
   hero: {
     eyebrow: "Show unit",
     title: "The unit exists.",
-    question: "Is it ready to receive a client?",
-    body: "We design and deliver show villas, apartments, and suites, from the interior and the technical details to furniture, lighting, and handover. The unit should show how the project is meant to be lived in.",
-    cta: "Discuss your project",
+    question: "Is it ready to receive the buyer?",
+    body: "We design and deliver show villas, apartments, and suites — from design and technical detail to furniture, lighting, and handover. The unit is how the buyer sees the lifestyle the project offers.",
+    cta: "Discuss the show unit",
     secondary: "What the work includes",
   },
   problem: {
@@ -176,8 +176,8 @@ const ar: ShowUnitCopy = {
     eyebrow: "وحدة العرض",
     title: "الوحدة موجودة.",
     question: "هل هي جاهزة لاستقبال العميل؟",
-    body: "نصمّم وننفّذ فلل العرض وشقق العرض وأجنحة العرض، من التصميم والتفاصيل الفنية إلى الأثاث والإضاءة والتسليم. الوحدة يجب أن تُظهر طريقة الحياة التي يقدّمها المشروع.",
-    cta: "ناقش مشروعك معنا",
+    body: "نصمّم وننفّذ فلل العرض وشقق العرض وأجنحة العرض، من التصميم والتفاصيل الفنية إلى الأثاث والإضاءة والتسليم. الوحدة ليست مجرد تشطيب؛ إنها الطريقة التي يرى بها العميل أسلوب الحياة الذي يقدمه المشروع.",
+    cta: "ناقش وحدة العرض",
     secondary: "ماذا يشمل العمل",
   },
   problem: {

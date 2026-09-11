@@ -81,7 +81,7 @@ const en: FitOutCopy = {
     title: "The design is approved. Who will build it?",
     body: "We take an approved design through technical development, supply, fabrication, installation, and handover. The original design stays. We do not redraw it to make the job easier.",
     cta: "Discuss your project",
-    secondary: "What the work includes",
+    secondary: "Share the project scope",
   },
   problem: {
     eyebrow: "The problem",
@@ -175,8 +175,8 @@ const ar: FitOutCopy = {
     eyebrow: "التنفيذ والتجهيز",
     title: "التصميم معتمد. من يبنيه؟",
     body: "نأخذ تصميماً معتمداً إلى التطوير الفني والتوريد والتصنيع والتركيب والتسليم. التصميم الأصلي يبقى. لا نعيد رسمه ليسهّل العمل على الورشة.",
-    cta: "ناقش مشروعك معنا",
-    secondary: "ماذا يشمل العمل",
+    cta: "ناقش مشروعك",
+    secondary: "شاركنا نطاق المشروع",
   },
   problem: {
     eyebrow: "المشكلة",

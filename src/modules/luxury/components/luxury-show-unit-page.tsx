@@ -6,7 +6,6 @@ import { LuxuryExperienceBriefForm } from "./luxury-experience-brief-form";
 import { LuxuryProductBriefSection } from "./luxury-product-brief-section";
 import { LuxuryProductHero } from "./luxury-product-hero";
 import { LuxuryProductVisualBand } from "./luxury-product-visual-band";
-import { LuxuryProductPager, LuxuryProductRelated } from "./luxury-product-related";
 import { LuxuryStickyCta } from "./luxury-sticky-cta";
 
 type Props = { locale: Locale };
@@ -162,8 +161,6 @@ export function LuxuryShowUnitPage({ locale }: Props) {
         </div>
       </section>
 
-      <LuxuryProductRelated locale={locale} product="show-unit" />
-
       <LuxuryProductBriefSection
         locale={locale}
         product="show-unit"
@@ -181,8 +178,6 @@ export function LuxuryShowUnitPage({ locale }: Props) {
           drawings={copy.form.drawings}
         />
       </LuxuryProductBriefSection>
-
-      <LuxuryProductPager locale={locale} product="show-unit" />
 
       <LuxuryStickyCta
         locale={locale}

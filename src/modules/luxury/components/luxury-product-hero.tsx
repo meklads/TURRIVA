@@ -12,6 +12,7 @@ type Props = {
   body: string;
   primaryCta: string;
   secondaryCta: string;
+  secondaryHref?: string;
   titleId: string;
 };
 
@@ -24,6 +25,7 @@ export function LuxuryProductHero({
   body,
   primaryCta,
   secondaryCta,
+  secondaryHref = "#scope",
   titleId,
 }: Props) {
   const visuals = getProductVisuals(product);
@@ -53,7 +55,7 @@ export function LuxuryProductHero({
           <a href="#brief" className="lux-btn-primary">
             {primaryCta}
           </a>
-          <a href="#scope" className="lux-btn-outline lux-product-hero__outline">
+          <a href={secondaryHref} className="lux-btn-outline lux-product-hero__outline">
             {secondaryCta}
           </a>
         </div>

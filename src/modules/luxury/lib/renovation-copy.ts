@@ -84,9 +84,9 @@ const en: RenovationCopy = {
   hero: {
     eyebrow: "Renovation and upgrade",
     title: "An existing space. New potential.",
-    body: "We take an occupied or finished room and make it work better for how it is used now. This is not restoration, and it does not start by demolishing everything.",
+    body: "Not every space needs demolition and a rebuild. We start by assessing what can be kept and upgraded, and what needs redesign or execution.",
     cta: "Discuss your project",
-    secondary: "What the work includes",
+    secondary: "Send drawings",
   },
   problem: {
     eyebrow: "The problem",
@@ -137,9 +137,9 @@ const en: RenovationCopy = {
     title: "How much of the existing room changes. Not a price list.",
     note: "The cost follows the condition and the quantities. It is set after the assessment, not from a package name.",
     items: [
-      { title: "A limited upgrade", body: "Finishes, lighting, or furniture, without changing the plan of the room." },
-      { title: "A wider reworking", body: "Rooms, finishes, and joinery reworked for the current use." },
-      { title: "A change of use", body: "The same path, when the room has to do a different job. Still only the scope the assessment supports." },
+      { title: "Refresh", body: "A limited update — finishes, lighting, or furniture — without changing the plan of the room." },
+      { title: "Renew", body: "A wider redevelopment of rooms, finishes, and joinery for the current use." },
+      { title: "Transform", body: "A fuller change when the space must do a different job. Still only the scope the assessment supports." },
     ],
   },
   method: {
@@ -204,9 +204,9 @@ const ar: RenovationCopy = {
   hero: {
     eyebrow: "التجديد والتطوير",
     title: "مساحة قائمة. إمكانات جديدة.",
-    body: "نأخذ غرفة مشغولة أو مكتملة ونجعلها أنسب لطريقة استخدامها الآن. ليس هذا ترميمًا، ولا يبدأ بهدم كل شيء.",
-    cta: "ناقش مشروعك معنا",
-    secondary: "ماذا يشمل العمل",
+    body: "لا تحتاج كل مساحة إلى الهدم وإعادة البناء. نبدأ بتقييم ما يمكن الحفاظ عليه وتطويره، وما يحتاج إلى إعادة تصميم أو تنفيذ.",
+    cta: "ناقش مشروعك",
+    secondary: "أرسل المخططات",
   },
   problem: {
     eyebrow: "المشكلة",
@@ -257,9 +257,9 @@ const ar: RenovationCopy = {
     title: "كم من الغرفة القائمة يتغير. ليست قائمة أسعار.",
     note: "التكلفة تتبع الحالة والكميات. تُحدد بعد المعاينة، لا من اسم باقة.",
     items: [
-      { title: "تحديث محدود", body: "تشطيبات أو إضاءة أو أثاث، من غير تغيير تخطيط الغرفة." },
-      { title: "إعادة تطوير أوسع", body: "غرف وتشطيبات ونجارة تُعاد للطريقة الحالية في الاستخدام." },
-      { title: "تغيير الاستخدام", body: "المسار نفسه، عندما يجب أن تؤدي الغرفة عملاً مختلفاً. ويبقى النطاق ما تدعمه المعاينة فقط." },
+      { title: "تحديث", body: "تحديث محدود — تشطيبات أو إضاءة أو أثاث — من غير تغيير تخطيط الغرفة." },
+      { title: "إعادة تطوير", body: "إعادة تطوير أوسع للغرف والتشطيبات والنجارة لطريقة الاستخدام الحالية." },
+      { title: "تحول شامل", body: "تحول أشمل عندما يجب أن تؤدي المساحة عملاً مختلفاً. ويبقى النطاق ما تدعمه المعاينة فقط." },
     ],
   },
   method: {

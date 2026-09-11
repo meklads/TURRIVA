@@ -135,10 +135,10 @@ const en: ExperienceCopy = {
   hero: {
     eyebrow: "Real estate project experience",
     title: "Your project is ready to sell.",
-    question: "Is the way you show it ready?",
-    body: "We design and deliver the place where your project meets its clients, from the sales gallery and show unit to models, interactive tools, and interior fit-out.",
-    cta: "Discuss your project",
-    secondary: "What the work includes",
+    question: "Is the experience ready?",
+    body: "From the sales environment to the show unit, from the space to the experience — we design and deliver the environment where your project presents itself to its clients.",
+    cta: "Discuss your real estate project",
+    secondary: "Send project details",
   },
   problem: {
     eyebrow: "The problem",
@@ -195,7 +195,7 @@ const en: ExperienceCopy = {
   flexible: {
     eyebrow: "How we start",
     title: "The solution follows the project.",
-    intro: "Not every project needs a large experience center. It may need one of these, or a combination.",
+    intro: "The experience scope is built around the project type, the development stage, and how the units are sold. Not every element is required.",
     options: [
       "A sales gallery only",
       "A sales gallery and a model",
@@ -341,9 +341,9 @@ const ar: ExperienceCopy = {
     eyebrow: "تجربة المشروع العقاري",
     title: "مشروعك جاهز للبيع.",
     question: "هل تجربة عرضه جاهزة؟",
-    body: "نصمّم وننفّذ البيئة التي يستقبل فيها مشروعك عملاءه، من مركز البيع ووحدة العرض إلى المجسمات والتجارب التفاعلية والتجهيزات الداخلية.",
-    cta: "ناقش مشروعك معنا",
-    secondary: "ماذا يشمل الحل",
+    body: "من مركز البيع إلى وحدة العرض، ومن المساحة إلى التجربة — نصمم وننفذ البيئة التي يقدم فيها مشروعك نفسه لعملائه.",
+    cta: "ناقش مشروعك العقاري",
+    secondary: "أرسل تفاصيل المشروع",
   },
   problem: {
     eyebrow: "المشكلة",
@@ -400,7 +400,7 @@ const ar: ExperienceCopy = {
   flexible: {
     eyebrow: "كيف نبدأ",
     title: "نحدد الحل حسب احتياج مشروعك.",
-    intro: "ليس كل مشروع يحتاج مركز تجربة كبيرًا. قد يحتاج إلى واحد من هذه، أو إلى أكثر من واحد.",
+    intro: "يُبنى نطاق التجربة حسب طبيعة المشروع ومرحلة التطوير وطريقة البيع. ليست كل العناصر إلزامية.",
     options: [
       "مركز بيع فقط",
       "مركز بيع ومجسم",
