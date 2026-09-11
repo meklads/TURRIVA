@@ -6,11 +6,12 @@ import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import { MarketingNavPrefetch } from "@/shared/components/marketing-nav-prefetch";
 import { LuxuryBrandLogo } from "./luxury-brand-logo";
 import { LuxuryDesktopNav, LuxuryMobileNav, LuxuryRouteProgress } from "./luxury-nav-links";
-import { getLuxuryHeaderNavLinks, getLuxuryNavLinks } from "../lib/nav";
+import { getLuxuryHeaderNavLinks, getLuxuryNavLinks, getLuxuryProductMenu } from "../lib/nav";
 
 export async function LuxuryHeader() {
   const locale = await getLocale();
   const headerLinks = getLuxuryHeaderNavLinks(locale);
+  const productMenu = getLuxuryProductMenu(locale);
   const mobileLinks = getLuxuryNavLinks(locale);
   const t = getLuxuryMessages(locale);
   const homeHref = localizePath("/", locale);
@@ -37,7 +38,7 @@ export async function LuxuryHeader() {
             <div className="lux-header-brand">
               <LuxuryBrandLogo href={homeHref} priority layout="header" tagline={t.brand.tagline} />
             </div>
-            <LuxuryDesktopNav links={headerLinks} />
+            <LuxuryDesktopNav links={headerLinks} products={productMenu} />
             <div className="lux-header-actions">
               <Link href={contactHref} prefetch className="lux-btn-primary lux-header-cta inline-flex">
                 <span className="lux-header-cta-short">{t.nav.contact}</span>

@@ -61,7 +61,7 @@ export const INSIGHT_ARTICLES: readonly InsightArticle[] = [
     titleEn: "Modular kitchens for Gulf climate: materials that survive daily life",
     titleAr: "مطابخ معيارية لمناخ الخليج: مواد تتحمل الحياة اليومية",
     summaryEn: "Moisture-resistant cores, hardware selection, and factory tolerance for Jeddah and Makkah villas.",
-    summaryAr: "نوى مقاومة للرطوبة واختيار hardware ودقة مصنع لفلل جدة ومكة.",
+    summaryAr: "مواصفات مقاومة للرطوبة واختيار المفصلات لفلل جدة ومكة. لا ننشر رقم دقة مصنع.",
     readMinutes: 7,
     bodyEn: [
       "Gulf villas demand kitchens that handle humidity, heavy daily use, and long warranty expectations. Turriva specifies moisture-resistant carcasses, PET and lacquer finishes tested for local conditions, and soft-close hardware from tier-one partners.",

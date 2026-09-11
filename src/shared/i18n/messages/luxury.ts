@@ -292,7 +292,7 @@ export type LuxuryMessages = LuxuryPlatformMessages & {
 
 const en: LuxuryMessages = {
   ...getLuxuryPlatformMessages("en"),
-  brand: { name: "Turriva", tagline: "Spatial design · Execution" },
+  brand: { name: "Turriva", tagline: "Design · Experience · Build" },
   nav: {
     home: "Home",
     villas: "Residential",
@@ -310,12 +310,12 @@ const en: LuxuryMessages = {
     eyebrow: "A Tasami Group company · Saudi Arabia",
     title: "From concept to physical reality.",
     subtitle:
-      "Turriva designs and delivers finished spaces for developers and serious commercial work: sales galleries, show villas, hospitality, and fit-out. Not a furniture shop. Not a software company.",
-    servicesLine: "Spatial design · Technical detailing · Fabrication · Installation · Sales environments",
-    tags: ["Spatial design", "Technical detailing", "Fabrication", "Installation", "Sales environments"],
+      "We design and build the space, and the way a client moves through it. Design · Experience · Build. Not a furniture shop. Not a software company.",
+    servicesLine: "Design · Experience · Build",
+    tags: ["Design", "Experience", "Build"],
     ctaPrimary: "Discuss your project",
     ctaSecondary: "Project experience",
-    ctaSample: "Request sample kit",
+    ctaSample: "Send the drawings",
   },
   intro: {
     eyebrow: "How we work",
@@ -455,32 +455,7 @@ const en: LuxuryMessages = {
   testimonials: {
     eyebrow: "From the field",
     title: "Notes from recent projects",
-    items: [
-      {
-        quote:
-          "We reviewed the plan twice before manufacturing. Sample boards arrived two weeks ahead of install, which helped us lock the wood tone on site, not from a screen.",
-        author: "S. A.",
-        role: "Villa owner · North Jeddah",
-      },
-      {
-        quote:
-          "The walk-in wardrobe was installed in two visits to match our schedule. One door alignment note was logged and closed on the second site visit.",
-        author: "N. H.",
-        role: "Apartment · Makkah",
-      },
-      {
-        quote:
-          "For a 12-unit batch, we received numbered shop drawings per floor. Import and site coordination was documented, even when the programme shifted by a week.",
-        author: "Development office",
-        role: "Residential batch · Jeddah",
-      },
-      {
-        quote:
-          "We specify Turriva for modular joinery supply on client fit-outs. Phased delivery fits finishing schedules when unit handover order changes mid-project.",
-        author: "Fit-out consultant",
-        role: "B2B · Western Region",
-      },
-    ],
+    items: [],
   },
   cta: {
     title: "Tell us the space, the date, and what has to be finished.",
@@ -489,15 +464,15 @@ const en: LuxuryMessages = {
     button: "Talk to Turriva",
   },
   quoteForm: {
-    title: "Get a free quote",
+    title: "Discuss your project",
     subtitle:
-      "Send your project details and floor plan. We will contact you within 24 hours.",
+      "Send the drawings, or describe the space. Cost follows the scope. It is not a price sent before we have read the work.",
     formName: "Name",
     formEmail: "Email",
     formPhone: "Phone / WhatsApp",
     formCity: "City",
     formCountry: "Country",
-    formProducts: "Products required",
+    formProducts: "What is the job",
     formQuantity: "Quantity / area",
     formFile: "Upload file",
     formFileHint: "Floor plans, PDFs, or images (optional)",
@@ -507,12 +482,13 @@ const en: LuxuryMessages = {
     formSuccess: "Thank you. We will contact you within 24 hours.",
     formError: "Something went wrong. Please try again, WhatsApp us, or email info@turriva.com.",
     products: [
-      { value: "whole-home", label: "Whole-home fit-out" },
-      { value: "kitchens", label: "Modular kitchens" },
-      { value: "wardrobes", label: "Wardrobes & walk-ins" },
-      { value: "bathroom", label: "Bathroom joinery" },
-      { value: "wall-panels", label: "Wall panels & doors" },
-      { value: "b2b", label: "Developer / B2B programme" },
+      { value: "real-estate", label: "Real estate project experience" },
+      { value: "show-unit", label: "Show unit" },
+      { value: "design-build", label: "Design and build" },
+      { value: "fit-out", label: "Fit-out and execution" },
+      { value: "commercial", label: "Commercial spaces" },
+      { value: "hospitality", label: "Hospitality spaces" },
+      { value: "renovation", label: "Renovation and upgrade" },
       { value: "other", label: "Other" },
     ],
     countries: [
@@ -526,10 +502,10 @@ const en: LuxuryMessages = {
   },
   footer: {
     about:
-      "Turriva is a Tasami Group company specializing in spatial execution, furnishing, and physical delivery, from technical development and fabrication to installation and handover.",
+      "Turriva designs and builds spaces and experiences. Execution is part of the product, not the whole identity. Hire Turriva alone. The group joins only when the project needs it.",
     quickLinks: "Quick Links",
     importantLinks: "Important Links",
-    servicesLinks: "Services",
+    servicesLinks: "What we do",
     solutionsLinks: "Solutions",
     offices: "Offices",
     countries: {
@@ -550,7 +526,7 @@ const en: LuxuryMessages = {
     address: "Jeddah, Al-Zahra District, Saudi Arabia",
     email: "info@turriva.com",
     phone: "+966 50 278 6513",
-    sponsoredBy: "Turriva spatial execution company",
+    sponsoredBy: "Turriva",
     solutions: {
       modularKitchens: "Modular kitchens",
       wardrobes: "Wardrobes & walk-ins",
@@ -564,7 +540,7 @@ const en: LuxuryMessages = {
         "Turriva develops approved interior concepts into technical details, material packages, fabrication scopes, coordinated installation, and completed spaces.",
     },
     construction: {
-      title: "Spatial execution & delivery",
+      title: "Fit-out and delivery",
       intro:
         "Turriva manages physical delivery on site, coordinating fabrication, trades, installation, quality control, snagging, and documented handover.",
     },
@@ -605,11 +581,11 @@ const en: LuxuryMessages = {
     about: {
       title: "About Turriva",
       intro:
-        "Turriva is a specialized spatial execution and physical delivery company within Tasami Group. We turn approved creative concepts into reality through technical development, furnishing, fabrication, installation, and turnkey delivery for interiors, exhibitions, and branded environments.",
+        "Turriva designs and builds spaces and experiences: spatial design, technical development, fit-out, and handover. Execution is part of the product, not the whole identity. Hire Turriva alone. The group joins only when the project needs it.",
     },
     contact: {
       title: "Contact Turriva",
-      intro: "Request a sample kit, 3D session, or share your project brief.",
+      intro: "Discuss the project, or send the drawings. Cost follows the scope.",
       formName: "Name",
       formEmail: "Email",
       formPhone: "Phone / WhatsApp",
@@ -631,10 +607,10 @@ const en: LuxuryMessages = {
       intro:
         "Turriva manages physical delivery for villas, hotels, restaurants, and retail, from technical development and material approval through fabrication, installation, and local warranty.",
       steps: [
-        { title: "3D design session", description: "Upload your plan or book a visit, factory-module layouts in days." },
+        { title: "3D design session", description: "Upload your plan or book a visit. Layouts follow the drawings, not a factory catalogue." },
         { title: "Samples & sign-off", description: "Physical finishes and hardware references before we order." },
-        { title: "Manufacture & import", description: "Automated factory production with SASO / SABER clearance." },
-        { title: "Install & warranty", description: "Laser-verified install and local after-sales support." },
+        { title: "Manufacture & import", description: "Made to the drawings. Import marks stay with the supplier, not as a Turriva certificate." },
+        { title: "Install & warranty", description: "Site install and local after-sales support." },
       ],
       ctaDesign: "Start 3D design",
       ctaContact: "Book a fit-out consultation",
@@ -665,14 +641,14 @@ const en: LuxuryMessages = {
         ],
       },
       kitchens: {
-        eyebrow: "Modular kitchens",
-        title: "Factory-precise kitchens, built for Gulf homes and hospitality",
+        eyebrow: "When the room needs them",
+        title: "Kitchens, when the room needs them",
         intro:
           "Modular systems with moisture-resistant cores, PET and lacquer finishes, and soft-close hardware. They are specified, sampled on site, then fabricated to the approved drawings.",
         highlights: [
           {
             title: "Island & galley layouts",
-            description: "Central islands, parallel runs, and hidden storage tuned to your floor plan and factory module sizes.",
+            description: "Central islands, parallel runs, and hidden storage tuned to the floor plan and the approved drawings.",
           },
           {
             title: "Finishes you approve first",
@@ -700,8 +676,8 @@ const en: LuxuryMessages = {
             description: "Repeatable modules for guest suites and back-of-house storage on boutique hospitality projects.",
           },
           {
-            title: "Factory-aligned modules",
-            description: "Every elevation feeds factory production directly, so there are fewer site adjustments and a cleaner handover.",
+            title: "Made to the drawings",
+            description: "Each elevation follows the approved drawings. Hardware is specified for the project, not taken from a house catalogue.",
           },
         ],
         cta: "Plan your wardrobes",
@@ -736,11 +712,11 @@ const en: LuxuryMessages = {
           },
           {
             q: "Can I see materials before ordering?",
-            a: "Yes. We ship a physical sample kit and run a factory-aligned 3D review before anything is manufactured at scale.",
+            a: "Yes. We can send finish references and review the drawings before anything is manufactured.",
           },
           {
             q: "What warranty do you offer?",
-            a: "Local warranty on products and installation, with spare-parts support. E0 boards meet international standards; hardware is specified from Blum and Hettich.",
+            a: "Warranty follows the contract for the work we deliver. Board grade and hardware follow the specification. We do not publish a factory certificate we have not issued.",
           },
           {
             q: "How do I start?",
@@ -771,7 +747,7 @@ const en: LuxuryMessages = {
             tag: "Contractors",
             title: "Main contractors & GCs",
             description:
-              "Factory-aligned shop drawings, import compliance, and dedicated Turriva site supervision through snagging.",
+              "Shop drawings from the approved design, and Turriva site supervision through snagging.",
           },
           {
             tag: "Hospitality",
@@ -783,14 +759,14 @@ const en: LuxuryMessages = {
       },
       steps: [
         { title: "Programme brief", description: "Unit mix, BOQ scope, sample boards, and delivery phasing agreed upfront." },
-        { title: "Shop drawings", description: "Execution drawings aligned to factory modules within signed SLA timelines." },
-        { title: "Manufacture & import", description: "Automated production, SASO / SABER, and staged warehousing." },
+        { title: "Shop drawings", description: "Execution drawings from the approved design, on an agreed timeline." },
+        { title: "Manufacture & import", description: "Made to the drawings. Conformity marks stay with the supplier." },
         { title: "Phased install", description: "Turriva site teams, snagging lists, and handover documentation per phase." },
       ],
       highlights: [
         { title: "MOQ & volume pricing", description: "Structured discounts for residential towers, compounds, and hospitality batches." },
-        { title: "Shop drawings SLA", description: "Execution drawings aligned to factory modules within agreed timelines." },
-        { title: "Customs & storage", description: "Import, SASO / SABER, and staged delivery to your programme." },
+        { title: "Shop drawings", description: "Execution drawings from the approved design, on an agreed timeline." },
+        { title: "Import & storage", description: "Import and staged delivery follow the programme. Conformity marks stay with the supplier." },
         { title: "Site teams", description: "Turriva supervisors through snagging and handover documentation." },
       ],
       programme: {
@@ -805,7 +781,7 @@ const en: LuxuryMessages = {
           },
           {
             title: "Compliance pack",
-            description: "SASO / SABER documentation and conformity certificates bundled for your procurement team.",
+            description: "We pass through the supplier's documents. We do not issue a Turriva conformity certificate.",
           },
           {
             title: "Snagging & sign-off",
@@ -829,7 +805,7 @@ const en: LuxuryMessages = {
           },
           {
             q: "Do you work with our architect's drawings?",
-            a: "Yes. We produce factory-aligned shop drawings from your design intent, or adapt our modular systems to your consultant's layouts within the agreed SLA.",
+            a: "Yes. We develop shop drawings from the approved design, or work to the consultant's layouts. We do not replace the designer.",
           },
           {
             q: "How is this different from Residential?",
@@ -856,7 +832,7 @@ const en: LuxuryMessages = {
     },
     design: {
       title: "Design consultation",
-      intro: "Share your floor plan, our studio team prepares factory-aligned layouts and a sample review session. No online uploads required.",
+      intro: "Share your floor plan. We review the drawings and agree samples before fabrication.",
     },
     styles: {
       title: "Style directions",
@@ -952,7 +928,7 @@ const en: LuxuryMessages = {
 
 const ar: LuxuryMessages = {
   ...getLuxuryPlatformMessages("ar"),
-  brand: { name: "توريفا", tagline: "تصميم مكاني · تنفيذ" },
+  brand: { name: "توريفا", tagline: "تصميم · تجربة · تنفيذ" },
   nav: {
     home: "الرئيسية",
     villas: "تنفيذ سكني",
@@ -970,12 +946,12 @@ const ar: LuxuryMessages = {
     eyebrow: "إحدى شركات مجموعة تسامي · المملكة العربية السعودية",
     title: "من الفكرة إلى واقع ملموس.",
     subtitle:
-      "توريفا تصمّم وتسلّم أماكن مكتملة للمطورين والمشاريع التجارية الجادة: معارض مبيعات، فلل عرض، ضيافة، وتشطيب. ليست متجر أثاث، وليست شركة برمجيات.",
-    servicesLine: "تصميم مكاني · تفصيل فني · تصنيع · تركيب · بيئات مبيعات",
-    tags: ["تصميم مكاني", "تفصيل فني", "تصنيع", "تركيب", "بيئات مبيعات"],
+      "نصمم وننفذ المساحة، وطريقة مرور العميل فيها. تصميم · تجربة · تنفيذ. ليست متجر أثاث، وليست شركة برمجيات.",
+    servicesLine: "تصميم · تجربة · تنفيذ",
+    tags: ["تصميم", "تجربة", "تنفيذ"],
     ctaPrimary: "ناقش مشروعك",
     ctaSecondary: "تجربة المشروع",
-    ctaSample: "اطلب حقيبة العينات",
+    ctaSample: "أرسل المخططات",
   },
   intro: {
     eyebrow: "منهجنا",
@@ -1115,32 +1091,7 @@ const ar: LuxuryMessages = {
   testimonials: {
     eyebrow: "من الميدان",
     title: "ملاحظات من مشاريع حديثة",
-    items: [
-      {
-        quote:
-          "راجعنا المخطط مرتين قبل التصنيع. وصلت العينات قبل أسبوعين من التركيب، وساعدتنا نثبت لون الخشب في الموقع لا على الشاشة فقط.",
-        author: "م. س.",
-        role: "مالك فيلا · شمال جدة",
-      },
-      {
-        quote:
-          "رُكّبت غرفة الملابس على زيارتين حسب جدولنا. سُجّلت ملاحظة بسيطة على باب واحد، وأُغلقت في الزيارة الثانية للموقع.",
-        author: "ن. ح.",
-        role: "شقة · مكة",
-      },
-      {
-        quote:
-          "في دفعة ١٢ وحدة، استلمنا مخططات تنفيذية مرقّمة لكل طابق. التنسيق مع الاستيراد والموقع كان موثّقاً، حتى عندما تأخر برنامج التسليم أسبوعاً.",
-        author: "مكتب تطوير",
-        role: "دفعة سكنية · جدة",
-      },
-      {
-        quote:
-          "نوصي بتوريفا لتوريد مطابخ معيارية في مشاريع عملائنا. التسليم المرحلي يناسب جدول التشطيب حين يتغيّر ترتيب تسليم الوحدات.",
-        author: "استشاري تشطيبات",
-        role: "B2B · المنطقة الغربية",
-      },
-    ],
+    items: [],
   },
   cta: {
     title: "أخبرنا بالمكان، والموعد، وما يجب أن يُكتمل.",
@@ -1149,15 +1100,15 @@ const ar: LuxuryMessages = {
     button: "تواصل مع توريفا",
   },
   quoteForm: {
-    title: "احصل على عرض سعر مجاني",
+    title: "ناقش مشروعك",
     subtitle:
-      "أرسل تفاصيل مشروعك ومخطط الطابق. سنتواصل معك خلال 24 ساعة.",
+      "أرسل المخططات، أو صف المساحة. التكلفة تتبع النطاق. ليست سعراً يُرسل قبل قراءة العمل.",
     formName: "الاسم",
     formEmail: "البريد الإلكتروني",
     formPhone: "هاتف / واتساب",
     formCity: "المدينة",
     formCountry: "الدولة",
-    formProducts: "المنتج المطلوب",
+    formProducts: "ما هو العمل",
     formQuantity: "الكمية / المساحة",
     formFile: "تحميل الملف",
     formFileHint: "مخططات أو PDF أو صور (اختياري)",
@@ -1167,12 +1118,13 @@ const ar: LuxuryMessages = {
     formSuccess: "شكراً. سنتواصل معك خلال 24 ساعة.",
     formError: "حدث خطأ. جرّب مرة أخرى، أو راسلنا على واتساب أو info@turriva.com.",
     products: [
-      { value: "whole-home", label: "حلول منزلية متكاملة" },
-      { value: "kitchens", label: "خزائن المطبخ" },
-      { value: "wardrobes", label: "خزائن الملابس" },
-      { value: "bathroom", label: "خزائن الحمام" },
-      { value: "wall-panels", label: "تكسيات وأبواب داخلية" },
-      { value: "b2b", label: "مطور / مشروع B2B" },
+      { value: "real-estate", label: "تجربة المشروع العقاري" },
+      { value: "show-unit", label: "وحدة العرض" },
+      { value: "design-build", label: "التصميم والتنفيذ" },
+      { value: "fit-out", label: "التنفيذ والتجهيز" },
+      { value: "commercial", label: "المساحات التجارية" },
+      { value: "hospitality", label: "مساحات الضيافة" },
+      { value: "renovation", label: "التجديد والتطوير" },
       { value: "other", label: "أخرى" },
     ],
     countries: [
@@ -1186,10 +1138,10 @@ const ar: LuxuryMessages = {
   },
   footer: {
     about:
-      "توريفا إحدى شركات مجموعة تسامي، متخصصة في تنفيذ المساحات والتأثيث والتسليم الميداني من التطوير الفني والتصنيع إلى التركيب والتسليم.",
+      "توريفا تصمم وتنفذ المساحات والتجارب. التنفيذ جزء من المنتج، لا الهوية كلها. تعاقد مع توريفا وحدها. استخدم المجموعة عندما يحتاجها المشروع.",
     quickLinks: "روابط سريعة",
     importantLinks: "أهم الروابط",
-    servicesLinks: "الخدمات",
+    servicesLinks: "ما نقوم به",
     solutionsLinks: "الحلول",
     offices: "مكاتبنا",
     countries: {
@@ -1224,7 +1176,7 @@ const ar: LuxuryMessages = {
         "تطوّر توريفا المفاهيم الداخلية المعتمدة إلى تفاصيل فنية وحزم خامات ونطاقات تصنيع وتركيب منسّق ومساحات مكتملة.",
     },
     construction: {
-      title: "تنفيذ المساحات والتسليم",
+      title: "التجهيز والتسليم",
       intro:
         "تدير توريفا التسليم الميداني، وتنسّق التصنيع والتخصصات والتركيب وضبط الجودة وإغلاق الملاحظات والتسليم الموثق.",
     },
@@ -1265,11 +1217,11 @@ const ar: LuxuryMessages = {
     about: {
       title: "عن توريفا",
       intro:
-        "توريفا شركة متخصصة في تنفيذ المساحات والتسليم الميداني ضمن مجموعة تسامي. نحوّل المفاهيم الإبداعية المعتمدة إلى واقع مادي عبر التطوير الفني والتأثيث والتصنيع والتركيب والتسليم المتكامل للمساحات الداخلية والمعارض وبيئات العلامات.",
+        "توريفا تصمم وتنفذ المساحات والتجارب: تصميم مكاني، تطوير فني، تجهيز، وتسليم. التنفيذ جزء من المنتج، لا الهوية كلها. تعاقد مع توريفا وحدها. استخدم المجموعة عندما يحتاجها المشروع.",
     },
     contact: {
       title: "تواصل مع توريفا",
-      intro: "اطلب حقيبة العينات، جلسة 3D، أو شاركنا ملخص مشروعك.",
+      intro: "ناقش المشروع، أو أرسل المخططات. التكلفة تتبع النطاق.",
       formName: "الاسم",
       formEmail: "البريد الإلكتروني",
       formPhone: "الجوال / واتساب",
@@ -1291,10 +1243,10 @@ const ar: LuxuryMessages = {
       intro:
         "تدير توريفا التسليم الميداني للفلل والفنادق والمطاعم والتجزئة الفاخرة، من التطوير الفني واعتماد الخامات إلى التصنيع والتركيب والضمان المحلي.",
       steps: [
-        { title: "جلسة تصميم 3D", description: "ارفع مخططك أو احجز زيارة، تخطيطات بمقاسات المصنع." },
+        { title: "جلسة تصميم 3D", description: "ارفع مخططك أو احجز زيارة. التخطيط يتبع المخططات، لا كتالوج مصنع." },
         { title: "عينات واعتماد", description: "تشطيبات ومفصلات فيزيائية قبل أمر التصنيع." },
-        { title: "تصنيع واستيراد", description: "إنتاج مصنعي أوتوماتيكي مع SASO / SABER." },
-        { title: "تركيب وضمان", description: "تركيب بالليزر ودعم ما بعد البيع محلياً." },
+        { title: "تصنيع واستيراد", description: "يُصنع وفق المخططات. علامات المطابقة تبقى لدى المورّد." },
+        { title: "تركيب وضمان", description: "تركيب في الموقع ودعم ما بعد البيع محلياً." },
       ],
       ctaDesign: "ابدأ تصميم 3D",
       ctaContact: "احجز استشارة تأثيث",
@@ -1325,14 +1277,14 @@ const ar: LuxuryMessages = {
         ],
       },
       kitchens: {
-        eyebrow: "المطابخ المعيارية",
-        title: "مطابخ للفلل والضيافة",
+        eyebrow: "عندما تحتاجها الغرفة",
+        title: "مطابخ عندما تحتاجها الغرفة",
         intro:
           "أنظمة معيارية بقلب مقاوم للرطوبة، وتشطيبات PET وطلاء، ومفصلات إغلاق ناعم. تُحدَّد وتُعتمد بعينات ثم تُصنَّع وفق المخططات المعتمدة.",
         highlights: [
           {
             title: "جزيرة وممرات عمل",
-            description: "جزائر مركزية، مسارات متوازية، وتخزين مخفي مُهندَس حسب مخططك ومقاسات الوحدات.",
+            description: "جزائر مركزية، مسارات متوازية، وتخزين مخفي مُهندَس حسب المخطط المعتمد.",
           },
           {
             title: "تشطيبات تعتمدها قبل التصنيع",
@@ -1396,11 +1348,11 @@ const ar: LuxuryMessages = {
           },
           {
             q: "هل أرى الخامات قبل الطلب؟",
-            a: "نعم. نرسل حقيبة عينات فيزيائية ونجري مراجعة 3D متوافقة مع المصنع قبل أي تصنيع بالجملة.",
+            a: "نعم. يمكن إرسال مراجع التشطيب ومراجعة المخططات قبل أي تصنيع.",
           },
           {
             q: "ما الضمان المقدّم؟",
-            a: "ضمان محلي على المنتج والتركيب مع دعم قطع الغيار. ألواح E0 بمعايير دولية؛ مفصلات من Blum وHettich.",
+            a: "الضمان يتبع العقد على العمل الذي نسلّمه. درجة اللوح والمفصلات تتبع المواصفات. لا ننشر شهادة مصنع لم نصدرها.",
           },
           {
             q: "كيف أبدأ؟",
@@ -1443,14 +1395,14 @@ const ar: LuxuryMessages = {
       },
       steps: [
         { title: "ملخص البرنامج", description: "مزيج الوحدات، نطاق BOQ، لوحات العينات، وجدول التسليم." },
-        { title: "مخططات تنفيذ", description: "رسومات متوافقة مع وحدات المصنع ضمن SLA متفق عليه." },
-        { title: "تصنيع واستيراد", description: "إنتاج أوتوماتيكي، SASO / SABER، وتخزين مرحلي." },
+        { title: "مخططات تنفيذ", description: "رسومات تنفيذ من التصميم المعتمد، ضمن جدول متفق عليه." },
+        { title: "تصنيع واستيراد", description: "يُصنع وفق المخططات. علامات المطابقة تبقى لدى المورّد." },
         { title: "تركيب مرحلي", description: "فرق موقع توريفا، قوائم ملاحظات، ووثائق تسليم لكل مرحلة." },
       ],
       highlights: [
         { title: "تسعير MOQ", description: "خصومات هيكلية للأبراج والمجمعات والضيافة." },
-        { title: "SLA للمخططات", description: "مخططات تنفيذ متوافقة مع وحدات المصنع." },
-        { title: "جمارك وتخزين", description: "استيراد SASO / SABER وتسليم مرحلي." },
+        { title: "مخططات تنفيذ", description: "مخططات من التصميم المعتمد، ضمن جدول متفق عليه." },
+        { title: "استيراد وتخزين", description: "الاستيراد والتسليم المرحلي يتبعان البرنامج. علامات المطابقة تبقى لدى المورّد." },
         { title: "فرق موقع", description: "إشراف توريفا حتى الملاحظات والتسليم." },
       ],
       programme: {
@@ -1465,7 +1417,7 @@ const ar: LuxuryMessages = {
           },
           {
             title: "حزمة امتثال",
-            description: "وثائق SASO / SABER وشهادات مطابقة جاهزة لفريق المشتريات.",
+            description: "نمرر وثائق المورّد. لا نصدر شهادة مطابقة باسم توريفا.",
           },
           {
             title: "ملاحظات وتسليم",

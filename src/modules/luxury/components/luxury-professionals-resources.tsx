@@ -43,7 +43,7 @@ export function LuxuryProfessionalsResources({ locale, copy }: Props) {
           <h2 className="lux-display text-xl">{copy.nextStepsTitle}</h2>
           <p className="lux-body mt-4 text-lux-ink-soft">{copy.nextStepsIntro}</p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <LocalizedLink href="/contact?intent=quote" className="lux-btn-primary">
+            <LocalizedLink href="/contact" className="lux-btn-primary">
               {copy.nextStepsBrief}
             </LocalizedLink>
             <LocalizedLink href="/portfolio" className="lux-btn-outline-gold">

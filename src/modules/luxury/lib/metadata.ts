@@ -16,8 +16,8 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
 
   const description =
     locale === "ar"
-      ? "توريفا إحدى شركات مجموعة تسامي، متخصصة في تنفيذ المساحات الداخلية والمعارض والتأثيث والتصنيع والتركيب والتسليم الميداني في السعودية."
-      : "Turriva is a Tasami Group company specializing in spatial execution, fit-out, exhibitions, furnishing, fabrication, installation, and physical delivery in Saudi Arabia.";
+      ? "تصميم وتنفيذ المساحات والتجارب. من الفكرة إلى واقع ملموس. للمطورين والمشاريع التجارية والضيافة والمساكن."
+      : "Design and execution of spaces and experiences. From concept to physical reality. For developers, commercial projects, hospitality, and homes.";
 
   const canonical = `${TURRIVA_PUBLIC_URL}${localizePath("/", locale)}`;
 
@@ -27,24 +27,21 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
     keywords:
       locale === "ar"
         ? [
-            "تصميم داخلي",
-            "تنفيذ ديكور",
-            "تنفيذ معارض",
-            "تنفيذ مساحات",
-            "تأثيث",
-            "تصنيع وتركيب",
-            "ديكور فلل",
-            "شركة ديكور جدة",
+            "تصميم وتنفيذ المساحات",
+            "تجربة المشروع العقاري",
+            "وحدة عرض",
+            "التنفيذ والتجهيز",
+            "مساحات تجارية",
+            "مساحات ضيافة",
             "توريفا",
           ]
         : [
-            "interior design Saudi Arabia",
-            "interior execution Saudi Arabia",
-            "fit-out contractor Jeddah",
-            "exhibition execution",
-            "spatial fabrication",
-            "furnishing",
-            "turnkey physical experiences",
+            "spatial design and build",
+            "real estate project experience",
+            "show unit fit-out",
+            "fit-out and execution",
+            "commercial spaces",
+            "hospitality spaces",
             "Turriva",
           ],
     alternates: {

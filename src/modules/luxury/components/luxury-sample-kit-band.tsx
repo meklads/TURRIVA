@@ -6,7 +6,7 @@ import { localizePath } from "@/shared/i18n/path";
 
 export function LuxurySampleKitBand({ messages, locale }: { messages: LuxuryMessages; locale: Locale }) {
   const t = messages.sampleKit;
-  const contactHref = localizePath("/contact?intent=sample", locale);
+  const contactHref = `${localizePath("/", locale)}#brief`;
 
   return (
     <section className="lux-section lux-section--cream lux-sample-kit-band">
@@ -24,7 +24,7 @@ export function LuxurySampleKitBand({ messages, locale }: { messages: LuxuryMess
           <div className="lux-sample-kit-panel">
             <h2 className="lux-display text-2xl sm:text-3xl">{t.title}</h2>
             <p className="lux-body mt-3 text-sm sm:text-base">{t.subtitle}</p>
-            <Link href={contactHref} className="lux-btn-primary mt-8 inline-flex">
+            <Link href={contactHref} className="lux-btn-outline mt-8 inline-flex">
               {t.button}
             </Link>
           </div>

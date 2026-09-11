@@ -17,6 +17,6 @@
 - Marketing & content: Bees Motion (beesmotion.com)
 
 ## Contact
-info@turriva.com · turriva.com/contact?intent=quote
+info@turriva.com · turriva.com/contact
 
 — Turriva · A Tasami Group company

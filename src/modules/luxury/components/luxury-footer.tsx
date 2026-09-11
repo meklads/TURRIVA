@@ -47,15 +47,13 @@ export async function LuxuryFooter() {
   ];
 
   const exploreLinks = [
-    { href: lp("/launch"), label: seo.nav.launch },
-    { href: lp("/markets"), label: seo.nav.markets },
+    { href: lp("/our-work"), label: t.nav.ourWork },
     { href: lp("/portfolio"), label: seo.nav.portfolio },
     { href: lp("/professionals"), label: t.nav.professionals },
-    { href: lp("/our-work"), label: t.nav.ourWork },
-    { href: lp("/insights"), label: seo.nav.insights },
-    { href: lp("/faq"), label: seo.nav.faq },
+    { href: lp("/services"), label: seo.nav.services },
     { href: lp("/about"), label: t.nav.about },
     { href: lp("/contact"), label: t.nav.contact },
+    { href: lp("/faq"), label: seo.nav.faq },
   ];
 
   const workLinks = [

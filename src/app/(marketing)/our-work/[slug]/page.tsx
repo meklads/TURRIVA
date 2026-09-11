@@ -117,7 +117,7 @@ export default async function CaseStudyPage({ params }: Props) {
             </p>
           ) : null}
 
-          <LocalizedLink href="/contact?intent=quote" className="lux-btn-primary mt-10 inline-flex">
+          <LocalizedLink href="/contact" className="lux-btn-primary mt-10 inline-flex">
             {t.pages.ourWork.caseStudyContactCta}
           </LocalizedLink>
         </div>

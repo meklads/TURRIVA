@@ -7,10 +7,11 @@
 - Hospitality and developer batch programmes
 - Exhibition and sales-environment casework
 
-## Factory QC
-- Module tolerance target: 0.1 mm alignment bands on critical junctions
-- Pre-delivery factory inspection with documented snagging list
-- Laser-verified installation checks on site
+## Fabrication
+- Made to the approved drawings and the agreed specification
+- Samples signed off before production
+- Installation checked on site against the drawings
+- We do not publish a factory tolerance or a machine brand as a Turriva certificate
 
 ## Documentation at handover
 - As-built module register

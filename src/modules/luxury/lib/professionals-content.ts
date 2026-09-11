@@ -43,8 +43,8 @@ export const PROFESSIONAL_RESOURCES: readonly ProfessionalResource[] = [
     filename: "gulf-compliance-notes.md",
     titleEn: "Gulf compliance & environment notes",
     titleAr: "ملاحظات المطابقة وبيئة الخليج",
-    summaryEn: "Moisture-resistant specs, SASO references, and regional install considerations.",
-    summaryAr: "مواصفات مقاومة الرطوبة، مراجع SASO، واعتبارات التركيب في المنطقة.",
+    summaryEn: "Moisture-resistant specs and regional install considerations. Conformity marks stay with the supplier.",
+    summaryAr: "مواصفات مقاومة للرطوبة واعتبارات التركيب في المنطقة. علامات المطابقة تبقى لدى المورّد.",
   },
 ] as const;
 

@@ -52,11 +52,11 @@ export function LuxuryInnerPage({
                   : "Turriva manages field delivery: fabrication coordination, trades, installation, QC, and documented handover. For launch campaigns, Bees Motion provides marketing and creative production."}
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <LocalizedLink href="/villas" className="lux-btn-primary">
-                {t.nav.villas}
+              <LocalizedLink href="/real-estate-experience" className="lux-btn-primary">
+                {locale === "ar" ? "تجربة المشروع العقاري" : "Project experience"}
               </LocalizedLink>
-              <LocalizedLink href="/projects" className="lux-btn-outline-gold">
-                {t.nav.projects}
+              <LocalizedLink href="/fit-out" className="lux-btn-outline-gold">
+                {locale === "ar" ? "التنفيذ والتجهيز" : "Fit-out and execution"}
               </LocalizedLink>
               <LocalizedLink href="/services" className="lux-btn-outline">
                 {seo.nav.services}

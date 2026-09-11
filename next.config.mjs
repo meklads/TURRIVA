@@ -98,6 +98,36 @@ const nextConfig = {
         destination: "/en/hospitality-spaces",
         permanent: true,
       },
+      {
+        source: "/services/exhibition-execution",
+        destination: "/real-estate-experience",
+        permanent: true,
+      },
+      {
+        source: "/ar/services/exhibition-execution",
+        destination: "/ar/real-estate-experience",
+        permanent: true,
+      },
+      {
+        source: "/en/services/exhibition-execution",
+        destination: "/en/real-estate-experience",
+        permanent: true,
+      },
+      {
+        source: "/services/developer-joinery",
+        destination: "/fit-out",
+        permanent: true,
+      },
+      {
+        source: "/ar/services/developer-joinery",
+        destination: "/ar/fit-out",
+        permanent: true,
+      },
+      {
+        source: "/en/services/developer-joinery",
+        destination: "/en/fit-out",
+        permanent: true,
+      },
     ];
   },
 };

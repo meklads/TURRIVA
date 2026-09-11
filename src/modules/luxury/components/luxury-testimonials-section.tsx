@@ -6,6 +6,7 @@ type Props = {
 
 export function LuxuryTestimonialsSection({ messages }: Props) {
   const t = messages.testimonials;
+  if (t.items.length === 0) return null;
 
   return (
     <section

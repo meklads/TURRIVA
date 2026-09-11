@@ -33,7 +33,7 @@ export default async function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-                <LocalizedLink href={item.href} className="lux-btn-primary mt-6 inline-flex">
+                <LocalizedLink href={item.href} className="lux-btn-outline mt-6 inline-flex">
                   {item.cta}
                 </LocalizedLink>
               </article>

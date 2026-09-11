@@ -4,8 +4,6 @@ import { localizePath } from "@/shared/i18n/path";
 import type { Locale } from "@/shared/i18n/locale";
 import { CASE_STUDIES } from "@/modules/luxury/lib/case-studies";
 import { INSIGHT_ARTICLES } from "@/modules/luxury/lib/insights-content";
-import { SERVICE_LANDINGS } from "@/modules/luxury/lib/service-landings";
-
 const LOCALES: Locale[] = ["ar", "en"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -13,34 +11,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const routes = [
     { path: "/", priority: 1, changeFrequency: "weekly" as const },
-    { path: "/villas", priority: 0.95, changeFrequency: "weekly" as const },
-    { path: "/projects", priority: 0.95, changeFrequency: "weekly" as const },
-    { path: "/services", priority: 0.9, changeFrequency: "monthly" as const },
-    ...SERVICE_LANDINGS.map((s) => ({
-      path: `/services/${s.slug}`,
-      priority: 0.92,
-      changeFrequency: "monthly" as const,
-    })),
-    { path: "/styles", priority: 0.9, changeFrequency: "monthly" as const },
-    { path: "/our-work", priority: 0.88, changeFrequency: "weekly" as const },
-    { path: "/portfolio", priority: 0.85, changeFrequency: "monthly" as const },
-    { path: "/real-estate-experience", priority: 0.96, changeFrequency: "weekly" as const },
+    { path: "/real-estate-experience", priority: 0.98, changeFrequency: "weekly" as const },
+    { path: "/show-unit", priority: 0.95, changeFrequency: "weekly" as const },
     { path: "/design-build", priority: 0.95, changeFrequency: "weekly" as const },
-    { path: "/fit-out", priority: 0.94, changeFrequency: "weekly" as const },
+    { path: "/fit-out", priority: 0.95, changeFrequency: "weekly" as const },
     { path: "/commercial-spaces", priority: 0.94, changeFrequency: "weekly" as const },
     { path: "/hospitality-spaces", priority: 0.88, changeFrequency: "weekly" as const },
     { path: "/renovation", priority: 0.86, changeFrequency: "weekly" as const },
-    { path: "/show-unit", priority: 0.93, changeFrequency: "weekly" as const },
+    { path: "/services", priority: 0.82, changeFrequency: "monthly" as const },
+    { path: "/our-work", priority: 0.9, changeFrequency: "weekly" as const },
+    { path: "/portfolio", priority: 0.85, changeFrequency: "monthly" as const },
     { path: "/professionals", priority: 0.86, changeFrequency: "monthly" as const },
-    { path: "/launch", priority: 0.9, changeFrequency: "monthly" as const },
-    { path: "/markets", priority: 0.88, changeFrequency: "monthly" as const },
-    { path: "/insights", priority: 0.82, changeFrequency: "weekly" as const },
-    { path: "/faq", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/villas", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/projects", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/styles", priority: 0.65, changeFrequency: "monthly" as const },
+    { path: "/launch", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/markets", priority: 0.78, changeFrequency: "monthly" as const },
+    { path: "/insights", priority: 0.75, changeFrequency: "weekly" as const },
+    { path: "/faq", priority: 0.75, changeFrequency: "monthly" as const },
     { path: "/locations", priority: 0.5, changeFrequency: "yearly" as const },
-    { path: "/interior-design", priority: 0.85, changeFrequency: "monthly" as const },
-    { path: "/construction", priority: 0.85, changeFrequency: "monthly" as const },
-    { path: "/about", priority: 0.7, changeFrequency: "monthly" as const },
-    { path: "/contact", priority: 0.88, changeFrequency: "monthly" as const },
+    { path: "/interior-design", priority: 0.6, changeFrequency: "monthly" as const },
+    { path: "/construction", priority: 0.6, changeFrequency: "monthly" as const },
+    { path: "/about", priority: 0.75, changeFrequency: "monthly" as const },
+    { path: "/contact", priority: 0.9, changeFrequency: "monthly" as const },
     { path: "/privacy", priority: 0.3, changeFrequency: "yearly" as const },
     { path: "/terms", priority: 0.3, changeFrequency: "yearly" as const },
     ...CASE_STUDIES.map((c) => ({

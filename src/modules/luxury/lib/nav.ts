@@ -36,33 +36,68 @@ function productNav(locale: Locale) {
   };
 }
 
-/** Mobile row: the three doors, then the rest of the site. */
+/** Mobile row: short product doors, then the rest of the site. */
 export function getLuxuryNavLinks(locale: Locale) {
   const links = buildLuxuryNavLinks(locale);
   const products = productNav(locale);
-  const ar = locale === "ar";
-  const full = (link: { href: string; label: string }, label: string) => ({ href: link.href, label });
   return [
     links.home,
-    full(products.experience, ar ? "تجربة المشروع العقاري" : "Project experience"),
+    products.experience,
     products.showUnit,
-    full(products.designBuild, ar ? "التصميم والتنفيذ" : "Design and build"),
-    full(products.fitOut, ar ? "التنفيذ والتجهيز" : "Fit-out and execution"),
-    full(products.commercial, ar ? "المساحات التجارية" : "Commercial spaces"),
-    full(products.hospitality, ar ? "مساحات الضيافة" : "Hospitality spaces"),
-    full(products.renovation, ar ? "التجديد والتطوير" : "Renovation and upgrade"),
+    products.designBuild,
+    products.fitOut,
+    products.commercial,
+    products.hospitality,
+    products.renovation,
     links.ourWork,
-    links.professionals,
-    links.about,
     links.contact,
   ] as const;
 }
 
-/** Desktop bar stays six items. The catalogue leaves. Fit-out sits beside the developer door. */
+export function getLuxuryProductMenu(locale: Locale) {
+  const products = productNav(locale);
+  const ar = locale === "ar";
+  const full = (link: { href: string; label: string }, label: string) => ({ href: link.href, label });
+  return {
+    label: ar ? "المنتجات" : "Products",
+    groups: [
+      {
+        title: ar ? "العقار" : "Real estate",
+        links: [
+          full(products.experience, ar ? "تجربة المشروع العقاري" : "Real estate project experience"),
+          products.showUnit,
+        ],
+      },
+      {
+        title: ar ? "التصميم والتنفيذ" : "Design and build",
+        links: [
+          full(products.designBuild, ar ? "التصميم والتنفيذ" : "Design and build"),
+          full(products.fitOut, ar ? "التنفيذ والتجهيز" : "Fit-out and execution"),
+        ],
+      },
+      {
+        title: ar ? "المساحات" : "Spaces",
+        links: [
+          full(products.commercial, ar ? "المساحات التجارية" : "Commercial spaces"),
+          full(products.hospitality, ar ? "مساحات الضيافة" : "Hospitality spaces"),
+          full(products.renovation, ar ? "التجديد والتطوير" : "Renovation and upgrade"),
+        ],
+      },
+    ],
+  };
+}
+
+/** Desktop: products, then the two buyers, then the work. Contact stays the button. */
 export function getLuxuryHeaderNavLinks(locale: Locale) {
   const links = buildLuxuryNavLinks(locale);
-  const products = productNav(locale);
-  return [products.experience, products.designBuild, products.fitOut, products.commercial, links.ourWork, links.professionals] as const;
+  const ar = locale === "ar";
+  const lp = (path: string) => localizePath(path, locale);
+  return [
+    { href: lp("/real-estate-experience"), label: ar ? "المطورون" : "Developers" },
+    { href: lp("/fit-out"), label: ar ? "المصممون" : "Designers" },
+    links.ourWork,
+    links.about,
+  ] as const;
 }
 
 export const LUXURY_HERO_IMAGE = "/brand/turriva/hero-interior.webp";

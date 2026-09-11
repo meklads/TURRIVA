@@ -27,12 +27,11 @@ export function LuxuryHomePage({ locale }: Props) {
   return (
     <>
       <LuxuryHomeHero locale={locale} />
-      <LuxuryAlbumSection locale={locale} />
       <LuxuryDefinitionSection locale={locale} />
+      <LuxuryAlbumSection locale={locale} />
       <LuxuryProductGroupsSection locale={locale} />
       <LuxuryDevelopersSection locale={locale} />
       <LuxuryMethodSection locale={locale} />
-
       <LuxuryGroupEcosystemSection locale={locale} />
       <LuxurySampleKitBand messages={t} locale={locale} />
       <LuxuryFaqSection messages={t} />

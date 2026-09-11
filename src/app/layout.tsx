@@ -65,12 +65,12 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL("https://turriva.com"),
     title:
       locale === "ar"
-        ? "توريفا · عمارة · تصميم داخلي · إنشاءات"
-        : "Turriva · Architecture · Interior · Construction",
+        ? "توريفا · تصميم · تجربة · تنفيذ"
+        : "Turriva · Design · Experience · Build",
     description:
       locale === "ar"
-        ? "توريفا إحدى شركات مجموعة تسامي، متخصصة في تنفيذ المساحات الداخلية والمعارض والتأثيث والتصنيع والتركيب والتجارب المادية المتكاملة."
-        : "A Tasami Group company specializing in spatial execution, fit-out, exhibitions, furnishing, fabrication, installation, and turnkey physical experiences.",
+        ? "تصميم وتنفيذ المساحات والتجارب. من الفكرة إلى واقع ملموس."
+        : "Design and execution of spaces and experiences. From concept to physical reality.",
     ...(googleVerification
       ? { verification: { google: googleVerification } }
       : {}),

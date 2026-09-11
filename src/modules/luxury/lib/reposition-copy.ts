@@ -6,6 +6,7 @@ export type RepositionCopy = {
     eyebrow: string;
     title: string;
     body: string;
+    audiences: string;
     notes: readonly string[];
   };
   developers: {
@@ -21,6 +22,7 @@ export type RepositionCopy = {
     eyebrow: string;
     title: string;
     subtitle: string;
+    note: string;
     cta: string;
     items: readonly { image: string; category: string; title: string; href: string }[];
   };
@@ -48,19 +50,20 @@ const en: RepositionCopy = {
   navDevelopers: "Project experience",
   definition: {
     eyebrow: "What Turriva is",
-    title: "Spatial design and execution. Not a furniture shop, and not a tech company.",
-    body: "Turriva develops a space and delivers it: design, technical detailing, fabrication, installation, and handover. A finished room or sales environment is the work. Screens and campaigns can support it; they are not the product.",
+    title: "Design and execution of spaces and experiences.",
+    body: "Not a furniture shop, and not a tech company. Turriva develops the space and delivers it: design, technical detailing, fabrication, installation, and handover. The product is a finished room. Screens and campaigns can support it. They are not the product.",
+    audiences: "For developers · Commercial projects · Hospitality · Homes",
     notes: [
-      "Built for developers, commercial brands, and owners of existing rooms. Not catalogue decor.",
+      "The first commercial door is real estate project experience: the place a development meets its clients.",
       "The first step is a conversation. Cost follows the drawings and the quantities.",
-      "Graphics House and Bees Motion join only when the project needs visualization or launch.",
+      "Hire Turriva alone. Graphics House and Bees Motion join only when the project needs them.",
     ],
   },
   developers: {
-    eyebrow: "For developers",
+    eyebrow: "Primary door",
     title: "Your project is ready to sell. Is the way you show it ready?",
     intro:
-      "We design and deliver the place where the project meets its clients: a sales gallery, a show unit, models, and fit-out. The scope follows the project. The first step is a conversation.",
+      "We design and deliver the place where the project meets its clients: a sales gallery, a show unit, models, and fit-out. The scope follows the project. We do not promise higher sales. We build the environment that lets a buyer understand the living standard.",
     points: [
       {
         title: "Sales gallery and show villa",
@@ -82,7 +85,8 @@ const en: RepositionCopy = {
   album: {
     eyebrow: "The work",
     title: "Spaces, not a catalogue.",
-    subtitle: "Frames from the work and from selected team experience. Not a list of historical Turriva contracts. Each one opens the door it belongs to.",
+    subtitle: "Each frame opens the door it belongs to. Look at the room, not at a product list.",
+    note: "Selected team experience and live work. Not a list of historical Turriva contracts.",
     cta: "Selected work",
     items: [
       { image: "/brand/turriva/makkah-charter-04.jpeg", category: "Real estate", title: "The place a project is shown", href: "/real-estate-experience" },
@@ -90,13 +94,13 @@ const en: RepositionCopy = {
       { image: "/brand/turriva/hero-interior.webp", category: "Design and build", title: "From an idea to a room", href: "/design-build" },
       { image: "/brand/turriva/projects/project-joinery-b2b.webp", category: "Fit-out", title: "Drawings, built", href: "/fit-out" },
       { image: "/brand/turriva/sample-kit-showroom.webp", category: "Commercial", title: "Where the customer meets the brand", href: "/commercial-spaces" },
-      { image: "/brand/turriva/projects/project-kitchen-jeddah.webp", category: "An existing room", title: "What stays, and what changes", href: "/renovation" },
+      { image: "/brand/turriva/projects/project-kitchen-jeddah.webp", category: "Renovation", title: "What stays, and what changes", href: "/renovation" },
     ],
   },
   groups: {
-    eyebrow: "How to start",
+    eyebrow: "What you can buy",
     title: "Three doors. One company.",
-    intro: "Choose the question that matches the job. The pages behind each door are not seven equal services.",
+    intro: "Seven products sit behind three questions. They are not seven equal services competing for attention.",
     items: [
       {
         title: "Real estate",
@@ -146,19 +150,20 @@ const ar: RepositionCopy = {
   navDevelopers: "تجربة المشروع",
   definition: {
     eyebrow: "ما هي توريفا",
-    title: "تصميم مكاني وتنفيذ. ليست متجر ديكور، وليست شركة تقنية.",
-    body: "توريفا تطوّر الفراغ وتسلّمه: تصميم، تفصيل فني، تصنيع، تركيب، وتسليم. المنتج مكان مكتمل. الشاشات والحملات قد تخدمه، لكنها ليست المنتج.",
+    title: "تصميم وتنفيذ المساحات والتجارب.",
+    body: "ليست متجر ديكور، وليست شركة تقنية. توريفا تطوّر الفراغ وتسلّمه: تصميم، تفصيل فني، تصنيع، تركيب، وتسليم. المنتج مكان مكتمل. الشاشات والحملات قد تخدمه. لكنها ليست المنتج.",
+    audiences: "للمطورين · المشاريع التجارية · الضيافة · المساكن",
     notes: [
-      "للمطورين والعلامات وملاك المساحات القائمة، لا لكتالوج الأثاث.",
+      "الباب التجاري الأول هو تجربة المشروع العقاري: المكان الذي يلتقي فيه المشروع بعملائه.",
       "الخطوة الأولى محادثة. التكلفة تتبع المخططات والكميات.",
-      "جرافيكس هاوس وبيزموشن يدخلان فقط عندما يحتاج المشروع تصورًا أو إطلاقًا.",
+      "تعاقد مع توريفا وحدها. جرافيكس هاوس وبيز موشن يدخلان فقط عندما يحتاجهما المشروع.",
     ],
   },
   developers: {
-    eyebrow: "للمطورين",
+    eyebrow: "الباب الأول",
     title: "مشروعك جاهز للبيع. هل تجربة عرضه جاهزة؟",
     intro:
-      "نصمّم وننفّذ البيئة التي يستقبل فيها مشروعك عملاءه: مركز البيع ووحدة العرض والمجسمات والتجهيز. النطاق حسب المشروع. الخطوة الأولى محادثة.",
+      "نصمّم وننفّذ البيئة التي يستقبل فيها مشروعك عملاءه: مركز البيع ووحدة العرض والمجسمات والتجهيز. النطاق حسب المشروع. لا نعد بزيادة المبيعات. نبني المكان الذي يفهم فيه العميل مستوى المعيشة الذي يقدمه المشروع.",
     points: [
       {
         title: "معرض مبيعات وفيلا عرض",
@@ -180,7 +185,8 @@ const ar: RepositionCopy = {
   album: {
     eyebrow: "الأعمال",
     title: "مساحات، لا كتالوج.",
-    subtitle: "صور من العمل ومن خبرة الفريق المختارة. ليست عقوداً تاريخية باسم توريفا. كل صورة تفتح الباب الذي تنتمي إليه.",
+    subtitle: "كل إطار يفتح الباب الذي ينتمي إليه. انظر إلى المكان، لا إلى قائمة منتجات.",
+    note: "خبرة فريق مختارة وأعمال حية. ليست قائمة عقود تاريخية باسم توريفا.",
     cta: "أعمال مختارة",
     items: [
       { image: "/brand/turriva/makkah-charter-04.jpeg", category: "العقار", title: "المكان الذي يُعرض فيه المشروع", href: "/real-estate-experience" },
@@ -188,13 +194,13 @@ const ar: RepositionCopy = {
       { image: "/brand/turriva/hero-interior.webp", category: "التصميم والتنفيذ", title: "من فكرة إلى غرفة", href: "/design-build" },
       { image: "/brand/turriva/projects/project-joinery-b2b.webp", category: "التنفيذ والتجهيز", title: "مخططات تُبنى", href: "/fit-out" },
       { image: "/brand/turriva/sample-kit-showroom.webp", category: "التجاري", title: "حيث يلتقي العميل بالعلامة", href: "/commercial-spaces" },
-      { image: "/brand/turriva/projects/project-kitchen-jeddah.webp", category: "غرفة قائمة", title: "ما يبقى، وما يتغير", href: "/renovation" },
+      { image: "/brand/turriva/projects/project-kitchen-jeddah.webp", category: "التجديد", title: "ما يبقى، وما يتغير", href: "/renovation" },
     ],
   },
   groups: {
-    eyebrow: "كيف نبدأ",
+    eyebrow: "ما يمكن شراؤه",
     title: "ثلاثة أبواب. شركة واحدة.",
-    intro: "اختر السؤال الذي يطابق العمل. الصفحات خلف كل باب ليست سبع خدمات متساوية.",
+    intro: "سبعة منتجات خلف ثلاثة أسئلة. ليست سبع خدمات متساوية تتنافس على الانتباه.",
     items: [
       {
         title: "العقار",

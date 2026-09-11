@@ -111,7 +111,7 @@ export type LuxuryPlatformMessages = {
 const en: LuxuryPlatformMessages = {
   trustBar: {
     items: [
-      { icon: "build", label: "Spatial execution & installation · Turriva" },
+      { icon: "build", label: "Design · Experience · Build" },
       { icon: "design", label: "Concept-to-build technical development" },
       { icon: "factory", label: "Fabrication, procurement & physical delivery" },
     ],
@@ -156,9 +156,9 @@ const en: LuxuryPlatformMessages = {
   },
   brandRelationship: {
     eyebrow: "Part of Tasami Group",
-    title: "Specialists working together, with Turriva accountable for execution",
+    title: "Hire Turriva. The group joins only when the project needs it.",
     body:
-      "Turriva is the specialized spatial execution and physical delivery company within Tasami Group. It works alongside sister companies across creative, marketing, and execution disciplines. For selected projects, Graphics House may lead creative and visual development; Turriva turns the approved direction into physical reality through technical development, furnishing, fabrication, installation, and delivery.",
+      "Turriva designs and builds spaces and experiences. Graphics House and Bees Motion join only when the brief needs visualization or a launch. You do not have to hire the group to hire Turriva.",
     flow: "Creative → Execution",
     groupLink: "Discover Tasami Group",
     companies: [
@@ -197,7 +197,7 @@ const en: LuxuryPlatformMessages = {
     items: [
       {
         title: "Modular kitchens",
-        description: "Water-resistant cores, PET & lacquer finishes, Blum soft-close systems.",
+        description: "Specified when the room needs them. Hardware follows the drawings, not a house catalogue.",
         href: "/villas#kitchens",
       },
       {
@@ -312,7 +312,7 @@ const en: LuxuryPlatformMessages = {
       },
       {
         q: "Is there a warranty?",
-        a: "We provide local warranty on products and installation. Specified hardware and board grades meet international E0 and factory QC standards.",
+        a: "Warranty follows the contract for the work we deliver. Board grade and hardware follow the specification. We do not publish a factory certificate we have not issued.",
       },
       {
         q: "Can I request physical material samples?",
@@ -325,37 +325,37 @@ const en: LuxuryPlatformMessages = {
     ],
   },
   partners: {
-    title: "Specified components & compliance",
-    subtitle: "Production technology, selected hardware, and Saudi compliance references coordinated for physical delivery.",
+    title: "How fabrication is specified",
+    subtitle: "We do not publish a factory tolerance, and we do not present a machine brand or a conformity mark as a Turriva certificate.",
     groups: [
       {
-        label: "Manufacturing",
-        description: "Factory-scale production and precision cutting",
-        items: ["HOMAG"],
+        label: "Production",
+        description: "Made to the approved drawings, with the workshop the specification requires.",
+        items: ["Not claimed as a Turriva-owned line"],
       },
       {
-        label: "Hardware & fittings",
-        description: "Premium hinges, runners, and soft-close systems",
-        items: ["Blum", "Hettich"],
+        label: "Hardware",
+        description: "Hinges and runners follow the specification. They are not a house catalogue.",
+        items: ["Specified per project"],
       },
       {
-        label: "Saudi compliance",
-        description: "Board standards and product conformity for import",
-        items: ["SASO", "SABER", "E0 boards"],
+        label: "Conformity",
+        description: "Import and product marks stay with the supplier and the project.",
+        items: ["Not a Turriva certificate"],
       },
     ],
   },
   sampleKit: {
-    title: "Request a physical sample kit & drawing review",
+    title: "Samples come after the scope.",
     subtitle:
-      "We send finishes, hinges, and board samples to your site, alongside a factory-aligned 3D review of your plans.",
-    button: "Request sample kit",
+      "We send finishes and hardware references after the scope is clear. This is not a quote, and not a factory certificate.",
+    button: "Send the drawings",
   },
   valueOffers: {
     eyebrow: "The Turriva promise",
     title: "What Turriva delivers for your project",
     subtitle:
-      "A specialized execution company that turns approved concepts into completed interiors, exhibitions, and branded environments through disciplined physical delivery.",
+      "Design and execution of spaces and experiences. Execution is part of the product, not the whole identity.",
     items: [
       {
         icon: "warranty",
@@ -370,14 +370,14 @@ const en: LuxuryPlatformMessages = {
         title: "Built to global standards",
         points: [
           "Fabrication against approved drawings, with samples signed off before production.",
-          "E0 boards plus Blum and Hettich hardware specified for daily use.",
+          "Board grade and hardware follow the specification. We do not publish a factory brand as ours.",
         ],
       },
       {
         icon: "design",
         title: "Design aligned to reality",
         points: [
-          "High-fidelity 3D and VR using factory-approved engineering blocks.",
+          "3D used to agree the room before fabrication, not as a factory certificate.",
           "Full customization to your floor plan before anything is cut.",
         ],
       },
@@ -390,15 +390,15 @@ const en: LuxuryPlatformMessages = {
         ],
       },
     ],
-    cta: "Request a free quote",
-    ctaHref: "/contact?intent=quote",
+    cta: "Discuss your project",
+    ctaHref: "/contact",
   },
 };
 
 const ar: LuxuryPlatformMessages = {
   trustBar: {
     items: [
-      { icon: "build", label: "تنفيذ المساحات والتركيب · توريفا" },
+      { icon: "build", label: "تصميم · تجربة · تنفيذ" },
       { icon: "design", label: "تطوير فني من المفهوم إلى التنفيذ" },
       { icon: "factory", label: "تصنيع وتوريد وتسليم ميداني" },
     ],
@@ -443,9 +443,9 @@ const ar: LuxuryPlatformMessages = {
   },
   brandRelationship: {
     eyebrow: "جزء من مجموعة تسامي",
-    title: "تخصصات تعمل معاً، وتوريفا مسؤولة عن التنفيذ",
+    title: "تعاقد مع توريفا. المجموعة تنضم عندما يحتاجها المشروع.",
     body:
-      "توريفا هي شركة تنفيذ المساحات والتسليم الميداني المتخصصة ضمن مجموعة تسامي، وتعمل إلى جانب شركات شقيقة في مجالات الإبداع والتسويق والتنفيذ. في مشاريع مختارة، قد تتولى Graphics House التطوير الإبداعي والبصري، بينما تحوّل توريفا التوجه المعتمد إلى واقع مادي عبر التطوير الفني والتأثيث والتصنيع والتركيب والتسليم.",
+      "توريفا تصمم وتنفذ المساحات والتجارب. جرافيكس هاوس وبيز موشن تنضمان فقط عندما يحتاج الموجز إلى تصور أو إطلاق. لا يلزم التعاقد مع المجموعة للتعاقد مع توريفا.",
     flow: "الإبداع ← التنفيذ",
     groupLink: "اكتشف مجموعة تسامي",
     companies: [
@@ -484,7 +484,7 @@ const ar: LuxuryPlatformMessages = {
     items: [
       {
         title: "مطابخ معيارية",
-        description: "نواة مقاومة للماء، تشطيبات PET ولاكر، أنظمة Blum.",
+        description: "تُحدد عندما تحتاجها الغرفة. المفصلات تتبع المخططات، لا كتالوج الدار.",
         href: "/villas#kitchens",
       },
       {
@@ -529,7 +529,7 @@ const ar: LuxuryPlatformMessages = {
         label: "خزائن",
         title: "غرف ملابس",
         description:
-          "إضاءة مدمجة ومفصلات soft-close ووحدات بدقة المصنع، لغرف الملابس والجناح الرئيسي.",
+          "إضاءة مدمجة ومفصلات إغلاق ناعم، لغرف الملابس والجناح الرئيسي، وفق المخططات.",
         cta: "اكتشف الخزائن",
         href: "/villas#wardrobes",
       },
@@ -599,7 +599,7 @@ const ar: LuxuryPlatformMessages = {
       },
       {
         q: "هل يوجد ضمان؟",
-        a: "ضمان محلي على المنتج والتركيب. مواصفات E0 وفحص المصنع وفق معايير دولية.",
+        a: "الضمان يتبع العقد على العمل الذي نسلّمه. درجة اللوح والمفصلات تتبع المواصفات. لا ننشر شهادة مصنع لم نصدرها.",
       },
       {
         q: "هل يمكن طلب عينات فيزيائية؟",
@@ -607,42 +607,42 @@ const ar: LuxuryPlatformMessages = {
       },
       {
         q: "كيف أبدأ؟",
-        a: "أرسل مخططك لمراجعة التصميم وطلب العينات، أو قدّم ملخص مشروع مطور عبر صفحة المشاريع لعرض سعر رسمي.",
+        a: "أرسل المخططات أو صف المكان. نرد لمناقشة النطاق. التكلفة تتبع الكميات بعد المراجعة.",
       },
     ],
   },
   partners: {
-    title: "المكونات المحددة ومراجع الامتثال",
-    subtitle: "تقنيات إنتاج ومفصلات مختارة ومراجع امتثال سعودي تُنسّق لخدمة التسليم الميداني.",
+    title: "كيف يُحدد التصنيع",
+    subtitle: "لا ننشر رقم دقة مصنع، ولا نعرض علامة آلة أو علامة مطابقة كشهادة باسم توريفا.",
     groups: [
       {
-        label: "التصنيع",
-        description: "إنتاج مصنعي وتقطيع بدقة صناعية",
-        items: ["HOMAG"],
+        label: "الإنتاج",
+        description: "يُصنع وفق المخططات المعتمدة، ومع الورشة التي تتطلبها المواصفات.",
+        items: ["ليس خط إنتاج مملوكاً لتوريفا"],
       },
       {
-        label: "المفصلات والإكسسوارات",
-        description: "مفصلات وسوفت-كlose من العلامات العالمية",
-        items: ["Blum", "Hettich"],
+        label: "المفصلات",
+        description: "تتبع المواصفات. ليست كتالوج دار.",
+        items: ["تُحدد لكل مشروع"],
       },
       {
-        label: "الامتثال السعودي",
-        description: "معايير الألواح ومطابقة المنتج للاستيراد",
-        items: ["SASO", "SABER", "E0"],
+        label: "المطابقة",
+        description: "الاستيراد وعلامات المنتج تبقى لدى المورّد والمشروع.",
+        items: ["ليست شهادة باسم توريفا"],
       },
     ],
   },
   sampleKit: {
-    title: "اطلب حقيبة العينات الفيزيائية وجلسة مراجعة المخططات",
+    title: "العينات تأتي بعد وضوح النطاق.",
     subtitle:
-      "نرسل التشطيبات والمفصلات والألواح إلى موقعك، مع مراجعة 3D متوافقة مع مقاسات المصنع.",
-    button: "اطلب حقيبة العينات",
+      "نرسل مراجع التشطيب بعد وضوح النطاق. ليست عرض سعر، وليست شهادة مصنع.",
+    button: "أرسل المخططات",
   },
   valueOffers: {
     eyebrow: "وعد توريفا",
     title: "ما الذي يقدمه لك فريق توريفا",
     subtitle:
-      "شركة تنفيذ متخصصة تحوّل المفاهيم المعتمدة إلى مساحات داخلية ومعارض وبيئات للعلامات عبر تسليم ميداني منضبط.",
+      "تصميم وتنفيذ المساحات والتجارب. التنفيذ جزء من المنتج، لا الهوية كلها.",
     items: [
       {
         icon: "warranty",
@@ -657,14 +657,14 @@ const ar: LuxuryPlatformMessages = {
         title: "جودة فائقة",
         points: [
           "تصنيع وفق المخططات المعتمدة، مع اعتماد العينات قبل الإنتاج.",
-          "ألواح E0 ومفصلات Blum وHettich لاستخدام يومي متين.",
+          "درجة اللوح والمفصلات تتبع المواصفات. ليست علامة مصنع باسم توريفا.",
         ],
       },
       {
         icon: "design",
         title: "تصميم منتقى بعناية",
         points: [
-          "إظهار 3D وVR ببلوكات هندسية معتمدة للمصنع.",
+          "إظهار ثلاثي الأبعاد لاتفاق الغرفة قبل التصنيع، لا كشهادة مصنع.",
           "تخصيص كامل حسب مخططك قبل أي عملية قطع.",
         ],
       },
@@ -673,12 +673,12 @@ const ar: LuxuryPlatformMessages = {
         title: "خدمة شاملة",
         points: [
           "رفع مساحي وتنسيق توريد وامتثال وتركيب تحت مسؤول توريفا واحد.",
-          "امتثال SASO/SABER ولوجستيات مرحلية للفلل والمشاريع.",
+          "التوريد والتسليم المرحلي يتبعان البرنامج. علامات المطابقة تبقى لدى المورّد.",
         ],
       },
     ],
-    cta: "احصل على عرض سعر مجاني",
-    ctaHref: "/contact?intent=quote",
+    cta: "ناقش مشروعك",
+    ctaHref: "/contact",
   },
 };
 

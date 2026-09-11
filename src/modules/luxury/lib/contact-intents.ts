@@ -40,10 +40,10 @@ export const CONTACT_INTENTS: Record<ContactIntent, FunnelPreset> = {
   },
   quote: {
     source: "contact_intent_quote",
-    titleEn: "Request a project quote",
-    titleAr: "اطلب عرض سعر",
-    subtitleEn: "Structured brief for villas, hospitality, exhibitions, and developer programmes.",
-    subtitleAr: "ملخص منظم للفلل والضيافة والمعارض وبرامج المطورين.",
+    titleEn: "Discuss the project",
+    titleAr: "ناقش المشروع",
+    subtitleEn: "Tell us the space and send the drawings. Cost follows the scope.",
+    subtitleAr: "أخبرنا بالمكان وأرسل المخططات. التكلفة تتبع النطاق.",
   },
   hospitality: {
     projectType: "hospitality",

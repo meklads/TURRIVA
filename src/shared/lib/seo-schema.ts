@@ -26,8 +26,8 @@ export function organizationSchema(locale: Locale) {
     email: TURRIVA_PUBLIC_EMAIL,
     telephone: "+966502786513",
     description: isAr
-      ? "شركة متخصصة في تنفيذ المساحات والتسليم الميداني ضمن مجموعة تسامي."
-      : "Specialized spatial execution and physical delivery company within Tasami Group.",
+      ? "تصميم وتنفيذ المساحات والتجارب. التنفيذ جزء من المنتج، لا الهوية كلها."
+      : "Design and execution of spaces and experiences. Execution is part of the product, not the whole identity.",
     parentOrganization: {
       "@type": "Organization",
       name: "Tasami Group",

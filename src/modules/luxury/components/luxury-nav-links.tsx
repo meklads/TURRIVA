@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { stripLocalePrefix } from "@/shared/i18n/path";
 
@@ -63,11 +63,79 @@ export function LuxuryRouteProgress() {
   );
 }
 
-export function LuxuryDesktopNav({ links }: { links: readonly NavLink[] }) {
+type ProductMenu = {
+  label: string;
+  groups: readonly { title: string; links: readonly NavLink[] }[];
+};
+
+export function LuxuryDesktopNav({ links, products }: { links: readonly NavLink[]; products?: ProductMenu }) {
   const isActive = useActivePath();
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const panelId = useId();
+  const productsActive = products?.groups.some((group) => group.links.some((link) => isActive(link.href))) ?? false;
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onPointerDown = (event: MouseEvent) => {
+      if (!rootRef.current?.contains(event.target as Node)) setOpen(false);
+    };
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
 
   return (
     <nav className="lux-header-nav hidden min-w-0 items-center justify-center lg:flex" aria-label="Main">
+      {products ? (
+        <div
+          ref={rootRef}
+          className={`lux-nav-products${productsActive || open ? " lux-nav-products--active" : ""}${open ? " lux-nav-products--open" : ""}`}
+          onMouseEnter={() => setOpen(true)}
+          onMouseLeave={() => setOpen(false)}
+        >
+          <button
+            type="button"
+            className="lux-nav-link lux-nav-products__button"
+            aria-haspopup="menu"
+            aria-expanded={open}
+            aria-controls={panelId}
+            onClick={() => setOpen((value) => !value)}
+          >
+            {products.label}
+          </button>
+          <div id={panelId} className="lux-nav-products__panel" role="menu">
+            {products.groups.map((group) => (
+              <div key={group.title} className="lux-nav-products__group">
+                <p className="lux-nav-products__label">{group.title}</p>
+                {group.links.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    prefetch
+                    role="menuitem"
+                    className={`lux-nav-products__link${isActive(link.href) ? " lux-nav-products__link--active" : ""}`}
+                    onClick={() => setOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : null}
       {links.map((link) => (
         <Link
           key={link.href}
