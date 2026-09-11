@@ -129,20 +129,32 @@ export function LuxuryDesktopNav({
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const panelId = useId();
   const menuActive = products?.groups.some((group) => group.items.some((item) => isActive(item.href))) ?? false;
 
-  useEffect(() => {
+  const closeMenu = () => {
     setOpen(false);
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+  };
+
+  useEffect(() => {
+    closeMenu();
   }, [pathname]);
+
+  useEffect(() => {
+    return () => {
+      if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    };
+  }, []);
 
   useEffect(() => {
     if (!open) return;
     const onPointerDown = (event: MouseEvent) => {
-      if (!rootRef.current?.contains(event.target as Node)) setOpen(false);
+      if (!rootRef.current?.contains(event.target as Node)) closeMenu();
     };
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Escape") closeMenu();
     };
     document.addEventListener("mousedown", onPointerDown);
     document.addEventListener("keydown", onKeyDown);
@@ -162,8 +174,13 @@ export function LuxuryDesktopNav({
         <div
           ref={rootRef}
           className={`lux-nav-products${menuActive || open ? " lux-nav-products--active" : ""}${open ? " lux-nav-products--open" : ""}`}
-          onMouseEnter={() => setOpen(true)}
-          onMouseLeave={() => setOpen(false)}
+          onMouseEnter={() => {
+            if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+            setOpen(true);
+          }}
+          onMouseLeave={() => {
+            closeTimerRef.current = setTimeout(() => setOpen(false), 120);
+          }}
         >
           <button
             type="button"
@@ -175,7 +192,7 @@ export function LuxuryDesktopNav({
           >
             {products.label}
           </button>
-          <div id={panelId} className="lux-mega" role="menu" aria-label={products.label}>
+          <div id={panelId} className="lux-mega" role="menu" aria-label={products.label} hidden={!open}>
             <div className="lux-mega__inner">
               <header className="lux-mega__head">
                 <p className="lux-mega__eyebrow">{products.eyebrow}</p>
@@ -195,7 +212,7 @@ export function LuxuryDesktopNav({
                           isAr={isAr}
                           active={isActive(item.href)}
                           featured={item.number === "01"}
-                          onNavigate={() => setOpen(false)}
+                          onNavigate={closeMenu}
                         />
                       ))}
                     </div>

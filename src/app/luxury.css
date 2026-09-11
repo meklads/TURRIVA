@@ -360,8 +360,6 @@
   transition: opacity 0.18s ease;
 }
 
-.lux-nav-products:hover .lux-mega,
-.lux-nav-products:focus-within .lux-mega,
 .lux-nav-products--open .lux-mega {
   display: block;
   opacity: 1;
@@ -5402,6 +5400,11 @@
   position: relative;
   z-index: 1;
   max-width: 40rem;
+  color: #f7f1e8;
+}
+
+.lux-product-hero__content :is(.lux-display, .lux-body, h1, h2, h3, p) {
+  color: inherit;
 }
 
 .lux-product-hero__index {
@@ -5431,7 +5434,7 @@
   font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.04em;
-  color: color-mix(in srgb, #f7f1e8 62%, transparent);
+  color: color-mix(in srgb, #f7f1e8 68%, transparent);
 }
 
 .lux-product-hero__eyebrow {
@@ -5442,14 +5445,14 @@
   margin-top: 1.15rem;
   font-size: clamp(2.15rem, 4.8vw, 3.55rem);
   line-height: 1.08;
-  color: #f7f1e8;
+  color: #f7f1e8 !important;
   text-wrap: balance;
 }
 
 .lux-product-hero__question {
   display: block;
   margin-top: 0.3rem;
-  color: color-mix(in srgb, #f7f1e8 78%, var(--lux-gold));
+  color: color-mix(in srgb, #f7f1e8 82%, var(--lux-gold));
   font-size: 0.9em;
 }
 
@@ -5458,7 +5461,7 @@
   max-width: 34rem;
   font-size: clamp(0.95rem, 1.5vw, 1.0625rem);
   line-height: 1.65;
-  color: color-mix(in srgb, #f7f1e8 78%, transparent);
+  color: color-mix(in srgb, #f7f1e8 82%, transparent) !important;
 }
 
 .lux-product-hero__cta {
@@ -5468,16 +5471,29 @@
   margin-top: 1.6rem;
 }
 
-.lux-product-hero__outline {
-  border-color: color-mix(in srgb, #f7f1e8 55%, transparent);
-  color: #f7f1e8;
-  background: transparent;
+.lux-product-hero__cta .lux-btn-primary {
+  background: #f7f1e8;
+  color: var(--lux-ink);
+  box-shadow: none;
 }
 
-.lux-product-hero__outline:hover {
-  border-color: #f7f1e8;
-  background: color-mix(in srgb, #f7f1e8 10%, transparent);
-  color: #f7f1e8;
+.lux-product-hero__cta .lux-btn-primary:hover {
+  background: #fff;
+  color: var(--lux-ink);
+}
+
+.lux-product-hero__outline,
+.lux-product-hero__cta .lux-btn-outline {
+  border-color: color-mix(in srgb, #f7f1e8 60%, transparent) !important;
+  color: #f7f1e8 !important;
+  background: transparent !important;
+}
+
+.lux-product-hero__outline:hover,
+.lux-product-hero__cta .lux-btn-outline:hover {
+  border-color: #f7f1e8 !important;
+  background: color-mix(in srgb, #f7f1e8 12%, transparent) !important;
+  color: #f7f1e8 !important;
 }
 
 @media (max-width: 639px) {

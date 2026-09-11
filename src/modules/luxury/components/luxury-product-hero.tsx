@@ -57,7 +57,7 @@ export function LuxuryProductHero({
           {title}
           {question ? <span className="lux-product-hero__question">{question}</span> : null}
         </h1>
-        <p className="lux-body lux-product-hero__body">{body}</p>
+        <p className="lux-product-hero__body">{body}</p>
         <div className="lux-product-hero__cta">
           <a href="#brief" className="lux-btn-primary">
             {primaryCta}
