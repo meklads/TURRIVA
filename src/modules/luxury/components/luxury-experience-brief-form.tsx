@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import type { Locale } from "@/shared/i18n/locale";
 import { TURRIVA_PUBLIC_EMAIL } from "@/shared/constants/brand";
 import { trackMarketingEvent } from "@/shared/lib/marketing-events";
@@ -58,11 +58,37 @@ export function LuxuryExperienceBriefForm({
   const [file, setFile] = useState<File | null>(null);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [needError, setNeedError] = useState(false);
+  const [needsOpen, setNeedsOpen] = useState(false);
+  const needsPanelId = useId();
+  const needsRootRef = useRef<HTMLDivElement>(null);
 
   function toggleNeed(need: ExperienceNeed) {
     setNeeds((current) => (current.includes(need) ? current.filter((item) => item !== need) : [...current, need]));
     setNeedError(false);
   }
+
+  useEffect(() => {
+    if (!needsOpen) return;
+    const onPointerDown = (event: MouseEvent) => {
+      if (!needsRootRef.current?.contains(event.target as Node)) setNeedsOpen(false);
+    };
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setNeedsOpen(false);
+    };
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [needsOpen]);
+
+  const needsSummary =
+    needs.length === 0
+      ? locale === "ar"
+        ? "اختر ما تحتاجه"
+        : "Select what you need"
+      : needs.map((need) => copy.needLabels[need]).join(locale === "ar" ? "، " : ", ");
 
   async function uploadFile(): Promise<string | null> {
     if (!file) return null;
@@ -165,27 +191,27 @@ export function LuxuryExperienceBriefForm({
       </div>
 
       {unitTypes && unitTypes.length > 0 ? (
-        <fieldset className="mt-6">
-          <legend className="lux-funnel__legend">{choiceLegend ?? (locale === "ar" ? "نوع الوحدة" : "Unit type")}</legend>
-          <div className="lux-funnel__grid lux-funnel__grid--compact">
+        <label className="lux-funnel__field">
+          <span className="lux-funnel__legend">{choiceLegend ?? (locale === "ar" ? "نوع الوحدة" : "Unit type")}</span>
+          <select
+            required
+            value={unitType}
+            onChange={(e) => setUnitType(e.target.value)}
+            className="lux-input lux-funnel__select"
+          >
             {unitTypes.map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                className={`lux-funnel__choice lux-funnel__choice--sm${unitType === item.id ? " lux-funnel__choice--active" : ""}`}
-                onClick={() => setUnitType(item.id)}
-              >
+              <option key={item.id} value={item.id}>
                 {item.label}
-              </button>
+              </option>
             ))}
-          </div>
-        </fieldset>
+          </select>
+        </label>
       ) : null}
 
       {drawings ? (
-        <fieldset className="mt-6">
+        <fieldset className="lux-funnel__field">
           <legend className="lux-funnel__legend">{drawings.label}</legend>
-          <div className="lux-funnel__grid lux-funnel__grid--compact">
+          <div className="lux-funnel__grid lux-funnel__grid--compact lux-funnel__grid--pair">
             {(["yes", "no"] as const).map((value) => (
               <button
                 key={value}
@@ -200,48 +226,68 @@ export function LuxuryExperienceBriefForm({
         </fieldset>
       ) : null}
 
-      <fieldset className="mt-6">
-        <legend className="lux-funnel__legend">{copy.projectType}</legend>
-        <div className="lux-funnel__grid lux-funnel__grid--compact">
+      <label className="lux-funnel__field">
+        <span className="lux-funnel__legend">{copy.projectType}</span>
+        <select
+          required
+          value={projectType}
+          onChange={(e) => setProjectType(e.target.value as ExperienceProjectType)}
+          className="lux-input lux-funnel__select"
+        >
           {EXPERIENCE_PROJECT_TYPES.map((type) => (
-            <button
-              key={type}
-              type="button"
-              className={`lux-funnel__choice lux-funnel__choice--sm${projectType === type ? " lux-funnel__choice--active" : ""}`}
-              onClick={() => setProjectType(type)}
-            >
+            <option key={type} value={type}>
               {copy.projectTypes[type]}
-            </button>
+            </option>
           ))}
-        </div>
-      </fieldset>
+        </select>
+      </label>
 
-      <fieldset className="mt-6">
-        <legend className="lux-funnel__legend">{copy.needs}</legend>
-        <div className="lux-funnel__grid lux-funnel__grid--compact">
-          {EXPERIENCE_NEEDS.map((need) => (
-            <button
-              key={need}
-              type="button"
-              aria-pressed={needs.includes(need)}
-              className={`lux-funnel__choice lux-funnel__choice--sm${needs.includes(need) ? " lux-funnel__choice--active" : ""}`}
-              onClick={() => toggleNeed(need)}
-            >
-              {copy.needLabels[need]}
-            </button>
-          ))}
-        </div>
+      <div className="lux-funnel__field" ref={needsRootRef}>
+        <span className="lux-funnel__legend" id={`${needsPanelId}-label`}>
+          {copy.needs}
+        </span>
+        <button
+          type="button"
+          className={`lux-input lux-funnel__select lux-funnel__multi-trigger${needsOpen ? " lux-funnel__multi-trigger--open" : ""}${needError ? " lux-funnel__multi-trigger--error" : ""}`}
+          aria-haspopup="listbox"
+          aria-expanded={needsOpen}
+          aria-controls={needsPanelId}
+          aria-labelledby={`${needsPanelId}-label`}
+          onClick={() => setNeedsOpen((value) => !value)}
+        >
+          <span className={needs.length === 0 ? "lux-funnel__multi-placeholder" : undefined}>{needsSummary}</span>
+        </button>
+        {needsOpen ? (
+          <div id={needsPanelId} className="lux-funnel__multi-panel" role="listbox" aria-multiselectable="true">
+            {EXPERIENCE_NEEDS.map((need) => {
+              const selected = needs.includes(need);
+              return (
+                <button
+                  key={need}
+                  type="button"
+                  role="option"
+                  aria-selected={selected}
+                  className={`lux-funnel__multi-option${selected ? " lux-funnel__multi-option--active" : ""}`}
+                  onClick={() => toggleNeed(need)}
+                >
+                  <span className="lux-funnel__multi-check" aria-hidden="true" />
+                  {copy.needLabels[need]}
+                </button>
+              );
+            })}
+          </div>
+        ) : null}
         {needError ? <p className="lux-funnel__error mt-3">{copy.needError}</p> : null}
-      </fieldset>
+      </div>
 
-      <label className="mt-6 block">
+      <label className="lux-funnel__field">
         <span className="lux-funnel__legend">{copy.brief}</span>
         <textarea
           rows={4}
           value={brief}
           onChange={(e) => setBrief(e.target.value)}
           placeholder={copy.briefPlaceholder}
-          className="lux-input mt-2"
+          className="lux-input"
         />
       </label>
 
