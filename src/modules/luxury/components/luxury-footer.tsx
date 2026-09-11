@@ -21,13 +21,32 @@ export async function LuxuryFooter() {
   const seo = getLuxurySeoMessages(locale);
   const lp = (path: string) => localizePath(path, locale);
 
+  const productGroups = [
+    {
+      title: locale === "ar" ? "العقار" : "Real estate",
+      links: [
+        { href: lp("/real-estate-experience"), label: locale === "ar" ? "تجربة المشروع العقاري" : "Real estate project experience" },
+        { href: lp("/show-unit"), label: locale === "ar" ? "وحدة العرض" : "Show unit" },
+      ],
+    },
+    {
+      title: locale === "ar" ? "التصميم والتنفيذ" : "Design and build",
+      links: [
+        { href: lp("/design-build"), label: locale === "ar" ? "التصميم والتنفيذ" : "Design and build" },
+        { href: lp("/fit-out"), label: locale === "ar" ? "التنفيذ والتجهيز" : "Fit-out and execution" },
+      ],
+    },
+    {
+      title: locale === "ar" ? "المساحات" : "Spaces",
+      links: [
+        { href: lp("/commercial-spaces"), label: locale === "ar" ? "المساحات التجارية" : "Commercial spaces" },
+        { href: lp("/hospitality-spaces"), label: locale === "ar" ? "مساحات الضيافة" : "Hospitality spaces" },
+        { href: lp("/renovation"), label: locale === "ar" ? "التجديد والتطوير" : "Renovation and upgrade" },
+      ],
+    },
+  ];
+
   const exploreLinks = [
-    { href: lp("/design-build"), label: locale === "ar" ? "التصميم والتنفيذ" : "Design and build" },
-    { href: lp("/fit-out"), label: locale === "ar" ? "التنفيذ والتجهيز" : "Fit-out" },
-    { href: lp("/commercial-spaces"), label: locale === "ar" ? "المساحات التجارية" : "Commercial spaces" },
-    { href: lp("/real-estate-experience"), label: t.nav.developers },
-    { href: lp("/show-unit"), label: locale === "ar" ? "وحدة العرض" : "Show unit" },
-    { href: lp("/hospitality-spaces"), label: locale === "ar" ? "مساحات الضيافة" : "Hospitality spaces" },
     { href: lp("/villas"), label: t.nav.villas },
     { href: lp("/projects"), label: t.nav.projects },
     { href: lp("/services"), label: seo.nav.services },
@@ -160,6 +179,16 @@ export async function LuxuryFooter() {
           <div className="lux-footer-col">
             <h3 className="lux-footer-col-title">{t.footer.importantLinks}</h3>
             <nav className="lux-footer-links" aria-label={t.footer.importantLinks}>
+              {productGroups.map((group) => (
+                <div key={group.title} className="flex flex-col gap-2">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-lux-ink-muted">{group.title}</p>
+                  {group.links.map((link) => (
+                    <Link key={link.href} href={link.href}>
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              ))}
               {exploreLinks.map((link) => (
                 <Link key={link.href + link.label} href={link.href}>
                   {link.label}

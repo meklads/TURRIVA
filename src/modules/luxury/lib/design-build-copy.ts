@@ -91,12 +91,12 @@ const en: DesignBuildCopy = {
   definition: {
     eyebrow: "The product",
     title: "Design and build",
-    body: "A defined path for a space that starts from an idea, or from drawings you already have, and ends when the space is ready to use. Turriva coordinates the stages and remains accountable for the result.",
-    result: "This is not a furniture catalogue, and not a software product. The work is the finished space.",
+    body: "A defined path for a space that starts from an idea and ends when it is ready to use. Turriva designs it and builds it. One team, from the brief to handover.",
+    result: "If the design is already approved, that is fit-out and execution. If the room already exists and the job is to change it, that is renovation. This is not a furniture catalogue, and not a software product.",
   },
   starts: {
     eyebrow: "How you can start",
-    title: "Two ways in. The same path after that.",
+    title: "This page starts from an idea.",
     items: [
       { title: "From an idea", body: "We develop the concept, the materials, and the details, then build them." },
       {
@@ -142,23 +142,23 @@ const en: DesignBuildCopy = {
     ],
   },
   related: {
-    title: "If the job is to show a development, start there.",
-    body: "A sales gallery, a model, or a launch space is the real-estate project experience. A villa, apartment, or suite for buyers to walk is a show unit. A restaurant, store, or showroom that receives customers is commercial spaces. This page is for a space you will occupy.",
+    title: "This page is not every job.",
+    body: "A sales gallery is the real-estate project experience. A unit a buyer walks is a show unit. A new shop or restaurant is commercial spaces. An existing room that needs to change is renovation. This page is one team from an idea to a space you will occupy.",
     links: [
-      { href: "/real-estate-experience", label: "Real estate project experience" },
-      { href: "/show-unit", label: "Show unit" },
+      { href: "/fit-out", label: "Fit-out and execution" },
+      { href: "/renovation", label: "Renovation and upgrade" },
       { href: "/commercial-spaces", label: "Commercial spaces" },
     ],
   },
   audience: {
     eyebrow: "Who it is for",
     title: "A client who wants one team from the start.",
-    body: "A villa, a private residence, or another interior you will occupy. A restaurant, store, showroom, or other space that receives customers has its own page.",
+    body: "A villa or private residence that is not yet the room it will become. A shop, a hotel, and an existing room that needs to change each have their own page.",
     trust: "Turriva is a new specialized brand, backed by a team with experience in design, execution, and visual work.",
   },
   close: {
     title: "A new space to build?",
-    body: "Share the idea, or the drawings you have. We will review the scope and propose a path. The first step is a conversation, not a price sent in the dark.",
+    body: "Share the idea. If the design is already approved, or the room already exists, we will point you to the right path. The first step is a conversation, not a price sent in the dark.",
   },
   form: {
     productLabel: "Design and build",
@@ -194,12 +194,12 @@ const ar: DesignBuildCopy = {
   definition: {
     eyebrow: "المنتج",
     title: "التصميم والتنفيذ",
-    body: "مسار محدد لمساحة تبدأ من فكرة، أو من مخططات لديكم، وتنتهي عندما تصبح جاهزة للاستخدام. توريفا تنسّق المراحل وتبقى مسؤولة عن النتيجة.",
-    result: "ليست كتالوج أثاث، وليست منتجاً برمجياً. العمل هو المساحة المكتملة.",
+    body: "مسار محدد لمساحة تبدأ من فكرة وتنتهي عندما تصبح جاهزة للاستخدام. توريفا تصممها وتبنيها. فريق واحد، من الموجز إلى التسليم.",
+    result: "إذا كان التصميم معتمداً، فذلك التنفيذ والتجهيز. إذا كانت الغرفة قائمة والعمل تغييرها، فذلك التجديد والتطوير. ليست كتالوج أثاث، وليست منتجاً برمجياً.",
   },
   starts: {
     eyebrow: "كيف نبدأ",
-    title: "مدخلان. المسار بعد ذلك واحد.",
+    title: "هذه الصفحة تبدأ من فكرة.",
     items: [
       { title: "من فكرة", body: "نطوّر الفكرة والمواد والتفاصيل، ثم نبنيها." },
       {
@@ -245,23 +245,23 @@ const ar: DesignBuildCopy = {
     ],
   },
   related: {
-    title: "إذا كان العمل عرض مشروع عقاري، ابدأ من هناك.",
-    body: "مركز البيع أو المجسم أو مساحة الإطلاق هي تجربة المشروع العقاري. فيلا أو شقة أو جناح يمشي فيه المشتري هي وحدة العرض. مطعم أو متجر أو صالة عرض تستقبل العملاء هي المساحات التجارية. هذه الصفحة لمساحة ستشغلونها.",
+    title: "ليست هذه الصفحة كل عمل.",
+    body: "مركز البيع هو تجربة المشروع العقاري. الوحدة التي يمشي فيها المشتري هي وحدة العرض. المتجر أو المطعم الجديد هو المساحات التجارية. الغرفة القائمة التي تحتاج إلى تغيير هي التجديد والتطوير. هذه الصفحة فريق واحد من فكرة إلى مساحة ستشغلونها.",
     links: [
-      { href: "/real-estate-experience", label: "تجربة المشروع العقاري" },
-      { href: "/show-unit", label: "وحدة العرض" },
+      { href: "/fit-out", label: "التنفيذ والتجهيز" },
+      { href: "/renovation", label: "التجديد والتطوير" },
       { href: "/commercial-spaces", label: "المساحات التجارية" },
     ],
   },
   audience: {
     eyebrow: "لمن",
     title: "لعميل يريد فريقاً واحداً من البداية.",
-    body: "فيلا أو مسكن خاص أو فراغ داخلي ستشغلونه. مطعم أو متجر أو صالة عرض أو أي مساحة تستقبل العملاء لها صفحتها.",
+    body: "فيلا أو مسكن خاص لم يصبح بعد الغرفة التي سيُشغل. المتجر والفندق والغرفة القائمة التي تحتاج إلى تغيير لكل منها صفحته.",
     trust: "توريفا علامة متخصصة حديثة، مدعومة بفريق ذي خبرة في التصميم والتنفيذ والعمل البصري.",
   },
   close: {
     title: "لديك مساحة جديدة تُبنى؟",
-    body: "شاركنا الفكرة، أو المخططات المتوفرة. نراجع النطاق ونقترح المسار. الخطوة الأولى محادثة، لا سعر يُرسل في الظلام.",
+    body: "شاركنا الفكرة. إذا كان التصميم معتمداً، أو كانت الغرفة قائمة، نوجهكم إلى المسار المناسب. الخطوة الأولى محادثة، لا سعر يُرسل في الظلام.",
   },
   form: {
     productLabel: "التصميم والتنفيذ",

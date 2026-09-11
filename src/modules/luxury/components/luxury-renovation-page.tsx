@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { LUXURY_HERO_IMAGE } from "@/modules/luxury/lib/nav";
-import { FIT_OUT_PATH, getFitOutCopy } from "@/modules/luxury/lib/fit-out-copy";
+import { RENOVATION_PATH, getRenovationCopy } from "@/modules/luxury/lib/renovation-copy";
 import type { Locale } from "@/shared/i18n/locale";
 import { localizePath } from "@/shared/i18n/path";
 import { LocalizedLink } from "@/shared/components/localized-link";
@@ -9,16 +9,16 @@ import { LuxuryStickyCta } from "./luxury-sticky-cta";
 
 type Props = { locale: Locale };
 
-export function LuxuryFitOutPage({ locale }: Props) {
-  const copy = getFitOutCopy(locale);
+export function LuxuryRenovationPage({ locale }: Props) {
+  const copy = getRenovationCopy(locale);
 
   return (
     <>
-      <section className="lux-section lux-section--white" aria-labelledby="fit-out-title">
+      <section className="lux-section lux-section--white" aria-labelledby="renovation-title">
         <div className="lux-container grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <p className="lux-eyebrow">{copy.hero.eyebrow}</p>
-            <h1 id="fit-out-title" className="lux-display mt-4 text-4xl leading-tight text-lux-ink md:text-5xl">
+            <h1 id="renovation-title" className="lux-display mt-4 text-4xl leading-tight text-lux-ink md:text-5xl">
               {copy.hero.title}
             </h1>
             <p className="lux-body mt-5 max-w-xl text-lg leading-relaxed text-lux-ink-soft">{copy.hero.body}</p>
@@ -34,7 +34,7 @@ export function LuxuryFitOutPage({ locale }: Props) {
           <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lux-card sm:aspect-[5/4] lg:aspect-[4/5]">
             <Image
               src={LUXURY_HERO_IMAGE}
-              alt={locale === "ar" ? "فراغ داخلي مكتمل" : "A finished interior space"}
+              alt={locale === "ar" ? "مساحة قائمة قبل التغيير" : "An existing space before the change"}
               fill
               priority
               className="object-cover"
@@ -44,10 +44,10 @@ export function LuxuryFitOutPage({ locale }: Props) {
         </div>
       </section>
 
-      <section className="lux-section lux-section--linen" aria-labelledby="fit-out-problem">
+      <section className="lux-section lux-section--linen" aria-labelledby="renovation-problem">
         <div className="lux-container max-w-4xl">
           <p className="lux-eyebrow">{copy.problem.eyebrow}</p>
-          <h2 id="fit-out-problem" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
+          <h2 id="renovation-problem" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
             {copy.problem.title}
           </h2>
           <p className="lux-body mt-4 text-lg leading-relaxed text-lux-ink-soft">{copy.problem.body}</p>
@@ -61,10 +61,10 @@ export function LuxuryFitOutPage({ locale }: Props) {
         </div>
       </section>
 
-      <section className="lux-section lux-section--white" aria-labelledby="fit-out-definition">
+      <section className="lux-section lux-section--white" aria-labelledby="renovation-definition">
         <div className="lux-container max-w-3xl">
           <p className="lux-eyebrow">{copy.definition.eyebrow}</p>
-          <h2 id="fit-out-definition" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
+          <h2 id="renovation-definition" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
             {copy.definition.title}
           </h2>
           <p className="lux-body mt-4 text-lg leading-relaxed text-lux-ink-soft">{copy.definition.body}</p>
@@ -72,21 +72,43 @@ export function LuxuryFitOutPage({ locale }: Props) {
         </div>
       </section>
 
-      <section className="lux-section lux-section--linen" aria-labelledby="fit-out-partner">
-        <div className="lux-container max-w-3xl">
-          <p className="lux-eyebrow">{copy.partner.eyebrow}</p>
-          <h2 id="fit-out-partner" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
-            {copy.partner.title}
+      <section className="lux-section lux-section--linen" aria-labelledby="renovation-starts">
+        <div className="lux-container max-w-4xl">
+          <p className="lux-eyebrow">{copy.starts.eyebrow}</p>
+          <h2 id="renovation-starts" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
+            {copy.starts.title}
           </h2>
-          <p className="lux-body mt-4 text-lg leading-relaxed text-lux-ink-soft">{copy.partner.body}</p>
-          <p className="mt-6 text-sm font-semibold text-lux-ink">{copy.partner.line}</p>
+          <ul className="mt-8 grid gap-4 md:grid-cols-2">
+            {copy.starts.items.map((item) => (
+              <li key={item.title} className="rounded-2xl border border-lux-sand bg-white p-6">
+                <h3 className="font-semibold text-lux-ink">{item.title}</h3>
+                <p className="lux-body mt-3 text-sm leading-relaxed text-lux-ink-soft">{item.body}</p>
+                {item.href && item.cta ? (
+                  <LocalizedLink href={item.href} className="mt-4 inline-flex text-sm font-semibold text-lux-gold">
+                    {item.cta}
+                  </LocalizedLink>
+                ) : null}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      <section id="scope" className="lux-section lux-section--white scroll-mt-24" aria-labelledby="fit-out-scope">
+      <section className="lux-section lux-section--white" aria-labelledby="renovation-keep">
+        <div className="lux-container max-w-3xl">
+          <p className="lux-eyebrow">{copy.keep.eyebrow}</p>
+          <h2 id="renovation-keep" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
+            {copy.keep.title}
+          </h2>
+          <p className="lux-body mt-4 text-lg leading-relaxed text-lux-ink-soft">{copy.keep.body}</p>
+          <p className="mt-6 border-s-2 border-lux-gold ps-4 text-sm leading-relaxed text-lux-ink">{copy.keep.line}</p>
+        </div>
+      </section>
+
+      <section id="scope" className="lux-section lux-section--linen scroll-mt-24" aria-labelledby="renovation-scope">
         <div className="lux-container max-w-4xl">
           <p className="lux-eyebrow">{copy.includes.eyebrow}</p>
-          <h2 id="fit-out-scope" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
+          <h2 id="renovation-scope" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
             {copy.includes.title}
           </h2>
           <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.includes.intro}</p>
@@ -104,11 +126,11 @@ export function LuxuryFitOutPage({ locale }: Props) {
         </div>
       </section>
 
-      <section className="lux-section lux-section--linen" aria-labelledby="fit-out-sizes">
+      <section className="lux-section lux-section--white" aria-labelledby="renovation-sizes">
         <div className="lux-container">
           <div className="max-w-3xl">
             <p className="lux-eyebrow">{copy.sizes.eyebrow}</p>
-            <h2 id="fit-out-sizes" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
+            <h2 id="renovation-sizes" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
               {copy.sizes.title}
             </h2>
             <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.sizes.note}</p>
@@ -125,10 +147,10 @@ export function LuxuryFitOutPage({ locale }: Props) {
         </div>
       </section>
 
-      <section className="lux-section lux-section--white" aria-labelledby="fit-out-method">
+      <section className="lux-section lux-section--linen" aria-labelledby="renovation-method">
         <div className="lux-container max-w-3xl">
           <p className="lux-eyebrow">{copy.method.eyebrow}</p>
-          <h2 id="fit-out-method" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
+          <h2 id="renovation-method" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
             {copy.method.title}
           </h2>
           <ol className="mt-8">
@@ -142,21 +164,6 @@ export function LuxuryFitOutPage({ locale }: Props) {
               </li>
             ))}
           </ol>
-        </div>
-      </section>
-
-      <section className="lux-section lux-section--linen">
-        <div className="lux-container max-w-3xl">
-          <p className="lux-eyebrow">{copy.audience.eyebrow}</p>
-          <h2 className="lux-display mt-3 text-3xl leading-tight md:text-4xl">{copy.audience.title}</h2>
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-            {copy.audience.items.map((item) => (
-              <li key={item} className="border-t border-lux-sand py-3 text-sm text-lux-ink">
-                {item}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-8 text-sm leading-relaxed text-lux-ink-muted">{copy.audience.trust}</p>
         </div>
       </section>
 
@@ -174,20 +181,35 @@ export function LuxuryFitOutPage({ locale }: Props) {
         </div>
       </section>
 
-      <section id="brief" className="lux-section lux-section--linen scroll-mt-24" aria-labelledby="fit-out-cta">
+      <section className="lux-section lux-section--linen">
         <div className="lux-container max-w-3xl">
-          <h2 id="fit-out-cta" className="lux-display text-3xl leading-tight md:text-4xl">
+          <p className="lux-eyebrow">{copy.audience.eyebrow}</p>
+          <h2 className="lux-display mt-3 text-3xl leading-tight md:text-4xl">{copy.audience.title}</h2>
+          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+            {copy.audience.items.map((item) => (
+              <li key={item} className="rounded-xl border border-lux-sand bg-white px-4 py-4 text-sm leading-relaxed text-lux-ink">
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-sm leading-relaxed text-lux-ink-muted">{copy.audience.trust}</p>
+        </div>
+      </section>
+
+      <section id="brief" className="lux-section lux-section--white scroll-mt-24" aria-labelledby="renovation-cta">
+        <div className="lux-container max-w-3xl">
+          <h2 id="renovation-cta" className="lux-display text-3xl leading-tight md:text-4xl">
             {copy.close.title}
           </h2>
           <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.close.body}</p>
           <div className="mt-8 rounded-2xl border border-lux-sand bg-white p-5 shadow-lux-card sm:p-8">
             <LuxuryExperienceBriefForm
               locale={locale}
-              source="fit_out"
+              source="renovation"
               productLabel={copy.form.productLabel}
               initialProjectType="other"
-              initialNeeds={["execution"]}
-              unitTypes={copy.form.roles}
+              initialNeeds={["design", "execution"]}
+              unitTypes={copy.form.spaces}
               choiceLegend={copy.form.choiceLegend}
               drawings={copy.form.drawings}
             />
@@ -198,8 +220,8 @@ export function LuxuryFitOutPage({ locale }: Props) {
       <LuxuryStickyCta
         locale={locale}
         label={copy.hero.cta}
-        href={`${localizePath(FIT_OUT_PATH, locale)}#brief`}
-        source="fit_out"
+        href={`${localizePath(RENOVATION_PATH, locale)}#brief`}
+        source="renovation"
       />
     </>
   );

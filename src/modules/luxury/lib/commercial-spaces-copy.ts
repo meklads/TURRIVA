@@ -98,7 +98,7 @@ const en: CommercialSpacesCopy = {
     eyebrow: "The product",
     title: "Commercial spaces",
     body: "A defined path for a restaurant, café, store, showroom, client office, clinic, or other space that receives customers. Turriva designs the interior around the activity and the brand, then develops, supplies, and builds it.",
-    result: "A private home stays on design and build. A sales gallery for a development is the project experience. This page is the room where a business meets its customers.",
+    result: "An ordinary restaurant, café, store, or showroom being fitted out belongs here. A destination dining room sits with hospitality. If the room already exists and the job is to change it, that is renovation.",
   },
   starts: {
     eyebrow: "How you can start",
@@ -155,12 +155,12 @@ const en: CommercialSpacesCopy = {
   },
   related: {
     title: "Not every room is this product.",
-    body: "A private residence is design and build. An approved design that only needs execution is fit-out. A sales gallery for a development is the project experience. A hotel or a guest stay is hospitality spaces.",
+    body: "A private residence is design and build. An approved design that only needs execution is fit-out. A hotel stay, or a destination restaurant, is hospitality. An existing room that needs to change is renovation.",
     links: [
       { href: "/fit-out", label: "Fit-out and execution" },
       { href: "/design-build", label: "Design and build" },
       { href: "/hospitality-spaces", label: "Hospitality spaces" },
-      { href: "/real-estate-experience", label: "Real estate project experience" },
+      { href: "/renovation", label: "Renovation and upgrade" },
     ],
   },
   audience: {
@@ -218,7 +218,7 @@ const ar: CommercialSpacesCopy = {
     eyebrow: "المنتج",
     title: "المساحات التجارية",
     body: "مسار محدد لمطعم أو مقهى أو متجر أو صالة عرض أو مكتب يستقبل عملاء أو عيادة أو أي مساحة تستقبل جمهوراً. توريفا تصمم الداخل حول النشاط والعلامة، ثم تطوّره وتورّده وتبنيه.",
-    result: "المسكن الخاص يبقى في التصميم والتنفيذ. مركز بيع المشروع العقاري هو تجربة المشروع. هذه الصفحة للمكان الذي تلتقي فيه جهة تجارية بعملائها.",
+    result: "المطعم أو المقهى أو المتجر أو صالة العرض التي تُجهَّز الآن تبقى هنا. مطعم الوجهة يبقى مع الضيافة. إذا كانت الغرفة قائمة والعمل تغييرها، فذلك التجديد والتطوير.",
   },
   starts: {
     eyebrow: "كيف نبدأ",
@@ -275,12 +275,12 @@ const ar: CommercialSpacesCopy = {
   },
   related: {
     title: "ليست كل غرفة هذا المنتج.",
-    body: "المسكن الخاص هو التصميم والتنفيذ. التصميم المعتمد الذي يحتاج تنفيذاً فقط هو التنفيذ والتجهيز. مركز بيع المشروع العقاري هو تجربة المشروع. الفندق أو إقامة الضيف هي مساحات الضيافة.",
+    body: "المسكن الخاص هو التصميم والتنفيذ. التصميم المعتمد الذي يحتاج تنفيذاً فقط هو التنفيذ والتجهيز. إقامة الفندق أو مطعم الوجهة هي الضيافة. الغرفة القائمة التي تحتاج إلى تغيير هي التجديد والتطوير.",
     links: [
       { href: "/fit-out", label: "التنفيذ والتجهيز" },
       { href: "/design-build", label: "التصميم والتنفيذ" },
       { href: "/hospitality-spaces", label: "مساحات الضيافة" },
-      { href: "/real-estate-experience", label: "تجربة المشروع العقاري" },
+      { href: "/renovation", label: "التجديد والتطوير" },
     ],
   },
   audience: {

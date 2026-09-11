@@ -51,8 +51,7 @@ export type FitOutCopy = {
   related: {
     title: string;
     body: string;
-    href: string;
-    cta: string;
+    links: readonly { href: string; label: string }[];
   };
   audience: {
     eyebrow: string;
@@ -94,7 +93,7 @@ const en: FitOutCopy = {
     eyebrow: "The product",
     title: "Fit-out and execution",
     body: "A defined scope for a project that already has drawings. Turriva reviews them, develops the technical package, then supplies, builds, and hands over. We are the execution partner, not a second designer.",
-    result: "If there is no design yet, that is a different path. This page starts when the design is already there.",
+    result: "If there is no design yet, start with design and build. If the room exists and still needs to be assessed, that is renovation. This page starts when the design is already there.",
   },
   partner: {
     eyebrow: "For architects and designers",
@@ -138,9 +137,11 @@ const en: FitOutCopy = {
   },
   related: {
     title: "No drawings yet?",
-    body: "If the project still needs a design, start with design and build. This page is for work that is already designed.",
-    href: "/design-build",
-    cta: "Design and build",
+    body: "If the project still needs a design, start with design and build. If the space already exists and still needs to be assessed, that is renovation. This page is for work that is already designed, including a renovation design.",
+    links: [
+      { href: "/design-build", label: "Design and build" },
+      { href: "/renovation", label: "Renovation and upgrade" },
+    ],
   },
   audience: {
     eyebrow: "Who it is for",
@@ -187,7 +188,7 @@ const ar: FitOutCopy = {
     eyebrow: "المنتج",
     title: "التنفيذ والتجهيز",
     body: "نطاق محدد لمشروع لديه مخططات. توريفا تراجعها، وتطوّر الحزمة الفنية، ثم تورّد وتبني وتسلّم. نحن شريك تنفيذ، لا مصمم ثانٍ.",
-    result: "إن لم يوجد تصميم بعد، فذلك مسار آخر. هذه الصفحة تبدأ عندما يكون التصميم موجوداً.",
+    result: "إن لم يوجد تصميم بعد، ابدأ من التصميم والتنفيذ. إذا كانت الغرفة قائمة وما زالت تحتاج إلى معاينة، فذلك التجديد والتطوير. هذه الصفحة تبدأ عندما يكون التصميم موجوداً.",
   },
   partner: {
     eyebrow: "لمكاتب التصميم والهندسة",
@@ -231,9 +232,11 @@ const ar: FitOutCopy = {
   },
   related: {
     title: "لا توجد مخططات بعد؟",
-    body: "إذا كان المشروع ما زال يحتاج إلى تصميم، ابدأ من التصميم والتنفيذ. هذه الصفحة لعمل مُصمَّم بالفعل.",
-    href: "/design-build",
-    cta: "التصميم والتنفيذ",
+    body: "إذا كان المشروع ما زال يحتاج إلى تصميم، ابدأ من التصميم والتنفيذ. إذا كانت المساحة قائمة وما زالت تحتاج إلى معاينة، فذلك التجديد والتطوير. هذه الصفحة لعمل مُصمَّم بالفعل، بما فيه تصميم التجديد.",
+    links: [
+      { href: "/design-build", label: "التصميم والتنفيذ" },
+      { href: "/renovation", label: "التجديد والتطوير" },
+    ],
   },
   audience: {
     eyebrow: "لمن",

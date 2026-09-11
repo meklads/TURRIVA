@@ -98,7 +98,7 @@ const en: HospitalitySpacesCopy = {
     eyebrow: "The product",
     title: "Hospitality spaces",
     body: "A defined path for a hotel, a boutique hotel, a serviced apartment, a lobby, or a guest area. Turriva designs the interior around the stay and the operation, then develops, supplies, and builds it. We do not operate the property, and we do not replace the designer if the design is already approved.",
-    result: "A restaurant or café that is its own business stays on commercial spaces. Food and drink inside a hotel can sit in this scope when they are part of the stay, not a second restaurant product.",
+    result: "A destination restaurant, where the room is the reason to come, sits here. An ordinary restaurant or café stays on commercial spaces. If the hotel already stands and the job is to change it, that is renovation.",
   },
   starts: {
     eyebrow: "How you can start",
@@ -155,11 +155,11 @@ const en: HospitalitySpacesCopy = {
   },
   related: {
     title: "A hotel is not a shop, and not a sales gallery.",
-    body: "A restaurant or café that stands alone is commercial spaces. A private home is design and build. A unit built so a buyer can walk it is a show unit. An approved design that only needs execution is fit-out.",
+    body: "An ordinary restaurant or café is commercial spaces. A private home is design and build. An approved design that only needs execution is fit-out. An existing hotel that needs to change is renovation.",
     links: [
       { href: "/commercial-spaces", label: "Commercial spaces" },
       { href: "/fit-out", label: "Fit-out and execution" },
-      { href: "/show-unit", label: "Show unit" },
+      { href: "/renovation", label: "Renovation and upgrade" },
     ],
   },
   audience: {
@@ -171,6 +171,7 @@ const en: HospitalitySpacesCopy = {
       "Lobbies and reception",
       "Guest areas",
       "Hotel lounges",
+      "Destination restaurants",
       "Hospitality developers",
     ],
     trust: "Turriva is a new specialized brand, backed by a team with experience in design, execution, and visual work.",
@@ -215,7 +216,7 @@ const ar: HospitalitySpacesCopy = {
     eyebrow: "المنتج",
     title: "مساحات الضيافة",
     body: "مسار محدد لفندق أو فندق صغير أو شقق فندقية أو ردهة أو منطقة ضيوف. توريفا تصمم الداخل حول الإقامة والتشغيل، ثم تطوّره وتورّده وتبنيه. لا ندير المنشأة، ولا نحل محل المصمم إذا كان التصميم معتمداً.",
-    result: "المطعم أو المقهى الذي هو نشاط مستقل يبقى في المساحات التجارية. الطعام والشراب داخل الفندق يمكن أن يدخلا هذا النطاق عندما يكونان جزءاً من الإقامة، لا منتج مطاعم ثانياً.",
+    result: "مطعم الوجهة، حيث يكون المكان سبب الزيارة، يبقى هنا. المطعم أو المقهى التجاري العادي يبقى في المساحات التجارية. إذا كان الفندق قائماً والعمل تغييره، فذلك التجديد والتطوير.",
   },
   starts: {
     eyebrow: "كيف نبدأ",
@@ -272,17 +273,17 @@ const ar: HospitalitySpacesCopy = {
   },
   related: {
     title: "الفندق ليس متجراً، وليس مركز بيع.",
-    body: "المطعم أو المقهى المستقل هو المساحات التجارية. المسكن الخاص هو التصميم والتنفيذ. الوحدة التي تُبنى ليمشي فيها المشتري هي وحدة العرض. التصميم المعتمد الذي يحتاج تنفيذاً فقط هو التنفيذ والتجهيز.",
+    body: "المطعم أو المقهى التجاري العادي هو المساحات التجارية. المسكن الخاص هو التصميم والتنفيذ. التصميم المعتمد الذي يحتاج تنفيذاً فقط هو التنفيذ والتجهيز. الفندق القائم الذي يحتاج إلى تغيير هو التجديد والتطوير.",
     links: [
       { href: "/commercial-spaces", label: "المساحات التجارية" },
       { href: "/fit-out", label: "التنفيذ والتجهيز" },
-      { href: "/show-unit", label: "وحدة العرض" },
+      { href: "/renovation", label: "التجديد والتطوير" },
     ],
   },
   audience: {
     eyebrow: "لمن",
     title: "منشأة تستقبل ضيوفاً، لا متسوقين.",
-    items: ["فنادق وفنادق صغيرة", "شقق فندقية", "ردهات واستقبال", "مناطق الضيوف", "صالات جلوس فندقية", "مطورو ضيافة"],
+    items: ["فنادق وفنادق صغيرة", "شقق فندقية", "ردهات واستقبال", "مناطق الضيوف", "صالات جلوس فندقية", "مطاعم الوجهة", "مطورو ضيافة"],
     trust: "توريفا علامة متخصصة حديثة، مدعومة بفريق ذي خبرة في التصميم والتنفيذ والعمل البصري.",
   },
   close: {
