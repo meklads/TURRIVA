@@ -368,7 +368,7 @@
 }
 
 .lux-mega__inner {
-  padding: 1.35rem 1.5rem 1.5rem;
+  padding: 0.95rem 1.1rem 1.1rem;
 }
 
 .lux-mega__head {
@@ -376,9 +376,9 @@
   flex-wrap: wrap;
   align-items: end;
   justify-content: space-between;
-  gap: 0.75rem 1.5rem;
-  padding-bottom: 1.1rem;
-  margin-bottom: 1.1rem;
+  gap: 0.5rem 1.25rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
   border-bottom: 1px solid color-mix(in srgb, var(--lux-sand) 85%, transparent);
 }
 
@@ -398,9 +398,9 @@
 }
 
 .lux-mega__title {
-  margin: 0.35rem 0 0;
+  margin: 0.25rem 0 0;
   font-family: var(--font-latin), Georgia, serif;
-  font-size: 1.35rem;
+  font-size: 1.1rem;
   font-weight: 500;
   line-height: 1.2;
   color: var(--lux-ink);
@@ -412,7 +412,7 @@
 
 .lux-mega__subtitle {
   margin: 0;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -422,57 +422,23 @@
 [dir="rtl"] .lux-mega__subtitle {
   letter-spacing: 0;
   text-transform: none;
-  font-size: 0.8125rem;
-}
-
-.lux-mega__grid {
-  display: grid;
-  gap: 1.25rem;
-}
-
-@media (min-width: 1024px) {
-  .lux-mega__grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.35rem;
-  }
-}
-
-.lux-mega__group {
-  margin: 0 0 0.65rem;
-  font-size: 0.625rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--lux-gold);
-}
-
-[dir="rtl"] .lux-mega__group {
-  letter-spacing: 0;
-  text-transform: none;
   font-size: 0.75rem;
 }
 
-.lux-mega__stack {
+/* 7 products → 3 columns → 3 rows only */
+.lux-mega__products {
   display: grid;
-  gap: 0.75rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
 }
 
-.lux-mega__spaces {
-  margin-top: 1.25rem;
-  padding-top: 1.15rem;
-  border-top: 1px solid color-mix(in srgb, var(--lux-sand) 85%, transparent);
-}
-
-/* One card style only: horizontal editorial row (image + text) — never featured/top-image */
 .lux-mega-card {
-  display: grid;
-  grid-template-columns: 9.25rem minmax(0, 1fr);
-  gap: 0.95rem;
-  align-items: stretch;
-  min-height: 6.5rem;
-  padding: 0.65rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 0.4rem;
   border: 1px solid color-mix(in srgb, var(--lux-gold) 16%, var(--lux-sand));
-  border-radius: 1.15rem;
+  border-radius: 0.85rem;
   background: #fff;
   text-decoration: none;
   color: inherit;
@@ -485,16 +451,16 @@
 .lux-mega-card:focus-visible,
 .lux-mega-card--active {
   border-color: color-mix(in srgb, var(--lux-gold) 42%, var(--lux-sand));
-  box-shadow: 0 12px 28px color-mix(in srgb, var(--lux-ink) 6%, transparent);
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--lux-ink) 6%, transparent);
   outline: none;
 }
 
 .lux-mega-card__media {
   position: relative;
   overflow: hidden;
-  border-radius: 0.75rem;
+  aspect-ratio: 16 / 10;
+  border-radius: 0.55rem;
   background: var(--lux-stone);
-  min-height: 5.25rem;
 }
 
 .lux-mega-card__media img {
@@ -509,27 +475,22 @@
 .lux-mega-card__body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   min-width: 0;
-  padding: 0.2rem 0.45rem 0.2rem 0;
-}
-
-[dir="rtl"] .lux-mega-card__body {
-  padding: 0.2rem 0 0.2rem 0.45rem;
+  padding: 0.5rem 0.35rem 0.3rem;
 }
 
 .lux-mega-card__number {
   margin: 0;
-  font-size: 0.6875rem;
+  font-size: 0.625rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   color: var(--lux-gold);
 }
 
 .lux-mega-card__title {
-  margin: 0.25rem 0 0;
+  margin: 0.15rem 0 0;
   font-family: var(--font-latin), Georgia, serif;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.3;
   color: var(--lux-ink);
@@ -537,20 +498,20 @@
 
 [dir="rtl"] .lux-mega-card__title {
   font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
-  font-size: 1.05rem;
+  font-size: 0.9375rem;
 }
 
 .lux-mega-card__en {
-  margin: 0.2rem 0 0;
-  font-size: 0.75rem;
+  margin: 0.15rem 0 0;
+  font-size: 0.6875rem;
   font-weight: 600;
   color: var(--lux-ink-muted);
 }
 
 .lux-mega-card__desc {
-  margin: 0.45rem 0 0;
-  font-size: 0.8125rem;
-  line-height: 1.5;
+  margin: 0.3rem 0 0;
+  font-size: 0.7rem;
+  line-height: 1.4;
   color: var(--lux-ink-soft);
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -558,11 +519,9 @@
   overflow: hidden;
 }
 
-@media (max-width: 899px) {
-  .lux-mega-card {
-    grid-template-columns: 7.25rem minmax(0, 1fr);
-    gap: 0.75rem;
-    min-height: 0;
+@media (max-width: 1023px) {
+  .lux-mega__products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
