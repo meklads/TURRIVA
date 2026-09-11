@@ -83,7 +83,7 @@ const en: CommercialSpacesCopy = {
     "A space where the customer meets the brand. Turriva designs and builds it for how the place works, then hands it over ready to open. The first step is a conversation.",
   hero: {
     eyebrow: "Commercial spaces",
-    title: "A commercial space designed to express the brand and perform.",
+    title: "A commercial space that carries the brand and works.",
     body: "We design and build spaces that sell or receive customers. The plan, the interior, and the way the brand is read in the room, then technical development, supply, and handover. Not shop finishing with a sign on the door.",
     cta: "Discuss your project",
     secondary: "Send drawings",
