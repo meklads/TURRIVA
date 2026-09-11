@@ -21,7 +21,7 @@ export const MARKETS: readonly Market[] = [
     summaryEn: "Primary execution market — villas, hospitality programmes, exhibitions, and developer joinery across the Kingdom.",
     summaryAr: "سوق التنفيذ الأساسي — فلل وبرامج ضيافة ومعارض ونجارة مطورين في أنحاء المملكة.",
     pointsEn: ["Jeddah HQ & Western Region hub", "Makkah hospitality programmes", "Central region developer & pavilion work"],
-    pointsAr: ["المقر في جدة ومركز المنطقة الغربية", "برامج ضيافة في مكة", "مشاريع مطورين وبافيلions في الوسط"],
+    pointsAr: ["المقر في جدة ومركز المنطقة الغربية", "برامج ضيافة في مكة", "مشاريع مطورين وأجنحة في الوسط"],
     intent: "quote",
   },
   {

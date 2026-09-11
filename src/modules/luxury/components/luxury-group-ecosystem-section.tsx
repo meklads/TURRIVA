@@ -15,7 +15,7 @@ export function LuxuryGroupEcosystemSection({ locale }: { locale: Locale }) {
         </h2>
         <p className="lux-body mx-auto mt-4 max-w-3xl text-lux-ink-soft">{t.intro}</p>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
           {t.companies.map((company) => (
             <article
               key={company.name}

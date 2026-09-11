@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CASE_STUDIES } from "@/modules/luxury/lib/case-studies";
+import { getRepositionCopy } from "@/modules/luxury/lib/reposition-copy";
 import { luxuryPageMetadata } from "@/modules/luxury/lib/metadata";
 import { LuxuryMarketingHero } from "@/modules/luxury/components/luxury-marketing-hero";
 import { LuxuryQuoteSection } from "@/modules/luxury/components/luxury-quote-section";
@@ -18,6 +19,7 @@ export default async function OurWorkPage() {
   const locale = await getLocale();
   const t = getLuxuryMessages(locale);
   const lp = (path: string) => localizePath(path, locale);
+  const note = getRepositionCopy(locale);
 
   return (
     <>
@@ -29,7 +31,8 @@ export default async function OurWorkPage() {
 
       <section className="lux-section lux-section--linen scroll-mt-24">
         <div className="lux-container max-w-6xl">
-          <h2 className="lux-display text-center text-2xl">{locale === "ar" ? "مشاريع مختارة" : "Selected projects"}</h2>
+          <h2 className="lux-display text-center text-2xl">{note.teamExperience}</h2>
+          <p className="lux-body mx-auto mt-3 max-w-2xl text-center text-sm text-lux-ink-muted">{note.honestNote}</p>
           <div className="lux-marketing-grid mt-10 sm:grid-cols-2 lg:grid-cols-3">
             {CASE_STUDIES.map((study) => {
               const title = locale === "ar" ? study.titleAr : study.titleEn;
@@ -50,7 +53,8 @@ export default async function OurWorkPage() {
                     />
                   </div>
                   <div className="p-4">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-lux-gold">{category}</p>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-lux-gold">{note.teamExperience}</p>
+                    <p className="mt-1 text-xs text-lux-ink-muted">{category}</p>
                     <h3 className="lux-display mt-1 text-lg">{title}</h3>
                   </div>
                 </Link>

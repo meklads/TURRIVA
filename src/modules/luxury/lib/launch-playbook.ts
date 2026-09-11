@@ -74,8 +74,8 @@ export function getLaunchPageCopy(locale: Locale) {
         ],
     proofTitle: isAr ? "إثبات من المشاريع" : "Proof from projects",
     proofBody: isAr
-      ? "بافيلions الراف في الدرعية ومعرض الإنسانية في جدة يوضحان النموذج: تصور وإطلاق من Graphics House، وتنفيذ ميداني من توريفا."
-      : "Rafal Pavilions in Diriyah and the Humanity Exhibition in Jeddah show the model: visual launch from Graphics House, physical delivery from Turriva.",
+      ? "أجنحة الراف في الدرعية ومعرض الإنسانية في جدة يظهران كنموذج للمجموعة: العمل البصري من جرافيكس هاوس، والطبقة المكانية خبرة فريق تنفيذ — وليست عقودًا تاريخية باسم توريفا."
+      : "Rafal Pavilions in Diriyah and the Humanity Exhibition in Jeddah are shown as group examples: visual work from Graphics House, spatial layer as selected team experience — not historical Turriva contracts.",
     ctaBrief: isAr ? "قدّم ملخص إطلاق" : "Submit a launch brief",
     ctaWork: isAr ? "شاهد دراسات الحالة" : "View case studies",
     groupNote: isAr

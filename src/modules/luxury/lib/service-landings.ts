@@ -41,17 +41,17 @@ export const SERVICE_LANDINGS: readonly ServiceLanding[] = [
     introAr:
       "نجارة على دفعات وتشطيب مناطق رطبة وتسليم مرحلي للفنادق والشقق الفندقية — مصمم لتحمل التشغيل في مكة وجدة والرياض.",
     pointsEn: [
-      "120+ unit programmes with floor-by-floor snagging",
+      "Phased programmes with floor-by-floor snagging",
       "Moisture-resistant wet zones & acoustic gypsum",
       "Documented handover aligned with opening dates",
     ],
     pointsAr: [
-      "برامج 120+ وحدة مع إغلاق ملاحظات لكل طابق",
+      "برامج مرحلية مع إغلاق ملاحظات لكل طابق",
       "مناطق رطبة مقاومة للرطوبة وجبس acoustic",
       "تسليم موثق متوافق مع مواعيد الافتتاح",
     ],
-    proofEn: "Boutique hotel programme · Makkah — 120+ guest units",
-    proofAr: "برنامج فندق boutique · مكة — أكثر من 120 وحدة",
+    proofEn: "Selected team experience · hospitality scope in Makkah",
+    proofAr: "خبرة فريق مختارة · نطاق ضيافة في مكة",
     relatedCaseSlug: "hospitality-fitout-makkah",
   },
   {
@@ -60,13 +60,13 @@ export const SERVICE_LANDINGS: readonly ServiceLanding[] = [
     projectType: "exhibition",
     source: "lp_exhibition_execution",
     whatsappEn: "Hello Turriva — we need exhibition / pavilion execution. Please contact me.",
-    whatsappAr: "مرحباً توريفا — نحتاج تنفيذ معرض أو بافيلion. يرجى التواصل.",
+    whatsappAr: "مرحباً توريفا — نحتاج تنفيذ معرض أو جناح. يرجى التواصل.",
     titleEn: "Exhibition & pavilion execution",
-    titleAr: "تنفيذ المعارض والبافيلions",
+    titleAr: "تنفيذ المعارض والأجنحة",
     introEn:
       "Physical delivery for sales galleries, institutional exhibitions, and developer pavilions — coordinated with Graphics House launch assets from approved 3D to opening day.",
     introAr:
-      "تسليم ميداني لمعارض المبيعات والمعارض المؤسسية وبافيلions المطورين — منسّق مع أصول إطلاق Graphics House من 3D المعتمد حتى الافتتاح.",
+      "تسليم ميداني لمعارض المبيعات والمعارض المؤسسية وأجنحة المطورين — منسّق مع أصول إطلاق Graphics House من 3D المعتمد حتى الافتتاح.",
     pointsEn: [
       "Joinery, décor, and interactive zone installation",
       "Single accountable field programme",
@@ -77,8 +77,8 @@ export const SERVICE_LANDINGS: readonly ServiceLanding[] = [
       "برنامج ميداني واحد مسؤول",
       "تسليم جاهز للافتتاح مع توثيق جودة",
     ],
-    proofEn: "Humanity Exhibition · Muslim World League — Jeddah",
-    proofAr: "معرض الإنسانية · رابطة العالم الإسلامي — جدة",
+    proofEn: "Selected team experience · institutional exhibition, Jeddah",
+    proofAr: "خبرة فريق مختارة · معرض مؤسسي، جدة",
     relatedCaseSlug: "humanity-exhibition-mwl",
   },
   {
@@ -97,15 +97,15 @@ export const SERVICE_LANDINGS: readonly ServiceLanding[] = [
     pointsEn: [
       "Standardised modules with factory QC",
       "B2B pricing and batch scheduling",
-      "Laser-verified installation on site",
+      "Installation checked against approved drawings",
     ],
     pointsAr: [
       "وحدات موحّدة مع فحص جودة في المصنع",
       "تسعير B2B وجدولة على دفعات",
-      "تركيب بتحقق ليزري في الموقع",
+      "تركيب يُراجع مقابل المخططات المعتمدة",
     ],
-    proofEn: "Developer tower joinery batch — Western Region",
-    proofAr: "دفعة نجارة برج مطور — المنطقة الغربية",
+    proofEn: "Selected team experience · developer joinery scope",
+    proofAr: "خبرة فريق مختارة · نطاق نجارة لمطور",
     relatedCaseSlug: "developer-joinery-batch",
   },
   {
@@ -131,8 +131,8 @@ export const SERVICE_LANDINGS: readonly ServiceLanding[] = [
       "نجارة معيارية وجدران مميزة",
       "إغلاق ملاحظات وتسليم بضمان",
     ],
-    proofEn: "Rafal Pavilions · Diriyah — sales environment execution",
-    proofAr: "بافيلions الراف · الدرعية — تنفيذ بيئة مبيعات",
+    proofEn: "Selected team experience · sales environment, Diriyah",
+    proofAr: "خبرة فريق مختارة · بيئة مبيعات، الدرعية",
     relatedCaseSlug: "rafal-pavilions",
   },
 ] as const;

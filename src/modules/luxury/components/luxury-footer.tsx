@@ -22,6 +22,7 @@ export async function LuxuryFooter() {
   const lp = (path: string) => localizePath(path, locale);
 
   const exploreLinks = [
+    { href: lp("/developers"), label: t.nav.developers },
     { href: lp("/villas"), label: t.nav.villas },
     { href: lp("/projects"), label: t.nav.projects },
     { href: lp("/services"), label: seo.nav.services },

@@ -14,6 +14,7 @@ export type LuxuryMessages = LuxuryPlatformMessages & {
     interiorDesign: string;
     construction: string;
     ourWork: string;
+    developers: string;
     about: string;
     contact: string;
     professionals: string;
@@ -291,7 +292,7 @@ export type LuxuryMessages = LuxuryPlatformMessages & {
 
 const en: LuxuryMessages = {
   ...getLuxuryPlatformMessages("en"),
-  brand: { name: "Turriva", tagline: "Architecture · Interior · Construction" },
+  brand: { name: "Turriva", tagline: "Spatial design · Execution" },
   nav: {
     home: "Home",
     villas: "Residential",
@@ -300,6 +301,7 @@ const en: LuxuryMessages = {
     interiorDesign: "Interior design",
     construction: "Delivery & build",
     ourWork: "Our work",
+    developers: "Developers",
     about: "About",
     contact: "Contact",
     professionals: "For professionals",
@@ -308,11 +310,11 @@ const en: LuxuryMessages = {
     eyebrow: "A Tasami Group company · Saudi Arabia",
     title: "From concept to physical reality.",
     subtitle:
-      "Turriva executes interiors, exhibitions, furnishing, fabrication, and installation — turning approved designs into spaces you can walk into, on schedule and on site.",
-    servicesLine: "Interior execution · Exhibitions · Furnishing · Fabrication · Installation",
-    tags: ["Interior execution", "Exhibition execution", "Furnishing", "Fabrication", "Turnkey delivery"],
+      "Turriva designs and delivers finished spaces for developers and serious commercial work — sales galleries, show villas, hospitality, and fit-out. Not a furniture shop. Not a software company.",
+    servicesLine: "Spatial design · Technical detailing · Fabrication · Installation · Sales environments",
+    tags: ["Spatial design", "Technical detailing", "Fabrication", "Installation", "Sales environments"],
     ctaPrimary: "Discuss your project",
-    ctaSecondary: "Execution portfolio",
+    ctaSecondary: "For developers",
     ctaSample: "Request sample kit",
   },
   intro: {
@@ -323,10 +325,10 @@ const en: LuxuryMessages = {
   },
   stats: {
     items: [
-      { value: "3D", label: "Factory-aligned design studio" },
-      { value: "0.1 mm", label: "Factory precision cutting" },
-      { value: "1 team", label: "Survey through warranty" },
-      { value: "SASO", label: "Local compliance & install" },
+      { value: "1 team", label: "Design through handover" },
+      { value: "Samples", label: "Approved before fabrication" },
+      { value: "Site", label: "Delivered in Saudi Arabia" },
+      { value: "Scope", label: "Clear before we start" },
     ],
   },
   execution: {
@@ -417,15 +419,15 @@ const en: LuxuryMessages = {
     ],
   },
   projects: {
-    eyebrow: "Proof of delivery",
-    title: "Approved in 3D. Delivered on site.",
+    eyebrow: "Typical scopes",
+    title: "A finished space, not a furniture list.",
     subtitle:
-      "Kitchens, wardrobes, and joinery for villas, compounds, and hospitality — photographed and documented from approval through handover.",
-    cta: "View execution portfolio",
+      "Illustrative work — sales environments, hospitality, and fit-out. Named studies on Our work are labelled as team experience until a Turriva contract is confirmed.",
+    cta: "For developers",
     items: [
-      { title: "Villa kitchen · modular joinery", category: "Residential · Jeddah" },
-      { title: "Walk-in wardrobe suite", category: "Residential · Makkah" },
-      { title: "Developer tower joinery batch", category: "Developers · Western Region" },
+      { title: "Sales gallery and show villa", category: "Developers" },
+      { title: "Hospitality reception and suites", category: "Hospitality" },
+      { title: "Fit-out and joinery from drawings", category: "Execution" },
     ],
   },
   process: {
@@ -481,9 +483,9 @@ const en: LuxuryMessages = {
     ],
   },
   cta: {
-    title: "Ready for a factory-aligned design review?",
+    title: "Tell us the space, the date, and what has to be finished.",
     subtitle:
-      "Request a sample kit, book a 3D session, or send your B2B floor plan. We respond within one business day.",
+      "A short brief is enough. We reply within one business day — and we will say if the scope is not ours.",
     button: "Talk to Turriva",
   },
   quoteForm: {
@@ -569,7 +571,7 @@ const en: LuxuryMessages = {
     ourWork: {
       title: "Our work",
       intro:
-        "Public project highlights — selected kitchens, wardrobes, and joinery programmes documented from approved 3D through installation and handover.",
+        "Selected team experience and typical scopes. Named programmes are not presented as historical Turriva contracts unless that attribution is confirmed.",
       caseStudyContactCta: "Discuss a similar project",
     },
     portfolio: {
@@ -666,7 +668,7 @@ const en: LuxuryMessages = {
         eyebrow: "Modular kitchens",
         title: "Factory-precise kitchens, built for Gulf homes and hospitality",
         intro:
-          "Factory-grade modular systems with moisture-resistant cores, PET and lacquer finishes, and Blum soft-close hardware — specified in 3D, sampled on site, then cut to 0.1 mm tolerance.",
+          "Modular systems with moisture-resistant cores, PET and lacquer finishes, and soft-close hardware — specified, sampled on site, then fabricated to the approved drawings.",
         highlights: [
           {
             title: "Island & galley layouts",
@@ -950,7 +952,7 @@ const en: LuxuryMessages = {
 
 const ar: LuxuryMessages = {
   ...getLuxuryPlatformMessages("ar"),
-  brand: { name: "توريفا", tagline: "عمارة · تصميم داخلي · إنشاءات" },
+  brand: { name: "توريفا", tagline: "تصميم مكاني · تنفيذ" },
   nav: {
     home: "الرئيسية",
     villas: "تنفيذ سكني",
@@ -959,6 +961,7 @@ const ar: LuxuryMessages = {
     interiorDesign: "التصميم الداخلي",
     construction: "التنفيذ في الموقع",
     ourWork: "أعمالنا",
+    developers: "للمطورين",
     about: "من نحن",
     contact: "تواصل",
     professionals: "للمهندسين",
@@ -967,11 +970,11 @@ const ar: LuxuryMessages = {
     eyebrow: "إحدى شركات مجموعة تسامي · المملكة العربية السعودية",
     title: "من الفكرة إلى واقع ملموس.",
     subtitle:
-      "توريفا تنفّذ المساحات الداخلية والمعارض والتأثيث والتصنيع والتركيب — نحوّل التصاميم المعتمدة إلى مساحات تدخلها بثقة، وفق جدول ميداني واضح.",
-    servicesLine: "تنفيذ داخلي · معارض · تأثيث · تصنيع · تركيب",
-    tags: ["تنفيذ داخلي", "تنفيذ معارض", "تأثيث", "تصنيع", "تسليم متكامل"],
+      "توريفا تصمّم وتسلّم أماكن مكتملة للمطورين والمشاريع التجارية الجادة — معارض مبيعات، فلل عرض، ضيافة، وتشطيب. ليست متجر أثاث. وليست شركة برمجيات.",
+    servicesLine: "تصميم مكاني · تفصيل فني · تصنيع · تركيب · بيئات مبيعات",
+    tags: ["تصميم مكاني", "تفصيل فني", "تصنيع", "تركيب", "بيئات مبيعات"],
     ctaPrimary: "ناقش مشروعك",
-    ctaSecondary: "أعمال التنفيذ",
+    ctaSecondary: "للمطورين",
     ctaSample: "اطلب حقيبة العينات",
   },
   intro: {
@@ -982,10 +985,10 @@ const ar: LuxuryMessages = {
   },
   stats: {
     items: [
-      { value: "3D", label: "استوديو تصميم بمقاسات المصنع" },
-      { value: "0.1 مم", label: "دقة قطع مصنعية" },
-      { value: "فريق واحد", label: "من الرفع المساحي حتى الضمان" },
-      { value: "SASO", label: "امتثال وتركيب محلي" },
+      { value: "فريق واحد", label: "من التصميم حتى التسليم" },
+      { value: "عينات", label: "تُعتمد قبل التصنيع" },
+      { value: "موقع", label: "تسليم داخل السعودية" },
+      { value: "نطاق", label: "واضح قبل البدء" },
     ],
   },
   execution: {
@@ -1076,15 +1079,15 @@ const ar: LuxuryMessages = {
     ],
   },
   projects: {
-    eyebrow: "إثبات التنفيذ",
-    title: "اعتُمد في 3D… وسُلّم في الموقع.",
+    eyebrow: "نطاقات معتادة",
+    title: "مكان مكتمل، لا قائمة أثاث.",
     subtitle:
-      "مطابخ وخزائن وتشطيبات معيارية للفلل والمجمعات والضيافة — موثّقة من الاعتماد حتى التسليم.",
-    cta: "عرض أعمال التنفيذ",
+      "أعمال توضيحية — بيئات مبيعات وضيافة وتشطيب. الدراسات المسماة في أعمالنا تُوسم كخبرة فريق حتى يُؤكد عقد باسم توريفا.",
+    cta: "للمطورين",
     items: [
-      { title: "مطبخ فيلا · تشطيب معياري", category: "سكني · جدة" },
-      { title: "غرفة ملابس كاملة", category: "سكني · مكة" },
-      { title: "دفعة نجارة لبرج سكني", category: "مطورون · الغربية" },
+      { title: "معرض مبيعات وفيلا عرض", category: "مطورون" },
+      { title: "استقبال وأجنحة ضيافة", category: "ضيافة" },
+      { title: "تشطيب ونجارة من المخططات", category: "تنفيذ" },
     ],
   },
   process: {
@@ -1140,9 +1143,9 @@ const ar: LuxuryMessages = {
     ],
   },
   cta: {
-    title: "جاهز لمراجعة مخططاتك بمقاسات المصنع؟",
+    title: "أخبرنا بالمكان، والموعد، وما يجب أن يُكتمل.",
     subtitle:
-      "اطلب حقيبة العينات، احجز جلسة 3D، أو أرسل مخطط مشروع B2B. نرد خلال يوم عمل.",
+      "موجز قصير يكفي. نرد خلال يوم عمل — ونقول بصراحة إن كان النطاق ليس لنا.",
     button: "تواصل مع توريفا",
   },
   quoteForm: {
@@ -1228,7 +1231,7 @@ const ar: LuxuryMessages = {
     ourWork: {
       title: "أعمالنا",
       intro:
-        "نماذج عامة من مشاريع مختارة — مطابخ وخزائن وأعمال نجارة، موثّقة من التصميم ثلاثي الأبعاد المعتمد حتى التسليم.",
+        "خبرة فريق مختارة ونطاقات معتادة. البرامج المسماة لا تُعرض كعقود تاريخية باسم توريفا إلا بعد تأكيد النسبة.",
       caseStudyContactCta: "ناقش مشروعاً مشابهاً",
     },
     portfolio: {
@@ -1325,7 +1328,7 @@ const ar: LuxuryMessages = {
         eyebrow: "المطابخ المعيارية",
         title: "مطابخ بدقة المصنع — للفلل والضيافة",
         intro:
-          "أنظمة معيارية بقلب مقاوم للرطوبة، تشطيبات PET وطلاء عالي الجودة، ومفصلات Blum — تُحدَّد في 3D، تُعتمد بعينات فيزيائية، ثم تُقطع بدقة 0.1 مم.",
+          "أنظمة معيارية بقلب مقاوم للرطوبة، تشطيبات PET وطلاء، ومفصلات إغلاق ناعم — تُحدَّد وتُعتمد بعينات ثم تُصنَّع وفق المخططات المعتمدة.",
         highlights: [
           {
             title: "جزيرة وممرات عمل",

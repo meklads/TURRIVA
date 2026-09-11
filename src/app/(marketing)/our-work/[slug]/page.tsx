@@ -2,6 +2,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { luxuryPageMetadata } from "@/modules/luxury/lib/metadata";
 import { CASE_STUDIES, getCaseStudy } from "@/modules/luxury/lib/case-studies";
+import { getRepositionCopy } from "@/modules/luxury/lib/reposition-copy";
 import { LuxuryMarketingHero } from "@/modules/luxury/components/luxury-marketing-hero";
 import { LuxuryProjectFunnelForm } from "@/modules/luxury/components/luxury-project-funnel-form";
 import { LuxuryFormSplitSection } from "@/modules/luxury/components/luxury-form-split-section";
@@ -49,6 +50,7 @@ export default async function CaseStudyPage({ params }: Props) {
   const category = isAr ? study.categoryAr : study.categoryEn;
   const location = isAr ? study.locationAr : study.locationEn;
   const services = isAr ? study.servicesAr : study.servicesEn;
+  const note = getRepositionCopy(locale);
 
   return (
     <>
@@ -76,6 +78,12 @@ export default async function CaseStudyPage({ params }: Props) {
               copiedLabel={social.linkCopied}
             />
           </div>
+
+          {study.attribution === "team" ? (
+            <p className="mt-8 rounded-xl border border-lux-sand bg-white px-4 py-3 text-sm leading-relaxed text-lux-ink-soft">
+              {note.honestNote}
+            </p>
+          ) : null}
 
           <p className="lux-body mt-8 leading-relaxed text-lux-ink-soft">{body}</p>
 

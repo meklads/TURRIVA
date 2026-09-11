@@ -8,21 +8,15 @@ import {
   LUXURY_PROJECT_IMAGES,
 } from "@/shared/i18n/messages/luxury";
 import type { Locale } from "@/shared/i18n/locale";
-import { LuxuryBeforeAfterSection } from "./luxury-before-after-section";
-import { LuxuryBrandRelationshipSection } from "./luxury-brand-relationship-section";
-import { LuxuryComparisonSection } from "./luxury-comparison-section";
-import { LuxuryEcosystemSection } from "./luxury-ecosystem-section";
 import { LuxuryFaqSection } from "./luxury-faq-section";
 import { LuxuryHomeHero } from "./luxury-home-hero";
-import { LuxuryInspirationSection } from "./luxury-inspiration-section";
-import { LuxuryPartnersStrip } from "./luxury-partners-strip";
-import { LuxuryProductGrid } from "./luxury-product-grid";
 import { LuxurySampleKitBand } from "./luxury-sample-kit-band";
-import { LuxuryTestimonialsSection } from "./luxury-testimonials-section";
-import { LuxuryTrustBar } from "./luxury-trust-bar";
-import { LuxuryTrustStats } from "./luxury-trust-stats";
-import { LuxuryValueOffersSection } from "./luxury-value-offers-section";
-import { LuxuryWaysOfLivingSection } from "./luxury-ways-of-living-section";
+import {
+  LuxuryDefinitionSection,
+  LuxuryDevelopersSection,
+  LuxuryMethodSection,
+  LuxuryScopesSection,
+} from "./luxury-reposition-sections";
 import { LuxuryGroupEcosystemSection } from "./luxury-group-ecosystem-section";
 import { localizePath } from "@/shared/i18n/path";
 
@@ -36,10 +30,11 @@ export function LuxuryHomePage({ locale }: Props) {
 
   return (
     <>
-      {/* Explore → trust → proof → system → cinematic → offer → convert */}
       <LuxuryHomeHero locale={locale} />
-      <LuxuryInspirationSection messages={t} />
-      <LuxuryTrustBar messages={t} />
+      <LuxuryDefinitionSection locale={locale} />
+      <LuxuryDevelopersSection locale={locale} />
+      <LuxuryScopesSection locale={locale} />
+      <LuxuryMethodSection locale={locale} />
 
       <section className="lux-section lux-section--white">
         <div className="lux-container max-w-3xl text-center">
@@ -71,23 +66,13 @@ export function LuxuryHomePage({ locale }: Props) {
           })}
         </div>
         <div className="lux-container mt-12 text-center">
-          <Link href={lp("/portfolio")} className="lux-btn-outline">
+          <Link href={lp("/developers")} className="lux-btn-outline">
             {t.projects.cta}
           </Link>
         </div>
       </section>
 
-      <LuxuryEcosystemSection messages={t} locale={locale} />
       <LuxuryGroupEcosystemSection locale={locale} />
-      <LuxuryBrandRelationshipSection messages={t} compact />
-      <LuxuryWaysOfLivingSection messages={t} />
-      <LuxuryProductGrid messages={t} locale={locale} />
-      <LuxuryBeforeAfterSection messages={t} />
-      <LuxuryValueOffersSection messages={t} locale={locale} />
-      <LuxuryTrustStats messages={t} />
-      <LuxuryPartnersStrip messages={t} />
-      <LuxuryTestimonialsSection messages={t} />
-      <LuxuryComparisonSection messages={t} />
       <LuxurySampleKitBand messages={t} locale={locale} />
       <LuxuryFaqSection messages={t} />
 
@@ -107,7 +92,7 @@ export function LuxuryHomePage({ locale }: Props) {
               </h2>
               <p className="lux-body mt-4">{t.cta.subtitle}</p>
               <div className="lux-cta-band-form">
-                <LuxuryProjectFunnelForm locale={locale} source="marketing_home" initialProjectType="villa" />
+                <LuxuryProjectFunnelForm locale={locale} source="marketing_home" initialProjectType="developer" />
               </div>
             </div>
           </div>

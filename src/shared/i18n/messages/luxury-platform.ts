@@ -162,9 +162,9 @@ const en: LuxuryPlatformMessages = {
     flow: "Creative → Execution",
     groupLink: "Discover Tasami Group",
     companies: [
-      { name: "Graphics House", role: "Creative · Visual · Experience Design" },
-      { name: "Bees Motion", role: "Marketing · Content · AI" },
-      { name: "Turriva", role: "Execution · Interiors · Exhibitions · Furnishing · Delivery", active: true },
+      { name: "Graphics House", role: "CREATE · visual work" },
+      { name: "Bees Motion", role: "GROW · launch and campaigns" },
+      { name: "Turriva", role: "BUILD · the finished space", active: true },
     ],
   },
   comparison: {
@@ -183,7 +183,7 @@ const en: LuxuryPlatformMessages = {
       },
       {
         traditional: "Local workshop variance, delays, and quality drift",
-        turriva: "Automated production at 0.1 mm precision with global standards",
+        turriva: "Fabrication and installation against approved drawings",
       },
       {
         traditional: "Weak warranty, who owns the defect?",
@@ -369,7 +369,7 @@ const en: LuxuryPlatformMessages = {
         icon: "quality",
         title: "Built to global standards",
         points: [
-          "Automated factory production at 0.1 mm precision on every module.",
+          "Fabrication against approved drawings, with samples signed off before production.",
           "E0 boards plus Blum and Hettich hardware specified for daily use.",
         ],
       },
@@ -449,9 +449,9 @@ const ar: LuxuryPlatformMessages = {
     flow: "الإبداع ← التنفيذ",
     groupLink: "اكتشف مجموعة تسامي",
     companies: [
-      { name: "Graphics House", role: "إبداع · تصميم بصري · تصميم تجارب" },
-      { name: "Bees Motion", role: "تسويق · محتوى · ذكاء اصطناعي" },
-      { name: "Turriva", role: "تنفيذ · مساحات داخلية · معارض · تأثيث · تسليم", active: true },
+      { name: "Graphics House", role: "CREATE · العمل البصري" },
+      { name: "Bees Motion", role: "GROW · الإطلاق والحملات" },
+      { name: "Turriva", role: "BUILD · المكان المكتمل", active: true },
     ],
   },
   comparison: {
@@ -470,7 +470,7 @@ const ar: LuxuryPlatformMessages = {
       },
       {
         traditional: "تأخير وتفاوت جودة في الورش المحلية",
-        turriva: "تصنيع أوتوماتيكي بدقة 0.1 مم وفق معايير عالمية",
+        turriva: "تصنيع وتركيب وفق المخططات المعتمدة",
       },
       {
         traditional: "ضمان ضعيف، من يتحمل العيب؟",
@@ -656,7 +656,7 @@ const ar: LuxuryPlatformMessages = {
         icon: "quality",
         title: "جودة فائقة",
         points: [
-          "إنتاج أوتوماتيكي بدقة 0.1 مم في كل وحدة.",
+          "تصنيع وفق المخططات المعتمدة، مع اعتماد العينات قبل الإنتاج.",
           "ألواح E0 ومفصلات Blum وHettich لاستخدام يومي متين.",
         ],
       },

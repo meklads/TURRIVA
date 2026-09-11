@@ -250,7 +250,7 @@ const en: LuxurySeoMessages = {
         slug: "hospitality-fitout",
         title: "Hospitality fit-out",
         intro: "Hotels and serviced apartments — batch joinery, wet-area finishes, and phased handover.",
-        points: ["120+ unit programmes", "Moisture-aware specifications", "Opening-ready delivery"],
+        points: ["Phased unit programmes", "Moisture-aware specifications", "Opening-ready delivery"],
         cta: "Hospitality programmes",
         href: "/services/hospitality-fitout",
       },
@@ -341,13 +341,13 @@ const en: LuxurySeoMessages = {
   },
   groupEcosystem: {
     eyebrow: "Tasami Group ecosystem",
-    title: "One group. Complementary specialists.",
+    title: "Hire Turriva alone. Use the group when the project needs it.",
     intro:
-      "Turriva executes on site. Sister companies cover creative visualization, marketing, and property discovery — connected when your project needs more than one discipline.",
+      "Turriva builds the space. Graphics House creates the visual work. Bees Motion grows the launch. The others join only when visualization or marketing is part of the brief.",
     companies: [
       {
         name: "Graphics House",
-        tagline: "Creative & visual experiences",
+        tagline: "CREATE · visual work",
         description:
           "Cinematic CGI, smart maquettes, interactive sales tools, and spatial design for GCC developers — from concept to pre-sale launch.",
         href: "https://3dgraphicshouse.com",
@@ -355,7 +355,7 @@ const en: LuxurySeoMessages = {
       },
       {
         name: "Bees Motion",
-        tagline: "Digital marketing & creative production",
+        tagline: "GROW · launch and campaigns",
         description:
           "Strategy, campaigns, film, motion, and healthcare/real-estate marketing — production built in, not bolted on.",
         href: "https://beesmotion.com",
@@ -561,7 +561,7 @@ const ar: LuxurySeoMessages = {
         slug: "hospitality-fitout",
         title: "تشطيب الضيافة",
         intro: "فنادق وشقق فندقية — نجارة على دفعات وتشطيب مناطق رطبة وتسليم مرحلي.",
-        points: ["برامج 120+ وحدة", "مواصفات مقاومة للرطوبة", "تسليم جاهز للافتتاح"],
+        points: ["برامج وحدات مرحلية", "مواصفات مقاومة للرطوبة", "تسليم جاهز للافتتاح"],
         cta: "برامج ضيافة",
         href: "/services/hospitality-fitout",
       },
@@ -651,20 +651,20 @@ const ar: LuxurySeoMessages = {
   },
   groupEcosystem: {
     eyebrow: "منظومة مجموعة تسامي",
-    title: "مجموعة واحدة. تخصصات متكاملة.",
+    title: "تعاقد مع توريفا وحدها. استخدم المجموعة عندما يحتاجها المشروع.",
     intro:
-      "توريفا تنفّذ في الموقع. الشركات الشقيقة تغطي التصور والتسويق واكتشاف العقار — تُربط عندما يحتاج مشروعك أكثر من تخصص.",
+      "توريفا تبني المكان. جرافيكس هاوس تصنع العمل البصري. بيزموشن تنمّي الإطلاق. الشركتان الأخريان تدخلان فقط عندما يكون التصور أو التسويق جزءًا من الموجز.",
     companies: [
       {
         name: "Graphics House",
-        tagline: "تجارب إبداعية وبصرية",
+        tagline: "CREATE · العمل البصري",
         description: "تصور سينمائي، ماكيت ذكي، أدوات مبيعات تفاعلية، وتصميم مكاني لمطوري الخليج.",
         href: "https://3dgraphicshouse.com",
         cta: "استكشف Graphics House",
       },
       {
         name: "Bees Motion",
-        tagline: "تسويق رقمي وإنتاج إبداعي",
+        tagline: "GROW · الإطلاق والحملات",
         description: "استراتيجية وحملات وأفلام وmotion — تسويق صحي وعقاري بإنتاج مدمج.",
         href: "https://beesmotion.com",
         cta: "استكشف Bees Motion",

@@ -16,6 +16,7 @@ export type CaseStudy = {
   bodyAr: string;
   servicesEn: readonly string[];
   servicesAr: readonly string[];
+  attribution: "team";
   partner?: { name: string; url: string; roleEn: string; roleAr: string };
   videoUrl?: string;
   metrics?: readonly { labelEn: string; labelAr: string; valueEn: string; valueAr: string }[];
@@ -23,6 +24,7 @@ export type CaseStudy = {
 
 export const CASE_STUDIES: readonly CaseStudy[] = [
   {
+    attribution: "team",
     slug: "humanity-exhibition-mwl",
     image: "/brand/turriva/makkah-charter-04.jpeg",
     categoryEn: "Exhibition · Institutional",
@@ -36,9 +38,9 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     summaryAr:
       "تنفيذ مكاني لتجربة مقر الرابطة — تشطيب داخلي، تكامل الماكيت الذكي، ومناطق تفاعلية ضمن برنامج ميداني واحد.",
     bodyEn:
-      "Turriva coordinated physical delivery for the Humanity Exhibition at the Muslim World League headquarters in Jeddah. The programme combined interior fit-out, exhibition décor, and installation of interactive touchpoints developed with Graphics House. From approved creative concepts through fabrication, site coordination, and documented handover, one execution team managed the spatial layer while sister companies handled visualization and software layers.",
+      "Selected team experience — not a historical Turriva-branded contract. A physical exhibition layer for an institutional headquarters programme: interior fit-out, exhibition décor, and installation of interactive touchpoints developed with Graphics House. Visualization and software sat with sister companies; the spatial layer was field delivery.",
     bodyAr:
-      "نسّقت توريفا التسليم الميداني لمعرض الإنسانية في مقر رابطة العالم الإسلامي بجدة. جمع البرنامج التشطيب الداخلي وديكور المعرض وتركيب نقاط تفاعل طوّرت مع جرافيكس هاوس. من المفاهيم الإبداعية المعتمدة إلى التصنيع والتنسيق الميداني والتسليم الموثق، أدار فريق تنفيذ واحد الطبقة المكانية بينما تولت الشركات الشقيقة التصور والبرمجيات.",
+      "خبرة فريق مختارة — ليست عقدًا تاريخيًا باسم توريفا. طبقة مكانية لمعرض مؤسسي في مقر: تشطيب داخلي وديكور معرض وتركيب نقاط تفاعل طُوّرت مع جرافيكس هاوس. التصور والبرمجيات لدى الشركات الشقيقة، والطبقة المكانية تسليم ميداني.",
     servicesEn: ["Interior fit-out", "Exhibition execution", "Installation", "Handover"],
     servicesAr: ["تشطيب داخلي", "تنفيذ معارض", "تركيب", "تسليم"],
     metrics: [
@@ -54,27 +56,28 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     },
   },
   {
+    attribution: "team",
     slug: "rafal-pavilions",
     image: LUXURY_IMAGES.project1,
     categoryEn: "Exhibition · Developer",
     categoryAr: "معرض · مطور",
     titleEn: "Rafal Pavilions",
-    titleAr: "بافيلions الراف",
+    titleAr: "أجنحة الراف",
     locationEn: "Diriyah, Riyadh",
     locationAr: "الدرعية، الرياض",
     summaryEn:
       "Exhibition pavilions and sales environment execution — from approved 3D through fabrication, installation, and opening-ready handover.",
     summaryAr:
-      "تنفيذ بافيلions وبيئة مبيعات — من التصميم ثلاثي الأبعاد المعتمد إلى التصنيع والتركيب والتسليم الجاهز للافتتاح.",
+      "أجنحة معرض وبيئة مبيعات — من التصميم ثلاثي الأبعاد المعتمد إلى التصنيع والتركيب والتسليم الجاهز للافتتاح.",
     bodyEn:
-      "Turriva delivered the physical execution layer for Rafal Pavilions in Diriyah — modular joinery, exhibition structures, and on-site installation aligned with Graphics House cinematic launch assets. The project demonstrates the Tasami Group model: creative visualization and film from Graphics House, physical delivery from Turriva.",
+      "Selected team experience — not a historical Turriva-branded contract. Physical sales pavilions in Diriyah: modular joinery, exhibition structures, and installation aligned with Graphics House launch assets. Graphics House created the visual work; the field layer was spatial delivery.",
     bodyAr:
-      "نفّذت توريفا الطبقة المادية لبافيلions الراف في الدرعية — نجارة معيارية وهياكل معرض وتركيب ميداني متسق مع أصول الإطلاق السينمائي من جرافيكس هاوس. يُظهر المشروع نموذج مجموعة تسامي: التصور الإبداعي من GH والتسليم المادي من توريفا.",
+      "خبرة فريق مختارة — ليست عقدًا تاريخيًا باسم توريفا. أجنحة مبيعات في الدرعية: نجارة معيارية وهياكل معرض وتركيب متسق مع أصول الإطلاق من جرافيكس هاوس. جرافيكس هاوس صنعت العمل البصري، والطبقة الميدانية تسليم مكاني.",
     servicesEn: ["Exhibition execution", "Fabrication", "Installation"],
     servicesAr: ["تنفيذ معارض", "تصنيع", "تركيب"],
     metrics: [
       { labelEn: "Location", labelAr: "الموقع", valueEn: "Diriyah, Riyadh", valueAr: "الدرعية، الرياض" },
-      { labelEn: "Scope", labelAr: "النطاق", valueEn: "Sales pavilions", valueAr: "بافيلions مبيعات" },
+      { labelEn: "Scope", labelAr: "النطاق", valueEn: "Sales pavilions", valueAr: "أجنحة مبيعات" },
       { labelEn: "Launch", labelAr: "الإطلاق", valueEn: "CGI + physical", valueAr: "CGI + ميداني" },
     ],
     partner: {
@@ -86,6 +89,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     videoUrl: "https://3dgraphicshouse.com",
   },
   {
+    attribution: "team",
     slug: "villa-kitchen-jeddah",
     image: LUXURY_IMAGES.project2,
     categoryEn: "Residential · Kitchen",
@@ -95,18 +99,18 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     locationEn: "Jeddah, Saudi Arabia",
     locationAr: "جدة، السعودية",
     summaryEn:
-      "Factory-precise modular kitchen programme — 3D approval, physical samples, fabrication, and laser-verified installation.",
+      "A typical residential scope — modular kitchen from samples through fabrication and installation. Not a named Turriva contract listing.",
     summaryAr:
-      "برنامج مطبخ معياري بدقة مصنع — اعتماد 3D، عينات مادية، تصنيع، وتركيب بتحقق ليزري.",
+      "نطاق سكني معتاد — مطبخ معياري من العينات إلى التصنيع والتركيب. ليس عقدًا مسمى باسم توريفا.",
     bodyEn:
-      "A full modular kitchen execution for a private villa in north Jeddah: moisture-resistant cores, soft-close hardware, and PET finishes specified in 3D, sampled on site, then manufactured and installed by Turriva's execution team. Documented on Ruwaq PRO as a reference tour for fit-out quality in the Western Region.",
+      "Selected team experience — a private villa kitchen in north Jeddah: samples agreed, then fabrication and installation. Shown as a residential scope type, not as a published Turriva contract or a factory-tolerance claim.",
     bodyAr:
-      "تنفيذ مطبخ معياري كامل لفيلا خاصة في شمال جدة: نوى مقاومة للرطوبة، مفصلات soft-close، وتشطيبات PET محددة في 3D، معاينة ميدانية، ثم تصنيع وتركيب من فريق توريفا. موثّق على Ruwaq PRO كجولة مرجعية لجودة التشطيب في المنطقة الغربية.",
+      "خبرة فريق مختارة — مطبخ فيلا خاصة في شمال جدة: عينات تُعتمد ثم تصنيع وتركيب. يُعرض كنطاق سكني، لا كعقد منشور باسم توريفا ولا كادعاء دقة مصنع.",
     servicesEn: ["Modular kitchens", "Sampling", "Installation", "Warranty"],
     servicesAr: ["مطابخ معيارية", "عينات", "تركيب", "ضمان"],
     metrics: [
       { labelEn: "Type", labelAr: "النوع", valueEn: "Modular kitchen", valueAr: "مطبخ معياري" },
-      { labelEn: "Tolerance", labelAr: "الدقة", valueEn: "0.1 mm factory", valueAr: "0.1 مم مصنع" },
+      { labelEn: "Method", labelAr: "الطريقة", valueEn: "Samples before order", valueAr: "عينات قبل الطلب" },
       { labelEn: "Region", labelAr: "المنطقة", valueEn: "North Jeddah", valueAr: "شمال جدة" },
     ],
     partner: {
@@ -117,6 +121,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     },
   },
   {
+    attribution: "team",
     slug: "hospitality-fitout-makkah",
     image: LUXURY_IMAGES.project3,
     categoryEn: "Hospitality · Fit-out",
@@ -126,22 +131,23 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     locationEn: "Makkah, Saudi Arabia",
     locationAr: "مكة المكرمة، السعودية",
     summaryEn:
-      "120+ guest unit joinery and wet-area finishes engineered for hospitality footfall and operational wear.",
+      "A hospitality fit-out scope — batch joinery and wet-area finishes for a Makkah programme. Unit counts are not published as a Turriva figure.",
     summaryAr:
-      "نجارة لأكثر من 120 وحدة ضيافة وتشطيبات مناطق رطبة مصممة لتحمل الاستخدام التشغيلي.",
+      "نطاق تشطيب ضيافة — نجارة على دفعات وتشطيب مناطق رطبة لبرنامج في مكة. أعداد الوحدات لا تُنشر كرقم لتوريفا.",
     bodyEn:
-      "Turriva managed batch joinery fabrication and phased installation for a hospitality programme in Makkah — acoustic gypsum, moisture-resistant porcelain in wet zones, and coordinated handover per floor. Execution scope aligned with developer timelines and documented snagging before opening.",
+      "Selected team experience — hospitality joinery and phased installation in Makkah, including wet-area finishes and handover by floor. Shown as a scope type. No unit count is claimed as a Turriva contract figure.",
     bodyAr:
-      "أدارت توريفا تصنيع نجارة على دفعات وتركيباً مرحلياً لبرنامج ضيافة في مكة — جبس acoustic، بورسلان مقاوم للرطوبة في المناطق الرطبة، وتسليم منسّق لكل طابق. نطاق التنفيذ متوافق مع جداول المطور وإغلاق ملاحظات موثّق قبل الافتتاح.",
+      "خبرة فريق مختارة — نجارة ضيافة وتركيب مرحلي في مكة، بما في ذلك تشطيب المناطق الرطبة والتسليم حسب الطابق. يُعرض كنطاق. لا يُدّعى عدد وحدات كرقم عقد لتوريفا.",
     servicesEn: ["Hospitality fit-out", "Joinery batching", "Snagging"],
     servicesAr: ["تشطيب ضيافة", "نجارة على دفعات", "إغلاق ملاحظات"],
     metrics: [
-      { labelEn: "Units", labelAr: "الوحدات", valueEn: "120+ guest units", valueAr: "120+ وحدة ضيافة" },
+      { labelEn: "Units", labelAr: "الوحدات", valueEn: "Not published", valueAr: "غير منشور" },
       { labelEn: "City", labelAr: "المدينة", valueEn: "Makkah", valueAr: "مكة" },
       { labelEn: "Handover", labelAr: "التسليم", valueEn: "Phased by floor", valueAr: "مرحلي لكل طابق" },
     ],
   },
   {
+    attribution: "team",
     slug: "developer-joinery-batch",
     image: LUXURY_IMAGES.project4,
     categoryEn: "B2B · Joinery",
@@ -155,9 +161,9 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     summaryAr:
       "حزم نجارة معيارية قابلة للتكرار لمشروع مطور متعدد الوحدات — مواصفات وتصنيع وتسليم مرحلي.",
     bodyEn:
-      "Turriva delivered standardized joinery modules across a developer tower programme: kitchens, wardrobes, and common-area elements manufactured to approved drawings, with QC checkpoints and phased site delivery to match construction milestones.",
+      "Selected team experience — repeatable joinery modules for a multi-unit developer programme: kitchens, wardrobes, and common-area elements from approved drawings, with checkpoints and phased site delivery. A scope type, not a named tower contract.",
     bodyAr:
-      "سلّمت توريفا وحدات نجارة موحّدة عبر برنامج برج مطور: مطابخ وخزائن وعناصر مناطق مشتركة مصنّعة وفق رسومات معتمدة، مع نقاط فحص جودة وتسليم ميداني مرحلي يتوافق مع مراحل البناء.",
+      "خبرة فريق مختارة — وحدات نجارة قابلة للتكرار لبرنامج مطور متعدد الوحدات: مطابخ وخزائن وعناصر مناطق مشتركة من رسومات معتمدة، مع نقاط فحص وتسليم ميداني مرحلي. نطاق عمل، لا عقد برج مسمى.",
     servicesEn: ["B2B joinery", "Modular systems", "Phased delivery"],
     servicesAr: ["نجارة B2B", "أنظمة معيارية", "تسليم مرحلي"],
     metrics: [
