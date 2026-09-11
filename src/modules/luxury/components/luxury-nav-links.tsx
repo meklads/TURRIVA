@@ -75,17 +75,13 @@ function productAlt(item: LuxuryProductMenuItem, isAr: boolean) {
 
 function MegaProductCard({
   item,
-  explore,
   isAr,
   active,
-  featured = false,
   onNavigate,
 }: {
   item: LuxuryProductMenuItem;
-  explore: string;
   isAr: boolean;
   active: boolean;
-  featured?: boolean;
   onNavigate: () => void;
 }) {
   return (
@@ -93,7 +89,7 @@ function MegaProductCard({
       href={item.href}
       prefetch
       role="menuitem"
-      className={`lux-mega-card${featured ? " lux-mega-card--featured" : ""}${item.primary && !featured ? " lux-mega-card--primary" : ""}${active ? " lux-mega-card--active" : ""}`}
+      className={`lux-mega-card${active ? " lux-mega-card--active" : ""}`}
       onClick={onNavigate}
     >
       <div className="lux-mega-card__media">
@@ -102,7 +98,7 @@ function MegaProductCard({
           alt={productTitle(item, isAr)}
           fill
           className="object-cover"
-          sizes={featured ? "(max-width: 1024px) 100vw, 28rem" : "(max-width: 1024px) 50vw, 14rem"}
+          sizes="(max-width: 1024px) 40vw, 12rem"
         />
       </div>
       <div className="lux-mega-card__body">
@@ -110,7 +106,6 @@ function MegaProductCard({
         <h3 className="lux-mega-card__title">{productTitle(item, isAr)}</h3>
         <p className="lux-mega-card__en">{productAlt(item, isAr)}</p>
         <p className="lux-mega-card__desc">{item.description}</p>
-        {featured ? <span className="lux-mega-card__cta">{explore} →</span> : null}
       </div>
     </Link>
   );
@@ -155,8 +150,6 @@ export function LuxuryDesktopNav({
   const realEstate = products?.groups.find((group) => group.id === "real-estate");
   const designBuild = products?.groups.find((group) => group.id === "design-build");
   const spaces = products?.groups.find((group) => group.id === "spaces");
-  const featured = realEstate?.items.find((item) => item.featured);
-  const showUnit = realEstate?.items.find((item) => !item.featured);
 
   return (
     <nav className="lux-header-nav hidden min-w-0 items-center justify-center lg:flex" aria-label="Main">
@@ -188,27 +181,19 @@ export function LuxuryDesktopNav({
               </header>
 
               <div className="lux-mega__grid">
-                <section className="lux-mega__col lux-mega__col--featured" aria-label={realEstate?.title}>
+                <section className="lux-mega__col" aria-label={realEstate?.title}>
                   <p className="lux-mega__group">{realEstate?.title}</p>
-                  {featured ? (
-                    <MegaProductCard
-                      item={featured}
-                      explore={products.explore}
-                      isAr={isAr}
-                      active={isActive(featured.href)}
-                      featured
-                      onNavigate={() => setOpen(false)}
-                    />
-                  ) : null}
-                  {showUnit ? (
-                    <MegaProductCard
-                      item={showUnit}
-                      explore={products.explore}
-                      isAr={isAr}
-                      active={isActive(showUnit.href)}
-                      onNavigate={() => setOpen(false)}
-                    />
-                  ) : null}
+                  <div className="lux-mega__stack">
+                    {realEstate?.items.map((item) => (
+                      <MegaProductCard
+                        key={item.href}
+                        item={item}
+                        isAr={isAr}
+                        active={isActive(item.href)}
+                        onNavigate={() => setOpen(false)}
+                      />
+                    ))}
+                  </div>
                 </section>
 
                 <section className="lux-mega__col" aria-label={designBuild?.title}>
@@ -218,7 +203,6 @@ export function LuxuryDesktopNav({
                       <MegaProductCard
                         key={item.href}
                         item={item}
-                        explore={products.explore}
                         isAr={isAr}
                         active={isActive(item.href)}
                         onNavigate={() => setOpen(false)}
@@ -230,12 +214,11 @@ export function LuxuryDesktopNav({
 
               <section className="lux-mega__spaces" aria-label={spaces?.title}>
                 <p className="lux-mega__group">{spaces?.title}</p>
-                <div className="lux-mega__spaces-grid">
+                <div className="lux-mega__stack">
                   {spaces?.items.map((item) => (
                     <MegaProductCard
                       key={item.href}
                       item={item}
-                      explore={products.explore}
                       isAr={isAr}
                       active={isActive(item.href)}
                       onNavigate={() => setOpen(false)}

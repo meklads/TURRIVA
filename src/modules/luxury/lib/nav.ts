@@ -43,8 +43,6 @@ export type LuxuryProductMenuItem = {
   nameEn: string;
   description: string;
   image: string;
-  featured?: boolean;
-  primary?: boolean;
 };
 
 export type LuxuryProductMenuGroup = {
@@ -101,8 +99,6 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
               ? "من مركز البيع إلى وحدة العرض، نصمم وننفذ البيئة التي يقدم فيها مشروعك نفسه لعملائه."
               : "From the sales centre to the show unit, we design and deliver the environment where your project meets its clients.",
             image: "/brand/turriva/makkah-charter-04.jpeg",
-            featured: true,
-            primary: true,
           },
           {
             href: lp("/show-unit"),
@@ -113,7 +109,6 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
               ? "فيلا أو شقة أو جناح جاهز لاستقبال العميل وفهم أسلوب الحياة."
               : "A villa, apartment, or suite ready for the buyer to walk and understand the lifestyle.",
             image: "/brand/turriva/projects/project-walk-in-makkah.webp",
-            primary: true,
           },
         ],
       },
@@ -130,7 +125,6 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
               ? "من الفكرة إلى مساحة جاهزة للاستخدام في مسار واحد."
               : "From an idea to a space ready to use, in one accountable path.",
             image: "/brand/turriva/hero-interior.webp",
-            primary: true,
           },
           {
             href: lp("/fit-out"),

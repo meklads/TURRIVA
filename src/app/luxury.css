@@ -432,8 +432,8 @@
 
 @media (min-width: 1024px) {
   .lux-mega__grid {
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.35rem;
   }
 }
 
@@ -457,74 +457,44 @@
   gap: 0.75rem;
 }
 
-.lux-mega__col--featured {
-  display: grid;
-  gap: 0.75rem;
-}
-
 .lux-mega__spaces {
   margin-top: 1.25rem;
   padding-top: 1.15rem;
   border-top: 1px solid color-mix(in srgb, var(--lux-sand) 85%, transparent);
 }
 
-.lux-mega__spaces-grid {
-  display: grid;
-  gap: 0.75rem;
-}
-
-@media (min-width: 900px) {
-  .lux-mega__spaces-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
+/* One card style only: horizontal editorial row (image + text) — never featured/top-image */
 .lux-mega-card {
   display: grid;
-  grid-template-columns: 7.5rem 1fr;
-  gap: 0.85rem;
+  grid-template-columns: 9.25rem minmax(0, 1fr);
+  gap: 0.95rem;
   align-items: stretch;
-  padding: 0.55rem;
-  border: 1px solid color-mix(in srgb, var(--lux-gold) 14%, var(--lux-sand));
-  border-radius: 0.9rem;
-  background: color-mix(in srgb, white 92%, var(--lux-cream, #f7f1e8));
+  min-height: 6.5rem;
+  padding: 0.65rem;
+  border: 1px solid color-mix(in srgb, var(--lux-gold) 16%, var(--lux-sand));
+  border-radius: 1.15rem;
+  background: #fff;
   text-decoration: none;
   color: inherit;
   transition:
     border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    transform 0.2s ease;
+    box-shadow 0.2s ease;
 }
 
 .lux-mega-card:hover,
 .lux-mega-card:focus-visible,
 .lux-mega-card--active {
-  border-color: color-mix(in srgb, var(--lux-gold) 40%, var(--lux-sand));
+  border-color: color-mix(in srgb, var(--lux-gold) 42%, var(--lux-sand));
   box-shadow: 0 12px 28px color-mix(in srgb, var(--lux-ink) 6%, transparent);
   outline: none;
-}
-
-.lux-mega-card--featured {
-  grid-template-columns: 1fr;
-  min-height: 17rem;
-  background: #fff;
-}
-
-.lux-mega-card--featured .lux-mega-card__media {
-  aspect-ratio: 16 / 10;
-  min-height: 10.5rem;
-}
-
-.lux-mega-card--primary:not(.lux-mega-card--featured) .lux-mega-card__media {
-  min-height: 5.5rem;
 }
 
 .lux-mega-card__media {
   position: relative;
   overflow: hidden;
-  border-radius: 0.65rem;
+  border-radius: 0.75rem;
   background: var(--lux-stone);
-  min-height: 4.75rem;
+  min-height: 5.25rem;
 }
 
 .lux-mega-card__media img {
@@ -541,29 +511,25 @@
   flex-direction: column;
   justify-content: center;
   min-width: 0;
-  padding: 0.15rem 0.35rem 0.15rem 0;
+  padding: 0.2rem 0.45rem 0.2rem 0;
 }
 
 [dir="rtl"] .lux-mega-card__body {
-  padding: 0.15rem 0 0.15rem 0.35rem;
-}
-
-.lux-mega-card--featured .lux-mega-card__body {
-  padding: 0.35rem 0.55rem 0.7rem;
+  padding: 0.2rem 0 0.2rem 0.45rem;
 }
 
 .lux-mega-card__number {
   margin: 0;
-  font-size: 0.625rem;
+  font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   color: var(--lux-gold);
 }
 
 .lux-mega-card__title {
-  margin: 0.2rem 0 0;
+  margin: 0.25rem 0 0;
   font-family: var(--font-latin), Georgia, serif;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1.3;
   color: var(--lux-ink);
@@ -571,24 +537,20 @@
 
 [dir="rtl"] .lux-mega-card__title {
   font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
-  font-size: 1rem;
-}
-
-.lux-mega-card--featured .lux-mega-card__title {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
 }
 
 .lux-mega-card__en {
   margin: 0.2rem 0 0;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--lux-ink-muted);
 }
 
 .lux-mega-card__desc {
-  margin: 0.4rem 0 0;
-  font-size: 0.75rem;
-  line-height: 1.45;
+  margin: 0.45rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
   color: var(--lux-ink-soft);
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -596,24 +558,12 @@
   overflow: hidden;
 }
 
-.lux-mega-card--featured .lux-mega-card__desc {
-  -webkit-line-clamp: 3;
-}
-
-.lux-mega-card__cta {
-  margin-top: 0.7rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--lux-gold);
-  transition: transform 0.2s ease;
-}
-
-.lux-mega-card--featured:hover .lux-mega-card__cta {
-  transform: translateX(0.2rem);
-}
-
-[dir="rtl"] .lux-mega-card--featured:hover .lux-mega-card__cta {
-  transform: translateX(-0.2rem);
+@media (max-width: 899px) {
+  .lux-mega-card {
+    grid-template-columns: 7.25rem minmax(0, 1fr);
+    gap: 0.75rem;
+    min-height: 0;
+  }
 }
 
 .lux-header-mobile__row {
