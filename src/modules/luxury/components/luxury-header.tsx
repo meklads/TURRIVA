@@ -38,7 +38,7 @@ export async function LuxuryHeader() {
             <div className="lux-header-brand">
               <LuxuryBrandLogo href={homeHref} priority layout="header" tagline={t.brand.tagline} />
             </div>
-            <LuxuryDesktopNav links={headerLinks} products={productMenu} />
+            <LuxuryDesktopNav links={headerLinks} products={productMenu} isAr={locale === "ar"} />
             <div className="lux-header-actions">
               <Link href={contactHref} prefetch className="lux-btn-primary lux-header-cta inline-flex">
                 <span className="lux-header-cta-short">{t.nav.contact}</span>
@@ -47,7 +47,7 @@ export async function LuxuryHeader() {
               <LocaleSwitcher variant="luxury" />
             </div>
           </div>
-          <LuxuryMobileNav links={mobileLinks} />
+          <LuxuryMobileNav links={mobileLinks} products={productMenu} isAr={locale === "ar"} />
         </div>
       </div>
     </header>

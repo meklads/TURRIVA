@@ -36,6 +36,32 @@ function productNav(locale: Locale) {
   };
 }
 
+export type LuxuryProductMenuItem = {
+  href: string;
+  number: string;
+  nameAr: string;
+  nameEn: string;
+  description: string;
+  image: string;
+  featured?: boolean;
+  primary?: boolean;
+};
+
+export type LuxuryProductMenuGroup = {
+  id: "real-estate" | "design-build" | "spaces";
+  title: string;
+  items: readonly LuxuryProductMenuItem[];
+};
+
+export type LuxuryProductMenu = {
+  label: string;
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  explore: string;
+  groups: readonly LuxuryProductMenuGroup[];
+};
+
 /** Mobile: commercial map without dumping seven equal chips only. */
 export function getLuxuryNavLinks(locale: Locale) {
   const links = buildLuxuryNavLinks(locale);
@@ -43,10 +69,6 @@ export function getLuxuryNavLinks(locale: Locale) {
   const ar = locale === "ar";
   return [
     links.home,
-    products.experience,
-    products.showUnit,
-    products.designBuild,
-    products.fitOut,
     { href: links.developers.href, label: ar ? "المطورون" : "Developers" },
     { href: products.fitOut.href, label: ar ? "للمهندسين" : "Designers" },
     links.ourWork,
@@ -55,40 +77,114 @@ export function getLuxuryNavLinks(locale: Locale) {
   ] as const;
 }
 
-export function getLuxuryProductMenu(locale: Locale) {
-  const products = productNav(locale);
+export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
+  const lp = (path: string) => localizePath(path, locale);
   const ar = locale === "ar";
-  const full = (link: { href: string; label: string }, label: string) => ({ href: link.href, label });
+
   return {
-    label: ar ? "المنتجات" : "Products",
+    label: ar ? "منتجاتنا" : "Our products",
+    eyebrow: ar ? "منتجاتنا" : "Our products",
+    title: ar ? "ما نقدمه" : "What we offer",
+    subtitle: ar ? "تصميم مكاني · تجربة · تنفيذ" : "Spatial Design · Experience · Build",
+    explore: ar ? "استكشف المنتج" : "Explore product",
     groups: [
       {
+        id: "real-estate",
         title: ar ? "العقار" : "Real estate",
-        links: [
-          full(products.experience, ar ? "تجربة المشروع العقاري" : "Real estate project experience"),
-          products.showUnit,
+        items: [
+          {
+            href: lp("/real-estate-experience"),
+            number: "01",
+            nameAr: "تجربة المشروع العقاري",
+            nameEn: "Real Estate Project Experience",
+            description: ar
+              ? "من مركز البيع إلى وحدة العرض، نصمم وننفذ البيئة التي يقدم فيها مشروعك نفسه لعملائه."
+              : "From the sales centre to the show unit, we design and deliver the environment where your project meets its clients.",
+            image: "/brand/turriva/makkah-charter-04.jpeg",
+            featured: true,
+            primary: true,
+          },
+          {
+            href: lp("/show-unit"),
+            number: "02",
+            nameAr: "وحدة العرض",
+            nameEn: "Show Unit",
+            description: ar
+              ? "فيلا أو شقة أو جناح جاهز لاستقبال العميل وفهم أسلوب الحياة."
+              : "A villa, apartment, or suite ready for the buyer to walk and understand the lifestyle.",
+            image: "/brand/turriva/projects/project-walk-in-makkah.webp",
+            primary: true,
+          },
         ],
       },
       {
-        title: ar ? "التصميم والتنفيذ" : "Design and build",
-        links: [
-          full(products.designBuild, ar ? "التصميم والتنفيذ" : "Design and build"),
-          full(products.fitOut, ar ? "التنفيذ والتجهيز" : "Fit-out and execution"),
+        id: "design-build",
+        title: ar ? "التصميم والتنفيذ" : "Design & build",
+        items: [
+          {
+            href: lp("/design-build"),
+            number: "03",
+            nameAr: "التصميم والتنفيذ",
+            nameEn: "Design & Build",
+            description: ar
+              ? "من الفكرة إلى مساحة جاهزة للاستخدام في مسار واحد."
+              : "From an idea to a space ready to use, in one accountable path.",
+            image: "/brand/turriva/hero-interior.webp",
+            primary: true,
+          },
+          {
+            href: lp("/fit-out"),
+            number: "04",
+            nameAr: "التنفيذ والتجهيز",
+            nameEn: "Fit-Out & Execution",
+            description: ar
+              ? "تصميمكم. تنفيذنا. شريك تنفيذ، لا مصمم ثانٍ."
+              : "Your design. Our execution. An execution partner, not a second studio.",
+            image: "/brand/turriva/projects/project-joinery-b2b.webp",
+          },
         ],
       },
       {
+        id: "spaces",
         title: ar ? "المساحات" : "Spaces",
-        links: [
-          full(products.commercial, ar ? "المساحات التجارية" : "Commercial spaces"),
-          full(products.hospitality, ar ? "مساحات الضيافة" : "Hospitality spaces"),
-          full(products.renovation, ar ? "التجديد والتطوير" : "Renovation and upgrade"),
+        items: [
+          {
+            href: lp("/commercial-spaces"),
+            number: "05",
+            nameAr: "المساحات التجارية",
+            nameEn: "Commercial Spaces",
+            description: ar
+              ? "مساحة تعكس العلامة وتعمل بكفاءة يومياً."
+              : "A space that carries the brand and works in daily use.",
+            image: "/brand/turriva/sample-kit-showroom.webp",
+          },
+          {
+            href: lp("/hospitality-spaces"),
+            number: "06",
+            nameAr: "مساحات الضيافة",
+            nameEn: "Hospitality Spaces",
+            description: ar
+              ? "تجربة الضيف تبدأ من المكان."
+              : "The guest experience begins in the room.",
+            image: "/brand/turriva/inspiration/living-walnut-interior.webp",
+          },
+          {
+            href: lp("/renovation"),
+            number: "07",
+            nameAr: "التجديد والتطوير",
+            nameEn: "Renovation & Upgrade",
+            description: ar
+              ? "مساحة قائمة. إمكانات جديدة. دون هدم أولاً."
+              : "An existing space. New potential. Not demolition first.",
+            image: "/brand/turriva/projects/project-kitchen-jeddah.webp",
+          },
         ],
       },
     ],
   };
 }
 
-/** Desktop: Products dropdown, then Work, buyers, About. Contact stays the button. */
+/** Desktop: Products mega menu, then Work, buyers, About. Contact stays the button. */
 export function getLuxuryHeaderNavLinks(locale: Locale) {
   const links = buildLuxuryNavLinks(locale);
   const ar = locale === "ar";
