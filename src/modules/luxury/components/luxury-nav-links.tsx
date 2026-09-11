@@ -102,14 +102,14 @@ function MegaProductCard({
           alt={productTitle(item, isAr)}
           fill
           className="object-cover"
-          sizes={featured ? "(max-width: 1024px) 100vw, 22rem" : "(max-width: 1024px) 30vw, 5.5rem"}
+          sizes="5.5rem"
         />
       </div>
       <div className="lux-mega-card__body">
         <p className="lux-mega-card__number">{item.number}</p>
         <h3 className="lux-mega-card__title">{productTitle(item, isAr)}</h3>
         <p className="lux-mega-card__en">{productAlt(item, isAr)}</p>
-        <p className="lux-mega-card__desc">{item.description}</p>
+        {featured ? <p className="lux-mega-card__desc">{item.description}</p> : null}
         {featured ? <span className="lux-mega-card__cta">{explore} →</span> : null}
       </div>
     </Link>
@@ -155,8 +155,6 @@ export function LuxuryDesktopNav({
   const realEstate = products?.groups.find((group) => group.id === "real-estate");
   const designBuild = products?.groups.find((group) => group.id === "design-build");
   const spaces = products?.groups.find((group) => group.id === "spaces");
-  const featured = realEstate?.items.find((item) => item.number === "01");
-  const showUnit = realEstate?.items.find((item) => item.number === "02");
 
   return (
     <nav className="lux-header-nav hidden min-w-0 items-center justify-center lg:flex" aria-label="Main">
@@ -180,71 +178,29 @@ export function LuxuryDesktopNav({
           <div id={panelId} className="lux-mega" role="menu" aria-label={products.label}>
             <div className="lux-mega__inner">
               <header className="lux-mega__head">
-                <div>
-                  <p className="lux-mega__eyebrow">{products.eyebrow}</p>
-                  <h2 className="lux-mega__title">{products.title}</h2>
-                </div>
+                <p className="lux-mega__eyebrow">{products.eyebrow}</p>
                 <p className="lux-mega__subtitle">{products.subtitle}</p>
               </header>
 
               <div className="lux-mega__layout">
-                {featured ? (
-                  <MegaProductCard
-                    item={featured}
-                    explore={products.explore}
-                    isAr={isAr}
-                    active={isActive(featured.href)}
-                    featured
-                    onNavigate={() => setOpen(false)}
-                  />
-                ) : null}
-
-                <div className="lux-mega__groups">
-                  <section className="lux-mega__group" aria-label={realEstate?.title}>
-                    <p className="lux-mega__group-title">{realEstate?.title}</p>
-                    {showUnit ? (
-                      <MegaProductCard
-                        item={showUnit}
-                        explore={products.explore}
-                        isAr={isAr}
-                        active={isActive(showUnit.href)}
-                        onNavigate={() => setOpen(false)}
-                      />
-                    ) : null}
-                  </section>
-
-                  <section className="lux-mega__group" aria-label={designBuild?.title}>
-                    <p className="lux-mega__group-title">{designBuild?.title}</p>
+                {[realEstate, designBuild, spaces].filter(Boolean).map((group) => (
+                  <section key={group!.id} className="lux-mega__group" aria-label={group!.title}>
+                    <p className="lux-mega__group-title">{group!.title}</p>
                     <div className="lux-mega__group-stack">
-                      {designBuild?.items.map((item) => (
+                      {group!.items.map((item) => (
                         <MegaProductCard
                           key={item.href}
                           item={item}
                           explore={products.explore}
                           isAr={isAr}
                           active={isActive(item.href)}
+                          featured={item.number === "01"}
                           onNavigate={() => setOpen(false)}
                         />
                       ))}
                     </div>
                   </section>
-
-                  <section className="lux-mega__group" aria-label={spaces?.title}>
-                    <p className="lux-mega__group-title">{spaces?.title}</p>
-                    <div className="lux-mega__group-stack">
-                      {spaces?.items.map((item) => (
-                        <MegaProductCard
-                          key={item.href}
-                          item={item}
-                          explore={products.explore}
-                          isAr={isAr}
-                          active={isActive(item.href)}
-                          onNavigate={() => setOpen(false)}
-                        />
-                      ))}
-                    </div>
-                  </section>
-                </div>
+                ))}
               </div>
             </div>
           </div>

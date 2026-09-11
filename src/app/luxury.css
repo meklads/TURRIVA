@@ -346,16 +346,18 @@
   z-index: 55;
   display: none;
   width: auto;
-  max-width: min(72rem, calc(100vw - 2rem));
+  max-width: min(64rem, calc(100vw - 2rem));
+  max-height: min(22rem, 48vh);
   margin-inline: auto;
   padding: 0;
   border: 1px solid color-mix(in srgb, var(--lux-gold) 22%, var(--lux-sand));
-  border-radius: 1rem;
+  border-radius: 0.9rem;
   background: #fff;
-  box-shadow: 0 22px 48px color-mix(in srgb, var(--lux-ink) 9%, transparent);
+  box-shadow: 0 18px 40px color-mix(in srgb, var(--lux-ink) 8%, transparent);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease;
+  overflow: auto;
+  transition: opacity 0.18s ease;
 }
 
 .lux-nav-products:hover .lux-mega,
@@ -367,17 +369,17 @@
 }
 
 .lux-mega__inner {
-  padding: 1rem 1.15rem 1.2rem;
+  padding: 0.75rem 0.9rem 0.85rem;
 }
 
 .lux-mega__head {
   display: flex;
   flex-wrap: wrap;
-  align-items: end;
+  align-items: center;
   justify-content: space-between;
-  gap: 0.5rem 1.25rem;
-  padding-bottom: 0.75rem;
-  margin-bottom: 0.85rem;
+  gap: 0.35rem 1rem;
+  padding-bottom: 0.55rem;
+  margin-bottom: 0.65rem;
   border-bottom: 1px solid color-mix(in srgb, var(--lux-sand) 85%, transparent);
 }
 
@@ -396,24 +398,11 @@
   font-size: 0.75rem;
 }
 
-.lux-mega__title {
-  margin: 0.25rem 0 0;
-  font-family: var(--font-latin), Georgia, serif;
-  font-size: 1.1rem;
-  font-weight: 500;
-  line-height: 1.2;
-  color: var(--lux-ink);
-}
-
-[dir="rtl"] .lux-mega__title {
-  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
-}
-
 .lux-mega__subtitle {
   margin: 0;
-  font-size: 0.7rem;
+  font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--lux-ink-muted);
 }
@@ -424,26 +413,22 @@
   font-size: 0.75rem;
 }
 
+/* 3 groups side-by-side → short panel height */
 .lux-mega__layout {
   display: grid;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 @media (min-width: 1024px) {
   .lux-mega__layout {
-    grid-template-columns: minmax(16rem, 0.95fr) minmax(0, 1.25fr);
-    gap: 1.15rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.85rem;
     align-items: start;
   }
 }
 
-.lux-mega__groups {
-  display: grid;
-  gap: 0.85rem;
-}
-
 .lux-mega__group-title {
-  margin: 0 0 0.45rem;
+  margin: 0 0 0.4rem;
   font-size: 0.625rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -459,68 +444,56 @@
 
 .lux-mega__group-stack {
   display: grid;
-  gap: 0.45rem;
+  gap: 0.35rem;
 }
 
 .lux-mega-card {
   display: grid;
-  grid-template-columns: 4.75rem minmax(0, 1fr);
-  gap: 0.7rem;
+  grid-template-columns: 3.75rem minmax(0, 1fr);
+  gap: 0.55rem;
   align-items: center;
   min-height: 0;
-  padding: 0.4rem;
-  border: 1px solid color-mix(in srgb, var(--lux-gold) 14%, var(--lux-sand));
-  border-radius: 0.75rem;
+  padding: 0.3rem;
+  border: 1px solid color-mix(in srgb, var(--lux-gold) 12%, var(--lux-sand));
+  border-radius: 0.65rem;
   background: #fff;
   text-decoration: none;
   color: inherit;
   transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
 .lux-mega-card:hover,
 .lux-mega-card:focus-visible,
 .lux-mega-card--active {
-  border-color: color-mix(in srgb, var(--lux-gold) 40%, var(--lux-sand));
-  box-shadow: 0 8px 18px color-mix(in srgb, var(--lux-ink) 5%, transparent);
+  border-color: color-mix(in srgb, var(--lux-gold) 38%, var(--lux-sand));
+  box-shadow: 0 6px 14px color-mix(in srgb, var(--lux-ink) 5%, transparent);
   outline: none;
 }
 
 .lux-mega-card--featured {
-  grid-template-columns: 1fr;
-  align-items: stretch;
-  padding: 0.45rem;
-  background: color-mix(in srgb, var(--lux-cream, #f7f1e8) 35%, white);
-}
-
-.lux-mega-card--featured .lux-mega-card__media {
-  aspect-ratio: 4 / 3;
-  min-height: 11rem;
-}
-
-.lux-mega-card--featured .lux-mega-card__body {
-  padding: 0.7rem 0.55rem 0.55rem;
-}
-
-.lux-mega-card--featured .lux-mega-card__title {
-  font-size: 1.05rem;
-}
-
-.lux-mega-card--featured .lux-mega-card__desc {
-  -webkit-line-clamp: 3;
+  border-color: color-mix(in srgb, var(--lux-gold) 34%, var(--lux-sand));
+  background: color-mix(in srgb, var(--lux-cream, #f7f1e8) 40%, white);
 }
 
 .lux-mega-card__media {
   position: relative;
   overflow: hidden;
+  width: 3.75rem;
+  height: 3.75rem;
   aspect-ratio: 1 / 1;
-  border-radius: 0.5rem;
+  border-radius: 0.45rem;
   background: var(--lux-stone);
 }
 
+.lux-mega-card--featured .lux-mega-card__media {
+  width: 4.25rem;
+  height: 4.25rem;
+}
+
 .lux-mega-card__media img {
-  transition: transform 0.22s ease;
+  transition: transform 0.2s ease;
 }
 
 .lux-mega-card:hover .lux-mega-card__media img,
@@ -532,46 +505,46 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-  padding: 0.1rem 0.2rem 0.1rem 0;
+  padding: 0.05rem 0.15rem 0.05rem 0;
 }
 
 [dir="rtl"] .lux-mega-card__body {
-  padding: 0.1rem 0 0.1rem 0.2rem;
+  padding: 0.05rem 0 0.05rem 0.15rem;
 }
 
 .lux-mega-card__number {
   margin: 0;
-  font-size: 0.625rem;
+  font-size: 0.5625rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   color: var(--lux-gold);
 }
 
 .lux-mega-card__title {
-  margin: 0.12rem 0 0;
+  margin: 0.08rem 0 0;
   font-family: var(--font-latin), Georgia, serif;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 500;
-  line-height: 1.3;
+  line-height: 1.25;
   color: var(--lux-ink);
 }
 
 [dir="rtl"] .lux-mega-card__title {
   font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
 }
 
 .lux-mega-card__en {
-  margin: 0.12rem 0 0;
-  font-size: 0.6875rem;
+  margin: 0.08rem 0 0;
+  font-size: 0.625rem;
   font-weight: 600;
   color: var(--lux-ink-muted);
 }
 
 .lux-mega-card__desc {
-  margin: 0.25rem 0 0;
-  font-size: 0.7rem;
-  line-height: 1.4;
+  margin: 0.2rem 0 0;
+  font-size: 0.6875rem;
+  line-height: 1.35;
   color: var(--lux-ink-soft);
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -580,19 +553,10 @@
 }
 
 .lux-mega-card__cta {
-  margin-top: 0.55rem;
-  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  font-size: 0.6875rem;
   font-weight: 700;
   color: var(--lux-gold);
-  transition: transform 0.2s ease;
-}
-
-.lux-mega-card--featured:hover .lux-mega-card__cta {
-  transform: translateX(0.15rem);
-}
-
-[dir="rtl"] .lux-mega-card--featured:hover .lux-mega-card__cta {
-  transform: translateX(-0.15rem);
 }
 
 .lux-header-mobile__row {
