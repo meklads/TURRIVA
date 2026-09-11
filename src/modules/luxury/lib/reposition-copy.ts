@@ -17,6 +17,13 @@ export type RepositionCopy = {
     fitOutCta: string;
     pageCta: string;
   };
+  album: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    cta: string;
+    items: readonly { image: string; category: string; title: string; href: string }[];
+  };
   groups: {
     eyebrow: string;
     title: string;
@@ -71,6 +78,20 @@ const en: RepositionCopy = {
     cta: "Real estate project experience",
     fitOutCta: "Fit-out and execution",
     pageCta: "Discuss your project",
+  },
+  album: {
+    eyebrow: "The work",
+    title: "Spaces, not a catalogue.",
+    subtitle: "Frames from the work and from selected team experience. Not a list of historical Turriva contracts. Each one opens the door it belongs to.",
+    cta: "Selected work",
+    items: [
+      { image: "/brand/turriva/makkah-charter-04.jpeg", category: "Real estate", title: "The place a project is shown", href: "/real-estate-experience" },
+      { image: "/brand/turriva/projects/project-walk-in-makkah.webp", category: "Show unit", title: "A unit a buyer walks", href: "/show-unit" },
+      { image: "/brand/turriva/hero-interior.webp", category: "Design and build", title: "From an idea to a room", href: "/design-build" },
+      { image: "/brand/turriva/projects/project-joinery-b2b.webp", category: "Fit-out", title: "Drawings, built", href: "/fit-out" },
+      { image: "/brand/turriva/sample-kit-showroom.webp", category: "Commercial", title: "Where the customer meets the brand", href: "/commercial-spaces" },
+      { image: "/brand/turriva/projects/project-kitchen-jeddah.webp", category: "An existing room", title: "What stays, and what changes", href: "/renovation" },
+    ],
   },
   groups: {
     eyebrow: "How to start",
@@ -155,6 +176,20 @@ const ar: RepositionCopy = {
     cta: "تجربة المشروع العقاري",
     fitOutCta: "التنفيذ والتجهيز",
     pageCta: "ناقش مشروعك معنا",
+  },
+  album: {
+    eyebrow: "الأعمال",
+    title: "مساحات، لا كتالوج.",
+    subtitle: "صور من العمل ومن خبرة الفريق المختارة. ليست عقوداً تاريخية باسم توريفا. كل صورة تفتح الباب الذي تنتمي إليه.",
+    cta: "أعمال مختارة",
+    items: [
+      { image: "/brand/turriva/makkah-charter-04.jpeg", category: "العقار", title: "المكان الذي يُعرض فيه المشروع", href: "/real-estate-experience" },
+      { image: "/brand/turriva/projects/project-walk-in-makkah.webp", category: "وحدة العرض", title: "وحدة يمشي فيها المشتري", href: "/show-unit" },
+      { image: "/brand/turriva/hero-interior.webp", category: "التصميم والتنفيذ", title: "من فكرة إلى غرفة", href: "/design-build" },
+      { image: "/brand/turriva/projects/project-joinery-b2b.webp", category: "التنفيذ والتجهيز", title: "مخططات تُبنى", href: "/fit-out" },
+      { image: "/brand/turriva/sample-kit-showroom.webp", category: "التجاري", title: "حيث يلتقي العميل بالعلامة", href: "/commercial-spaces" },
+      { image: "/brand/turriva/projects/project-kitchen-jeddah.webp", category: "غرفة قائمة", title: "ما يبقى، وما يتغير", href: "/renovation" },
+    ],
   },
   groups: {
     eyebrow: "كيف نبدأ",

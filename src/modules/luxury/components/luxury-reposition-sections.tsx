@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { LocalizedLink } from "@/shared/components/localized-link";
 import { getRepositionCopy } from "@/modules/luxury/lib/reposition-copy";
 import type { Locale } from "@/shared/i18n/locale";
@@ -60,6 +61,49 @@ export function LuxuryDevelopersSection({ locale, compact = false }: Props & { c
             </LocalizedLink>
           </div>
         ) : null}
+      </div>
+    </section>
+  );
+}
+
+export function LuxuryAlbumSection({ locale }: Props) {
+  const copy = getRepositionCopy(locale);
+
+  return (
+    <section className="lux-section lux-section--cream" aria-labelledby="lux-album-title">
+      <div className="lux-container max-w-3xl text-center">
+        <p className="lux-eyebrow">{copy.album.eyebrow}</p>
+        <div className="lux-divider-gold" />
+        <h2 id="lux-album-title" className="lux-display lux-heading mt-6">
+          {copy.album.title}
+        </h2>
+        <p className="lux-body mx-auto mt-4 max-w-2xl text-lux-ink-muted">{copy.album.subtitle}</p>
+      </div>
+      <div className="lux-container mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {copy.album.items.map((item) => (
+          <LocalizedLink key={item.href + item.title} href={item.href} className="lux-gallery-figure group block">
+            <figure>
+              <div className="lux-gallery-media">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.02]"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+              <figcaption className="lux-gallery-caption">
+                <span className="lux-gallery-category">{item.category}</span>
+                <span className="lux-display mt-1 block text-lg text-lux-ink">{item.title}</span>
+              </figcaption>
+            </figure>
+          </LocalizedLink>
+        ))}
+      </div>
+      <div className="lux-container mt-12 text-center">
+        <LocalizedLink href="/our-work" className="lux-btn-outline">
+          {copy.album.cta}
+        </LocalizedLink>
       </div>
     </section>
   );
