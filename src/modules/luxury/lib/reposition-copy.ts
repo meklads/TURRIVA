@@ -8,6 +8,7 @@ export type RepositionCopy = {
     body: string;
     notes: readonly string[];
     pathCta: string;
+    commercialCta: string;
   };
   developers: {
     eyebrow: string;
@@ -40,11 +41,12 @@ const en: RepositionCopy = {
     title: "Spatial design and execution. Not a furniture shop, and not a tech company.",
     body: "Turriva develops a space and delivers it: design, technical detailing, fabrication, installation, and handover. A finished room or sales environment is the work. Screens and campaigns can support it; they are not the product.",
     notes: [
-      "Built for developers and hospitality operators, not catalogue decor.",
+      "Built for developers, commercial brands, and hospitality operators, not catalogue decor.",
       "A new space can start from an idea, or from drawings you already have.",
       "Graphics House and Bees Motion join only when the project needs visualization or launch.",
     ],
     pathCta: "From idea to a finished space",
+    commercialCta: "A space that receives customers",
   },
   developers: {
     eyebrow: "For developers",
@@ -104,11 +106,12 @@ const ar: RepositionCopy = {
     title: "تصميم مكاني وتنفيذ. ليست متجر ديكور، وليست شركة تقنية.",
     body: "توريفا تطوّر الفراغ وتسلّمه: تصميم، تفصيل فني، تصنيع، تركيب، وتسليم. المنتج مكان مكتمل. الشاشات والحملات قد تخدمه، لكنها ليست المنتج.",
     notes: [
-      "للمطورين ومشغّلي الضيافة، لا لكتالوج الأثاث.",
+      "للمطورين والعلامات التجارية ومشغّلي الضيافة، لا لكتالوج الأثاث.",
       "المساحة الجديدة يمكن أن تبدأ من فكرة، أو من مخططات لديكم.",
       "جرافيكس هاوس وبيزموشن يدخلان فقط عندما يحتاج المشروع تصورًا أو إطلاقًا.",
     ],
     pathCta: "من الفكرة إلى مساحة جاهزة",
+    commercialCta: "مساحة تستقبل العملاء",
   },
   developers: {
     eyebrow: "للمطورين",

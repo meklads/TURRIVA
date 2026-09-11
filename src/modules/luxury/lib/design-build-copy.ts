@@ -143,16 +143,17 @@ const en: DesignBuildCopy = {
   },
   related: {
     title: "If the job is to show a development, start there.",
-    body: "A sales gallery, a model, or a launch space is the real-estate project experience. A villa, apartment, or suite for buyers to walk is a show unit. This page is for a space that will be used.",
+    body: "A sales gallery, a model, or a launch space is the real-estate project experience. A villa, apartment, or suite for buyers to walk is a show unit. A restaurant, store, or showroom that receives customers is commercial spaces. This page is for a space you will occupy.",
     links: [
       { href: "/real-estate-experience", label: "Real estate project experience" },
       { href: "/show-unit", label: "Show unit" },
+      { href: "/commercial-spaces", label: "Commercial spaces" },
     ],
   },
   audience: {
     eyebrow: "Who it is for",
     title: "A client who wants one team from the start.",
-    body: "A villa, a private residence, or another interior you will occupy. The same path can cover an office or a commercial room when that is the brief. It is not a separate product for every building type.",
+    body: "A villa, a private residence, or another interior you will occupy. A restaurant, store, showroom, or other space that receives customers has its own page.",
     trust: "Turriva is a new specialized brand, backed by a team with experience in design, execution, and visual work.",
   },
   close: {
@@ -245,16 +246,17 @@ const ar: DesignBuildCopy = {
   },
   related: {
     title: "إذا كان العمل عرض مشروع عقاري، ابدأ من هناك.",
-    body: "مركز البيع أو المجسم أو مساحة الإطلاق هي تجربة المشروع العقاري. فيلا أو شقة أو جناح يمشي فيه المشتري هي وحدة العرض. هذه الصفحة لمساحة ستُستخدم.",
+    body: "مركز البيع أو المجسم أو مساحة الإطلاق هي تجربة المشروع العقاري. فيلا أو شقة أو جناح يمشي فيه المشتري هي وحدة العرض. مطعم أو متجر أو صالة عرض تستقبل العملاء هي المساحات التجارية. هذه الصفحة لمساحة ستشغلونها.",
     links: [
       { href: "/real-estate-experience", label: "تجربة المشروع العقاري" },
       { href: "/show-unit", label: "وحدة العرض" },
+      { href: "/commercial-spaces", label: "المساحات التجارية" },
     ],
   },
   audience: {
     eyebrow: "لمن",
     title: "لعميل يريد فريقاً واحداً من البداية.",
-    body: "فيلا أو مسكن خاص أو فراغ داخلي ستشغلونه. المسار نفسه يمكن أن يغطي مكتباً أو غرفة تجارية عندما يكون ذلك هو الموجز. وليس منتجاً منفصلاً لكل نوع مبنى.",
+    body: "فيلا أو مسكن خاص أو فراغ داخلي ستشغلونه. مطعم أو متجر أو صالة عرض أو أي مساحة تستقبل العملاء لها صفحتها.",
     trust: "توريفا علامة متخصصة حديثة، مدعومة بفريق ذي خبرة في التصميم والتنفيذ والعمل البصري.",
   },
   close: {

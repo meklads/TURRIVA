@@ -22,9 +22,14 @@ export function LuxuryDefinitionSection({ locale }: Props) {
             </li>
           ))}
         </ul>
-        <LocalizedLink href="/design-build" className="mt-6 inline-flex text-sm font-semibold text-lux-gold">
-          {copy.definition.pathCta}
-        </LocalizedLink>
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+          <LocalizedLink href="/design-build" className="text-sm font-semibold text-lux-gold">
+            {copy.definition.pathCta}
+          </LocalizedLink>
+          <LocalizedLink href="/commercial-spaces" className="text-sm font-semibold text-lux-gold">
+            {copy.definition.commercialCta}
+          </LocalizedLink>
+        </div>
       </div>
     </section>
   );

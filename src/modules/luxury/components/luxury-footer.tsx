@@ -24,6 +24,7 @@ export async function LuxuryFooter() {
   const exploreLinks = [
     { href: lp("/design-build"), label: locale === "ar" ? "التصميم والتنفيذ" : "Design and build" },
     { href: lp("/fit-out"), label: locale === "ar" ? "التنفيذ والتجهيز" : "Fit-out" },
+    { href: lp("/commercial-spaces"), label: locale === "ar" ? "المساحات التجارية" : "Commercial spaces" },
     { href: lp("/real-estate-experience"), label: t.nav.developers },
     { href: lp("/show-unit"), label: locale === "ar" ? "وحدة العرض" : "Show unit" },
     { href: lp("/villas"), label: t.nav.villas },
