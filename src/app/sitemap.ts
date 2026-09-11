@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/our-work", priority: 0.88, changeFrequency: "weekly" as const },
     { path: "/portfolio", priority: 0.85, changeFrequency: "monthly" as const },
     { path: "/real-estate-experience", priority: 0.96, changeFrequency: "weekly" as const },
+    { path: "/show-unit", priority: 0.93, changeFrequency: "weekly" as const },
     { path: "/professionals", priority: 0.86, changeFrequency: "monthly" as const },
     { path: "/launch", priority: 0.9, changeFrequency: "monthly" as const },
     { path: "/markets", priority: 0.88, changeFrequency: "monthly" as const },

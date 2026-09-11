@@ -23,6 +23,7 @@ export async function LuxuryFooter() {
 
   const exploreLinks = [
     { href: lp("/real-estate-experience"), label: t.nav.developers },
+    { href: lp("/show-unit"), label: locale === "ar" ? "وحدة العرض" : "Show unit" },
     { href: lp("/villas"), label: t.nav.villas },
     { href: lp("/projects"), label: t.nav.projects },
     { href: lp("/services"), label: seo.nav.services },

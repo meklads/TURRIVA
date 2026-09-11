@@ -13,7 +13,17 @@ import {
   type ExperienceProjectType,
 } from "../lib/real-estate-experience-copy";
 
-type Props = { locale: Locale };
+type UnitTypeOption = { id: string; label: string };
+
+type Props = {
+  locale: Locale;
+  source?: string;
+  productLabel?: string;
+  initialProjectType?: ExperienceProjectType;
+  initialNeeds?: readonly ExperienceNeed[];
+  unitTypes?: readonly UnitTypeOption[];
+  drawings?: { label: string; yes: string; no: string };
+};
 
 function mapCity(value: string): "jeddah" | "makkah" | "other" {
   const v = value.trim().toLowerCase();
@@ -22,7 +32,15 @@ function mapCity(value: string): "jeddah" | "makkah" | "other" {
   return "other";
 }
 
-export function LuxuryExperienceBriefForm({ locale }: Props) {
+export function LuxuryExperienceBriefForm({
+  locale,
+  source = "real_estate_experience",
+  productLabel = "Real estate project experience",
+  initialProjectType = "residential",
+  initialNeeds = [],
+  unitTypes,
+  drawings,
+}: Props) {
   const copy = getExperienceCopy(locale).form;
   const [company, setCompany] = useState("");
   const [name, setName] = useState("");
@@ -30,8 +48,10 @@ export function LuxuryExperienceBriefForm({ locale }: Props) {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [city, setCity] = useState("");
-  const [projectType, setProjectType] = useState<ExperienceProjectType>("residential");
-  const [needs, setNeeds] = useState<ExperienceNeed[]>([]);
+  const [projectType, setProjectType] = useState<ExperienceProjectType>(initialProjectType);
+  const [needs, setNeeds] = useState<ExperienceNeed[]>([...initialNeeds]);
+  const [unitType, setUnitType] = useState(unitTypes?.[0]?.id ?? "");
+  const [hasDrawings, setHasDrawings] = useState<"yes" | "no" | "">("");
   const [brief, setBrief] = useState("");
   const [file, setFile] = useState<File | null>(null);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -67,11 +87,14 @@ export function LuxuryExperienceBriefForm({ locale }: Props) {
       const workEmail = Boolean(email) && !/@(gmail|googlemail|hotmail|outlook|yahoo|icloud)\./i.test(email);
       const leadScore = 30 + (needs.length >= 3 ? 20 : 14) + 10 + 8 + (workEmail ? 7 : 0);
 
+      const unitLabel = unitTypes?.find((item) => item.id === unitType)?.label;
       const message = [
-        "Product: Real estate project experience",
+        `Product: ${productLabel}`,
         `Role: ${role}`,
         `City: ${city}`,
         `Project type: ${typeLabel}`,
+        unitLabel ? `Unit: ${unitLabel}` : null,
+        drawings && hasDrawings ? `Drawings: ${hasDrawings === "yes" ? drawings.yes : drawings.no}` : null,
         `Needs: ${needLabels}`,
         brief,
         attachmentUrl ? `Attachment: ${attachmentUrl}` : file ? `Attachment: ${file.name} (upload failed)` : null,
@@ -89,7 +112,7 @@ export function LuxuryExperienceBriefForm({ locale }: Props) {
           company,
           city: mapCity(city),
           locale,
-          source: "real_estate_experience",
+          source,
           interest: "bespoke",
           projectType: "developer",
           executionScope: needs.includes("show_unit") || needs.includes("full_fitout") ? "full_property" : "multiple_rooms",
@@ -103,7 +126,7 @@ export function LuxuryExperienceBriefForm({ locale }: Props) {
 
       if (!res.ok) throw new Error("failed");
       setStatus("success");
-      trackMarketingEvent("Lead Submit", { source: "real_estate_experience", projectType: "developer" });
+      trackMarketingEvent("Lead Submit", { source, projectType: "developer" });
     } catch {
       setStatus("error");
     }
@@ -112,8 +135,8 @@ export function LuxuryExperienceBriefForm({ locale }: Props) {
   if (status === "success") {
     const waHref = buildWhatsAppHref(
       locale === "ar"
-        ? `مرحباً توريفا، أرسلت ملخص تجربة المشروع العقاري. الشركة: ${company}. الاسم: ${name}.`
-        : `Hello Turriva, I submitted a real-estate project experience brief. Company: ${company}. Name: ${name}.`
+        ? `مرحباً توريفا، أرسلت ملخصاً عن ${productLabel}. الشركة: ${company}. الاسم: ${name}.`
+        : `Hello Turriva, I submitted a brief for ${productLabel}. Company: ${company}. Name: ${name}.`
     );
 
     return (
@@ -138,6 +161,42 @@ export function LuxuryExperienceBriefForm({ locale }: Props) {
         <input required type="email" dir="ltr" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={copy.email} className="lux-input" />
         <input required value={city} onChange={(e) => setCity(e.target.value)} placeholder={copy.city} className="lux-input" />
       </div>
+
+      {unitTypes && unitTypes.length > 0 ? (
+        <fieldset className="mt-6">
+          <legend className="lux-funnel__legend">{locale === "ar" ? "نوع الوحدة" : "Unit type"}</legend>
+          <div className="lux-funnel__grid lux-funnel__grid--compact">
+            {unitTypes.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                className={`lux-funnel__choice lux-funnel__choice--sm${unitType === item.id ? " lux-funnel__choice--active" : ""}`}
+                onClick={() => setUnitType(item.id)}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        </fieldset>
+      ) : null}
+
+      {drawings ? (
+        <fieldset className="mt-6">
+          <legend className="lux-funnel__legend">{drawings.label}</legend>
+          <div className="lux-funnel__grid lux-funnel__grid--compact">
+            {(["yes", "no"] as const).map((value) => (
+              <button
+                key={value}
+                type="button"
+                className={`lux-funnel__choice lux-funnel__choice--sm${hasDrawings === value ? " lux-funnel__choice--active" : ""}`}
+                onClick={() => setHasDrawings(value)}
+              >
+                {value === "yes" ? drawings.yes : drawings.no}
+              </button>
+            ))}
+          </div>
+        </fieldset>
+      ) : null}
 
       <fieldset className="mt-6">
         <legend className="lux-funnel__legend">{copy.projectType}</legend>

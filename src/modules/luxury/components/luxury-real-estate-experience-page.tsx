@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { LUXURY_HERO_IMAGE } from "@/modules/luxury/lib/nav";
 import { EXPERIENCE_PATH, getExperienceCopy } from "@/modules/luxury/lib/real-estate-experience-copy";
+import { LocalizedLink } from "@/shared/components/localized-link";
 import type { Locale } from "@/shared/i18n/locale";
 import { localizePath } from "@/shared/i18n/path";
 import { LuxuryExperienceBriefForm } from "./luxury-experience-brief-form";
@@ -94,6 +95,11 @@ export function LuxuryRealEstateExperiencePage({ locale }: Props) {
                     </li>
                   ))}
                 </ul>
+                {item.more && item.moreHref ? (
+                  <LocalizedLink href={item.moreHref} className="mt-4 inline-flex text-sm font-semibold text-lux-gold">
+                    {item.more}
+                  </LocalizedLink>
+                ) : null}
               </li>
             ))}
           </ol>

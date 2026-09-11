@@ -54,7 +54,7 @@ export type ExperienceCopy = {
     eyebrow: string;
     title: string;
     intro: string;
-    items: readonly { title: string; points: readonly string[] }[];
+    items: readonly { title: string; points: readonly string[]; more?: string; moreHref?: string }[];
     techNote: string;
   };
   flexible: {
@@ -169,6 +169,8 @@ const en: ExperienceCopy = {
       {
         title: "Show unit",
         points: ["Show villa, apartment, or suite", "Finishes and furniture", "Lighting", "Smart systems only if needed"],
+        more: "This can be commissioned on its own.",
+        moreHref: "/show-unit",
       },
       {
         title: "Project display",
@@ -372,6 +374,8 @@ const ar: ExperienceCopy = {
       {
         title: "وحدة العرض",
         points: ["فيلا أو شقة أو جناح عرض", "تشطيب وأثاث", "إضاءة", "أنظمة ذكية عند الحاجة فقط"],
+        more: "يمكن التعاقد عليها وحدها.",
+        moreHref: "/show-unit",
       },
       {
         title: "عرض المشروع",
