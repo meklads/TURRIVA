@@ -82,9 +82,9 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
   return {
     label: ar ? "منتجاتنا" : "Our products",
     eyebrow: ar ? "منتجاتنا" : "Our products",
-    title: ar ? "ما نقدمه" : "What we offer",
+    title: ar ? "اختر ما يناسب مشروعك" : "Choose what fits your project",
     subtitle: ar ? "تصميم مكاني · تجربة · تنفيذ" : "Spatial Design · Experience · Build",
-    explore: ar ? "استكشف المنتج" : "Explore product",
+    explore: ar ? "استكشف" : "Explore",
     groups: [
       {
         id: "real-estate",
@@ -96,8 +96,8 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             nameAr: "تجربة المشروع العقاري",
             nameEn: "Real Estate Project Experience",
             description: ar
-              ? "من مركز البيع إلى وحدة العرض، نصمم وننفذ البيئة التي يقدم فيها مشروعك نفسه لعملائه."
-              : "From the sales centre to the show unit, we design and deliver the environment where your project meets its clients.",
+              ? "بيئة البيع: من مركز البيع إلى وحدة العرض."
+              : "The sales environment — from gallery to show unit.",
             image: "/brand/turriva/makkah-charter-04.jpeg",
           },
           {
@@ -106,8 +106,8 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             nameAr: "وحدة العرض",
             nameEn: "Show Unit",
             description: ar
-              ? "فيلا أو شقة أو جناح جاهز لاستقبال العميل وفهم أسلوب الحياة."
-              : "A villa, apartment, or suite ready for the buyer to walk and understand the lifestyle.",
+              ? "فيلا أو شقة أو جناح يمشي فيه المشتري."
+              : "A villa, apartment, or suite the buyer can walk.",
             image: "/brand/turriva/projects/project-walk-in-makkah.webp",
           },
         ],
@@ -122,8 +122,8 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             nameAr: "التصميم والتنفيذ",
             nameEn: "Design & Build",
             description: ar
-              ? "من الفكرة إلى مساحة جاهزة للاستخدام في مسار واحد."
-              : "From an idea to a space ready to use, in one accountable path.",
+              ? "من الفكرة إلى مساحة جاهزة — مسار واحد."
+              : "From idea to a ready space — one path.",
             image: "/brand/turriva/hero-interior.webp",
           },
           {
@@ -132,8 +132,8 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             nameAr: "التنفيذ والتجهيز",
             nameEn: "Fit-Out & Execution",
             description: ar
-              ? "تصميمكم. تنفيذنا. شريك تنفيذ، لا مصمم ثانٍ."
-              : "Your design. Our execution. An execution partner, not a second studio.",
+              ? "تصميمكم المعتمد. نحن نبنيه."
+              : "Your approved design. We build it.",
             image: "/brand/turriva/projects/project-joinery-b2b.webp",
           },
         ],
@@ -148,8 +148,8 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             nameAr: "المساحات التجارية",
             nameEn: "Commercial Spaces",
             description: ar
-              ? "مساحة تعكس العلامة وتعمل بكفاءة يومياً."
-              : "A space that carries the brand and works in daily use.",
+              ? "مساحة تحمل العلامة وتعمل يومياً."
+              : "A space that carries the brand and works daily.",
             image: "/brand/turriva/sample-kit-showroom.webp",
           },
           {
@@ -159,7 +159,7 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             nameEn: "Hospitality Spaces",
             description: ar
               ? "تجربة الضيف تبدأ من المكان."
-              : "The guest experience begins in the room.",
+              : "The guest experience begins with the space.",
             image: "/brand/turriva/inspiration/living-walnut-interior.webp",
           },
           {
@@ -168,8 +168,8 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             nameAr: "التجديد والتطوير",
             nameEn: "Renovation & Upgrade",
             description: ar
-              ? "مساحة قائمة. إمكانات جديدة. دون هدم أولاً."
-              : "An existing space. New potential. Not demolition first.",
+              ? "مساحة قائمة. ما يبقى وما يتغير."
+              : "An existing space. What stays, what changes.",
             image: "/brand/turriva/projects/project-kitchen-jeddah.webp",
           },
         ],

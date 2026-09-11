@@ -17,40 +17,40 @@ const CATALOG: readonly ProductRelation[] = [
     href: "/real-estate-experience",
     nameAr: "تجربة المشروع العقاري",
     nameEn: "Real Estate Project Experience",
-    blurbAr: "البيئة الكاملة التي يقدم فيها المشروع نفسه.",
-    blurbEn: "The full environment where the project presents itself.",
+    blurbAr: "بيئة البيع الكاملة للمشروع.",
+    blurbEn: "The full sales environment for the project.",
   },
   {
     key: "show-unit",
     href: "/show-unit",
     nameAr: "وحدة العرض",
     nameEn: "Show Unit",
-    blurbAr: "الوحدة التي يمشي فيها العميل.",
-    blurbEn: "The unit the buyer walks through.",
+    blurbAr: "وحدة يمشي فيها المشتري ويفهم المعيار.",
+    blurbEn: "A unit the buyer walks — and understands.",
   },
   {
     key: "design-build",
     href: "/design-build",
     nameAr: "التصميم والتنفيذ",
     nameEn: "Design & Build",
-    blurbAr: "من الفكرة إلى مساحة جاهزة للاستخدام.",
-    blurbEn: "From an idea to a space ready to use.",
+    blurbAr: "من الفكرة إلى مساحة جاهزة.",
+    blurbEn: "From idea to a ready space.",
   },
   {
     key: "fit-out",
     href: "/fit-out",
     nameAr: "التنفيذ والتجهيز",
     nameEn: "Fit-Out & Execution",
-    blurbAr: "تصميم معتمد. نحن نبنيه.",
-    blurbEn: "Approved design. We build it.",
+    blurbAr: "تصميم معتمد. تنفيذ واضح.",
+    blurbEn: "Approved design. Clear execution.",
   },
   {
     key: "commercial-spaces",
     href: "/commercial-spaces",
     nameAr: "المساحات التجارية",
     nameEn: "Commercial Spaces",
-    blurbAr: "مساحة تعكس العلامة وتعمل.",
-    blurbEn: "A space that carries the brand and performs.",
+    blurbAr: "مساحة تحمل العلامة وتعمل.",
+    blurbEn: "A space that carries the brand and works.",
   },
   {
     key: "hospitality-spaces",
@@ -65,8 +65,8 @@ const CATALOG: readonly ProductRelation[] = [
     href: "/renovation",
     nameAr: "التجديد والتطوير",
     nameEn: "Renovation & Upgrade",
-    blurbAr: "مساحة قائمة. إمكانات جديدة.",
-    blurbEn: "An existing space. New potential.",
+    blurbAr: "مساحة قائمة. إمكانات أوضح.",
+    blurbEn: "An existing space. Clearer potential.",
   },
 ] as const;
 
@@ -143,6 +143,6 @@ export function getProductPager(key: ProductVisualKey, locale: Locale) {
 
 export function getRelatedSectionCopy(locale: Locale) {
   return locale === "ar"
-    ? { eyebrow: "استمر في الاستكشاف", title: "قد تحتاج أيضاً إلى" }
-    : { eyebrow: "Continue exploring", title: "You may also need" };
+    ? { eyebrow: "استكشف أيضاً", title: "منتجات ذات صلة" }
+    : { eyebrow: "Explore further", title: "Related products" };
 }

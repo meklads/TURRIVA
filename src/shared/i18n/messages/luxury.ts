@@ -308,9 +308,9 @@ const en: LuxuryMessages = {
   },
   hero: {
     eyebrow: "A Tasami Group company · Saudi Arabia",
-    title: "From concept to physical reality.",
+    title: "From idea to a space you can enter.",
     subtitle:
-      "Turriva designs and delivers spaces for residential, commercial, hospitality, and real estate projects. Not a furniture shop. Not a software company.",
+      "Turriva designs and delivers spaces for homes, businesses, hospitality, and real estate. Clear scope. One team. From drawings to handover.",
     servicesLine: "Spatial Design · Experience · Build",
     tags: ["Spatial Design", "Experience", "Build"],
     ctaPrimary: "Discuss your project",
@@ -319,27 +319,27 @@ const en: LuxuryMessages = {
   },
   intro: {
     eyebrow: "How we work",
-    title: "Design that reads the room, execution that respects your name",
+    title: "Design with intent. Delivery with care.",
     body:
-      "Trust in interiors is earned with real materials and spaces you can believe. We bring that standard to Gulf homes and businesses: contemporary lines, warm hospitality, and details that suit majlis life as well as daily living. One team stays with the work from samples to handover, with clear updates at every stage.",
+      "A finished space should feel inevitable — materials, light, and detail working together. One team stays with the work from samples to handover, with clear updates at every stage.",
   },
   stats: {
     items: [
       { value: "1 team", label: "Design through handover" },
       { value: "Samples", label: "Approved before fabrication" },
       { value: "Site", label: "Delivered in Saudi Arabia" },
-      { value: "Scope", label: "Clear before we start" },
+      { value: "Scope", label: "Agreed before we start" },
     ],
   },
   execution: {
     badge: "Design & site delivery",
-    title: "The drawing is a promise, the handover is our reputation",
+    title: "What you approve is what we build.",
     subtitle:
-      "Joinery, stone, lighting, and furnishings are procured against approved boards. Trades are coordinated on site until the space matches what you signed. Exhibition builds follow the same care as a family villa.",
+      "Joinery, stone, lighting, and furnishings follow approved boards. Trades are coordinated on site until the space matches the signed design.",
     points: [
-      "Samples and sign-off before we order at scale",
-      "Execution drawings aligned with your architect",
-      "Site lead through snagging, styling, and keys",
+      "Samples and sign-off before bulk orders",
+      "Execution drawings aligned with your design team",
+      "Site leadership through snagging and handover",
     ],
     cta: "Talk to our team",
   },
@@ -577,19 +577,19 @@ const en: LuxuryMessages = {
     about: {
       title: "About Turriva",
       intro:
-        "Turriva designs and builds spaces and experiences: spatial design, technical development, fit-out, and handover. Execution is part of the product, not the whole identity. Hire Turriva alone. The group joins only when the project needs it.",
+        "Turriva designs and delivers spaces and experiences — spatial design, technical development, fit-out, and handover. Execution is part of the offer, not the whole brand. Contract Turriva alone; the group joins only when the project needs it.",
     },
     contact: {
       title: "Contact Turriva",
-      intro: "Discuss the project, or send the drawings. Cost follows the scope.",
+      intro: "Tell us about the project, or send the drawings. Scope comes first. Cost follows.",
       formName: "Name",
       formEmail: "Email",
       formPhone: "Phone / WhatsApp",
       formProjectType: "Project type",
-      formMessage: "Tell us about your project",
-      formSubmit: "Send request",
-      formSuccess: "Thank you, we will contact you within one business day.",
-      formError: "Something went wrong. Please try again, WhatsApp us, or email info@turriva.com.",
+      formMessage: "A short note on the project",
+      formSubmit: "Send message",
+      formSuccess: "Thank you. We will reply within one business day.",
+      formError: "Something went wrong. Try again, WhatsApp us, or email info@turriva.com.",
       projectTypes: [
         { value: "villa", label: "Private villa" },
         { value: "developer", label: "Developer / B2B project" },
@@ -940,9 +940,9 @@ const ar: LuxuryMessages = {
   },
   hero: {
     eyebrow: "إحدى شركات مجموعة تسامي · المملكة العربية السعودية",
-    title: "من الفكرة إلى واقع ملموس.",
+    title: "من الفكرة إلى مساحة تدخلها.",
     subtitle:
-      "توريفا تصمم وتنفذ المساحات للمشاريع السكنية والتجارية والضيافة والتطوير العقاري. ليست متجر أثاث، وليست شركة برمجيات.",
+      "توريفا تصمم وتنفذ المساحات للمنازل والأعمال والضيافة والعقار. نطاق واضح. فريق واحد. من المخططات إلى التسليم.",
     servicesLine: "تصميم مكاني · تجربة · تنفيذ",
     tags: ["تصميم مكاني", "تجربة", "تنفيذ"],
     ctaPrimary: "ناقش مشروعك",
@@ -951,26 +951,26 @@ const ar: LuxuryMessages = {
   },
   intro: {
     eyebrow: "منهجنا",
-    title: "تصميم يقرأ أسلوب حياتك… وتنفيذ يحترم اسمك",
+    title: "تصميم بقصد. وتنفيذ بعناية.",
     body:
-      "الثقة تُبنى بخامات حقيقية ومساحات مقنعة. نطبّق ذلك على المشاريع السكنية والتجارية: خطوط معاصرة، ضيافة راقية، وتفاصيل تناسب المجلس والمعيشة اليومية. فريق واحد يتابع العمل من العينات إلى التسليم، مع تحديث واضح في كل مرحلة.",
+      "المساحة المكتملة يجب أن تبدو طبيعية — مواد وإضاءة وتفاصيل تعمل معاً. فريق واحد يتابع العمل من العينات إلى التسليم، مع تحديث واضح في كل مرحلة.",
   },
   stats: {
     items: [
       { value: "فريق واحد", label: "من التصميم حتى التسليم" },
       { value: "عينات", label: "تُعتمد قبل التصنيع" },
       { value: "موقع", label: "تسليم داخل السعودية" },
-      { value: "نطاق", label: "واضح قبل البدء" },
+      { value: "نطاق", label: "يُتفق عليه قبل البدء" },
     ],
   },
   execution: {
     badge: "تصميم وتسليم ميداني",
-    title: "التصميم التزام… والتسليم سمعتنا",
+    title: "ما تعتمدونه هو ما نبنيه.",
     subtitle:
-      "تُورد النجارة والحجر والإضاءة والأثاث وفق لوحات الاعتماد. تُنسَّق التخصصات في الموقع حتى تطابق المساحة الموافقات المعتمدة. أجنحة المعارض تُدار بمعايير لا تقل عن المشاريع السكنية.",
+      "النجارة والحجر والإضاءة والأثاث تتبع لوحات الاعتماد. تُنسَّق التخصصات في الموقع حتى تطابق المساحة التصميم المعتمد.",
     points: [
-      "عينات واعتماد قبل أي شراء بالجملة",
-      "رسومات تنفيذ متوافقة مع فريق المشروع",
+      "عينات واعتماد قبل الشراء بالجملة",
+      "رسومات تنفيذ متوافقة مع فريق التصميم",
       "إشراف ميداني حتى إغلاق الملاحظات والتسليم",
     ],
     cta: "تواصل مع الفريق",
@@ -1209,19 +1209,19 @@ const ar: LuxuryMessages = {
     about: {
       title: "عن توريفا",
       intro:
-        "توريفا تصمم وتنفذ المساحات والتجارب: تصميم مكاني، تطوير فني، تجهيز، وتسليم. التنفيذ جزء من المنتج، لا الهوية كلها. تعاقد مع توريفا وحدها. استخدم المجموعة عندما يحتاجها المشروع.",
+        "توريفا تصمم وتسلّم المساحات والتجارب — تصميم مكاني، تطوير فني، تجهيز، وتسليم. التنفيذ جزء من العرض، لا الهوية كلها. تعاقد مع توريفا وحدها؛ والمجموعة تُستدعى حين يحتاجها المشروع.",
     },
     contact: {
       title: "تواصل مع توريفا",
-      intro: "ناقش المشروع، أو أرسل المخططات. التكلفة تتبع النطاق.",
+      intro: "أخبرنا عن المشروع، أو أرسل المخططات. النطاق أولاً. والتكلفة تتبعه.",
       formName: "الاسم",
       formEmail: "البريد الإلكتروني",
       formPhone: "الجوال / واتساب",
       formProjectType: "نوع المشروع",
-      formMessage: "أخبرنا عن مشروعك",
-      formSubmit: "إرسال الطلب",
-      formSuccess: "شكراً، سنتواصل خلال يوم عمل.",
-      formError: "حدث خطأ. جرّب مرة أخرى، أو راسلنا على واتساب أو info@turriva.com.",
+      formMessage: "نبذة مختصرة عن المشروع",
+      formSubmit: "إرسال الرسالة",
+      formSuccess: "شكراً. نرد خلال يوم عمل.",
+      formError: "حدث خطأ. أعد المحاولة، أو راسلنا على واتساب أو info@turriva.com.",
       projectTypes: [
         { value: "villa", label: "فيلا خاصة" },
         { value: "developer", label: "مطور / مشروع B2B" },
