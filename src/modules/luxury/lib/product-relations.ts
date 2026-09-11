@@ -1,5 +1,6 @@
 import type { Locale } from "@/shared/i18n/locale";
 import type { ProductVisualKey } from "./product-visuals";
+import { getProductVisuals } from "./product-visuals";
 
 export type ProductRelation = {
   key: ProductVisualKey;
@@ -85,15 +86,35 @@ function find(key: ProductVisualKey): ProductRelation {
   return item;
 }
 
+export function getProductMeta(key: ProductVisualKey) {
+  const index = CATALOG.findIndex((entry) => entry.key === key);
+  const item = find(key);
+  return {
+    key,
+    href: item.href,
+    index: index + 1,
+    total: CATALOG.length,
+    number: String(index + 1).padStart(2, "0"),
+    indexLabel: `${String(index + 1).padStart(2, "0")} / ${String(CATALOG.length).padStart(2, "0")}`,
+    nameAr: item.nameAr,
+    nameEn: item.nameEn,
+  };
+}
+
 export function getRelatedProducts(key: ProductVisualKey, locale: Locale) {
   const isAr = locale === "ar";
   return RELATED[key].map((relatedKey) => {
     const item = find(relatedKey);
+    const meta = getProductMeta(relatedKey);
+    const visuals = getProductVisuals(relatedKey);
     return {
       href: item.href,
+      number: meta.number,
       title: isAr ? item.nameAr : item.nameEn,
       subtitle: isAr ? item.nameEn : item.nameAr,
       blurb: isAr ? item.blurbAr : item.blurbEn,
+      image: visuals.mid,
+      alt: isAr ? visuals.altAr : visuals.altEn,
     };
   });
 }
@@ -122,6 +143,6 @@ export function getProductPager(key: ProductVisualKey, locale: Locale) {
 
 export function getRelatedSectionCopy(locale: Locale) {
   return locale === "ar"
-    ? { eyebrow: "منتجات مرتبطة", title: "قد تحتاج أيضاً إلى" }
-    : { eyebrow: "Related products", title: "You may also need" };
+    ? { eyebrow: "استمر في الاستكشاف", title: "قد تحتاج أيضاً إلى" }
+    : { eyebrow: "Continue exploring", title: "You may also need" };
 }

@@ -6,6 +6,7 @@ import { LuxuryExperienceBriefForm } from "./luxury-experience-brief-form";
 import { LuxuryProductBriefSection } from "./luxury-product-brief-section";
 import { LuxuryProductHero } from "./luxury-product-hero";
 import { LuxuryProductVisualBand } from "./luxury-product-visual-band";
+import { LuxuryProductStoryStrip } from "./luxury-product-story-strip";
 import { LuxuryProductPager, LuxuryProductRelated } from "./luxury-product-related";
 import { LuxuryStickyCta } from "./luxury-sticky-cta";
 
@@ -60,6 +61,8 @@ export function LuxuryRealEstateExperiencePage({ locale }: Props) {
 
       <LuxuryProductVisualBand locale={locale} product="real-estate-experience" />
 
+      <LuxuryProductStoryStrip locale={locale} product="real-estate-experience" />
+
       <section id="scope" className="lux-section lux-section--linen scroll-mt-24" aria-labelledby="experience-scope-title">
         <div className="lux-container">
           <div className="max-w-3xl">
@@ -71,7 +74,7 @@ export function LuxuryRealEstateExperiencePage({ locale }: Props) {
           </div>
           <ol className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {copy.includes.items.map((item, index) => (
-              <li key={item.title} className="rounded-2xl border border-lux-sand bg-white p-6">
+              <li key={item.title} className="lux-product-panel">
                 <p className="text-xs font-semibold tracking-[0.16em] text-lux-gold">0{index + 1}</p>
                 <h3 className="mt-3 text-lg font-semibold text-lux-ink">{item.title}</h3>
                 <ul className="mt-4 space-y-2">
@@ -121,7 +124,7 @@ export function LuxuryRealEstateExperiencePage({ locale }: Props) {
           </div>
           <ol className="mt-10 grid gap-4 lg:grid-cols-3">
             {copy.levels.items.map((level, index) => (
-              <li key={level.name} className="rounded-2xl border border-lux-sand bg-white p-6">
+              <li key={level.name} className="lux-product-panel">
                 <p className="text-xs font-semibold tracking-[0.16em] text-lux-gold">0{index + 1}</p>
                 <h3 className="mt-3 font-semibold text-lux-ink">{level.name}</h3>
                 <p className="mt-2 text-sm text-lux-ink-soft">{level.body}</p>
@@ -181,7 +184,7 @@ export function LuxuryRealEstateExperiencePage({ locale }: Props) {
           </div>
           <ul className="mt-10 grid gap-4 md:grid-cols-3">
             {copy.why.items.map((item) => (
-              <li key={item.title} className="rounded-2xl border border-lux-sand bg-white p-6">
+              <li key={item.title} className="lux-product-panel">
                 <h3 className="font-semibold text-lux-ink">{item.title}</h3>
                 <p className="lux-body mt-3 text-sm leading-relaxed text-lux-ink-soft">{item.body}</p>
               </li>

@@ -6,6 +6,7 @@ import { LuxuryExperienceBriefForm } from "./luxury-experience-brief-form";
 import { LuxuryProductBriefSection } from "./luxury-product-brief-section";
 import { LuxuryProductHero } from "./luxury-product-hero";
 import { LuxuryProductVisualBand } from "./luxury-product-visual-band";
+import { LuxuryProductStoryStrip } from "./luxury-product-story-strip";
 import { LuxuryProductPager, LuxuryProductRelated } from "./luxury-product-related";
 import { LuxuryStickyCta } from "./luxury-sticky-cta";
 
@@ -58,6 +59,8 @@ export function LuxuryCommercialSpacesPage({ locale }: Props) {
 
       <LuxuryProductVisualBand locale={locale} product="commercial-spaces" />
 
+      <LuxuryProductStoryStrip locale={locale} product="commercial-spaces" />
+
       <section className="lux-section lux-section--linen" aria-labelledby="commercial-spaces-starts">
         <div className="lux-container max-w-4xl">
           <p className="lux-eyebrow">{copy.starts.eyebrow}</p>
@@ -66,7 +69,7 @@ export function LuxuryCommercialSpacesPage({ locale }: Props) {
           </h2>
           <ul className="mt-8 grid gap-4 md:grid-cols-2">
             {copy.starts.items.map((item) => (
-              <li key={item.title} className="rounded-2xl border border-lux-sand bg-white p-6">
+              <li key={item.title} className="lux-product-panel">
                 <h3 className="font-semibold text-lux-ink">{item.title}</h3>
                 <p className="lux-body mt-3 text-sm leading-relaxed text-lux-ink-soft">{item.body}</p>
                 {item.href && item.cta ? (
@@ -123,7 +126,7 @@ export function LuxuryCommercialSpacesPage({ locale }: Props) {
           </div>
           <ol className="mt-10 grid gap-4 lg:grid-cols-3">
             {copy.sizes.items.map((item, index) => (
-              <li key={item.title} className="rounded-2xl border border-lux-sand bg-white p-6">
+              <li key={item.title} className="lux-product-panel">
                 <p className="text-xs font-semibold tracking-[0.16em] text-lux-gold">0{index + 1}</p>
                 <h3 className="mt-3 font-semibold text-lux-ink">{item.title}</h3>
                 <p className="lux-body mt-3 text-sm leading-relaxed text-lux-ink-soft">{item.body}</p>
@@ -159,7 +162,7 @@ export function LuxuryCommercialSpacesPage({ locale }: Props) {
           <h2 className="lux-display mt-3 text-3xl leading-tight md:text-4xl">{copy.audience.title}</h2>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
             {copy.audience.items.map((item) => (
-              <li key={item} className="rounded-xl border border-lux-sand bg-white px-4 py-4 text-sm leading-relaxed text-lux-ink">
+              <li key={item} className="lux-product-point">
                 {item}
               </li>
             ))}

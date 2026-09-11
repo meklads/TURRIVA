@@ -1,12 +1,12 @@
 import Image from "next/image";
 import type { ProductVisualKey } from "../lib/product-visuals";
 import { getProductVisuals } from "../lib/product-visuals";
+import { getProductMeta } from "../lib/product-relations";
 import type { Locale } from "@/shared/i18n/locale";
 
 type Props = {
   locale: Locale;
   product: ProductVisualKey;
-  eyebrow: string;
   title: string;
   question?: string;
   body: string;
@@ -14,12 +14,13 @@ type Props = {
   secondaryCta: string;
   secondaryHref?: string;
   titleId: string;
+  /** @deprecated eyebrow kept for call-site compatibility; product name comes from catalog */
+  eyebrow?: string;
 };
 
 export function LuxuryProductHero({
   locale,
   product,
-  eyebrow,
   title,
   question,
   body,
@@ -29,7 +30,11 @@ export function LuxuryProductHero({
   titleId,
 }: Props) {
   const visuals = getProductVisuals(product);
-  const alt = locale === "ar" ? visuals.altAr : visuals.altEn;
+  const meta = getProductMeta(product);
+  const isAr = locale === "ar";
+  const alt = isAr ? visuals.altAr : visuals.altEn;
+  const productName = isAr ? meta.nameAr : meta.nameEn;
+  const productAlt = isAr ? meta.nameEn : meta.nameAr;
 
   return (
     <section className="lux-product-hero" aria-labelledby={titleId}>
@@ -45,7 +50,9 @@ export function LuxuryProductHero({
         <div className="lux-product-hero__shade" aria-hidden />
       </div>
       <div className="lux-container lux-product-hero__content">
-        <p className="lux-eyebrow lux-product-hero__eyebrow">{eyebrow}</p>
+        <p className="lux-product-hero__index">{meta.indexLabel}</p>
+        <p className="lux-product-hero__product">{productName}</p>
+        <p className="lux-product-hero__product-alt">{productAlt}</p>
         <h1 id={titleId} className="lux-display lux-product-hero__title">
           {title}
           {question ? <span className="lux-product-hero__question">{question}</span> : null}

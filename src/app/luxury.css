@@ -346,14 +346,13 @@
   z-index: 55;
   display: none;
   width: auto;
-  max-width: none;
-  margin-inline: 0;
+  max-width: min(72rem, calc(100vw - 2rem));
+  margin-inline: auto;
   padding: 0;
-  border: 1px solid color-mix(in srgb, var(--lux-gold) 24%, var(--lux-sand));
-  border-radius: 1.15rem;
+  border: 1px solid color-mix(in srgb, var(--lux-gold) 22%, var(--lux-sand));
+  border-radius: 1rem;
   background: #fff;
-  box-shadow: 0 24px 56px color-mix(in srgb, var(--lux-ink) 10%, transparent);
-  transform: none;
+  box-shadow: 0 22px 48px color-mix(in srgb, var(--lux-ink) 9%, transparent);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s ease;
@@ -368,7 +367,7 @@
 }
 
 .lux-mega__inner {
-  padding: 0.95rem 1.1rem 1.1rem;
+  padding: 1rem 1.15rem 1.2rem;
 }
 
 .lux-mega__head {
@@ -378,7 +377,7 @@
   justify-content: space-between;
   gap: 0.5rem 1.25rem;
   padding-bottom: 0.75rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
   border-bottom: 1px solid color-mix(in srgb, var(--lux-sand) 85%, transparent);
 }
 
@@ -425,20 +424,53 @@
   font-size: 0.75rem;
 }
 
-/* 7 products → 3 columns → 3 rows only */
-.lux-mega__products {
+.lux-mega__layout {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.65rem;
+  gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .lux-mega__layout {
+    grid-template-columns: minmax(16rem, 0.95fr) minmax(0, 1.25fr);
+    gap: 1.15rem;
+    align-items: start;
+  }
+}
+
+.lux-mega__groups {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.lux-mega__group-title {
+  margin: 0 0 0.45rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lux-gold);
+}
+
+[dir="rtl"] .lux-mega__group-title {
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 0.75rem;
+}
+
+.lux-mega__group-stack {
+  display: grid;
+  gap: 0.45rem;
 }
 
 .lux-mega-card {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 4.75rem minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: center;
   min-height: 0;
   padding: 0.4rem;
-  border: 1px solid color-mix(in srgb, var(--lux-gold) 16%, var(--lux-sand));
-  border-radius: 0.85rem;
+  border: 1px solid color-mix(in srgb, var(--lux-gold) 14%, var(--lux-sand));
+  border-radius: 0.75rem;
   background: #fff;
   text-decoration: none;
   color: inherit;
@@ -450,33 +482,61 @@
 .lux-mega-card:hover,
 .lux-mega-card:focus-visible,
 .lux-mega-card--active {
-  border-color: color-mix(in srgb, var(--lux-gold) 42%, var(--lux-sand));
-  box-shadow: 0 10px 22px color-mix(in srgb, var(--lux-ink) 6%, transparent);
+  border-color: color-mix(in srgb, var(--lux-gold) 40%, var(--lux-sand));
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--lux-ink) 5%, transparent);
   outline: none;
+}
+
+.lux-mega-card--featured {
+  grid-template-columns: 1fr;
+  align-items: stretch;
+  padding: 0.45rem;
+  background: color-mix(in srgb, var(--lux-cream, #f7f1e8) 35%, white);
+}
+
+.lux-mega-card--featured .lux-mega-card__media {
+  aspect-ratio: 4 / 3;
+  min-height: 11rem;
+}
+
+.lux-mega-card--featured .lux-mega-card__body {
+  padding: 0.7rem 0.55rem 0.55rem;
+}
+
+.lux-mega-card--featured .lux-mega-card__title {
+  font-size: 1.05rem;
+}
+
+.lux-mega-card--featured .lux-mega-card__desc {
+  -webkit-line-clamp: 3;
 }
 
 .lux-mega-card__media {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 16 / 10;
-  border-radius: 0.55rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 0.5rem;
   background: var(--lux-stone);
 }
 
 .lux-mega-card__media img {
-  transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: transform 0.22s ease;
 }
 
 .lux-mega-card:hover .lux-mega-card__media img,
 .lux-mega-card:focus-visible .lux-mega-card__media img {
-  transform: scale(1.035);
+  transform: scale(1.03);
 }
 
 .lux-mega-card__body {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  padding: 0.5rem 0.35rem 0.3rem;
+  padding: 0.1rem 0.2rem 0.1rem 0;
+}
+
+[dir="rtl"] .lux-mega-card__body {
+  padding: 0.1rem 0 0.1rem 0.2rem;
 }
 
 .lux-mega-card__number {
@@ -488,7 +548,7 @@
 }
 
 .lux-mega-card__title {
-  margin: 0.15rem 0 0;
+  margin: 0.12rem 0 0;
   font-family: var(--font-latin), Georgia, serif;
   font-size: 0.875rem;
   font-weight: 500;
@@ -502,14 +562,14 @@
 }
 
 .lux-mega-card__en {
-  margin: 0.15rem 0 0;
+  margin: 0.12rem 0 0;
   font-size: 0.6875rem;
   font-weight: 600;
   color: var(--lux-ink-muted);
 }
 
 .lux-mega-card__desc {
-  margin: 0.3rem 0 0;
+  margin: 0.25rem 0 0;
   font-size: 0.7rem;
   line-height: 1.4;
   color: var(--lux-ink-soft);
@@ -519,10 +579,20 @@
   overflow: hidden;
 }
 
-@media (max-width: 1023px) {
-  .lux-mega__products {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.lux-mega-card__cta {
+  margin-top: 0.55rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--lux-gold);
+  transition: transform 0.2s ease;
+}
+
+.lux-mega-card--featured:hover .lux-mega-card__cta {
+  transform: translateX(0.15rem);
+}
+
+[dir="rtl"] .lux-mega-card--featured:hover .lux-mega-card__cta {
+  transform: translateX(-0.15rem);
 }
 
 .lux-header-mobile__row {
@@ -5332,14 +5402,14 @@
   color: var(--lux-ink-soft);
 }
 
-/* —— Product pages V2: editorial full-bleed heroes —— */
+/* —— Product pages V3: quiet premium editorial —— */
 .lux-product-hero {
   position: relative;
   isolation: isolate;
-  min-height: min(88vh, 52rem);
+  min-height: min(84vh, 48rem);
   display: flex;
   align-items: flex-end;
-  padding: clamp(5.5rem, 12vw, 8rem) 0 clamp(2.5rem, 6vw, 4.5rem);
+  padding: clamp(5.5rem, 12vw, 8rem) 0 clamp(2.5rem, 6vw, 4.25rem);
   color: #f7f1e8;
   overflow: hidden;
 }
@@ -5354,20 +5424,50 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(12, 28, 24, 0.28) 0%, rgba(12, 28, 24, 0.55) 42%, rgba(12, 28, 24, 0.88) 100%),
-    linear-gradient(90deg, rgba(12, 28, 24, 0.55) 0%, rgba(12, 28, 24, 0.12) 58%, transparent 100%);
+    linear-gradient(180deg, rgba(12, 28, 24, 0.22) 0%, rgba(12, 28, 24, 0.5) 40%, rgba(12, 28, 24, 0.9) 100%),
+    linear-gradient(90deg, rgba(12, 28, 24, 0.5) 0%, rgba(12, 28, 24, 0.1) 58%, transparent 100%);
 }
 
 [dir="rtl"] .lux-product-hero__shade {
   background:
-    linear-gradient(180deg, rgba(12, 28, 24, 0.28) 0%, rgba(12, 28, 24, 0.55) 42%, rgba(12, 28, 24, 0.88) 100%),
-    linear-gradient(270deg, rgba(12, 28, 24, 0.55) 0%, rgba(12, 28, 24, 0.12) 58%, transparent 100%);
+    linear-gradient(180deg, rgba(12, 28, 24, 0.22) 0%, rgba(12, 28, 24, 0.5) 40%, rgba(12, 28, 24, 0.9) 100%),
+    linear-gradient(270deg, rgba(12, 28, 24, 0.5) 0%, rgba(12, 28, 24, 0.1) 58%, transparent 100%);
 }
 
 .lux-product-hero__content {
   position: relative;
   z-index: 1;
-  max-width: 42rem;
+  max-width: 40rem;
+}
+
+.lux-product-hero__index {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: color-mix(in srgb, var(--lux-gold) 80%, white);
+}
+
+.lux-product-hero__product {
+  margin: 0.85rem 0 0;
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: #f7f1e8;
+}
+
+[dir="ltr"] .lux-product-hero__product {
+  font-family: var(--font-latin), Georgia, serif;
+  font-weight: 500;
+}
+
+.lux-product-hero__product-alt {
+  margin: 0.25rem 0 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: color-mix(in srgb, #f7f1e8 62%, transparent);
 }
 
 .lux-product-hero__eyebrow {
@@ -5375,8 +5475,8 @@
 }
 
 .lux-product-hero__title {
-  margin-top: 0.85rem;
-  font-size: clamp(2.35rem, 5.2vw, 4rem);
+  margin-top: 1.15rem;
+  font-size: clamp(2.15rem, 4.8vw, 3.55rem);
   line-height: 1.08;
   color: #f7f1e8;
   text-wrap: balance;
@@ -5384,24 +5484,24 @@
 
 .lux-product-hero__question {
   display: block;
-  margin-top: 0.35rem;
+  margin-top: 0.3rem;
   color: color-mix(in srgb, #f7f1e8 78%, var(--lux-gold));
-  font-size: 0.92em;
+  font-size: 0.9em;
 }
 
 .lux-product-hero__body {
-  margin-top: 1.15rem;
-  max-width: 36rem;
-  font-size: clamp(1rem, 1.6vw, 1.125rem);
+  margin-top: 1rem;
+  max-width: 34rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.0625rem);
   line-height: 1.65;
-  color: color-mix(in srgb, #f7f1e8 82%, transparent);
+  color: color-mix(in srgb, #f7f1e8 78%, transparent);
 }
 
 .lux-product-hero__cta {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 1.75rem;
+  margin-top: 1.6rem;
 }
 
 .lux-product-hero__outline {
@@ -5418,8 +5518,7 @@
 
 @media (max-width: 639px) {
   .lux-product-hero {
-    min-height: min(92vh, 40rem);
-    align-items: flex-end;
+    min-height: min(88vh, 36rem);
   }
 
   .lux-product-hero__cta {
@@ -5440,14 +5539,14 @@
 
 .lux-product-band__media {
   position: relative;
-  min-height: clamp(16rem, 42vw, 28rem);
+  min-height: clamp(14rem, 38vw, 26rem);
   overflow: hidden;
 }
 
 .lux-product-band__shade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 45%, rgba(12, 28, 24, 0.72) 100%);
+  background: linear-gradient(180deg, transparent 42%, rgba(12, 28, 24, 0.72) 100%);
 }
 
 .lux-product-band__caption {
@@ -5462,12 +5561,70 @@
   color: color-mix(in srgb, #f7f1e8 88%, transparent);
 }
 
-.lux-product-point {
-  padding: 1rem 1.05rem;
-  border: 1px solid color-mix(in srgb, var(--lux-gold) 18%, var(--lux-sand));
-  border-radius: 0.85rem;
-  background: color-mix(in srgb, white 72%, var(--lux-cream, #f7f1e8));
+.lux-product-story {
+  padding: clamp(2.5rem, 5vw, 3.75rem) 0;
+  background: color-mix(in srgb, var(--lux-cream, #f7f1e8) 45%, white);
+}
+
+.lux-product-story__grid {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .lux-product-story__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+.lux-product-story__item {
+  min-width: 0;
+}
+
+.lux-product-story__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--lux-stone);
+}
+
+.lux-product-story__media img {
+  transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.lux-product-story__item:hover .lux-product-story__media img {
+  transform: scale(1.03);
+}
+
+.lux-product-story__num {
+  margin: 0.7rem 0 0;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--lux-gold);
+}
+
+.lux-product-story__caption {
+  margin: 0.25rem 0 0;
   font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--lux-ink);
+}
+
+.lux-product-panel {
+  padding: 1.15rem 0;
+  border-top: 1px solid var(--lux-sand);
+  background: transparent;
+}
+
+.lux-product-point {
+  padding: 0.95rem 0;
+  border-top: 1px solid color-mix(in srgb, var(--lux-gold) 18%, var(--lux-sand));
+  font-size: 0.9375rem;
   line-height: 1.55;
   color: var(--lux-ink);
 }
@@ -5495,37 +5652,54 @@
 .lux-product-related__card {
   display: block;
   height: 100%;
-  padding: 1.35rem 1.4rem 1.5rem;
-  border-top: 1px solid color-mix(in srgb, var(--lux-gold) 35%, var(--lux-sand));
-  border-inline: 0;
-  border-bottom: 1px solid var(--lux-sand);
+  overflow: hidden;
   text-decoration: none;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  color: inherit;
+  border-top: 1px solid color-mix(in srgb, var(--lux-gold) 30%, var(--lux-sand));
+  transition: border-color 0.2s ease;
 }
 
 .lux-product-related__card:hover {
-  background: color-mix(in srgb, var(--lux-cream, #f7f1e8) 55%, white);
   border-top-color: var(--lux-gold);
 }
 
-.lux-product-related__en {
+.lux-product-related__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--lux-stone);
+}
+
+.lux-product-related__media img {
+  transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.lux-product-related__card:hover .lux-product-related__media img {
+  transform: scale(1.03);
+}
+
+.lux-product-related__body {
+  padding: 1rem 0 0.35rem;
+}
+
+.lux-product-related__number {
   margin: 0;
   font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.16em;
   color: var(--lux-gold);
 }
 
-[dir="rtl"] .lux-product-related__en {
-  letter-spacing: 0;
-  text-transform: none;
+.lux-product-related__en {
+  margin: 0.2rem 0 0;
   font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--lux-ink-muted);
 }
 
 .lux-product-related__cta {
   display: inline-block;
-  margin-top: 1.1rem;
+  margin-top: 0.9rem;
   font-size: 0.8125rem;
   font-weight: 600;
   color: var(--lux-gold);
@@ -5533,13 +5707,13 @@
 
 .lux-product-pager {
   border-top: 1px solid var(--lux-sand);
-  background: color-mix(in srgb, var(--lux-cream, #f7f1e8) 40%, white);
+  background: color-mix(in srgb, var(--lux-cream, #f7f1e8) 35%, white);
 }
 
 .lux-product-pager__inner {
   display: grid;
   gap: 1rem;
-  padding: 1.35rem 0;
+  padding: 1.25rem 0;
   align-items: center;
 }
 
