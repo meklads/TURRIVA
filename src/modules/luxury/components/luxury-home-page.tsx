@@ -15,7 +15,7 @@ import {
   LuxuryDefinitionSection,
   LuxuryDevelopersSection,
   LuxuryMethodSection,
-  LuxuryScopesSection,
+  LuxuryProductGroupsSection,
 } from "./luxury-reposition-sections";
 import { LuxuryGroupEcosystemSection } from "./luxury-group-ecosystem-section";
 import { localizePath } from "@/shared/i18n/path";
@@ -32,8 +32,8 @@ export function LuxuryHomePage({ locale }: Props) {
     <>
       <LuxuryHomeHero locale={locale} />
       <LuxuryDefinitionSection locale={locale} />
+      <LuxuryProductGroupsSection locale={locale} />
       <LuxuryDevelopersSection locale={locale} />
-      <LuxuryScopesSection locale={locale} />
       <LuxuryMethodSection locale={locale} />
 
       <section className="lux-section lux-section--white">

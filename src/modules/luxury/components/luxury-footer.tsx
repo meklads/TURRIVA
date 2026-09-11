@@ -47,9 +47,6 @@ export async function LuxuryFooter() {
   ];
 
   const exploreLinks = [
-    { href: lp("/villas"), label: t.nav.villas },
-    { href: lp("/projects"), label: t.nav.projects },
-    { href: lp("/services"), label: seo.nav.services },
     { href: lp("/launch"), label: seo.nav.launch },
     { href: lp("/markets"), label: seo.nav.markets },
     { href: lp("/portfolio"), label: seo.nav.portfolio },
@@ -61,14 +58,12 @@ export async function LuxuryFooter() {
     { href: lp("/contact"), label: t.nav.contact },
   ];
 
-  const solutionLinks = [
-    { href: lp("/villas#kitchens"), label: t.footer.solutions.modularKitchens },
-    { href: lp("/villas#wardrobes"), label: t.footer.solutions.wardrobes },
-    { href: lp("/projects#joinery"), label: t.footer.solutions.b2bJoinery },
-    { href: lp("/styles"), label: seo.nav.styles },
-    { href: lp("/interior-design"), label: t.pages.interiorDesign.title },
-    { href: lp("/construction"), label: t.pages.construction.title },
+  const workLinks = [
+    { href: lp("/fit-out"), label: locale === "ar" ? "نجارة وفق المخططات" : "Joinery to the drawings" },
+    { href: lp("/design-build"), label: locale === "ar" ? "مسكن من فكرة" : "A residence from an idea" },
+    { href: lp("/our-work"), label: locale === "ar" ? "أعمال مختارة" : "Selected work" },
   ];
+  const workTitle = locale === "ar" ? "ضمن العمل" : "Inside the work";
 
   const offices = [
     {
@@ -198,9 +193,9 @@ export async function LuxuryFooter() {
           </div>
 
           <div className="lux-footer-col">
-            <h3 className="lux-footer-col-title">{t.footer.solutionsLinks}</h3>
-            <nav className="lux-footer-links" aria-label={t.footer.solutionsLinks}>
-              {solutionLinks.map((link) => (
+            <h3 className="lux-footer-col-title">{workTitle}</h3>
+            <nav className="lux-footer-links" aria-label={workTitle}>
+              {workLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
                   {link.label}
                 </Link>

@@ -22,14 +22,6 @@ export function LuxuryDefinitionSection({ locale }: Props) {
             </li>
           ))}
         </ul>
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-          <LocalizedLink href="/design-build" className="text-sm font-semibold text-lux-gold">
-            {copy.definition.pathCta}
-          </LocalizedLink>
-          <LocalizedLink href="/commercial-spaces" className="text-sm font-semibold text-lux-gold">
-            {copy.definition.commercialCta}
-          </LocalizedLink>
-        </div>
       </div>
     </section>
   );
@@ -59,37 +51,48 @@ export function LuxuryDevelopersSection({ locale, compact = false }: Props & { c
           ))}
         </ul>
         {!compact ? (
-          <LocalizedLink href="/real-estate-experience" className="lux-btn-primary mt-8 inline-flex">
-            {copy.developers.cta}
-          </LocalizedLink>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <LocalizedLink href="/real-estate-experience" className="lux-btn-primary inline-flex">
+              {copy.developers.cta}
+            </LocalizedLink>
+            <LocalizedLink href="/fit-out" className="lux-btn-outline inline-flex">
+              {copy.developers.fitOutCta}
+            </LocalizedLink>
+          </div>
         ) : null}
       </div>
     </section>
   );
 }
 
-export function LuxuryScopesSection({ locale }: Props) {
+export function LuxuryProductGroupsSection({ locale }: Props) {
   const copy = getRepositionCopy(locale);
 
   return (
-    <section className="lux-section lux-section--linen" aria-labelledby="lux-scopes-title">
+    <section className="lux-section lux-section--linen" aria-labelledby="lux-groups-title">
       <div className="lux-container">
         <div className="max-w-3xl">
-          <p className="lux-eyebrow">{copy.scopes.eyebrow}</p>
-          <h2 id="lux-scopes-title" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
-            {copy.scopes.title}
+          <p className="lux-eyebrow">{copy.groups.eyebrow}</p>
+          <h2 id="lux-groups-title" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
+            {copy.groups.title}
           </h2>
-          <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.scopes.intro}</p>
+          <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.groups.intro}</p>
         </div>
-        <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {copy.scopes.items.map((item, index) => (
-            <li key={item.title} className="rounded-2xl border border-lux-sand bg-white p-5">
-              <p className="text-xs font-semibold tracking-[0.16em] text-lux-gold">0{index + 1}</p>
-              <h3 className="mt-3 font-semibold text-lux-ink">{item.title}</h3>
-              <p className="lux-body mt-2 text-sm leading-relaxed text-lux-ink-soft">{item.body}</p>
+        <ul className="mt-10 grid gap-4 lg:grid-cols-3">
+          {copy.groups.items.map((item) => (
+            <li key={item.title} className="flex flex-col rounded-2xl border border-lux-sand bg-white p-6 shadow-lux-card">
+              <h3 className="lux-display text-xl text-lux-ink">{item.title}</h3>
+              <p className="lux-body mt-3 text-sm leading-relaxed text-lux-ink-soft">{item.question}</p>
+              <div className="mt-6 flex flex-col gap-3">
+                {item.links.map((link) => (
+                  <LocalizedLink key={link.href} href={link.href} className="text-sm font-semibold text-lux-gold">
+                    {link.label}
+                  </LocalizedLink>
+                ))}
+              </div>
             </li>
           ))}
-        </ol>
+        </ul>
       </div>
     </section>
   );

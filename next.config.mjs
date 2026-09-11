@@ -68,6 +68,36 @@ const nextConfig = {
         destination: "/en/real-estate-experience",
         permanent: true,
       },
+      {
+        source: "/services/commercial-fitout",
+        destination: "/commercial-spaces",
+        permanent: true,
+      },
+      {
+        source: "/ar/services/commercial-fitout",
+        destination: "/ar/commercial-spaces",
+        permanent: true,
+      },
+      {
+        source: "/en/services/commercial-fitout",
+        destination: "/en/commercial-spaces",
+        permanent: true,
+      },
+      {
+        source: "/services/hospitality-fitout",
+        destination: "/hospitality-spaces",
+        permanent: true,
+      },
+      {
+        source: "/ar/services/hospitality-fitout",
+        destination: "/ar/hospitality-spaces",
+        permanent: true,
+      },
+      {
+        source: "/en/services/hospitality-fitout",
+        destination: "/en/hospitality-spaces",
+        permanent: true,
+      },
     ];
   },
 };

@@ -22,27 +22,47 @@ function buildLuxuryNavLinks(locale: Locale) {
   } as const;
 }
 
-/** Full nav for mobile scroll row and footer. */
+function productNav(locale: Locale) {
+  const lp = (path: string) => localizePath(path, locale);
+  const ar = locale === "ar";
+  return {
+    experience: { href: lp("/real-estate-experience"), label: ar ? "تجربة المشروع" : "Project experience" },
+    showUnit: { href: lp("/show-unit"), label: ar ? "وحدة العرض" : "Show unit" },
+    designBuild: { href: lp("/design-build"), label: ar ? "تصميم وتنفيذ" : "Design and build" },
+    fitOut: { href: lp("/fit-out"), label: ar ? "التنفيذ" : "Fit-out" },
+    commercial: { href: lp("/commercial-spaces"), label: ar ? "التجاري" : "Commercial" },
+    hospitality: { href: lp("/hospitality-spaces"), label: ar ? "الضيافة" : "Hospitality" },
+    renovation: { href: lp("/renovation"), label: ar ? "التجديد" : "Renovation" },
+  };
+}
+
+/** Mobile row: the three doors, then the rest of the site. */
 export function getLuxuryNavLinks(locale: Locale) {
   const links = buildLuxuryNavLinks(locale);
+  const products = productNav(locale);
+  const ar = locale === "ar";
+  const full = (link: { href: string; label: string }, label: string) => ({ href: link.href, label });
   return [
     links.home,
-    links.developers,
-    links.villas,
-    links.projects,
-    links.services,
+    full(products.experience, ar ? "تجربة المشروع العقاري" : "Project experience"),
+    products.showUnit,
+    full(products.designBuild, ar ? "التصميم والتنفيذ" : "Design and build"),
+    full(products.fitOut, ar ? "التنفيذ والتجهيز" : "Fit-out and execution"),
+    full(products.commercial, ar ? "المساحات التجارية" : "Commercial spaces"),
+    full(products.hospitality, ar ? "مساحات الضيافة" : "Hospitality spaces"),
+    full(products.renovation, ar ? "التجديد والتطوير" : "Renovation and upgrade"),
     links.ourWork,
-    links.portfolio,
     links.professionals,
     links.about,
     links.contact,
   ] as const;
 }
 
-/** Compact desktop bar — logo covers home; CTA covers contact. */
+/** Desktop bar stays six items. The catalogue leaves. Fit-out sits beside the developer door. */
 export function getLuxuryHeaderNavLinks(locale: Locale) {
   const links = buildLuxuryNavLinks(locale);
-  return [links.developers, links.villas, links.projects, links.services, links.ourWork, links.professionals] as const;
+  const products = productNav(locale);
+  return [products.experience, products.designBuild, products.fitOut, products.commercial, links.ourWork, links.professionals] as const;
 }
 
 export const LUXURY_HERO_IMAGE = "/brand/turriva/hero-interior.webp";

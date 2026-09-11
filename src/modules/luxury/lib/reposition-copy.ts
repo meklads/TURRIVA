@@ -7,8 +7,6 @@ export type RepositionCopy = {
     title: string;
     body: string;
     notes: readonly string[];
-    pathCta: string;
-    commercialCta: string;
   };
   developers: {
     eyebrow: string;
@@ -16,13 +14,18 @@ export type RepositionCopy = {
     intro: string;
     points: readonly { title: string; body: string }[];
     cta: string;
+    fitOutCta: string;
     pageCta: string;
   };
-  scopes: {
+  groups: {
     eyebrow: string;
     title: string;
     intro: string;
-    items: readonly { title: string; body: string }[];
+    items: readonly {
+      title: string;
+      question: string;
+      links: readonly { href: string; label: string }[];
+    }[];
   };
   method: {
     eyebrow: string;
@@ -41,12 +44,10 @@ const en: RepositionCopy = {
     title: "Spatial design and execution. Not a furniture shop, and not a tech company.",
     body: "Turriva develops a space and delivers it: design, technical detailing, fabrication, installation, and handover. A finished room or sales environment is the work. Screens and campaigns can support it; they are not the product.",
     notes: [
-      "Built for developers, commercial brands, and hospitality operators, not catalogue decor.",
-      "A new space can start from an idea, or from drawings you already have.",
+      "Built for developers, commercial brands, and owners of existing rooms. Not catalogue decor.",
+      "The first step is a conversation. Cost follows the drawings and the quantities.",
       "Graphics House and Bees Motion join only when the project needs visualization or launch.",
     ],
-    pathCta: "From idea to a finished space",
-    commercialCta: "A space that receives customers",
   },
   developers: {
     eyebrow: "For developers",
@@ -68,18 +69,39 @@ const en: RepositionCopy = {
       },
     ],
     cta: "Real estate project experience",
+    fitOutCta: "Fit-out and execution",
     pageCta: "Discuss your project",
   },
-  scopes: {
-    eyebrow: "How to engage",
-    title: "Five ways to start. You do not have to buy the whole stack.",
-    intro: "Most projects use more than one. The point is a clear scope, not a package label.",
+  groups: {
+    eyebrow: "How to start",
+    title: "Three doors. One company.",
+    intro: "Choose the question that matches the job. The pages behind each door are not seven equal services.",
     items: [
-      { title: "Design only", body: "Spatial concept and technical drawings, ready for a contractor you already have." },
-      { title: "Execution of your design", body: "We fabricate and install from your approved drawings." },
-      { title: "Design and execution", body: "From idea to a finished space, with one team accountable for the result." },
-      { title: "Real-estate experience", body: "A sales gallery, show unit, or launch space, built and supported visually when needed." },
-      { title: "Full property delivery", body: "The fit-out and the experience around it, timed to a launch or opening." },
+      {
+        title: "Real estate",
+        question: "How do I show the project for sale?",
+        links: [
+          { href: "/real-estate-experience", label: "Real estate project experience" },
+          { href: "/show-unit", label: "Show unit" },
+        ],
+      },
+      {
+        title: "Design and build",
+        question: "Do I start from an idea, or from a design I already have?",
+        links: [
+          { href: "/design-build", label: "Design and build" },
+          { href: "/fit-out", label: "Fit-out and execution" },
+        ],
+      },
+      {
+        title: "Spaces",
+        question: "A place that receives customers, a stay, or a room that already exists?",
+        links: [
+          { href: "/commercial-spaces", label: "Commercial spaces" },
+          { href: "/hospitality-spaces", label: "Hospitality spaces" },
+          { href: "/renovation", label: "Renovation and upgrade" },
+        ],
+      },
     ],
   },
   method: {
@@ -106,12 +128,10 @@ const ar: RepositionCopy = {
     title: "تصميم مكاني وتنفيذ. ليست متجر ديكور، وليست شركة تقنية.",
     body: "توريفا تطوّر الفراغ وتسلّمه: تصميم، تفصيل فني، تصنيع، تركيب، وتسليم. المنتج مكان مكتمل. الشاشات والحملات قد تخدمه، لكنها ليست المنتج.",
     notes: [
-      "للمطورين والعلامات التجارية ومشغّلي الضيافة، لا لكتالوج الأثاث.",
-      "المساحة الجديدة يمكن أن تبدأ من فكرة، أو من مخططات لديكم.",
+      "للمطورين والعلامات وملاك المساحات القائمة، لا لكتالوج الأثاث.",
+      "الخطوة الأولى محادثة. التكلفة تتبع المخططات والكميات.",
       "جرافيكس هاوس وبيزموشن يدخلان فقط عندما يحتاج المشروع تصورًا أو إطلاقًا.",
     ],
-    pathCta: "من الفكرة إلى مساحة جاهزة",
-    commercialCta: "مساحة تستقبل العملاء",
   },
   developers: {
     eyebrow: "للمطورين",
@@ -133,18 +153,39 @@ const ar: RepositionCopy = {
       },
     ],
     cta: "تجربة المشروع العقاري",
+    fitOutCta: "التنفيذ والتجهيز",
     pageCta: "ناقش مشروعك معنا",
   },
-  scopes: {
+  groups: {
     eyebrow: "كيف نبدأ",
-    title: "خمس طرق للبدء. لست مضطرًا لشراء المنظومة كاملة.",
-    intro: "معظم المشاريع تستخدم أكثر من طريقة. المهم نطاق واضح، لا اسم باقة.",
+    title: "ثلاثة أبواب. شركة واحدة.",
+    intro: "اختر السؤال الذي يطابق العمل. الصفحات خلف كل باب ليست سبع خدمات متساوية.",
     items: [
-      { title: "تصميم فقط", body: "فكرة مكانية ومخططات فنية، جاهزة لمقاول لديكم." },
-      { title: "تنفيذ تصميمكم", body: "نصنّع ونركّب من مخططاتكم المعتمدة." },
-      { title: "تصميم وتنفيذ", body: "من الفكرة إلى مكان مكتمل، مع فريق واحد مسؤول عن النتيجة." },
-      { title: "تجربة عقارية", body: "معرض مبيعات أو وحدة عرض أو مساحة إطلاق، مبنية ومدعومة بصريًا عند الحاجة." },
-      { title: "تسليم عقاري كامل", body: "التشطيب والتجربة حوله، في توقيت الإطلاق أو الافتتاح." },
+      {
+        title: "العقار",
+        question: "كيف أُظهر المشروع للبيع؟",
+        links: [
+          { href: "/real-estate-experience", label: "تجربة المشروع العقاري" },
+          { href: "/show-unit", label: "وحدة العرض" },
+        ],
+      },
+      {
+        title: "التصميم والتنفيذ",
+        question: "أبدأ من فكرة، أم من تصميم موجود؟",
+        links: [
+          { href: "/design-build", label: "التصميم والتنفيذ" },
+          { href: "/fit-out", label: "التنفيذ والتجهيز" },
+        ],
+      },
+      {
+        title: "المساحات",
+        question: "مكان يستقبل عملاء، أم إقامة، أم غرفة قائمة؟",
+        links: [
+          { href: "/commercial-spaces", label: "المساحات التجارية" },
+          { href: "/hospitality-spaces", label: "مساحات الضيافة" },
+          { href: "/renovation", label: "التجديد والتطوير" },
+        ],
+      },
     ],
   },
   method: {
