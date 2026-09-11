@@ -292,7 +292,7 @@ export type LuxuryMessages = LuxuryPlatformMessages & {
 
 const en: LuxuryMessages = {
   ...getLuxuryPlatformMessages("en"),
-  brand: { name: "Turriva", tagline: "Design · Experience · Build" },
+  brand: { name: "Turriva", tagline: "Spatial Design · Experience · Build" },
   nav: {
     home: "Home",
     villas: "Residential",
@@ -310,9 +310,9 @@ const en: LuxuryMessages = {
     eyebrow: "A Tasami Group company · Saudi Arabia",
     title: "From concept to physical reality.",
     subtitle:
-      "We design and build the space, and the way a client moves through it. Design · Experience · Build. Not a furniture shop. Not a software company.",
-    servicesLine: "Design · Experience · Build",
-    tags: ["Design", "Experience", "Build"],
+      "Turriva designs and delivers spaces for residential, commercial, hospitality, and real estate projects. Not a furniture shop. Not a software company.",
+    servicesLine: "Spatial Design · Experience · Build",
+    tags: ["Spatial Design", "Experience", "Build"],
     ctaPrimary: "Discuss your project",
     ctaSecondary: "Project experience",
     ctaSample: "Send the drawings",
@@ -344,28 +344,24 @@ const en: LuxuryMessages = {
     cta: "Talk to our team",
   },
   capabilities: {
-    eyebrow: "What we deliver",
-    title: "Four disciplines, one coherent vision",
+    eyebrow: "Capabilities",
+    title: "What Turriva can execute",
     items: [
       {
-        title: "Villas & palaces",
-        description:
-          "Majlis, dining, bedrooms, and kitchens, contemporary Gulf character with materials chosen for daily use and Saudi climate.",
+        title: "Spatial design",
+        description: "The plan, materials, and how the room is used. A capability inside a product, not a product of its own.",
       },
       {
-        title: "Retail & hospitality",
-        description:
-          "Boutiques, showrooms, and guest-facing spaces that carry your brand and stand up to real footfall.",
+        title: "Technical development",
+        description: "Shop drawings, quantities, and a specification that can be built.",
       },
       {
-        title: "Facades & arrival",
-        description:
-          "Street presence and entry sequences for villas and commercial buildings, consistent from gate to lobby.",
+        title: "Joinery and fabrication",
+        description: "Custom joinery to the drawings. Support for kitchens and wardrobes when the room needs them, not as the brand identity.",
       },
       {
-        title: "Exhibitions & brand spaces",
-        description:
-          "Fair booths and activations: design, build, install, and dismantle on tight show calendars.",
+        title: "Fit-out and experience",
+        description: "Installation, handover, and experience integration only when the project requires it.",
       },
     ],
   },
@@ -505,7 +501,7 @@ const en: LuxuryMessages = {
       "Turriva designs and builds spaces and experiences. Execution is part of the product, not the whole identity. Hire Turriva alone. The group joins only when the project needs it.",
     quickLinks: "Quick Links",
     importantLinks: "Important Links",
-    servicesLinks: "What we do",
+    servicesLinks: "Capabilities",
     solutionsLinks: "Solutions",
     offices: "Offices",
     countries: {
@@ -928,7 +924,7 @@ const en: LuxuryMessages = {
 
 const ar: LuxuryMessages = {
   ...getLuxuryPlatformMessages("ar"),
-  brand: { name: "توريفا", tagline: "تصميم · تجربة · تنفيذ" },
+  brand: { name: "توريفا", tagline: "تصميم مكاني · تجربة · تنفيذ" },
   nav: {
     home: "الرئيسية",
     villas: "تنفيذ سكني",
@@ -946,9 +942,9 @@ const ar: LuxuryMessages = {
     eyebrow: "إحدى شركات مجموعة تسامي · المملكة العربية السعودية",
     title: "من الفكرة إلى واقع ملموس.",
     subtitle:
-      "نصمم وننفذ المساحة، وطريقة مرور العميل فيها. تصميم · تجربة · تنفيذ. ليست متجر أثاث، وليست شركة برمجيات.",
-    servicesLine: "تصميم · تجربة · تنفيذ",
-    tags: ["تصميم", "تجربة", "تنفيذ"],
+      "توريفا تصمم وتنفذ المساحات للمشاريع السكنية والتجارية والضيافة والتطوير العقاري. ليست متجر أثاث، وليست شركة برمجيات.",
+    servicesLine: "تصميم مكاني · تجربة · تنفيذ",
+    tags: ["تصميم مكاني", "تجربة", "تنفيذ"],
     ctaPrimary: "ناقش مشروعك",
     ctaSecondary: "تجربة المشروع",
     ctaSample: "أرسل المخططات",
@@ -980,28 +976,24 @@ const ar: LuxuryMessages = {
     cta: "تواصل مع الفريق",
   },
   capabilities: {
-    eyebrow: "مجالاتنا",
-    title: "أربعة محاور… رؤية واحدة",
+    eyebrow: "القدرات",
+    title: "ما الذي يمكن لتوريفا تنفيذه",
     items: [
       {
-        title: "فلل وقصور",
-        description:
-          "مجلس وضيافة وغرف نوم ومطابخ، طابع خليجي معاصر وخامات تُختار للاستخدام اليومي ومناخ المملكة.",
+        title: "التصميم المكاني",
+        description: "التخطيط والمواد وطريقة استخدام الغرفة. قدرة داخل منتج، لا منتج مستقل.",
       },
       {
-        title: "تجزئة وضيافة",
-        description:
-          "محلات وصالات عرض ومساحات استقبال الزوار، حضور للعلامة ومتانة أمام الزحام الحقيقي.",
+        title: "التطوير الفني",
+        description: "مخططات تنفيذ وكميات ومواصفات قابلة للبناء.",
       },
       {
-        title: "واجهات ومداخل",
-        description:
-          "حضور الشارع وتسلسل الدخول للفلل والمباني التجارية، من البوابة إلى الردهة.",
+        title: "النجارة والتصنيع",
+        description: "نجارة وفق المخططات. دعم المطابخ والخزائن عندما تحتاجها الغرفة، لا كهوية للعلامة.",
       },
       {
-        title: "معارض ومساحات العلامات",
-        description:
-          "أجنحة وفعاليات: تصميم وتصنيع وتركيب وإزالة ضمن جداول المعارض.",
+        title: "التجهيز والتجربة",
+        description: "تركيب وتسليم ودمج تجربة فقط عندما يحتاجها المشروع.",
       },
     ],
   },
@@ -1141,7 +1133,7 @@ const ar: LuxuryMessages = {
       "توريفا تصمم وتنفذ المساحات والتجارب. التنفيذ جزء من المنتج، لا الهوية كلها. تعاقد مع توريفا وحدها. استخدم المجموعة عندما يحتاجها المشروع.",
     quickLinks: "روابط سريعة",
     importantLinks: "أهم الروابط",
-    servicesLinks: "ما نقوم به",
+    servicesLinks: "القدرات",
     solutionsLinks: "الحلول",
     offices: "مكاتبنا",
     countries: {

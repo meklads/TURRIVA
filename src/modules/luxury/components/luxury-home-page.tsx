@@ -3,15 +3,16 @@ import { LuxuryProjectFunnelForm } from "./luxury-project-funnel-form";
 import { LuxuryStickyCta } from "./luxury-sticky-cta";
 import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import type { Locale } from "@/shared/i18n/locale";
-import { LuxuryFaqSection } from "./luxury-faq-section";
 import { LuxuryHomeHero } from "./luxury-home-hero";
-import { LuxurySampleKitBand } from "./luxury-sample-kit-band";
 import {
   LuxuryAlbumSection,
   LuxuryDefinitionSection,
   LuxuryDevelopersSection,
+  LuxuryFeaturedExperienceSection,
+  LuxuryHomeCapabilitiesSection,
   LuxuryMethodSection,
-  LuxuryProductGroupsSection,
+  LuxuryProductsWeightedSection,
+  LuxuryTeamExperienceSection,
 } from "./luxury-reposition-sections";
 import { LuxuryGroupEcosystemSection } from "./luxury-group-ecosystem-section";
 import { localizePath } from "@/shared/i18n/path";
@@ -28,13 +29,14 @@ export function LuxuryHomePage({ locale }: Props) {
     <>
       <LuxuryHomeHero locale={locale} />
       <LuxuryDefinitionSection locale={locale} />
-      <LuxuryAlbumSection locale={locale} />
-      <LuxuryProductGroupsSection locale={locale} />
       <LuxuryDevelopersSection locale={locale} />
+      <LuxuryProductsWeightedSection locale={locale} />
+      <LuxuryHomeCapabilitiesSection locale={locale} />
+      <LuxuryFeaturedExperienceSection locale={locale} />
+      <LuxuryAlbumSection locale={locale} />
+      <LuxuryTeamExperienceSection locale={locale} />
       <LuxuryMethodSection locale={locale} />
       <LuxuryGroupEcosystemSection locale={locale} />
-      <LuxurySampleKitBand messages={t} locale={locale} />
-      <LuxuryFaqSection messages={t} />
 
       <section id="brief" className="lux-cta-band" aria-labelledby="home-cta-heading">
         <div className="lux-container">

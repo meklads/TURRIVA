@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { LocalizedLink } from "@/shared/components/localized-link";
 import { getRepositionCopy } from "@/modules/luxury/lib/reposition-copy";
+import { CASE_STUDIES } from "@/modules/luxury/lib/case-studies";
 import type { Locale } from "@/shared/i18n/locale";
 
 type Props = { locale: Locale };
@@ -10,20 +11,13 @@ export function LuxuryDefinitionSection({ locale }: Props) {
 
   return (
     <section className="lux-section lux-section--white lux-definition" aria-labelledby="lux-definition-title">
-      <div className="lux-container max-w-4xl">
+      <div className="lux-container max-w-3xl">
         <p className="lux-eyebrow">{copy.definition.eyebrow}</p>
-        <h2 id="lux-definition-title" className="lux-display mt-3 text-3xl leading-tight text-lux-ink md:text-4xl lg:text-[2.75rem]">
+        <h2 id="lux-definition-title" className="lux-display mt-3 text-3xl leading-tight text-lux-ink md:text-4xl">
           {copy.definition.title}
         </h2>
         <p className="lux-definition__audiences mt-5">{copy.definition.audiences}</p>
-        <p className="lux-body mt-5 max-w-3xl text-lg leading-relaxed text-lux-ink-soft">{copy.definition.body}</p>
-        <ul className="lux-definition__notes mt-10">
-          {copy.definition.notes.map((note) => (
-            <li key={note} className="lux-definition__note">
-              {note}
-            </li>
-          ))}
-        </ul>
+        <p className="lux-body mt-5 text-lg leading-relaxed text-lux-ink-soft">{copy.definition.body}</p>
       </div>
     </section>
   );
@@ -58,14 +52,144 @@ export function LuxuryDevelopersSection({ locale, compact = false }: Props & { c
         </ul>
         {!compact ? (
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <LocalizedLink href="/real-estate-experience" className="lux-btn-primary inline-flex">
+            <LocalizedLink href="#brief" className="lux-btn-primary inline-flex">
               {copy.developers.cta}
             </LocalizedLink>
-            <LocalizedLink href="/fit-out" className="lux-btn-outline inline-flex">
-              {copy.developers.fitOutCta}
+            <LocalizedLink href="/real-estate-experience" className="lux-btn-outline inline-flex">
+              {copy.featured.cta}
             </LocalizedLink>
           </div>
         ) : null}
+      </div>
+    </section>
+  );
+}
+
+export function LuxuryProductsWeightedSection({ locale }: Props) {
+  const copy = getRepositionCopy(locale);
+  const isAr = locale === "ar";
+
+  return (
+    <section className="lux-section lux-section--white lux-products-weighted" aria-labelledby="lux-products-title">
+      <div className="lux-container">
+        <div className="max-w-3xl">
+          <p className="lux-eyebrow">{copy.products.eyebrow}</p>
+          <h2 id="lux-products-title" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
+            {copy.products.title}
+          </h2>
+          <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.products.intro}</p>
+        </div>
+
+        <ul className="lux-products-weighted__primary mt-10">
+          {copy.products.primary.map((item) => (
+            <li key={item.href}>
+              <LocalizedLink href={item.href} className="lux-product-card lux-product-card--primary group">
+                <div className="lux-product-card__media">
+                  <Image
+                    src={item.image}
+                    alt={isAr ? item.nameAr : item.nameEn}
+                    fill
+                    className="object-cover transition-transform duration-[1.1s] ease-out group-hover:scale-[1.03]"
+                    sizes="(max-width: 1024px) 100vw, 33vw"
+                  />
+                </div>
+                <div className="lux-product-card__body">
+                  <h3 className="lux-display text-xl text-lux-ink">{isAr ? item.nameAr : item.nameEn}</h3>
+                  <p className="lux-product-card__en">{isAr ? item.nameEn : item.nameAr}</p>
+                  <p className="lux-body mt-3 text-sm leading-relaxed text-lux-ink-soft">{item.description}</p>
+                  <span className="lux-product-card__cta">{copy.products.learnMore}</span>
+                </div>
+              </LocalizedLink>
+            </li>
+          ))}
+        </ul>
+
+        <ul className="lux-products-weighted__secondary mt-6">
+          {copy.products.secondary.map((item) => (
+            <li key={item.href}>
+              <LocalizedLink href={item.href} className="lux-product-card lux-product-card--secondary group">
+                <div className="lux-product-card__media lux-product-card__media--sm">
+                  <Image
+                    src={item.image}
+                    alt={isAr ? item.nameAr : item.nameEn}
+                    fill
+                    className="object-cover transition-transform duration-[1.1s] ease-out group-hover:scale-[1.03]"
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                  />
+                </div>
+                <div className="lux-product-card__body">
+                  <h3 className="lux-display text-lg text-lux-ink">{isAr ? item.nameAr : item.nameEn}</h3>
+                  <p className="lux-product-card__en">{isAr ? item.nameEn : item.nameAr}</p>
+                  <p className="lux-body mt-2 text-sm leading-relaxed text-lux-ink-soft">{item.description}</p>
+                  <span className="lux-product-card__cta">{copy.products.learnMore}</span>
+                </div>
+              </LocalizedLink>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+export function LuxuryHomeCapabilitiesSection({ locale }: Props) {
+  const copy = getRepositionCopy(locale);
+
+  return (
+    <section className="lux-section lux-section--linen lux-home-capabilities" aria-labelledby="lux-capabilities-title">
+      <div className="lux-container">
+        <div className="max-w-3xl">
+          <p className="lux-eyebrow">{copy.capabilities.eyebrow}</p>
+          <h2 id="lux-capabilities-title" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
+            {copy.capabilities.title}
+          </h2>
+          <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.capabilities.intro}</p>
+        </div>
+        <ul className="lux-home-capabilities__grid mt-10">
+          {copy.capabilities.items.map((item) => (
+            <li key={item.title} className="lux-home-capabilities__item">
+              <h3 className="text-sm font-semibold text-lux-ink">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-lux-ink-soft">{item.description}</p>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-8">
+          <LocalizedLink href="/services" className="lux-btn-outline inline-flex">
+            {copy.capabilities.cta}
+          </LocalizedLink>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function LuxuryFeaturedExperienceSection({ locale }: Props) {
+  const copy = getRepositionCopy(locale);
+
+  return (
+    <section className="lux-section lux-section--cream lux-featured-re" aria-labelledby="lux-featured-title">
+      <div className="lux-container">
+        <div className="lux-featured-re__grid">
+          <div className="lux-featured-re__media">
+            <Image
+              src="/brand/turriva/makkah-charter-04.jpeg"
+              alt={copy.featured.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 900px) 100vw, 52vw"
+            />
+          </div>
+          <div className="lux-featured-re__copy">
+            <p className="lux-eyebrow">{copy.featured.eyebrow}</p>
+            <h2 id="lux-featured-title" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
+              {copy.featured.title}
+            </h2>
+            <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.featured.body}</p>
+            <LocalizedLink href="/real-estate-experience" className="lux-btn-primary mt-8 inline-flex">
+              {copy.featured.cta}
+            </LocalizedLink>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -75,7 +199,7 @@ export function LuxuryAlbumSection({ locale }: Props) {
   const copy = getRepositionCopy(locale);
 
   return (
-    <section className="lux-section lux-section--linen lux-album" aria-labelledby="lux-album-title">
+    <section className="lux-section lux-section--white lux-album" aria-labelledby="lux-album-title">
       <div className="lux-container max-w-3xl text-center">
         <p className="lux-eyebrow">{copy.album.eyebrow}</p>
         <div className="lux-divider-gold" />
@@ -124,38 +248,59 @@ export function LuxuryAlbumSection({ locale }: Props) {
   );
 }
 
-export function LuxuryProductGroupsSection({ locale }: Props) {
+export function LuxuryTeamExperienceSection({ locale }: Props) {
   const copy = getRepositionCopy(locale);
+  const isAr = locale === "ar";
+  const studies = CASE_STUDIES.filter((study) => study.attribution === "team").slice(0, 3);
 
   return (
-    <section className="lux-section lux-section--white lux-doors" aria-labelledby="lux-groups-title">
+    <section className="lux-section lux-section--linen lux-team-experience" aria-labelledby="lux-team-title">
       <div className="lux-container">
         <div className="max-w-3xl">
-          <p className="lux-eyebrow">{copy.groups.eyebrow}</p>
-          <h2 id="lux-groups-title" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
-            {copy.groups.title}
+          <p className="lux-eyebrow">{copy.team.eyebrow}</p>
+          <h2 id="lux-team-title" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
+            {copy.team.title}
           </h2>
-          <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.groups.intro}</p>
+          <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.team.intro}</p>
+          <p className="lux-album__note mt-3">{copy.team.note}</p>
         </div>
-        <ul className="lux-doors__grid mt-10">
-          {copy.groups.items.map((item, index) => (
-            <li key={item.title} className="lux-door-card lux-door-card--tall">
-              <p className="lux-door-card__index">0{index + 1}</p>
-              <h3 className="lux-display mt-3 text-xl text-lux-ink">{item.title}</h3>
-              <p className="lux-body mt-3 text-sm leading-relaxed text-lux-ink-soft">{item.question}</p>
-              <div className="lux-door-card__links mt-auto pt-6">
-                {item.links.map((link) => (
-                  <LocalizedLink key={link.href} href={link.href} className="lux-door-card__link">
-                    {link.label}
-                  </LocalizedLink>
-                ))}
-              </div>
+        <ul className="mt-10 grid gap-4 md:grid-cols-3">
+          {studies.map((study) => (
+            <li key={study.slug}>
+              <LocalizedLink href={`/our-work/${study.slug}`} className="lux-door-card group block h-full">
+                <div className="relative mb-4 aspect-[4/3] overflow-hidden rounded-lg bg-lux-stone">
+                  <Image
+                    src={study.image}
+                    alt={isAr ? study.titleAr : study.titleEn}
+                    fill
+                    className="object-cover transition-transform duration-[1.1s] ease-out group-hover:scale-[1.03]"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <p className="text-xs font-semibold tracking-[0.12em] text-lux-gold uppercase">
+                  {isAr ? study.categoryAr : study.categoryEn}
+                </p>
+                <h3 className="lux-display mt-2 text-lg text-lux-ink">{isAr ? study.titleAr : study.titleEn}</h3>
+                <p className="lux-body mt-2 text-sm leading-relaxed text-lux-ink-soft">
+                  {isAr ? study.summaryAr : study.summaryEn}
+                </p>
+              </LocalizedLink>
             </li>
           ))}
         </ul>
+        <div className="mt-8">
+          <LocalizedLink href="/our-work" className="lux-btn-outline inline-flex">
+            {copy.team.cta}
+          </LocalizedLink>
+        </div>
       </div>
     </section>
   );
+}
+
+/** @deprecated Prefer LuxuryProductsWeightedSection on homepage */
+export function LuxuryProductGroupsSection({ locale }: Props) {
+  return <LuxuryProductsWeightedSection locale={locale} />;
 }
 
 export function LuxuryMethodSection({ locale }: Props) {

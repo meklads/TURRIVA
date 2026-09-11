@@ -65,12 +65,12 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL("https://turriva.com"),
     title:
       locale === "ar"
-        ? "توريفا · تصميم · تجربة · تنفيذ"
-        : "Turriva · Design · Experience · Build",
+        ? "توريفا · تصميم مكاني · تجربة · تنفيذ"
+        : "Turriva · Spatial Design · Experience · Build",
     description:
       locale === "ar"
-        ? "تصميم وتنفيذ المساحات والتجارب. من الفكرة إلى واقع ملموس."
-        : "Design and execution of spaces and experiences. From concept to physical reality.",
+        ? "تصميم وتنفيذ المساحات والتجارب. من الفكرة إلى الواقع."
+        : "Design and execution of spaces and experiences. From concept to reality.",
     ...(googleVerification
       ? { verification: { google: googleVerification } }
       : {}),

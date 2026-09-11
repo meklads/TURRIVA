@@ -36,20 +36,21 @@ function productNav(locale: Locale) {
   };
 }
 
-/** Mobile row: short product doors, then the rest of the site. */
+/** Mobile: commercial map without dumping seven equal chips only. */
 export function getLuxuryNavLinks(locale: Locale) {
   const links = buildLuxuryNavLinks(locale);
   const products = productNav(locale);
+  const ar = locale === "ar";
   return [
     links.home,
     products.experience,
     products.showUnit,
     products.designBuild,
     products.fitOut,
-    products.commercial,
-    products.hospitality,
-    products.renovation,
+    { href: links.developers.href, label: ar ? "المطورون" : "Developers" },
+    { href: products.fitOut.href, label: ar ? "للمهندسين" : "Designers" },
     links.ourWork,
+    links.about,
     links.contact,
   ] as const;
 }
@@ -87,15 +88,15 @@ export function getLuxuryProductMenu(locale: Locale) {
   };
 }
 
-/** Desktop: products, then the two buyers, then the work. Contact stays the button. */
+/** Desktop: Products dropdown, then Work, buyers, About. Contact stays the button. */
 export function getLuxuryHeaderNavLinks(locale: Locale) {
   const links = buildLuxuryNavLinks(locale);
   const ar = locale === "ar";
   const lp = (path: string) => localizePath(path, locale);
   return [
-    { href: lp("/real-estate-experience"), label: ar ? "المطورون" : "Developers" },
-    { href: lp("/fit-out"), label: ar ? "المصممون" : "Designers" },
     links.ourWork,
+    { href: links.developers.href, label: ar ? "للمطورين" : "Developers" },
+    { href: lp("/fit-out"), label: ar ? "للمهندسين" : "Designers" },
     links.about,
   ] as const;
 }

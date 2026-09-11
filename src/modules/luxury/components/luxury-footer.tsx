@@ -59,9 +59,10 @@ export async function LuxuryFooter() {
   const workLinks = [
     { href: lp("/fit-out"), label: locale === "ar" ? "نجارة وفق المخططات" : "Joinery to the drawings" },
     { href: lp("/design-build"), label: locale === "ar" ? "مسكن من فكرة" : "A residence from an idea" },
+    { href: lp("/services"), label: locale === "ar" ? "القدرات" : "Capabilities" },
     { href: lp("/our-work"), label: locale === "ar" ? "أعمال مختارة" : "Selected work" },
   ];
-  const workTitle = locale === "ar" ? "ضمن العمل" : "Inside the work";
+  const workTitle = locale === "ar" ? "قدرات متخصصة" : "Specialized execution";
 
   const offices = [
     {

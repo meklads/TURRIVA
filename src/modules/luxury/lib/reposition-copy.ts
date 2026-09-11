@@ -7,7 +7,6 @@ export type RepositionCopy = {
     title: string;
     body: string;
     audiences: string;
-    notes: readonly string[];
   };
   developers: {
     eyebrow: string;
@@ -18,6 +17,39 @@ export type RepositionCopy = {
     fitOutCta: string;
     pageCta: string;
   };
+  products: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    learnMore: string;
+    primary: readonly {
+      href: string;
+      nameAr: string;
+      nameEn: string;
+      description: string;
+      image: string;
+    }[];
+    secondary: readonly {
+      href: string;
+      nameAr: string;
+      nameEn: string;
+      description: string;
+      image: string;
+    }[];
+  };
+  capabilities: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    items: readonly { title: string; description: string }[];
+    cta: string;
+  };
+  featured: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    cta: string;
+  };
   album: {
     eyebrow: string;
     title: string;
@@ -26,15 +58,12 @@ export type RepositionCopy = {
     cta: string;
     items: readonly { image: string; category: string; title: string; href: string }[];
   };
-  groups: {
+  team: {
     eyebrow: string;
     title: string;
     intro: string;
-    items: readonly {
-      title: string;
-      question: string;
-      links: readonly { href: string; label: string }[];
-    }[];
+    note: string;
+    cta: string;
   };
   method: {
     eyebrow: string;
@@ -46,99 +75,159 @@ export type RepositionCopy = {
   honestNote: string;
 };
 
+const PRODUCT_IMAGES = {
+  experience: "/brand/turriva/makkah-charter-04.jpeg",
+  showUnit: "/brand/turriva/projects/project-walk-in-makkah.webp",
+  designBuild: "/brand/turriva/hero-interior.webp",
+  fitOut: "/brand/turriva/projects/project-joinery-b2b.webp",
+  commercial: "/brand/turriva/sample-kit-showroom.webp",
+  hospitality: "/brand/turriva/projects/project-walk-in-makkah.webp",
+  renovation: "/brand/turriva/projects/project-kitchen-jeddah.webp",
+} as const;
+
 const en: RepositionCopy = {
   navDevelopers: "Project experience",
   definition: {
     eyebrow: "What Turriva is",
     title: "Design and execution of spaces and experiences.",
-    body: "Not a furniture shop, and not a tech company. Turriva develops the space and delivers it: design, technical detailing, fabrication, installation, and handover. The product is a finished room. Screens and campaigns can support it. They are not the product.",
-    audiences: "For developers · Commercial projects · Hospitality · Homes",
-    notes: [
-      "The first commercial door is real estate project experience: the place a development meets its clients.",
-      "The first step is a conversation. Cost follows the drawings and the quantities.",
-      "Hire Turriva alone. Graphics House and Bees Motion join only when the project needs them.",
-    ],
+    body: "From spatial design and technical development to procurement, installation, and handover, Turriva works as one partner to turn a space from drawings into a place ready to use or to present.",
+    audiences: "Residential · Commercial · Hospitality · Real estate development",
   },
   developers: {
-    eyebrow: "Primary door",
-    title: "Your project is ready to sell. Is the way you show it ready?",
+    eyebrow: "For real estate developers",
+    title: "From the project to the client experience.",
     intro:
-      "We design and deliver the place where the project meets its clients: a sales gallery, a show unit, models, and fit-out. The scope follows the project. We do not promise higher sales. We build the environment that lets a buyer understand the living standard.",
+      "The project may be ready to sell, but the way it is presented still needs a clear environment. Turriva designs and delivers the spaces where a development meets its clients.",
     points: [
       {
         title: "Sales gallery and show villa",
-        body: "The physical space a buyer walks through, coordinated with the visual work, not a loose furniture list.",
+        body: "A clearer presentation of the living standard, not a loose furniture list.",
       },
       {
-        title: "Fit-out of the asset",
-        body: "Reception, suites, and shared spaces executed from drawings or from a design we develop with you.",
+        title: "Show apartment and project presentation",
+        body: "A path the buyer walks, coordinated with models and visual work when needed.",
       },
       {
-        title: "One accountable delivery",
-        body: "Design, detailing, supply, and site in one conversation, so the finished space matches what was approved.",
+        title: "Interactive experience and build",
+        body: "Screens and models support the room when useful. They are not the product.",
       },
     ],
-    cta: "Real estate project experience",
+    cta: "Discuss your real estate project",
     fitOutCta: "Fit-out and execution",
     pageCta: "Discuss your project",
   },
-  album: {
-    eyebrow: "The work",
-    title: "Spaces, not a catalogue.",
-    subtitle: "Each frame opens the door it belongs to. Look at the room, not at a product list.",
-    note: "Selected team experience and live work. Not a list of historical Turriva contracts.",
-    cta: "Selected work",
-    items: [
-      { image: "/brand/turriva/makkah-charter-04.jpeg", category: "Real estate", title: "The place a project is shown", href: "/real-estate-experience" },
-      { image: "/brand/turriva/projects/project-walk-in-makkah.webp", category: "Show unit", title: "A unit a buyer walks", href: "/show-unit" },
-      { image: "/brand/turriva/hero-interior.webp", category: "Design and build", title: "From an idea to a room", href: "/design-build" },
-      { image: "/brand/turriva/projects/project-joinery-b2b.webp", category: "Fit-out", title: "Drawings, built", href: "/fit-out" },
-      { image: "/brand/turriva/sample-kit-showroom.webp", category: "Commercial", title: "Where the customer meets the brand", href: "/commercial-spaces" },
-      { image: "/brand/turriva/projects/project-kitchen-jeddah.webp", category: "Renovation", title: "What stays, and what changes", href: "/renovation" },
+  products: {
+    eyebrow: "Products",
+    title: "What you can buy from Turriva.",
+    intro: "Seven products behind three doors. The first three carry the commercial weight.",
+    learnMore: "Learn more",
+    primary: [
+      {
+        href: "/real-estate-experience",
+        nameAr: "تجربة المشروع العقاري",
+        nameEn: "Real Estate Project Experience",
+        description: "The environment where a development meets its clients: sales gallery, show unit, presentation, and fit-out.",
+        image: PRODUCT_IMAGES.experience,
+      },
+      {
+        href: "/show-unit",
+        nameAr: "وحدة العرض",
+        nameEn: "Show Unit",
+        description: "A villa, apartment, or suite a buyer can walk. Not finishing alone: the lifestyle the project sells.",
+        image: PRODUCT_IMAGES.showUnit,
+      },
+      {
+        href: "/design-build",
+        nameAr: "التصميم والتنفيذ",
+        nameEn: "Design & Build",
+        description: "From an idea to a space ready to use: design, technical development, supply, install, and handover.",
+        image: PRODUCT_IMAGES.designBuild,
+      },
+    ],
+    secondary: [
+      {
+        href: "/fit-out",
+        nameAr: "التنفيذ والتجهيز",
+        nameEn: "Fit-Out & Execution",
+        description: "Your design. Our execution. An execution partner for architects and designers, not a second studio.",
+        image: PRODUCT_IMAGES.fitOut,
+      },
+      {
+        href: "/commercial-spaces",
+        nameAr: "المساحات التجارية",
+        nameEn: "Commercial Spaces",
+        description: "Retail, restaurants, cafés, showrooms, and offices that carry the brand and work in daily use.",
+        image: PRODUCT_IMAGES.commercial,
+      },
+      {
+        href: "/hospitality-spaces",
+        nameAr: "مساحات الضيافة",
+        nameEn: "Hospitality Spaces",
+        description: "Hotels, serviced apartments, lobbies, and guest areas where the stay begins in the room.",
+        image: PRODUCT_IMAGES.hospitality,
+      },
+      {
+        href: "/renovation",
+        nameAr: "التجديد والتطوير",
+        nameEn: "Renovation & Upgrade",
+        description: "An existing room. What stays, what changes. Not demolition first.",
+        image: PRODUCT_IMAGES.renovation,
+      },
     ],
   },
-  groups: {
-    eyebrow: "What you can buy",
-    title: "Three doors. One company.",
-    intro: "Seven products sit behind three questions. They are not seven equal services competing for attention.",
+  capabilities: {
+    eyebrow: "Capabilities",
+    title: "What Turriva can execute.",
+    intro: "Capabilities support the products. They are not a second catalogue of what you buy.",
     items: [
-      {
-        title: "Real estate",
-        question: "How do I show the project for sale?",
-        links: [
-          { href: "/real-estate-experience", label: "Real estate project experience" },
-          { href: "/show-unit", label: "Show unit" },
-        ],
-      },
-      {
-        title: "Design and build",
-        question: "Do I start from an idea, or from a design I already have?",
-        links: [
-          { href: "/design-build", label: "Design and build" },
-          { href: "/fit-out", label: "Fit-out and execution" },
-        ],
-      },
-      {
-        title: "Spaces",
-        question: "A place that receives customers, a stay, or a room that already exists?",
-        links: [
-          { href: "/commercial-spaces", label: "Commercial spaces" },
-          { href: "/hospitality-spaces", label: "Hospitality spaces" },
-          { href: "/renovation", label: "Renovation and upgrade" },
-        ],
-      },
+      { title: "Spatial design", description: "The plan, materials, and how the room is used." },
+      { title: "Technical development", description: "Shop drawings, quantities, and a buildable specification." },
+      { title: "Joinery and fabrication", description: "Custom joinery to the drawings. Not a kitchen shop identity." },
+      { title: "Fit-out and installation", description: "Site coordination, installation, QA, and handover." },
+      { title: "Procurement", description: "Materials, furniture, and lighting against the approved specification." },
+      { title: "Experience integration", description: "Displays, models, and content only when the project needs them." },
     ],
+    cta: "See capabilities",
+  },
+  featured: {
+    eyebrow: "Primary product",
+    title: "Your project is ready to sell. Is the way you show it ready?",
+    body: "From the sales centre to the show unit, from the room to the experience: we design and deliver the environment in which your project presents itself to clients. Scope follows the developer, the phase, and the sales method.",
+    cta: "Real estate project experience",
+  },
+  album: {
+    eyebrow: "Selected work",
+    title: "Spaces, not a catalogue.",
+    subtitle: "Each frame opens the door it belongs to.",
+    note: "Selected team experience and live work. Not a list of historical Turriva contracts.",
+    cta: "View selected work",
+    items: [
+      { image: PRODUCT_IMAGES.experience, category: "Real estate", title: "The place a project is shown", href: "/real-estate-experience" },
+      { image: PRODUCT_IMAGES.showUnit, category: "Show unit", title: "A unit a buyer walks", href: "/show-unit" },
+      { image: PRODUCT_IMAGES.designBuild, category: "Design and build", title: "From an idea to a room", href: "/design-build" },
+      { image: PRODUCT_IMAGES.fitOut, category: "Fit-out", title: "Drawings, built", href: "/fit-out" },
+      { image: PRODUCT_IMAGES.commercial, category: "Commercial", title: "Where the customer meets the brand", href: "/commercial-spaces" },
+      { image: PRODUCT_IMAGES.renovation, category: "Renovation", title: "What stays, and what changes", href: "/renovation" },
+    ],
+  },
+  team: {
+    eyebrow: "Credibility",
+    title: "Selected team experience.",
+    intro:
+      "Turriva is a new specialized brand, backed by an experienced team in spatial design, execution, visual communication, and project delivery.",
+    note: "Named programmes below are shown as selected team experience, not as historical Turriva contracts, unless that attribution is confirmed.",
+    cta: "Our work",
   },
   method: {
     eyebrow: "How we work",
-    title: "A short path from brief to a space you can hand over.",
-    intro: "No extra process theatre. These are the decisions that keep a project from drifting.",
+    title: "From understanding to handover.",
+    intro: "A short path that keeps scope clear and the finished space aligned with what was approved.",
     steps: [
-      { title: "Brief", body: "Site, drawings, opening date, and what the space has to do." },
-      { title: "Scope", body: "What Turriva delivers, and what stays with your contractor or designer." },
-      { title: "Detail", body: "Materials and samples are agreed before fabrication, not after the site is waiting." },
-      { title: "Make and install", body: "Joinery, finishes, and installation against the approved drawings." },
-      { title: "Handover", body: "A space that can be shown, occupied, or opened, not a render left on a screen." },
+      { title: "Understand", body: "Site, drawings, opening date, and what the space has to do." },
+      { title: "Design", body: "The room and the path through it, when design is part of the brief." },
+      { title: "Develop", body: "Technical detailing, quantities, and samples before fabrication." },
+      { title: "Build", body: "Procurement, fabrication, and installation against the approved drawings." },
+      { title: "Deliver", body: "A space ready to show, occupy, or open." },
     ],
   },
   teamExperience: "Selected team experience",
@@ -151,94 +240,144 @@ const ar: RepositionCopy = {
   definition: {
     eyebrow: "ما هي توريفا",
     title: "تصميم وتنفيذ المساحات والتجارب.",
-    body: "ليست متجر ديكور، وليست شركة تقنية. توريفا تطوّر الفراغ وتسلّمه: تصميم، تفصيل فني، تصنيع، تركيب، وتسليم. المنتج مكان مكتمل. الشاشات والحملات قد تخدمه. لكنها ليست المنتج.",
-    audiences: "للمطورين · المشاريع التجارية · الضيافة · المساكن",
-    notes: [
-      "الباب التجاري الأول هو تجربة المشروع العقاري: المكان الذي يلتقي فيه المشروع بعملائه.",
-      "الخطوة الأولى محادثة. التكلفة تتبع المخططات والكميات.",
-      "تعاقد مع توريفا وحدها. جرافيكس هاوس وبيز موشن يدخلان فقط عندما يحتاجهما المشروع.",
-    ],
+    body: "من التصميم المكاني والتطوير الفني، إلى التنفيذ والتوريد والتركيب والتسليم، تعمل توريفا كشريك واحد لتحويل المساحة من مخطط إلى واقع جاهز للاستخدام أو العرض.",
+    audiences: "سكني · تجاري · ضيافة · تطوير عقاري",
   },
   developers: {
-    eyebrow: "الباب الأول",
-    title: "مشروعك جاهز للبيع. هل تجربة عرضه جاهزة؟",
+    eyebrow: "للمطورين العقاريين",
+    title: "من المشروع إلى تجربة العميل.",
     intro:
-      "نصمّم وننفّذ البيئة التي يستقبل فيها مشروعك عملاءه: مركز البيع ووحدة العرض والمجسمات والتجهيز. النطاق حسب المشروع. لا نعد بزيادة المبيعات. نبني المكان الذي يفهم فيه العميل مستوى المعيشة الذي يقدمه المشروع.",
+      "المشروع قد يكون جاهزاً للبيع، لكن طريقة تقديمه للعميل تحتاج إلى بيئة واضحة ومقنعة. تساعد توريفا المطور على تصميم وتنفيذ المساحات التي يلتقي فيها المشروع بعملائه.",
     points: [
       {
-        title: "معرض مبيعات وفيلا عرض",
-        body: "المكان الذي يمشي فيه المشتري، منسَّق مع العمل البصري، وليس قائمة أثاث منفصلة.",
+        title: "مركز البيع وفيلا العرض",
+        body: "تقديم أوضح لمستوى المعيشة، لا قائمة أثاث منفصلة.",
       },
       {
-        title: "تشطيب الأصل",
-        body: "استقبال وأجنحة ومساحات مشتركة، من مخططاتكم أو من تصميم نطوّره معكم.",
+        title: "شقة العرض وعرض المشروع",
+        body: "مسار يمشي فيه المشتري، منسَّق مع المجسمات والعمل البصري عند الحاجة.",
       },
       {
-        title: "تسليم واحد",
-        body: "تصميم وتفصيل وتوريد وموقع في محادثة واحدة، حتى يطابق المكان ما تم اعتماده.",
+        title: "تجربة تفاعلية وتنفيذ",
+        body: "الشاشات والمجسمات تخدم المكان عندما تفيد. ليست المنتج.",
       },
     ],
-    cta: "تجربة المشروع العقاري",
+    cta: "ناقش مشروعك العقاري",
     fitOutCta: "التنفيذ والتجهيز",
-    pageCta: "ناقش مشروعك معنا",
+    pageCta: "ناقش مشروعك",
+  },
+  products: {
+    eyebrow: "المنتجات",
+    title: "ما يمكن شراؤه من توريفا.",
+    intro: "سبعة منتجات خلف ثلاثة أبواب. الثلاثة الأولى تحمل الوزن التجاري.",
+    learnMore: "اعرف المزيد",
+    primary: [
+      {
+        href: "/real-estate-experience",
+        nameAr: "تجربة المشروع العقاري",
+        nameEn: "Real Estate Project Experience",
+        description: "البيئة التي يلتقي فيها المشروع بعملائه: مركز البيع ووحدة العرض والعرض والتجهيز.",
+        image: PRODUCT_IMAGES.experience,
+      },
+      {
+        href: "/show-unit",
+        nameAr: "وحدة العرض",
+        nameEn: "Show Unit",
+        description: "فيلا أو شقة أو جناح يمشي فيه المشتري. ليست تشطيباً فقط: أسلوب الحياة الذي يبيعه المشروع.",
+        image: PRODUCT_IMAGES.showUnit,
+      },
+      {
+        href: "/design-build",
+        nameAr: "التصميم والتنفيذ",
+        nameEn: "Design & Build",
+        description: "من فكرة إلى مساحة جاهزة للاستخدام: تصميم وتطوير فني وتوريد وتركيب وتسليم.",
+        image: PRODUCT_IMAGES.designBuild,
+      },
+    ],
+    secondary: [
+      {
+        href: "/fit-out",
+        nameAr: "التنفيذ والتجهيز",
+        nameEn: "Fit-Out & Execution",
+        description: "تصميمكم. تنفيذنا. شريك تنفيذ للمعماريين والمصممين، لا مصمم ثانٍ.",
+        image: PRODUCT_IMAGES.fitOut,
+      },
+      {
+        href: "/commercial-spaces",
+        nameAr: "المساحات التجارية",
+        nameEn: "Commercial Spaces",
+        description: "تجزئة ومطاعم ومقاهٍ وصالات عرض ومكاتب تحمل العلامة وتعمل يومياً.",
+        image: PRODUCT_IMAGES.commercial,
+      },
+      {
+        href: "/hospitality-spaces",
+        nameAr: "مساحات الضيافة",
+        nameEn: "Hospitality Spaces",
+        description: "فنادق وشقق فندقية وردهات ومناطق ضيوف تبدأ فيها الإقامة من المكان.",
+        image: PRODUCT_IMAGES.hospitality,
+      },
+      {
+        href: "/renovation",
+        nameAr: "التجديد والتطوير",
+        nameEn: "Renovation & Upgrade",
+        description: "مساحة قائمة. ما يبقى وما يتغير. لا نبدأ بالهدم.",
+        image: PRODUCT_IMAGES.renovation,
+      },
+    ],
+  },
+  capabilities: {
+    eyebrow: "القدرات",
+    title: "ما الذي يمكن لتوريفا تنفيذه؟",
+    intro: "القدرات تدعم المنتجات. ليست كتالوجاً ثانياً لما يُشترى.",
+    items: [
+      { title: "التصميم المكاني", description: "التخطيط والمواد وطريقة استخدام الغرفة." },
+      { title: "التطوير الفني", description: "مخططات تنفيذ وكميات ومواصفات قابلة للبناء." },
+      { title: "النجارة والتصنيع", description: "نجارة وفق المخططات. ليست هوية متجر مطابخ." },
+      { title: "التجهيز والتركيب", description: "تنسيق موقع وتركيب وضبط جودة وتسليم." },
+      { title: "التوريد", description: "مواد وأثاث وإضاءة وفق المواصفات المعتمدة." },
+      { title: "دمج التجربة", description: "شاشات ومجسمات ومحتوى فقط عندما يحتاجها المشروع." },
+    ],
+    cta: "عرض القدرات",
+  },
+  featured: {
+    eyebrow: "المنتج الأول",
+    title: "مشروعك جاهز للبيع. هل تجربة عرضه جاهزة؟",
+    body: "من مركز البيع إلى وحدة العرض، ومن المساحة إلى التجربة: نصمم وننفذ البيئة التي يقدم فيها مشروعك نفسه لعملائه. يُبنى النطاق حسب احتياجات المطور ومرحلة المشروع وطريقة البيع.",
+    cta: "تجربة المشروع العقاري",
   },
   album: {
-    eyebrow: "الأعمال",
+    eyebrow: "أعمال مختارة",
     title: "مساحات، لا كتالوج.",
-    subtitle: "كل إطار يفتح الباب الذي ينتمي إليه. انظر إلى المكان، لا إلى قائمة منتجات.",
+    subtitle: "كل إطار يفتح الباب الذي ينتمي إليه.",
     note: "خبرة فريق مختارة وأعمال حية. ليست قائمة عقود تاريخية باسم توريفا.",
-    cta: "أعمال مختارة",
+    cta: "عرض الأعمال المختارة",
     items: [
-      { image: "/brand/turriva/makkah-charter-04.jpeg", category: "العقار", title: "المكان الذي يُعرض فيه المشروع", href: "/real-estate-experience" },
-      { image: "/brand/turriva/projects/project-walk-in-makkah.webp", category: "وحدة العرض", title: "وحدة يمشي فيها المشتري", href: "/show-unit" },
-      { image: "/brand/turriva/hero-interior.webp", category: "التصميم والتنفيذ", title: "من فكرة إلى غرفة", href: "/design-build" },
-      { image: "/brand/turriva/projects/project-joinery-b2b.webp", category: "التنفيذ والتجهيز", title: "مخططات تُبنى", href: "/fit-out" },
-      { image: "/brand/turriva/sample-kit-showroom.webp", category: "التجاري", title: "حيث يلتقي العميل بالعلامة", href: "/commercial-spaces" },
-      { image: "/brand/turriva/projects/project-kitchen-jeddah.webp", category: "التجديد", title: "ما يبقى، وما يتغير", href: "/renovation" },
+      { image: PRODUCT_IMAGES.experience, category: "العقار", title: "المكان الذي يُعرض فيه المشروع", href: "/real-estate-experience" },
+      { image: PRODUCT_IMAGES.showUnit, category: "وحدة العرض", title: "وحدة يمشي فيها المشتري", href: "/show-unit" },
+      { image: PRODUCT_IMAGES.designBuild, category: "التصميم والتنفيذ", title: "من فكرة إلى غرفة", href: "/design-build" },
+      { image: PRODUCT_IMAGES.fitOut, category: "التنفيذ والتجهيز", title: "مخططات تُبنى", href: "/fit-out" },
+      { image: PRODUCT_IMAGES.commercial, category: "التجاري", title: "حيث يلتقي العميل بالعلامة", href: "/commercial-spaces" },
+      { image: PRODUCT_IMAGES.renovation, category: "التجديد", title: "ما يبقى، وما يتغير", href: "/renovation" },
     ],
   },
-  groups: {
-    eyebrow: "ما يمكن شراؤه",
-    title: "ثلاثة أبواب. شركة واحدة.",
-    intro: "سبعة منتجات خلف ثلاثة أسئلة. ليست سبع خدمات متساوية تتنافس على الانتباه.",
-    items: [
-      {
-        title: "العقار",
-        question: "كيف أُظهر المشروع للبيع؟",
-        links: [
-          { href: "/real-estate-experience", label: "تجربة المشروع العقاري" },
-          { href: "/show-unit", label: "وحدة العرض" },
-        ],
-      },
-      {
-        title: "التصميم والتنفيذ",
-        question: "أبدأ من فكرة، أم من تصميم موجود؟",
-        links: [
-          { href: "/design-build", label: "التصميم والتنفيذ" },
-          { href: "/fit-out", label: "التنفيذ والتجهيز" },
-        ],
-      },
-      {
-        title: "المساحات",
-        question: "مكان يستقبل عملاء، أم إقامة، أم غرفة قائمة؟",
-        links: [
-          { href: "/commercial-spaces", label: "المساحات التجارية" },
-          { href: "/hospitality-spaces", label: "مساحات الضيافة" },
-          { href: "/renovation", label: "التجديد والتطوير" },
-        ],
-      },
-    ],
+  team: {
+    eyebrow: "المصداقية",
+    title: "خبرة فريق مختارة.",
+    intro:
+      "توريفا علامة متخصصة حديثة، مدعومة بفريق ذي خبرة في التصميم والتنفيذ والتجارب البصرية والتقنية وتسليم المشاريع.",
+    note: "البرامج المسماة أدناه تُعرض كخبرة فريق مختارة، لا كعقود تاريخية باسم توريفا، إلا بعد تأكيد النسبة.",
+    cta: "أعمالنا",
   },
   method: {
     eyebrow: "كيف نعمل",
-    title: "مسار قصير من الموجز إلى مكان يمكن تسليمه.",
-    intro: "لا إجراءات إضافية للعرض. هذه القرارات التي تمنع المشروع من الانحراف.",
+    title: "من الفهم إلى التسليم.",
+    intro: "مسار قصير يحافظ على وضوح النطاق وعلى تطابق المكان المكتمل مع ما اعتُمد.",
     steps: [
-      { title: "الموجز", body: "الموقع، المخططات، موعد الافتتاح، وما يجب أن يفعله المكان." },
-      { title: "النطاق", body: "ما تسلّمه توريفا، وما يبقى لدى مقاولكم أو مصممكم." },
-      { title: "التفصيل", body: "مواد وعينات تُعتمد قبل التصنيع، لا بعد أن ينتظر الموقع." },
-      { title: "التصنيع والتركيب", body: "أعمال خشبية وتشطيبات وتركيب وفق المخططات المعتمدة." },
-      { title: "التسليم", body: "مكان يمكن عرضه أو استخدامه أو افتتاحه، لا تصوّر يبقى على الشاشة." },
+      { title: "الفهم", body: "الموقع والمخططات وموعد الافتتاح وما يجب أن يفعله المكان." },
+      { title: "التصميم", body: "الغرفة والمسار داخلها، عندما يكون التصميم جزءاً من الموجز." },
+      { title: "التطوير", body: "تفصيل فني وكميات وعينات قبل التصنيع." },
+      { title: "البناء", body: "توريد وتصنيع وتركيب وفق المخططات المعتمدة." },
+      { title: "التسليم", body: "مكان جاهز للعرض أو الاستخدام أو الافتتاح." },
     ],
   },
   teamExperience: "خبرة فريق مختارة",

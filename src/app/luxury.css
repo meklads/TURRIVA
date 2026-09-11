@@ -4808,6 +4808,20 @@
 }
 
 /* Homepage hierarchy polish */
+.lux-hero__position {
+  margin: 0;
+  max-width: 28rem;
+  font-family: var(--font-latin), Georgia, serif;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--lux-ink-soft);
+}
+
+[dir="rtl"] .lux-hero__position {
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
+}
+
 .lux-hero__audiences,
 .lux-definition__audiences {
   margin: 0;
@@ -4825,7 +4839,97 @@
   font-size: 0.9375rem;
 }
 
-.lux-definition__notes {
+.lux-products-weighted__primary {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 1024px) {
+  .lux-products-weighted__primary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.lux-products-weighted__secondary {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .lux-products-weighted__secondary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .lux-products-weighted__secondary {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.lux-product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--lux-gold) 18%, var(--lux-sand));
+  border-radius: 1.15rem;
+  background: white;
+  text-decoration: none;
+  box-shadow: 0 14px 36px color-mix(in srgb, var(--lux-ink) 5%, transparent);
+  transition:
+    border-color 0.28s ease,
+    box-shadow 0.28s ease,
+    transform 0.28s ease;
+}
+
+.lux-product-card:hover {
+  border-color: color-mix(in srgb, var(--lux-gold) 42%, var(--lux-sand));
+  box-shadow: 0 18px 44px color-mix(in srgb, var(--lux-gold) 12%, transparent);
+  transform: translateY(-2px);
+}
+
+.lux-product-card__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--lux-stone);
+}
+
+.lux-product-card__media--sm {
+  aspect-ratio: 16 / 10;
+}
+
+.lux-product-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.15rem 1.2rem 1.35rem;
+}
+
+.lux-product-card__en {
+  margin: 0.35rem 0 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--lux-ink-muted);
+}
+
+.lux-product-card__cta {
+  margin-top: auto;
+  padding-top: 1rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--lux-gold);
+}
+
+.lux-home-capabilities__grid {
   display: grid;
   gap: 0.85rem;
   margin: 0;
@@ -4834,19 +4938,49 @@
 }
 
 @media (min-width: 640px) {
-  .lux-definition__notes {
+  .lux-home-capabilities__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lux-home-capabilities__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
-.lux-definition__note {
-  padding: 1rem 1.05rem;
-  border: 1px solid color-mix(in srgb, var(--lux-gold) 22%, var(--lux-sand));
+.lux-home-capabilities__item {
+  padding: 1rem 1.1rem;
+  border: 1px solid color-mix(in srgb, var(--lux-gold) 16%, var(--lux-sand));
   border-radius: 1rem;
-  background: color-mix(in srgb, var(--lux-cream, #f7f1e8) 55%, white);
-  font-size: 0.875rem;
-  line-height: 1.55;
-  color: var(--lux-ink-soft);
+  background: white;
+}
+
+.lux-featured-re__grid {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .lux-featured-re__grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 2.5rem;
+  }
+}
+
+.lux-featured-re__media {
+  position: relative;
+  min-height: 18rem;
+  overflow: hidden;
+  border-radius: 1.15rem;
+  background: var(--lux-stone);
+}
+
+@media (min-width: 900px) {
+  .lux-featured-re__media {
+    min-height: 26rem;
+  }
 }
 
 .lux-album__note {
@@ -4969,5 +5103,29 @@
   letter-spacing: 0;
   text-transform: none;
   font-size: 0.8125rem;
+}
+
+.lux-definition__notes {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 640px) {
+  .lux-definition__notes {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.lux-definition__note {
+  padding: 1rem 1.05rem;
+  border: 1px solid color-mix(in srgb, var(--lux-gold) 22%, var(--lux-sand));
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--lux-cream, #f7f1e8) 55%, white);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--lux-ink-soft);
 }
 

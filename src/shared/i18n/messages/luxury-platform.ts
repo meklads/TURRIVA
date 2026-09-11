@@ -111,7 +111,7 @@ export type LuxuryPlatformMessages = {
 const en: LuxuryPlatformMessages = {
   trustBar: {
     items: [
-      { icon: "build", label: "Design · Experience · Build" },
+      { icon: "build", label: "Spatial Design · Experience · Build" },
       { icon: "design", label: "Concept-to-build technical development" },
       { icon: "factory", label: "Fabrication, procurement & physical delivery" },
     ],
@@ -398,7 +398,7 @@ const en: LuxuryPlatformMessages = {
 const ar: LuxuryPlatformMessages = {
   trustBar: {
     items: [
-      { icon: "build", label: "تصميم · تجربة · تنفيذ" },
+      { icon: "build", label: "تصميم مكاني · تجربة · تنفيذ" },
       { icon: "design", label: "تطوير فني من المفهوم إلى التنفيذ" },
       { icon: "factory", label: "تصنيع وتوريد وتسليم ميداني" },
     ],

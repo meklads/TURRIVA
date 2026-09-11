@@ -21,24 +21,17 @@ export function LuxuryHomeHero({ locale }: Props) {
         <div className="lux-hero-copy">
           <div className="lux-hero-copy-inner lux-reveal">
             <p className="lux-eyebrow">{t.hero.eyebrow}</p>
-            <h1 className="lux-display lux-heading mt-5 sm:mt-6">{t.hero.title}</h1>
+            <p className="lux-hero__position mt-4">{copy.definition.title.replace(/\.$/, "")}</p>
+            <h1 className="lux-display lux-heading mt-4 sm:mt-5">{t.hero.title}</h1>
             <div className="lux-flourish" aria-hidden />
             <p className="lux-body max-w-lg">{t.hero.subtitle}</p>
             <p className="lux-hero__audiences mt-4">{copy.definition.audiences}</p>
-            <div className="lux-hero-cta mt-9 flex flex-col gap-3 sm:mt-10">
-              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <Link href="#brief" className="lux-btn-primary">
-                  {t.hero.ctaPrimary}
-                </Link>
-                <Link href={lp("/real-estate-experience")} className="lux-btn-outline-gold">
-                  {t.hero.ctaSecondary}
-                </Link>
-              </div>
-              <Link
-                href={lp("/fit-out#brief")}
-                className="text-sm font-semibold text-lux-gold transition-colors hover:text-lux-gold-light"
-              >
-                {t.hero.ctaSample} →
+            <div className="lux-hero-cta mt-9 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap">
+              <Link href="#brief" className="lux-btn-primary">
+                {t.hero.ctaPrimary}
+              </Link>
+              <Link href={lp("/fit-out#brief")} className="lux-btn-outline-gold">
+                {t.hero.ctaSample}
               </Link>
             </div>
           </div>

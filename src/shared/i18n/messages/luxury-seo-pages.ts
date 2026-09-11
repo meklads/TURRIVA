@@ -234,8 +234,8 @@ const en: LuxurySeoMessages = {
     ],
   },
   servicesPage: {
-    title: "What we do",
-    intro: "These are capabilities, not products. What you buy is named on the product pages.",
+    title: "Capabilities",
+    intro: "What Turriva can execute. These are capabilities, not products. What you buy is named on the product pages.",
     items: [
       {
         slug: "spatial-design",
@@ -390,7 +390,7 @@ const en: LuxurySeoMessages = {
   },
   nav: {
     styles: "Design styles",
-    services: "What we do",
+    services: "Capabilities",
     faq: "FAQ",
     insights: "Insights",
     portfolio: "Portfolio",
@@ -553,8 +553,8 @@ const ar: LuxurySeoMessages = {
     ],
   },
   servicesPage: {
-    title: "ما نقوم به",
-    intro: "هذه قدرات، لا منتجات. ما يُشترى مسمّى في صفحات المنتجات.",
+    title: "القدرات",
+    intro: "ما الذي يمكن لتوريفا تنفيذه. هذه قدرات، لا منتجات. ما يُشترى مسمّى في صفحات المنتجات.",
     items: [
       {
         slug: "spatial-design",
@@ -705,7 +705,7 @@ const ar: LuxurySeoMessages = {
   },
   nav: {
     styles: "أساليب التصميم",
-    services: "ما نقوم به",
+    services: "القدرات",
     faq: "الأسئلة الشائعة",
     insights: "رؤى",
     portfolio: "البورتفوليو",
