@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { LocalizedLink } from "@/shared/components/localized-link";
 import { getRepositionCopy } from "@/modules/luxury/lib/reposition-copy";
+import { getGroupProofCopy } from "@/modules/luxury/lib/group-proof-copy";
 import { CASE_STUDIES } from "@/modules/luxury/lib/case-studies";
 import type { Locale } from "@/shared/i18n/locale";
 
@@ -78,9 +79,11 @@ export function LuxuryProductsWeightedSection({ locale }: Props) {
             {copy.products.title}
           </h2>
           <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.products.intro}</p>
+          <p className="lux-products-weighted__frame">{copy.products.frame}</p>
         </div>
 
-        <ul className="lux-products-weighted__primary mt-10">
+        <p className="lux-products-weighted__tier-label">{copy.products.tierPrimary}</p>
+        <ul className="lux-products-weighted__primary">
           {copy.products.primary.map((item) => (
             <li key={item.href}>
               <LocalizedLink href={item.href} className="lux-product-card lux-product-card--primary group">
@@ -90,7 +93,7 @@ export function LuxuryProductsWeightedSection({ locale }: Props) {
                     alt={isAr ? item.nameAr : item.nameEn}
                     fill
                     className="object-cover transition-transform duration-[1.1s] ease-out group-hover:scale-[1.03]"
-                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
                 <div className="lux-product-card__body">
@@ -104,7 +107,8 @@ export function LuxuryProductsWeightedSection({ locale }: Props) {
           ))}
         </ul>
 
-        <ul className="lux-products-weighted__secondary mt-6">
+        <p className="lux-products-weighted__tier-label">{copy.products.tierSecondary}</p>
+        <ul className="lux-products-weighted__secondary">
           {copy.products.secondary.map((item) => (
             <li key={item.href}>
               <LocalizedLink href={item.href} className="lux-product-card lux-product-card--secondary group">
@@ -114,7 +118,7 @@ export function LuxuryProductsWeightedSection({ locale }: Props) {
                     alt={isAr ? item.nameAr : item.nameEn}
                     fill
                     className="object-cover transition-transform duration-[1.1s] ease-out group-hover:scale-[1.03]"
-                    sizes="(max-width: 768px) 100vw, 25vw"
+                    sizes="(max-width: 768px) 100vw, 20vw"
                   />
                 </div>
                 <div className="lux-product-card__body">
@@ -250,6 +254,7 @@ export function LuxuryAlbumSection({ locale }: Props) {
 
 export function LuxuryTeamExperienceSection({ locale }: Props) {
   const copy = getRepositionCopy(locale);
+  const proof = getGroupProofCopy(locale);
   const isAr = locale === "ar";
   const studies = CASE_STUDIES.filter((study) => study.attribution === "team").slice(0, 3);
 
@@ -262,7 +267,10 @@ export function LuxuryTeamExperienceSection({ locale }: Props) {
             {copy.team.title}
           </h2>
           <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.team.intro}</p>
-          <p className="lux-album__note mt-3">{copy.team.note}</p>
+          <blockquote className="lux-team-experience__quote">
+            <p>“{proof.testimonial.quote}”</p>
+            <footer>— {proof.testimonial.attribution}</footer>
+          </blockquote>
         </div>
         <ul className="mt-10 grid gap-4 md:grid-cols-3">
           {studies.map((study) => (

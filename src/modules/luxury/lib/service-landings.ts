@@ -50,8 +50,8 @@ export const SERVICE_LANDINGS: readonly ServiceLanding[] = [
       "مناطق رطبة مقاومة للرطوبة وجبس acoustic",
       "تسليم موثق متوافق مع مواعيد الافتتاح",
     ],
-    proofEn: "Selected team experience · hospitality scope in Makkah",
-    proofAr: "خبرة فريق مختارة · نطاق ضيافة في مكة",
+    proofEn: "Delivered hospitality scope · Makkah",
+    proofAr: "نطاق ضيافة منفّذ · مكة",
     relatedCaseSlug: "hospitality-fitout-makkah",
   },
   {
@@ -77,8 +77,8 @@ export const SERVICE_LANDINGS: readonly ServiceLanding[] = [
       "برنامج ميداني واحد مسؤول",
       "تسليم جاهز للافتتاح مع توثيق جودة",
     ],
-    proofEn: "Selected team experience · institutional exhibition, Jeddah",
-    proofAr: "خبرة فريق مختارة · معرض مؤسسي، جدة",
+    proofEn: "Institutional exhibition · Jeddah",
+    proofAr: "معرض مؤسسي · جدة",
     relatedCaseSlug: "humanity-exhibition-mwl",
   },
   {
@@ -104,8 +104,8 @@ export const SERVICE_LANDINGS: readonly ServiceLanding[] = [
       "تسعير B2B وجدولة على دفعات",
       "تركيب يُراجع مقابل المخططات المعتمدة",
     ],
-    proofEn: "Selected team experience · developer joinery scope",
-    proofAr: "خبرة فريق مختارة · نطاق نجارة لمطور",
+    proofEn: "Developer joinery programme",
+    proofAr: "برنامج نجارة لمطور",
     relatedCaseSlug: "developer-joinery-batch",
   },
   {
@@ -131,8 +131,8 @@ export const SERVICE_LANDINGS: readonly ServiceLanding[] = [
       "نجارة معيارية وجدران مميزة",
       "إغلاق ملاحظات وتسليم بضمان",
     ],
-    proofEn: "Selected team experience · sales environment, Diriyah",
-    proofAr: "خبرة فريق مختارة · بيئة مبيعات، الدرعية",
+    proofEn: "Sales environment · Diriyah",
+    proofAr: "بيئة مبيعات · الدرعية",
     relatedCaseSlug: "rafal-pavilions",
   },
 ] as const;

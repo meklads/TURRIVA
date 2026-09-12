@@ -16,8 +16,8 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
 
   const description =
     locale === "ar"
-      ? "تصميم وتنفيذ المساحات والتجارب. من الفكرة إلى واقع ملموس. للمطورين والمشاريع التجارية والضيافة والمساكن."
-      : "Design and execution of spaces and experiences. From concept to physical reality. For developers, commercial projects, hospitality, and homes.";
+      ? "توريفا تصمم وتنفذ المساحات — نفس الفريق الذي بنى تجارب بيع وتشطيبات داخلية لعملاء مجموعة تسامي منذ 15 عامًا. من المخططات إلى التسليم."
+      : "Turriva designs and delivers spaces — the same team that built sales experiences and interior fit-out for Tasami Group clients for 15 years. From drawings to handover.";
 
   const canonical = `${TURRIVA_PUBLIC_URL}${localizePath("/", locale)}`;
 

@@ -310,7 +310,7 @@ const en: LuxuryMessages = {
     eyebrow: "A Tasami Group company · Saudi Arabia",
     title: "From idea to a space you can enter.",
     subtitle:
-      "Turriva designs and delivers spaces for homes, businesses, hospitality, and real estate. Clear scope. One team. From drawings to handover.",
+      "Turriva designs and delivers spaces — residential, commercial, hospitality, and real estate. The same team that built sales experiences and interior execution for Tasami Group clients for 15 years, now under one brand dedicated to design and delivery.",
     servicesLine: "Spatial Design · Experience · Build",
     tags: ["Spatial Design", "Experience", "Build"],
     ctaPrimary: "Discuss your project",
@@ -418,7 +418,7 @@ const en: LuxuryMessages = {
     eyebrow: "Typical scopes",
     title: "A finished space, not a furniture list.",
     subtitle:
-      "Illustrative work: sales environments, hospitality, and fit-out. Named studies on Our work are labelled as team experience until a Turriva contract is confirmed.",
+      "Sales environments, hospitality, and fit-out — delivered by the Turriva team, including work under Graphics House before the dedicated brand.",
     cta: "Project experience",
     items: [
       { title: "Sales gallery and show villa", category: "Developers" },
@@ -543,7 +543,7 @@ const en: LuxuryMessages = {
     ourWork: {
       title: "Our work",
       intro:
-        "Selected team experience and typical scopes. Named programmes are not presented as historical Turriva contracts unless that attribution is confirmed.",
+        "Sales environments, interiors, and exhibition delivery by the Turriva team — including work delivered under Graphics House before the dedicated brand.",
       caseStudyContactCta: "Discuss a similar project",
     },
     portfolio: {
@@ -942,7 +942,7 @@ const ar: LuxuryMessages = {
     eyebrow: "إحدى شركات مجموعة تسامي · المملكة العربية السعودية",
     title: "من الفكرة إلى مساحة تدخلها.",
     subtitle:
-      "توريفا تصمم وتنفذ المساحات للمنازل والأعمال والضيافة والعقار. نطاق واضح. فريق واحد. من المخططات إلى التسليم.",
+      "توريفا تصمم وتنفذ المساحات — سكني وتجاري وضيافة وعقار. الفريق نفسه الذي بنى تجارب البيع والتنفيذ الداخلي لعملاء مجموعة تسامي منذ 15 عامًا، الآن تحت علامة واحدة مخصصة للتصميم والتنفيذ.",
     servicesLine: "تصميم مكاني · تجربة · تنفيذ",
     tags: ["تصميم مكاني", "تجربة", "تنفيذ"],
     ctaPrimary: "ناقش مشروعك",
@@ -1050,7 +1050,7 @@ const ar: LuxuryMessages = {
     eyebrow: "نطاقات معتادة",
     title: "مكان مكتمل، لا قائمة أثاث.",
     subtitle:
-      "أعمال توضيحية: بيئات مبيعات وضيافة وتشطيب. الدراسات المسماة في أعمالنا تُوسم كخبرة فريق حتى يُؤكد عقد باسم توريفا.",
+      "بيئات مبيعات وضيافة وتشطيب — نفّذها فريق توريفا، بما فيها أعمال تحت جرافيكس هاوس قبل إطلاق العلامة المستقلة.",
     cta: "تجربة المشروع",
     items: [
       { title: "معرض مبيعات وفيلا عرض", category: "مطورون" },
@@ -1175,7 +1175,7 @@ const ar: LuxuryMessages = {
     ourWork: {
       title: "أعمالنا",
       intro:
-        "خبرة فريق مختارة ونطاقات معتادة. البرامج المسماة لا تُعرض كعقود تاريخية باسم توريفا إلا بعد تأكيد النسبة.",
+        "بيئات مبيعات وتشطيبات وتنفيذ معارض بيد فريق توريفا — بما فيها أعمال تحت جرافيكس هاوس قبل إطلاق العلامة المستقلة.",
       caseStudyContactCta: "ناقش مشروعاً مشابهاً",
     },
     portfolio: {

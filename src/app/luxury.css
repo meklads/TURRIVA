@@ -5202,9 +5202,9 @@
   list-style: none;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 900px) {
   .lux-products-weighted__primary {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -5224,7 +5224,13 @@
 
 @media (min-width: 1200px) {
   .lux-products-weighted__secondary {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1400px) {
+  .lux-products-weighted__secondary {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
 
@@ -6798,4 +6804,254 @@ html[lang="en"] .lux-rx-method__title {
 .lux-rx .lux-product-related__card {
   border-radius: 0.15rem;
   overflow: hidden;
+}
+
+/* ═══════════════════════════════════════════════
+   Group proof · client strip · testimonial
+   ═══════════════════════════════════════════════ */
+
+.lux-client-strip {
+  padding-block: 1.15rem 1.35rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--lux-sand) 80%, transparent);
+  background: color-mix(in srgb, var(--lux-linen) 55%, white);
+}
+
+.lux-client-strip__label {
+  margin: 0 0 0.75rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lux-gold);
+  text-align: center;
+}
+
+.lux-client-strip__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem 1.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lux-client-strip__list li {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--lux-ink-soft);
+  white-space: nowrap;
+}
+
+.lux-proof {
+  color: #f7f1e8;
+}
+
+.lux-proof--compact {
+  padding-block: clamp(3rem, 6vw, 4.5rem);
+}
+
+.lux-proof__intro {
+  max-width: 44rem;
+}
+
+.lux-proof__eyebrow {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--lux-gold) 88%, white);
+}
+
+.lux-proof__title {
+  margin: 0.9rem 0 0;
+  max-width: 22ch;
+  font-family: var(--font-inter), var(--font-latin), system-ui, sans-serif;
+  font-size: clamp(1.75rem, 3.6vw, 2.65rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #f7f1e8;
+  text-wrap: balance;
+}
+
+[dir="rtl"] .lux-proof__title {
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
+  font-weight: 700;
+  letter-spacing: normal;
+}
+
+html[lang="ar"] .lux-proof__title,
+html[data-lang="ar"] .lux-proof__title,
+html[lang="en"] .lux-proof__title {
+  color: #f7f1e8;
+}
+
+.lux-proof__body {
+  margin: 1.15rem 0 0;
+  max-width: 40rem;
+  font-size: clamp(0.98rem, 1.5vw, 1.1rem);
+  line-height: 1.7;
+  color: color-mix(in srgb, #f7f1e8 80%, transparent);
+}
+
+.lux-proof__stats {
+  display: grid;
+  gap: 1rem;
+  margin: clamp(2rem, 4vw, 2.75rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 700px) {
+  .lux-proof__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .lux-proof__stats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.lux-proof__stat {
+  padding: 1.15rem 1.05rem;
+  border: 1px solid color-mix(in srgb, #f7f1e8 14%, transparent);
+  border-radius: 0.15rem;
+  background: color-mix(in srgb, white 4%, transparent);
+}
+
+.lux-proof__stat-value {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.5vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: color-mix(in srgb, var(--lux-gold) 88%, white);
+}
+
+.lux-proof__stat-label {
+  margin: 0.45rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: color-mix(in srgb, #f7f1e8 72%, transparent);
+}
+
+.lux-proof__logos {
+  margin-top: clamp(1.75rem, 3vw, 2.5rem);
+  padding-top: 1.35rem;
+  border-top: 1px solid color-mix(in srgb, #f7f1e8 14%, transparent);
+}
+
+.lux-proof__logos-label {
+  margin: 0 0 0.85rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--lux-gold) 82%, white);
+}
+
+.lux-proof__logo-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lux-proof__logo-list li {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: color-mix(in srgb, #f7f1e8 78%, transparent);
+}
+
+.lux-proof__quote {
+  margin: clamp(2rem, 4vw, 2.75rem) 0 0;
+  padding: 1.5rem 1.4rem;
+  border: 1px solid color-mix(in srgb, var(--lux-gold) 38%, transparent);
+  border-radius: 0.15rem;
+  background: color-mix(in srgb, white 5%, transparent);
+  max-width: 46rem;
+}
+
+.lux-proof__quote-text {
+  margin: 0;
+  font-size: clamp(1rem, 1.7vw, 1.15rem);
+  line-height: 1.7;
+  color: #f7f1e8;
+  text-wrap: pretty;
+}
+
+.lux-proof__quote-attr {
+  margin: 1rem 0 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--lux-gold) 85%, white);
+}
+
+.lux-products-weighted__frame {
+  margin: 0.85rem 0 0;
+  max-width: 40rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--lux-ink-soft);
+}
+
+.lux-products-weighted__tier-label {
+  margin: 1.75rem 0 0.85rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lux-ink-muted);
+}
+
+@media (min-width: 900px) {
+  .lux-products-weighted__primary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.lux-product-card--primary .lux-product-card__media {
+  aspect-ratio: 16 / 10;
+}
+
+.lux-product-card--primary .lux-product-card__body h3 {
+  font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.65rem);
+}
+
+.lux-team-experience__quote {
+  margin: 1.75rem 0 0;
+  max-width: 42rem;
+  padding: 1.35rem 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--lux-gold) 35%, var(--lux-sand));
+  border-radius: 0.15rem;
+  background: #fff;
+}
+
+.lux-team-experience__quote p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--lux-ink);
+}
+
+.lux-team-experience__quote footer {
+  margin: 0.85rem 0 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--lux-gold);
+}
+
+.lux-work-intro {
+  margin: 0 auto;
+  max-width: 40rem;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--lux-ink-soft);
 }

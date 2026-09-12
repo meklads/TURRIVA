@@ -26,8 +26,8 @@ export function organizationSchema(locale: Locale) {
     email: TURRIVA_PUBLIC_EMAIL,
     telephone: "+966502786513",
     description: isAr
-      ? "تصميم وتنفيذ المساحات والتجارب. التنفيذ جزء من المنتج، لا الهوية كلها."
-      : "Design and execution of spaces and experiences. Execution is part of the product, not the whole identity.",
+      ? "توريفا تصمم وتنفذ المساحات — نفس الفريق الذي بنى تجارب بيع وتشطيبات داخلية لعملاء مجموعة تسامي منذ 15 عامًا. من المخططات إلى التسليم."
+      : "Turriva designs and delivers spaces — the same team that built sales experiences and interior fit-out for Tasami Group clients for 15 years. From drawings to handover.",
     parentOrganization: {
       "@type": "Organization",
       name: "Tasami Group",

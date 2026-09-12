@@ -17,6 +17,7 @@ import {
   RxScopeRows,
   RxShell,
 } from "./luxury-product-rx";
+import { LuxuryGroupProofSection } from "./luxury-group-proof-section";
 import { LuxuryStickyCta } from "./luxury-sticky-cta";
 
 type Props = { locale: Locale };
@@ -37,6 +38,8 @@ export function LuxuryShowUnitPage({ locale }: Props) {
         secondaryCta={copy.hero.secondary}
         titleId="show-unit-title"
       />
+
+      <LuxuryGroupProofSection locale={locale} compact showLogos />
 
       <RxProblem
         eyebrow={copy.problem.eyebrow}

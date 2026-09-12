@@ -21,6 +21,7 @@ import {
   RxSignals,
   RxTiers,
 } from "./luxury-product-rx";
+import { LuxuryGroupProofSection } from "./luxury-group-proof-section";
 import { LuxuryStickyCta } from "./luxury-sticky-cta";
 
 type Props = { locale: Locale };
@@ -45,6 +46,8 @@ export function LuxuryRealEstateExperiencePage({ locale }: Props) {
         secondaryHref="#brief"
         titleId="experience-hero-title"
       />
+
+      <LuxuryGroupProofSection locale={locale} compact showLogos />
 
       <RxProblem
         eyebrow={copy.problem.eyebrow}

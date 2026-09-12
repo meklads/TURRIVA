@@ -45,12 +45,12 @@ export const INSIGHT_ARTICLES: readonly InsightArticle[] = [
     readMinutes: 5,
     bodyEn: [
       "Developer launches in Saudi Arabia often need two proofs at once: cinematic storytelling for investors, and a physical sales environment buyers can walk through. Graphics House handles the visual launch. Turriva handles the space.",
-      "On programmes such as Rafal Pavilions or the Humanity Exhibition, creative direction and CGI may come from Graphics House. Those pieces are shown as selected team experience, not as historical Turriva-branded contracts.",
+      "On programmes such as Rafal Pavilions or the Humanity Exhibition, creative direction and CGI may come from Graphics House. The spatial layer is delivered by the same execution team that leads Turriva today.",
       "The benefit for clients is coordination: aligned visual language from film to finished space, fewer vendor handoffs, and one group routing when scope spans creative and physical layers.",
     ],
     bodyAr: [
       "إطلاقات المطورين في السعودية غالباً تحتاج إثباتين: سرداً بصرياً للمستثمرين، وبيئة مبيعات يمكن المشي فيها. جرافيكس هاوس تتولى الإطلاق البصري، وتوريفا تتولى المكان.",
-      "في برامج مثل أجنحة الراف أو معرض الإنسانية، قد يأتي التوجه الإبداعي من Graphics House. تُعرض هذه القطع كخبرة فريق مختارة، لا كعقود تاريخية باسم توريفا.",
+      "في برامج مثل أجنحة الراف أو معرض الإنسانية، قد يأتي التوجه الإبداعي من Graphics House. الطبقة المكانية يسلّمها فريق التنفيذ نفسه الذي يقود توريفا اليوم.",
       "الفائدة للعميل: لغة بصرية متسقة من الفيلم إلى الفراغ المنجز، تقليل تسليمات الموردين، ومجموعة واحدة تنسّق عندما يمتد النطاق للطبقتين.",
     ],
   },

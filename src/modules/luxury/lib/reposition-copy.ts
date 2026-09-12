@@ -21,6 +21,9 @@ export type RepositionCopy = {
     eyebrow: string;
     title: string;
     intro: string;
+    frame: string;
+    tierPrimary: string;
+    tierSecondary: string;
     learnMore: string;
     primary: readonly {
       href: string;
@@ -90,7 +93,7 @@ const en: RepositionCopy = {
   definition: {
     eyebrow: "What Turriva is",
     title: "Spaces designed. Spaces delivered.",
-    body: "We take a space from idea and drawings to a place ready to use or present — design, detailing, supply, installation, and handover, held by one team.",
+    body: "We take a space from idea and drawings to a place ready to use or present — design, detailing, supply, installation, and handover, held by one team. This team has already delivered sales galleries, smart models, and exhibition pavilions for major clients through Graphics House — Turriva brings that experience to every spatial design and delivery brief.",
     audiences: "Residential · Commercial · Hospitality · Real estate",
   },
   developers: {
@@ -120,6 +123,9 @@ const en: RepositionCopy = {
     eyebrow: "Products",
     title: "Seven clear offers. One way of working.",
     intro: "Each product has a defined job. Choose the door that matches your brief.",
+    frame: "We always start where your project needs us now: the sales environment first, then full delivery. The remaining capabilities are ready when required.",
+    tierPrimary: "Start here",
+    tierSecondary: "Also available",
     learnMore: "Explore",
     primary: [
       {
@@ -136,6 +142,8 @@ const en: RepositionCopy = {
         description: "A villa, apartment, or suite the buyer can walk — the lifestyle made physical.",
         image: PRODUCT_IMAGES.showUnit,
       },
+    ],
+    secondary: [
       {
         href: "/design-build",
         nameAr: "التصميم والتنفيذ",
@@ -143,8 +151,6 @@ const en: RepositionCopy = {
         description: "From idea to a ready space: design, detailing, supply, install, handover.",
         image: PRODUCT_IMAGES.designBuild,
       },
-    ],
-    secondary: [
       {
         href: "/fit-out",
         nameAr: "التنفيذ والتجهيز",
@@ -199,7 +205,7 @@ const en: RepositionCopy = {
     eyebrow: "Selected work",
     title: "Spaces with a clear job.",
     subtitle: "Each frame opens the product it belongs to.",
-    note: "Selected team experience and live work — not a list of historical Turriva contracts.",
+    note: "Delivered by the Turriva team — some under Graphics House before the dedicated brand launched.",
     cta: "View selected work",
     items: [
       { image: PRODUCT_IMAGES.experience, category: "Real estate", title: "Where the project is shown", href: "/real-estate-experience" },
@@ -212,10 +218,10 @@ const en: RepositionCopy = {
   },
   team: {
     eyebrow: "Credibility",
-    title: "A new brand. An experienced team.",
+    title: "Documented experience, not promises.",
     intro:
-      "Turriva is a specialized brand, backed by people who know spatial design, execution, visual work, and delivery.",
-    note: "Named programmes below are selected team experience — not historical Turriva contracts unless that attribution is confirmed.",
+      "Turriva is new as a name. It carries Tasami Group’s real delivery record. The work below was executed by the same team that runs Turriva today — some before the brand launched, some under Graphics House as the execution arm.",
+    note: "",
     cta: "Our work",
   },
   method: {
@@ -230,9 +236,9 @@ const en: RepositionCopy = {
       { title: "Deliver", body: "A space ready to show, occupy, or open." },
     ],
   },
-  teamExperience: "Selected team experience",
+  teamExperience: "Selected work",
   honestNote:
-    "Shown as selected experience of the delivery team and group partners — not as a historical Turriva-branded contract.",
+    "The work below was delivered by the Turriva team — some under Graphics House before the dedicated brand launched. Same team. Same execution standard.",
 };
 
 const ar: RepositionCopy = {
@@ -240,7 +246,7 @@ const ar: RepositionCopy = {
   definition: {
     eyebrow: "ما هي توريفا",
     title: "نصمّم المساحات. ونسلّمها.",
-    body: "نأخذ المساحة من الفكرة والمخططات إلى مكان جاهز للاستخدام أو العرض — تصميم، تفاصيل، توريد، تركيب، وتسليم، بيد فريق واحد.",
+    body: "نأخذ المساحة من الفكرة والمخططات إلى مكان جاهز للاستخدام أو العرض — تصميم، تفاصيل، توريد، تركيب، وتسليم، بيد فريق واحد. هذا الفريق نفّذ من قبل قاعات عرض ومجسمات ذكية وأجنحة معارض لعملاء كبار عبر جرافيكس هاوس — توريفا تحمل هذه الخبرة إلى كل مشروع تصميم وتنفيذ مكاني.",
     audiences: "سكني · تجاري · ضيافة · عقار",
   },
   developers: {
@@ -270,6 +276,9 @@ const ar: RepositionCopy = {
     eyebrow: "المنتجات",
     title: "سبعة عروض واضحة. أسلوب عمل واحد.",
     intro: "لكل منتج مهمة محددة. اختر الباب الذي يطابق احتياجك.",
+    frame: "نبدأ دائمًا من حيث تحتاج مشروعك الآن: بيئة البيع أولًا، ثم التنفيذ الكامل. باقي القدرات متاحة عند الحاجة.",
+    tierPrimary: "ابدأ من هنا",
+    tierSecondary: "متاح أيضًا",
     learnMore: "استكشف",
     primary: [
       {
@@ -286,6 +295,8 @@ const ar: RepositionCopy = {
         description: "فيلا أو شقة أو جناح يمشي فيه المشتري — أسلوب الحياة وقد صار مكاناً.",
         image: PRODUCT_IMAGES.showUnit,
       },
+    ],
+    secondary: [
       {
         href: "/design-build",
         nameAr: "التصميم والتنفيذ",
@@ -293,8 +304,6 @@ const ar: RepositionCopy = {
         description: "من الفكرة إلى مساحة جاهزة: تصميم، تفاصيل، توريد، تركيب، تسليم.",
         image: PRODUCT_IMAGES.designBuild,
       },
-    ],
-    secondary: [
       {
         href: "/fit-out",
         nameAr: "التنفيذ والتجهيز",
@@ -349,7 +358,7 @@ const ar: RepositionCopy = {
     eyebrow: "أعمال مختارة",
     title: "مساحات بمهمة واضحة.",
     subtitle: "كل إطار يفتح المنتج الذي ينتمي إليه.",
-    note: "خبرة فريق مختارة وأعمال حية — ليست قائمة عقود تاريخية باسم توريفا.",
+    note: "نفّذها فريق توريفا — بعضها تحت جرافيكس هاوس قبل إطلاق العلامة المستقلة.",
     cta: "عرض الأعمال المختارة",
     items: [
       { image: PRODUCT_IMAGES.experience, category: "العقار", title: "حيث يُعرض المشروع", href: "/real-estate-experience" },
@@ -362,10 +371,10 @@ const ar: RepositionCopy = {
   },
   team: {
     eyebrow: "المصداقية",
-    title: "علامة جديدة. فريق ذو خبرة.",
+    title: "خبرة موثّقة، لا وعود.",
     intro:
-      "توريفا علامة متخصصة، مدعومة بمن يعرف التصميم المكاني والتنفيذ والعمل البصري والتسليم.",
-    note: "البرامج المسماة أدناه خبرة فريق مختارة — لا عقود تاريخية باسم توريفا إلا بعد تأكيد النسبة.",
+      "توريفا علامة جديدة بالاسم، لكنها تحمل سجل تنفيذ فعلي لمجموعة تسامي. الأعمال التالية نُفّذت بنفس الفريق الذي يدير توريفا اليوم، بعضها قبل إطلاق العلامة، وبعضها تحت مظلة جرافيكس هاوس كذراع تنفيذ.",
+    note: "",
     cta: "أعمالنا",
   },
   method: {
@@ -380,9 +389,9 @@ const ar: RepositionCopy = {
       { title: "التسليم", body: "مكان جاهز للعرض أو الاستخدام أو الافتتاح." },
     ],
   },
-  teamExperience: "خبرة فريق مختارة",
+  teamExperience: "أعمال مختارة",
   honestNote:
-    "تُعرض كخبرة مختارة لفريق التنفيذ وشركاء المجموعة — وليست عقداً تاريخياً باسم توريفا.",
+    "الأعمال التالية نفّذها فريق توريفا، بعضها تحت مظلة جرافيكس هاوس قبل إطلاق العلامة المستقلة. نفس الفريق، نفس معايير التنفيذ.",
 };
 
 export function getRepositionCopy(locale: Locale): RepositionCopy {

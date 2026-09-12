@@ -14,7 +14,7 @@ import {
   LuxuryProductsWeightedSection,
   LuxuryTeamExperienceSection,
 } from "./luxury-reposition-sections";
-import { LuxuryGroupEcosystemSection } from "./luxury-group-ecosystem-section";
+import { LuxuryClientLogoStrip, LuxuryGroupProofSection } from "./luxury-group-proof-section";
 import { localizePath } from "@/shared/i18n/path";
 
 type Props = {
@@ -28,6 +28,8 @@ export function LuxuryHomePage({ locale }: Props) {
   return (
     <>
       <LuxuryHomeHero locale={locale} />
+      <LuxuryClientLogoStrip locale={locale} />
+      <LuxuryGroupProofSection locale={locale} showLogos={false} />
       <LuxuryDefinitionSection locale={locale} />
       <LuxuryDevelopersSection locale={locale} />
       <LuxuryProductsWeightedSection locale={locale} />
@@ -36,7 +38,6 @@ export function LuxuryHomePage({ locale }: Props) {
       <LuxuryAlbumSection locale={locale} />
       <LuxuryTeamExperienceSection locale={locale} />
       <LuxuryMethodSection locale={locale} />
-      <LuxuryGroupEcosystemSection locale={locale} />
 
       <section id="brief" className="lux-cta-band" aria-labelledby="home-cta-heading">
         <div className="lux-container">
