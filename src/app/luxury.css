@@ -423,6 +423,20 @@
     gap: 0.85rem;
     align-items: start;
   }
+
+  .lux-mega__layout--doors {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  }
+}
+
+.lux-mega__group--support .lux-mega-card {
+  grid-template-columns: 3rem minmax(0, 1fr);
+  padding: 0.25rem;
+}
+
+.lux-mega__group--support .lux-mega-card__media {
+  width: 3rem;
+  height: 3rem;
 }
 
 .lux-mega__group-title {
@@ -5204,7 +5218,7 @@
 
 @media (min-width: 900px) {
   .lux-products-weighted__primary {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -5224,13 +5238,13 @@
 
 @media (min-width: 1200px) {
   .lux-products-weighted__secondary {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 1400px) {
   .lux-products-weighted__secondary {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
@@ -7012,7 +7026,7 @@ html[lang="en"] .lux-proof__title {
 
 @media (min-width: 900px) {
   .lux-products-weighted__primary {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 

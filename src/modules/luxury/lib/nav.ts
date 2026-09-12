@@ -43,10 +43,11 @@ export type LuxuryProductMenuItem = {
   nameEn: string;
   description: string;
   image: string;
+  featured?: boolean;
 };
 
 export type LuxuryProductMenuGroup = {
-  id: "real-estate" | "design-build" | "spaces";
+  id: "doors" | "support";
   title: string;
   items: readonly LuxuryProductMenuItem[];
 };
@@ -82,13 +83,15 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
   return {
     label: ar ? "منتجاتنا" : "Our products",
     eyebrow: ar ? "منتجاتنا" : "Our products",
-    title: ar ? "اختر ما يناسب مشروعك" : "Choose what fits your project",
-    subtitle: ar ? "تصميم مكاني · تجربة · تنفيذ" : "Spatial Design · Experience · Build",
+    title: ar ? "ثلاثة أبواب رئيسية" : "Three main doors",
+    subtitle: ar
+      ? "ابدأ من هنا. باقي الصفحات دعم — الروابط كما هي."
+      : "Start here. The rest are support — same URLs, clearer hierarchy.",
     explore: ar ? "استكشف" : "Explore",
     groups: [
       {
-        id: "real-estate",
-        title: ar ? "العقار" : "Real estate",
+        id: "doors",
+        title: ar ? "الأبواب الرئيسية" : "Main doors",
         items: [
           {
             href: lp("/real-estate-experience"),
@@ -99,6 +102,7 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
               ? "بيئة البيع: من مركز البيع إلى وحدة العرض."
               : "The sales environment — from gallery to show unit.",
             image: "/brand/turriva/makkah-charter-04.jpeg",
+            featured: true,
           },
           {
             href: lp("/show-unit"),
@@ -109,16 +113,28 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
               ? "فيلا أو شقة أو جناح يمشي فيه المشتري."
               : "A villa, apartment, or suite the buyer can walk.",
             image: "/brand/turriva/projects/project-walk-in-makkah.webp",
+            featured: true,
+          },
+          {
+            href: lp("/fit-out"),
+            number: "03",
+            nameAr: "التنفيذ والتجهيز",
+            nameEn: "Fit-Out & Execution",
+            description: ar
+              ? "تصميمكم المعتمد. نحن نبنيه."
+              : "Your approved design. We build it.",
+            image: "/brand/turriva/projects/project-joinery-b2b.webp",
+            featured: true,
           },
         ],
       },
       {
-        id: "design-build",
-        title: ar ? "التصميم والتنفيذ" : "Design & build",
+        id: "support",
+        title: ar ? "صفحات الدعم" : "Support pages",
         items: [
           {
             href: lp("/design-build"),
-            number: "03",
+            number: "04",
             nameAr: "التصميم والتنفيذ",
             nameEn: "Design & Build",
             description: ar
@@ -126,22 +142,6 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
               : "From idea to a ready space — one path.",
             image: "/brand/turriva/hero-interior.webp",
           },
-          {
-            href: lp("/fit-out"),
-            number: "04",
-            nameAr: "التنفيذ والتجهيز",
-            nameEn: "Fit-Out & Execution",
-            description: ar
-              ? "تصميمكم المعتمد. نحن نبنيه."
-              : "Your approved design. We build it.",
-            image: "/brand/turriva/projects/project-joinery-b2b.webp",
-          },
-        ],
-      },
-      {
-        id: "spaces",
-        title: ar ? "المساحات" : "Spaces",
-        items: [
           {
             href: lp("/commercial-spaces"),
             number: "05",

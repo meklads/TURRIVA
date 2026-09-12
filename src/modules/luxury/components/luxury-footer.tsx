@@ -23,22 +23,17 @@ export async function LuxuryFooter() {
 
   const productGroups = [
     {
-      title: locale === "ar" ? "العقار" : "Real estate",
+      title: locale === "ar" ? "الأبواب الرئيسية" : "Main doors",
       links: [
         { href: lp("/real-estate-experience"), label: locale === "ar" ? "تجربة المشروع العقاري" : "Real estate project experience" },
         { href: lp("/show-unit"), label: locale === "ar" ? "وحدة العرض" : "Show unit" },
-      ],
-    },
-    {
-      title: locale === "ar" ? "التصميم والتنفيذ" : "Design and build",
-      links: [
-        { href: lp("/design-build"), label: locale === "ar" ? "التصميم والتنفيذ" : "Design and build" },
         { href: lp("/fit-out"), label: locale === "ar" ? "التنفيذ والتجهيز" : "Fit-out and execution" },
       ],
     },
     {
-      title: locale === "ar" ? "المساحات" : "Spaces",
+      title: locale === "ar" ? "صفحات الدعم" : "Support pages",
       links: [
+        { href: lp("/design-build"), label: locale === "ar" ? "التصميم والتنفيذ" : "Design and build" },
         { href: lp("/commercial-spaces"), label: locale === "ar" ? "المساحات التجارية" : "Commercial spaces" },
         { href: lp("/hospitality-spaces"), label: locale === "ar" ? "مساحات الضيافة" : "Hospitality spaces" },
         { href: lp("/renovation"), label: locale === "ar" ? "التجديد والتطوير" : "Renovation and upgrade" },

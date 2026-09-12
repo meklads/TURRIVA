@@ -29,20 +29,20 @@ const CATALOG: readonly ProductRelation[] = [
     blurbEn: "A unit the buyer walks — and understands.",
   },
   {
-    key: "design-build",
-    href: "/design-build",
-    nameAr: "التصميم والتنفيذ",
-    nameEn: "Design & Build",
-    blurbAr: "من الفكرة إلى مساحة جاهزة.",
-    blurbEn: "From idea to a ready space.",
-  },
-  {
     key: "fit-out",
     href: "/fit-out",
     nameAr: "التنفيذ والتجهيز",
     nameEn: "Fit-Out & Execution",
     blurbAr: "تصميم معتمد. تنفيذ واضح.",
     blurbEn: "Approved design. Clear execution.",
+  },
+  {
+    key: "design-build",
+    href: "/design-build",
+    nameAr: "التصميم والتنفيذ",
+    nameEn: "Design & Build",
+    blurbAr: "من الفكرة إلى مساحة جاهزة.",
+    blurbEn: "From idea to a ready space.",
   },
   {
     key: "commercial-spaces",
@@ -71,13 +71,13 @@ const CATALOG: readonly ProductRelation[] = [
 ] as const;
 
 const RELATED: Record<ProductVisualKey, readonly ProductVisualKey[]> = {
-  "real-estate-experience": ["show-unit", "design-build"],
+  "real-estate-experience": ["show-unit", "fit-out"],
   "show-unit": ["real-estate-experience", "fit-out"],
-  "design-build": ["show-unit", "commercial-spaces", "hospitality-spaces"],
-  "fit-out": ["design-build", "commercial-spaces", "hospitality-spaces"],
-  "commercial-spaces": ["design-build", "fit-out", "renovation"],
-  "hospitality-spaces": ["design-build", "fit-out", "renovation"],
-  renovation: ["design-build", "commercial-spaces", "hospitality-spaces"],
+  "fit-out": ["real-estate-experience", "show-unit", "design-build"],
+  "design-build": ["fit-out", "show-unit", "commercial-spaces"],
+  "commercial-spaces": ["fit-out", "design-build", "renovation"],
+  "hospitality-spaces": ["fit-out", "design-build", "renovation"],
+  renovation: ["fit-out", "design-build", "commercial-spaces"],
 };
 
 function find(key: ProductVisualKey): ProductRelation {

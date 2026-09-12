@@ -164,9 +164,8 @@ export function LuxuryDesktopNav({
     };
   }, [open]);
 
-  const realEstate = products?.groups.find((group) => group.id === "real-estate");
-  const designBuild = products?.groups.find((group) => group.id === "design-build");
-  const spaces = products?.groups.find((group) => group.id === "spaces");
+  const doors = products?.groups.find((group) => group.id === "doors");
+  const support = products?.groups.find((group) => group.id === "support");
 
   return (
     <nav className="lux-header-nav hidden min-w-0 items-center justify-center lg:flex" aria-label="Main">
@@ -199,9 +198,13 @@ export function LuxuryDesktopNav({
                 <p className="lux-mega__subtitle">{products.subtitle}</p>
               </header>
 
-              <div className="lux-mega__layout">
-                {[realEstate, designBuild, spaces].filter(Boolean).map((group) => (
-                  <section key={group!.id} className="lux-mega__group" aria-label={group!.title}>
+              <div className="lux-mega__layout lux-mega__layout--doors">
+                {[doors, support].filter(Boolean).map((group) => (
+                  <section
+                    key={group!.id}
+                    className={`lux-mega__group${group!.id === "doors" ? " lux-mega__group--doors" : " lux-mega__group--support"}`}
+                    aria-label={group!.title}
+                  >
                     <p className="lux-mega__group-title">{group!.title}</p>
                     <div className="lux-mega__group-stack">
                       {group!.items.map((item) => (
@@ -211,7 +214,7 @@ export function LuxuryDesktopNav({
                           explore={products.explore}
                           isAr={isAr}
                           active={isActive(item.href)}
-                          featured={item.number === "01"}
+                          featured={Boolean(item.featured)}
                           onNavigate={closeMenu}
                         />
                       ))}
