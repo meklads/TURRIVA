@@ -3,7 +3,7 @@ import type { Locale } from "@/shared/i18n/locale";
 
 type Props = {
   locale: Locale;
-  /** Compact omits logo strip (useful when already shown under hero) */
+  /** Compact shortens vertical rhythm (product pages) */
   compact?: boolean;
   showLogos?: boolean;
   showTestimonial?: boolean;
@@ -25,12 +25,34 @@ export function LuxuryGroupProofSection({
       aria-labelledby="lux-proof-title"
     >
       <div className="lux-container">
-        <div className="lux-proof__intro">
-          <p className="lux-proof__eyebrow">{copy.eyebrow}</p>
-          <h2 id="lux-proof-title" className="lux-proof__title">
-            {copy.title}
-          </h2>
-          <p className="lux-proof__body">{copy.body}</p>
+        <div className="lux-proof__grid">
+          <div className="lux-proof__intro">
+            <p className="lux-proof__eyebrow">{copy.eyebrow}</p>
+            <h2 id="lux-proof-title" className="lux-proof__title">
+              {copy.title}
+            </h2>
+            <p className="lux-proof__lead">{copy.lead}</p>
+            <p className="lux-proof__body">{copy.body}</p>
+
+            <div className="lux-proof__lineage" aria-label={copy.lineage.note}>
+              <span className="lux-proof__lineage-from">{copy.lineage.from}</span>
+              <span className="lux-proof__lineage-arrow" aria-hidden="true">
+                →
+              </span>
+              <span className="lux-proof__lineage-to">{copy.lineage.to}</span>
+              <span className="lux-proof__lineage-note">{copy.lineage.note}</span>
+            </div>
+          </div>
+
+          {showTestimonial ? (
+            <blockquote className="lux-proof__quote lux-proof__quote--aside">
+              <p className="lux-proof__quote-mark" aria-hidden="true">
+                ”
+              </p>
+              <p className="lux-proof__quote-text">{copy.testimonial.quote}</p>
+              <footer className="lux-proof__quote-attr">— {copy.testimonial.attribution}</footer>
+            </blockquote>
+          ) : null}
         </div>
 
         {showStats ? (
@@ -53,13 +75,6 @@ export function LuxuryGroupProofSection({
               ))}
             </ul>
           </div>
-        ) : null}
-
-        {showTestimonial ? (
-          <blockquote className="lux-proof__quote">
-            <p className="lux-proof__quote-text">“{copy.testimonial.quote}”</p>
-            <footer className="lux-proof__quote-attr">— {copy.testimonial.attribution}</footer>
-          </blockquote>
         ) : null}
       </div>
     </section>

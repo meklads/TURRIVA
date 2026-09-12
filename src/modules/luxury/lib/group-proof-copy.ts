@@ -3,7 +3,14 @@ import type { Locale } from "@/shared/i18n/locale";
 export type GroupProofCopy = {
   eyebrow: string;
   title: string;
+  /** Short affirmative claim under the title — the positioning in one breath */
+  lead: string;
   body: string;
+  lineage: {
+    from: string;
+    to: string;
+    note: string;
+  };
   logoLabel: string;
   clients: readonly string[];
   stats: readonly { value: string; label: string }[];
@@ -41,16 +48,22 @@ const CLIENTS_AR = [
 ] as const;
 
 const en: GroupProofCopy = {
-  eyebrow: "We are not new to this work",
-  title: "Turriva is Tasami Group’s execution arm — not a brand starting from zero.",
-  body: "The Turriva team is the same team that designed and delivered sales experiences, interior fit-out, and pavilions for Tasami Group clients for 15 years through Graphics House. Turriva is now a focused brand for spatial design and delivery — same team, same delivery standard.",
-  logoLabel: "Group-level trust",
+  eyebrow: "Tasami Group · Execution arm",
+  title: "Turriva is Tasami Group’s arm for spatial design and delivery.",
+  lead: "Fifteen years of field delivery — the same team, now under one dedicated brand.",
+  body: "Sales galleries, interior fit-out, and exhibition pavilions for Tasami Group clients were designed and built by this team through Graphics House. Turriva concentrates that craft: spatial design, detailing, fabrication, installation, and handover.",
+  lineage: {
+    from: "Graphics House",
+    to: "Turriva",
+    note: "Same team · Same delivery standard · Tasami Group",
+  },
+  logoLabel: "Clients served across the group",
   clients: CLIENTS_EN,
   stats: [
-    { value: "15+", label: "Years with developers and institutions across Saudi Arabia and the Gulf" },
+    { value: "15+", label: "Years delivering for developers and institutions in Saudi Arabia and the Gulf" },
     { value: "500+", label: "Projects delivered across the group ecosystem" },
     { value: "4", label: "Countries: Saudi Arabia, Oman, Bahrain, Egypt" },
-    { value: "Clients", label: "Including Rafal, Toyota, IMC, Al Oula, Al-Ayuni, Muslim World League, Anan Eskan, and others" },
+    { value: "Group", label: "Clients including Rafal, Toyota, IMC, Al Oula, Muslim World League, Anan Eskan" },
   ],
   testimonial: {
     quote:
@@ -58,20 +71,26 @@ const en: GroupProofCopy = {
     attribution: "Senior Official, Muslim World League · Humanity Exhibition, Makkah",
   },
   workIntro:
-    "The work below was delivered by the Turriva team — some under Graphics House before the dedicated brand launched. Same team. Same execution standard.",
+    "The work below was delivered by the Turriva team — some under Graphics House before the dedicated brand. Same team. Same execution standard.",
 };
 
 const ar: GroupProofCopy = {
-  eyebrow: "لسنا جددًا على هذا العمل",
-  title: "توريفا هي ذراع التنفيذ لمجموعة تسامي — لا علامة تبدأ من الصفر.",
-  body: "فريق توريفا هو نفسه الفريق الذي صمّم ونفّذ تجارب البيع والتشطيب الداخلي والأجنحة لعملاء مجموعة تسامي على مدى 15 عامًا عبر جرافيكس هاوس. توريفا اليوم علامة مستقلة، مخصصة بالكامل للتصميم المكاني والتنفيذ، بنفس الفريق ونفس معايير التسليم.",
-  logoLabel: "ثقة على مستوى المجموعة",
+  eyebrow: "ذراع التنفيذ · مجموعة تسامي",
+  title: "توريفا هي ذراع التصميم المكاني والتنفيذ لمجموعة تسامي.",
+  lead: "خمسة عشر عاماً من التسليم الميداني — الفريق نفسه، تحت علامة واحدة مخصصة لهذا العمل.",
+  body: "قاعات العرض والتشطيب الداخلي وأجنحة المعارض لعملاء مجموعة تسامي صمّمها ونفّذها هذا الفريق عبر جرافيكس هاوس. توريفا تركّز هذه الخبرة في مسار واحد: تصميم مكاني، تفاصيل، تصنيع، تركيب، وتسليم.",
+  lineage: {
+    from: "جرافيكس هاوس",
+    to: "توريفا",
+    note: "نفس الفريق · نفس معيار التسليم · مجموعة تسامي",
+  },
+  logoLabel: "عملاء منظومة المجموعة",
   clients: CLIENTS_AR,
   stats: [
-    { value: "15+", label: "عامًا من العمل مع مطورين ومؤسسات في السعودية والخليج" },
-    { value: "500+", label: "مشروع منفذ عبر منظومة المجموعة" },
+    { value: "15+", label: "عاماً من التنفيذ مع مطورين ومؤسسات في السعودية والخليج" },
+    { value: "500+", label: "مشروع منفّذ عبر منظومة المجموعة" },
     { value: "4", label: "دول: السعودية، عُمان، البحرين، مصر" },
-    { value: "عملاء", label: "من بينهم: الراجحي، رفال، رابطة العالم الإسلامي، عنان إسكان، تويوتا، وغيرهم" },
+    { value: "المجموعة", label: "منهم رفال، تويوتا، IMC، الأولى، رابطة العالم الإسلامي، عنان إسكان" },
   ],
   testimonial: {
     quote:
