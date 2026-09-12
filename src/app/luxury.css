@@ -5218,7 +5218,7 @@
 
 @media (min-width: 900px) {
   .lux-products-weighted__primary {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -5238,13 +5238,13 @@
 
 @media (min-width: 1200px) {
   .lux-products-weighted__secondary {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 1400px) {
   .lux-products-weighted__secondary {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
 
@@ -7085,10 +7085,45 @@ html[lang="en"] .lux-proof__title {
   list-style: none;
 }
 
+.lux-proof__logo-list--images {
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+}
+
 .lux-proof__logo-list li {
   font-size: 0.8125rem;
   font-weight: 600;
   color: color-mix(in srgb, #f7f1e8 78%, transparent);
+}
+
+.lux-proof__logo-img {
+  width: auto;
+  height: 2.75rem;
+  max-width: 7.5rem;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.88;
+}
+
+.lux-client-strip__list--images {
+  align-items: center;
+  gap: 0.85rem 1.5rem;
+}
+
+.lux-client-strip__img {
+  width: auto;
+  height: 2.35rem;
+  max-width: 6.5rem;
+  object-fit: contain;
+  opacity: 0.85;
+}
+
+.lux-products-weighted__frame {
+  margin: 0.85rem 0 0;
+  max-width: 40rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--lux-ink-soft);
 }
 
 .lux-proof__quote {
@@ -7155,7 +7190,7 @@ html[lang="en"] .lux-proof__title {
 
 @media (min-width: 900px) {
   .lux-products-weighted__primary {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

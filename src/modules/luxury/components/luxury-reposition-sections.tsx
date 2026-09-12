@@ -75,11 +75,11 @@ export function LuxuryProductsWeightedSection({ locale }: Props) {
       <div className="lux-container">
         <div className="max-w-3xl">
           <p className="lux-eyebrow">{copy.products.eyebrow}</p>
+          <p className="lux-products-weighted__frame">{copy.products.frame}</p>
           <h2 id="lux-products-title" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
             {copy.products.title}
           </h2>
           <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.products.intro}</p>
-          <p className="lux-products-weighted__frame">{copy.products.frame}</p>
         </div>
 
         <p className="lux-products-weighted__tier-label">{copy.products.tierPrimary}</p>

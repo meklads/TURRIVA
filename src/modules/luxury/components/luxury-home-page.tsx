@@ -14,7 +14,7 @@ import {
   LuxuryProductsWeightedSection,
   LuxuryTeamExperienceSection,
 } from "./luxury-reposition-sections";
-import { LuxuryClientLogoStrip, LuxuryGroupProofSection } from "./luxury-group-proof-section";
+import { LuxuryGroupProofSection } from "./luxury-group-proof-section";
 import { localizePath } from "@/shared/i18n/path";
 
 type Props = {
@@ -28,8 +28,7 @@ export function LuxuryHomePage({ locale }: Props) {
   return (
     <>
       <LuxuryHomeHero locale={locale} />
-      <LuxuryClientLogoStrip locale={locale} />
-      <LuxuryGroupProofSection locale={locale} showLogos={false} />
+      <LuxuryGroupProofSection locale={locale} showLogos />
       <LuxuryDefinitionSection locale={locale} />
       <LuxuryDevelopersSection locale={locale} />
       <LuxuryProductsWeightedSection locale={locale} />
