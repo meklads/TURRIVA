@@ -136,8 +136,8 @@ export const PRODUCT_VISUALS: Record<ProductVisualKey, ProductVisuals> = {
     ],
   },
   "commercial-spaces": {
-    hero: "/brand/turriva/sample-kit-showroom.webp",
-    mid: `https://images.unsplash.com/photo-1441986300917-64674bd600d8?${q}&w=1600`,
+    hero: "/brand/turriva/projects/project-commercial-retail.jpg",
+    mid: "/brand/turriva/sample-kit-showroom.webp",
     form: "/brand/turriva/turriva-office.png",
     altEn: "Commercial interior where customers meet the brand",
     altAr: "فراغ تجاري يلتقي فيه العميل بالعلامة",
@@ -145,14 +145,14 @@ export const PRODUCT_VISUALS: Record<ProductVisualKey, ProductVisuals> = {
     midCaptionAr: "تخطيط مكاني يخدم العلامة والتشغيل معاً",
     story: [
       {
+        src: "/brand/turriva/projects/project-commercial-retail.jpg",
+        captionEn: "Customer path",
+        captionAr: "مسار العميل",
+      },
+      {
         src: "/brand/turriva/sample-kit-showroom.webp",
         captionEn: "Brand in the room",
         captionAr: "العلامة داخل المكان",
-      },
-      {
-        src: `https://images.unsplash.com/photo-1441986300917-64674bd600d8?${q}&w=1200`,
-        captionEn: "Customer path",
-        captionAr: "مسار العميل",
       },
       {
         src: "/brand/turriva/turriva-office.png",

@@ -80,11 +80,11 @@ export type RepositionCopy = {
 
 const PRODUCT_IMAGES = {
   experience: "/brand/turriva/makkah-charter-04.jpeg",
-  showUnit: "/brand/turriva/projects/project-walk-in-makkah.webp",
+  showUnit: "/brand/turriva/inspiration/living-walnut-interior.webp",
   designBuild: "/brand/turriva/hero-interior.webp",
   fitOut: "/brand/turriva/projects/project-joinery-b2b.webp",
-  commercial: "/brand/turriva/sample-kit-showroom.webp",
-  hospitality: "/brand/turriva/projects/project-walk-in-makkah.webp",
+  commercial: "/brand/turriva/projects/project-commercial-retail.jpg",
+  hospitality: "/brand/turriva/styles/french-sicily.webp",
   renovation: "/brand/turriva/projects/project-kitchen-jeddah.webp",
 } as const;
 

@@ -112,7 +112,7 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             description: ar
               ? "فيلا أو شقة أو جناح يمشي فيه المشتري."
               : "A villa, apartment, or suite the buyer can walk.",
-            image: "/brand/turriva/projects/project-walk-in-makkah.webp",
+            image: "/brand/turriva/inspiration/living-walnut-interior.webp",
             featured: true,
           },
           {
@@ -150,7 +150,7 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             description: ar
               ? "مساحة تحمل العلامة وتعمل يومياً."
               : "A space that carries the brand and works daily.",
-            image: "/brand/turriva/sample-kit-showroom.webp",
+            image: "/brand/turriva/projects/project-commercial-retail.jpg",
           },
           {
             href: lp("/hospitality-spaces"),
