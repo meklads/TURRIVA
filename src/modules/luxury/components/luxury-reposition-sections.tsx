@@ -177,10 +177,10 @@ export function LuxuryFeaturedExperienceSection({ locale }: Props) {
         <div className="lux-featured-re__grid">
           <div className="lux-featured-re__media lux-media-frame lux-media-frame--wide">
             <Image
-              src="/brand/turriva/makkah-charter-04.jpeg"
+              src="/brand/turriva/inspiration/living-walnut-interior.webp"
               alt={copy.featured.title}
               fill
-              className="object-cover"
+              className="object-cover object-[center_40%]"
               sizes="(max-width: 900px) 100vw, 52vw"
             />
           </div>
@@ -232,7 +232,7 @@ export function LuxuryAlbumSection({ locale }: Props) {
                   src={item.image}
                   alt={item.title}
                   fill
-                  className="object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.03]"
+                  className="object-cover object-[center_35%] transition-transform duration-[1.2s] ease-out group-hover:scale-[1.03]"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>
@@ -258,7 +258,9 @@ export function LuxuryAlbumSection({ locale }: Props) {
 export function LuxuryTeamExperienceSection({ locale }: Props) {
   const copy = getRepositionCopy(locale);
   const isAr = locale === "ar";
-  const studies = CASE_STUDIES.filter((study) => study.attribution === "team").slice(0, 3);
+  const studies = CASE_STUDIES.filter(
+    (study) => study.attribution === "team" && study.delivery === "field_execution"
+  ).slice(0, 3);
 
   return (
     <section className="lux-section lux-section--linen lux-team-experience" aria-labelledby="lux-team-title">

@@ -33,7 +33,7 @@ const q = "auto=format&fit=crop&q=85";
 export const PRODUCT_VISUALS: Record<ProductVisualKey, ProductVisuals> = {
   "real-estate-experience": {
     hero: `https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?${q}&w=1800`,
-    mid: "/brand/turriva/makkah-charter-04.jpeg",
+    mid: "/brand/turriva/projects/anan-eskan-gallery.jpg",
     form: "/brand/turriva/sample-kit-showroom.webp",
     altEn: "Modern development presentation environment",
     altAr: "بيئة عرض لمشروع عقاري حديث",
@@ -41,7 +41,7 @@ export const PRODUCT_VISUALS: Record<ProductVisualKey, ProductVisuals> = {
     midCaptionAr: "المكان الذي يلتقي فيه المشروع بعملائه",
     story: [
       {
-        src: "/brand/turriva/makkah-charter-04.jpeg",
+        src: "/brand/turriva/projects/anan-eskan-gallery.jpg",
         captionEn: "Sales environment",
         captionAr: "بيئة البيع",
       },
@@ -51,7 +51,7 @@ export const PRODUCT_VISUALS: Record<ProductVisualKey, ProductVisuals> = {
         captionAr: "عرض المشروع",
       },
       {
-        src: "/brand/turriva/projects/project-walk-in-makkah.webp",
+        src: "/brand/turriva/inspiration/living-walnut-interior.webp",
         captionEn: "Show unit",
         captionAr: "وحدة العرض",
       },

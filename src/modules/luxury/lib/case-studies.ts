@@ -16,7 +16,13 @@ export type CaseStudy = {
   bodyAr: string;
   servicesEn: readonly string[];
   servicesAr: readonly string[];
+  /**
+   * Credibility rule: homepage Selected Work / Credibility cards must be
+   * on-the-ground execution (fabrication + install). CGI-only marketing
+   * renders (e.g. aerial CGI campaigns) must not be listed as delivery proof.
+   */
   attribution: "team";
+  delivery: "field_execution";
   partner?: { name: string; url: string; roleEn: string; roleAr: string };
   /** Optional external source for verification (e.g. Graphics House case page). */
   sourceUrl?: { ar: string; en: string };
@@ -27,6 +33,7 @@ export type CaseStudy = {
 export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     attribution: "team",
+    delivery: "field_execution",
     slug: "humanity-exhibition-mwl",
     image: "/brand/turriva/makkah-charter-04.jpeg",
     categoryEn: "Exhibition · Institutional",
@@ -59,8 +66,9 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   },
   {
     attribution: "team",
+    delivery: "field_execution",
     slug: "anan-eskan-sales-gallery",
-    image: "/brand/turriva/sample-kit-showroom.webp",
+    image: "/brand/turriva/projects/anan-eskan-youtube-poster.jpg",
     categoryEn: "Sales gallery · Decor Design & Build",
     categoryAr: "قاعة عرض · تصميم وتنفيذ ديكور",
     titleEn: "Anan Eskan Sales Gallery · Riyadh",
@@ -68,9 +76,9 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     locationEn: "Riyadh, Saudi Arabia",
     locationAr: "الرياض، السعودية",
     summaryEn:
-      "Decor Design & Build for a complete sales gallery — from drawings to a space ready for opening.",
+      "Full spatial delivery for a sales gallery: design and fabrication of display models, and on-site exhibition fit-out from drawings to opening-ready handover.",
     summaryAr:
-      "تصميم وتنفيذ ديكور لقاعة عرض مبيعات كاملة — من المخططات إلى التسليم الجاهز للافتتاح.",
+      "تنفيذ مكاني كامل لقاعة عرض مبيعات: تصميم وتصنيع مجسمات العرض، وتجهيز فعلي للمعرض من المخططات إلى التسليم الجاهز للافتتاح.",
     bodyEn:
       "A full sales-gallery environment for Anan Eskan in Riyadh: interior composition, finishes, and fit-out delivered as Decor Design & Build. The brief was a place where the development meets its buyers — presentation-ready at handover.",
     bodyAr:
@@ -92,11 +100,13 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       ar: "https://3dgraphicshouse.com/insights/projects/anan-eskan-riyadh.html",
       en: "https://3dgraphicshouse.com/insights/projects/anan-eskan-riyadh-en.html",
     },
+    videoUrl: "https://youtu.be/jP8vLnnRhb0",
   },
   {
     attribution: "team",
+    delivery: "field_execution",
     slug: "rafal-pavilions",
-    image: LUXURY_IMAGES.project1,
+    image: "/brand/turriva/projects/rafal-pavilions.jpg",
     categoryEn: "Exhibition · Developer",
     categoryAr: "معرض · مطور",
     titleEn: "Rafal Pavilions",
@@ -124,10 +134,11 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       roleEn: "Cinematic CGI & launch film",
       roleAr: "CGI سينمائي وفيلم إطلاق",
     },
-    videoUrl: "https://3dgraphicshouse.com",
+    videoUrl: "https://3dgraphicshouse.com/insights/projects/rafal-pavilions-en.html",
   },
   {
     attribution: "team",
+    delivery: "field_execution",
     slug: "villa-kitchen-jeddah",
     image: LUXURY_IMAGES.project2,
     categoryEn: "Residential · Kitchen",
@@ -160,6 +171,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   },
   {
     attribution: "team",
+    delivery: "field_execution",
     slug: "hospitality-fitout-makkah",
     image: LUXURY_IMAGES.project3,
     categoryEn: "Hospitality · Fit-out",
@@ -186,6 +198,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   },
   {
     attribution: "team",
+    delivery: "field_execution",
     slug: "developer-joinery-batch",
     image: LUXURY_IMAGES.project4,
     categoryEn: "B2B · Joinery",

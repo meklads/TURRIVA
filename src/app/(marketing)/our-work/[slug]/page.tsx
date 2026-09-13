@@ -2,6 +2,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { luxuryPageMetadata } from "@/modules/luxury/lib/metadata";
 import { CASE_STUDIES, getCaseStudy } from "@/modules/luxury/lib/case-studies";
+import { getYouTubeEmbedUrl } from "@/modules/luxury/lib/youtube";
 import { getRepositionCopy } from "@/modules/luxury/lib/reposition-copy";
 import { LuxuryMarketingHero } from "@/modules/luxury/components/luxury-marketing-hero";
 import { LuxuryProjectFunnelForm } from "@/modules/luxury/components/luxury-project-funnel-form";
@@ -51,6 +52,7 @@ export default async function CaseStudyPage({ params }: Props) {
   const location = isAr ? study.locationAr : study.locationEn;
   const services = isAr ? study.servicesAr : study.servicesEn;
   const note = getRepositionCopy(locale);
+  const youtubeEmbed = study.videoUrl ? getYouTubeEmbedUrl(study.videoUrl) : null;
 
   return (
     <>
@@ -64,9 +66,23 @@ export default async function CaseStudyPage({ params }: Props) {
 
       <section className="lux-section lux-section--linen">
         <div className="lux-container max-w-5xl">
-          <div className="relative aspect-[16/10] overflow-hidden rounded-xl shadow-lux-card">
-            <Image src={study.image} alt={title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 80vw" />
-          </div>
+          {youtubeEmbed ? (
+            <div className="lux-case-video relative aspect-video overflow-hidden rounded-xl bg-lux-ink shadow-lux-card">
+              <iframe
+                src={youtubeEmbed}
+                title={title}
+                className="absolute inset-0 h-full w-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+          ) : (
+            <div className="relative aspect-[16/10] overflow-hidden rounded-xl shadow-lux-card">
+              <Image src={study.image} alt={title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 80vw" />
+            </div>
+          )}
 
           <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
             <p className="text-sm text-lux-ink-muted">{location}</p>

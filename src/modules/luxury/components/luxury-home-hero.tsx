@@ -5,6 +5,8 @@ import type { Locale } from "@/shared/i18n/locale";
 import { localizePath } from "@/shared/i18n/path";
 import { getRepositionCopy } from "../lib/reposition-copy";
 import { LUXURY_HERO_IMAGE } from "../lib/nav";
+import { TrackedWhatsAppLink } from "@/shared/components/tracked-whatsapp-link";
+import { buildSalesBriefWhatsAppMessage } from "@/shared/lib/whatsapp";
 
 type Props = {
   locale: Locale;
@@ -30,7 +32,14 @@ export function LuxuryHomeHero({ locale }: Props) {
               <Link href="#brief" className="lux-btn-primary">
                 {t.hero.ctaPrimary}
               </Link>
-              <Link href={lp("/fit-out#brief")} className="lux-btn-outline-gold">
+              <TrackedWhatsAppLink
+                message={buildSalesBriefWhatsAppMessage(locale)}
+                source="home_hero_whatsapp"
+                className="lux-btn-outline-gold"
+              >
+                WhatsApp
+              </TrackedWhatsAppLink>
+              <Link href={lp("/fit-out#brief")} className="lux-btn-outline">
                 {t.hero.ctaSample}
               </Link>
             </div>
@@ -41,11 +50,15 @@ export function LuxuryHomeHero({ locale }: Props) {
           <div className="lux-hero-media-frame">
             <Image
               src={LUXURY_HERO_IMAGE}
-              alt={locale === "ar" ? "مساحة من توريفا" : "A space by Turriva"}
+              alt={
+                locale === "ar"
+                  ? "مجسم عرض عنان إسكان — تنفيذ ميداني لفريق توريفا"
+                  : "Anan Eskan display maquette — field delivery by the Turriva team"
+              }
               fill
               priority
               unoptimized
-              className="lux-hero-media-img object-cover object-[center_42%]"
+              className="lux-hero-media-img object-cover object-[center_45%]"
               sizes="(max-width: 1024px) 100vw, 55vw"
             />
           </div>

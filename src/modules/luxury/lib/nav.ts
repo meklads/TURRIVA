@@ -101,7 +101,7 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             description: ar
               ? "بيئة البيع: من مركز البيع إلى وحدة العرض."
               : "The sales environment — from gallery to show unit.",
-            image: "/brand/turriva/makkah-charter-04.jpeg",
+            image: "/brand/turriva/projects/anan-eskan-gallery.jpg",
             featured: true,
           },
           {
@@ -191,4 +191,5 @@ export function getLuxuryHeaderNavLinks(locale: Locale) {
   ] as const;
 }
 
-export const LUXURY_HERO_IMAGE = "/brand/turriva/hero-interior.webp";
+export const LUXURY_HERO_IMAGE = "/brand/turriva/projects/anan-eskan-gallery.jpg";
+/** TODO(hero): if a stronger on-site sales-gallery still is approved by design, swap LUXURY_HERO_IMAGE. Current asset is a real team-delivered Anan Eskan exhibition maquette (not CGI). */

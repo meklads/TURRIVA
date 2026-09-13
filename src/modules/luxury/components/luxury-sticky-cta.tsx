@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import type { Locale } from "@/shared/i18n/locale";
-import { buildWhatsAppHref } from "@/shared/lib/whatsapp";
+import { buildWhatsAppHref, buildSalesBriefWhatsAppMessage } from "@/shared/lib/whatsapp";
 import { trackMarketingEvent } from "@/shared/lib/marketing-events";
 
 type Props = {
@@ -26,8 +26,7 @@ export function LuxuryStickyCta({ locale, label, href, whatsappMessage, source }
 
   if (!visible) return null;
 
-  const waDefault =
-    locale === "ar" ? "مرحباً توريفا، أود مناقشة مشروع تنفيذ." : "Hello Turriva, I would like to discuss an execution project.";
+  const waDefault = whatsappMessage ?? buildSalesBriefWhatsAppMessage(locale);
 
   return (
     <div className="lux-sticky-cta" role="region" aria-label={label}>
@@ -36,7 +35,7 @@ export function LuxuryStickyCta({ locale, label, href, whatsappMessage, source }
           {label}
         </Link>
         <a
-          href={buildWhatsAppHref(whatsappMessage ?? waDefault)}
+          href={buildWhatsAppHref(waDefault)}
           className="lux-btn-outline-gold lux-sticky-cta__btn"
           target="_blank"
           rel="noopener noreferrer"

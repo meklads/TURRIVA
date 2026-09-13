@@ -43,3 +43,13 @@ jobs:
             ${{ env.IMAGE }}:${{ github.sha }}
           build-args: |
             NEXT_PUBLIC_APP_URL=https://turriva.com
+
+      # Marketing HTML is Cache-Control: no-store + Cloudflare DYNAMIC — there is no
+      # Prerender.io / Bot Cache / SSR snapshot layer to purge. After Coolify pulls
+      # :latest, bots and browsers both hit Origin fresh. Verify with:
+      #   curl -sI https://www.turriva.com/ar -A Googlebot | grep -i 'cache-control\|cf-cache'
+      - name: Note — no bot prerender cache to invalidate
+        run: |
+          echo "No Prerender/Bot-Cache layer on turriva.com HTML."
+          echo "Origin serves private,no-store; cf-cache-status=DYNAMIC for browser and Googlebot alike."
+          echo "Coolify redeploy of ghcr image is the only refresh needed."

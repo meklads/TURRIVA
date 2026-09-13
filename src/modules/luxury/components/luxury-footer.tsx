@@ -9,7 +9,7 @@ import { TURRIVA_LOGO_ON_DARK, TURRIVA_LOGO_HEIGHT, TURRIVA_LOGO_WIDTH, TURRIVA_
 import { TURRIVA_PUBLIC_EMAIL, TURRIVA_PUBLIC_HOST, TURRIVA_PUBLIC_URL } from "@/shared/constants/brand";
 import { TURRIVA_SOCIAL_LINKS } from "@/shared/lib/seo-schema";
 import { TrackedWhatsAppLink } from "@/shared/components/tracked-whatsapp-link";
-import { withUtm } from "@/shared/lib/whatsapp";
+import { buildSalesBriefWhatsAppMessage, withUtm } from "@/shared/lib/whatsapp";
 
 const TASAMI_GROUP_URL = "https://www.tasamify.com/";
 const LINKEDIN_URL = TURRIVA_SOCIAL_LINKS.linkedin;
@@ -103,7 +103,7 @@ export async function LuxuryFooter() {
 
       <div className="lux-footer-float" aria-label={t.footer.contact}>
         <TrackedWhatsAppLink
-          message={locale === "ar" ? "مرحباً توريفا، أود مناقشة مشروع تنفيذ." : "Hello Turriva, I would like to discuss an execution project."}
+          message={buildSalesBriefWhatsAppMessage(locale)}
           source="footer_float"
           className="lux-footer-float-btn lux-footer-float-btn--wa"
         >
@@ -213,7 +213,7 @@ export async function LuxuryFooter() {
                 <span dir="ltr">{t.footer.phone}</span>
               </a>
               <TrackedWhatsAppLink
-                message={locale === "ar" ? "مرحباً توريفا، أود مناقشة مشروع تنفيذ." : "Hello Turriva, I would like to discuss an execution project."}
+                message={buildSalesBriefWhatsAppMessage(locale)}
                 source="footer_contact"
                 className="lux-footer-contact-item"
               >

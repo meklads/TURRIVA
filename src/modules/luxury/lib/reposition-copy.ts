@@ -79,7 +79,8 @@ export type RepositionCopy = {
 };
 
 const PRODUCT_IMAGES = {
-  experience: "/brand/turriva/makkah-charter-04.jpeg",
+  /** Sales environment card — avoid MWL phone still here; that stays in Selected Work / case study only. */
+  experience: "/brand/turriva/projects/anan-eskan-gallery.jpg",
   showUnit: "/brand/turriva/inspiration/living-walnut-interior.webp",
   designBuild: "/brand/turriva/hero-interior.webp",
   fitOut: "/brand/turriva/projects/project-joinery-b2b.webp",
@@ -87,6 +88,9 @@ const PRODUCT_IMAGES = {
   hospitality: "/brand/turriva/styles/french-sicily.webp",
   renovation: "/brand/turriva/projects/project-kitchen-jeddah.webp",
 } as const;
+
+/** MWL exhibition — Selected Work / credibility only (execution photo; do not duplicate in product cards). */
+const MWL_SELECTED_WORK_IMAGE = "/brand/turriva/makkah-charter-04.jpeg";
 
 const en: RepositionCopy = {
   navDevelopers: "Project experience",
@@ -208,7 +212,7 @@ const en: RepositionCopy = {
     note: "The work below was delivered by the Turriva team — some under Graphics House before the dedicated brand launched. Same team. Same execution standard.",
     cta: "View selected work",
     items: [
-      { image: PRODUCT_IMAGES.experience, category: "Real estate", title: "Where the project is shown", href: "/real-estate-experience" },
+      { image: MWL_SELECTED_WORK_IMAGE, category: "Real estate", title: "Where the project is shown", href: "/real-estate-experience" },
       { image: PRODUCT_IMAGES.showUnit, category: "Show unit", title: "A unit the buyer walks", href: "/show-unit" },
       { image: PRODUCT_IMAGES.designBuild, category: "Design and build", title: "From idea to room", href: "/design-build" },
       { image: PRODUCT_IMAGES.fitOut, category: "Fit-out", title: "Drawings, built", href: "/fit-out" },
@@ -361,7 +365,7 @@ const ar: RepositionCopy = {
     note: "الأعمال التالية نفّذها فريق توريفا، بعضها تحت مظلة جرافيكس هاوس قبل إطلاق العلامة المستقلة. نفس الفريق، نفس معايير التنفيذ.",
     cta: "عرض الأعمال المختارة",
     items: [
-      { image: PRODUCT_IMAGES.experience, category: "العقار", title: "حيث يُعرض المشروع", href: "/real-estate-experience" },
+      { image: MWL_SELECTED_WORK_IMAGE, category: "العقار", title: "حيث يُعرض المشروع", href: "/real-estate-experience" },
       { image: PRODUCT_IMAGES.showUnit, category: "وحدة العرض", title: "وحدة يمشي فيها المشتري", href: "/show-unit" },
       { image: PRODUCT_IMAGES.designBuild, category: "التصميم والتنفيذ", title: "من فكرة إلى غرفة", href: "/design-build" },
       { image: PRODUCT_IMAGES.fitOut, category: "التنفيذ والتجهيز", title: "مخططات تُبنى", href: "/fit-out" },
