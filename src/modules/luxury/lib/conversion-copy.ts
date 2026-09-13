@@ -34,7 +34,7 @@ export const PRODUCT_TIERS: readonly ProductTier[] = [
     href: "/real-estate-experience",
     media: {
       type: "image",
-      src: "/brand/turriva/projects/anan-eskan-gallery.jpg",
+      src: "/brand/turriva/makkah-charter-04.jpeg",
     },
   },
   {
@@ -71,7 +71,7 @@ export const PRODUCT_TIERS: readonly ProductTier[] = [
     href: "/show-unit",
     media: {
       type: "image",
-      src: "/brand/turriva/makkah-charter-04.jpeg",
+      src: "/brand/turriva/projects/anan-eskan-gallery.jpg",
     },
   },
 ] as const;
