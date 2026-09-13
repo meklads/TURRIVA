@@ -18,6 +18,8 @@ export type CaseStudy = {
   servicesAr: readonly string[];
   attribution: "team";
   partner?: { name: string; url: string; roleEn: string; roleAr: string };
+  /** Optional external source for verification (e.g. Graphics House case page). */
+  sourceUrl?: { ar: string; en: string };
   videoUrl?: string;
   metrics?: readonly { labelEn: string; labelAr: string; valueEn: string; valueAr: string }[];
 };
@@ -85,6 +87,10 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       url: GROUP_LINKS.graphicsHouse,
       roleEn: "Group delivery partner",
       roleAr: "شريك تسليم المجموعة",
+    },
+    sourceUrl: {
+      ar: "https://3dgraphicshouse.com/insights/projects/anan-eskan-riyadh.html",
+      en: "https://3dgraphicshouse.com/insights/projects/anan-eskan-riyadh-en.html",
     },
   },
   {

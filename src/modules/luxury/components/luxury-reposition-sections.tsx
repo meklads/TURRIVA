@@ -175,7 +175,7 @@ export function LuxuryFeaturedExperienceSection({ locale }: Props) {
     <section className="lux-section lux-section--cream lux-featured-re" aria-labelledby="lux-featured-title">
       <div className="lux-container">
         <div className="lux-featured-re__grid">
-          <div className="lux-featured-re__media lux-media-frame lux-media-frame--portrait">
+          <div className="lux-featured-re__media lux-media-frame lux-media-frame--wide">
             <Image
               src="/brand/turriva/makkah-charter-04.jpeg"
               alt={copy.featured.title}
@@ -224,7 +224,7 @@ export function LuxuryAlbumSection({ locale }: Props) {
             className="lux-gallery-figure lux-album__frame group block"
           >
             <figure>
-              <div className="lux-gallery-media lux-media-frame lux-media-frame--portrait">
+              <div className="lux-gallery-media lux-media-frame lux-media-frame--landscape">
                 <span className="lux-album__index" aria-hidden>
                   {String(index + 1).padStart(2, "0")}
                 </span>
@@ -272,7 +272,7 @@ export function LuxuryTeamExperienceSection({ locale }: Props) {
         </div>
         <ul className="lux-equal-cards mt-10">
           {studies.map((study) => (
-            <li key={study.slug}>
+            <li key={study.slug} className="lux-case-card">
               <LocalizedLink href={`/our-work/${study.slug}`} className="lux-door-card group block h-full">
                 <div className="lux-media-frame lux-media-frame--wide mb-4 overflow-hidden rounded-lg">
                   <Image
@@ -291,6 +291,35 @@ export function LuxuryTeamExperienceSection({ locale }: Props) {
                   {isAr ? study.summaryAr : study.summaryEn}
                 </p>
               </LocalizedLink>
+              {study.sourceUrl ? (
+                <p className="lux-case-ref">
+                  {isAr ? (
+                    <>
+                      الحالة الكاملة موثّقة على{" "}
+                      <a
+                        href={study.sourceUrl.ar}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="lux-case-ref__link"
+                      >
+                        جرافيكس هاوس
+                      </a>
+                    </>
+                  ) : (
+                    <>
+                      Full case documented on{" "}
+                      <a
+                        href={study.sourceUrl.en}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="lux-case-ref__link"
+                      >
+                        Graphics House
+                      </a>
+                    </>
+                  )}
+                </p>
+              ) : null}
             </li>
           ))}
         </ul>

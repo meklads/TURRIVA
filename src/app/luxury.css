@@ -5429,15 +5429,16 @@ html {
   overflow: hidden;
   border-radius: 0.15rem;
   background: var(--lux-stone);
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 2;
+  max-height: 18rem;
   min-height: 0;
 }
 
 @media (min-width: 900px) {
   .lux-featured-re__media {
-    min-height: 0;
-    height: 100%;
-    aspect-ratio: 4 / 5;
+    max-height: 22rem;
+    height: auto;
+    aspect-ratio: 3 / 2;
   }
 }
 
@@ -7299,8 +7300,8 @@ html[lang="en"] .lux-proof__title,
 
 /* ——— Homepage composition system ——— */
 .lux-home {
-  --lux-media-portrait: 4 / 5;
-  --lux-media-wide: 16 / 10;
+  --lux-media-portrait: 4 / 3;
+  --lux-media-wide: 16 / 9;
   --lux-media-square: 1 / 1;
   --lux-sticky-top: 6.5rem;
   --lux-intro-measure: 36rem;
@@ -7393,15 +7394,21 @@ html[lang="en"] .lux-proof__title,
 }
 
 .lux-home .lux-album .lux-gallery-media,
-.lux-home .lux-album .lux-media-frame--portrait {
+.lux-home .lux-album .lux-media-frame--landscape {
   aspect-ratio: var(--lux-media-portrait);
   border-radius: 0.15rem;
+  max-height: 16.5rem;
 }
 
 .lux-home .lux-product-card__media,
 .lux-home .lux-product-card__media--sm,
 .lux-home .lux-product-card--primary .lux-product-card__media {
   aspect-ratio: var(--lux-media-wide);
+  max-height: 12.5rem;
+}
+
+.lux-home .lux-product-card--primary .lux-product-card__media {
+  max-height: 14rem;
 }
 
 .lux-home .lux-products-weighted__primary,
@@ -7467,13 +7474,17 @@ html[lang="en"] .lux-proof__title,
 }
 
 .lux-home .lux-featured-re__grid {
-  align-items: start;
+  align-items: center;
   gap: clamp(1.5rem, 3vw, 3rem);
 }
 
 @media (min-width: 900px) {
   .lux-home .lux-featured-re__grid {
     grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  }
+
+  .lux-home .lux-featured-re__media {
+    max-height: 22rem;
   }
 }
 
@@ -7511,6 +7522,31 @@ html[lang="en"] .lux-proof__title,
 
 .lux-home .lux-method__list {
   max-width: 52rem;
+}
+
+.lux-case-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.lux-case-ref {
+  margin: 0.65rem 0 0;
+  padding-inline: 0.15rem;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--lux-ink-muted);
+}
+
+.lux-case-ref__link {
+  color: var(--lux-gold);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.lux-case-ref__link:hover {
+  color: var(--lux-ink);
 }
 
 @media (prefers-reduced-motion: reduce) {
