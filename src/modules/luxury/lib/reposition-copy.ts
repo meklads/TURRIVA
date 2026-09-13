@@ -92,7 +92,7 @@ const PRODUCT_IMAGES = {
 } as const;
 
 /** MWL exhibition. Selected Work / credibility only (execution photo; do not duplicate in product cards). */
-const MWL_SELECTED_WORK_IMAGE = "/brand/turriva/makkah-charter-04.jpeg";
+const MWL_SELECTED_WORK_IMAGE = "/brand/turriva/projects/mwl/hero.jpeg";
 
 const en: RepositionCopy = {
   navDevelopers: "Project experience",
@@ -224,10 +224,10 @@ const en: RepositionCopy = {
     items: [
       { image: MWL_SELECTED_WORK_IMAGE, category: "Temporary fit-out", title: "MWL presentation hall, Jeddah", href: "/our-work/humanity-exhibition-mwl" },
       { image: PRODUCT_IMAGES.experience, category: "Permanent sales gallery", title: "Anan Eskan sales gallery, Riyadh", href: "/our-work/anan-eskan-sales-gallery" },
+      { image: "/brand/turriva/projects/al-rajhi/maquette.jpeg", category: "Smart maquette", title: "Al Rajhi architectural maquette", href: "/our-work/al-rajhi-maquette" },
       { image: "/brand/turriva/projects/rafal-pavilions.jpg", category: "Launch pavilions", title: "Rafal pavilions, Diriyah", href: "/our-work/rafal-pavilions" },
       { image: PRODUCT_IMAGES.showUnit, category: "Show unit", title: "A unit the buyer walks", href: "/show-unit" },
       { image: PRODUCT_IMAGES.fitOut, category: "Fit-out", title: "Approved drawings, built", href: "/fit-out" },
-      { image: PRODUCT_IMAGES.commercial, category: "Commercial & hospitality", title: "Extended spatial delivery", href: "/commercial-spaces" },
     ],
   },
   team: {
@@ -385,10 +385,10 @@ const ar: RepositionCopy = {
     items: [
       { image: MWL_SELECTED_WORK_IMAGE, category: "تجهيز مؤقت", title: "قاعة عرض الرابطة، جدة", href: "/our-work/humanity-exhibition-mwl" },
       { image: PRODUCT_IMAGES.experience, category: "صالة بيع دائمة", title: "صالة عرض عنان إسكان، الرياض", href: "/our-work/anan-eskan-sales-gallery" },
+      { image: "/brand/turriva/projects/al-rajhi/maquette.jpeg", category: "مجسم ذكي", title: "مجسم الراجحي المعماري", href: "/our-work/al-rajhi-maquette" },
       { image: "/brand/turriva/projects/rafal-pavilions.jpg", category: "أجنحة إطلاق", title: "أجنحة رفال، الدرعية", href: "/our-work/rafal-pavilions" },
       { image: PRODUCT_IMAGES.showUnit, category: "وحدة العرض", title: "وحدة يمشي فيها المشتري", href: "/show-unit" },
       { image: PRODUCT_IMAGES.fitOut, category: "التجهيز", title: "مخططات معتمدة تُبنى", href: "/fit-out" },
-      { image: PRODUCT_IMAGES.commercial, category: "تجاري وضيافة", title: "تنفيذ مكاني أوسع", href: "/commercial-spaces" },
     ],
   },
   team: {

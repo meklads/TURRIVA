@@ -36,6 +36,13 @@ export type CaseStudy = {
   resultsEn?: string;
   resultsAr?: string;
   metrics?: readonly { labelEn: string; labelAr: string; valueEn: string; valueAr: string }[];
+  /** Short line for the Al Abrar-style featured hero carousel. */
+  heroTaglineEn?: string;
+  heroTaglineAr?: string;
+  /** Optional gallery stills for detail page. */
+  gallery?: readonly string[];
+  /** When true, appears in the our-work featured hero carousel. */
+  featured?: boolean;
 };
 
 export const CASE_STUDIES: readonly CaseStudy[] = [
@@ -43,8 +50,9 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     attribution: "team",
     delivery: "field_execution",
     fitMode: "temporary",
+    featured: true,
     slug: "humanity-exhibition-mwl",
-    image: "/brand/turriva/makkah-charter-04.jpeg",
+    image: "/brand/turriva/projects/mwl/hero.jpeg",
     categoryEn: "Temporary presentation fit-out",
     categoryAr: "تجهيز عرض مؤقت",
     titleEn: "Humanity Exhibition · Muslim World League",
@@ -59,6 +67,14 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       "An institutional presentation environment for the Muslim World League. The owned scope was temporary décor design and on-site execution, production of interactive architectural models, interactive display screens, and custom software integrated as one visitor experience. The work was delivered by the same field and creative team now operating under Turriva, with Graphics House as the brand layer at the time. The environment was received as a strong presentation success: clear narrative, walkable path, and interactive tools that helped visitors understand the programme without scattering vendors.",
     bodyAr:
       "بيئة عرض مؤسسية لرابطة العالم الإسلامي. النطاق الذي ملكناه: تصميم وتنفيذ ديكور مؤقت لقاعة العرض، وإنتاج مجسمات معمارية تفاعلية، وشاشات عرض تفاعلية، وبرمجيات مخصصة دُمجت كتجربة زائر واحدة. نفّذ العمل نفس الفريق الميداني والإبداعي الذي يعمل اليوم تحت توريفا، وكانت جرافيكس هاوس الطبقة الاسمية حينها. لاقى التجهيز نجاحاً واضحاً في العرض: سرد واضح، ومسار يُمشى، وأدوات تفاعل تساعد الزائر على فهم البرنامج دون تشتت المقاولين.",
+    heroTaglineEn: "From décor to interactive models and software. One presentation experience.",
+    heroTaglineAr: "من الديكور إلى المجسمات التفاعلية والبرمجيات. تجربة عرض واحدة.",
+    gallery: [
+      "/brand/turriva/projects/mwl/hero.jpeg",
+      "/brand/turriva/projects/mwl/gallery-02.jpeg",
+      "/brand/turriva/projects/mwl/gallery-05.jpeg",
+      "/brand/turriva/makkah-charter-04.jpeg",
+    ],
     servicesEn: [
       "Temporary décor design",
       "Temporary décor execution",
@@ -103,8 +119,9 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     attribution: "team",
     delivery: "field_execution",
     fitMode: "permanent",
+    featured: true,
     slug: "anan-eskan-sales-gallery",
-    image: "/brand/turriva/projects/anan-eskan-youtube-poster.jpg",
+    image: "/brand/turriva/projects/anan-eskan-gallery.jpg",
     categoryEn: "Permanent sales gallery",
     categoryAr: "صالة بيع دائمة",
     titleEn: "Anan Eskan Sales Gallery · Riyadh",
@@ -119,6 +136,14 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       "A permanent sales environment for Anan Eskan in Riyadh. Unlike a temporary exhibition hall, this brief required durable gallery décor and a lasting presentation path for buyers. The owned scope was décor design and build, fabrication of display models, and on-site fit-out to opening readiness. Documented under Graphics House; field delivery by the same team now under Turriva.",
     bodyAr:
       "بيئة بيع دائمة لعنان إسكان في الرياض. بخلاف قاعة العرض المؤقتة، تطلب الموجز ديكور صالة ثابتاً ومسار عرض دائماً للمشترين. النطاق الذي ملكناه: تصميم وتنفيذ الديكور، وتصنيع مجسمات العرض، والتجهيز الميداني حتى جاهزية الافتتاح. موثّق تحت جرافيكس هاوس؛ والتنفيذ الميداني لنفس الفريق تحت توريفا اليوم.",
+    heroTaglineEn: "Permanent gallery décor. Built for daily buyer presentations.",
+    heroTaglineAr: "ديكور صالة دائمة. مبني لعروض المشترين اليومية.",
+    gallery: [
+      "/brand/turriva/projects/anan-eskan-gallery.jpg",
+      "/brand/turriva/projects/anan-eskan/maquette-01.jpeg",
+      "/brand/turriva/projects/anan-eskan/maquette-03.jpeg",
+      "/brand/turriva/projects/anan-eskan-youtube-poster.jpg",
+    ],
     servicesEn: ["Permanent décor design", "Permanent décor build", "Display models", "Gallery fit-out", "Handover"],
     servicesAr: ["تصميم ديكور دائم", "تنفيذ ديكور دائم", "مجسمات عرض", "تجهيز صالة", "تسليم"],
     metrics: [
@@ -149,6 +174,59 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       "A lasting sales-gallery environment ready for buyer presentations. Documented under Graphics House; same field team now under Turriva.",
     resultsAr:
       "بيئة صالة بيع دائمة جاهزة لعروض المشترين. موثّقة تحت جرافيكس هاوس؛ ونفس الفريق الميداني تحت توريفا اليوم.",
+  },
+  {
+    attribution: "team",
+    delivery: "field_execution",
+    featured: true,
+    slug: "al-rajhi-maquette",
+    image: "/brand/turriva/projects/al-rajhi/maquette.jpeg",
+    categoryEn: "Smart architectural maquette",
+    categoryAr: "مجسم معماري ذكي",
+    titleEn: "Al Rajhi · Architectural Maquette",
+    titleAr: "الراجحي · مجسم معماري",
+    locationEn: "Saudi Arabia",
+    locationAr: "المملكة العربية السعودية",
+    summaryEn:
+      "Physical architectural maquette for Al Rajhi project presentation: crafted model work delivered as a sales and briefing tool, documented in the Graphics House portfolio.",
+    summaryAr:
+      "مجسم معماري مادي لعرض مشروع الراجحي: عمل مجسمات حرفي سُلّم كأداة بيع وعرض، موثّق في أعمال جرافيكس هاوس.",
+    bodyEn:
+      "A physical architectural maquette produced for Al Rajhi project presentation. The owned scope is the crafted physical model used as a briefing and sales tool. Visual launch assets around the Naseem context sit with Graphics House; the maquette itself is field craft by the same team now under Turriva. This case is shown as a presentation-model example, not as a full permanent sales-gallery fit-out.",
+    bodyAr:
+      "مجسم معماري مادي أُنتج لعرض مشروع الراجحي. النطاق الذي ملكناه هو المجسم الحرفي المستخدم كأداة عرض وبيع. أصول الإطلاق البصرية المرتبطة بسياق النسيم لدى جرافيكس هاوس؛ والمجسم نفسه حرفية ميدانية لنفس الفريق تحت توريفا اليوم. يُعرض هذا الكيس كنموذج أداة عرض، لا كتجهيز صالة بيع دائمة كاملة.",
+    heroTaglineEn: "A physical model that holds the room in the presentation.",
+    heroTaglineAr: "مجسم مادي يمسك الغرفة في لحظة العرض.",
+    gallery: [
+      "/brand/turriva/projects/al-rajhi/maquette.jpeg",
+      "/brand/turriva/projects/al-rajhi/visual.jpg",
+      "/brand/turriva/projects/al-rajhi/naseem-aerial.jpg",
+    ],
+    servicesEn: ["Architectural maquette", "Presentation model craft", "Handover"],
+    servicesAr: ["مجسم معماري", "حرفية نموذج عرض", "تسليم"],
+    metrics: [
+      { labelEn: "Type", labelAr: "النوع", valueEn: "Physical maquette", valueAr: "مجسم مادي" },
+      { labelEn: "Owned scope", labelAr: "النطاق المملوك", valueEn: "Maquette craft", valueAr: "حرفية المجسم" },
+      { labelEn: "Client", labelAr: "العميل", valueEn: "Al Rajhi", valueAr: "الراجحي" },
+    ],
+    partner: {
+      name: "Graphics House",
+      url: GROUP_LINKS.graphicsHouse,
+      roleEn: "Brand layer and visual launch assets",
+      roleAr: "الطبقة الاسمية وأصول الإطلاق البصري",
+    },
+    challengeEn:
+      "The project needed a physical presentation model that makes scale and layout tangible in the room, not only CGI stills.",
+    challengeAr:
+      "احتاج المشروع نموذجاً مادياً للعرض يجعل المقياس والتخطيط ملموسين في الغرفة، لا صور CGI فقط.",
+    solutionEn:
+      "Crafted a physical architectural maquette for Al Rajhi presentation use, with supporting visual assets held in the Graphics House portfolio.",
+    solutionAr:
+      "صُنع مجسم معماري مادي لعرض الراجحي، مع أصول بصرية داعمة ضمن أعمال جرافيكس هاوس.",
+    resultsEn:
+      "A tangible presentation model for briefings and sales conversations. Listed in the Graphics House successful projects set.",
+    resultsAr:
+      "نموذج عرض ملموس للجلسات ومحادثات البيع. مدرج ضمن مشاريع جرافيكس هاوس الناجحة.",
   },
   {
     attribution: "team",
@@ -285,4 +363,9 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
 
 export function getCaseStudy(slug: string): CaseStudy | undefined {
   return CASE_STUDIES.find((c) => c.slug === slug);
+}
+
+export function getFeaturedCaseStudies(): readonly CaseStudy[] {
+  const featured = CASE_STUDIES.filter((study) => study.featured);
+  return featured.length > 0 ? featured : CASE_STUDIES.slice(0, 3);
 }

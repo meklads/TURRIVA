@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CASE_STUDIES } from "@/modules/luxury/lib/case-studies";
+import { CASE_STUDIES, getFeaturedCaseStudies } from "@/modules/luxury/lib/case-studies";
 import { getRepositionCopy } from "@/modules/luxury/lib/reposition-copy";
 import { luxuryPageMetadata } from "@/modules/luxury/lib/metadata";
-import { LuxuryMarketingHero } from "@/modules/luxury/components/luxury-marketing-hero";
+import { LuxuryCaseStudiesHero } from "@/modules/luxury/components/luxury-case-studies-hero";
 import { LuxuryQuoteSection } from "@/modules/luxury/components/luxury-quote-section";
 import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import { getLocale } from "@/shared/i18n/server";
@@ -20,18 +20,26 @@ export default async function OurWorkPage() {
   const t = getLuxuryMessages(locale);
   const lp = (path: string) => localizePath(path, locale);
   const note = getRepositionCopy(locale);
+  const featured = getFeaturedCaseStudies();
+  const isAr = locale === "ar";
 
   return (
     <>
-      <LuxuryMarketingHero
-        eyebrow={t.projects.eyebrow}
-        title={t.pages.ourWork.title}
-        intro={t.pages.ourWork.intro}
+      <LuxuryCaseStudiesHero
+        locale={locale}
+        studies={featured}
+        eyebrow={isAr ? "نماذج من أعمال التسليم" : "Selected delivery models"}
+        viewLabel={isAr ? "عرض الكيس ستدي" : "View case study"}
       />
 
-      <section className="lux-section lux-section--linen scroll-mt-24">
+      <section id="cases" className="lux-section lux-section--linen scroll-mt-24">
         <div className="lux-container max-w-6xl">
-          <p className="lux-work-intro">{note.honestNote}</p>
+          <div className="lux-section-intro">
+            <p className="lux-eyebrow">{isAr ? "كل الأعمال" : "All work"}</p>
+            <h2 className="lux-display lux-heading mt-3">{t.pages.ourWork.title}</h2>
+            <p className="lux-body mt-4 text-lux-ink-soft">{t.pages.ourWork.intro}</p>
+            <p className="lux-work-intro mt-4">{note.honestNote}</p>
+          </div>
           <div className="lux-marketing-grid mt-10 sm:grid-cols-2 lg:grid-cols-3">
             {CASE_STUDIES.map((study) => {
               const title = locale === "ar" ? study.titleAr : study.titleEn;

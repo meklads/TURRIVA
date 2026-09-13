@@ -6,7 +6,7 @@ import { getYouTubeEmbedUrl } from "@/modules/luxury/lib/youtube";
 import { getRepositionCopy } from "@/modules/luxury/lib/reposition-copy";
 import { LuxuryCaseStudyVideo } from "@/modules/luxury/components/luxury-case-study-video";
 import { getConversionCopy } from "@/modules/luxury/lib/conversion-copy";
-import { LuxuryMarketingHero } from "@/modules/luxury/components/luxury-marketing-hero";
+import { LuxuryCaseStudyDetailHero } from "@/modules/luxury/components/luxury-case-study-detail-hero";
 import { LuxuryProjectFunnelForm } from "@/modules/luxury/components/luxury-project-funnel-form";
 import { LuxuryFormSplitSection } from "@/modules/luxury/components/luxury-form-split-section";
 import { LuxuryStickyCta } from "@/modules/luxury/components/luxury-sticky-cta";
@@ -59,6 +59,13 @@ export default async function CaseStudyPage({ params }: Props) {
   const challenge = isAr ? study.challengeAr : study.challengeEn;
   const solution = isAr ? study.solutionAr : study.solutionEn;
   const results = isAr ? study.resultsAr : study.resultsEn;
+  const fitLabel =
+    study.fitMode === "temporary"
+      ? caseLabels.fitTemporary
+      : study.fitMode === "permanent"
+        ? caseLabels.fitPermanent
+        : undefined;
+  const gallery = study.gallery?.length ? study.gallery : [study.image];
 
   return (
     <>
@@ -68,24 +75,56 @@ export default async function CaseStudyPage({ params }: Props) {
           { name: title, path: `/our-work/${slug}` },
         ])}
       />
-      <LuxuryMarketingHero eyebrow={category} title={title} intro={summary} />
+      <LuxuryCaseStudyDetailHero
+        locale={locale}
+        eyebrow={category}
+        title={title}
+        intro={summary}
+        image={study.image}
+        fitLabel={fitLabel}
+      >
+        <a href="#case-body" className="lux-btn-outline lux-case-detail-hero__outline">
+          {isAr ? "التفاصيل" : "Details"}
+        </a>
+        <LocalizedLink href="/our-work" className="lux-btn-primary">
+          {isAr ? "كل الأعمال" : "All work"}
+        </LocalizedLink>
+      </LuxuryCaseStudyDetailHero>
 
-      <section className="lux-section lux-section--linen">
+      <section id="case-body" className="lux-section lux-section--linen scroll-mt-28">
         <div className="lux-container max-w-5xl">
           {youtubeEmbed ? (
             <LuxuryCaseStudyVideo slug={study.slug} title={title} embedUrl={youtubeEmbed} />
-          ) : (
+          ) : null}
+
+          {!youtubeEmbed && gallery.length > 1 ? (
+            <div className="lux-case-gallery">
+              {gallery.map((src) => (
+                <div key={src} className="lux-case-gallery__item">
+                  <Image src={src} alt={title} fill className="object-cover" sizes="(max-width: 900px) 100vw, 33vw" />
+                </div>
+              ))}
+            </div>
+          ) : !youtubeEmbed ? (
             <div className="relative aspect-[16/10] overflow-hidden rounded-xl shadow-lux-card">
               <Image src={study.image} alt={title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 80vw" />
             </div>
-          )}
+          ) : gallery.length > 1 ? (
+            <div className="lux-case-gallery mt-8">
+              {gallery.map((src) => (
+                <div key={src} className="lux-case-gallery__item">
+                  <Image src={src} alt={title} fill className="object-cover" sizes="(max-width: 900px) 100vw, 33vw" />
+                </div>
+              ))}
+            </div>
+          ) : null}
 
           <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
             <div className="flex flex-wrap items-center gap-2">
               <p className="text-sm text-lux-ink-muted">{location}</p>
-              {study.fitMode ? (
+              {fitLabel ? (
                 <span className="rounded-sm border border-lux-sand bg-white px-2.5 py-1 text-xs font-semibold text-lux-ink">
-                  {study.fitMode === "temporary" ? caseLabels.fitTemporary : caseLabels.fitPermanent}
+                  {fitLabel}
                 </span>
               ) : null}
             </div>
