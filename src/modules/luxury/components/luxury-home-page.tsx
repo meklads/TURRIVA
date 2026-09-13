@@ -6,7 +6,6 @@ import type { Locale } from "@/shared/i18n/locale";
 import { LuxuryHomeHero } from "./luxury-home-hero";
 import {
   LuxuryAlbumSection,
-  LuxuryDevelopersSection,
   LuxuryExecutionCapabilitiesSection,
 } from "./luxury-reposition-sections";
 import { LuxuryGroupProofSection } from "./luxury-group-proof-section";
@@ -34,7 +33,6 @@ export function LuxuryHomePage({ locale }: Props) {
         <LuxuryGroupProofSection locale={locale} showLogos={false} showTestimonial compact />
         <LuxuryProductTiersSection locale={locale} />
         <LuxuryExecutionCapabilitiesSection locale={locale} />
-        <LuxuryDevelopersSection locale={locale} compact />
         <LuxuryAlbumSection locale={locale} />
 
         <section id="brief" className="lux-cta-band" aria-labelledby="home-cta-heading">

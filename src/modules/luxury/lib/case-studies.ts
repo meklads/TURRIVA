@@ -43,6 +43,12 @@ export type CaseStudy = {
   gallery?: readonly string[];
   /** When true, appears in the our-work featured hero carousel. */
   featured?: boolean;
+  /**
+   * When false, hidden from our-work listing and sitemap.
+   * Detail URL may still resolve for internal links.
+   * Defaults to true.
+   */
+  listed?: boolean;
 };
 
 export const CASE_STUDIES: readonly CaseStudy[] = [
@@ -142,6 +148,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       "/brand/turriva/projects/anan-eskan-gallery.jpg",
       "/brand/turriva/projects/anan-eskan/maquette-01.jpeg",
       "/brand/turriva/projects/anan-eskan/maquette-03.jpeg",
+      "/brand/turriva/projects/anan-eskan-interview-poster.png",
       "/brand/turriva/projects/anan-eskan-youtube-poster.jpg",
     ],
     servicesEn: [
@@ -254,12 +261,13 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     attribution: "team",
     delivery: "field_execution",
+    featured: true,
     slug: "rafal-pavilions",
     image: "/brand/turriva/projects/rafal-pavilions.jpg",
-    categoryEn: "Exhibition · Developer",
-    categoryAr: "معرض · مطور",
-    titleEn: "Rafal Pavilions",
-    titleAr: "أجنحة الراف",
+    categoryEn: "Launch pavilions",
+    categoryAr: "أجنحة إطلاق",
+    titleEn: "Rafal Pavilions · Diriyah",
+    titleAr: "أجنحة رفال · الدرعية",
     locationEn: "Diriyah, Riyadh",
     locationAr: "الدرعية، الرياض",
     summaryEn:
@@ -270,8 +278,11 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       "Physical sales pavilions in Diriyah: modular joinery, exhibition structures, and installation aligned with Graphics House launch assets. Graphics House created the visual work; the field layer was spatial delivery — design to fabrication to install to handover.",
     bodyAr:
       "أجنحة مبيعات في الدرعية: نجارة معيارية وهياكل معرض وتركيب متسق مع أصول الإطلاق من جرافيكس هاوس. جرافيكس هاوس صنعت العمل البصري، والطبقة الميدانية تسليم مكاني — من التصميم إلى التصنيع والتركيب والتسليم.",
-    servicesEn: ["Exhibition execution", "Fabrication", "Installation"],
-    servicesAr: ["تنفيذ معارض", "تصنيع", "تركيب"],
+    heroTaglineEn: "Launch pavilions built to open with the campaign, not after it.",
+    heroTaglineAr: "أجنحة إطلاق تُبنى لتفتتح مع الحملة، لا بعدها.",
+    gallery: ["/brand/turriva/projects/rafal-pavilions.jpg"],
+    servicesEn: ["Exhibition execution", "Fabrication", "Installation", "Handover"],
+    servicesAr: ["تنفيذ معارض", "تصنيع", "تركيب", "تسليم"],
     metrics: [
       { labelEn: "Location", labelAr: "الموقع", valueEn: "Diriyah, Riyadh", valueAr: "الدرعية، الرياض" },
       { labelEn: "Scope", labelAr: "النطاق", valueEn: "Sales pavilions", valueAr: "أجنحة مبيعات" },
@@ -298,6 +309,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     attribution: "team",
     delivery: "field_execution",
+    listed: false,
     slug: "villa-kitchen-jeddah",
     image: LUXURY_IMAGES.project2,
     categoryEn: "Residential · Kitchen",
@@ -331,12 +343,13 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     attribution: "team",
     delivery: "field_execution",
+    listed: false,
     slug: "hospitality-fitout-makkah",
     image: LUXURY_IMAGES.project3,
     categoryEn: "Hospitality · Fit-out",
     categoryAr: "ضيافة · تشطيب",
     titleEn: "Boutique Hotel Programme · Makkah",
-    titleAr: "برنامج فندق boutique · مكة",
+    titleAr: "برنامج فندق بوتيك · مكة",
     locationEn: "Makkah, Saudi Arabia",
     locationAr: "مكة المكرمة، السعودية",
     summaryEn:
@@ -358,6 +371,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     attribution: "team",
     delivery: "field_execution",
+    listed: false,
     slug: "developer-joinery-batch",
     image: LUXURY_IMAGES.project4,
     categoryEn: "B2B · Joinery",
@@ -384,11 +398,19 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   },
 ] as const;
 
+export function isCaseStudyListed(study: CaseStudy): boolean {
+  return study.listed !== false;
+}
+
+export function getListedCaseStudies(): readonly CaseStudy[] {
+  return CASE_STUDIES.filter(isCaseStudyListed);
+}
+
 export function getCaseStudy(slug: string): CaseStudy | undefined {
   return CASE_STUDIES.find((c) => c.slug === slug);
 }
 
 export function getFeaturedCaseStudies(): readonly CaseStudy[] {
-  const featured = CASE_STUDIES.filter((study) => study.featured);
-  return featured.length > 0 ? featured : CASE_STUDIES.slice(0, 3);
+  const featured = CASE_STUDIES.filter((study) => study.featured && isCaseStudyListed(study));
+  return featured.length > 0 ? featured : getListedCaseStudies().slice(0, 3);
 }

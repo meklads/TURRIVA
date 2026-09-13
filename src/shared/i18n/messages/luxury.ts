@@ -543,7 +543,7 @@ const en: LuxuryMessages = {
     ourWork: {
       title: "Our work",
       intro:
-        "Sales environments, interiors, and exhibition delivery by the Turriva team. Including work delivered under Graphics House before the dedicated brand.",
+        "Selected delivery work with a clear owned scope: sales environments, launch spaces, and spatial execution by the Turriva team. Including work delivered under Graphics House before the dedicated brand.",
       caseStudyContactCta: "Discuss a similar project",
     },
     portfolio: {
@@ -1175,7 +1175,7 @@ const ar: LuxuryMessages = {
     ourWork: {
       title: "أعمالنا",
       intro:
-        "بيئات مبيعات وتشطيبات وتنفيذ معارض بيد فريق توريفا. بما فيها أعمال تحت جرافيكس هاوس قبل إطلاق العلامة المستقلة.",
+        "أعمال تسليم مختارة بنطاق ملكية واضح: بيئات بيع ومساحات إطلاق وتنفيذ مكاني بيد فريق توريفا. بما فيها أعمال تحت جرافيكس هاوس قبل العلامة المستقلة.",
       caseStudyContactCta: "ناقش مشروعاً مشابهاً",
     },
     portfolio: {

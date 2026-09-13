@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { TURRIVA_PUBLIC_URL } from "@/shared/constants/brand";
 import { localizePath } from "@/shared/i18n/path";
 import type { Locale } from "@/shared/i18n/locale";
-import { CASE_STUDIES } from "@/modules/luxury/lib/case-studies";
+import { getListedCaseStudies } from "@/modules/luxury/lib/case-studies";
 import { INSIGHT_ARTICLES } from "@/modules/luxury/lib/insights-content";
 const LOCALES: Locale[] = ["ar", "en"];
 
@@ -36,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/contact", priority: 0.9, changeFrequency: "monthly" as const },
     { path: "/privacy", priority: 0.3, changeFrequency: "yearly" as const },
     { path: "/terms", priority: 0.3, changeFrequency: "yearly" as const },
-    ...CASE_STUDIES.map((c) => ({
+    ...getListedCaseStudies().map((c) => ({
       path: `/our-work/${c.slug}`,
       priority: 0.75,
       changeFrequency: "monthly" as const,

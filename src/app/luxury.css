@@ -5703,6 +5703,21 @@ html {
   color: #f7f3ec;
 }
 
+.lux-album__featured-copy :is(h1, h2, h3, h4, p, span) {
+  color: inherit;
+}
+
+.lux-album__featured-copy .lux-album__index-line,
+.lux-album__featured-copy .lux-album__category,
+.lux-album__featured-copy .lux-album__view {
+  color: var(--lux-gold);
+}
+
+.lux-album__featured-copy .lux-album__title,
+.lux-album__featured-copy .lux-album__title--featured {
+  color: #faf7f2;
+}
+
 @media (min-width: 900px) {
   .lux-album__featured-copy {
     padding: 2.25rem 2rem 2.4rem;
@@ -5772,6 +5787,10 @@ html {
   max-width: 18rem;
   font-size: clamp(1.35rem, 2.4vw, 1.85rem);
   font-weight: 600;
+  color: #faf7f2;
+}
+
+.lux-album--proof .lux-album__featured .lux-album__title--featured {
   color: #faf7f2;
 }
 

@@ -57,7 +57,7 @@ export const CONTACT_INTENTS: Record<ContactIntent, FunnelPreset> = {
     projectType: "exhibition",
     source: "contact_intent_exhibition",
     titleEn: "Exhibition & pavilion brief",
-    titleAr: "ملخص معرض أو بافيلion",
+    titleAr: "ملخص معرض أو جناح",
     subtitleEn: "Sales environments and institutional exhibitions with opening-ready delivery.",
     subtitleAr: "بيئات مبيعات ومعارض مؤسسية بتسليم جاهز للافتتاح.",
   },
@@ -122,7 +122,7 @@ export function getFunnelCopy(locale: Locale): FunnelCopy {
       ? {
           villa: "فيلا / سكني",
           hospitality: "ضيافة / فندق",
-          exhibition: "معرض / بافيلion",
+          exhibition: "معرض / جناح",
           developer: "مطور / B2B",
           commercial: "تجاري / مكاتب",
           other: "أخرى",

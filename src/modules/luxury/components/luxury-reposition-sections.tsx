@@ -328,7 +328,9 @@ export function LuxuryAlbumSection({ locale }: Props) {
               01
             </span>
             <span className="lux-album__category">{featured.category}</span>
-            <h3 className="lux-album__title lux-album__title--featured">{featured.title}</h3>
+            <h3 className="lux-album__title lux-album__title--featured" style={{ color: "#faf7f2" }}>
+              {featured.title}
+            </h3>
             <span className="lux-album__view">
               {viewLabel}
               <span aria-hidden>{isAr ? " ←" : " →"}</span>
@@ -382,7 +384,10 @@ export function LuxuryTeamExperienceSection({ locale }: Props) {
   const copy = getRepositionCopy(locale);
   const isAr = locale === "ar";
   const studies = CASE_STUDIES.filter(
-    (study) => study.attribution === "team" && study.delivery === "field_execution"
+    (study) =>
+      study.attribution === "team" &&
+      study.delivery === "field_execution" &&
+      study.listed !== false
   ).slice(0, 3);
 
   return (

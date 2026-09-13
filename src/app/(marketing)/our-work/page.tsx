@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CASE_STUDIES, getFeaturedCaseStudies } from "@/modules/luxury/lib/case-studies";
+import { getFeaturedCaseStudies, getListedCaseStudies } from "@/modules/luxury/lib/case-studies";
 import { getRepositionCopy } from "@/modules/luxury/lib/reposition-copy";
 import { luxuryPageMetadata } from "@/modules/luxury/lib/metadata";
 import { LuxuryCaseStudiesHero } from "@/modules/luxury/components/luxury-case-studies-hero";
@@ -21,6 +21,7 @@ export default async function OurWorkPage() {
   const lp = (path: string) => localizePath(path, locale);
   const note = getRepositionCopy(locale);
   const featured = getFeaturedCaseStudies();
+  const listed = getListedCaseStudies();
   const isAr = locale === "ar";
 
   return (
@@ -29,19 +30,19 @@ export default async function OurWorkPage() {
         locale={locale}
         studies={featured}
         eyebrow={isAr ? "نماذج من أعمال التسليم" : "Selected delivery models"}
-        viewLabel={isAr ? "عرض الكيس ستدي" : "View case study"}
+        viewLabel={isAr ? "عرض الحالة" : "View case"}
       />
 
       <section id="cases" className="lux-section lux-section--linen scroll-mt-24">
         <div className="lux-container max-w-6xl">
           <div className="lux-section-intro">
-            <p className="lux-eyebrow">{isAr ? "كل الأعمال" : "All work"}</p>
+            <p className="lux-eyebrow">{isAr ? "أعمال مختارة" : "Selected work"}</p>
             <h2 className="lux-display lux-heading mt-3">{t.pages.ourWork.title}</h2>
             <p className="lux-body mt-4 text-lux-ink-soft">{t.pages.ourWork.intro}</p>
             <p className="lux-work-intro mt-4">{note.honestNote}</p>
           </div>
-          <div className="lux-marketing-grid mt-10 sm:grid-cols-2 lg:grid-cols-3">
-            {CASE_STUDIES.map((study) => {
+          <div className="lux-marketing-grid mt-10 sm:grid-cols-2 lg:grid-cols-2">
+            {listed.map((study) => {
               const title = locale === "ar" ? study.titleAr : study.titleEn;
               const category = locale === "ar" ? study.categoryAr : study.categoryEn;
               return (
@@ -56,7 +57,7 @@ export default async function OurWorkPage() {
                       alt={title}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
                   <div className="p-4">

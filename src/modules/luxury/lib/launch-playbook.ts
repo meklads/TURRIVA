@@ -35,7 +35,7 @@ export const LAUNCH_STEPS: readonly LaunchStep[] = [
     titleEn: "Launch marketing",
     titleAr: "تسويق الإطلاق",
     bodyEn: "Campaigns, film, and content that amplify the physical environment when the sales gallery or pavilion opens.",
-    bodyAr: "حملات وأفلام ومحتوى يضاعف أثر البيئة المادية عند افتتاح معرض المبيعات أو البافيلion.",
+    bodyAr: "حملات وأفلام ومحتوى يضاعف أثر البيئة المادية عند افتتاح معرض المبيعات أو الجناح.",
     ownerEn: "Bees Motion",
     ownerAr: "Bees Motion",
   },
