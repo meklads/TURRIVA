@@ -15,7 +15,6 @@ import { LuxuryGroupProofSection } from "./luxury-group-proof-section";
 import { LuxuryConversionProvider } from "./luxury-conversion-provider";
 import { LuxuryLogoMarquee } from "./luxury-logo-marquee";
 import { LuxuryProductTiersSection } from "./luxury-product-tiers";
-import { EnterpriseComplianceBadges } from "./enterprise-compliance-badges";
 import { TurrivaAiAssistant } from "./turriva-ai-assistant";
 import { localizePath } from "@/shared/i18n/path";
 import { getConversionCopy } from "../lib/conversion-copy";
@@ -41,7 +40,6 @@ export function LuxuryHomePage({ locale }: Props) {
         <LuxuryAlbumSection locale={locale} />
         <LuxuryTeamExperienceSection locale={locale} />
         <LuxuryMethodSection locale={locale} />
-        <EnterpriseComplianceBadges locale={locale} />
 
         <section id="brief" className="lux-cta-band" aria-labelledby="home-cta-heading">
           <div className="lux-container">

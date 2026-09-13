@@ -21,16 +21,16 @@ export type ProductTier = {
 export const PRODUCT_TIERS: readonly ProductTier[] = [
   {
     id: "express-launch",
-    eyebrowAr: "نظام الإطلاق السريع",
-    eyebrowEn: "Express Launch",
-    titleAr: "صالات بيع جاهزة خلال أقل من 3 أسابيع",
-    titleEn: "Turnkey sales galleries in under 3 weeks",
+    eyebrowAr: "إطلاق بيئة البيع",
+    eyebrowEn: "Sales launch environment",
+    titleAr: "صالات ومعارض بيع جاهزة لافتتاح المبيعات",
+    titleEn: "Sales galleries ready for opening day",
     bodyAr:
-      "مسار تسليم سريع لمركز البيع ووحدة العرض: تصميم، تصنيع، وتركيب. نطاق واضح وجاهزية للعرض.",
+      "تصميم وتصنيع وتركيب لمركز البيع ووحدة العيّنة ضمن مسار تسليم مضبوط، يصل بالمشروع إلى جاهزية العرض في وقت قصير.",
     bodyEn:
-      "A fast delivery path for the sales gallery and show unit: design, fabrication, and install. Clear scope, presentation-ready.",
-    pointsAr: ["مركز بيع / جناح", "وحدة عرض", "تسليم ميداني مضبوط"],
-    pointsEn: ["Sales gallery / pavilion", "Show unit", "Disciplined site handover"],
+      "Design, fabrication, and install for the sales gallery and sample unit on a disciplined path, so the project reaches presentation readiness on a short clock.",
+    pointsAr: ["مركز بيع / جناح إطلاق", "وحدة عيّنة تسويقية", "تسليم ميداني منسّق"],
+    pointsEn: ["Sales gallery / launch pavilion", "Marketing sample unit", "Coordinated field handover"],
     href: "/real-estate-experience",
     media: {
       type: "image",
@@ -39,16 +39,16 @@ export const PRODUCT_TIERS: readonly ProductTier[] = [
   },
   {
     id: "flagship-spatial",
-    eyebrowAr: "المنظومة التفاعلية القيادية",
-    eyebrowEn: "Flagship Spatial System",
-    titleAr: "مجسمات حركية، شاشات لمس، وسينما مكانية في غرفة واحدة",
-    titleEn: "Kinetic models, touch displays, and spatial cinema in one room",
+    eyebrowAr: "الطبقة المكانية مع التجربة",
+    eyebrowEn: "Spatial layer with experience",
+    titleAr: "المكان أولاً، ثم أدوات التجربة حين يخدمها الإطلاق",
+    titleEn: "The space first, then experience tools when the launch needs them",
     bodyAr:
-      "تكامل كامل لبيئة البيع: الطبقة المكانية مع أدوات التجربة التفاعلية عندما يحتاجها الإطلاق.",
+      "ننفّذ بيئة البيع، ونُكمِلها عند الحاجة بمجسمات وشاشات ومحتوى تفاعلي عبر جرافيكس هاوس ضمن منظومة تسامي، دون أن تحل التقنية محل المكان.",
     bodyEn:
-      "Full sales-environment integration: the spatial layer plus interactive experience tools when the launch needs them.",
-    pointsAr: ["مجسمات ذكية", "شاشات تفاعلية", "تجربة مسار المشتري"],
-    pointsEn: ["Smart models", "Interactive screens", "Buyer-path experience"],
+      "We deliver the sales environment, then complete it when needed with models, screens, and interactive content through Graphics House in the Tasami ecosystem, without letting technology replace the room.",
+    pointsAr: ["بيئة بيع مكتملة", "تكامل مع جرافيكس هاوس", "مسار مشتري واضح"],
+    pointsEn: ["Complete sales environment", "Graphics House integration", "Clear buyer journey"],
     href: "/real-estate-experience",
     media: {
       type: "video",
@@ -58,16 +58,16 @@ export const PRODUCT_TIERS: readonly ProductTier[] = [
   },
   {
     id: "proptech-sales",
-    eyebrowAr: "حلول المبيعات الرقمية",
-    eyebrowEn: "PropTech Sales Engine",
-    titleAr: "أدوات رقمية تدعم الإغلاق، مرتبطة بالمكان لا بديلة عنه",
-    titleEn: "Digital tools that support closing, tied to the space, not replacing it",
+    eyebrowAr: "وحدة العرض التسويقية",
+    eyebrowEn: "Marketing show unit",
+    titleAr: "شقة أو فيلا عيّنة يمشي فيها المشتري ويفهم المشروع",
+    titleEn: "A sample apartment or villa the buyer walks and understands",
     bodyAr:
-      "تطبيقات عرض، تتبع وحدات، وتحليلات مكانية عبر منظومة المجموعة. تُفعَّل عندما يخدم الموجز المكاني.",
+      "وحدة عرض مصمّمة ومفروشة بمعيار المشروع، لتعكس أسلوب المعيشة وتدعم فريق المبيعات على أرض الواقع.",
     bodyEn:
-      "Buyer apps, inventory tracking, and spatial analytics via the group ecosystem. Activated when they serve the spatial brief.",
-    pointsAr: ["عرض الوحدات", "دعم فريق المبيعات", "تكامل مع بيئة العرض"],
-    pointsEn: ["Unit presentation", "Sales-team support", "Tied to the gallery floor"],
+      "A show unit designed and furnished to the project standard, so living quality is tangible and the sales team has a place that works on the floor.",
+    pointsAr: ["معيار معيشة واضح", "تجهيز كامل للعرض", "جاهزية لاستقبال المشترين"],
+    pointsEn: ["Clear living standard", "Fully staged for presentation", "Ready to receive buyers"],
     href: "/show-unit",
     media: {
       type: "image",
@@ -83,27 +83,27 @@ export function getConversionCopy(locale: Locale) {
   const isAr = locale === "ar";
   return {
     heroTitle: isAr
-      ? "نحّول صالات المبيعات العقارية والمخططات إلى بيئات إغلاق صفقات تفاعلية."
-      : "We turn real-estate sales galleries and masterplans into interactive deal-closing environments.",
-    heroTitleAccent: isAr ? "تسليم كامل في وقت قياسي." : "Full delivery on a developer clock.",
+      ? "نصمّم وننفّذ بيئات البيع العقاري ووحدات العرض التي يلتقي فيها المشروع بمشتريه."
+      : "We design and deliver real-estate sales environments and show units where the project meets its buyers.",
+    heroTitleAccent: isAr ? "من المخططات إلى جاهزية الافتتاح." : "From drawings to opening-ready.",
     heroSubtitle: isAr
-      ? "ذراع التنفيذ المكاني لمجموعة تسامي: من مركز البيع ووحدة العرض إلى المنظومة التفاعلية، بنفس فريق التسليم الميداني."
-      : "Tasami Group’s spatial execution arm: from sales gallery and show unit to the interactive system, same field delivery team.",
-    ctaDemo: isAr ? "احجز عرضاً حياً" : "Book a Live Demo",
-    ctaDemoEn: "Book a Live Demo",
-    ctaExplore: isAr ? "استكشف الحلول" : "Explore Solutions",
+      ? "ذراع التنفيذ المكاني لمجموعة تسامي. الطبقة المادية للإطلاق، ومع جرافيكس هاوس تُستكمل الطبقة الإبداعية حين يطلبها الموجز."
+      : "Tasami Group’s spatial execution arm. The physical layer for launch, completed with Graphics House creative when the brief calls for it.",
+    ctaDemo: isAr ? "اطلب تعارفاً على المشروع" : "Request a project introduction",
+    ctaDemoEn: "Request a project introduction",
+    ctaExplore: isAr ? "استكشف مسارات العمل" : "Explore our paths",
     logoLabel: isAr ? "يثق بنا مطورون ومؤسسات رائدة" : "Trusted by leading developers and institutions",
-    tiersEyebrow: isAr ? "باقات واضحة" : "Clear packages",
-    tiersTitle: isAr ? "ثلاثة مسارات إطلاق. اختر ما يطابق مرحلتك." : "Three launch paths. Pick what matches your phase.",
+    tiersEyebrow: isAr ? "مسارات واضحة" : "Clear paths",
+    tiersTitle: isAr ? "ثلاثة مداخل للعمل. اختر ما يناسب مرحلة إطلاقك." : "Three ways in. Choose what fits your launch stage.",
     tiersIntro: isAr
-      ? "كل باقة منتج قابل للشراء بنطاق وجدول واضح، لا قائمة خدمات عامة."
-      : "Each package is a buyable product with clear scope and timeline, not a generic service list.",
+      ? "كل مسار بنطاق وجدول واضح، يبدأ من بيئة البيع ووحدة العيّنة، ويتسع عند الحاجة إلى التجربة الإبداعية."
+      : "Each path has clear scope and timing, starting from the sales environment and sample unit, expanding into creative experience when required.",
     videoEyebrow: isAr ? "التنفيذ على الأرض" : "Execution on the ground",
     videoTitle: isAr ? "شاهد البيئات وهي تعمل" : "See the environments at work",
     demo: {
-      title: isAr ? "احجز عرضاً حياً" : "Book a live demo",
+      title: isAr ? "اطلب تعارفاً على المشروع" : "Request a project introduction",
       subtitle: isAr
-        ? "ثلاث خطوات قصيرة. نعود إليك خلال يوم عمل."
+        ? "ثلاث خطوات موجزة. نعود إليك خلال يوم عمل."
         : "Three short steps. We reply within one business day.",
       stepProject: isAr ? "نوع المشروع" : "Project type",
       stepTimeline: isAr ? "الجدول" : "Timeline",

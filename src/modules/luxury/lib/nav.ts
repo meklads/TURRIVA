@@ -84,12 +84,12 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
     label: ar ? "منتجاتنا" : "Our products",
     eyebrow: ar ? "منتجاتنا" : "Our products",
     title: ar ? "منتجاتنا" : "Our products",
-    subtitle: ar ? "اختر منتجاً لفتح صفحته" : "Pick a product to open its page",
+    subtitle: ar ? "اختر المسار الذي يناسب مرحلة مشروعك" : "Choose the path that fits your project stage",
     explore: ar ? "استكشف" : "Explore",
     groups: [
       {
         id: "doors",
-        title: ar ? "الأبواب الرئيسية" : "Main doors",
+        title: ar ? "العروض الأساسية" : "Core offers",
         items: [
           {
             href: lp("/real-estate-experience"),
@@ -97,8 +97,8 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             nameAr: "تجربة المشروع العقاري",
             nameEn: "Real Estate Project Experience",
             description: ar
-              ? "بيئة البيع: من مركز البيع إلى وحدة العرض."
-              : "The sales environment. From gallery to show unit.",
+              ? "بيئة البيع من مركز البيع إلى وحدة العرض."
+              : "The sales environment from gallery to show unit.",
             image: "/brand/turriva/projects/anan-eskan-gallery.jpg",
             featured: true,
           },
@@ -108,8 +108,8 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             nameAr: "وحدة العرض",
             nameEn: "Show Unit",
             description: ar
-              ? "فيلا أو شقة أو جناح يمشي فيه المشتري."
-              : "A villa, apartment, or suite the buyer can walk.",
+              ? "وحدة عيّنة تسويقية يمشي فيها المشتري."
+              : "A marketing sample unit the buyer can walk.",
             image: "/brand/turriva/inspiration/living-walnut-interior.webp",
             featured: true,
           },
@@ -128,7 +128,7 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
       },
       {
         id: "support",
-        title: ar ? "صفحات الدعم" : "Support pages",
+        title: ar ? "مسارات إضافية" : "Further paths",
         items: [
           {
             href: lp("/design-build"),

@@ -18,7 +18,7 @@ export function LuxuryHomeHero({ locale }: Props) {
       <div className="lux-container lux-hero-inner">
         <div className="lux-hero-copy">
           <div className="lux-hero-copy-inner lux-reveal">
-            <p className="lux-eyebrow">{isAr ? "ذراع التنفيذ المكاني · مجموعة تسامي" : "Spatial execution arm · Tasami Group"}</p>
+            <p className="lux-eyebrow">{isAr ? "تنفيذ مكاني لإطلاق المبيعات · مجموعة تسامي" : "Spatial execution for sales launch · Tasami Group"}</p>
             <h1 className="lux-display lux-heading mt-4 sm:mt-5">
               {copy.heroTitle}
               <span className="lux-hero-title-accent">{copy.heroTitleAccent}</span>
@@ -28,7 +28,6 @@ export function LuxuryHomeHero({ locale }: Props) {
             <div className="lux-hero-cta mt-9 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap">
               <button type="button" className="lux-btn-primary" onClick={() => openDemo({ source: "home_hero" })}>
                 {copy.ctaDemo}
-                {isAr ? <span className="lux-hero-cta__en"> (Book a Live Demo)</span> : null}
               </button>
               <a href="#solutions" className="lux-btn-outline-gold">
                 {copy.ctaExplore}
@@ -37,15 +36,15 @@ export function LuxuryHomeHero({ locale }: Props) {
             <ul className="lux-hero-glow-stats mt-8" aria-label={isAr ? "مؤشرات" : "Highlights"}>
               <li className="lux-glow-stat">
                 <strong>3</strong>
-                <span>{isAr ? "أسابيع تسليم سريع" : "weeks fast-track"}</span>
+                <span>{isAr ? "أسابيع لمسارات الإطلاق السريعة" : "weeks on fast-track launches"}</span>
               </li>
               <li className="lux-glow-stat">
                 <strong>100%</strong>
-                <span>{isAr ? "تسليم تسليم مفتاح" : "turnkey execution"}</span>
+                <span>{isAr ? "تسليم ميداني متكامل" : "integrated field delivery"}</span>
               </li>
               <li className="lux-glow-stat">
                 <strong>15+</strong>
-                <span>{isAr ? "عاماً من التسليم" : "years delivering"}</span>
+                <span>{isAr ? "عاماً من خبرة التسليم" : "years of delivery craft"}</span>
               </li>
             </ul>
           </div>

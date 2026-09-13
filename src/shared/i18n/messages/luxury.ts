@@ -454,9 +454,9 @@ const en: LuxuryMessages = {
     items: [],
   },
   cta: {
-    title: "Tell us the space, the date, and what has to be finished.",
+    title: "Share the project, the opening date, and what must be ready.",
     subtitle:
-      "A short brief is enough. We reply within one business day, and we will say if the scope is not ours.",
+      "A concise brief is enough. We reply within one business day with a clear next step.",
     button: "Talk to Turriva",
   },
   quoteForm: {
@@ -1086,9 +1086,9 @@ const ar: LuxuryMessages = {
     items: [],
   },
   cta: {
-    title: "أخبرنا بالمكان، والموعد، وما يجب أن يُكتمل.",
+    title: "شاركنا المشروع، وموعد الافتتاح، وما يجب أن يكون جاهزاً.",
     subtitle:
-      "موجز قصير يكفي. نرد خلال يوم عمل، ونقول بصراحة إن كان النطاق ليس لنا.",
+      "موجز مختصر يكفي. نرد خلال يوم عمل بخطوة تالية واضحة.",
     button: "تواصل مع توريفا",
   },
   quoteForm: {
