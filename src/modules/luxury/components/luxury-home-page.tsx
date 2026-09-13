@@ -17,6 +17,10 @@ import { LuxuryLogoMarquee } from "./luxury-logo-marquee";
 import { LuxuryProductTiersSection } from "./luxury-product-tiers";
 import { ProjectRoiCalculator } from "./project-roi-calculator";
 import { InteractiveShowcaseSlider } from "./interactive-showcase-slider";
+import { InteractiveUnitViewer3DLazy } from "./interactive-unit-viewer-lazy";
+import { ClientSpatialOsPortal } from "./client-spatial-os-portal";
+import { AgencyPartnerHub } from "./agency-partner-hub";
+import { EnterpriseComplianceBadges } from "./enterprise-compliance-badges";
 import { TurrivaAiAssistant } from "./turriva-ai-assistant";
 import { localizePath } from "@/shared/i18n/path";
 import { getConversionCopy } from "../lib/conversion-copy";
@@ -38,12 +42,16 @@ export function LuxuryHomePage({ locale }: Props) {
         <LuxuryGroupProofSection locale={locale} showLogos={false} showTestimonial compact />
         <LuxuryProductTiersSection locale={locale} />
         <InteractiveShowcaseSlider locale={locale} />
+        <InteractiveUnitViewer3DLazy locale={locale} />
+        <ClientSpatialOsPortal locale={locale} />
         <ProjectRoiCalculator locale={locale} />
+        <AgencyPartnerHub locale={locale} />
         <LuxuryDefinitionSection locale={locale} />
         <LuxuryDevelopersSection locale={locale} />
         <LuxuryAlbumSection locale={locale} />
         <LuxuryTeamExperienceSection locale={locale} />
         <LuxuryMethodSection locale={locale} />
+        <EnterpriseComplianceBadges locale={locale} />
 
         <section id="brief" className="lux-cta-band" aria-labelledby="home-cta-heading">
           <div className="lux-container">

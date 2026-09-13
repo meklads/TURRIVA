@@ -136,5 +136,82 @@ export function getConversionCopy(locale: Locale) {
       solution: isAr ? "حل توريفا" : "Turriva Solution",
       results: isAr ? "النتائج ومدة التسليم" : "Results & Delivery Timeframe",
     },
+    unitViewer: {
+      eyebrow: isAr ? "عارض الوحدات التفاعلي" : "Interactive unit viewer",
+      title: isAr
+        ? "معاينة ثلاثية الأبعاد للمخطط — فلترة حية وتوفر فوري"
+        : "Live 3D masterplan preview — filter status, price, and type",
+      intro: isAr
+        ? "نموذج تجريبي لبرج الإطلاق: نقاط ساخنة على الطوابق، حالة الوحدة، واستفسار مباشر لفريق التسليم."
+        : "Demo tower for launch galleries: floor hotspots, live availability, and inquire straight into the lead modal.",
+      filtersLabel: isAr ? "فلاتر الوحدات" : "Unit filters",
+      filterStatus: isAr ? "الحالة" : "Status",
+      filterType: isAr ? "نوع الوحدة" : "Unit type",
+      filterPrice: isAr ? "الحد الأقصى للسعر" : "Max price",
+      hint: isAr ? "انقر طابقاً مضيئاً لفتح تفاصيل الوحدة" : "Tap a highlighted floor to open unit details",
+      fallback: isAr
+        ? "WebGL غير متاح على هذا الجهاز — استخدم قائمة الوحدات على اليمين."
+        : "WebGL unavailable on this device — use the unit list instead.",
+      area: isAr ? "المساحة" : "Area",
+      status: isAr ? "الحالة" : "Status",
+      price: isAr ? "السعر" : "Price",
+      beds: isAr ? "غرف" : "Beds",
+      planPreview: isAr ? "معاينة مخطط الطابق (تجريبي)" : "Floor-plan preview (demo)",
+      inquire: isAr ? "استفسر الآن" : "Inquire Now",
+      empty: isAr ? "اختر طابقاً أو وحدة من القائمة." : "Select a floor or unit from the list.",
+    },
+    portal: {
+      eyebrow: isAr ? "بوابة العملاء B2B" : "B2B client portal",
+      title: isAr
+        ? "Spatial OS — تحكم عن بُعد بصالة المبيعات"
+        : "Spatial OS — remote control for the sales gallery",
+      intro: isAr
+        ? "معاينة تفاعلية لما يراه المطور والوكالة: تحليلات الزوار، مزامنة إضاءة المجسم، وتحديث المخزون عبر كل شاشات اللمس."
+        : "An interactive mock of what developers and agencies see: visitor analytics, maquette lighting sync, and inventory updates across every touchscreen.",
+      chromeTitle: isAr ? "توريفا · Spatial OS (تجريبي)" : "Turriva · Spatial OS (demo)",
+      analyticsTitle: isAr ? "تحليلات الصالة الحية" : "Live gallery analytics",
+      visitors: isAr ? "زوار اليوم" : "Visitors today",
+      avgTime: isAr ? "متوسط التفاعل / قسم" : "Avg interaction / section",
+      topType: isAr ? "أكثر أنواع الوحدات مشاهدة" : "Top viewed unit type",
+      lightingTitle: isAr ? "مزامنة الإضاءة والأجهزة" : "Hardware & lighting sync",
+      lightingHint: isAr
+        ? "بدّل طبقات الإضاءة كما لو كانت مربوطة بالمجسم الفعلي والشاشات."
+        : "Toggle lighting layers as if synced to the physical maquette and screens.",
+      layerParking: isAr ? "مواقف" : "Parking",
+      layerAmenities: isAr ? "مرافق" : "Amenities",
+      layerPenthouse: isAr ? "طوابق البنتهاوس" : "Penthouse floors",
+      inventoryTitle: isAr ? "مزامنة المخزون الفورية" : "Real-time inventory sync",
+      inventoryHint: isAr
+        ? "حدّث الحالة — تُبثّ تجريبياً لكل نقاط البيع في الصالة."
+        : "Update status — demo-broadcast to every gallery touchpoint.",
+      colUnit: isAr ? "الوحدة" : "Unit",
+      colStatus: isAr ? "الحالة" : "Status",
+      colSync: isAr ? "مزامنة" : "Sync",
+      syncAction: isAr ? "تحديث وبث" : "Update & broadcast",
+      demoNote: isAr
+        ? "واجهة تجريبية لعرض القدرات — ليست بوابة إنتاج حية."
+        : "Interactive capability showcase — not a live production portal.",
+      cta: isAr ? "اطلب عرض Spatial OS" : "Request a Spatial OS walkthrough",
+    },
+    agency: {
+      eyebrow: isAr ? "شركاء الوكالات" : "Agency partners",
+      title: isAr
+        ? "انضم لشبكة شركاء ProjectLaunch™ — قدّم لعملائك صالات مبيعات ومعارض متكاملة باسم وكالتك (White-Label Executions) وبسرعة تنفيذ قياسية."
+        : "Join the ProjectLaunch™ partner network — deliver turnkey sales galleries and exhibitions under your agency brand (white-label executions) at field speed.",
+      body: isAr
+        ? "للوكالات الإبداعية ووكالات الفعاليات التي تطرح مشاريع كبرى في السعودية والإمارات."
+        : "For creative and event agencies pitching mega projects across Saudi Arabia and the UAE.",
+      points: isAr
+        ? ["تنفيذ باسم الوكالة", "BOQ ومواصفات جاهزة للطرح", "عمولة وتآزر واضح مع توريفا"]
+        : ["White-label execution", "Pitch-ready BOQ & specs", "Clear commission synergy with Turriva"],
+      download: isAr ? "حمّل عرض الوكالة ومواصفات BOQ" : "Download Agency Pitch Deck & BOQ Specs",
+      commissionCta: isAr ? "استفسار عمولة وتآزر" : "Partner commission & synergy inquiry",
+    },
+    compliance: {
+      aria: isAr ? "شارات الامتثال المؤسسي" : "Enterprise compliance badges",
+      badges: isAr
+        ? ["متوافق أمنياً مع معايير ISO", "أمن أجهزة متزامن سحابياً", "خصوصية بيانات GDPR"]
+        : ["ISO Security Compliant", "Cloud-Synced Hardware Security", "GDPR Data Privacy"],
+    },
   };
 }

@@ -1,0 +1,30 @@
+{
+  "name": "Turriva Gallery",
+  "short_name": "Turriva",
+  "description": "Turriva spatial sales gallery — offline-ready exhibition assets and interactive previews.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F7F3EB",
+  "theme_color": "#9A7B4F",
+  "lang": "en",
+  "dir": "auto",
+  "icons": [
+    {
+      "src": "/brand/turriva/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/brand/turriva/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/brand/turriva/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

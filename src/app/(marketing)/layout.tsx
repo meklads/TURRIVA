@@ -1,6 +1,7 @@
 import "@/app/luxury.css";
 import { LuxuryFooter } from "@/modules/luxury/components/luxury-footer";
 import { LuxuryHeader } from "@/modules/luxury/components/luxury-header";
+import { LuxuryPwaRegister } from "@/modules/luxury/components/luxury-pwa-register";
 import { MarketingJsonLd } from "@/modules/luxury/components/marketing-json-ld";
 import { MarketingAnalytics } from "@/shared/components/marketing-analytics";
 import { getLocale } from "@/shared/i18n/server";
@@ -19,6 +20,7 @@ export default async function MarketingLayout({
       </a>
       <MarketingJsonLd locale={locale} />
       <MarketingAnalytics />
+      <LuxuryPwaRegister />
       <LuxuryHeader />
       <main id="main" className="flex-1">
         {children}
