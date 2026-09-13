@@ -21,7 +21,7 @@ export function LuxuryGroupProofSection({
 
   return (
     <section
-      className={`lux-section lux-proof${compact ? " lux-proof--compact" : ""} lux-section--ink`}
+      className={`lux-section lux-proof${compact ? " lux-proof--compact" : ""} lux-section--dark`}
       aria-labelledby="lux-proof-title"
     >
       <div className="lux-container">
@@ -66,7 +66,7 @@ export function LuxuryGroupProofSection({
         {showTestimonial ? (
           <blockquote className="lux-proof__quote">
             <p className="lux-proof__quote-text">“{copy.testimonial.quote}”</p>
-            <footer className="lux-proof__quote-attr">— {copy.testimonial.attribution}</footer>
+            <footer className="lux-proof__quote-attr">{copy.testimonial.attribution}</footer>
           </blockquote>
         ) : null}
       </div>

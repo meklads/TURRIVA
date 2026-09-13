@@ -35,41 +35,41 @@ const CLIENT_LOGOS: readonly GroupProofClient[] = [
 const en: GroupProofCopy = {
   eyebrow: "Part of Tasami Group",
   title: "Group experience, under one name.",
-  body: "Turriva is Tasami Group’s execution arm — the same team that designed and delivered sales experiences, interior fit-out, and pavilions for major clients for 15 years, now under a brand dedicated to design and delivery.",
+  body: "Turriva is Tasami Group’s execution arm. The same team that designed and delivered sales experiences, interior fit-out, and pavilions for major clients for 15 years, now under a brand dedicated to design and delivery.",
   logoLabel: "Clients served across the group",
   clients: CLIENT_LOGOS,
   stats: [
     { value: "15+", label: "Years with developers and institutions across Saudi Arabia and the Gulf" },
     { value: "500+", label: "Projects delivered across the group ecosystem" },
     { value: "4", label: "Countries: Saudi Arabia, Oman, Bahrain, Egypt" },
-    { value: "Clients include", label: "Al Rajhi · Rafal · Muslim World League · Anan Eskan" },
+    { value: "Clients include", label: "Al Rajhi, Rafal, Muslim World League, Anan Eskan" },
   ],
   testimonial: {
     quote:
       "We worked with Graphics House as a single execution partner. The smart maquette, interior fit-out, and interactive software arrived ready to present, at a standard that matched the League’s standing.",
-    attribution: "Senior Official, Muslim World League — Humanity Exhibition, Makkah",
+    attribution: "Senior Official, Muslim World League, Humanity Exhibition, Makkah",
   },
   workIntro:
-    "The work below was delivered by the Turriva team — some under Graphics House before the dedicated brand launched. Same team. Same execution standard.",
+    "The work below was delivered by the Turriva team, some under Graphics House before the dedicated brand launched. Same team. Same execution standard.",
 };
 
-/** Arabic strings below are locked copy — do not rewrite. */
+/** Arabic strings: locked wording; separators use commas (no dashes). */
 const ar: GroupProofCopy = {
   eyebrow: "جزء من مجموعة تسامي",
   title: "خبرة المجموعة، باسم واحد.",
-  body: "توريفا ذراع التنفيذ لمجموعة تسامي — نفس الفريق الذي صمّم ونفّذ تجارب البيع والتشطيب الداخلي والأجنحة لعملاء كبار على مدى 15 عامًا، الآن تحت علامة مخصصة للتصميم والتنفيذ.",
+  body: "توريفا ذراع التنفيذ لمجموعة تسامي. نفس الفريق الذي صمّم ونفّذ تجارب البيع والتشطيب الداخلي والأجنحة لعملاء كبار على مدى 15 عامًا، الآن تحت علامة مخصصة للتصميم والتنفيذ.",
   logoLabel: "عملاء منظومة المجموعة",
   clients: CLIENT_LOGOS,
   stats: [
     { value: "15+", label: "عامًا من العمل مع مطورين ومؤسسات في السعودية والخليج" },
     { value: "500+", label: "مشروع منفذ عبر منظومة المجموعة" },
     { value: "4", label: "دول: السعودية، عُمان، البحرين، مصر" },
-    { value: "عملاء من بينهم", label: "الراجحي · رفال · رابطة العالم الإسلامي · عناية إسكان" },
+    { value: "عملاء من بينهم", label: "الراجحي، رفال، رابطة العالم الإسلامي، عناية إسكان" },
   ],
   testimonial: {
     quote:
       "تعاملنا مع جرافيكس هاوس كشريك تنفيذ واحد. المجسم الذكي والتشطيب الداخلي والبرمجيات التفاعلية وصلت جاهزة للعرض، بمستوى يليق بمكانة الرابطة.",
-    attribution: "مسؤول أول، رابطة العالم الإسلامي — معرض الإنسانية، مكة المكرمة",
+    attribution: "مسؤول أول، رابطة العالم الإسلامي، معرض الإنسانية، مكة المكرمة",
   },
   workIntro:
     "الأعمال التالية نفّذها فريق توريفا، بعضها تحت مظلة جرافيكس هاوس قبل إطلاق العلامة المستقلة. نفس الفريق، نفس معايير التنفيذ.",

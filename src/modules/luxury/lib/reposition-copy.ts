@@ -94,7 +94,7 @@ const en: RepositionCopy = {
     eyebrow: "What Turriva is",
     title: "Spaces designed. Spaces delivered.",
     body: "We take a space from idea and drawings to a place ready to use or present — design, detailing, supply, installation, and handover, held by one team. This team has already delivered sales galleries, smart models, and exhibition pavilions for major clients through Graphics House — Turriva brings that experience to every spatial design and delivery brief.",
-    audiences: "Residential · Commercial · Hospitality · Real estate",
+    audiences: "Residential, Commercial, Hospitality, Real estate",
   },
   developers: {
     eyebrow: "For developers",
@@ -246,8 +246,8 @@ const ar: RepositionCopy = {
   definition: {
     eyebrow: "ما هي توريفا",
     title: "نصمّم المساحات. ونسلّمها.",
-    body: "نأخذ المساحة من الفكرة والمخططات إلى مكان جاهز للاستخدام أو العرض — تصميم، تفاصيل، توريد، تركيب، وتسليم، بيد فريق واحد. هذا الفريق نفّذ من قبل قاعات عرض ومجسمات ذكية وأجنحة معارض لعملاء كبار عبر جرافيكس هاوس — توريفا تحمل هذه الخبرة إلى كل مشروع تصميم وتنفيذ مكاني.",
-    audiences: "سكني · تجاري · ضيافة · عقار",
+    body: "نأخذ المساحة من الفكرة والمخططات إلى مكان جاهز للاستخدام أو العرض: تصميم، تفاصيل، توريد، تركيب، وتسليم، بيد فريق واحد. هذا الفريق نفّذ من قبل قاعات عرض ومجسمات ذكية وأجنحة معارض لعملاء كبار عبر جرافيكس هاوس. توريفا تحمل هذه الخبرة إلى كل مشروع تصميم وتنفيذ مكاني.",
+    audiences: "سكني، تجاري، ضيافة، عقار",
   },
   developers: {
     eyebrow: "للمطورين",
@@ -257,7 +257,7 @@ const ar: RepositionCopy = {
     points: [
       {
         title: "مركز البيع وفيلا العرض",
-        body: "مكان مرتّب لعرض معيار المعيشة — لا قائمة أثاث مبعثرة.",
+        body: "مكان مرتّب لعرض معيار المعيشة، لا قائمة أثاث مبعثرة.",
       },
       {
         title: "شقة العرض وعرض المشروع",
@@ -285,14 +285,14 @@ const ar: RepositionCopy = {
         href: "/real-estate-experience",
         nameAr: "تجربة المشروع العقاري",
         nameEn: "Real Estate Project Experience",
-        description: "بيئة البيع: مركز البيع ووحدة العرض والعرض والتجهيز — وفق مرحلة إطلاقكم.",
+        description: "بيئة البيع: مركز البيع ووحدة العرض والعرض والتجهيز، وفق مرحلة إطلاقكم.",
         image: PRODUCT_IMAGES.experience,
       },
       {
         href: "/show-unit",
         nameAr: "وحدة العرض",
         nameEn: "Show Unit",
-        description: "فيلا أو شقة أو جناح يمشي فيه المشتري — أسلوب الحياة وقد صار مكاناً.",
+        description: "فيلا أو شقة أو جناح يمشي فيه المشتري. أسلوب الحياة وقد صار مكاناً.",
         image: PRODUCT_IMAGES.showUnit,
       },
     ],
@@ -308,7 +308,7 @@ const ar: RepositionCopy = {
         href: "/fit-out",
         nameAr: "التنفيذ والتجهيز",
         nameEn: "Fit-Out & Execution",
-        description: "تصميمكم المعتمد. تنفيذنا. نبني — ولا نحل محل المصمم.",
+        description: "تصميمكم المعتمد. تنفيذنا. نبني، ولا نحل محل المصمم.",
         image: PRODUCT_IMAGES.fitOut,
       },
       {
@@ -329,7 +329,7 @@ const ar: RepositionCopy = {
         href: "/renovation",
         nameAr: "التجديد والتطوير",
         nameEn: "Renovation & Upgrade",
-        description: "مساحة قائمة. ما يبقى وما يتغير — يُحدَّد قبل بدء العمل.",
+        description: "مساحة قائمة. ما يبقى وما يتغير، يُحدَّد قبل بدء العمل.",
         image: PRODUCT_IMAGES.renovation,
       },
     ],
@@ -383,7 +383,7 @@ const ar: RepositionCopy = {
     intro: "مسار قصير يحفظ وضوح النطاق ويُبقي المساحة المكتملة مطابقة لما اعتُمد.",
     steps: [
       { title: "الفهم", body: "الموقع والمخططات والتوقيت وما يجب أن يفعله المكان." },
-      { title: "التصميم", body: "الغرفة والمسار داخلها — عندما يكون التصميم في الموجز." },
+      { title: "التصميم", body: "الغرفة والمسار داخلها، عندما يكون التصميم في الموجز." },
       { title: "التطوير", body: "تفاصيل وكميات وعينات قبل التصنيع." },
       { title: "التنفيذ", body: "توريد وتصنيع وتركيب وفق المخططات المعتمدة." },
       { title: "التسليم", body: "مكان جاهز للعرض أو الاستخدام أو الافتتاح." },

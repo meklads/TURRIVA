@@ -310,7 +310,7 @@ const en: LuxuryMessages = {
     eyebrow: "A Tasami Group company · Saudi Arabia",
     title: "From idea to a space you can enter.",
     subtitle:
-      "Turriva designs and delivers spaces — residential, commercial, hospitality, and real estate. The same team that built sales experiences and interior execution for Tasami Group clients for 15 years, now under one brand dedicated to design and delivery.",
+      "Turriva designs and delivers spaces: residential, commercial, hospitality, and real estate. The same team that built sales experiences and interior execution for Tasami Group clients for 15 years, now under one brand dedicated to design and delivery.",
     servicesLine: "Spatial Design · Experience · Build",
     tags: ["Spatial Design", "Experience", "Build"],
     ctaPrimary: "Discuss your project",
@@ -942,7 +942,7 @@ const ar: LuxuryMessages = {
     eyebrow: "إحدى شركات مجموعة تسامي · المملكة العربية السعودية",
     title: "من الفكرة إلى مساحة تدخلها.",
     subtitle:
-      "توريفا تصمم وتنفذ المساحات — سكني وتجاري وضيافة وعقار. الفريق نفسه الذي بنى تجارب البيع والتشطيب الداخلي لعملاء مجموعة تسامي منذ 15 عامًا، الآن تحت علامة واحدة مخصصة للتصميم والتنفيذ.",
+      "توريفا تصمم وتنفذ المساحات: سكني وتجاري وضيافة وعقار. الفريق نفسه الذي بنى تجارب البيع والتشطيب الداخلي لعملاء مجموعة تسامي منذ 15 عامًا، الآن تحت علامة واحدة مخصصة للتصميم والتنفيذ.",
     servicesLine: "تصميم مكاني · تجربة · تنفيذ",
     tags: ["تصميم مكاني", "تجربة", "تنفيذ"],
     ctaPrimary: "ناقش مشروعك",

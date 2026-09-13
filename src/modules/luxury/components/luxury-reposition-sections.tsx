@@ -269,7 +269,7 @@ export function LuxuryTeamExperienceSection({ locale }: Props) {
           <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.team.intro}</p>
           <blockquote className="lux-team-experience__quote">
             <p>“{proof.testimonial.quote}”</p>
-            <footer>— {proof.testimonial.attribution}</footer>
+            <footer>{proof.testimonial.attribution}</footer>
           </blockquote>
         </div>
         <ul className="mt-10 grid gap-4 md:grid-cols-3">
@@ -328,7 +328,7 @@ export function LuxuryMethodSection({ locale }: Props) {
           {copy.method.steps.map((step, index) => (
             <li key={step.title} className="lux-method__step">
               <p className="lux-method__label">
-                0{index + 1} · {step.title}
+                {String(index + 1).padStart(2, "0")} {step.title}
               </p>
               <p className="lux-body text-sm leading-relaxed text-lux-ink-soft">{step.body}</p>
             </li>
