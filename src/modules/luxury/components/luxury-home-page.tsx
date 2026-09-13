@@ -15,8 +15,6 @@ import { LuxuryGroupProofSection } from "./luxury-group-proof-section";
 import { LuxuryConversionProvider } from "./luxury-conversion-provider";
 import { LuxuryLogoMarquee } from "./luxury-logo-marquee";
 import { LuxuryProductTiersSection } from "./luxury-product-tiers";
-import { InteractiveShowcaseSlider } from "./interactive-showcase-slider";
-import { AgencyPartnerHub } from "./agency-partner-hub";
 import { EnterpriseComplianceBadges } from "./enterprise-compliance-badges";
 import { TurrivaAiAssistant } from "./turriva-ai-assistant";
 import { localizePath } from "@/shared/i18n/path";
@@ -38,8 +36,6 @@ export function LuxuryHomePage({ locale }: Props) {
         <LuxuryLogoMarquee locale={locale} />
         <LuxuryGroupProofSection locale={locale} showLogos={false} showTestimonial compact />
         <LuxuryProductTiersSection locale={locale} />
-        <InteractiveShowcaseSlider locale={locale} />
-        <AgencyPartnerHub locale={locale} />
         <LuxuryDefinitionSection locale={locale} />
         <LuxuryDevelopersSection locale={locale} />
         <LuxuryAlbumSection locale={locale} />
