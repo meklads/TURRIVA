@@ -24,8 +24,8 @@ export function LuxuryLogoMarquee({ locale }: Props) {
               <Image
                 src={client.src}
                 alt={client.name}
-                width={120}
-                height={56}
+                width={156}
+                height={73}
                 className="lux-logo-marquee__img"
               />
             </li>

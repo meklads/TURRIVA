@@ -35,11 +35,11 @@ export function LuxuryHomePage({ locale }: Props) {
         <LuxuryLogoMarquee locale={locale} />
         <LuxuryGroupProofSection locale={locale} showLogos={false} showTestimonial compact />
         <LuxuryProductTiersSection locale={locale} />
+        <LuxuryMethodSection locale={locale} />
         <LuxuryDefinitionSection locale={locale} />
         <LuxuryDevelopersSection locale={locale} />
         <LuxuryAlbumSection locale={locale} />
         <LuxuryTeamExperienceSection locale={locale} />
-        <LuxuryMethodSection locale={locale} />
 
         <section id="brief" className="lux-cta-band" aria-labelledby="home-cta-heading">
           <div className="lux-container">
@@ -50,7 +50,7 @@ export function LuxuryHomePage({ locale }: Props) {
                 sizes="(max-width: 900px) 100vw, 52vw"
               />
               <div className="lux-cta-band-panel">
-                <p className="lux-eyebrow">{t.brand.tagline}</p>
+                <p className="lux-eyebrow">{conversion.heroCapability}</p>
                 <div className="lux-divider-gold" />
                 <h2 id="home-cta-heading" className="lux-display lux-heading mt-6">
                   {t.cta.title}

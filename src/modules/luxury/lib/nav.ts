@@ -94,11 +94,11 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
           {
             href: lp("/real-estate-experience"),
             number: "01",
-            nameAr: "تجربة المشروع العقاري",
-            nameEn: "Real Estate Project Experience",
+            nameAr: "بيئة البيع العقاري",
+            nameEn: "Real Estate Sales Environment",
             description: ar
-              ? "بيئة البيع من مركز البيع إلى وحدة العرض."
-              : "The sales environment from gallery to show unit.",
+              ? "صالات البيع وتجربة المشروع حتى جاهزية الافتتاح."
+              : "Sales galleries and project experience through opening readiness.",
             image: "/brand/turriva/projects/anan-eskan-gallery.jpg",
             featured: true,
           },
@@ -108,27 +108,27 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             nameAr: "وحدة العرض",
             nameEn: "Show Unit",
             description: ar
-              ? "وحدة عيّنة تسويقية يمشي فيها المشتري."
-              : "A marketing sample unit the buyer can walk.",
+              ? "فيلا أو شقة عيّنة يمشي فيها المشتري."
+              : "A show villa or apartment the buyer can walk.",
             image: "/brand/turriva/inspiration/living-walnut-interior.webp",
             featured: true,
           },
           {
-            href: lp("/fit-out"),
+            href: lp("/real-estate-experience"),
             number: "03",
-            nameAr: "التنفيذ والتجهيز",
-            nameEn: "Fit-Out & Execution",
+            nameAr: "مساحة الإطلاق",
+            nameEn: "Project Launch Space",
             description: ar
-              ? "تصميمكم المعتمد. نحن نبنيه."
-              : "Your approved design. We build it.",
-            image: "/brand/turriva/projects/project-joinery-b2b.webp",
+              ? "مركز إطلاق وبيئة معرض لمرحلة البيع الأولى."
+              : "Launch center and exhibition environment for the first sales phase.",
+            image: "/brand/graphics-house/rafal-pavilions-poster.jpg",
             featured: true,
           },
         ],
       },
       {
         id: "support",
-        title: ar ? "مسارات إضافية" : "Further paths",
+        title: ar ? "تنفيذ مكاني أوسع" : "Extended spatial delivery",
         items: [
           {
             href: lp("/design-build"),
@@ -141,24 +141,24 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             image: "/brand/turriva/hero-interior.webp",
           },
           {
-            href: lp("/commercial-spaces"),
+            href: lp("/fit-out"),
             number: "05",
-            nameAr: "المساحات التجارية",
-            nameEn: "Commercial Spaces",
+            nameAr: "التنفيذ والتجهيز",
+            nameEn: "Fit-Out & Execution",
             description: ar
-              ? "مساحة تحمل العلامة وتعمل يومياً."
-              : "A space that carries the brand and works daily.",
-            image: "/brand/turriva/projects/project-commercial-retail.jpg",
+              ? "تصميمكم المعتمد. نحن نبنيه."
+              : "Your approved design. We build it.",
+            image: "/brand/turriva/projects/project-joinery-b2b.webp",
           },
           {
-            href: lp("/hospitality-spaces"),
+            href: lp("/commercial-spaces"),
             number: "06",
-            nameAr: "مساحات الضيافة",
-            nameEn: "Hospitality Spaces",
+            nameAr: "التجاري والضيافة",
+            nameEn: "Commercial & Hospitality",
             description: ar
-              ? "تجربة الضيف تبدأ من المكان."
-              : "The guest experience begins with the space.",
-            image: "/brand/turriva/inspiration/living-walnut-interior.webp",
+              ? "مساحات تحمل العلامة وتعمل يومياً."
+              : "Spaces that carry the brand and work every day.",
+            image: "/brand/turriva/projects/project-commercial-retail.jpg",
           },
           {
             href: lp("/renovation"),

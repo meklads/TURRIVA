@@ -18,13 +18,15 @@ export function LuxuryHomeHero({ locale }: Props) {
       <div className="lux-container lux-hero-inner">
         <div className="lux-hero-copy">
           <div className="lux-hero-copy-inner lux-reveal">
-            <p className="lux-eyebrow">{isAr ? "تنفيذ مكاني لإطلاق المبيعات · مجموعة تسامي" : "Spatial execution for sales launch · Tasami Group"}</p>
+            <p className="lux-eyebrow">{copy.heroEyebrow}</p>
             <h1 className="lux-display lux-heading mt-4 sm:mt-5">
               {copy.heroTitle}
               <span className="lux-hero-title-accent">{copy.heroTitleAccent}</span>
             </h1>
+            <p className="lux-hero-pillars">{copy.heroPillars}</p>
             <div className="lux-flourish" aria-hidden />
             <p className="lux-body max-w-lg">{copy.heroSubtitle}</p>
+            <p className="lux-hero-capability">{copy.heroCapability}</p>
             <div className="lux-hero-cta mt-9 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap">
               <button type="button" className="lux-btn-primary" onClick={() => openDemo({ source: "home_hero" })}>
                 {copy.ctaDemo}
@@ -35,8 +37,8 @@ export function LuxuryHomeHero({ locale }: Props) {
             </div>
             <ul className="lux-hero-glow-stats mt-8" aria-label={isAr ? "مؤشرات" : "Highlights"}>
               <li className="lux-glow-stat">
-                <strong>3</strong>
-                <span>{isAr ? "أسابيع لمسارات الإطلاق السريعة" : "weeks on fast-track launches"}</span>
+                <strong>21</strong>
+                <span>{isAr ? "يوماً كنموذج تسليم سريع" : "days as a fast delivery benchmark"}</span>
               </li>
               <li className="lux-glow-stat">
                 <strong>100%</strong>
@@ -56,8 +58,8 @@ export function LuxuryHomeHero({ locale }: Props) {
               src={LUXURY_HERO_IMAGE}
               alt={
                 isAr
-                  ? "مساحة داخلية فاخرة من تنفيذ توريفا"
-                  : "Premium interior space delivered by Turriva"
+                  ? "مساحة جاهزة للعرض من تنفيذ توريفا"
+                  : "A presentation-ready space delivered by Turriva"
               }
               fill
               priority

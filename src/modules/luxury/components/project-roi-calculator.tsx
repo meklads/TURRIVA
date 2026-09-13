@@ -54,7 +54,13 @@ export function ProjectRoiCalculator({ locale }: Props) {
     });
 
     const projectType: DemoProjectType =
-      kind === "event" ? "launch_exhibition" : kind === "residential" ? "sales_gallery" : "masterplan";
+      kind === "event"
+        ? "launch_exhibition"
+        : kind === "residential"
+          ? "sales_gallery"
+          : kind === "mixed"
+            ? "show_unit"
+            : "extended_spatial";
     const timeline: DemoTimeline =
       result.deliveryDays <= 21 ? "urgent" : daysToLaunch <= 90 ? "1_3_months" : "planning";
 

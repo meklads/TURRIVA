@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { LocalizedLink } from "@/shared/components/localized-link";
+import { getConversionCopy } from "@/modules/luxury/lib/conversion-copy";
 import { getRepositionCopy } from "@/modules/luxury/lib/reposition-copy";
 import { CASE_STUDIES } from "@/modules/luxury/lib/case-studies";
 import type { Locale } from "@/shared/i18n/locale";
@@ -364,20 +365,20 @@ export function LuxuryProductGroupsSection({ locale }: Props) {
 }
 
 export function LuxuryMethodSection({ locale }: Props) {
-  const copy = getRepositionCopy(locale);
+  const journey = getConversionCopy(locale).journey;
 
   return (
-    <section className="lux-section lux-section--white lux-method" aria-labelledby="lux-method-title">
+    <section id="launch-path" className="lux-section lux-section--linen lux-method scroll-mt-28" aria-labelledby="lux-method-title">
       <div className="lux-container">
         <div className="lux-section-intro">
-          <p className="lux-eyebrow">{copy.method.eyebrow}</p>
+          <p className="lux-eyebrow">{journey.eyebrow}</p>
           <h2 id="lux-method-title" className="lux-display lux-heading mt-3">
-            {copy.method.title}
+            {journey.title}
           </h2>
-          <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.method.intro}</p>
+          <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{journey.intro}</p>
         </div>
         <ol className="lux-method__list mt-10">
-          {copy.method.steps.map((step, index) => (
+          {journey.steps.map((step, index) => (
             <li key={step.title} className="lux-method__step">
               <p className="lux-method__label">
                 {String(index + 1).padStart(2, "0")} {step.title}

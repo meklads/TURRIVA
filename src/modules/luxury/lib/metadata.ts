@@ -27,21 +27,21 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
     keywords:
       locale === "ar"
         ? [
-            "تصميم وتنفيذ المساحات",
-            "تجربة المشروع العقاري",
+            "بيئات البيع العقاري",
+            "صالة مبيعات",
             "وحدة عرض",
-            "التنفيذ والتجهيز",
-            "مساحات تجارية",
-            "مساحات ضيافة",
+            "فيلا عرض",
+            "تجربة المشروع العقاري",
+            "تصميم وتنفيذ",
             "توريفا",
           ]
         : [
+            "real estate sales environments",
+            "sales gallery",
+            "show unit",
+            "show villa",
+            "project launch space",
             "spatial design and build",
-            "real estate project experience",
-            "show unit fit-out",
-            "fit-out and execution",
-            "commercial spaces",
-            "hospitality spaces",
             "Turriva",
           ],
     alternates: {

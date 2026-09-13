@@ -87,8 +87,8 @@ export function LuxuryClientLogoStrip({ locale }: { locale: Locale }) {
               <Image
                 src={client.src}
                 alt={client.name}
-                width={110}
-                height={66}
+                width={143}
+                height={86}
                 className="lux-client-strip__img"
               />
             </li>

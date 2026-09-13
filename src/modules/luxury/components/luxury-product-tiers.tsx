@@ -90,6 +90,7 @@ export function LuxuryProductTiersSection({ locale }: Props) {
                   <AutoPlayMedia type={tier.media.type} src={tier.media.src} poster={tier.media.poster} title={title} />
                 </div>
                 <div className="lux-tier-card__body">
+                  <p className="lux-tier-card__number">{tier.number}</p>
                   <p className="lux-tier-card__eyebrow">{eyebrow}</p>
                   <h3 className="lux-display mt-2 text-xl text-lux-ink">{title}</h3>
                   <p className="lux-body mt-3 text-sm text-lux-ink-soft">{body}</p>

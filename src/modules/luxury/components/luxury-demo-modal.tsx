@@ -18,6 +18,7 @@ export function LuxuryDemoModal({ locale, open, onClose, prefill }: Props) {
   const titleId = useId();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [step, setStep] = useState(0);
+  const [objective, setObjective] = useState("");
   const [projectType, setProjectType] = useState<DemoProjectType>("sales_gallery");
   const [timeline, setTimeline] = useState<DemoTimeline>("1_3_months");
   const [name, setName] = useState("");
@@ -27,6 +28,9 @@ export function LuxuryDemoModal({ locale, open, onClose, prefill }: Props) {
   const [email, setEmail] = useState("");
   const [note, setNote] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const stepLabels = [copy.demo.stepObjective, copy.demo.stepProject, copy.demo.stepTimeline, copy.demo.stepContact];
+  const lastStep = 3;
 
   useEffect(() => {
     const el = dialogRef.current;
@@ -60,12 +64,13 @@ export function LuxuryDemoModal({ locale, open, onClose, prefill }: Props) {
         email: email || undefined,
         company,
         locale,
-        source: prefill?.source ?? "live_demo_modal",
+        source: prefill?.source ?? "launch_brief_modal",
         interest: "bespoke" as const,
         projectType: "developer",
         message: [
-          `Live demo request`,
-          `Project type: ${projectType}`,
+          `Launch brief`,
+          objective ? `Sales objective: ${objective}` : null,
+          `Environment type: ${projectType}`,
           `Timeline: ${timeline}`,
           role ? `Role: ${role}` : null,
           company ? `Company: ${company}` : null,
@@ -116,7 +121,7 @@ export function LuxuryDemoModal({ locale, open, onClose, prefill }: Props) {
         {note ? <p className="lux-demo-modal__note mt-3">{note}</p> : null}
 
         <ol className="lux-demo-modal__steps" aria-hidden>
-          {[copy.demo.stepProject, copy.demo.stepTimeline, copy.demo.stepContact].map((label, i) => (
+          {stepLabels.map((label, i) => (
             <li key={label} className={i === step ? "is-active" : i < step ? "is-done" : undefined}>
               <span>{String(i + 1).padStart(2, "0")}</span> {label}
             </li>
@@ -126,8 +131,21 @@ export function LuxuryDemoModal({ locale, open, onClose, prefill }: Props) {
         {status === "success" ? (
           <p className="lux-demo-modal__success mt-6">{copy.demo.success}</p>
         ) : (
-          <form className="lux-demo-modal__form mt-6" onSubmit={step === 2 ? onSubmit : (e) => e.preventDefault()}>
+          <form className="lux-demo-modal__form mt-6" onSubmit={step === lastStep ? onSubmit : (e) => e.preventDefault()}>
             {step === 0 ? (
+              <label className="lux-demo-modal__objective">
+                <span>{copy.demo.objectivePrompt}</span>
+                <textarea
+                  required
+                  rows={4}
+                  value={objective}
+                  onChange={(e) => setObjective(e.target.value)}
+                  placeholder={copy.demo.objectivePlaceholder}
+                />
+              </label>
+            ) : null}
+
+            {step === 1 ? (
               <fieldset className="lux-demo-modal__fieldset">
                 <legend className="sr-only">{copy.demo.stepProject}</legend>
                 <div className="lux-demo-modal__choices">
@@ -145,7 +163,7 @@ export function LuxuryDemoModal({ locale, open, onClose, prefill }: Props) {
               </fieldset>
             ) : null}
 
-            {step === 1 ? (
+            {step === 2 ? (
               <fieldset className="lux-demo-modal__fieldset">
                 <legend className="sr-only">{copy.demo.stepTimeline}</legend>
                 <div className="lux-demo-modal__choices">
@@ -163,7 +181,7 @@ export function LuxuryDemoModal({ locale, open, onClose, prefill }: Props) {
               </fieldset>
             ) : null}
 
-            {step === 2 ? (
+            {step === 3 ? (
               <div className="lux-demo-modal__fields">
                 <label>
                   <span>{copy.demo.fields.name}</span>
@@ -198,8 +216,13 @@ export function LuxuryDemoModal({ locale, open, onClose, prefill }: Props) {
               ) : (
                 <span />
               )}
-              {step < 2 ? (
-                <button type="button" className="lux-btn-primary" onClick={() => setStep((s) => s + 1)}>
+              {step < lastStep ? (
+                <button
+                  type="button"
+                  className="lux-btn-primary"
+                  disabled={step === 0 && objective.trim().length < 8}
+                  onClick={() => setStep((s) => s + 1)}
+                >
                   {copy.demo.next}
                 </button>
               ) : (

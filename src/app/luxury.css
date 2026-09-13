@@ -100,6 +100,43 @@
   letter-spacing: 0;
 }
 
+.lux-hero-pillars {
+  margin: 1rem 0 0;
+  max-width: 36rem;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: clamp(0.8125rem, 1.2vw, 0.9375rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--lux-ink);
+}
+
+[dir="rtl"] .lux-hero-pillars {
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: clamp(0.875rem, 1.25vw, 1rem);
+  font-weight: 700;
+}
+
+.lux-hero-capability {
+  margin: 0.85rem 0 0;
+  max-width: 28rem;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lux-ink-muted);
+}
+
+[dir="rtl"] .lux-hero-capability {
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  font-size: 0.8125rem;
+}
+
 .lux-body {
   @apply leading-relaxed text-lux-ink-soft;
   font-size: clamp(0.9375rem, 1.35vw, 1.0625rem);
@@ -7100,8 +7137,8 @@ html[lang="en"] .lux-proof__title,
 
 .lux-client-strip__img {
   width: auto;
-  height: 2.35rem;
-  max-width: 6.5rem;
+  height: 3.05rem;
+  max-width: 8.45rem;
   object-fit: contain;
   opacity: 0.95;
 }
@@ -7572,7 +7609,7 @@ html[lang="en"] .lux-proof__title,
 }
 
 .lux-logo-marquee__img {
-  height: 2.35rem;
+  height: 3.05rem;
   width: auto;
   object-fit: contain;
   filter: grayscale(1);
@@ -7665,6 +7702,15 @@ html[lang="en"] .lux-proof__title,
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--lux-gold);
+}
+
+.lux-tier-card__number {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--lux-ink-muted);
 }
 
 [dir="rtl"] .lux-tier-card__eyebrow {
