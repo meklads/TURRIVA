@@ -4,11 +4,11 @@ export function buildWhatsAppHref(message: string): string {
   return `https://wa.me/${WHATSAPP_SA}?text=${encodeURIComponent(message)}`;
 }
 
-/** Prefill for sales brief — company, project type, city, target date placeholders. */
+/** Prefill for project discussion — company, project type, city, target date placeholders. */
 export function buildSalesBriefWhatsAppMessage(locale: "ar" | "en"): string {
   if (locale === "ar") {
     return [
-      "مرحباً توريفا — أود بدء موجز مشروع.",
+      "مرحباً توريفا — أود مناقشة مشروع.",
       "",
       "اسم الشركة:",
       "نوع المشروع:",
@@ -17,7 +17,7 @@ export function buildSalesBriefWhatsAppMessage(locale: "ar" | "en"): string {
     ].join("\n");
   }
   return [
-    "Hello Turriva — I would like to start a project brief.",
+    "Hello Turriva — I would like to discuss a project.",
     "",
     "Company name:",
     "Project type:",

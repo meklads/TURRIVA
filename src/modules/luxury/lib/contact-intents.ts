@@ -185,7 +185,7 @@ export function getFunnelCopy(locale: Locale): FunnelCopy {
     fileHint: isAr ? "PDF أو صور أو مخططات، حتى 12 م.ب" : "PDF, images, or drawings, up to 12 MB",
     next: isAr ? "التالي" : "Next",
     back: isAr ? "رجوع" : "Back",
-    submit: isAr ? "إرسال الملخص" : "Submit brief",
+    submit: isAr ? "أرسل الطلب" : "Send request",
     loading: isAr ? "جاري الإرسال…" : "Submitting…",
     success: isAr
       ? "شكراً. استلمنا ملخص مشروعك. سيتواصل معك فريق توريفا خلال 24 ساعة."

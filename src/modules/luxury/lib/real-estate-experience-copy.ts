@@ -270,7 +270,7 @@ const en: ExperienceCopy = {
         body: "Graphics House can add identity, CGI, film, models, and interactive content — without a separate hire unless you want one.",
       },
     ],
-    trust: "A specialized brand, backed by a team experienced in design, execution, and visual work.",
+    trust: "TURRIVA is a spatial execution and physical delivery company, backed by a team with 15+ years of group delivery experience.",
   },
   scenario: {
     eyebrow: "Example",
@@ -286,7 +286,7 @@ const en: ExperienceCopy = {
   close: {
     line: "From gallery to show unit, we design and deliver the environment in which your project presents itself.",
     brand: "TURRIVA",
-    tagline: "Spatial design · Experience · Build",
+    tagline: "Technical Development · Fabrication · Installation · Handover",
     title: "A project coming up?",
     body: "Share what you have. We review the need and propose a scope. First step: a conversation — not a price in the dark.",
   },
@@ -476,7 +476,7 @@ const ar: ExperienceCopy = {
         body: "جرافيكس هاوس تضيف الهوية والتصوير والأفلام والمجسمات والمحتوى التفاعلي — دون تعاقد منفصل إلا إذا رغبت.",
       },
     ],
-    trust: "علامة متخصصة، مدعومة بفريق ذي خبرة في التصميم والتنفيذ والعمل البصري.",
+    trust: "توريفا شركة تنفيذ مكاني وتسليم مادي، مدعومة بفريق لديه أكثر من 15 عاماً من خبرة التسليم عبر المجموعة.",
   },
   scenario: {
     eyebrow: "مثال",
@@ -492,7 +492,7 @@ const ar: ExperienceCopy = {
   close: {
     line: "من مركز البيع إلى وحدة العرض، نصمم وننفذ البيئة التي يقدم فيها مشروعك نفسه.",
     brand: "TURRIVA",
-    tagline: "تصميم مكاني · تجربة · تنفيذ",
+    tagline: "تطوير فني · تصنيع · تركيب · تسليم",
     title: "لديك مشروع قادم؟",
     body: "شاركنا ما لديك. نراجع الاحتياج ونقترح النطاق. الخطوة الأولى محادثة — لا سعر في الظلام.",
   },

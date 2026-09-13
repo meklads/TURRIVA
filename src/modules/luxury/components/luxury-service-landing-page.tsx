@@ -26,7 +26,7 @@ export function LuxuryServiceLandingPage({ locale, slug }: Props) {
     <>
       <LuxuryMarketingHero eyebrow="Turriva" title={text.title} intro={text.intro}>
         <Link href={`#brief`} className="lux-btn-primary">
-          {locale === "ar" ? "قدّم ملخص المشروع" : "Submit project brief"}
+          {locale === "ar" ? "ناقش مشروعك" : "Discuss your project"}
         </Link>
         <TrackedWhatsAppLink message={text.whatsapp} source={landing.source} className="lux-btn-outline-gold">
           WhatsApp
@@ -79,7 +79,7 @@ export function LuxuryServiceLandingPage({ locale, slug }: Props) {
 
       <LuxuryStickyCta
         locale={locale}
-        label={locale === "ar" ? "قدّم ملخص المشروع" : "Submit brief"}
+        label={locale === "ar" ? "ناقش مشروعك" : "Discuss your project"}
         href={`${lp(`/services/${slug}`)}#brief`}
         whatsappMessage={text.whatsapp}
         source={landing.source}

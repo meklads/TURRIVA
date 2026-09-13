@@ -76,7 +76,7 @@ export function getLaunchPageCopy(locale: Locale) {
     proofBody: isAr
       ? "أجنحة الراف في الدرعية ومعرض الإنسانية يظهران نموذج المجموعة: العمل البصري من جرافيكس هاوس، والطبقة المكانية بيد فريق التنفيذ نفسه الذي يقود توريفا اليوم."
       : "Rafal Pavilions in Diriyah and the Humanity Exhibition show the group model: visual work from Graphics House, and the spatial layer by the same execution team that leads Turriva today.",
-    ctaBrief: isAr ? "قدّم ملخص إطلاق" : "Submit a launch brief",
+    ctaBrief: isAr ? "ناقش مشروعك" : "Discuss your project",
     ctaWork: isAr ? "شاهد دراسات الحالة" : "View case studies",
     groupNote: isAr
       ? "توريفا شركة التنفيذ ضمن مجموعة تسامي. للشركات الشقيقة:"

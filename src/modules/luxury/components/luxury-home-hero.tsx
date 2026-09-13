@@ -38,7 +38,7 @@ export function LuxuryHomeHero({ locale }: Props) {
             <ul className="lux-hero-glow-stats mt-8" aria-label={isAr ? "مؤشرات" : "Highlights"}>
               <li className="lux-glow-stat">
                 <strong>15+</strong>
-                <span>{isAr ? "عاماً من الخبرة" : "years of experience"}</span>
+                <span>{isAr ? "عاماً من خبرة الفريق" : "years of team experience"}</span>
               </li>
             </ul>
           </div>

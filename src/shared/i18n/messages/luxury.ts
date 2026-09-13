@@ -348,20 +348,20 @@ const en: LuxuryMessages = {
     title: "What Turriva can execute",
     items: [
       {
-        title: "Spatial design",
-        description: "The plan, materials, and how the room is used. A capability inside a product, not a product of its own.",
-      },
-      {
         title: "Technical development",
         description: "Shop drawings, quantities, and a specification that can be built.",
       },
       {
-        title: "Joinery and fabrication",
-        description: "Custom joinery to the drawings. Support for kitchens and wardrobes when the room needs them, not as the brand identity.",
+        title: "Fabrication",
+        description: "Factory production and procurement aligned to the approved package.",
       },
       {
-        title: "Fit-out and experience",
-        description: "Installation, handover, and experience integration only when the project requires it.",
+        title: "Installation",
+        description: "Site coordination, field install, and quality control.",
+      },
+      {
+        title: "Handover",
+        description: "Opening-ready or use-ready delivery with snagging closed.",
       },
     ],
   },
@@ -608,7 +608,7 @@ const en: LuxuryMessages = {
         { title: "Manufacture & import", description: "Made to the drawings. Import marks stay with the supplier, not as a Turriva certificate." },
         { title: "Install & warranty", description: "Site install and local after-sales support." },
       ],
-      ctaDesign: "Start 3D design",
+      ctaDesign: "Discuss your project",
       ctaContact: "Book a fit-out consultation",
       segments: {
         eyebrow: "Who we serve",
@@ -716,7 +716,7 @@ const en: LuxuryMessages = {
           },
           {
             q: "How do I start?",
-            a: "Book a 3D design session, request a sample kit, or submit the form below with your plan. We route you to the right Turriva studio lead.",
+            a: "Book a 3D design session, request a sample kit, or submit the form below with your plan. We route you to the right Turriva delivery lead.",
           },
         ],
       },
@@ -725,7 +725,7 @@ const en: LuxuryMessages = {
       title: "Commercial, exhibition & B2B execution",
       intro:
         "Turriva delivers commercial interiors, exhibition environments, developer programmes, and hospitality rollouts through coordinated technical development, fabrication, installation, and phased handover.",
-      ctaBrief: "Submit B2B brief",
+      ctaBrief: "Discuss your project",
       ctaSample: "Request sample kit",
       segments: {
         eyebrow: "Who we serve",
@@ -817,7 +817,7 @@ const en: LuxuryMessages = {
       formCompany: "Company / developer name",
       formUnits: "Approx. Units or area (sqm)",
       formProducts: "Products needed",
-      formSubmit: "Submit B2B brief",
+      formSubmit: "Discuss your project",
       formEmail: "Work email",
       productOptions: [
         { value: "kitchens", label: "Kitchens" },
@@ -980,20 +980,20 @@ const ar: LuxuryMessages = {
     title: "ما الذي يمكن لتوريفا تنفيذه",
     items: [
       {
-        title: "التصميم المكاني",
-        description: "التخطيط والمواد وطريقة استخدام الغرفة. قدرة داخل منتج، لا منتج مستقل.",
-      },
-      {
         title: "التطوير الفني",
         description: "مخططات تنفيذ وكميات ومواصفات قابلة للبناء.",
       },
       {
-        title: "النجارة والتصنيع",
-        description: "نجارة وفق المخططات. دعم المطابخ والخزائن عندما تحتاجها الغرفة، لا كهوية للعلامة.",
+        title: "التصنيع",
+        description: "إنتاج مصنع وتوريد وفق الحزمة المعتمدة.",
       },
       {
-        title: "التجهيز والتجربة",
-        description: "تركيب وتسليم ودمج تجربة فقط عندما يحتاجها المشروع.",
+        title: "التركيب",
+        description: "تنسيق موقع وتركيب ميداني وضبط جودة.",
+      },
+      {
+        title: "التسليم",
+        description: "جاهزية الاستخدام أو الافتتاح مع إغلاق الملاحظات.",
       },
     ],
   },
@@ -1240,7 +1240,7 @@ const ar: LuxuryMessages = {
         { title: "تصنيع واستيراد", description: "يُصنع وفق المخططات. علامات المطابقة تبقى لدى المورّد." },
         { title: "تركيب وضمان", description: "تركيب في الموقع ودعم ما بعد البيع محلياً." },
       ],
-      ctaDesign: "ابدأ تصميم 3D",
+      ctaDesign: "ناقش مشروعك",
       ctaContact: "احجز استشارة تأثيث",
       segments: {
         eyebrow: "من نخدم",
@@ -1348,7 +1348,7 @@ const ar: LuxuryMessages = {
           },
           {
             q: "كيف أبدأ؟",
-            a: "احجز جلسة تصميم، اطلب حقيبة عينات، أو أرسل النموذج أدناه مع مخططك. نوجّهك لمسؤول الاستوديو المناسب.",
+            a: "احجز جلسة تصميم، اطلب حقيبة عينات، أو أرسل النموذج أدناه مع مخططك. نوجّهك لمسؤول التسليم المناسب.",
           },
         ],
       },
@@ -1357,7 +1357,7 @@ const ar: LuxuryMessages = {
       title: "تنفيذ المشاريع التجارية والمعارض وB2B",
       intro:
         "تنفّذ توريفا المساحات التجارية وبيئات المعارض وبرامج المطورين والضيافة عبر تطوير فني وتصنيع وتركيب وتسليم مرحلي منسّق.",
-      ctaBrief: "أرسل ملخص B2B",
+      ctaBrief: "ناقش مشروعك",
       ctaSample: "اطلب حقيبة عينات",
       segments: {
         eyebrow: "من نخدم",
@@ -1449,7 +1449,7 @@ const ar: LuxuryMessages = {
       formCompany: "اسم الشركة / المطور",
       formUnits: "عدد الوحدات أو المساحة (م²)",
       formProducts: "المنتجات المطلوبة",
-      formSubmit: "إرسال ملخص B2B",
+      formSubmit: "ناقش مشروعك",
       formEmail: "البريد الوظيفي",
       productOptions: [
         { value: "kitchens", label: "مطابخ" },

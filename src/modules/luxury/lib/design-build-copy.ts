@@ -72,13 +72,13 @@ export type DesignBuildCopy = {
 
 const en: DesignBuildCopy = {
   nav: "Design and build",
-  metaTitle: "Interior Design and Build",
+  metaTitle: "Design & Build · Spatial Execution",
   metaDescription:
-    "One coordinated path from an initial idea to a completed space: design, technical development, supply, installation, and handover.",
+    "One coordinated path from approved intent to a completed space: technical development, fabrication, installation, and handover under Turriva.",
   hero: {
     eyebrow: "Design and build",
-    title: "From idea to finished space.",
-    body: "We bring design, technical development, supply, installation, and handover into one coordinated process. One team remains responsible from the first brief to the completed space.",
+    title: "From approved intent to finished space.",
+    body: "We bring technical development, supply, installation, and handover into one coordinated process. One team remains responsible from the first brief to the completed space.",
     cta: "Discuss your project",
     secondary: "Send drawings",
   },
@@ -154,7 +154,7 @@ const en: DesignBuildCopy = {
     eyebrow: "Who we work with",
     title: "For clients starting with an idea.",
     body: "For villas, private residences, and selected spaces that need both design and delivery. We begin with the brief and remain involved through handover.",
-    trust: "TURRIVA brings spatial design, technical development, execution, and visual coordination into one focused team.",
+    trust: "TURRIVA brings technical development, fabrication, installation, and handover into one accountable delivery team.",
   },
   close: {
     title: "Have a space in mind?",
@@ -175,15 +175,15 @@ const en: DesignBuildCopy = {
 
 const ar: DesignBuildCopy = {
   nav: "التصميم والتنفيذ",
-  metaTitle: "التصميم الداخلي والتنفيذ",
+  metaTitle: "التصميم والتنفيذ · تنفيذ مكاني",
   metaDescription:
-    "مسار منسق من الفكرة الأولية إلى مساحة مكتملة، يشمل التصميم والتطوير الفني والتوريد والتركيب والتسليم.",
+    "مسار منسق من النية المعتمدة إلى مساحة مكتملة: تطوير فني وتصنيع وتركيب وتسليم تحت توريفا.",
   hero: {
     eyebrow: "التصميم والتنفيذ",
-    title: "من الفكرة إلى مساحة مكتملة.",
-    body: "نجمع التصميم والتطوير الفني والتوريد والتركيب والتسليم ضمن عملية واحدة منسقة. ويتولى فريق واحد المسؤولية من الموجز الأول حتى اكتمال المساحة.",
-    cta: "ناقشوا مشروعكم",
-    secondary: "أرسلوا المخططات",
+    title: "من النية المعتمدة إلى مساحة مكتملة.",
+    body: "نجمع التطوير الفني والتوريد والتركيب والتسليم ضمن عملية واحدة منسقة. ويتولى فريق واحد المسؤولية من الموجز الأول حتى اكتمال المساحة.",
+    cta: "ناقش مشروعك",
+    secondary: "أرسل المخططات",
   },
   problem: {
     eyebrow: "لماذا فريق واحد؟",
@@ -257,7 +257,7 @@ const ar: DesignBuildCopy = {
     eyebrow: "نعمل مع",
     title: "عملاء يبدأون بفكرة.",
     body: "للفلل والمساكن الخاصة والمساحات المختارة التي تحتاج إلى التصميم والتنفيذ معاً. نبدأ من الموجز ونواصل العمل حتى التسليم.",
-    trust: "تجمع توريفا التصميم المكاني والتطوير الفني والتنفيذ والتنسيق البصري ضمن فريق متخصص.",
+    trust: "تجمع توريفا التطوير الفني والتصنيع والتركيب والتسليم ضمن فريق تسليم واحد بمسؤولية واضحة.",
   },
   close: {
     title: "لديكم مساحة جديدة؟",

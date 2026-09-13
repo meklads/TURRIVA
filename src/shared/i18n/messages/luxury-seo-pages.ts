@@ -163,7 +163,7 @@ const en: LuxurySeoMessages = {
       title: "Terms of use",
       updated: "Last updated: August 2026",
       intro:
-        "These terms govern the use of turriva.com, which presents Turriva's spatial design, experience, and build capabilities and provides channels for project enquiries.",
+        "These terms govern the use of turriva.com, which presents Turriva's spatial execution and physical delivery capabilities and provides channels for project enquiries.",
       sections: [
         {
           title: "Website purpose",
@@ -202,7 +202,7 @@ const en: LuxurySeoMessages = {
         items: [
           {
             q: "What does Turriva do?",
-            a: "Turriva provides spatial design, experience, and build services. We develop approved ideas into coordinated technical packages and deliver the physical space. Turriva can be appointed independently.",
+            a: "Turriva is a spatial execution and physical delivery company. We bridge approved design to delivered reality: technical development, fabrication, installation, and handover. Real estate sales environments are the flagship specialty. Turriva can be appointed independently.",
           },
           {
             q: "How is Turriva different from Graphics House?",
@@ -235,28 +235,29 @@ const en: LuxurySeoMessages = {
   },
   servicesPage: {
     title: "Capabilities",
-    intro: "Spatial design, experience, and build capabilities brought together around the requirements of each project.",
+    intro:
+      "Spatial execution capabilities built for delivery: technical development, fabrication, installation, and handover — with sales environments as the flagship specialty.",
     items: [
       {
         slug: "spatial-design",
-        title: "Spatial design",
-        intro: "Plans, materials, and movement developed around how the space needs to look, feel, and work.",
-        points: ["Spatial concept", "Material direction", "User journey"],
-        cta: "Discuss your space",
-        href: "/design-build",
+        title: "Technical development",
+        intro: "Approved design intent translated into coordinated drawings, quantities, and buildable specifications.",
+        points: ["Shop drawings", "Material samples", "Buildable package"],
+        cta: "Discuss your project",
+        href: "/fit-out",
       },
       {
         slug: "technical-development",
-        title: "Technical development",
-        intro: "Approved design intent translated into coordinated drawings, quantities, and buildable specifications.",
-        points: ["Shop drawings", "Quantities", "Technical coordination"],
+        title: "Fabrication & procurement",
+        intro: "Factory production and sourcing aligned to the approved package before site work begins.",
+        points: ["Factory coordination", "QC checkpoints", "Logistics"],
         cta: "Send your drawings",
         href: "/fit-out",
       },
       {
         slug: "fit-out",
-        title: "Fit-out and installation",
-        intro: "Site delivery, installation, supervision, and trade coordination through to handover.",
+        title: "Installation & handover",
+        intro: "Site delivery, installation, supervision, and snagging through opening-ready handover.",
         points: ["Installation", "Site coordination", "Quality and handover"],
         cta: "Discuss your project",
         href: "/fit-out",
@@ -279,10 +280,10 @@ const en: LuxurySeoMessages = {
       },
       {
         slug: "experience",
-        title: "Spatial experience",
-        intro: "Environments shaped around how guests arrive, move, understand, and engage with a place.",
-        points: ["Sales environments", "Guest journey", "Integrated delivery"],
-        cta: "Discuss the experience",
+        title: "Sales environments",
+        intro: "Flagship specialty: sales galleries, show units, and launch spaces built for buyer understanding.",
+        points: ["Sales galleries", "Show units", "Launch spaces"],
+        cta: "Discuss your project",
         href: "/real-estate-experience",
       },
     ],
@@ -350,7 +351,7 @@ const en: LuxurySeoMessages = {
     eyebrow: "Tasami Group ecosystem",
     title: "One company, wider support when needed",
     intro:
-      "Turriva designs and delivers the space. Graphics House supports visualisation, while Bees Motion supports launch and communication. Each company can work independently or together when the brief calls for it.",
+      "Turriva owns spatial execution and physical delivery. Graphics House supports visualisation, while Bees Motion supports launch and communication. Contract Turriva alone; the group joins only when the brief needs it.",
     companies: [
       {
         name: "Graphics House",
@@ -482,7 +483,7 @@ const ar: LuxurySeoMessages = {
     terms: {
       title: "شروط الاستخدام",
       updated: "آخر تحديث: أغسطس 2026",
-      intro: "تنظم هذه الشروط استخدام turriva.com، حيث يعرض الموقع قدرات توريفا في التصميم المكاني والتجربة والتنفيذ ويوفر قنوات للتواصل بشأن المشاريع.",
+      intro: "تنظم هذه الشروط استخدام turriva.com، حيث يعرض الموقع قدرات توريفا في التنفيذ المكاني والتسليم المادي ويوفر قنوات للتواصل بشأن المشاريع.",
       sections: [
         {
           title: "غرض الموقع",
@@ -521,7 +522,7 @@ const ar: LuxurySeoMessages = {
         items: [
           {
             q: "ماذا تفعل توريفا؟",
-            a: "تقدم توريفا التصميم المكاني والتجربة والتنفيذ. نطوّر الأفكار المعتمدة إلى حزم فنية منسقة ثم نسلّم المكان على أرض الواقع. ويمكن التعاقد مع توريفا بصورة مستقلة.",
+            a: "توريفا شركة تنفيذ مكاني وتسليم مادي. نربط التصميم المعتمد بالواقع المسلَّم: تطوير فني، تصنيع، تركيب، وتسليم. بيئات البيع العقاري هي التخصص الرئيسي. ويمكن التعاقد مع توريفا بصورة مستقلة.",
           },
           {
             q: "ما الفرق بين توريفا وGraphics House؟",
@@ -554,28 +555,29 @@ const ar: LuxurySeoMessages = {
   },
   servicesPage: {
     title: "القدرات",
-    intro: "قدرات في التصميم المكاني والتجربة والتنفيذ، تتكامل حول متطلبات كل مشروع.",
+    intro:
+      "قدرات تنفيذ مكاني مبنية للتسليم: تطوير فني وتصنيع وتركيب وتسليم — مع بيئات البيع كالتخصص الرئيسي.",
     items: [
       {
         slug: "spatial-design",
-        title: "التصميم المكاني",
-        intro: "مخططات وخامات وحركة تُطوّر وفق الشكل والإحساس وطريقة الاستخدام المطلوبة للمكان.",
-        points: ["المفهوم المكاني", "اتجاه الخامات", "رحلة المستخدم"],
-        cta: "ناقش مساحتك",
-        href: "/design-build",
+        title: "التطوير الفني",
+        intro: "ترجمة التوجه التصميمي المعتمد إلى مخططات وكميات ومواصفات منسقة وقابلة للتنفيذ.",
+        points: ["مخططات تنفيذ", "عينات مواد", "حزمة قابلة للبناء"],
+        cta: "ناقش مشروعك",
+        href: "/fit-out",
       },
       {
         slug: "technical-development",
-        title: "التطوير الفني",
-        intro: "ترجمة التوجه التصميمي المعتمد إلى مخططات وكميات ومواصفات منسقة وقابلة للتنفيذ.",
-        points: ["مخططات تنفيذ", "كميات", "تنسيق فني"],
+        title: "التصنيع والتوريد",
+        intro: "إنتاج مصنع وتوريد وفق الحزمة المعتمدة قبل بدء العمل في الموقع.",
+        points: ["تنسيق مصنع", "نقاط ضبط جودة", "لوجستيات"],
         cta: "أرسل مخططاتك",
         href: "/fit-out",
       },
       {
         slug: "fit-out",
-        title: "التجهيز والتركيب",
-        intro: "تنفيذ ميداني وتركيب وإشراف وتنسيق بين التخصصات حتى التسليم.",
+        title: "التركيب والتسليم",
+        intro: "تنفيذ ميداني وتركيب وإشراف وإغلاق ملاحظات حتى التسليم الجاهز للافتتاح.",
         points: ["التركيب", "التنسيق الميداني", "الجودة والتسليم"],
         cta: "ناقش مشروعك",
         href: "/fit-out",
@@ -593,15 +595,15 @@ const ar: LuxurySeoMessages = {
         title: "الشراء والتوريد",
         intro: "شراء الخامات والأثاث والإضاءة وتنسيقها وفق المواصفات المعتمدة.",
         points: ["شراء وفق المواصفات", "تنسيق المورّدين", "تسليم مرحلي"],
-        cta: "ناقش متطلباتك",
+        cta: "ناقش مشروعك",
         href: "/fit-out",
       },
       {
         slug: "experience",
-        title: "التجربة المكانية",
-        intro: "بيئات تُصاغ حول وصول الزائر وحركته وفهمه وتفاعله مع المكان.",
-        points: ["بيئات المبيعات", "رحلة الزائر", "تنفيذ متكامل"],
-        cta: "ناقش التجربة",
+        title: "بيئات البيع",
+        intro: "التخصص الرئيسي: صالات البيع ووحدات العرض ومساحات الإطلاق لفهم المشتري.",
+        points: ["صالات بيع", "وحدات عرض", "مساحات إطلاق"],
+        cta: "ناقش مشروعك",
         href: "/real-estate-experience",
       },
     ],
@@ -668,7 +670,7 @@ const ar: LuxurySeoMessages = {
     eyebrow: "منظومة مجموعة تسامي",
     title: "شركة واحدة، ودعم أوسع عند الحاجة",
     intro:
-      "تصمم توريفا المكان وتنفذه، وتدعم Graphics House أعمال التصور البصري، فيما تدعم Bees Motion الإطلاق والتواصل. يمكن لكل شركة العمل بصورة مستقلة أو ضمن فريق واحد عندما يتطلب الموجز ذلك.",
+      "توريفا تملك التنفيذ المكاني والتسليم المادي. جرافيكس هاوس تدعم التصور البصري، وBees Motion تدعم الإطلاق والتواصل. تعاقد مع توريفا وحدها؛ والمجموعة تُستدعى حين يحتاجها الموجز فقط.",
     companies: [
       {
         name: "Graphics House",

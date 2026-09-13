@@ -78,13 +78,13 @@ export type HospitalitySpacesCopy = {
 
 const en: HospitalitySpacesCopy = {
   nav: "Hospitality spaces",
-  metaTitle: "Hospitality Space Design and Build",
+  metaTitle: "Hospitality Spaces · Spatial Execution",
   metaDescription:
-    "TURRIVA designs and builds hotels, serviced apartments, and guest spaces around the stay, the operation, and the people they serve.",
+    "Turriva delivers hotels, serviced apartments, and guest spaces around the stay and the operation: technical development, fabrication, installation, and handover.",
   hero: {
     eyebrow: "Hospitality spaces",
-    title: "Designed around the stay.",
-    body: "We create hotels, serviced apartments, and guest spaces around how people arrive, settle in, and move through the property. Every design also considers the team responsible for running it.",
+    title: "Built around the stay.",
+    body: "We deliver hotels, serviced apartments, and guest spaces around how people arrive, settle in, and move through the property. Every programme also considers the team responsible for running it.",
     cta: "Discuss your project",
     secondary: "Explore the scope",
   },
@@ -174,7 +174,7 @@ const en: HospitalitySpacesCopy = {
       "Destination restaurants",
       "Hospitality developers",
     ],
-    trust: "TURRIVA is a specialised spatial design and build studio, supported by a team experienced in design, execution, and visual communication.",
+    trust: "TURRIVA is a spatial execution and physical delivery company. We bridge approved design to delivered reality: technical development, fabrication, installation, and handover.",
   },
   close: {
     title: "Planning a hospitality space?",
@@ -196,14 +196,14 @@ const en: HospitalitySpacesCopy = {
 
 const ar: HospitalitySpacesCopy = {
   nav: "مساحات الضيافة",
-  metaTitle: "تصميم وتنفيذ مساحات الضيافة",
+  metaTitle: "تنفيذ مساحات الضيافة · تنفيذ مكاني",
   metaDescription:
-    "تصمم توريفا الفنادق والشقق الفندقية ومساحات الضيوف وتنفذها بما يوازن بين تجربة الإقامة ومتطلبات التشغيل.",
+    "توريفا تسلّم الفنادق والشقق الفندقية ومساحات الضيوف بما يوازن بين تجربة الإقامة ومتطلبات التشغيل: تطوير فني وتصنيع وتركيب وتسليم.",
   hero: {
     eyebrow: "مساحات الضيافة",
-    title: "تصميم يبدأ من تجربة الإقامة.",
-    body: "نصمم وننفذ الفنادق والشقق الفندقية ومساحات الضيوف وفق طريقة الوصول والإقامة والحركة داخل المنشأة، مع مراعاة احتياجات الفريق الذي يديرها.",
-    cta: "ناقش مشروعك معنا",
+    title: "مبنية حول تجربة الإقامة.",
+    body: "ننفّذ الفنادق والشقق الفندقية ومساحات الضيوف وفق طريقة الوصول والإقامة والحركة داخل المنشأة، مع مراعاة احتياجات الفريق الذي يديرها.",
+    cta: "ناقش مشروعك",
     secondary: "استكشف نطاق العمل",
   },
   problem: {
@@ -284,7 +284,7 @@ const ar: HospitalitySpacesCopy = {
     eyebrow: "لمن",
     title: "للأماكن التي ترحب بالضيوف",
     items: ["فنادق وفنادق صغيرة", "شقق فندقية", "ردهات واستقبال", "مناطق الضيوف", "صالات جلوس فندقية", "مطاعم الوجهة", "مطورو ضيافة"],
-    trust: "توريفا استوديو متخصص في التصميم المكاني والتنفيذ، يدعمه فريق ذو خبرة في التصميم والتنفيذ والاتصال البصري.",
+    trust: "توريفا شركة تنفيذ مكاني وتسليم مادي. نربط التصميم المعتمد بالواقع المسلَّم: تطوير فني، تصنيع، تركيب، وتسليم.",
   },
   close: {
     title: "هل تخطط لمساحة ضيافة؟",

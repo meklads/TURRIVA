@@ -78,9 +78,9 @@ export type RenovationCopy = {
 
 const en: RenovationCopy = {
   nav: "Renovation and upgrade",
-  metaTitle: "Renovation and Spatial Upgrade",
+  metaTitle: "Renovation · Spatial Execution",
   metaDescription:
-    "TURRIVA assesses, redesigns, and renovates existing spaces with a clear scope shaped by their condition and future use.",
+    "Turriva assesses and renovates existing spaces with a clear owned scope shaped by their condition and future use: technical development, fabrication, installation, and handover.",
   hero: {
     eyebrow: "Renovation and upgrade",
     title: "Keep what works. Improve what matters.",
@@ -175,7 +175,7 @@ const en: RenovationCopy = {
       "Developers repositioning an existing asset",
       "Companies updating their headquarters",
     ],
-    trust: "TURRIVA is a specialised spatial design and build studio, supported by a team experienced in design, execution, and visual communication.",
+    trust: "TURRIVA is a spatial execution and physical delivery company. We bridge approved design to delivered reality: technical development, fabrication, installation, and handover.",
   },
   close: {
     title: "Planning to renew a space?",
@@ -198,9 +198,9 @@ const en: RenovationCopy = {
 
 const ar: RenovationCopy = {
   nav: "التجديد والتطوير",
-  metaTitle: "تجديد المساحات وتطويرها",
+  metaTitle: "التجديد والتطوير · تنفيذ مكاني",
   metaDescription:
-    "تقيّم توريفا المساحات القائمة وتعيد تصميمها وتجديدها ضمن نطاق واضح تحدده حالتها واستخدامها المستقبلي.",
+    "تقيّم توريفا المساحات القائمة وتجدّدها ضمن نطاق ملكية واضح تحدده حالتها واستخدامها المستقبلي: تطوير فني وتصنيع وتركيب وتسليم.",
   hero: {
     eyebrow: "التجديد والتطوير",
     title: "نحافظ على الجيد. ونطور ما يلزم.",
@@ -295,7 +295,7 @@ const ar: RenovationCopy = {
       "مطورون يعيدون تموضع أصل قائم",
       "شركات تطور مقراتها",
     ],
-    trust: "توريفا استوديو متخصص في التصميم المكاني والتنفيذ، يدعمه فريق ذو خبرة في التصميم والتنفيذ والاتصال البصري.",
+    trust: "توريفا شركة تنفيذ مكاني وتسليم مادي. نربط التصميم المعتمد بالواقع المسلَّم: تطوير فني، تصنيع، تركيب، وتسليم.",
   },
   close: {
     title: "هل تخطط لتجديد مساحة؟",

@@ -111,9 +111,9 @@ export type LuxuryPlatformMessages = {
 const en: LuxuryPlatformMessages = {
   trustBar: {
     items: [
-      { icon: "build", label: "Spatial Design · Experience · Build" },
-      { icon: "design", label: "Concept-to-build technical development" },
-      { icon: "factory", label: "Fabrication, procurement & physical delivery" },
+      { icon: "build", label: "Technical Development · Fabrication · Installation · Handover" },
+      { icon: "design", label: "From approved design to delivered reality" },
+      { icon: "factory", label: "Sales galleries · Show units · Launch spaces" },
     ],
   },
   ecosystem: {
@@ -158,13 +158,13 @@ const en: LuxuryPlatformMessages = {
     eyebrow: "Part of Tasami Group",
     title: "Turriva, supported when needed",
     body:
-      "Turriva designs and delivers spaces and experiences. Graphics House or Bees Motion can join when a brief also requires visualisation or launch support. Turriva can be appointed independently.",
-    flow: "Creative → Execution",
+      "Turriva is a spatial execution and physical delivery company. Contract Turriva alone. Graphics House or Bees Motion join only when the brief also needs visualisation or launch support.",
+    flow: "Create → Grow → Execute",
     groupLink: "Discover Tasami Group",
     companies: [
       { name: "Graphics House", role: "CREATE · visual work" },
       { name: "Bees Motion", role: "GROW · launch and campaigns" },
-      { name: "Turriva", role: "BUILD · the finished space", active: true },
+      { name: "Turriva", role: "EXECUTE · physical delivery", active: true },
     ],
   },
   comparison: {
@@ -355,7 +355,7 @@ const en: LuxuryPlatformMessages = {
     eyebrow: "Why Turriva",
     title: "A considered path to delivery",
     subtitle:
-      "Spatial design, experience, and build coordinated around one clear brief.",
+      "Technical development, fabrication, installation, and handover coordinated around one clear owned scope.",
     items: [
       {
         icon: "warranty",
@@ -398,9 +398,9 @@ const en: LuxuryPlatformMessages = {
 const ar: LuxuryPlatformMessages = {
   trustBar: {
     items: [
-      { icon: "build", label: "تصميم مكاني · تجربة · تنفيذ" },
-      { icon: "design", label: "تطوير فني من المفهوم إلى التنفيذ" },
-      { icon: "factory", label: "تصنيع وتوريد وتسليم ميداني" },
+      { icon: "build", label: "تطوير فني · تصنيع · تركيب · تسليم" },
+      { icon: "design", label: "من التصميم المعتمد إلى واقع جاهز للتسليم" },
+      { icon: "factory", label: "صالات بيع · وحدات عرض · مساحات إطلاق" },
     ],
   },
   ecosystem: {
@@ -445,13 +445,13 @@ const ar: LuxuryPlatformMessages = {
     eyebrow: "جزء من مجموعة تسامي",
     title: "توريفا، بدعم عند الحاجة",
     body:
-      "تصمم توريفا المساحات والتجارب وتنفذها. ويمكن أن تنضم Graphics House أو Bees Motion عندما يشمل الموجز التصور البصري أو دعم الإطلاق. كما يمكن التعاقد مع توريفا بصورة مستقلة.",
-    flow: "الإبداع ← التنفيذ",
+      "توريفا شركة تنفيذ مكاني وتسليم مادي. تعاقد مع توريفا وحدها. جرافيكس هاوس أو Bees Motion تُستدعى فقط حين يحتاج الموجز التصور البصري أو دعم الإطلاق.",
+    flow: "خلق ← نمو ← تنفيذ",
     groupLink: "اكتشف مجموعة تسامي",
     companies: [
       { name: "Graphics House", role: "CREATE · العمل البصري" },
       { name: "Bees Motion", role: "GROW · الإطلاق والحملات" },
-      { name: "Turriva", role: "BUILD · المكان المكتمل", active: true },
+      { name: "Turriva", role: "EXECUTE · التسليم المادي", active: true },
     ],
   },
   comparison: {
@@ -642,7 +642,7 @@ const ar: LuxuryPlatformMessages = {
     eyebrow: "لماذا توريفا",
     title: "مسار مدروس نحو التسليم",
     subtitle:
-      "تصميم مكاني وتجربة وتنفيذ، تتكامل حول موجز واضح.",
+      "تطوير فني وتصنيع وتركيب وتسليم، تتكامل حول نطاق ملكية واضح.",
     items: [
       {
         icon: "warranty",

@@ -65,12 +65,12 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL("https://turriva.com"),
     title:
       locale === "ar"
-        ? "توريفا · تصميم مكاني · تجربة · تنفيذ"
-        : "Turriva · Spatial Design · Experience · Build",
+        ? "توريفا · تنفيذ مكاني وتسليم مادي"
+        : "Turriva · Spatial Execution & Physical Delivery",
     description:
       locale === "ar"
-        ? "تصميم وتنفيذ المساحات والتجارب. من الفكرة إلى الواقع."
-        : "Design and execution of spaces and experiences. From concept to reality.",
+        ? "توريفا: تنفيذ مكاني وتسليم مادي من التصميم المعتمد إلى الواقع. بيئات البيع العقاري تخصص رئيسي. جزء من مجموعة تسامي."
+        : "Turriva: spatial execution and physical delivery from approved design to reality. Real estate sales environments as flagship specialty. Part of Tasami Group.",
     manifest: "/manifest.webmanifest",
     themeColor: "#9A7B4F",
     appleWebApp: {

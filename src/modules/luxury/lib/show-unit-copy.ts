@@ -73,14 +73,14 @@ export type ShowUnitCopy = {
 
 const en: ShowUnitCopy = {
   nav: "Show unit",
-  metaTitle: "Show Unit Design and Delivery",
+  metaTitle: "Show Unit · Sales Environments",
   metaDescription:
-    "We design and deliver show villas, apartments, and suites for real estate projects. Commission a single unit or include it within a wider sales experience.",
+    "Turriva delivers show villas, apartments, and suites for real estate projects: technical development, fit-out, furniture, and handover. Commission a single unit or include it within a wider sales environment.",
   hero: {
     eyebrow: "Show unit",
     title: "Bring the unit to life.",
     question: "What should buyers see and feel when they enter?",
-    body: "We design and deliver show villas, apartments, and suites. Our scope can cover design, technical detailing, fit-out, furniture, lighting, styling, and handover.",
+    body: "We deliver show villas, apartments, and suites. Our scope can cover technical detailing, fit-out, furniture, lighting, styling, and handover.",
     cta: "Discuss your show unit",
     secondary: "Explore the scope",
   },
@@ -150,7 +150,7 @@ const en: ShowUnitCopy = {
     eyebrow: "Who we work with",
     title: "For residential developers.",
     body: "For projects requiring a show villa, apartment, or suite. We can work from an initial brief or review existing drawings.",
-    trust: "TURRIVA brings spatial design, technical development, execution, and visual coordination into one focused team.",
+    trust: "TURRIVA brings technical development, fabrication, installation, and handover into one accountable delivery team.",
   },
   close: {
     title: "Planning a show unit?",
@@ -169,14 +169,14 @@ const en: ShowUnitCopy = {
 
 const ar: ShowUnitCopy = {
   nav: "وحدة العرض",
-  metaTitle: "تصميم وتنفيذ وحدات العرض",
+  metaTitle: "وحدة العرض · بيئات البيع",
   metaDescription:
-    "نصمّم وننفّذ فلل وشقق وأجنحة العرض للمشاريع العقارية. يمكن التعاقد على وحدة مستقلة أو إدراجها ضمن تجربة بيع متكاملة.",
+    "توريفا تسلّم فلل وشقق وأجنحة العرض للمشاريع العقارية: تطوير فني وتجهيز وأثاث وتسليم. يمكن التعاقد على وحدة مستقلة أو إدراجها ضمن بيئة بيع أوسع.",
   hero: {
     eyebrow: "وحدة العرض",
     title: "نحوّل الوحدة إلى تجربة.",
     question: "ماذا تريدون أن يرى المشتري ويشعر به عند الدخول؟",
-    body: "نصمّم وننفّذ فلل وشقق وأجنحة العرض. ويمكن أن يشمل نطاقنا التصميم والتطوير الفني والتشطيبات والأثاث والإضاءة والتنسيق والتسليم.",
+    body: "نسلّم فلل وشقق وأجنحة العرض. ويمكن أن يشمل نطاقنا التطوير الفني والتشطيبات والأثاث والإضاءة والتنسيق والتسليم.",
     cta: "ناقشوا وحدة العرض",
     secondary: "استكشفوا نطاق العمل",
   },
@@ -246,7 +246,7 @@ const ar: ShowUnitCopy = {
     eyebrow: "نعمل مع",
     title: "مطوري المشاريع السكنية.",
     body: "للمشاريع التي تحتاج إلى فيلا أو شقة أو جناح عرض. يمكننا البدء من موجز أولي أو مراجعة مخططات قائمة.",
-    trust: "تجمع توريفا التصميم المكاني والتطوير الفني والتنفيذ والتنسيق البصري ضمن فريق متخصص.",
+    trust: "تجمع توريفا التطوير الفني والتصنيع والتركيب والتسليم ضمن فريق تسليم واحد بمسؤولية واضحة.",
   },
   close: {
     title: "تخططون لوحدة عرض؟",

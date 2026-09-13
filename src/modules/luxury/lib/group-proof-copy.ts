@@ -45,7 +45,7 @@ const en: GroupProofCopy = {
   body: "Turriva is Tasami Group’s physical delivery company. The same team that executed sales environments, interiors, and exhibitions for major clients now works under a brand dedicated to spatial execution. Contract Turriva alone. Graphics House joins when the project needs the visual layer.",
   logoLabel: "Clients served across the group",
   clients: CLIENT_LOGOS,
-  stats: [{ value: "15+", label: "Years of experience" }],
+  stats: [{ value: "15+", label: "Years of team experience" }],
   testimonial: {
     quote:
       "We worked with one execution partner. The interactive model, temporary presentation décor, interactive screens, and software arrived ready to present, at a standard that matched the League’s standing.",
@@ -68,7 +68,7 @@ const ar: GroupProofCopy = {
   body: "توريفا شركة التسليم المادي لمجموعة تسامي. نفس الفريق الذي نفّذ بيئات البيع والديكورات والمعارض لعملاء كبار يعمل الآن تحت علامة مخصصة للتنفيذ المكاني. تعاقد مع توريفا وحدها. جرافيكس هاوس تُستدعى حين يحتاج المشروع الطبقة البصرية.",
   logoLabel: "عملاء منظومة المجموعة",
   clients: CLIENT_LOGOS,
-  stats: [{ value: "15+", label: "عاماً من الخبرة" }],
+  stats: [{ value: "15+", label: "عاماً من خبرة الفريق" }],
   testimonial: {
     quote:
       "تعاملنا مع شريك تنفيذ واحد. المجسم التفاعلي وديكور العرض المؤقت والشاشات التفاعلية والبرمجيات وصلت جاهزة للعرض، بمستوى يليق بمكانة الرابطة.",

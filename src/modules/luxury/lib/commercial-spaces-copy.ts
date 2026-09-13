@@ -78,13 +78,13 @@ export type CommercialSpacesCopy = {
 
 const en: CommercialSpacesCopy = {
   nav: "Commercial spaces",
-  metaTitle: "Commercial Space Design and Build",
+  metaTitle: "Commercial Spaces · Spatial Execution",
   metaDescription:
-    "TURRIVA designs and builds commercial spaces around the brand, customer journey, and daily operation, from concept to handover.",
+    "Turriva delivers commercial spaces around the brand, customer journey, and daily operation: technical development, fabrication, installation, and handover.",
   hero: {
     eyebrow: "Commercial spaces",
     title: "Designed for business. Built for people.",
-    body: "We create restaurants, cafés, retail stores, showrooms, offices, and clinics around the way each business works. One considered process connects the interior, brand experience, technical development, supply, and build.",
+    body: "We deliver restaurants, cafés, retail stores, showrooms, offices, and clinics around the way each business works. One considered process connects brand experience, technical development, supply, and installation.",
     cta: "Discuss your project",
     secondary: "Send drawings",
   },
@@ -175,7 +175,7 @@ const en: CommercialSpacesCopy = {
       "Brands planning a new location",
       "Developers creating commercial assets",
     ],
-    trust: "TURRIVA is a specialised spatial design and build studio, supported by a team experienced in design, execution, and visual communication.",
+    trust: "TURRIVA is a spatial execution and physical delivery company. We bridge approved design to delivered reality: technical development, fabrication, installation, and handover.",
   },
   close: {
     title: "Planning a commercial space?",
@@ -198,14 +198,14 @@ const en: CommercialSpacesCopy = {
 
 const ar: CommercialSpacesCopy = {
   nav: "المساحات التجارية",
-  metaTitle: "تصميم وتنفيذ المساحات التجارية",
+  metaTitle: "تنفيذ المساحات التجارية · تنفيذ مكاني",
   metaDescription:
-    "تصمم توريفا المساحات التجارية وتنفذها وفق هوية العلامة ومسار العميل ومتطلبات التشغيل، من الفكرة حتى التسليم.",
+    "توريفا تسلّم المساحات التجارية وفق هوية العلامة ومسار العميل ومتطلبات التشغيل: تطوير فني وتصنيع وتركيب وتسليم.",
   hero: {
     eyebrow: "المساحات التجارية",
     title: "مصممة للأعمال. ومهيأة للناس.",
-    body: "نصمم وننفذ المطاعم والمقاهي والمتاجر وصالات العرض والمكاتب والعيادات بما يناسب طبيعة كل نشاط. ونربط التصميم الداخلي وتجربة العلامة والتطوير الفني والتوريد والتنفيذ ضمن مسار واحد.",
-    cta: "ناقش مشروعك معنا",
+    body: "ننفّذ المطاعم والمقاهي والمتاجر وصالات العرض والمكاتب والعيادات بما يناسب طبيعة كل نشاط. ونربط تجربة العلامة والتطوير الفني والتوريد والتركيب ضمن مسار واحد.",
+    cta: "ناقش مشروعك",
     secondary: "أرسل المخططات",
   },
   problem: {
@@ -295,7 +295,7 @@ const ar: CommercialSpacesCopy = {
       "علامات تخطط لفرع جديد",
       "مطورون ينشئون أصولاً تجارية",
     ],
-    trust: "توريفا استوديو متخصص في التصميم المكاني والتنفيذ، يدعمه فريق ذو خبرة في التصميم والتنفيذ والاتصال البصري.",
+    trust: "توريفا شركة تنفيذ مكاني وتسليم مادي. نربط التصميم المعتمد بالواقع المسلَّم: تطوير فني، تصنيع، تركيب، وتسليم.",
   },
   close: {
     title: "هل تخطط لمساحة تجارية؟",
