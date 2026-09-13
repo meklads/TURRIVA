@@ -292,54 +292,87 @@ export function LuxuryFeaturedExperienceSection({ locale }: Props) {
 
 export function LuxuryAlbumSection({ locale }: Props) {
   const copy = getRepositionCopy(locale);
+  const isAr = locale === "ar";
+  const [featured, ...rest] = copy.album.items;
+  const viewLabel = isAr ? "عرض الحالة" : "View case";
+
+  if (!featured) return null;
 
   return (
-    <section className="lux-section lux-section--white lux-album" aria-labelledby="lux-album-title">
+    <section className="lux-section lux-album lux-album--proof" aria-labelledby="lux-album-title">
       <div className="lux-container">
-        <div className="lux-section-intro lux-section-intro--center">
+        <div className="lux-album__intro">
           <p className="lux-eyebrow">{copy.album.eyebrow}</p>
           <div className="lux-divider-gold" />
           <h2 id="lux-album-title" className="lux-display lux-heading mt-6">
             {copy.album.title}
           </h2>
-          <p className="lux-body mt-4 text-lux-ink-muted">{copy.album.subtitle}</p>
-          <p className="lux-album__note mt-3">{copy.album.note}</p>
+          <p className="lux-album__subtitle">{copy.album.subtitle}</p>
+          <p className="lux-album__note">{copy.album.note}</p>
         </div>
-      </div>
-      <div className="lux-container mt-14 lux-album__grid">
-        {copy.album.items.map((item, index) => (
-          <LocalizedLink
-            key={item.href + item.title}
-            href={item.href}
-            className="lux-gallery-figure lux-album__frame group block"
-          >
-            <figure>
-              <div className="lux-gallery-media lux-media-frame lux-media-frame--landscape">
-                <span className="lux-album__index" aria-hidden>
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover object-[center_35%] transition-transform duration-[1.2s] ease-out group-hover:scale-[1.03]"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-              </div>
-              <figcaption className="lux-gallery-caption">
-                <span className="lux-gallery-category">{item.category}</span>
-                <span className="lux-display mt-1 block text-lg text-lux-ink transition-colors group-hover:text-lux-gold">
-                  {item.title}
-                </span>
-              </figcaption>
-            </figure>
-          </LocalizedLink>
-        ))}
-      </div>
-      <div className="lux-container mt-12 text-center">
-        <LocalizedLink href="/our-work" className="lux-btn-outline">
-          {copy.album.cta}
+
+        <LocalizedLink href={featured.href} className="lux-album__featured group">
+          <div className="lux-album__featured-media">
+            <Image
+              src={featured.image}
+              alt={featured.title}
+              fill
+              className="lux-album__img object-cover object-[center_40%]"
+              sizes="(max-width: 900px) 100vw, 92vw"
+              priority={false}
+            />
+            <span className="lux-album__veil" aria-hidden />
+          </div>
+          <div className="lux-album__featured-copy">
+            <span className="lux-album__index-line" aria-hidden>
+              01
+            </span>
+            <span className="lux-album__category">{featured.category}</span>
+            <h3 className="lux-album__title lux-album__title--featured">{featured.title}</h3>
+            <span className="lux-album__view">
+              {viewLabel}
+              <span aria-hidden>{isAr ? " ←" : " →"}</span>
+            </span>
+          </div>
         </LocalizedLink>
+
+        {rest.length > 0 ? (
+          <ul className="lux-album__mosaic">
+            {rest.map((item, index) => (
+              <li key={item.href + item.title}>
+                <LocalizedLink href={item.href} className="lux-album__tile group">
+                  <div className="lux-album__tile-media">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="lux-album__img object-cover object-[center_35%]"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                    <span className="lux-album__veil lux-album__veil--soft" aria-hidden />
+                    <span className="lux-album__index-line lux-album__index-line--on-media" aria-hidden>
+                      {String(index + 2).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <div className="lux-album__tile-copy">
+                    <span className="lux-album__category">{item.category}</span>
+                    <h3 className="lux-album__title">{item.title}</h3>
+                    <span className="lux-album__view lux-album__view--quiet">
+                      {viewLabel}
+                      <span aria-hidden>{isAr ? " ←" : " →"}</span>
+                    </span>
+                  </div>
+                </LocalizedLink>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+
+        <div className="lux-album__footer">
+          <LocalizedLink href="/our-work" className="lux-btn-outline">
+            {copy.album.cta}
+          </LocalizedLink>
+        </div>
       </div>
     </section>
   );

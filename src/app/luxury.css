@@ -5573,6 +5573,298 @@ html {
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
 }
 
+/* Proof-of-delivery album — editorial composition */
+.lux-album--proof {
+  position: relative;
+  background:
+    radial-gradient(ellipse 80% 55% at 50% 0%, color-mix(in srgb, var(--lux-gold) 7%, transparent), transparent 70%),
+    linear-gradient(180deg, #f4f0e8 0%, #faf8f4 42%, #ffffff 100%);
+  overflow: hidden;
+}
+
+.lux-album--proof::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--lux-gold) 45%, transparent),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.lux-album__intro {
+  max-width: 38rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.lux-album__subtitle {
+  margin: 1rem 0 0;
+  font-size: clamp(0.9375rem, 1.35vw, 1.0625rem);
+  line-height: 1.65;
+  color: var(--lux-ink-soft);
+}
+
+.lux-album__intro .lux-album__note {
+  margin: 0.85rem 0 0;
+  max-width: 32rem;
+  margin-inline: auto;
+}
+
+.lux-album__featured {
+  position: relative;
+  display: grid;
+  margin-top: clamp(2.5rem, 5vw, 3.75rem);
+  isolation: isolate;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  min-height: clamp(18rem, 42vw, 26rem);
+  background: var(--lux-ink);
+}
+
+@media (min-width: 900px) {
+  .lux-album__featured {
+    grid-template-columns: 1.35fr 0.85fr;
+    min-height: 24rem;
+  }
+}
+
+.lux-album__featured-media {
+  position: relative;
+  min-height: 16rem;
+  overflow: hidden;
+}
+
+@media (min-width: 900px) {
+  .lux-album__featured-media {
+    min-height: 100%;
+  }
+}
+
+.lux-album__img {
+  transition: transform 1.15s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .lux-album__img,
+.group:focus-visible .lux-album__img {
+  transform: scale(1.045);
+}
+
+.lux-album__veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      105deg,
+      color-mix(in srgb, var(--lux-ink) 55%, transparent) 0%,
+      color-mix(in srgb, var(--lux-ink) 12%, transparent) 48%,
+      transparent 72%
+    ),
+    linear-gradient(0deg, color-mix(in srgb, var(--lux-ink) 28%, transparent), transparent 42%);
+}
+
+[dir="rtl"] .lux-album__veil {
+  background:
+    linear-gradient(
+      255deg,
+      color-mix(in srgb, var(--lux-ink) 55%, transparent) 0%,
+      color-mix(in srgb, var(--lux-ink) 12%, transparent) 48%,
+      transparent 72%
+    ),
+    linear-gradient(0deg, color-mix(in srgb, var(--lux-ink) 28%, transparent), transparent 42%);
+}
+
+.lux-album__veil--soft {
+  background: linear-gradient(0deg, color-mix(in srgb, var(--lux-ink) 52%, transparent) 0%, transparent 55%);
+}
+
+.lux-album__featured-copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  padding: 1.5rem 1.35rem 1.6rem;
+  background:
+    linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--lux-ink) 92%, #2a241c) 0%,
+      #14110e 100%
+    );
+  color: #f7f3ec;
+}
+
+@media (min-width: 900px) {
+  .lux-album__featured-copy {
+    padding: 2.25rem 2rem 2.4rem;
+  }
+
+  .lux-album__featured-media .lux-album__veil {
+    opacity: 0.35;
+  }
+}
+
+@media (max-width: 899px) {
+  .lux-album__featured-copy {
+    position: absolute;
+    inset: auto 0 0 0;
+    background: linear-gradient(0deg, rgba(12, 10, 8, 0.92) 0%, rgba(12, 10, 8, 0.35) 70%, transparent);
+    padding-top: 4rem;
+  }
+}
+
+.lux-album__index-line {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--lux-gold);
+}
+
+[dir="rtl"] .lux-album__index-line {
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
+  letter-spacing: 0.06em;
+}
+
+.lux-album__index-line--on-media {
+  position: absolute;
+  top: 0.9rem;
+  inset-inline-start: 0.9rem;
+  z-index: 2;
+  color: #fff;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+}
+
+.lux-album__category {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--lux-gold) 88%, white);
+}
+
+[dir="rtl"] .lux-album__category {
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 0.8125rem;
+}
+
+.lux-album__title {
+  margin: 0.15rem 0 0;
+  font-family: inherit;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--lux-ink);
+  transition: color 0.3s ease;
+}
+
+.lux-album__title--featured {
+  max-width: 18rem;
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  font-weight: 600;
+  color: #faf7f2;
+}
+
+.lux-album__title,
+.lux-album__title--featured {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+[dir="rtl"] .lux-album__title,
+[dir="rtl"] .lux-album__title--featured {
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
+  letter-spacing: 0;
+}
+
+.lux-album__view {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-top: 0.85rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--lux-gold);
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+[dir="ltr"] .group:hover .lux-album__view {
+  transform: translateX(4px);
+}
+
+[dir="rtl"] .group:hover .lux-album__view {
+  transform: translateX(-4px);
+}
+
+.lux-album__view--quiet {
+  margin-top: 0.55rem;
+  opacity: 0.85;
+}
+
+.lux-album__mosaic {
+  display: grid;
+  gap: 1.25rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .lux-album__mosaic {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.35rem;
+  }
+}
+
+.lux-album__tile {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.lux-album__tile-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--lux-stone);
+}
+
+.lux-album__tile-copy {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1rem 0.15rem 0.25rem;
+  border-top: 2px solid transparent;
+  transition: border-color 0.35s ease;
+}
+
+.lux-album__tile:hover .lux-album__tile-copy,
+.lux-album__tile:focus-visible .lux-album__tile-copy {
+  border-top-color: var(--lux-gold);
+}
+
+.lux-album__tile:hover .lux-album__title,
+.lux-album__tile:focus-visible .lux-album__title {
+  color: var(--lux-gold);
+}
+
+.lux-album__footer {
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+  text-align: center;
+}
+
 .lux-doors__grid {
   display: grid;
   gap: 1rem;
@@ -7906,13 +8198,6 @@ html[lang="en"] .lux-proof__title,
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.75rem 1.5rem;
   }
-}
-
-.lux-home .lux-album .lux-gallery-media,
-.lux-home .lux-album .lux-media-frame--landscape {
-  aspect-ratio: var(--lux-media-portrait);
-  border-radius: 0.15rem;
-  max-height: 16.5rem;
 }
 
 .lux-home .lux-product-card__media,
