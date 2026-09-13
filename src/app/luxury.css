@@ -5175,6 +5175,60 @@ html {
   font-size: 0.9375rem;
 }
 
+.lux-definition__grid {
+  display: grid;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .lux-definition__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: 2.75rem;
+  }
+}
+
+.lux-definition__media {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 0.2rem;
+  background: var(--lux-stone);
+  box-shadow: 0 18px 40px color-mix(in srgb, var(--lux-ink) 8%, transparent);
+}
+
+@media (min-width: 900px) {
+  .lux-definition__media {
+    aspect-ratio: 5 / 4;
+    min-height: 22rem;
+  }
+}
+
+.lux-door-card--media {
+  padding: 0;
+  overflow: hidden;
+}
+
+.lux-door-card__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: var(--lux-stone);
+}
+
+.lux-door-card__body {
+  padding: 1.15rem 1.25rem 1.35rem;
+}
+
+.lux-door-card--media:hover .lux-door-card__media img {
+  transform: scale(1.03);
+}
+
+.lux-door-card__media img {
+  transition: transform 0.7s ease;
+}
+
 .lux-products-weighted__primary {
   display: grid;
   gap: 1rem;

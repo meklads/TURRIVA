@@ -7,12 +7,14 @@ export type RepositionCopy = {
     title: string;
     body: string;
     audiences: string;
+    image: string;
+    imageAlt: string;
   };
   developers: {
     eyebrow: string;
     title: string;
     intro: string;
-    points: readonly { title: string; body: string }[];
+    points: readonly { title: string; body: string; image: string; imageAlt: string }[];
     cta: string;
     fitOutCta: string;
     pageCta: string;
@@ -99,6 +101,8 @@ const en: RepositionCopy = {
     title: "Spaces designed. Spaces delivered.",
     body: "We take a space from idea and drawings to a place ready to use or present — design, detailing, supply, installation, and handover, held by one team. This team has already delivered sales galleries, smart models, and exhibition pavilions for major clients through Graphics House — Turriva brings that experience to every spatial design and delivery brief.",
     audiences: "Residential, Commercial, Hospitality, Real estate",
+    image: "/brand/turriva/sections/definition-spaces.jpg",
+    imageAlt: "A finished premium interior — designed, furnished, and presentation-ready",
   },
   developers: {
     eyebrow: "For developers",
@@ -109,14 +113,20 @@ const en: RepositionCopy = {
       {
         title: "Sales gallery and show villa",
         body: "A composed place to present living standards — not a loose furniture list.",
+        image: "/brand/turriva/sections/dev-sales-gallery.jpg",
+        imageAlt: "Show villa exterior and living standard ready for buyers",
       },
       {
         title: "Show apartment and project display",
         body: "A path the buyer walks, with models and visuals when they help.",
+        image: "/brand/turriva/sections/dev-show-apartment.jpg",
+        imageAlt: "Open show apartment the buyer can walk through",
       },
       {
         title: "Build, with experience tools as needed",
         body: "Screens and models support the room. They are not the product.",
+        image: "/brand/turriva/sections/dev-experience-tools.jpg",
+        imageAlt: "Physical display model supporting the sales environment",
       },
     ],
     cta: "Discuss your real estate project",
@@ -252,6 +262,8 @@ const ar: RepositionCopy = {
     title: "نصمّم المساحات. ونسلّمها.",
     body: "نأخذ المساحة من الفكرة والمخططات إلى مكان جاهز للاستخدام أو العرض: تصميم، تفاصيل، توريد، تركيب، وتسليم، بيد فريق واحد. هذا الفريق نفّذ من قبل قاعات عرض ومجسمات ذكية وأجنحة معارض لعملاء كبار عبر جرافيكس هاوس. توريفا تحمل هذه الخبرة إلى كل مشروع تصميم وتنفيذ مكاني.",
     audiences: "سكني، تجاري، ضيافة، عقار",
+    image: "/brand/turriva/sections/definition-spaces.jpg",
+    imageAlt: "مساحة داخلية فاخرة جاهزة — مصمّمة ومفروشة وجاهزة للعرض",
   },
   developers: {
     eyebrow: "للمطورين",
@@ -262,14 +274,20 @@ const ar: RepositionCopy = {
       {
         title: "مركز البيع وفيلا العرض",
         body: "مكان مرتّب لعرض معيار المعيشة، لا قائمة أثاث مبعثرة.",
+        image: "/brand/turriva/sections/dev-sales-gallery.jpg",
+        imageAlt: "فيلا عرض جاهزة تعكس معيار المعيشة للمشترين",
       },
       {
         title: "شقة العرض وعرض المشروع",
         body: "مسار يمشي فيه المشتري، مع المجسمات والعناصر البصرية حين تفيد.",
+        image: "/brand/turriva/sections/dev-show-apartment.jpg",
+        imageAlt: "شقة عرض مفتوحة يمشي فيها المشتري",
       },
       {
         title: "تنفيذ، وأدوات تجربة عند الحاجة",
         body: "الشاشات والمجسمات تخدم المكان. ليست المنتج.",
+        image: "/brand/turriva/sections/dev-experience-tools.jpg",
+        imageAlt: "مجسم عرض يدعم بيئة المبيعات دون أن يستبدل المكان",
       },
     ],
     cta: "ناقش مشروعك العقاري",

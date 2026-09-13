@@ -12,13 +12,25 @@ export function LuxuryDefinitionSection({ locale }: Props) {
   return (
     <section className="lux-section lux-section--white lux-definition" aria-labelledby="lux-definition-title">
       <div className="lux-container">
-        <div className="lux-section-intro">
-          <p className="lux-eyebrow">{copy.definition.eyebrow}</p>
-          <h2 id="lux-definition-title" className="lux-display lux-heading mt-3 text-lux-ink">
-            {copy.definition.title}
-          </h2>
-          <p className="lux-definition__audiences mt-5">{copy.definition.audiences}</p>
-          <p className="lux-body mt-5 text-lg leading-relaxed text-lux-ink-soft">{copy.definition.body}</p>
+        <div className="lux-definition__grid">
+          <div className="lux-definition__copy">
+            <p className="lux-eyebrow">{copy.definition.eyebrow}</p>
+            <h2 id="lux-definition-title" className="lux-display lux-heading mt-3 text-lux-ink">
+              {copy.definition.title}
+            </h2>
+            <p className="lux-definition__audiences mt-5">{copy.definition.audiences}</p>
+            <p className="lux-body mt-5 text-lg leading-relaxed text-lux-ink-soft">{copy.definition.body}</p>
+          </div>
+          <div className="lux-definition__media">
+            <Image
+              src={copy.definition.image}
+              alt={copy.definition.imageAlt}
+              fill
+              className="object-cover"
+              sizes="(max-width: 900px) 100vw, 48vw"
+              priority={false}
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -44,11 +56,22 @@ export function LuxuryDevelopersSection({ locale, compact = false }: Props & { c
             <p className="lux-body mt-4 text-lg leading-relaxed text-lux-ink-soft">{copy.developers.intro}</p>
           </div>
         )}
-        <ul className={`lux-equal-cards ${compact ? "" : "mt-10"}`}>
+        <ul className={`lux-equal-cards lux-developers__cards ${compact ? "" : "mt-10"}`}>
           {copy.developers.points.map((point) => (
-            <li key={point.title} className="lux-door-card">
-              <h3 className="lux-display text-xl text-lux-ink">{point.title}</h3>
-              <p className="lux-body mt-3 text-sm leading-relaxed text-lux-ink-soft">{point.body}</p>
+            <li key={point.title} className="lux-door-card lux-door-card--media">
+              <div className="lux-door-card__media">
+                <Image
+                  src={point.image}
+                  alt={point.imageAlt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 900px) 100vw, 33vw"
+                />
+              </div>
+              <div className="lux-door-card__body">
+                <h3 className="lux-display text-xl text-lux-ink">{point.title}</h3>
+                <p className="lux-body mt-3 text-sm leading-relaxed text-lux-ink-soft">{point.body}</p>
+              </div>
             </li>
           ))}
         </ul>
