@@ -77,8 +77,8 @@ export const SERVICE_LANDINGS: readonly ServiceLanding[] = [
       "برنامج ميداني واحد مسؤول",
       "تسليم جاهز للافتتاح مع توثيق جودة",
     ],
-    proofEn: "Institutional exhibition · Jeddah",
-    proofAr: "معرض مؤسسي · جدة",
+    proofEn: "Temporary presentation fit-out · Jeddah",
+    proofAr: "تجهيز عرض مؤقت · جدة",
     relatedCaseSlug: "humanity-exhibition-mwl",
   },
   {
