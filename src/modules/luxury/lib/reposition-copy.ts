@@ -81,7 +81,7 @@ export type RepositionCopy = {
 };
 
 const PRODUCT_IMAGES = {
-  /** Sales environment card — avoid MWL phone still here; that stays in Selected Work / case study only. */
+  /** Sales environment card. Avoid MWL phone still here; that stays in Selected Work / case study only. */
   experience: "/brand/turriva/projects/anan-eskan-gallery.jpg",
   showUnit: "/brand/turriva/inspiration/living-walnut-interior.webp",
   designBuild: "/brand/turriva/hero-interior.webp",
@@ -91,7 +91,7 @@ const PRODUCT_IMAGES = {
   renovation: "/brand/turriva/projects/project-kitchen-jeddah.webp",
 } as const;
 
-/** MWL exhibition — Selected Work / credibility only (execution photo; do not duplicate in product cards). */
+/** MWL exhibition. Selected Work / credibility only (execution photo; do not duplicate in product cards). */
 const MWL_SELECTED_WORK_IMAGE = "/brand/turriva/makkah-charter-04.jpeg";
 
 const en: RepositionCopy = {
@@ -99,10 +99,10 @@ const en: RepositionCopy = {
   definition: {
     eyebrow: "What Turriva is",
     title: "Spaces designed. Spaces delivered.",
-    body: "We take a space from idea and drawings to a place ready to use or present — design, detailing, supply, installation, and handover, held by one team. This team has already delivered sales galleries, smart models, and exhibition pavilions for major clients through Graphics House — Turriva brings that experience to every spatial design and delivery brief.",
+    body: "We take a space from idea and drawings to a place ready to use or present. Design, detailing, supply, installation, and handover, held by one team. This team has already delivered sales galleries, smart models, and exhibition pavilions for major clients through Graphics House. Turriva brings that experience to every spatial design and delivery brief.",
     audiences: "Residential, Commercial, Hospitality, Real estate",
     image: "/brand/turriva/sections/definition-spaces.jpg",
-    imageAlt: "A finished premium interior — designed, furnished, and presentation-ready",
+    imageAlt: "A finished premium interior. Designed, furnished, and presentation-ready",
   },
   developers: {
     eyebrow: "For developers",
@@ -112,7 +112,7 @@ const en: RepositionCopy = {
     points: [
       {
         title: "Sales gallery and show villa",
-        body: "A composed place to present living standards — not a loose furniture list.",
+        body: "A composed place to present living standards. Not a loose furniture list.",
         image: "/brand/turriva/sections/dev-sales-gallery.jpg",
         imageAlt: "Show villa exterior and living standard ready for buyers",
       },
@@ -146,14 +146,14 @@ const en: RepositionCopy = {
         href: "/real-estate-experience",
         nameAr: "تجربة المشروع العقاري",
         nameEn: "Real Estate Project Experience",
-        description: "The sales environment: gallery, show unit, presentation, and fit-out — scoped to your launch.",
+        description: "The sales environment: gallery, show unit, presentation, and fit-out. Scoped to your launch.",
         image: PRODUCT_IMAGES.experience,
       },
       {
         href: "/show-unit",
         nameAr: "وحدة العرض",
         nameEn: "Show Unit",
-        description: "A villa, apartment, or suite the buyer can walk — the lifestyle made physical.",
+        description: "A villa, apartment, or suite the buyer can walk. The lifestyle made physical.",
         image: PRODUCT_IMAGES.showUnit,
       },
     ],
@@ -169,7 +169,7 @@ const en: RepositionCopy = {
         href: "/fit-out",
         nameAr: "التنفيذ والتجهيز",
         nameEn: "Fit-Out & Execution",
-        description: "Your approved design. Our build. We execute — we do not replace the designer.",
+        description: "Your approved design. Our build. We execute. We do not replace the designer.",
         image: PRODUCT_IMAGES.fitOut,
       },
       {
@@ -190,7 +190,7 @@ const en: RepositionCopy = {
         href: "/renovation",
         nameAr: "التجديد والتطوير",
         nameEn: "Renovation & Upgrade",
-        description: "An existing space. What stays, what changes — assessed before work begins.",
+        description: "An existing space. What stays, what changes. Assessed before work begins.",
         image: PRODUCT_IMAGES.renovation,
       },
     ],
@@ -219,7 +219,7 @@ const en: RepositionCopy = {
     eyebrow: "Selected work",
     title: "Spaces with a clear job.",
     subtitle: "Each frame opens the product it belongs to.",
-    note: "The work below was delivered by the Turriva team — some under Graphics House before the dedicated brand launched. Same team. Same execution standard.",
+    note: "The work below was delivered by the Turriva team. Some under Graphics House before the dedicated brand launched. Same team. Same execution standard.",
     cta: "View selected work",
     items: [
       { image: MWL_SELECTED_WORK_IMAGE, category: "Real estate", title: "Where the project is shown", href: "/real-estate-experience" },
@@ -234,7 +234,7 @@ const en: RepositionCopy = {
     eyebrow: "Credibility",
     title: "Documented experience, not promises.",
     intro:
-      "Turriva is new as a name. It carries Tasami Group’s real delivery record. The work below was executed by the same team that runs Turriva today — some before the brand launched, some under Graphics House as the execution arm.",
+      "Turriva is new as a name. It carries Tasami Group’s real delivery record. The work below was executed by the same team that runs Turriva today. Some before the brand launched, some under Graphics House as the execution arm.",
     note: "",
     cta: "Our work",
   },
@@ -244,7 +244,7 @@ const en: RepositionCopy = {
     intro: "A short path that keeps scope clear and the finished space true to what was approved.",
     steps: [
       { title: "Understand", body: "Site, drawings, timing, and what the space must do." },
-      { title: "Design", body: "The room and the path through it — when design is in the brief." },
+      { title: "Design", body: "The room and the path through it. When design is in the brief." },
       { title: "Develop", body: "Details, quantities, and samples before fabrication." },
       { title: "Build", body: "Procurement, fabrication, and installation to the approved drawings." },
       { title: "Deliver", body: "A space ready to show, occupy, or open." },
@@ -252,7 +252,7 @@ const en: RepositionCopy = {
   },
   teamExperience: "Selected work",
   honestNote:
-    "The work below was delivered by the Turriva team — some under Graphics House before the dedicated brand launched. Same team. Same execution standard.",
+    "The work below was delivered by the Turriva team. Some under Graphics House before the dedicated brand launched. Same team. Same execution standard.",
 };
 
 const ar: RepositionCopy = {
@@ -263,7 +263,7 @@ const ar: RepositionCopy = {
     body: "نأخذ المساحة من الفكرة والمخططات إلى مكان جاهز للاستخدام أو العرض: تصميم، تفاصيل، توريد، تركيب، وتسليم، بيد فريق واحد. هذا الفريق نفّذ من قبل قاعات عرض ومجسمات ذكية وأجنحة معارض لعملاء كبار عبر جرافيكس هاوس. توريفا تحمل هذه الخبرة إلى كل مشروع تصميم وتنفيذ مكاني.",
     audiences: "سكني، تجاري، ضيافة، عقار",
     image: "/brand/turriva/sections/definition-spaces.jpg",
-    imageAlt: "مساحة داخلية فاخرة جاهزة — مصمّمة ومفروشة وجاهزة للعرض",
+    imageAlt: "مساحة داخلية فاخرة جاهزة. مصمّمة ومفروشة وجاهزة للعرض",
   },
   developers: {
     eyebrow: "للمطورين",

@@ -83,6 +83,23 @@
   text-shadow: none;
 }
 
+.lux-hero-title-accent {
+  display: block;
+  margin-top: 0.55rem;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: clamp(0.9375rem, 1.45vw, 1.125rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.45;
+  color: var(--lux-ink-soft);
+  text-shadow: none;
+}
+
+[dir="rtl"] .lux-hero-title-accent {
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
+  letter-spacing: 0;
+}
+
 .lux-body {
   @apply leading-relaxed text-lux-ink-soft;
   font-size: clamp(0.9375rem, 1.35vw, 1.0625rem);

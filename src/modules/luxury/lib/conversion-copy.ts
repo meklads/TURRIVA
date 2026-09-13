@@ -26,9 +26,9 @@ export const PRODUCT_TIERS: readonly ProductTier[] = [
     titleAr: "صالات بيع جاهزة خلال أقل من 3 أسابيع",
     titleEn: "Turnkey sales galleries in under 3 weeks",
     bodyAr:
-      "مسار تسليم سريع لمركز البيع ووحدة العرض: تصميم، تصنيع، وتركيب — نطاق واضح وجاهزية للعرض.",
+      "مسار تسليم سريع لمركز البيع ووحدة العرض: تصميم، تصنيع، وتركيب. نطاق واضح وجاهزية للعرض.",
     bodyEn:
-      "A fast delivery path for the sales gallery and show unit: design, fabrication, and install — clear scope, presentation-ready.",
+      "A fast delivery path for the sales gallery and show unit: design, fabrication, and install. Clear scope, presentation-ready.",
     pointsAr: ["مركز بيع / جناح", "وحدة عرض", "تسليم ميداني مضبوط"],
     pointsEn: ["Sales gallery / pavilion", "Show unit", "Disciplined site handover"],
     href: "/real-estate-experience",
@@ -60,12 +60,12 @@ export const PRODUCT_TIERS: readonly ProductTier[] = [
     id: "proptech-sales",
     eyebrowAr: "حلول المبيعات الرقمية",
     eyebrowEn: "PropTech Sales Engine",
-    titleAr: "أدوات رقمية تدعم الإغلاق — مرتبطة بالمكان لا بديلة عنه",
-    titleEn: "Digital tools that support closing — tied to the space, not replacing it",
+    titleAr: "أدوات رقمية تدعم الإغلاق، مرتبطة بالمكان لا بديلة عنه",
+    titleEn: "Digital tools that support closing, tied to the space, not replacing it",
     bodyAr:
-      "تطبيقات عرض، تتبع وحدات، وتحليلات مكانية عبر منظومة المجموعة — تُفعَّل عندما يخدم الموجز المكاني.",
+      "تطبيقات عرض، تتبع وحدات، وتحليلات مكانية عبر منظومة المجموعة. تُفعَّل عندما يخدم الموجز المكاني.",
     bodyEn:
-      "Buyer apps, inventory tracking, and spatial analytics via the group ecosystem — activated when they serve the spatial brief.",
+      "Buyer apps, inventory tracking, and spatial analytics via the group ecosystem. Activated when they serve the spatial brief.",
     pointsAr: ["عرض الوحدات", "دعم فريق المبيعات", "تكامل مع بيئة العرض"],
     pointsEn: ["Unit presentation", "Sales-team support", "Tied to the gallery floor"],
     href: "/show-unit",
@@ -83,11 +83,12 @@ export function getConversionCopy(locale: Locale) {
   const isAr = locale === "ar";
   return {
     heroTitle: isAr
-      ? "نحّول صالات المبيعات العقارية والمخططات إلى بيئات إغلاق صفقات تفاعلية — تسليم كامل في وقت قياسي."
-      : "We turn real-estate sales galleries and masterplans into interactive deal-closing environments — full delivery on a developer clock.",
+      ? "نحّول صالات المبيعات العقارية والمخططات إلى بيئات إغلاق صفقات تفاعلية."
+      : "We turn real-estate sales galleries and masterplans into interactive deal-closing environments.",
+    heroTitleAccent: isAr ? "تسليم كامل في وقت قياسي." : "Full delivery on a developer clock.",
     heroSubtitle: isAr
-      ? "ذراع التنفيذ المكاني لمجموعة تسامي: من مركز البيع ووحدة العرض إلى المنظومة التفاعلية — بنفس فريق التسليم الميداني."
-      : "Tasami Group’s spatial execution arm: from sales gallery and show unit to the interactive system — same field delivery team.",
+      ? "ذراع التنفيذ المكاني لمجموعة تسامي: من مركز البيع ووحدة العرض إلى المنظومة التفاعلية، بنفس فريق التسليم الميداني."
+      : "Tasami Group’s spatial execution arm: from sales gallery and show unit to the interactive system, same field delivery team.",
     ctaDemo: isAr ? "احجز عرضاً حياً" : "Book a Live Demo",
     ctaDemoEn: "Book a Live Demo",
     ctaExplore: isAr ? "استكشف الحلول" : "Explore Solutions",
@@ -95,8 +96,8 @@ export function getConversionCopy(locale: Locale) {
     tiersEyebrow: isAr ? "باقات واضحة" : "Clear packages",
     tiersTitle: isAr ? "ثلاثة مسارات إطلاق. اختر ما يطابق مرحلتك." : "Three launch paths. Pick what matches your phase.",
     tiersIntro: isAr
-      ? "كل باقة منتج قابل للشراء بنطاق وجدول واضح — لا قائمة خدمات عامة."
-      : "Each package is a buyable product with clear scope and timeline — not a generic service list.",
+      ? "كل باقة منتج قابل للشراء بنطاق وجدول واضح، لا قائمة خدمات عامة."
+      : "Each package is a buyable product with clear scope and timeline, not a generic service list.",
     videoEyebrow: isAr ? "التنفيذ على الأرض" : "Execution on the ground",
     videoTitle: isAr ? "شاهد البيئات وهي تعمل" : "See the environments at work",
     demo: {
@@ -120,7 +121,7 @@ export function getConversionCopy(locale: Locale) {
       ],
       timelines: [
         { id: "urgent" as const, label: isAr ? "عاجل: أقل من 3 أسابيع" : "Urgent: under 3 weeks" },
-        { id: "1_3_months" as const, label: isAr ? "1–3 أشهر" : "1–3 months" },
+        { id: "1_3_months" as const, label: isAr ? "1-3 أشهر" : "1-3 months" },
         { id: "planning" as const, label: isAr ? "مرحلة تخطيط" : "Planning phase" },
       ],
       fields: {
@@ -139,8 +140,8 @@ export function getConversionCopy(locale: Locale) {
     unitViewer: {
       eyebrow: isAr ? "عارض الوحدات التفاعلي" : "Interactive unit viewer",
       title: isAr
-        ? "معاينة ثلاثية الأبعاد للمخطط — فلترة حية وتوفر فوري"
-        : "Live 3D masterplan preview — filter status, price, and type",
+        ? "معاينة ثلاثية الأبعاد للمخطط. فلترة حية وتوفر فوري"
+        : "Live 3D masterplan preview. Filter status, price, and type",
       intro: isAr
         ? "نموذج تجريبي لبرج الإطلاق: نقاط ساخنة على الطوابق، حالة الوحدة، واستفسار مباشر لفريق التسليم."
         : "Demo tower for launch galleries: floor hotspots, live availability, and inquire straight into the lead modal.",
@@ -150,8 +151,8 @@ export function getConversionCopy(locale: Locale) {
       filterPrice: isAr ? "الحد الأقصى للسعر" : "Max price",
       hint: isAr ? "انقر طابقاً مضيئاً لفتح تفاصيل الوحدة" : "Tap a highlighted floor to open unit details",
       fallback: isAr
-        ? "WebGL غير متاح على هذا الجهاز — استخدم قائمة الوحدات على اليمين."
-        : "WebGL unavailable on this device — use the unit list instead.",
+        ? "WebGL غير متاح على هذا الجهاز. استخدم قائمة الوحدات على اليمين."
+        : "WebGL unavailable on this device. Use the unit list instead.",
       area: isAr ? "المساحة" : "Area",
       status: isAr ? "الحالة" : "Status",
       price: isAr ? "السعر" : "Price",
@@ -163,8 +164,8 @@ export function getConversionCopy(locale: Locale) {
     portal: {
       eyebrow: isAr ? "بوابة العملاء B2B" : "B2B client portal",
       title: isAr
-        ? "Spatial OS — تحكم عن بُعد بصالة المبيعات"
-        : "Spatial OS — remote control for the sales gallery",
+        ? "Spatial OS. تحكم عن بُعد بصالة المبيعات"
+        : "Spatial OS. Remote control for the sales gallery",
       intro: isAr
         ? "معاينة تفاعلية لما يراه المطور والوكالة: تحليلات الزوار، مزامنة إضاءة المجسم، وتحديث المخزون عبر كل شاشات اللمس."
         : "An interactive mock of what developers and agencies see: visitor analytics, maquette lighting sync, and inventory updates across every touchscreen.",
@@ -182,22 +183,22 @@ export function getConversionCopy(locale: Locale) {
       layerPenthouse: isAr ? "طوابق البنتهاوس" : "Penthouse floors",
       inventoryTitle: isAr ? "مزامنة المخزون الفورية" : "Real-time inventory sync",
       inventoryHint: isAr
-        ? "حدّث الحالة — تُبثّ تجريبياً لكل نقاط البيع في الصالة."
-        : "Update status — demo-broadcast to every gallery touchpoint.",
+        ? "حدّث الحالة. تُبثّ تجريبياً لكل نقاط البيع في الصالة."
+        : "Update status. Demo-broadcast to every gallery touchpoint.",
       colUnit: isAr ? "الوحدة" : "Unit",
       colStatus: isAr ? "الحالة" : "Status",
       colSync: isAr ? "مزامنة" : "Sync",
       syncAction: isAr ? "تحديث وبث" : "Update & broadcast",
       demoNote: isAr
-        ? "واجهة تجريبية لعرض القدرات — ليست بوابة إنتاج حية."
-        : "Interactive capability showcase — not a live production portal.",
+        ? "واجهة تجريبية لعرض القدرات. ليست بوابة إنتاج حية."
+        : "Interactive capability showcase. Not a live production portal.",
       cta: isAr ? "اطلب عرض Spatial OS" : "Request a Spatial OS walkthrough",
     },
     agency: {
       eyebrow: isAr ? "شركاء الوكالات" : "Agency partners",
       title: isAr
-        ? "انضم لشبكة شركاء ProjectLaunch™ — قدّم لعملائك صالات مبيعات ومعارض متكاملة باسم وكالتك (White-Label Executions) وبسرعة تنفيذ قياسية."
-        : "Join the ProjectLaunch™ partner network — deliver turnkey sales galleries and exhibitions under your agency brand (white-label executions) at field speed.",
+        ? "انضم لشبكة شركاء ProjectLaunch™. قدّم لعملائك صالات مبيعات ومعارض متكاملة باسم وكالتك (White-Label Executions) وبسرعة تنفيذ قياسية."
+        : "Join the ProjectLaunch™ partner network. Deliver turnkey sales galleries and exhibitions under your agency brand (white-label executions) at field speed.",
       body: isAr
         ? "للوكالات الإبداعية ووكالات الفعاليات التي تطرح مشاريع كبرى في السعودية والإمارات."
         : "For creative and event agencies pitching mega projects across Saudi Arabia and the UAE.",

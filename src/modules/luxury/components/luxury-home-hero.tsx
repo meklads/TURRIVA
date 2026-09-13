@@ -19,7 +19,10 @@ export function LuxuryHomeHero({ locale }: Props) {
         <div className="lux-hero-copy">
           <div className="lux-hero-copy-inner lux-reveal">
             <p className="lux-eyebrow">{isAr ? "ذراع التنفيذ المكاني · مجموعة تسامي" : "Spatial execution arm · Tasami Group"}</p>
-            <h1 className="lux-display lux-heading mt-4 sm:mt-5">{copy.heroTitle}</h1>
+            <h1 className="lux-display lux-heading mt-4 sm:mt-5">
+              {copy.heroTitle}
+              <span className="lux-hero-title-accent">{copy.heroTitleAccent}</span>
+            </h1>
             <div className="lux-flourish" aria-hidden />
             <p className="lux-body max-w-lg">{copy.heroSubtitle}</p>
             <div className="lux-hero-cta mt-9 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap">

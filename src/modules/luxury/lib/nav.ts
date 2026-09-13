@@ -98,7 +98,7 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             nameEn: "Real Estate Project Experience",
             description: ar
               ? "بيئة البيع: من مركز البيع إلى وحدة العرض."
-              : "The sales environment — from gallery to show unit.",
+              : "The sales environment. From gallery to show unit.",
             image: "/brand/turriva/projects/anan-eskan-gallery.jpg",
             featured: true,
           },
@@ -136,8 +136,8 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             nameAr: "التصميم والتنفيذ",
             nameEn: "Design & Build",
             description: ar
-              ? "من الفكرة إلى مساحة جاهزة — مسار واحد."
-              : "From idea to a ready space — one path.",
+              ? "من الفكرة إلى مساحة جاهزة. مسار واحد."
+              : "From idea to a ready space. One path.",
             image: "/brand/turriva/hero-interior.webp",
           },
           {

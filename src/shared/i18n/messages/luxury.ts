@@ -1,4 +1,4 @@
-import type { Locale } from "../locale";
+import type { Locale } from "./locale";
 import {
   getLuxuryPlatformMessages,
   type LuxuryPlatformMessages,
@@ -291,7 +291,7 @@ export type LuxuryMessages = LuxuryPlatformMessages & {
 };
 
 const en: LuxuryMessages = {
-  ...getLuxuryPlatformMessages("en"),
+  ..getLuxuryPlatformMessages("en"),
   brand: { name: "Turriva", tagline: "Spatial Design · Experience · Build" },
   nav: {
     home: "Home",
@@ -313,7 +313,7 @@ const en: LuxuryMessages = {
       "Turriva designs and delivers spaces: residential, commercial, hospitality, and real estate. The same team that built sales experiences and interior execution for Tasami Group clients for 15 years, now under one brand dedicated to design and delivery.",
     servicesLine: "Spatial Design · Experience · Build",
     tags: ["Spatial Design", "Experience", "Build"],
-    ctaPrimary: "Start your brief — we reply within one business day",
+    ctaPrimary: "Start your brief. We reply within one business day",
     ctaSecondary: "Project experience",
     ctaSample: "Send the drawings",
   },
@@ -321,7 +321,7 @@ const en: LuxuryMessages = {
     eyebrow: "How we work",
     title: "Design with intent. Delivery with care.",
     body:
-      "A finished space should feel inevitable — materials, light, and detail working together. One team stays with the work from samples to handover, with clear updates at every stage.",
+      "A finished space should feel inevitable. Materials, light, and detail working together. One team stays with the work from samples to handover, with clear updates at every stage.",
   },
   stats: {
     items: [
@@ -418,7 +418,7 @@ const en: LuxuryMessages = {
     eyebrow: "Typical scopes",
     title: "A finished space, not a furniture list.",
     subtitle:
-      "Sales environments, hospitality, and fit-out — delivered by the Turriva team, including work under Graphics House before the dedicated brand.",
+      "Sales environments, hospitality, and fit-out. Delivered by the Turriva team, including work under Graphics House before the dedicated brand.",
     cta: "Project experience",
     items: [
       { title: "Sales gallery and show villa", category: "Developers" },
@@ -543,7 +543,7 @@ const en: LuxuryMessages = {
     ourWork: {
       title: "Our work",
       intro:
-        "Sales environments, interiors, and exhibition delivery by the Turriva team — including work delivered under Graphics House before the dedicated brand.",
+        "Sales environments, interiors, and exhibition delivery by the Turriva team. Including work delivered under Graphics House before the dedicated brand.",
       caseStudyContactCta: "Discuss a similar project",
     },
     portfolio: {
@@ -577,7 +577,7 @@ const en: LuxuryMessages = {
     about: {
       title: "About Turriva",
       intro:
-        "Turriva designs and delivers spaces and experiences — spatial design, technical development, fit-out, and handover. Execution is part of the offer, not the whole brand. Contract Turriva alone; the group joins only when the project needs it.",
+        "Turriva designs and delivers spaces and experiences. Spatial design, technical development, fit-out, and handover. Execution is part of the offer, not the whole brand. Contract Turriva alone; the group joins only when the project needs it.",
     },
     contact: {
       title: "Contact Turriva",
@@ -815,7 +815,7 @@ const en: LuxuryMessages = {
       },
       formTitle: "Request B2B proposal",
       formCompany: "Company / developer name",
-      formUnits: "Approx. units or area (sqm)",
+      formUnits: "Approx. Units or area (sqm)",
       formProducts: "Products needed",
       formSubmit: "Submit B2B brief",
       formEmail: "Work email",
@@ -923,7 +923,7 @@ const en: LuxuryMessages = {
 };
 
 const ar: LuxuryMessages = {
-  ...getLuxuryPlatformMessages("ar"),
+  ..getLuxuryPlatformMessages("ar"),
   brand: { name: "توريفا", tagline: "تصميم مكاني · تجربة · تنفيذ" },
   nav: {
     home: "الرئيسية",
@@ -945,7 +945,7 @@ const ar: LuxuryMessages = {
       "توريفا تصمم وتنفذ المساحات: سكني وتجاري وضيافة وعقار. الفريق نفسه الذي بنى تجارب البيع والتشطيب الداخلي لعملاء مجموعة تسامي منذ 15 عامًا، الآن تحت علامة واحدة مخصصة للتصميم والتنفيذ.",
     servicesLine: "تصميم مكاني · تجربة · تنفيذ",
     tags: ["تصميم مكاني", "تجربة", "تنفيذ"],
-    ctaPrimary: "ابدأ موجزك — نرد خلال يوم عمل",
+    ctaPrimary: "ابدأ موجزك. نرد خلال يوم عمل",
     ctaSecondary: "تجربة المشروع",
     ctaSample: "أرسل المخططات",
   },
@@ -953,7 +953,7 @@ const ar: LuxuryMessages = {
     eyebrow: "منهجنا",
     title: "تصميم بقصد. وتنفيذ بعناية.",
     body:
-      "المساحة المكتملة يجب أن تبدو طبيعية — مواد وإضاءة وتفاصيل تعمل معاً. فريق واحد يتابع العمل من العينات إلى التسليم، مع تحديث واضح في كل مرحلة.",
+      "المساحة المكتملة يجب أن تبدو طبيعية. مواد وإضاءة وتفاصيل تعمل معاً. فريق واحد يتابع العمل من العينات إلى التسليم، مع تحديث واضح في كل مرحلة.",
   },
   stats: {
     items: [
@@ -1050,7 +1050,7 @@ const ar: LuxuryMessages = {
     eyebrow: "نطاقات معتادة",
     title: "مكان مكتمل، لا قائمة أثاث.",
     subtitle:
-      "بيئات مبيعات وضيافة وتشطيب — نفّذها فريق توريفا، بما فيها أعمال تحت جرافيكس هاوس قبل إطلاق العلامة المستقلة.",
+      "بيئات مبيعات وضيافة وتشطيب. نفّذها فريق توريفا، بما فيها أعمال تحت جرافيكس هاوس قبل إطلاق العلامة المستقلة.",
     cta: "تجربة المشروع",
     items: [
       { title: "معرض مبيعات وفيلا عرض", category: "مطورون" },
@@ -1175,7 +1175,7 @@ const ar: LuxuryMessages = {
     ourWork: {
       title: "أعمالنا",
       intro:
-        "بيئات مبيعات وتشطيبات وتنفيذ معارض بيد فريق توريفا — بما فيها أعمال تحت جرافيكس هاوس قبل إطلاق العلامة المستقلة.",
+        "بيئات مبيعات وتشطيبات وتنفيذ معارض بيد فريق توريفا. بما فيها أعمال تحت جرافيكس هاوس قبل إطلاق العلامة المستقلة.",
       caseStudyContactCta: "ناقش مشروعاً مشابهاً",
     },
     portfolio: {
@@ -1209,7 +1209,7 @@ const ar: LuxuryMessages = {
     about: {
       title: "عن توريفا",
       intro:
-        "توريفا تصمم وتسلّم المساحات والتجارب — تصميم مكاني، تطوير فني، تجهيز، وتسليم. التنفيذ جزء من العرض، لا الهوية كلها. تعاقد مع توريفا وحدها؛ والمجموعة تُستدعى حين يحتاجها المشروع.",
+        "توريفا تصمم وتسلّم المساحات والتجارب. تصميم مكاني، تطوير فني، تجهيز، وتسليم. التنفيذ جزء من العرض، لا الهوية كلها. تعاقد مع توريفا وحدها؛ والمجموعة تُستدعى حين يحتاجها المشروع.",
     },
     contact: {
       title: "تواصل مع توريفا",
@@ -1572,7 +1572,7 @@ export const LUXURY_IMAGES = {
   cap2: "/brand/turriva/hero-turriva.png",
   cap3: `https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?${IMG_Q}&w=900`,
   cap4: `https://images.unsplash.com/photo-1600047509358-9dc75507daeb?${IMG_Q}&w=900`,
-  /** Portfolio gallery — Unsplash (free license), matched to project titles */
+  /** Portfolio gallery. Unsplash (free license), matched to project titles */
   project1: `https://images.unsplash.com/photo-1565538810643-b5bdb714032a?${IMG_Q}&w=1200`,
   project2: `https://images.unsplash.com/photo-1649361811423-a55616f7ab11?${IMG_Q}&w=1200`,
   project3: `https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?${IMG_Q}&w=1200`,
