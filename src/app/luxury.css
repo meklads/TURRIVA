@@ -5400,10 +5400,124 @@ html {
 }
 
 .lux-home-capabilities__item {
-  padding: 1rem 1.1rem;
-  border: 1px solid color-mix(in srgb, var(--lux-gold) 16%, var(--lux-sand));
-  border-radius: 1rem;
-  background: white;
+  position: relative;
+  padding: 1.15rem 1.2rem 1.2rem;
+  border: 1px solid color-mix(in srgb, var(--lux-gold) 22%, var(--lux-sand));
+  border-radius: 0.35rem;
+  background:
+    linear-gradient(
+      165deg,
+      color-mix(in srgb, white 92%, var(--lux-cream)) 0%,
+      white 55%,
+      color-mix(in srgb, var(--lux-linen, #f3ebe0) 35%, white) 100%
+    );
+  transition: border-color 0.35s ease, transform 0.45s ease;
+}
+
+.lux-home-capabilities__item:hover {
+  border-color: color-mix(in srgb, var(--lux-gold) 55%, var(--lux-sand));
+  transform: translateY(-2px);
+}
+
+.lux-home-capabilities__index {
+  display: block;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--lux-gold);
+}
+
+[dir="rtl"] .lux-home-capabilities__index {
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
+  letter-spacing: 0.06em;
+}
+
+.lux-home-capabilities__title {
+  margin: 0.55rem 0 0;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--lux-ink);
+}
+
+.lux-home-capabilities__body {
+  margin: 0.45rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--lux-ink-soft);
+}
+
+.lux-exec-cap__path {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 900px) {
+  .lux-exec-cap__path {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+.lux-exec-cap__path-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  padding: 1rem 1.05rem;
+  border-top: 2px solid var(--lux-gold);
+  background: color-mix(in srgb, white 70%, transparent);
+}
+
+.lux-exec-cap__path-num {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--lux-gold);
+  line-height: 1.6;
+}
+
+[dir="rtl"] .lux-exec-cap__path-num {
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.lux-exec-cap__path-title {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--lux-ink);
+}
+
+.lux-exec-cap__path-body {
+  margin: 0.35rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--lux-ink-soft);
+}
+
+.lux-exec-cap__tech {
+  padding-top: 1.75rem;
+  border-top: 1px solid color-mix(in srgb, var(--lux-gold) 18%, var(--lux-sand));
+}
+
+.lux-exec-cap__tech-title {
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  max-width: 40rem;
+  color: var(--lux-ink);
+}
+
+.lux-section-intro--tight .lux-heading {
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+}
+
+.lux-developers--compact {
+  padding-block: clamp(2.75rem, 5vw, 3.75rem);
 }
 
 .lux-featured-re__grid {
@@ -7789,7 +7903,7 @@ html[lang="en"] .lux-proof__title,
 
 @media (min-width: 1024px) {
   .lux-album__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.75rem 1.5rem;
   }
 }

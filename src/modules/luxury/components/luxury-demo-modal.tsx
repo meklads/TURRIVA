@@ -19,7 +19,7 @@ export function LuxuryDemoModal({ locale, open, onClose, prefill }: Props) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [step, setStep] = useState(0);
   const [objective, setObjective] = useState("");
-  const [projectType, setProjectType] = useState<DemoProjectType>("sales_gallery");
+  const [projectType, setProjectType] = useState<DemoProjectType>("developer");
   const [timeline, setTimeline] = useState<DemoTimeline>("1_3_months");
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
@@ -64,13 +64,20 @@ export function LuxuryDemoModal({ locale, open, onClose, prefill }: Props) {
         email: email || undefined,
         company,
         locale,
-        source: prefill?.source ?? "launch_brief_modal",
+        source: prefill?.source ?? "project_brief_modal",
         interest: "bespoke" as const,
-        projectType: "developer",
+        projectType:
+          projectType === "developer"
+            ? ("developer" as const)
+            : projectType === "hospitality"
+              ? ("hospitality" as const)
+              : projectType === "residential"
+                ? ("villa" as const)
+                : ("other" as const),
         message: [
-          `Launch brief`,
-          objective ? `Sales objective: ${objective}` : null,
-          `Environment type: ${projectType}`,
+          `Project discussion`,
+          objective ? `Brief: ${objective}` : null,
+          `Project type: ${projectType}`,
           `Timeline: ${timeline}`,
           role ? `Role: ${role}` : null,
           company ? `Company: ${company}` : null,

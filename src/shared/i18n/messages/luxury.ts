@@ -292,7 +292,7 @@ export type LuxuryMessages = LuxuryPlatformMessages & {
 
 const en: LuxuryMessages = {
   ...getLuxuryPlatformMessages("en"),
-  brand: { name: "Turriva", tagline: "Real Estate Sales Environments" },
+  brand: { name: "Turriva", tagline: "Spatial Execution & Physical Delivery" },
   nav: {
     home: "Home",
     villas: "Residential",
@@ -308,20 +308,20 @@ const en: LuxuryMessages = {
   },
   hero: {
     eyebrow: "A Tasami Group company · Saudi Arabia",
-    title: "From idea to a space you can enter.",
+    title: "From approved design to delivered reality.",
     subtitle:
-      "Turriva designs and delivers spaces: residential, commercial, hospitality, and real estate. The same team that built sales experiences and interior execution for Tasami Group clients for 15 years, now under one brand dedicated to design and delivery.",
-    servicesLine: "Spatial Design · Experience · Build",
-    tags: ["Spatial Design", "Experience", "Build"],
-    ctaPrimary: "Start your brief. We reply within one business day",
-    ctaSecondary: "Project experience",
+      "Turriva is a spatial execution and physical delivery company. Real estate sales environments are the flagship specialty. The same team that delivered field work for Tasami Group clients for 15+ years, now under one brand dedicated to getting the space built.",
+    servicesLine: "Technical Development · Fabrication · Installation · Handover",
+    tags: ["Technical Development", "Fabrication", "Installation", "Handover"],
+    ctaPrimary: "Discuss your project",
+    ctaSecondary: "Our work",
     ctaSample: "Send the drawings",
   },
   intro: {
     eyebrow: "How we work",
-    title: "Design with intent. Delivery with care.",
+    title: "Own the path from approved design to delivered space.",
     body:
-      "A finished space should feel inevitable. Materials, light, and detail working together. One team stays with the work from samples to handover, with clear updates at every stage.",
+      "Clients buy accountability for getting the space delivered. One team connects technical development, fabrication, installation, and handover, with clear updates at every stage.",
   },
   stats: {
     items: [
@@ -454,9 +454,9 @@ const en: LuxuryMessages = {
     items: [],
   },
   cta: {
-    title: "Share the project, the opening date, and what must be ready.",
+    title: "Discuss your project.",
     subtitle:
-      "A concise brief is enough. We reply within one business day with a clear next step.",
+      "Send drawings, scope, or the handover date. We reply within one business day with a clear next step.",
     button: "Talk to Turriva",
   },
   quoteForm: {
@@ -498,7 +498,7 @@ const en: LuxuryMessages = {
   },
   footer: {
     about:
-      "Turriva designs and builds spaces and experiences. Execution is part of the product, not the whole identity. Hire Turriva alone. The group joins only when the project needs it.",
+      "Turriva is a spatial execution and physical delivery company. From approved design to delivered reality. Real estate sales environments are the flagship specialty. Contract Turriva alone; the group joins only when needed.",
     quickLinks: "Quick Links",
     importantLinks: "Important Links",
     servicesLinks: "Capabilities",
@@ -577,7 +577,7 @@ const en: LuxuryMessages = {
     about: {
       title: "About Turriva",
       intro:
-        "Turriva designs and delivers spaces and experiences. Spatial design, technical development, fit-out, and handover. Execution is part of the offer, not the whole brand. Contract Turriva alone; the group joins only when the project needs it.",
+        "Turriva is a spatial execution and physical delivery company. We bridge approved creative intent and delivered reality: technical development, fabrication, installation, and handover. Real estate sales environments are our flagship specialty. Contract Turriva alone; the group joins only when the project needs it.",
     },
     contact: {
       title: "Contact Turriva",
@@ -924,7 +924,7 @@ const en: LuxuryMessages = {
 
 const ar: LuxuryMessages = {
   ...getLuxuryPlatformMessages("ar"),
-  brand: { name: "توريفا", tagline: "بيئات البيع العقاري" },
+  brand: { name: "توريفا", tagline: "تنفيذ مكاني وتسليم مادي" },
   nav: {
     home: "الرئيسية",
     villas: "تنفيذ سكني",
@@ -940,20 +940,20 @@ const ar: LuxuryMessages = {
   },
   hero: {
     eyebrow: "إحدى شركات مجموعة تسامي · المملكة العربية السعودية",
-    title: "من الفكرة إلى مساحة تدخلها.",
+    title: "من التصميم المعتمد إلى واقع جاهز للتسليم.",
     subtitle:
-      "توريفا تصمم وتنفذ المساحات: سكني وتجاري وضيافة وعقار. الفريق نفسه الذي بنى تجارب البيع والتشطيب الداخلي لعملاء مجموعة تسامي منذ 15 عامًا، الآن تحت علامة واحدة مخصصة للتصميم والتنفيذ.",
-    servicesLine: "تصميم مكاني · تجربة · تنفيذ",
-    tags: ["تصميم مكاني", "تجربة", "تنفيذ"],
-    ctaPrimary: "ابدأ موجزك. نرد خلال يوم عمل",
-    ctaSecondary: "تجربة المشروع",
+      "توريفا شركة تنفيذ مكاني وتسليم مادي. بيئات البيع العقاري هي التخصص الرئيسي. نفس الفريق الذي نفّذ أعمالاً ميدانية لعملاء مجموعة تسامي لأكثر من 15 عاماً، الآن تحت علامة واحدة مخصصة لتسليم المساحة.",
+    servicesLine: "تطوير فني · تصنيع · تركيب · تسليم",
+    tags: ["تطوير فني", "تصنيع", "تركيب", "تسليم"],
+    ctaPrimary: "ناقش مشروعك",
+    ctaSecondary: "أعمالنا",
     ctaSample: "أرسل المخططات",
   },
   intro: {
     eyebrow: "منهجنا",
-    title: "تصميم بقصد. وتنفيذ بعناية.",
+    title: "نملك المسار من التصميم المعتمد إلى المساحة المسلَّمة.",
     body:
-      "المساحة المكتملة يجب أن تبدو طبيعية. مواد وإضاءة وتفاصيل تعمل معاً. فريق واحد يتابع العمل من العينات إلى التسليم، مع تحديث واضح في كل مرحلة.",
+      "العميل يشتري جهة مسؤولة عن تسليم المساحة. فريق واحد يربط التطوير الفني والتصنيع والتركيب والتسليم، مع تحديث واضح في كل مرحلة.",
   },
   stats: {
     items: [
@@ -1086,9 +1086,9 @@ const ar: LuxuryMessages = {
     items: [],
   },
   cta: {
-    title: "شاركنا المشروع، وموعد الافتتاح، وما يجب أن يكون جاهزاً.",
+    title: "ناقش مشروعك.",
     subtitle:
-      "موجز مختصر يكفي. نرد خلال يوم عمل بخطوة تالية واضحة.",
+      "أرسل المخطط أو نطاق العمل أو موعد التسليم. نرد خلال يوم عمل بخطوة تالية واضحة.",
     button: "تواصل مع توريفا",
   },
   quoteForm: {
@@ -1130,7 +1130,7 @@ const ar: LuxuryMessages = {
   },
   footer: {
     about:
-      "توريفا تصمم وتنفذ المساحات والتجارب. التنفيذ جزء من المنتج، لا الهوية كلها. تعاقد مع توريفا وحدها. استخدم المجموعة عندما يحتاجها المشروع.",
+      "توريفا شركة تنفيذ مكاني وتسليم مادي. من التصميم المعتمد إلى واقع جاهز للتسليم. بيئات البيع العقاري هي التخصص الرئيسي. تعاقد مع توريفا وحدها؛ والمجموعة تُستدعى عند الحاجة فقط.",
     quickLinks: "روابط سريعة",
     importantLinks: "أهم الروابط",
     servicesLinks: "القدرات",
@@ -1209,7 +1209,7 @@ const ar: LuxuryMessages = {
     about: {
       title: "عن توريفا",
       intro:
-        "توريفا تصمم وتسلّم المساحات والتجارب. تصميم مكاني، تطوير فني، تجهيز، وتسليم. التنفيذ جزء من العرض، لا الهوية كلها. تعاقد مع توريفا وحدها؛ والمجموعة تُستدعى حين يحتاجها المشروع.",
+        "توريفا شركة تنفيذ مكاني وتسليم مادي. نربط النية الإبداعية المعتمدة بالواقع المسلَّم: تطوير فني، تصنيع، تركيب، وتسليم. بيئات البيع العقاري هي تخصصنا الرئيسي. تعاقد مع توريفا وحدها؛ والمجموعة تُستدعى حين يحتاجها المشروع.",
     },
     contact: {
       title: "تواصل مع توريفا",

@@ -129,13 +129,13 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     locationEn: "Riyadh, Saudi Arabia",
     locationAr: "الرياض، السعودية",
     summaryEn:
-      "Permanent sales-gallery décor: design and build of the presentation environment, including display models and on-site fit-out through opening-ready handover.",
+      "Permanent sales-gallery décor designed and built for ongoing buyer presentations: gallery environment, display models, and on-site fit-out through opening-ready handover.",
     summaryAr:
-      "تجهيز ديكور دائم لصالة بيع: تصميم وتنفيذ بيئة العرض، بما في ذلك مجسمات العرض والتجهيز الميداني حتى التسليم الجاهز للافتتاح.",
+      "تجهيز ديكور دائم لصالة بيع صُمم ونُفّذ لعروض المشترين اليومية: بيئة الصالة، ومجسمات العرض، والتجهيز الميداني حتى التسليم الجاهز للافتتاح.",
     bodyEn:
-      "A permanent sales environment for Anan Eskan in Riyadh. Unlike a temporary exhibition hall, this brief required durable gallery décor and a lasting presentation path for buyers. The owned scope was décor design and build, fabrication of display models, and on-site fit-out to opening readiness. Documented under Graphics House; field delivery by the same team now under Turriva.",
+      "A permanent sales environment for Anan Eskan in Riyadh. Unlike a temporary exhibition hall, this brief required durable gallery décor and a lasting presentation path buyers walk every day. The owned scope was décor design and build, fabrication of display models, and on-site fit-out to opening readiness—one accountable path from approved intent to a space that can host presentations without a short-run teardown. Documented under Graphics House; field delivery by the same team now under Turriva.",
     bodyAr:
-      "بيئة بيع دائمة لعنان إسكان في الرياض. بخلاف قاعة العرض المؤقتة، تطلب الموجز ديكور صالة ثابتاً ومسار عرض دائماً للمشترين. النطاق الذي ملكناه: تصميم وتنفيذ الديكور، وتصنيع مجسمات العرض، والتجهيز الميداني حتى جاهزية الافتتاح. موثّق تحت جرافيكس هاوس؛ والتنفيذ الميداني لنفس الفريق تحت توريفا اليوم.",
+      "بيئة بيع دائمة لعنان إسكان في الرياض. بخلاف قاعة العرض المؤقتة، تطلب الموجز ديكور صالة ثابتاً ومسار عرض دائماً يمشي فيه المشترون يومياً. النطاق الذي ملكناه: تصميم وتنفيذ الديكور، وتصنيع مجسمات العرض، والتجهيز الميداني حتى جاهزية الافتتاح—مسار مسؤولية واحد من النية المعتمدة إلى مساحة تستضيف العروض دون تفكيك قصير الأمد. موثّق تحت جرافيكس هاوس؛ والتنفيذ الميداني لنفس الفريق تحت توريفا اليوم.",
     heroTaglineEn: "Permanent gallery décor. Built for daily buyer presentations.",
     heroTaglineAr: "ديكور صالة دائمة. مبني لعروض المشترين اليومية.",
     gallery: [
@@ -144,11 +144,34 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       "/brand/turriva/projects/anan-eskan/maquette-03.jpeg",
       "/brand/turriva/projects/anan-eskan-youtube-poster.jpg",
     ],
-    servicesEn: ["Permanent décor design", "Permanent décor build", "Display models", "Gallery fit-out", "Handover"],
-    servicesAr: ["تصميم ديكور دائم", "تنفيذ ديكور دائم", "مجسمات عرض", "تجهيز صالة", "تسليم"],
+    servicesEn: [
+      "Permanent décor design",
+      "Permanent décor build",
+      "Display models",
+      "Gallery fit-out",
+      "Opening-ready handover",
+    ],
+    servicesAr: [
+      "تصميم ديكور دائم",
+      "تنفيذ ديكور دائم",
+      "مجسمات عرض",
+      "تجهيز صالة",
+      "تسليم جاهز للافتتاح",
+    ],
     metrics: [
       { labelEn: "Fit mode", labelAr: "نوع التجهيز", valueEn: "Permanent décor", valueAr: "ديكور دائم" },
-      { labelEn: "Owned scope", labelAr: "النطاق المملوك", valueEn: "Decor design & build + models", valueAr: "تصميم وتنفيذ ديكور + مجسمات" },
+      {
+        labelEn: "Owned scope",
+        labelAr: "النطاق المملوك",
+        valueEn: "Gallery décor + models + site fit-out",
+        valueAr: "ديكور صالة + مجسمات + تجهيز ميداني",
+      },
+      {
+        labelEn: "Outcome",
+        labelAr: "النتيجة",
+        valueEn: "Opening-ready buyer path",
+        valueAr: "مسار مشترٍ جاهز للافتتاح",
+      },
       { labelEn: "City", labelAr: "المدينة", valueEn: "Riyadh", valueAr: "الرياض" },
     ],
     partner: {
@@ -163,17 +186,17 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     },
     videoUrl: "https://youtu.be/jP8vLnnRhb0",
     challengeEn:
-      "A developer sales gallery needed a permanent décor environment and display models ready for ongoing buyer presentations, not a short-run exhibition install.",
+      "A developer sales gallery needed a permanent décor environment and display models ready for ongoing buyer presentations—durable enough for daily use, not a short-run exhibition install.",
     challengeAr:
-      "صالة بيع لمطور احتاجت بيئة ديكور دائمة ومجسمات عرض جاهزة لعروض المشترين المستمرة، لا تجهيز معرض قصير الأمد.",
+      "صالة بيع لمطور احتاجت بيئة ديكور دائمة ومجسمات عرض جاهزة لعروض المشترين المستمرة—ثابتة بما يكفي للاستخدام اليومي، لا تجهيز معرض قصير الأمد.",
     solutionEn:
-      "Decor design and build for a permanent sales gallery, with display-model fabrication and on-site fit-out through opening-ready handover.",
+      "Decor design and build for a permanent sales gallery, with display-model fabrication and on-site fit-out through opening-ready handover under one owned scope.",
     solutionAr:
-      "تصميم وتنفيذ ديكور لصالة بيع دائمة، مع تصنيع مجسمات العرض والتجهيز الميداني حتى التسليم الجاهز للافتتاح.",
+      "تصميم وتنفيذ ديكور لصالة بيع دائمة، مع تصنيع مجسمات العرض والتجهيز الميداني حتى التسليم الجاهز للافتتاح ضمن نطاق ملكية واحد.",
     resultsEn:
-      "A lasting sales-gallery environment ready for buyer presentations. Documented under Graphics House; same field team now under Turriva.",
+      "A lasting sales-gallery environment ready for daily buyer presentations: clear walk path, display models in place, and handover at opening readiness. Documented under Graphics House; same field team now under Turriva.",
     resultsAr:
-      "بيئة صالة بيع دائمة جاهزة لعروض المشترين. موثّقة تحت جرافيكس هاوس؛ ونفس الفريق الميداني تحت توريفا اليوم.",
+      "بيئة صالة بيع دائمة جاهزة لعروض المشترين اليومية: مسار واضح، ومجسمات في موضعها، وتسليم عند جاهزية الافتتاح. موثّقة تحت جرافيكس هاوس؛ ونفس الفريق الميداني تحت توريفا اليوم.",
   },
   {
     attribution: "team",

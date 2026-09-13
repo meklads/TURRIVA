@@ -55,12 +55,12 @@ export function ProjectRoiCalculator({ locale }: Props) {
 
     const projectType: DemoProjectType =
       kind === "event"
-        ? "launch_exhibition"
+        ? "exhibition"
         : kind === "residential"
-          ? "sales_gallery"
+          ? "developer"
           : kind === "mixed"
-            ? "show_unit"
-            : "extended_spatial";
+            ? "commercial"
+            : "hospitality";
     const timeline: DemoTimeline =
       result.deliveryDays <= 21 ? "urgent" : daysToLaunch <= 90 ? "1_3_months" : "planning";
 

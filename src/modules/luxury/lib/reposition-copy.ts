@@ -207,7 +207,7 @@ const en: RepositionCopy = {
       { title: "Handover & aftercare", description: "Opening-ready delivery with a clear close-out path." },
       { title: "Experience tools when needed", description: "Models, displays, and content only when they serve the brief." },
     ],
-    cta: "See capabilities",
+    cta: "Discuss your project",
   },
   featured: {
     eyebrow: "Flagship specialty",
@@ -226,8 +226,6 @@ const en: RepositionCopy = {
       { image: PRODUCT_IMAGES.experience, category: "Permanent sales gallery", title: "Anan Eskan sales gallery, Riyadh", href: "/our-work/anan-eskan-sales-gallery" },
       { image: "/brand/turriva/projects/al-rajhi/maquette.jpeg", category: "Smart maquette", title: "Al Rajhi architectural maquette", href: "/our-work/al-rajhi-maquette" },
       { image: "/brand/turriva/projects/rafal-pavilions.jpg", category: "Launch pavilions", title: "Rafal pavilions, Diriyah", href: "/our-work/rafal-pavilions" },
-      { image: PRODUCT_IMAGES.showUnit, category: "Show unit", title: "A unit the buyer walks", href: "/show-unit" },
-      { image: PRODUCT_IMAGES.fitOut, category: "Fit-out", title: "Approved drawings, built", href: "/fit-out" },
     ],
   },
   team: {
@@ -252,7 +250,7 @@ const en: RepositionCopy = {
   },
   teamExperience: "Selected work",
   honestNote:
-    "The work below was delivered by the Turriva team. Some under Graphics House before the dedicated brand launched. Same team. Same execution standard.",
+    "The work below was delivered by the Turriva team. Some under Graphics House before the dedicated brand. Same team. Same execution standard.",
 };
 
 const ar: RepositionCopy = {
@@ -267,7 +265,7 @@ const ar: RepositionCopy = {
   },
   developers: {
     eyebrow: "التخصص الرئيسي",
-    title: "بيئات بيع عقاري تنقل المشتري من الاهتمام إلى القرار.",
+    title: "بيئات البيع العقاري تنقل المشتري من الاهتمام إلى القرار.",
     intro:
       "للمطورين التخصص واضح: صالات البيع ووحدات العرض ومساحات الإطلاق حول ما يجب أن يفهمه المشتري ويحسّ به قبل يوم الافتتاح. ونفس مسار التنفيذ يخدم الفنادق والتجزئة والمعارض حين تصل هذه الموجزات.",
     points: [
@@ -368,7 +366,7 @@ const ar: RepositionCopy = {
       { title: "التسليم وما بعد التسليم", description: "جاهزية الافتتاح أو الاستخدام مع مسار إغلاق واضح." },
       { title: "أدوات تجربة عند الحاجة", description: "مجسمات وشاشات ومحتوى فقط حين تخدم الموجز." },
     ],
-    cta: "عرض القدرات",
+    cta: "ناقش مشروعك",
   },
   featured: {
     eyebrow: "التخصص الرئيسي",
@@ -387,8 +385,6 @@ const ar: RepositionCopy = {
       { image: PRODUCT_IMAGES.experience, category: "صالة بيع دائمة", title: "صالة عرض عنان إسكان، الرياض", href: "/our-work/anan-eskan-sales-gallery" },
       { image: "/brand/turriva/projects/al-rajhi/maquette.jpeg", category: "مجسم ذكي", title: "مجسم الراجحي المعماري", href: "/our-work/al-rajhi-maquette" },
       { image: "/brand/turriva/projects/rafal-pavilions.jpg", category: "أجنحة إطلاق", title: "أجنحة رفال، الدرعية", href: "/our-work/rafal-pavilions" },
-      { image: PRODUCT_IMAGES.showUnit, category: "وحدة العرض", title: "وحدة يمشي فيها المشتري", href: "/show-unit" },
-      { image: PRODUCT_IMAGES.fitOut, category: "التجهيز", title: "مخططات معتمدة تُبنى", href: "/fit-out" },
     ],
   },
   team: {

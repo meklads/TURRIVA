@@ -6,10 +6,8 @@ import type { Locale } from "@/shared/i18n/locale";
 import { LuxuryHomeHero } from "./luxury-home-hero";
 import {
   LuxuryAlbumSection,
-  LuxuryDefinitionSection,
   LuxuryDevelopersSection,
-  LuxuryMethodSection,
-  LuxuryTeamExperienceSection,
+  LuxuryExecutionCapabilitiesSection,
 } from "./luxury-reposition-sections";
 import { LuxuryGroupProofSection } from "./luxury-group-proof-section";
 import { LuxuryConversionProvider } from "./luxury-conversion-provider";
@@ -35,11 +33,9 @@ export function LuxuryHomePage({ locale }: Props) {
         <LuxuryLogoMarquee locale={locale} />
         <LuxuryGroupProofSection locale={locale} showLogos={false} showTestimonial compact />
         <LuxuryProductTiersSection locale={locale} />
-        <LuxuryMethodSection locale={locale} />
-        <LuxuryDefinitionSection locale={locale} />
-        <LuxuryDevelopersSection locale={locale} />
+        <LuxuryExecutionCapabilitiesSection locale={locale} />
+        <LuxuryDevelopersSection locale={locale} compact />
         <LuxuryAlbumSection locale={locale} />
-        <LuxuryTeamExperienceSection locale={locale} />
 
         <section id="brief" className="lux-cta-band" aria-labelledby="home-cta-heading">
           <div className="lux-container">

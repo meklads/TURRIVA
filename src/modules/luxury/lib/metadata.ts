@@ -16,8 +16,8 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
 
   const description =
     locale === "ar"
-      ? "توريفا تصمم وتنفّذ بيئات البيع العقاري ووحدات العرض، مع امتداد إلى الضيافة والسكني والتجاري. ذراع التنفيذ المكاني لمجموعة تسامي، مع جرافيكس هاوس عند الحاجة."
-      : "Turriva designs and delivers real-estate sales environments and show units, with hospitality, residential, and commercial work beyond the launch brief. Tasami Group’s spatial execution arm, with Graphics House when required.";
+      ? "توريفا: تنفيذ مكاني وتسليم مادي من التصميم المعتمد إلى الواقع. بيئات البيع العقاري تخصص رئيسي، مع ضيافة وتجاري ومعارض وسكني وتجهيز. جزء من مجموعة تسامي."
+      : "Turriva: spatial execution and physical delivery from approved design to reality. Real estate sales environments as flagship specialty, plus hospitality, commercial, exhibition, residential, and fit-out. Part of Tasami Group.";
 
   const canonical = `${TURRIVA_PUBLIC_URL}${localizePath("/", locale)}`;
 
@@ -27,21 +27,21 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
     keywords:
       locale === "ar"
         ? [
+            "تنفيذ مكاني",
+            "تسليم مادي",
             "بيئات البيع العقاري",
             "صالة مبيعات",
             "وحدة عرض",
-            "فيلا عرض",
-            "تجربة المشروع العقاري",
-            "تصميم وتنفيذ",
+            "تجهيز وتنفيذ",
             "توريفا",
           ]
         : [
+            "spatial execution",
+            "physical delivery",
             "real estate sales environments",
             "sales gallery",
             "show unit",
-            "show villa",
-            "project launch space",
-            "spatial design and build",
+            "fit-out execution",
             "Turriva",
           ],
     alternates: {

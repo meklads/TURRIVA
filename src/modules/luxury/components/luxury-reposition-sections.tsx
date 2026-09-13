@@ -44,20 +44,20 @@ export function LuxuryDevelopersSection({ locale, compact = false }: Props & { c
   return (
     <section
       id="developers"
-      className="lux-section lux-section--cream lux-developers scroll-mt-24"
-      aria-labelledby={compact ? undefined : "lux-developers-title"}
+      className={`lux-section lux-section--cream lux-developers scroll-mt-24${compact ? " lux-developers--compact" : ""}`}
+      aria-labelledby="lux-developers-title"
     >
       <div className="lux-container">
-        {compact ? null : (
-          <div className="lux-section-intro">
-            <p className="lux-eyebrow">{copy.developers.eyebrow}</p>
-            <h2 id="lux-developers-title" className="lux-display lux-heading mt-3">
-              {copy.developers.title}
-            </h2>
+        <div className={`lux-section-intro${compact ? " lux-section-intro--tight" : ""}`}>
+          <p className="lux-eyebrow">{copy.developers.eyebrow}</p>
+          <h2 id="lux-developers-title" className="lux-display lux-heading mt-3">
+            {copy.developers.title}
+          </h2>
+          {compact ? null : (
             <p className="lux-body mt-4 text-lg leading-relaxed text-lux-ink-soft">{copy.developers.intro}</p>
-          </div>
-        )}
-        <ul className={`lux-equal-cards lux-developers__cards ${compact ? "" : "mt-10"}`}>
+          )}
+        </div>
+        <ul className="lux-equal-cards lux-developers__cards mt-8">
           {copy.developers.points.map((point) => (
             <li key={point.title} className="lux-door-card lux-door-card--media">
               <div className="lux-door-card__media">
@@ -76,16 +76,16 @@ export function LuxuryDevelopersSection({ locale, compact = false }: Props & { c
             </li>
           ))}
         </ul>
-        {!compact ? (
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <LocalizedLink href="#brief" className="lux-btn-primary inline-flex">
-              {copy.developers.cta}
-            </LocalizedLink>
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <LocalizedLink href="#brief" className="lux-btn-primary inline-flex">
+            {copy.developers.cta}
+          </LocalizedLink>
+          {!compact ? (
             <LocalizedLink href="/real-estate-experience" className="lux-btn-outline inline-flex">
               {copy.featured.cta}
             </LocalizedLink>
-          </div>
-        ) : null}
+          ) : null}
+        </div>
       </div>
     </section>
   );
@@ -175,17 +175,83 @@ export function LuxuryHomeCapabilitiesSection({ locale }: Props) {
           <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.capabilities.intro}</p>
         </div>
         <ul className="lux-home-capabilities__grid mt-10">
-          {copy.capabilities.items.map((item) => (
+          {copy.capabilities.items.map((item, index) => (
             <li key={item.title} className="lux-home-capabilities__item">
-              <h3 className="text-sm font-semibold text-lux-ink">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-lux-ink-soft">{item.description}</p>
+              <span className="lux-home-capabilities__index" aria-hidden>
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h3 className="lux-home-capabilities__title">{item.title}</h3>
+              <p className="lux-home-capabilities__body">{item.description}</p>
             </li>
           ))}
         </ul>
         <div className="mt-8">
-          <LocalizedLink href="/services" className="lux-btn-outline inline-flex">
+          <LocalizedLink href="#brief" className="lux-btn-outline inline-flex">
             {copy.capabilities.cta}
           </LocalizedLink>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/** Homepage combined path: execution journey + technical capabilities for B2B buyers. */
+export function LuxuryExecutionCapabilitiesSection({ locale }: Props) {
+  const journey = getConversionCopy(locale).journey;
+  const copy = getRepositionCopy(locale);
+  const pathSteps = journey.steps.slice(0, 4);
+
+  return (
+    <section
+      id="launch-path"
+      className="lux-section lux-section--linen lux-exec-cap scroll-mt-28"
+      aria-labelledby="lux-exec-cap-title"
+    >
+      <div className="lux-container">
+        <div className="lux-section-intro">
+          <p className="lux-eyebrow">{journey.eyebrow}</p>
+          <h2 id="lux-exec-cap-title" className="lux-display lux-heading mt-3">
+            {journey.title}
+          </h2>
+          <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{journey.intro}</p>
+        </div>
+
+        <ol className="lux-exec-cap__path mt-10">
+          {pathSteps.map((step, index) => (
+            <li key={step.title} className="lux-exec-cap__path-step">
+              <span className="lux-exec-cap__path-num" aria-hidden>
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <div>
+                <p className="lux-exec-cap__path-title">{step.title}</p>
+                <p className="lux-exec-cap__path-body">{step.body}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+
+        <div className="lux-exec-cap__tech mt-12">
+          <div className="lux-exec-cap__tech-head">
+            <p className="lux-eyebrow">{copy.capabilities.eyebrow}</p>
+            <h3 className="lux-display lux-exec-cap__tech-title mt-2">{copy.capabilities.title}</h3>
+            <p className="lux-body mt-3 text-sm leading-relaxed text-lux-ink-soft">{copy.capabilities.intro}</p>
+          </div>
+          <ul className="lux-home-capabilities__grid mt-8">
+            {copy.capabilities.items.map((item, index) => (
+              <li key={item.title} className="lux-home-capabilities__item">
+                <span className="lux-home-capabilities__index" aria-hidden>
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h4 className="lux-home-capabilities__title">{item.title}</h4>
+                <p className="lux-home-capabilities__body">{item.description}</p>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-8">
+            <LocalizedLink href="#brief" className="lux-btn-primary inline-flex">
+              {copy.capabilities.cta}
+            </LocalizedLink>
+          </div>
         </div>
       </div>
     </section>

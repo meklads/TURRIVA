@@ -113,7 +113,7 @@ export function getConversionCopy(locale: Locale) {
     logoLabel: isAr ? "يثق بنا مطورون ومؤسسات وعلامات رائدة" : "Trusted by developers, institutions, and leading brands",
     tiersEyebrow: isAr ? "التخصص ثم القدرة" : "Specialty, then capacity",
     tiersTitle: isAr
-      ? "بيئات البيع عقاري كسلاح متخصص. والتنفيذ المكاني الأوسع يثبت القدرة."
+      ? "بيئات البيع العقاري كسلاح متخصص. والتنفيذ المكاني الأوسع يثبت القدرة."
       : "Sales environments as the specialty weapon. Broader spatial delivery proves capacity.",
     tiersIntro: isAr
       ? "نبدأ من صالات البيع ووحدات العرض ومساحات الإطلاق لأنها أقوى باب مع المطورين. الضيافة والتجاري والمعارض والسكني والتجهيز تبقى مفتوحة دون أن تصبح تعريف العلامة."
