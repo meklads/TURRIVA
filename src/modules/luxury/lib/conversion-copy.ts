@@ -71,7 +71,7 @@ export const PRODUCT_TIERS: readonly ProductTier[] = [
     href: "/show-unit",
     media: {
       type: "image",
-      src: "/brand/turriva/inspiration/living-walnut-interior.webp",
+      src: "/brand/turriva/makkah-charter-04.jpeg",
     },
   },
 ] as const;
