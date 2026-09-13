@@ -48,16 +48,16 @@ export const CONTACT_INTENTS: Record<ContactIntent, FunnelPreset> = {
   hospitality: {
     projectType: "hospitality",
     source: "contact_intent_hospitality",
-    titleEn: "Hospitality fit-out brief",
-    titleAr: "ملخص تشطيب ضيافة",
+    titleEn: "Hospitality project discussion",
+    titleAr: "مناقشة مشروع ضيافة",
     subtitleEn: "Hotels, serviced apartments, and restaurants: batch joinery and wet-area execution.",
     subtitleAr: "فنادق وشقق فندقية ومطاعم: نجارة على دفعات وتشطيب مناطق رطبة.",
   },
   exhibition: {
     projectType: "exhibition",
     source: "contact_intent_exhibition",
-    titleEn: "Exhibition & pavilion brief",
-    titleAr: "ملخص معرض أو جناح",
+    titleEn: "Exhibition & pavilion discussion",
+    titleAr: "مناقشة معرض أو جناح",
     subtitleEn: "Sales environments and institutional exhibitions with opening-ready delivery.",
     subtitleAr: "بيئات مبيعات ومعارض مؤسسية بتسليم جاهز للافتتاح.",
   },
@@ -72,8 +72,8 @@ export const CONTACT_INTENTS: Record<ContactIntent, FunnelPreset> = {
   commercial: {
     projectType: "commercial",
     source: "contact_intent_commercial",
-    titleEn: "Commercial fit-out brief",
-    titleAr: "ملخص تشطيب تجاري",
+    titleEn: "Commercial project discussion",
+    titleAr: "مناقشة مشروع تجاري",
     subtitleEn: "Retail, offices, and branded environments, from shop drawings to handover.",
     subtitleAr: "تجزئة ومكاتب وبيئات علامات، من الرسومات إلى التسليم.",
   },
@@ -188,20 +188,20 @@ export function getFunnelCopy(locale: Locale): FunnelCopy {
     submit: isAr ? "أرسل الطلب" : "Send request",
     loading: isAr ? "جاري الإرسال…" : "Submitting…",
     success: isAr
-      ? "شكراً. استلمنا ملخص مشروعك. سيتواصل معك فريق توريفا خلال 24 ساعة."
-      : "Thank you. We received your project brief. The Turriva team will contact you within 24 hours.",
+      ? "شكراً. استلمنا تفاصيل مشروعك. سيتواصل معك فريق توريفا خلال 24 ساعة."
+      : "Thank you. We received your project details. The Turriva team will contact you within 24 hours.",
     error: isAr ? "تعذر الإرسال. يرجى المحاولة مرة أخرى أو التواصل عبر واتساب." : "Could not submit. Please try again or contact us on WhatsApp.",
     qualifiedNote: isAr
-      ? "الملخص جاهز للمتابعة. سنخصص مسؤولاً للتنفيذ."
-      : "Your brief looks ready for follow-up. We will assign a dedicated execution contact.",
+      ? "التفاصيل جاهزة للمتابعة. سنخصص مسؤولاً للتنفيذ."
+      : "Your details look ready for follow-up. We will assign a dedicated execution contact.",
     nextSteps: isAr
       ? [
-          "مراجعة الملخص والمرفقات خلال يوم عمل",
+          "مراجعة التفاصيل والمرفقات خلال يوم عمل",
           "اتصال أو واتساب لتأكيد النطاق والجدول",
           "اقتراح زيارة موقع أو جلسة مراجعة مخططات عند الحاجة",
         ]
       : [
-          "We review your brief and attachments within one business day",
+          "We review your details and attachments within one business day",
           "A call or WhatsApp to confirm scope and timeline",
           "Site visit or drawing review when needed",
         ],

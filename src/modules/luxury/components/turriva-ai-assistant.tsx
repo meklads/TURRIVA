@@ -45,7 +45,7 @@ function replyFor(locale: Locale, input: string): Reply {
     return {
       text: isAr
         ? "الجدول يعتمد على النطاق والاعتمادات وجاهزية الموقع. المشاريع العاجلة تُراجع كمسار أولوية عند ملاءمة المساحة والمخططات. أرسل موعد الجاهزية في نموذج المناقشة لنحدد المسار المناسب."
-        : "Timeline depends on scope, approvals, and site readiness. Urgent briefs are reviewed as a priority path when area and drawings fit. Share the ready-by date in the discussion form so we can define the right path.",
+        : "Timeline depends on scope, approvals, and site readiness. Urgent projects are reviewed as a priority path when area and drawings fit. Share the ready-by date in the discussion form so we can define the right path.",
       openDemo: true,
       timeline: /عاجل|urgent|أسبوع|week/.test(q) ? "urgent" : "1_3_months",
     };

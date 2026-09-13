@@ -108,7 +108,7 @@ const en: RepositionCopy = {
     eyebrow: "Flagship specialty",
     title: "Real estate sales environments that move interest to decision.",
     intro:
-      "For developers, the specialty is clear: sales galleries, show units, and launch spaces designed around what the buyer must understand and feel before opening day. The same execution path serves hotels, retail, and exhibitions when those briefs arrive.",
+      "For developers, the specialty is clear: sales galleries, show units, and launch spaces built around what the buyer must understand before opening day. The same execution path serves hotels, retail, and exhibitions when those projects arrive.",
     points: [
       {
         title: "Sales gallery and show villa",
@@ -136,8 +136,8 @@ const en: RepositionCopy = {
   products: {
     eyebrow: "Products",
     title: "Seven clear offers. One way of working.",
-    intro: "Each product has a defined job. Choose the door that matches your brief.",
-    frame: "We begin with the sales environment and marketing show unit. Broader interiors follow when the brief expands.",
+    intro: "Each product has a defined job. Choose the door that matches your project.",
+    frame: "We begin with the sales environment and marketing show unit. Broader interiors follow when the project expands.",
     tierPrimary: "Start here",
     tierSecondary: "Also available",
     learnMore: "Explore",
@@ -205,14 +205,14 @@ const en: RepositionCopy = {
       { title: "Factory coordination & QC", description: "Production tracking, quality checks, and logistics aligned to site." },
       { title: "Site installation", description: "Field coordination, install sequencing, and snagging." },
       { title: "Handover & aftercare", description: "Opening-ready delivery with a clear close-out path." },
-      { title: "Experience tools when needed", description: "Models, displays, and content only when they serve the brief." },
+      { title: "Experience tools when needed", description: "Models, displays, and content only when they serve the project." },
     ],
     cta: "Discuss your project",
   },
   featured: {
     eyebrow: "Flagship specialty",
     title: "The project is ready. Is the place of sale?",
-    body: "From sales gallery to show unit, we design and deliver the environment where your development meets its buyers. Scope follows your launch stage and how you sell.",
+    body: "From sales gallery to show unit, we deliver the environment where your development meets its buyers. Scope follows your launch stage and how you sell.",
     cta: "Real estate sales environments",
   },
   album: {
@@ -224,7 +224,7 @@ const en: RepositionCopy = {
     items: [
       { image: MWL_SELECTED_WORK_IMAGE, category: "Temporary fit-out", title: "MWL presentation hall, Jeddah", href: "/our-work/humanity-exhibition-mwl" },
       { image: PRODUCT_IMAGES.experience, category: "Permanent sales gallery", title: "Anan Eskan sales gallery, Riyadh", href: "/our-work/anan-eskan-sales-gallery" },
-      { image: "/brand/turriva/projects/al-rajhi/maquette.jpeg", category: "Smart maquette", title: "Al Rajhi architectural maquette", href: "/our-work/al-rajhi-maquette" },
+      { image: "/brand/turriva/projects/al-rajhi/maquette.jpeg", category: "Presentation maquette", title: "Al Rajhi architectural maquette", href: "/our-work/al-rajhi-maquette" },
       { image: "/brand/turriva/projects/rafal-pavilions.jpg", category: "Launch pavilions", title: "Rafal pavilions, Diriyah", href: "/our-work/rafal-pavilions" },
     ],
   },
@@ -238,7 +238,7 @@ const en: RepositionCopy = {
   },
   method: {
     eyebrow: "How we work",
-    title: "Understand the brief. Own the execution path. Hand over ready.",
+    title: "Understand the project. Own the execution path. Hand over ready.",
     intro: "A short path that keeps scope clear and the finished space true to what was approved.",
     steps: [
       { title: "Brief", body: "What must be delivered, for whom, and by when." },
@@ -267,7 +267,7 @@ const ar: RepositionCopy = {
     eyebrow: "التخصص الرئيسي",
     title: "بيئات البيع العقاري تنقل المشتري من الاهتمام إلى القرار.",
     intro:
-      "للمطورين التخصص واضح: صالات البيع ووحدات العرض ومساحات الإطلاق حول ما يجب أن يفهمه المشتري ويحسّ به قبل يوم الافتتاح. ونفس مسار التنفيذ يخدم الفنادق والتجزئة والمعارض حين تصل هذه الموجزات.",
+      "للمطورين التخصص واضح: صالات البيع ووحدات العرض ومساحات الإطلاق حول ما يجب أن يفهمه المشتري قبل يوم الافتتاح. ونفس مسار التنفيذ يخدم الفنادق والتجزئة والمعارض حين تصل هذه المشاريع.",
     points: [
       {
         title: "مركز البيع وفيلا العرض",
@@ -296,7 +296,7 @@ const ar: RepositionCopy = {
     eyebrow: "المنتجات",
     title: "سبعة عروض واضحة. أسلوب عمل واحد.",
     intro: "لكل منتج مهمة محددة. اختر الباب الذي يطابق احتياجك.",
-    frame: "نبدأ من بيئة البيع ووحدة العيّنة التسويقية. وتتسع المساحات الأخرى حين يتسع الموجز.",
+    frame: "نبدأ من بيئة البيع ووحدة العيّنة التسويقية. وتتسع المساحات الأخرى حين يتسع المشروع.",
     tierPrimary: "ابدأ من هنا",
     tierSecondary: "متاح أيضًا",
     learnMore: "استكشف",
@@ -364,14 +364,14 @@ const ar: RepositionCopy = {
       { title: "تنسيق مصنع وضبط جودة", description: "تتبع إنتاج وفحص جودة ولوجستيات متوافقة مع الموقع." },
       { title: "التركيب الميداني", description: "تنسيق موقع وتسلسل تركيب وإغلاق ملاحظات." },
       { title: "التسليم وما بعد التسليم", description: "جاهزية الافتتاح أو الاستخدام مع مسار إغلاق واضح." },
-      { title: "أدوات تجربة عند الحاجة", description: "مجسمات وشاشات ومحتوى فقط حين تخدم الموجز." },
+      { title: "أدوات تجربة عند الحاجة", description: "مجسمات وشاشات ومحتوى فقط حين تخدم المشروع." },
     ],
     cta: "ناقش مشروعك",
   },
   featured: {
     eyebrow: "التخصص الرئيسي",
     title: "المشروع جاهز. هل مكان البيع جاهز؟",
-    body: "من مركز البيع إلى وحدة العرض، نصمم وننفّذ البيئة التي يلتقي فيها مشروعك بعملائه. النطاق يتبع مرحلة الإطلاق وطريقة البيع.",
+    body: "من مركز البيع إلى وحدة العرض، ننفّذ البيئة التي يلتقي فيها مشروعك بعملائه. النطاق يتبع مرحلة الإطلاق وطريقة البيع.",
     cta: "بيئات البيع العقاري",
   },
   album: {
@@ -383,7 +383,7 @@ const ar: RepositionCopy = {
     items: [
       { image: MWL_SELECTED_WORK_IMAGE, category: "تجهيز مؤقت", title: "قاعة عرض الرابطة، جدة", href: "/our-work/humanity-exhibition-mwl" },
       { image: PRODUCT_IMAGES.experience, category: "صالة بيع دائمة", title: "صالة عرض عنان إسكان، الرياض", href: "/our-work/anan-eskan-sales-gallery" },
-      { image: "/brand/turriva/projects/al-rajhi/maquette.jpeg", category: "مجسم ذكي", title: "مجسم الراجحي المعماري", href: "/our-work/al-rajhi-maquette" },
+      { image: "/brand/turriva/projects/al-rajhi/maquette.jpeg", category: "مجسم عرض", title: "مجسم الراجحي المعماري", href: "/our-work/al-rajhi-maquette" },
       { image: "/brand/turriva/projects/rafal-pavilions.jpg", category: "أجنحة إطلاق", title: "أجنحة رفال، الدرعية", href: "/our-work/rafal-pavilions" },
     ],
   },
@@ -397,10 +397,10 @@ const ar: RepositionCopy = {
   },
   method: {
     eyebrow: "كيف نعمل",
-    title: "نفهم الموجز. نملك مسار التنفيذ. نسلّم جاهزاً.",
+    title: "نفهم المشروع. نملك مسار التنفيذ. نسلّم جاهزاً.",
     intro: "مسار قصير يحفظ وضوح النطاق ويُبقي المساحة المكتملة مطابقة لما اعتُمد.",
     steps: [
-      { title: "الموجز", body: "ماذا يجب تسليمه، ولمن، ومتى." },
+      { title: "الاحتياج", body: "ماذا يجب تسليمه، ولمن، ومتى." },
       { title: "الموقع والمخططات", body: "القيود والمراجع وما هو قائم أصلاً." },
       { title: "النطاق والعرض", body: "حدود واضحة قبل بدء التصنيع." },
       { title: "التنفيذ", body: "توريد وتصنيع وتركيب وفق الحزمة المعتمدة." },

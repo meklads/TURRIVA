@@ -141,7 +141,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     bodyEn:
       "A permanent sales environment for Anan Eskan in Riyadh. Unlike a temporary exhibition hall, this brief required durable gallery décor and a lasting presentation path buyers walk every day. The owned scope was décor design and build, fabrication of display models, and on-site fit-out to opening readiness—one accountable path from approved intent to a space that can host presentations without a short-run teardown. Documented under Graphics House; field delivery by the same team now under Turriva.",
     bodyAr:
-      "بيئة بيع دائمة لعنان إسكان في الرياض. بخلاف قاعة العرض المؤقتة، تطلب الموجز ديكور صالة ثابتاً ومسار عرض دائماً يمشي فيه المشترون يومياً. النطاق الذي ملكناه: تصميم وتنفيذ الديكور، وتصنيع مجسمات العرض، والتجهيز الميداني حتى جاهزية الافتتاح—مسار مسؤولية واحد من النية المعتمدة إلى مساحة تستضيف العروض دون تفكيك قصير الأمد. موثّق تحت جرافيكس هاوس؛ والتنفيذ الميداني لنفس الفريق تحت توريفا اليوم.",
+      "بيئة بيع دائمة لعنان إسكان في الرياض. بخلاف قاعة العرض المؤقتة، تطلّب المشروع ديكور صالة ثابتاً ومسار عرض دائماً يمشي فيه المشترون يومياً. النطاق الذي ملكناه: تصميم وتنفيذ الديكور، وتصنيع مجسمات العرض، والتجهيز الميداني حتى جاهزية الافتتاح—مسار مسؤولية واحد من النية المعتمدة إلى مساحة تستضيف العروض دون تفكيك قصير الأمد. موثّق تحت جرافيكس هاوس؛ والتنفيذ الميداني لنفس الفريق تحت توريفا اليوم.",
     heroTaglineEn: "Permanent gallery décor. Built for daily buyer presentations.",
     heroTaglineAr: "ديكور صالة دائمة. مبني لعروض المشترين اليومية.",
     gallery: [
@@ -208,11 +208,11 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     attribution: "team",
     delivery: "field_execution",
-    featured: true,
+    featured: false,
     slug: "al-rajhi-maquette",
     image: "/brand/turriva/projects/al-rajhi/maquette.jpeg",
-    categoryEn: "Smart architectural maquette",
-    categoryAr: "مجسم معماري ذكي",
+    categoryEn: "Presentation maquette",
+    categoryAr: "مجسم عرض",
     titleEn: "Al Rajhi · Architectural Maquette",
     titleAr: "الراجحي · مجسم معماري",
     locationEn: "Saudi Arabia",
@@ -229,8 +229,6 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     heroTaglineAr: "مجسم مادي يمسك الغرفة في لحظة العرض.",
     gallery: [
       "/brand/turriva/projects/al-rajhi/maquette.jpeg",
-      "/brand/turriva/projects/al-rajhi/visual.jpg",
-      "/brand/turriva/projects/al-rajhi/naseem-aerial.jpg",
     ],
     servicesEn: ["Architectural maquette", "Presentation model craft", "Handover"],
     servicesAr: ["مجسم معماري", "حرفية نموذج عرض", "تسليم"],

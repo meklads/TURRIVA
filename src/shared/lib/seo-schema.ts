@@ -188,25 +188,25 @@ export function productPackagesSchema(locale: Locale) {
   const isAr = locale === "ar";
   const products = [
     {
-      name: isAr ? "نظام الإطلاق السريع" : "Express Launch",
+      name: isAr ? "بيئات البيع العقاري" : "Real Estate Sales Environments",
       description: isAr
-        ? "صالات بيع ووحدات عرض جاهزة خلال أقل من 3 أسابيع بنطاق واضح."
-        : "Turnkey sales galleries and show units in under 3 weeks on a clear scope.",
+        ? "صالات بيع ووحدات عرض ومساحات إطلاق: تطوير فني وتصنيع وتركيب وتسليم جاهز للافتتاح."
+        : "Sales galleries, show units, and launch spaces: technical development, fabrication, installation, and opening-ready handover.",
       url: `${TURRIVA_PUBLIC_URL}${localizePath("/real-estate-experience", locale)}`,
     },
     {
-      name: isAr ? "المنظومة التفاعلية القيادية" : "Flagship Spatial System",
+      name: isAr ? "وحدة العرض" : "Show Unit",
       description: isAr
-        ? "تكامل مجسمات حركية وشاشات لمس وسينما مكانية في بيئة البيع."
-        : "Kinetic models, touch displays, and spatial cinema integrated in the sales room.",
-      url: `${TURRIVA_PUBLIC_URL}${localizePath("/real-estate-experience", locale)}`,
-    },
-    {
-      name: isAr ? "حلول المبيعات الرقمية" : "PropTech Sales Engine",
-      description: isAr
-        ? "أدوات رقمية لدعم فريق المبيعات مرتبطة بالمكان عبر منظومة المجموعة."
-        : "Digital sales tools tied to the spatial environment via the group ecosystem.",
+        ? "فيلا أو شقة عيّنة بمعيار المشروع: تجهيز وتأثيث وتسليم لمسار يمشي فيه المشتري."
+        : "Show villa or apartment to the project standard: fit-out, furnishing, and handover for a path the buyer can walk.",
       url: `${TURRIVA_PUBLIC_URL}${localizePath("/show-unit", locale)}`,
+    },
+    {
+      name: isAr ? "التنفيذ والتجهيز" : "Fit-Out & Execution",
+      description: isAr
+        ? "من المخططات المعتمدة إلى التصنيع والتركيب والتسليم، لشريك تسليم مكاني لا مكتب تصميم."
+        : "From approved drawings through fabrication, installation, and handover — a spatial delivery partner, not a design firm.",
+      url: `${TURRIVA_PUBLIC_URL}${localizePath("/fit-out", locale)}`,
     },
   ];
 
@@ -217,7 +217,7 @@ export function productPackagesSchema(locale: Locale) {
     description: p.description,
     brand: { "@type": "Brand", name: "Turriva" },
     url: p.url,
-    category: "Real Estate Sales Environment",
+    category: "Spatial Execution & Physical Delivery",
   }));
 }
 
@@ -226,7 +226,7 @@ export function softwareApplicationSchema(locale: Locale) {
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: isAr ? "مستشار مبيعات توريفا" : "Turriva Sales Consultant",
+    name: isAr ? "مساعد توريفا" : "Turriva Assistant",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     offers: {
@@ -235,8 +235,8 @@ export function softwareApplicationSchema(locale: Locale) {
       priceCurrency: "SAR",
     },
     description: isAr
-      ? "مساعد محادثة لمساعدة المطورين على اختيار باقة الإطلاق وحجز عرض حي."
-      : "A chat assistant that helps developers choose a launch package and book a live demo.",
+      ? "مساعد محادثة يوضح التنفيذ المكاني وبيئات البيع ومسار التسليم، ويفتح مناقشة المشروع عند الحاجة."
+      : "A chat assistant that explains spatial execution, sales environments, and the delivery path, and opens a project discussion when needed.",
     inLanguage: [isAr ? "ar" : "en", "ar", "en"],
   };
 }

@@ -147,7 +147,7 @@ const en: RenovationCopy = {
     title: "Assess first. Then design and build.",
     steps: [
       { title: "Assess", body: "We inspect the space, its condition, and the requirements of the intended use." },
-      { title: "Define", body: "We agree what remains, what changes, and the scope needed to achieve the brief." },
+      { title: "Define", body: "We agree what remains, what changes, and the scope needed to achieve the goal." },
       { title: "Design", body: "We develop the layout, materials, lighting, and details for approval." },
       { title: "Build", body: "We manage selective removal, procurement, fabrication, installation, and coordination." },
       { title: "Deliver", body: "We review quality, close snags, and hand over the renewed space." },
@@ -155,7 +155,7 @@ const en: RenovationCopy = {
   },
   related: {
     title: "Choose the right service",
-    body: "New interiors from an initial brief follow design and build. New stores and restaurants belong under commercial spaces. New hotels follow hospitality. Approved designs that only need execution belong under fit-out.",
+    body: "New interiors from an initial need follow design and build. New stores and restaurants belong under commercial spaces. New hotels follow hospitality. Approved designs that only need execution belong under fit-out.",
     links: [
       { href: "/design-build", label: "Design and build" },
       { href: "/commercial-spaces", label: "Commercial spaces" },
@@ -267,7 +267,7 @@ const ar: RenovationCopy = {
     title: "نقيّم أولاً. ثم نصمم وننفذ.",
     steps: [
       { title: "المعاينة", body: "نفحص المساحة وحالتها ومتطلبات الاستخدام المقصود." },
-      { title: "التحديد", body: "نتفق على ما سيبقى وما سيتغير والنطاق اللازم لتحقيق الموجز." },
+      { title: "التحديد", body: "نتفق على ما سيبقى وما سيتغير والنطاق اللازم لتحقيق الهدف." },
       { title: "التصميم", body: "نطور التخطيط والمواد والإضاءة والتفاصيل للاعتماد." },
       { title: "التنفيذ", body: "ندير الإزالة الانتقائية والتوريد والتصنيع والتركيب والتنسيق." },
       { title: "التسليم", body: "نراجع الجودة ونغلق الملاحظات ونسلم المساحة المجددة." },
@@ -275,7 +275,7 @@ const ar: RenovationCopy = {
   },
   related: {
     title: "اختر الخدمة المناسبة",
-    body: "تتبع المساحات الداخلية الجديدة من موجز أولي خدمة التصميم والتنفيذ. وتندرج المتاجر والمطاعم الجديدة ضمن المساحات التجارية، والفنادق الجديدة ضمن الضيافة. أما التصاميم المعتمدة التي تحتاج إلى تنفيذ فقط فتندرج ضمن التنفيذ والتجهيز.",
+    body: "تتبع المساحات الداخلية الجديدة من احتياج أولي خدمة التصميم والتنفيذ. وتندرج المتاجر والمطاعم الجديدة ضمن المساحات التجارية، والفنادق الجديدة ضمن الضيافة. أما التصاميم المعتمدة التي تحتاج إلى تنفيذ فقط فتندرج ضمن التنفيذ والتجهيز.",
     links: [
       { href: "/design-build", label: "التصميم والتنفيذ" },
       { href: "/commercial-spaces", label: "المساحات التجارية" },

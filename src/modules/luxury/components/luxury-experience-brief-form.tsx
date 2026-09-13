@@ -163,8 +163,8 @@ export function LuxuryExperienceBriefForm({
   if (status === "success") {
     const waHref = buildWhatsAppHref(
       locale === "ar"
-        ? `مرحباً توريفا، أرسلت ملخصاً عن ${productLabel}. الشركة: ${company}. الاسم: ${name}.`
-        : `Hello Turriva, I submitted a brief for ${productLabel}. Company: ${company}. Name: ${name}.`
+        ? `مرحباً توريفا، أرسلت تفاصيل مشروع عن ${productLabel}. الشركة: ${company}. الاسم: ${name}.`
+        : `Hello Turriva, I submitted project details for ${productLabel}. Company: ${company}. Name: ${name}.`
     );
 
     return (

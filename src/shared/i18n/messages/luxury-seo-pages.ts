@@ -210,7 +210,7 @@ const en: LuxurySeoMessages = {
           },
           {
             q: "Can Bees Motion handle marketing for my project?",
-            a: "Bees Motion provides marketing strategy, campaigns, and creative production. It can join a Turriva project when the brief also includes launch or communication support.",
+            a: "Bees Motion provides marketing strategy, campaigns, and creative production. It can join a Turriva project when launch or communication support is also needed.",
           },
         ],
       },
@@ -351,7 +351,7 @@ const en: LuxurySeoMessages = {
     eyebrow: "Tasami Group ecosystem",
     title: "One company, wider support when needed",
     intro:
-      "Turriva owns spatial execution and physical delivery. Graphics House supports visualisation, while Bees Motion supports launch and communication. Contract Turriva alone; the group joins only when the brief needs it.",
+      "Turriva owns spatial execution and physical delivery. Graphics House supports visualisation, while Bees Motion supports launch and communication. Contract Turriva alone; the group joins only when the project needs it.",
     companies: [
       {
         name: "Graphics House",
@@ -437,8 +437,8 @@ const en: LuxurySeoMessages = {
     resourcesTitle: "Technical briefs",
     downloadLabel: "Download",
     nextStepsTitle: "Planning a project?",
-    nextStepsIntro: "Send your drawings or a structured brief, and our team will review the requirements with you.",
-    nextStepsBrief: "Send your project brief",
+    nextStepsIntro: "Send your drawings or a clear project note, and our team will review the requirements with you.",
+    nextStepsBrief: "Discuss your project",
     nextStepsPortfolio: "View the portfolio",
     groupNote: "Turriva is part of Tasami Group. Explore the wider group at",
     groupLink: "Tasami Group",
@@ -753,8 +753,8 @@ const ar: LuxurySeoMessages = {
     resourcesTitle: "الملخصات الفنية",
     downloadLabel: "تحميل",
     nextStepsTitle: "هل تخطط لمشروع؟",
-    nextStepsIntro: "أرسل مخططاتك أو موجزاً منظماً، وسيراجع فريقنا المتطلبات معك.",
-    nextStepsBrief: "أرسل موجز المشروع",
+    nextStepsIntro: "أرسل مخططاتك أو تفاصيل واضحة عن المشروع، وسيراجع فريقنا المتطلبات معك.",
+    nextStepsBrief: "ناقش مشروعك",
     nextStepsPortfolio: "عرض ملف الأعمال",
     groupNote: "توريفا جزء من مجموعة تسامي. تعرّف على المجموعة عبر",
     groupLink: "مجموعة تسامي",

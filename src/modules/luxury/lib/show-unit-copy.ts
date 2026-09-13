@@ -137,7 +137,7 @@ const en: ShowUnitCopy = {
   },
   method: {
     eyebrow: "Our process",
-    title: "From brief to viewing.",
+    title: "From scope to viewing.",
     steps: [
       { title: "Understand", body: "We review the project, unit, audience, programme, and purpose of the viewing." },
       { title: "Design", body: "We define the spatial approach, materials, lighting, furniture, and key details." },
@@ -149,7 +149,7 @@ const en: ShowUnitCopy = {
   audience: {
     eyebrow: "Who we work with",
     title: "For residential developers.",
-    body: "For projects requiring a show villa, apartment, or suite. We can work from an initial brief or review existing drawings.",
+    body: "For projects requiring a show villa, apartment, or suite. We can work from an initial scope note or review existing drawings.",
     trust: "TURRIVA brings technical development, fabrication, installation, and handover into one accountable delivery team.",
   },
   close: {
@@ -233,7 +233,7 @@ const ar: ShowUnitCopy = {
   },
   method: {
     eyebrow: "منهج العمل",
-    title: "من الموجز إلى الزيارة.",
+    title: "من النطاق إلى الزيارة.",
     steps: [
       { title: "الفهم", body: "نراجع المشروع والوحدة والجمهور والبرنامج وهدف الزيارة." },
       { title: "التصميم", body: "نحدّد التوجّه المكاني والمواد والإضاءة والأثاث والتفاصيل الرئيسية." },
@@ -245,7 +245,7 @@ const ar: ShowUnitCopy = {
   audience: {
     eyebrow: "نعمل مع",
     title: "مطوري المشاريع السكنية.",
-    body: "للمشاريع التي تحتاج إلى فيلا أو شقة أو جناح عرض. يمكننا البدء من موجز أولي أو مراجعة مخططات قائمة.",
+    body: "للمشاريع التي تحتاج إلى فيلا أو شقة أو جناح عرض. يمكننا البدء من تفاصيل أولية أو مراجعة مخططات قائمة.",
     trust: "تجمع توريفا التطوير الفني والتصنيع والتركيب والتسليم ضمن فريق تسليم واحد بمسؤولية واضحة.",
   },
   close: {

@@ -110,7 +110,9 @@ export function getConversionCopy(locale: Locale) {
     ctaDemo: isAr ? "ناقش مشروعك" : "Discuss your project",
     ctaDemoEn: "Discuss your project",
     ctaExplore: isAr ? "استكشف ما نقدّمه" : "Explore what we deliver",
-    logoLabel: isAr ? "يثق بنا مطورون ومؤسسات وعلامات رائدة" : "Trusted by developers, institutions, and leading brands",
+    logoLabel: isAr
+      ? "مطورون ومؤسسات وعلامات عملنا معها ضمن منظومة المجموعة"
+      : "Developers, institutions, and brands served across the group",
     tiersEyebrow: isAr ? "التخصص ثم القدرة" : "Specialty, then capacity",
     tiersTitle: isAr
       ? "بيئات البيع العقاري كسلاح متخصص. والتنفيذ المكاني الأوسع يثبت القدرة."

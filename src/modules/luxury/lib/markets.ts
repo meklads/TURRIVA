@@ -40,8 +40,8 @@ export const MARKETS: readonly Market[] = [
     titleAr: "الأسواق الدولية",
     summaryEn: "Selected programmes beyond the GCC, coordinated from the Cairo office and from Turriva.",
     summaryAr: "برامج مختارة خارج الخليج، عبر مكتب القاهرة وفرق مشاريع منسّقة من مقر توريفا.",
-    pointsEn: ["Cairo office", "Export-ready joinery packages", "Brief-led engagement for overseas developers"],
-    pointsAr: ["مكتب القاهرة", "حزم نجارة جاهزة للتصدير", "تعامل مبني على الملخص للمطورين خارج المنطقة"],
+    pointsEn: ["Cairo office", "Export-ready joinery packages", "Scope-led engagement for overseas developers"],
+    pointsAr: ["مكتب القاهرة", "حزم نجارة جاهزة للتصدير", "تعامل مبني على نطاق واضح للمطورين خارج المنطقة"],
     intent: "quote",
   },
 ] as const;

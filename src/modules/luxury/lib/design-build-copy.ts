@@ -78,7 +78,7 @@ const en: DesignBuildCopy = {
   hero: {
     eyebrow: "Design and build",
     title: "From approved intent to finished space.",
-    body: "We bring technical development, supply, installation, and handover into one coordinated process. One team remains responsible from the first brief to the completed space.",
+    body: "We bring technical development, supply, installation, and handover into one coordinated process. One team remains responsible from the first conversation to the completed space.",
     cta: "Discuss your project",
     secondary: "Send drawings",
   },
@@ -86,7 +86,7 @@ const en: DesignBuildCopy = {
     eyebrow: "Why one team",
     title: "Good design needs clear delivery.",
     body: "When design, procurement, and site execution are disconnected, details can be lost between approval and installation. A coordinated team keeps each stage aligned.",
-    points: ["One clear brief", "Details resolved before fabrication", "Continuity from concept to handover"],
+    points: ["One clear project need", "Details resolved before fabrication", "Continuity from concept to handover"],
   },
   definition: {
     eyebrow: "The service",
@@ -98,7 +98,7 @@ const en: DesignBuildCopy = {
     eyebrow: "Starting point",
     title: "Begin with an idea.",
     items: [
-      { title: "An initial brief", body: "Share the space, its purpose, your priorities, and the budget range. We develop the design and carry it through delivery." },
+      { title: "An initial scope", body: "Share the space, its purpose, your priorities, and the budget range. We develop the design and carry it through delivery." },
       {
         title: "Approved drawings",
         body: "If the design is complete, we can develop it for site and execute it through our fit-out service. The original designer remains the design authority.",
@@ -153,7 +153,7 @@ const en: DesignBuildCopy = {
   audience: {
     eyebrow: "Who we work with",
     title: "For clients starting with an idea.",
-    body: "For villas, private residences, and selected spaces that need both design and delivery. We begin with the brief and remain involved through handover.",
+    body: "For villas, private residences, and selected spaces that need both design and delivery. We begin with the project need and remain involved through handover.",
     trust: "TURRIVA brings technical development, fabrication, installation, and handover into one accountable delivery team.",
   },
   close: {
@@ -181,7 +181,7 @@ const ar: DesignBuildCopy = {
   hero: {
     eyebrow: "التصميم والتنفيذ",
     title: "من النية المعتمدة إلى مساحة مكتملة.",
-    body: "نجمع التطوير الفني والتوريد والتركيب والتسليم ضمن عملية واحدة منسقة. ويتولى فريق واحد المسؤولية من الموجز الأول حتى اكتمال المساحة.",
+    body: "نجمع التطوير الفني والتوريد والتركيب والتسليم ضمن عملية واحدة منسقة. ويتولى فريق واحد المسؤولية من أول محادثة حتى اكتمال المساحة.",
     cta: "ناقش مشروعك",
     secondary: "أرسل المخططات",
   },
@@ -189,7 +189,7 @@ const ar: DesignBuildCopy = {
     eyebrow: "لماذا فريق واحد؟",
     title: "التصميم الجيد يحتاج إلى تنفيذ واضح.",
     body: "عندما تنفصل مراحل التصميم والتوريد والتنفيذ، قد تضيع التفاصيل بين الاعتماد والتركيب. يحافظ الفريق المنسق على ترابط جميع المراحل.",
-    points: ["موجز واحد وواضح", "حسم التفاصيل قبل التصنيع", "استمرارية من الفكرة إلى التسليم"],
+    points: ["احتياج واحد وواضح", "حسم التفاصيل قبل التصنيع", "استمرارية من الفكرة إلى التسليم"],
   },
   definition: {
     eyebrow: "الخدمة",
@@ -201,7 +201,7 @@ const ar: DesignBuildCopy = {
     eyebrow: "نقطة البداية",
     title: "ابدؤوا بفكرة.",
     items: [
-      { title: "موجز أولي", body: "شاركونا المساحة والغرض منها وأولوياتكم ونطاق الميزانية. نطوّر التصميم ونتولى تنفيذه حتى التسليم." },
+      { title: "نطاق أولي", body: "شاركونا المساحة والغرض منها وأولوياتكم ونطاق الميزانية. نطوّر التصميم ونتولى تنفيذه حتى التسليم." },
       {
         title: "مخططات معتمدة",
         body: "إذا اكتمل التصميم، يمكننا تطويره للموقع وتنفيذه عبر خدمة التجهيز والتنفيذ. ويظل المصمم الأصلي مرجع التصميم.",
@@ -256,7 +256,7 @@ const ar: DesignBuildCopy = {
   audience: {
     eyebrow: "نعمل مع",
     title: "عملاء يبدأون بفكرة.",
-    body: "للفلل والمساكن الخاصة والمساحات المختارة التي تحتاج إلى التصميم والتنفيذ معاً. نبدأ من الموجز ونواصل العمل حتى التسليم.",
+    body: "للفلل والمساكن الخاصة والمساحات المختارة التي تحتاج إلى التصميم والتنفيذ معاً. نبدأ من الاحتياج ونواصل العمل حتى التسليم.",
     trust: "تجمع توريفا التطوير الفني والتصنيع والتركيب والتسليم ضمن فريق تسليم واحد بمسؤولية واضحة.",
   },
   close: {

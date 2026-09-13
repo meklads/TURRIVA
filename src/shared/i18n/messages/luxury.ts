@@ -387,7 +387,7 @@ const en: LuxuryMessages = {
         title: "Exhibition & booth builds",
         description:
           "Campaign-ready stands: concept, fabrication, on-site dressing, and strike when the event ends.",
-        cta: "Send a brief",
+        cta: "Discuss your project",
         href: "/contact",
       },
     ],
@@ -431,7 +431,7 @@ const en: LuxuryMessages = {
     title: "From first meeting to handover",
     steps: [
       {
-        title: "Listen & brief",
+        title: "Listen & scope",
         description: "We visit or workshop your needs, lifestyle, programme, and how you measure success.",
       },
       {
@@ -754,7 +754,7 @@ const en: LuxuryMessages = {
         ],
       },
       steps: [
-        { title: "Programme brief", description: "Unit mix, BOQ scope, sample boards, and delivery phasing agreed upfront." },
+        { title: "Programme scope", description: "Unit mix, BOQ scope, sample boards, and delivery phasing agreed upfront." },
         { title: "Shop drawings", description: "Execution drawings from the approved design, on an agreed timeline." },
         { title: "Manufacture & import", description: "Made to the drawings. Conformity marks stay with the supplier." },
         { title: "Phased install", description: "Turriva site teams, snagging lists, and handover documentation per phase." },
@@ -809,7 +809,7 @@ const en: LuxuryMessages = {
           },
           {
             q: "How do we start?",
-            a: "Submit the brief below with unit count and product scope, or email info@turriva.com with your programme schedule.",
+            a: "Submit the form below with unit count and product scope, or email info@turriva.com with your programme schedule.",
           },
         ],
       },
@@ -1301,7 +1301,7 @@ const ar: LuxuryMessages = {
           },
           {
             title: "خزائن الفنادق والخدم",
-            description: "وحدات متكررة لأجنحة الضيوف ومخازن back-of-house في مشاريع الضيافة boutique.",
+            description: "وحدات متكررة لأجنحة الضيوف ومخازن المناطق الخلفية في مشاريع الضيافة البوتيكية.",
           },
           {
             title: "وحدات متوافقة مع المصنع",
@@ -1386,7 +1386,7 @@ const ar: LuxuryMessages = {
         ],
       },
       steps: [
-        { title: "ملخص البرنامج", description: "مزيج الوحدات، نطاق BOQ، لوحات العينات، وجدول التسليم." },
+        { title: "نطاق البرنامج", description: "مزيج الوحدات، نطاق BOQ، لوحات العينات، وجدول التسليم." },
         { title: "مخططات تنفيذ", description: "رسومات تنفيذ من التصميم المعتمد، ضمن جدول متفق عليه." },
         { title: "تصنيع واستيراد", description: "يُصنع وفق المخططات. علامات المطابقة تبقى لدى المورّد." },
         { title: "تركيب مرحلي", description: "فرق موقع توريفا، قوائم ملاحظات، ووثائق تسليم لكل مرحلة." },
@@ -1441,7 +1441,7 @@ const ar: LuxuryMessages = {
           },
           {
             q: "كيف نبدأ؟",
-            a: "أرسل الملخص أدناه مع عدد الوحدات، أو راسل info@turriva.com مع جدول البرنامج.",
+            a: "أرسل تفاصيل المشروع أدناه مع عدد الوحدات، أو راسل info@turriva.com مع جدول البرنامج.",
           },
         ],
       },
@@ -1460,7 +1460,7 @@ const ar: LuxuryMessages = {
     },
     design: {
       title: "استشارة تصميم",
-      intro: "شاركنا مخططك، فريق الاستوديو يُعد تخطيطات متوافقة مع المصنع وجلسة مراجعة للعينات. بدون رفع صور أونلاين.",
+      intro: "شاركنا مخططك، ويُعد فريق التنفيذ تخطيطات متوافقة مع المصنع وجلسة مراجعة للعينات. بدون رفع صور أونلاين.",
     },
     styles: {
       title: "اتجاهات الأنماط",

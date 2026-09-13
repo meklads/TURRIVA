@@ -7,6 +7,7 @@ import { useConversionActions } from "./luxury-conversion-provider";
 import { trackMarketingEvent } from "@/shared/lib/marketing-events";
 
 type ProjectKind = "residential" | "commercial" | "mixed" | "event";
+type DeliveryPath = "priority" | "full";
 
 type Props = { locale: Locale };
 
@@ -15,10 +16,9 @@ function estimate(kind: ProjectKind, areaM2: number, daysToLaunch: number) {
     kind === "event" ? 14 : kind === "residential" ? 18 : kind === "commercial" ? 21 : 24;
   const areaFactor = areaM2 > 400 ? 7 : areaM2 > 200 ? 4 : 0;
   const deliveryDays = Math.min(baseDays + areaFactor, Math.max(12, daysToLaunch - 3));
-  const packageId: "express" | "flagship" =
-    areaM2 >= 250 || kind === "mixed" || kind === "commercial" ? "flagship" : "express";
-  const engagementLift = packageId === "flagship" ? "35–55%" : "20–35%";
-  return { deliveryDays, packageId, engagementLift };
+  const pathId: DeliveryPath =
+    areaM2 >= 250 || kind === "mixed" || kind === "commercial" ? "full" : "priority";
+  return { deliveryDays, pathId };
 }
 
 export function ProjectRoiCalculator({ locale }: Props) {
@@ -44,12 +44,21 @@ export function ProjectRoiCalculator({ locale }: Props) {
         { id: "event", label: "Event launch" },
       ];
 
+  const pathLabel =
+    result.pathId === "priority"
+      ? isAr
+        ? "مسار أولوية (نطاق واضح)"
+        : "Priority path (clear scope)"
+      : isAr
+        ? "مسار تسليم كامل"
+        : "Full delivery path";
+
   function onCalculateCta() {
     trackMarketingEvent("roi_calculator_used", {
       kind,
       area,
       daysToLaunch,
-      packageId: result.packageId,
+      packageId: result.pathId,
       deliveryDays: result.deliveryDays,
     });
 
@@ -69,8 +78,8 @@ export function ProjectRoiCalculator({ locale }: Props) {
       timeline,
       source: "roi_calculator",
       note: isAr
-        ? `حاسبة الإطلاق: ${kinds.find((k) => k.id === kind)?.label} · ${area} م² · تسليم تقديري ${result.deliveryDays} يوماً · باقة ${result.packageId === "express" ? "Express Launch" : "Flagship System"}`
-        : `Launch calculator: ${kinds.find((k) => k.id === kind)?.label} · ${area} m² · est. ${result.deliveryDays} days · ${result.packageId === "express" ? "Express Launch" : "Flagship System"}`,
+        ? `حاسبة الإطلاق: ${kinds.find((k) => k.id === kind)?.label} · ${area} م² · تسليم تقديري ${result.deliveryDays} يوماً · ${pathLabel}`
+        : `Launch calculator: ${kinds.find((k) => k.id === kind)?.label} · ${area} m² · est. ${result.deliveryDays} days · ${pathLabel}`,
     });
   }
 
@@ -81,12 +90,12 @@ export function ProjectRoiCalculator({ locale }: Props) {
           <div className="lux-section-intro">
             <p className="lux-eyebrow">{isAr ? "حاسبة الإطلاق" : "Launch calculator"}</p>
             <h2 id="lux-roi-title" className="lux-display lux-heading mt-3">
-              {isAr ? "قدّر جدول الإطلاق والباقة المناسبة." : "Estimate launch timing and the right package."}
+              {isAr ? "قدّر جدول الإطلاق ومسار التسليم المناسب." : "Estimate launch timing and the right delivery path."}
             </h2>
             <p className="lux-body mt-4 text-lux-ink-soft">
               {isAr
-                ? "أداة سريعة للمطورين: نوع المشروع، مساحة الصالة، وموعد الإطلاق — ثم توصية باقة ومدة تسليم تقريبية."
-                : "A fast tool for developers: project type, gallery area, and launch window — then a package recommendation and approximate delivery."}
+                ? "أداة سريعة للمطورين: نوع المشروع، مساحة الصالة، وموعد الإطلاق — ثم مسار تسليم ومدة تقريبية. ليست باقة منتجات جاهزة."
+                : "A fast tool for developers: project type, gallery area, and launch window — then a delivery path and approximate timing. Not a fixed product package."}
             </p>
           </div>
 
@@ -138,21 +147,19 @@ export function ProjectRoiCalculator({ locale }: Props) {
                 <p className="lux-roi__stat-label">{isAr ? "جدول تسليم تقديري" : "Estimated delivery"}</p>
               </div>
               <div className="lux-roi__stat">
-                <p className="lux-roi__stat-value">
-                  {result.packageId === "express" ? "Express Launch" : "Flagship Spatial System"}
-                </p>
-                <p className="lux-roi__stat-label">{isAr ? "الباقة الموصى بها" : "Recommended package"}</p>
+                <p className="lux-roi__stat-value">{pathLabel}</p>
+                <p className="lux-roi__stat-label">{isAr ? "المسار الموصى به" : "Recommended path"}</p>
               </div>
               <div className="lux-roi__stat">
-                <p className="lux-roi__stat-value">{result.engagementLift}</p>
+                <p className="lux-roi__stat-value">{isAr ? "وفق النطاق" : "Scope-led"}</p>
                 <p className="lux-roi__stat-label">
-                  {isAr ? "رفع تفاعلي تقديري في بيئة البيع" : "Est. engagement lift in the sales room"}
+                  {isAr ? "التكلفة والجدول يتبعان المخططات والموقع" : "Cost and timing follow drawings and site"}
                 </p>
               </div>
             </div>
 
             <button type="button" className="lux-btn-primary lux-roi__cta" onClick={onCalculateCta}>
-              {isAr ? "احصل على عرض تفصيلي لهذه الحسبة" : "Get detailed proposal for this calculation"}
+              {isAr ? "ناقش مشروعك بهذه الحسبة" : "Discuss your project with this estimate"}
             </button>
           </div>
         </div>

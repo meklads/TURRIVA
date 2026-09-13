@@ -158,7 +158,7 @@ const en: LuxuryPlatformMessages = {
     eyebrow: "Part of Tasami Group",
     title: "Turriva, supported when needed",
     body:
-      "Turriva is a spatial execution and physical delivery company. Contract Turriva alone. Graphics House or Bees Motion join only when the brief also needs visualisation or launch support.",
+      "Turriva is a spatial execution and physical delivery company. Contract Turriva alone. Graphics House or Bees Motion join only when the project also needs visualisation or launch support.",
     flow: "Create → Grow → Execute",
     groupLink: "Discover Tasami Group",
     companies: [
@@ -225,7 +225,7 @@ const en: LuxuryPlatformMessages = {
   inspiration: {
     eyebrow: "Ideas",
     title: "Inspiration by space",
-    subtitle: "Explore kitchens, wardrobes, living spaces, and considered style directions for your brief.",
+    subtitle: "Explore kitchens, wardrobes, living spaces, and considered style directions for your project.",
     stylesLink: "Style directions",
     items: [
       {
@@ -320,7 +320,7 @@ const en: LuxuryPlatformMessages = {
       },
       {
         q: "How do I start?",
-        a: "Send your drawings or a clear project brief. We will review the requirements and arrange a conversation about scope, programme, and next steps.",
+        a: "Send your drawings or a clear project note. We will review the requirements and arrange a conversation about scope, programme, and next steps.",
       },
     ],
   },
@@ -445,7 +445,7 @@ const ar: LuxuryPlatformMessages = {
     eyebrow: "جزء من مجموعة تسامي",
     title: "توريفا، بدعم عند الحاجة",
     body:
-      "توريفا شركة تنفيذ مكاني وتسليم مادي. تعاقد مع توريفا وحدها. جرافيكس هاوس أو Bees Motion تُستدعى فقط حين يحتاج الموجز التصور البصري أو دعم الإطلاق.",
+      "توريفا شركة تنفيذ مكاني وتسليم مادي. تعاقد مع توريفا وحدها. جرافيكس هاوس أو Bees Motion تُستدعى فقط حين يحتاج المشروع التصور البصري أو دعم الإطلاق.",
     flow: "خلق ← نمو ← تنفيذ",
     groupLink: "اكتشف مجموعة تسامي",
     companies: [
@@ -512,7 +512,7 @@ const ar: LuxuryPlatformMessages = {
   inspiration: {
     eyebrow: "إلهام",
     title: "أفكار حسب المساحة",
-    subtitle: "استكشف المطابخ والخزائن ومساحات المعيشة واتجاهات تصميمية مدروسة لموجزك.",
+    subtitle: "استكشف المطابخ والخزائن ومساحات المعيشة واتجاهات تصميمية مدروسة لمشروعك.",
     stylesLink: "اتجاهات الأنماط",
     items: [
       {
@@ -607,7 +607,7 @@ const ar: LuxuryPlatformMessages = {
       },
       {
         q: "كيف أبدأ؟",
-        a: "أرسل المخططات أو موجزاً واضحاً للمشروع. نراجع المتطلبات ثم نرتب نقاشاً حول النطاق والبرنامج والخطوات التالية.",
+        a: "أرسل المخططات أو تفاصيل واضحة للمشروع. نراجع المتطلبات ثم نرتب نقاشاً حول النطاق والبرنامج والخطوات التالية.",
       },
     ],
   },

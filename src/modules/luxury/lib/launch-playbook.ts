@@ -63,12 +63,12 @@ export function getLaunchPageCopy(locale: Locale) {
     whyTitle: isAr ? "لماذا هذا المسار؟" : "Why this path?",
     whyPoints: isAr
       ? [
-          "لا تعارض بين التصوير والتنفيذ. اللغة البصرية واحدة من الاستوديو إلى الموقع",
+          "لا تعارض بين التصوير والتنفيذ. لغة بصرية واحدة من العمل المعتمد إلى الموقع",
           "قائد توريفا واحد للطبقة المادية حتى يوم الافتتاح",
           "إمكانية إضافة التسويق عند الحاجة دون إعادة بناء الفريق",
         ]
       : [
-          "No clash between the visual work and execution. One visual language from studio to site",
+          "No clash between the visual work and execution. One visual language from approved work to site",
           "One Turriva lead for the physical layer through opening day",
           "Marketing can join when needed without rebuilding the team",
         ],

@@ -97,14 +97,14 @@ const en: HospitalitySpacesCopy = {
   definition: {
     eyebrow: "The service",
     title: "Hospitality spaces",
-    body: "A complete design-and-build service for hotels, boutique hotels, serviced apartments, lobbies, and guest areas. We connect the guest experience with operational requirements, then develop, procure, fabricate, install, and hand over. Property operations remain with the operator.",
+    body: "A coordinated delivery service for hotels, boutique hotels, serviced apartments, lobbies, and guest areas. We connect the guest experience with operational requirements, then develop, procure, fabricate, install, and hand over. Property operations remain with the operator.",
     result: "Destination restaurants also belong here when the setting is central to the experience. Everyday restaurants and cafés follow commercial spaces. Changes to an existing hospitality property begin with renovation.",
   },
   starts: {
     eyebrow: "Where we begin",
     title: "Start with the experience or approved drawings.",
     items: [
-      { title: "From the hospitality brief", body: "We study the property, guest journey, brand, and operational needs before designing and building the space." },
+      { title: "From the project need", body: "We study the property, guest journey, brand, and operational needs before developing and delivering the space." },
       {
         title: "From approved drawings",
         body: "If the design is complete, we develop it for construction and deliver the agreed scope while respecting the designer's intent.",
@@ -215,14 +215,14 @@ const ar: HospitalitySpacesCopy = {
   definition: {
     eyebrow: "الخدمة",
     title: "مساحات الضيافة",
-    body: "خدمة متكاملة لتصميم وتنفيذ الفنادق والفنادق البوتيكية والشقق الفندقية والردهات ومناطق الضيوف. نربط تجربة الضيف بمتطلبات التشغيل، ثم ننجز التطوير والتوريد والتصنيع والتركيب والتسليم. وتبقى إدارة المنشأة لدى المشغّل.",
+    body: "خدمة متكاملة لتنفيذ الفنادق والفنادق البوتيكية والشقق الفندقية والردهات ومناطق الضيوف. نربط تجربة الضيف بمتطلبات التشغيل، ثم ننجز التطوير والتوريد والتصنيع والتركيب والتسليم. وتبقى إدارة المنشأة لدى المشغّل.",
     result: "تندرج مطاعم الوجهة هنا عندما تكون المساحة محور التجربة. أما المطاعم والمقاهي اليومية فتندرج ضمن المساحات التجارية، ويبدأ تطوير منشأة ضيافة قائمة من خدمة التجديد.",
   },
   starts: {
     eyebrow: "نقطة البداية",
     title: "من تجربة الضيف أو مخططات معتمدة",
     items: [
-      { title: "من موجز الضيافة", body: "ندرس المنشأة ومسار الضيف والعلامة ومتطلبات التشغيل، ثم نصمم المساحة وننفذها." },
+      { title: "من احتياج المشروع", body: "ندرس المنشأة ومسار الضيف والعلامة ومتطلبات التشغيل، ثم نطوّر المساحة ونسلّمها." },
       {
         title: "من مخططات معتمدة",
         body: "إذا اكتمل التصميم، نطوره للتنفيذ ونسلم النطاق المتفق عليه مع الحفاظ على رؤية المصمم.",

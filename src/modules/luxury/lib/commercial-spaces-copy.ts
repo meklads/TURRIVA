@@ -97,14 +97,14 @@ const en: CommercialSpacesCopy = {
   definition: {
     eyebrow: "The service",
     title: "Commercial spaces",
-    body: "A complete design-and-build service for customer-facing businesses. We shape the interior around the activity and identity, then develop the technical package, procure, fabricate, install, and hand over.",
+    body: "A coordinated delivery service for customer-facing businesses. We shape the interior around the activity and identity, then develop the technical package, procure, fabricate, install, and hand over.",
     result: "This service suits new restaurants, cafés, stores, showrooms, client offices, and clinics. Destination dining belongs under hospitality. Changes to an existing space begin with renovation.",
   },
   starts: {
     eyebrow: "Where we begin",
-    title: "Start with a brief or approved drawings.",
+    title: "Start with project needs or approved drawings.",
     items: [
-      { title: "From your business brief", body: "We study the activity, brand, customer journey, and operational needs before designing and building the space." },
+      { title: "From your project need", body: "We study the activity, brand, customer journey, and operational needs before developing and delivering the space." },
       {
         title: "From approved drawings",
         body: "If the design is complete, we develop it for construction and deliver the agreed scope while respecting the designer's intent.",
@@ -127,14 +127,14 @@ const en: CommercialSpacesCopy = {
       { title: "Concept and interior", body: "Planning, materials, and lighting developed around the activity, customer, and site." },
       { title: "Brand experience", body: "Identity, display, signage, wayfinding, and customer touchpoints coordinated within the interior. Brand and signage design remain specialist services." },
       { title: "Technical development", body: "Construction drawings, quantities, specifications, and trade coordination completed before fabrication." },
-      { title: "Fit-out and joinery", body: "Floors, ceilings, walls, counters, and custom joinery shaped by the operational brief. Commercial kitchen systems remain a specialist scope." },
+      { title: "Fit-out and joinery", body: "Floors, ceilings, walls, counters, and custom joinery shaped by operational needs. Commercial kitchen systems remain a specialist scope." },
       { title: "Supply and fabrication", body: "Furniture, lighting, and custom elements sourced or made to the approved design, with specialist trades coordinated." },
       { title: "Installation and handover", body: "Site installation, coordination, quality review, snagging, and handover. Operating licences remain the operator's responsibility." },
     ],
   },
   sizes: {
     eyebrow: "Project scope",
-    title: "The right scope for the brief",
+    title: "The right scope for the project",
     note: "Scope and cost depend on the drawings, quantities, site conditions, and operational requirements. We define them after reviewing the project.",
     items: [
       { title: "Build an approved design", body: "Delivery of an agreed construction scope. When design is complete, this follows our fit-out service." },
@@ -217,14 +217,14 @@ const ar: CommercialSpacesCopy = {
   definition: {
     eyebrow: "الخدمة",
     title: "المساحات التجارية",
-    body: "خدمة متكاملة لتصميم وتنفيذ المساحات التي تستقبل العملاء. نصوغ التصميم الداخلي وفق النشاط والهوية، ثم ننجز التطوير الفني والتوريد والتصنيع والتركيب والتسليم.",
+    body: "خدمة متكاملة لتنفيذ المساحات التي تستقبل العملاء. نصوغ المساحة وفق النشاط والهوية، ثم ننجز التطوير الفني والتوريد والتصنيع والتركيب والتسليم.",
     result: "تناسب هذه الخدمة المطاعم والمقاهي والمتاجر وصالات العرض والمكاتب والعيادات الجديدة. أما مطاعم الوجهة فتندرج ضمن الضيافة، وتبدأ المساحات القائمة التي تحتاج إلى تغيير من خدمة التجديد.",
   },
   starts: {
     eyebrow: "نقطة البداية",
-    title: "من موجز المشروع أو مخططات معتمدة",
+    title: "من احتياج المشروع أو مخططات معتمدة",
     items: [
-      { title: "من متطلبات النشاط", body: "ندرس النشاط والعلامة ومسار العميل واحتياجات التشغيل، ثم نصمم المساحة وننفذها." },
+      { title: "من متطلبات النشاط", body: "ندرس النشاط والعلامة ومسار العميل واحتياجات التشغيل، ثم نطوّر المساحة ونسلّمها." },
       {
         title: "من مخططات معتمدة",
         body: "إذا اكتمل التصميم، نطوره للتنفيذ ونسلم النطاق المتفق عليه مع الحفاظ على رؤية المصمم.",
