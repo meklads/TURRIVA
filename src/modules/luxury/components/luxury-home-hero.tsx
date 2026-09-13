@@ -54,8 +54,8 @@ export function LuxuryHomeHero({ locale }: Props) {
               src={LUXURY_HERO_IMAGE}
               alt={
                 isAr
-                  ? "مجسم عرض عنان إسكان — تنفيذ ميداني لفريق توريفا"
-                  : "Anan Eskan display maquette — field delivery by the Turriva team"
+                  ? "مساحة داخلية فاخرة من تنفيذ توريفا"
+                  : "Premium interior space delivered by Turriva"
               }
               fill
               priority
