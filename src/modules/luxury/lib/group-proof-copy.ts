@@ -17,6 +17,13 @@ export type GroupProofCopy = {
     attribution: string;
   };
   workIntro: string;
+  visual: {
+    src: string;
+    alt: string;
+    kicker: string;
+    caption: string;
+  };
+  chain: readonly string[];
 };
 
 const CLIENT_LOGOS: readonly GroupProofClient[] = [
@@ -35,12 +42,10 @@ const CLIENT_LOGOS: readonly GroupProofClient[] = [
 const en: GroupProofCopy = {
   eyebrow: "Part of Tasami Group",
   title: "Group delivery experience, under one brand.",
-  body: "Turriva is Tasami Group’s physical delivery company. The same team that executed sales environments, interiors, exhibitions, and pavilions for major clients for 15+ years now operates under a brand dedicated to spatial execution. Contract Turriva alone; Graphics House and the group join when the project needs the visual or launch layer.",
+  body: "Turriva is Tasami Group’s physical delivery company. The same team that executed sales environments, interiors, and exhibitions for major clients now works under a brand dedicated to spatial execution. Contract Turriva alone. Graphics House joins when the project needs the visual layer.",
   logoLabel: "Clients served across the group",
   clients: CLIENT_LOGOS,
-  stats: [
-    { value: "15+", label: "Years of experience" },
-  ],
+  stats: [{ value: "15+", label: "Years of experience" }],
   testimonial: {
     quote:
       "We worked with Graphics House as a single execution partner. The smart maquette, interior fit-out, and interactive software arrived ready to present, at a standard that matched the League’s standing.",
@@ -48,17 +53,22 @@ const en: GroupProofCopy = {
   },
   workIntro:
     "Delivered by the Turriva team. Some under Graphics House before the dedicated brand. Same team. Same execution standard.",
+  visual: {
+    src: "/brand/turriva/projects/anan-eskan-gallery.jpg",
+    alt: "Sales gallery field delivery executed by the Turriva team",
+    kicker: "Field delivery",
+    caption: "From approved drawings to an opening-ready space",
+  },
+  chain: ["Create", "Grow", "Execute"],
 };
 
 const ar: GroupProofCopy = {
   eyebrow: "جزء من مجموعة تسامي",
   title: "خبرة تسليم المجموعة، تحت علامة واحدة.",
-  body: "توريفا شركة التسليم المادي لمجموعة تسامي. نفس الفريق الذي نفّذ بيئات البيع والديكورات والمعارض والأجنحة لعملاء كبار على مدى أكثر من 15 عاماً يعمل الآن تحت علامة مخصصة للتنفيذ المكاني. تعاقد مع توريفا وحدها. جرافيكس هاوس والمجموعة تُستدعى حين يحتاج المشروع الطبقة البصرية أو الإطلاق.",
+  body: "توريفا شركة التسليم المادي لمجموعة تسامي. نفس الفريق الذي نفّذ بيئات البيع والديكورات والمعارض لعملاء كبار يعمل الآن تحت علامة مخصصة للتنفيذ المكاني. تعاقد مع توريفا وحدها. جرافيكس هاوس تُستدعى حين يحتاج المشروع الطبقة البصرية.",
   logoLabel: "عملاء منظومة المجموعة",
   clients: CLIENT_LOGOS,
-  stats: [
-    { value: "15+", label: "عاماً من الخبرة" },
-  ],
+  stats: [{ value: "15+", label: "عاماً من الخبرة" }],
   testimonial: {
     quote:
       "تعاملنا مع جرافيكس هاوس كشريك تنفيذ واحد. المجسم الذكي والتشطيب الداخلي والبرمجيات التفاعلية وصلت جاهزة للعرض، بمستوى يليق بمكانة الرابطة.",
@@ -66,6 +76,13 @@ const ar: GroupProofCopy = {
   },
   workIntro:
     "نفّذها فريق توريفا، بعضها تحت جرافيكس هاوس قبل العلامة المستقلة. نفس الفريق، نفس معايير التنفيذ.",
+  visual: {
+    src: "/brand/turriva/projects/anan-eskan-gallery.jpg",
+    alt: "صالة بيع نُفّذت ميدانياً على يد فريق توريفا",
+    kicker: "تسليم ميداني",
+    caption: "من المخططات المعتمدة إلى مساحة جاهزة للافتتاح",
+  },
+  chain: ["خلق", "نمو", "تنفيذ"],
 };
 
 export function getGroupProofCopy(locale: Locale): GroupProofCopy {
