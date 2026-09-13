@@ -9,47 +9,78 @@ type Msg = { role: "bot" | "user"; text: string };
 
 type Props = { locale: Locale };
 
-function replyFor(locale: Locale, input: string): { text: string; openDemo?: boolean } {
+type Reply = { text: string; openDemo?: boolean; timeline?: "urgent" | "1_3_months" | "planning" };
+
+function replyFor(locale: Locale, input: string): Reply {
   const q = input.toLowerCase();
   const isAr = locale === "ar";
 
-  if (/استشارة|meeting|demo|عرض|quote|اقتباس|تواصل|contact|call/.test(q)) {
+  if (/استشارة|meeting|demo|تواصل|contact|call|ناقش|discuss|brief|موجز|عرض سعر|quote/.test(q)) {
     return {
       openDemo: true,
       text: isAr
-        ? "ممتاز — سأفتح نموذج حجز العرض الحي لالتقاط نوع المشروع والجدول وبيانات التواصل."
-        : "Great — I’ll open the live-demo form so we can capture project type, timeline, and contact details.",
+        ? "حسناً — سأفتح نموذج مناقشة المشروع لنلتقط النطاق والجدول وبيانات التواصل. نرد خلال يوم عمل بخطوة تالية واضحة."
+        : "Understood — I’ll open the project discussion form so we can capture scope, timeline, and contact details. We reply within one business day with a clear next step.",
     };
   }
 
-  if (/شهر|3 أسابيع|أقل من|weeks|month|سريع|express|delivery|تسليم/.test(q)) {
+  if (/من أنتم|من هي|what is turriva|who are|تعريف|تموضع|positioning/.test(q)) {
     return {
       text: isAr
-        ? "مسار Express Launch يجهّز مركز بيع / وحدة عرض بنطاق واضح خلال أقل من 3 أسابيع في الحالات المناسبة للمساحة والجدول. للقاعات الأكبر أو التكامل التفاعلي الكامل نوصي بـ Flagship Spatial System."
-        : "Express Launch can prepare a sales gallery / show unit on a clear scope in under 3 weeks when area and schedule fit. Larger galleries or full interactive integration usually need the Flagship Spatial System.",
+        ? "توريفا شركة تنفيذ مكاني وتسليم مادي. نربط التصميم المعتمد بالواقع: تطوير فني، تصنيع، تركيب، وتسليم. بيئات البيع العقاري هي التخصص الرئيسي. تعاقد مع توريفا وحدها؛ والمجموعة تُستدعى عند الحاجة فقط."
+        : "Turriva is a spatial execution and physical delivery company. We bridge approved design to reality: technical development, fabrication, installation, and handover. Real estate sales environments are the flagship specialty. Contract Turriva alone; the group joins only when needed.",
     };
   }
 
-  if (/مخطط|masterplan|حلول|solutions|عروض|packages|باقات|منتجات/.test(q)) {
+  if (/صالة|مبيعات|sales gallery|وحدة عرض|show unit|إطلاق|launch|معرض/.test(q)) {
     return {
       text: isAr
-        ? "لدينا ثلاث باقات: Express Launch (إطلاق سريع)، Flagship Spatial System (مجسمات وشاشات وسينما مكانية)، وحلول المبيعات الرقمية عبر منظومة المجموعة عندما يحتاجها المكان. يمكنني فتح الحاسبة أو نموذج العرض الحي حسب احتياجك."
-        : "We offer three packages: Express Launch (fast path), Flagship Spatial System (models, screens, spatial cinema), and digital sales tools via the group ecosystem when the room needs them. I can open the calculator or live-demo form next.",
+        ? "تخصصنا الرئيسي: صالات البيع ووحدات العرض ومساحات الإطلاق. نملك مسار التسليم من المخططات المعتمدة إلى مساحة جاهزة للافتتاح. هل تريد مناقشة مشروع محدد؟"
+        : "Our flagship specialty: sales galleries, show units, and launch spaces. We own the path from approved drawings to an opening-ready space. Want to discuss a specific project?",
+      openDemo: /مناقش|discuss|أريد|want|نعم|yes/.test(q) || undefined,
     };
   }
 
-  if (/مجسم|maquette|cgi|touch|شاشة|تفاعلي|interactive/.test(q)) {
+  if (/جدول|موعد|أسبوع|شهر|timeline|weeks|month|عاجل|urgent|سريع|delivery|تسليم/.test(q)) {
     return {
       text: isAr
-        ? "ننفّذ الطبقة المكانية (قاعة، وحدة عرض، تجهيز) ونربطها بأدوات التجربة — مجسمات ذكية، شاشات لمس، ومحتوى تفاعلي — عبر منظومة تسامي عندما يخدم الموجز."
-        : "We deliver the spatial layer (gallery, show unit, fit-out) and connect experience tools — smart maquettes, touch screens, interactive content — through the Tasami ecosystem when the brief needs them.",
+        ? "الجدول يعتمد على النطاق والاعتمادات وجاهزية الموقع. المشاريع العاجلة تُراجع كمسار أولوية عند ملاءمة المساحة والمخططات. أرسل موعد الجاهزية في نموذج المناقشة لنحدد المسار المناسب."
+        : "Timeline depends on scope, approvals, and site readiness. Urgent briefs are reviewed as a priority path when area and drawings fit. Share the ready-by date in the discussion form so we can define the right path.",
+      openDemo: true,
+      timeline: /عاجل|urgent|أسبوع|week/.test(q) ? "urgent" : "1_3_months",
+    };
+  }
+
+  if (/مجموعة|جرافيكس|graphics|bees|تسامي|group|cgi|فيلم/.test(q)) {
+    return {
+      text: isAr
+        ? "تعاقد مع توريفا للتنفيذ المكاني. جرافيكس هاوس للطبقة البصرية وBees Motion للإطلاق والحملات — تُستدعى فقط حين يحتاجها المشروع. توريفا هي جهة التسليم المادي."
+        : "Contract Turriva for spatial execution. Graphics House covers the visual layer and Bees Motion covers launch and campaigns — only when the project needs them. Turriva remains the physical delivery partner.",
+    };
+  }
+
+  if (/تكلفة|سعر|price|cost|ميزانية|budget/.test(q)) {
+    return {
+      text: isAr
+        ? "التكلفة تتبع النطاق والمخططات والمواد والجدول. لا نرسل سعراً قبل قراءة العمل. شارك نطاقك أو المخططات عبر نموذج المناقشة لنحدد الخطوة التالية."
+        : "Cost follows scope, drawings, materials, and timeline. We don’t quote before reading the work. Share your scope or drawings through the discussion form so we can define the next step.",
+      openDemo: true,
+      timeline: "planning",
+    };
+  }
+
+  if (/مسار|كيف تعملون|how do you|قدرات|capabilities|تصنيع|تركيب|shop drawing|مخططات/.test(q)) {
+    return {
+      text: isAr
+        ? "مسارنا: تطوير فني (مخططات وكميات وعينات) → تصنيع → تركيب ميداني → تسليم مع إغلاق الملاحظات. العميل يشتري جهة مسؤولة عن تسليم المساحة، لا مقاولين متفرقين."
+        : "Our path: technical development (drawings, quantities, samples) → fabrication → site installation → handover with snagging closed. Clients buy accountability for getting the space delivered, not scattered trades.",
     };
   }
 
   return {
     text: isAr
-      ? "يمكنني المساعدة في جداول الإطلاق، الباقات، أو تجهيز صالة مبيعات. جرّب أحد الاختصارات أو اطلب استشارة مخصصة."
-      : "I can help with launch timelines, packages, or sales-gallery setup. Try a quick prompt or ask for a tailored consultation.",
+      ? "يمكنني توضيح تعريف توريفا، بيئات البيع، مسار التنفيذ، الجداول، أو علاقة المجموعة. أو اطلب «ناقش مشروعك» لأفتح النموذج مباشرة."
+      : "I can explain what Turriva is, sales environments, the execution path, timelines, or the group relationship. Or say “discuss a project” and I’ll open the form.",
   };
 }
 
@@ -63,24 +94,16 @@ export function TurrivaAiAssistant({ locale }: Props) {
     {
       role: "bot",
       text: isAr
-        ? "مرحباً — أنا مستشار مبيعات توريفا. اسأل عن الإطلاق السريع، الباقات، أو اطلب عرضاً حياً."
-        : "Hello — I’m the Turriva sales consultant. Ask about fast launch, packages, or request a live demo.",
+        ? "مرحباً — أنا مساعد توريفا. اسأل عن التنفيذ المكاني، بيئات البيع، الجداول، أو اطلب مناقشة مشروعك."
+        : "Hello — I’m the Turriva assistant. Ask about spatial execution, sales environments, timelines, or request a project discussion.",
     },
   ]);
 
   const chips = useMemo(
     () =>
       isAr
-        ? [
-            "كيف أجهز صالة مبيعات خلال أقل من شهر؟",
-            "ما هي العروض والحلول المتاحة للمخططات العقارية؟",
-            "طلب استشارة مخصصة مشروع عقاري",
-          ]
-        : [
-            "How do I ready a sales gallery in under a month?",
-            "What packages fit a real-estate masterplan?",
-            "Request a tailored project consultation",
-          ],
+        ? ["ما هي توريفا؟", "كيف نجهز صالة مبيعات؟", "ما مسار التنفيذ؟", "ناقش مشروعك"]
+        : ["What is Turriva?", "How do we ready a sales gallery?", "What is the execution path?", "Discuss a project"],
     [isAr]
   );
 
@@ -96,10 +119,14 @@ export function TurrivaAiAssistant({ locale }: Props) {
     window.setTimeout(() => {
       setMessages((m) => [...m, { role: "bot", text: answer.text }]);
       if (answer.openDemo) {
-        openDemo({ source: "ai_assistant", timeline: "urgent" });
+        openDemo({
+          source: "ai_assistant",
+          timeline: answer.timeline ?? "1_3_months",
+        });
       }
-    }, 280);
+    }, 260);
     setInput("");
+    trackMarketingEvent("ai_chat_message", { locale });
   }
 
   function toggle() {
@@ -113,14 +140,21 @@ export function TurrivaAiAssistant({ locale }: Props) {
   return (
     <div className="lux-ai-assistant" dir={isAr ? "rtl" : "ltr"}>
       {open ? (
-        <section className="lux-ai-assistant__panel" aria-label={isAr ? "مستشار توريفا" : "Turriva assistant"}>
+        <section className="lux-ai-assistant__panel" aria-label={isAr ? "مساعد توريفا" : "Turriva assistant"}>
           <header className="lux-ai-assistant__head">
             <span className="lux-ai-assistant__pulse" aria-hidden />
             <div>
-              <p className="lux-ai-assistant__title">{isAr ? "مستشار توريفا" : "Turriva consultant"}</p>
-              <p className="lux-ai-assistant__status">{isAr ? "متصل · يرد فوراً" : "Online · replies instantly"}</p>
+              <p className="lux-ai-assistant__title">{isAr ? "مساعد توريفا" : "Turriva assistant"}</p>
+              <p className="lux-ai-assistant__status">
+                {isAr ? "تنفيذ مكاني · يرد فوراً" : "Spatial execution · replies instantly"}
+              </p>
             </div>
-            <button type="button" className="lux-ai-assistant__x" onClick={() => setOpen(false)} aria-label="Close">
+            <button
+              type="button"
+              className="lux-ai-assistant__x"
+              onClick={() => setOpen(false)}
+              aria-label={isAr ? "إغلاق" : "Close"}
+            >
               ×
             </button>
           </header>
@@ -151,13 +185,21 @@ export function TurrivaAiAssistant({ locale }: Props) {
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder={isAr ? "اكتب سؤالك…" : "Type your question…"}
+              placeholder={isAr ? "اسأل عن التنفيذ أو بيئات البيع…" : "Ask about delivery or sales environments…"}
               aria-label={isAr ? "رسالة" : "Message"}
             />
-            <button type="submit" className="lux-btn-primary">
+            <button type="submit" className="lux-ai-assistant__send">
               {isAr ? "إرسال" : "Send"}
             </button>
           </form>
+
+          <button
+            type="button"
+            className="lux-ai-assistant__cta"
+            onClick={() => openDemo({ source: "ai_assistant_cta" })}
+          >
+            {isAr ? "ناقش مشروعك" : "Discuss your project"}
+          </button>
         </section>
       ) : null}
 
