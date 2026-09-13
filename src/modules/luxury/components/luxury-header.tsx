@@ -6,6 +6,7 @@ import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import { MarketingNavPrefetch } from "@/shared/components/marketing-nav-prefetch";
 import { LuxuryBrandLogo } from "./luxury-brand-logo";
 import { LuxuryHeaderScroll } from "./luxury-header-scroll";
+import { LuxuryScrollProgress } from "./luxury-scroll-progress";
 import { LuxuryDesktopNav, LuxuryMobileNav, LuxuryRouteProgress } from "./luxury-nav-links";
 import { getLuxuryHeaderNavLinks, getLuxuryNavLinks, getLuxuryProductMenu } from "../lib/nav";
 
@@ -51,6 +52,7 @@ export async function LuxuryHeader() {
           </div>
           <LuxuryMobileNav links={mobileLinks} products={productMenu} isAr={locale === "ar"} />
         </div>
+        <LuxuryScrollProgress />
       </div>
     </header>
   );

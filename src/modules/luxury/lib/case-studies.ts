@@ -27,6 +27,12 @@ export type CaseStudy = {
   /** Optional external source for verification (e.g. Graphics House case page). */
   sourceUrl?: { ar: string; en: string };
   videoUrl?: string;
+  challengeEn?: string;
+  challengeAr?: string;
+  solutionEn?: string;
+  solutionAr?: string;
+  resultsEn?: string;
+  resultsAr?: string;
   metrics?: readonly { labelEn: string; labelAr: string; valueEn: string; valueAr: string }[];
 };
 
@@ -63,6 +69,16 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       roleEn: "Creative & visual systems partner",
       roleAr: "شريك الأنظمة البصرية والإبداعية",
     },
+    challengeEn:
+      "An institutional exhibition needed one field partner who could hand over a presentation-ready spatial layer — not scattered vendors.",
+    challengeAr:
+      "معرض مؤسسي احتاج شريك ميدان واحد يسلّم طبقة مكانية جاهزة للعرض — لا مقاولين متفرقين.",
+    solutionEn:
+      "Interior fit-out, smart maquette integration, and interactive touchpoints coordinated as one delivery with Graphics House systems.",
+    solutionAr:
+      "تشطيب داخلي ودمج مجسم ذكي ونقاط تفاعل نُسّقت كتسليم واحد مع أنظمة جرافيكس هاوس.",
+    resultsEn: "Ready-to-present environment at handover. Single team. One coordinated story.",
+    resultsAr: "بيئة جاهزة للعرض عند التسليم. فريق واحد. سرد واحد منسّق.",
   },
   {
     attribution: "team",
@@ -101,6 +117,16 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       en: "https://3dgraphicshouse.com/insights/projects/anan-eskan-riyadh-en.html",
     },
     videoUrl: "https://youtu.be/jP8vLnnRhb0",
+    challengeEn:
+      "A Riyadh sales gallery needed full spatial delivery — models and exhibition fit-out — ready for opening day.",
+    challengeAr:
+      "قاعة عرض في الرياض احتاجت تنفيذاً مكانياً كاملاً — مجسمات وتجهيز معرض — جاهزاً يوم الافتتاح.",
+    solutionEn:
+      "Design and fabrication of display models plus on-site gallery fit-out from drawings through opening-ready handover.",
+    solutionAr:
+      "تصميم وتصنيع مجسمات العرض مع تجهيز القاعة ميدانياً من المخططات حتى التسليم الجاهز للافتتاح.",
+    resultsEn: "Presentation-ready sales environment. Documented on Graphics House. Field execution by the same team now under Turriva.",
+    resultsAr: "بيئة بيع جاهزة للعرض. موثّقة على جرافيكس هاوس. تنفيذ ميداني لنفس الفريق تحت توريفا اليوم.",
   },
   {
     attribution: "team",
@@ -135,6 +161,16 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
       roleAr: "CGI سينمائي وفيلم إطلاق",
     },
     videoUrl: "https://3dgraphicshouse.com/insights/projects/rafal-pavilions-en.html",
+    challengeEn:
+      "A Diriyah launch needed physical sales pavilions aligned with cinematic CGI — ready for opening, not just renders.",
+    challengeAr:
+      "إطلاق في الدرعية احتاج أجنحة مبيعات مادية متسقة مع CGI سينمائي — جاهزة للافتتاح لا مجرد رندرات.",
+    solutionEn:
+      "Modular joinery, exhibition structures, and field installation from approved drawings through fabrication and handover.",
+    solutionAr:
+      "نجارة معيارية وهياكل معرض وتركيب ميداني من المخططات المعتمدة عبر التصنيع حتى التسليم.",
+    resultsEn: "Opening-ready sales pavilions. CGI by Graphics House; spatial delivery by the same field team now under Turriva.",
+    resultsAr: "أجنحة مبيعات جاهزة للافتتاح. CGI من جرافيكس هاوس؛ التسليم المكاني لنفس الفريق الميداني تحت توريفا اليوم.",
   },
   {
     attribution: "team",

@@ -1,48 +1,50 @@
-import Link from "next/link";
-import Image from "next/image";
-import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
-import type { Locale } from "@/shared/i18n/locale";
-import { localizePath } from "@/shared/i18n/path";
-import { getRepositionCopy } from "../lib/reposition-copy";
-import { LUXURY_HERO_IMAGE } from "../lib/nav";
-import { TrackedWhatsAppLink } from "@/shared/components/tracked-whatsapp-link";
-import { buildSalesBriefWhatsAppMessage } from "@/shared/lib/whatsapp";
+"use client";
 
-type Props = {
-  locale: Locale;
-};
+import Image from "next/image";
+import type { Locale } from "@/shared/i18n/locale";
+import { getConversionCopy } from "../lib/conversion-copy";
+import { LUXURY_HERO_IMAGE } from "../lib/nav";
+import { useConversionActions } from "./luxury-conversion-provider";
+
+type Props = { locale: Locale };
 
 export function LuxuryHomeHero({ locale }: Props) {
-  const t = getLuxuryMessages(locale);
-  const copy = getRepositionCopy(locale);
-  const lp = (path: string) => localizePath(path, locale);
+  const copy = getConversionCopy(locale);
+  const { openDemo } = useConversionActions();
+  const isAr = locale === "ar";
 
   return (
     <section className="lux-hero" aria-label="Hero">
       <div className="lux-container lux-hero-inner">
         <div className="lux-hero-copy">
           <div className="lux-hero-copy-inner lux-reveal">
-            <p className="lux-eyebrow">{t.hero.eyebrow}</p>
-            <p className="lux-hero__position mt-4">{copy.definition.title.replace(/\.$/, "")}</p>
-            <h1 className="lux-display lux-heading mt-4 sm:mt-5">{t.hero.title}</h1>
+            <p className="lux-eyebrow">{isAr ? "ذراع التنفيذ المكاني · مجموعة تسامي" : "Spatial execution arm · Tasami Group"}</p>
+            <h1 className="lux-display lux-heading mt-4 sm:mt-5">{copy.heroTitle}</h1>
             <div className="lux-flourish" aria-hidden />
-            <p className="lux-body max-w-lg">{t.hero.subtitle}</p>
-            <p className="lux-hero__audiences mt-4">{copy.definition.audiences}</p>
+            <p className="lux-body max-w-lg">{copy.heroSubtitle}</p>
             <div className="lux-hero-cta mt-9 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap">
-              <Link href="#brief" className="lux-btn-primary">
-                {t.hero.ctaPrimary}
-              </Link>
-              <TrackedWhatsAppLink
-                message={buildSalesBriefWhatsAppMessage(locale)}
-                source="home_hero_whatsapp"
-                className="lux-btn-outline-gold"
-              >
-                WhatsApp
-              </TrackedWhatsAppLink>
-              <Link href={lp("/fit-out#brief")} className="lux-btn-outline">
-                {t.hero.ctaSample}
-              </Link>
+              <button type="button" className="lux-btn-primary" onClick={() => openDemo({ source: "home_hero" })}>
+                {copy.ctaDemo}
+                {isAr ? <span className="lux-hero-cta__en"> (Book a Live Demo)</span> : null}
+              </button>
+              <a href="#solutions" className="lux-btn-outline-gold">
+                {copy.ctaExplore}
+              </a>
             </div>
+            <ul className="lux-hero-glow-stats mt-8" aria-label={isAr ? "مؤشرات" : "Highlights"}>
+              <li className="lux-glow-stat">
+                <strong>3</strong>
+                <span>{isAr ? "أسابيع تسليم سريع" : "weeks fast-track"}</span>
+              </li>
+              <li className="lux-glow-stat">
+                <strong>100%</strong>
+                <span>{isAr ? "تسليم تسليم مفتاح" : "turnkey execution"}</span>
+              </li>
+              <li className="lux-glow-stat">
+                <strong>15+</strong>
+                <span>{isAr ? "عاماً من التسليم" : "years delivering"}</span>
+              </li>
+            </ul>
           </div>
         </div>
 
@@ -51,7 +53,7 @@ export function LuxuryHomeHero({ locale }: Props) {
             <Image
               src={LUXURY_HERO_IMAGE}
               alt={
-                locale === "ar"
+                isAr
                   ? "مجسم عرض عنان إسكان — تنفيذ ميداني لفريق توريفا"
                   : "Anan Eskan display maquette — field delivery by the Turriva team"
               }

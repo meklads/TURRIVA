@@ -4,6 +4,8 @@ import { luxuryPageMetadata } from "@/modules/luxury/lib/metadata";
 import { CASE_STUDIES, getCaseStudy } from "@/modules/luxury/lib/case-studies";
 import { getYouTubeEmbedUrl } from "@/modules/luxury/lib/youtube";
 import { getRepositionCopy } from "@/modules/luxury/lib/reposition-copy";
+import { LuxuryCaseStudyVideo } from "@/modules/luxury/components/luxury-case-study-video";
+import { getConversionCopy } from "@/modules/luxury/lib/conversion-copy";
 import { LuxuryMarketingHero } from "@/modules/luxury/components/luxury-marketing-hero";
 import { LuxuryProjectFunnelForm } from "@/modules/luxury/components/luxury-project-funnel-form";
 import { LuxuryFormSplitSection } from "@/modules/luxury/components/luxury-form-split-section";
@@ -52,7 +54,11 @@ export default async function CaseStudyPage({ params }: Props) {
   const location = isAr ? study.locationAr : study.locationEn;
   const services = isAr ? study.servicesAr : study.servicesEn;
   const note = getRepositionCopy(locale);
+  const caseLabels = getConversionCopy(locale).caseStudy;
   const youtubeEmbed = study.videoUrl ? getYouTubeEmbedUrl(study.videoUrl) : null;
+  const challenge = isAr ? study.challengeAr : study.challengeEn;
+  const solution = isAr ? study.solutionAr : study.solutionEn;
+  const results = isAr ? study.resultsAr : study.resultsEn;
 
   return (
     <>
@@ -67,17 +73,7 @@ export default async function CaseStudyPage({ params }: Props) {
       <section className="lux-section lux-section--linen">
         <div className="lux-container max-w-5xl">
           {youtubeEmbed ? (
-            <div className="lux-case-video relative aspect-video overflow-hidden rounded-xl bg-lux-ink shadow-lux-card">
-              <iframe
-                src={youtubeEmbed}
-                title={title}
-                className="absolute inset-0 h-full w-full border-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-                loading="lazy"
-              />
-            </div>
+            <LuxuryCaseStudyVideo slug={study.slug} title={title} embedUrl={youtubeEmbed} />
           ) : (
             <div className="relative aspect-[16/10] overflow-hidden rounded-xl shadow-lux-card">
               <Image src={study.image} alt={title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 80vw" />
@@ -99,6 +95,23 @@ export default async function CaseStudyPage({ params }: Props) {
             <p className="mt-8 rounded-xl border border-lux-sand bg-white px-4 py-3 text-sm leading-relaxed text-lux-ink-soft">
               {note.honestNote}
             </p>
+          ) : null}
+
+          {challenge && solution && results ? (
+            <div className="lux-case-framework mt-10">
+              <article>
+                <h3 className="lux-case-framework__label">{caseLabels.challenge}</h3>
+                <p className="lux-body mt-2 text-lux-ink-soft">{challenge}</p>
+              </article>
+              <article>
+                <h3 className="lux-case-framework__label">{caseLabels.solution}</h3>
+                <p className="lux-body mt-2 text-lux-ink-soft">{solution}</p>
+              </article>
+              <article>
+                <h3 className="lux-case-framework__label">{caseLabels.results}</h3>
+                <p className="lux-body mt-2 text-lux-ink-soft">{results}</p>
+              </article>
+            </div>
           ) : null}
 
           <p className="lux-body mt-8 leading-relaxed text-lux-ink-soft">{body}</p>

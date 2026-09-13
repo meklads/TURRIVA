@@ -183,3 +183,60 @@ export function articleSchema(
       : {}),
   };
 }
+
+export function productPackagesSchema(locale: Locale) {
+  const isAr = locale === "ar";
+  const products = [
+    {
+      name: isAr ? "نظام الإطلاق السريع" : "Express Launch",
+      description: isAr
+        ? "صالات بيع ووحدات عرض جاهزة خلال أقل من 3 أسابيع بنطاق واضح."
+        : "Turnkey sales galleries and show units in under 3 weeks on a clear scope.",
+      url: `${TURRIVA_PUBLIC_URL}${localizePath("/real-estate-experience", locale)}`,
+    },
+    {
+      name: isAr ? "المنظومة التفاعلية القيادية" : "Flagship Spatial System",
+      description: isAr
+        ? "تكامل مجسمات حركية وشاشات لمس وسينما مكانية في بيئة البيع."
+        : "Kinetic models, touch displays, and spatial cinema integrated in the sales room.",
+      url: `${TURRIVA_PUBLIC_URL}${localizePath("/real-estate-experience", locale)}`,
+    },
+    {
+      name: isAr ? "حلول المبيعات الرقمية" : "PropTech Sales Engine",
+      description: isAr
+        ? "أدوات رقمية لدعم فريق المبيعات مرتبطة بالمكان عبر منظومة المجموعة."
+        : "Digital sales tools tied to the spatial environment via the group ecosystem.",
+      url: `${TURRIVA_PUBLIC_URL}${localizePath("/show-unit", locale)}`,
+    },
+  ];
+
+  return products.map((p) => ({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: p.name,
+    description: p.description,
+    brand: { "@type": "Brand", name: "Turriva" },
+    url: p.url,
+    category: "Real Estate Sales Environment",
+  }));
+}
+
+export function softwareApplicationSchema(locale: Locale) {
+  const isAr = locale === "ar";
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: isAr ? "مستشار مبيعات توريفا" : "Turriva Sales Consultant",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "SAR",
+    },
+    description: isAr
+      ? "مساعد محادثة لمساعدة المطورين على اختيار باقة الإطلاق وحجز عرض حي."
+      : "A chat assistant that helps developers choose a launch package and book a live demo.",
+    inLanguage: [isAr ? "ar" : "en", "ar", "en"],
+  };
+}
