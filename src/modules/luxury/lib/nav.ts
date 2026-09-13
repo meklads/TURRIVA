@@ -83,10 +83,8 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
   return {
     label: ar ? "منتجاتنا" : "Our products",
     eyebrow: ar ? "منتجاتنا" : "Our products",
-    title: ar ? "ثلاثة أبواب رئيسية" : "Three main doors",
-    subtitle: ar
-      ? "ابدأ من هنا. باقي الصفحات دعم، الروابط كما هي."
-      : "Start here. The rest are support, same URLs, clearer hierarchy.",
+    title: ar ? "منتجاتنا" : "Our products",
+    subtitle: ar ? "اختر منتجاً لفتح صفحته" : "Pick a product to open its page",
     explore: ar ? "استكشف" : "Explore",
     groups: [
       {

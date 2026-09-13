@@ -75,17 +75,13 @@ function productAlt(item: LuxuryProductMenuItem, isAr: boolean) {
 
 function MegaProductCard({
   item,
-  explore,
   isAr,
   active,
-  featured = false,
   onNavigate,
 }: {
   item: LuxuryProductMenuItem;
-  explore: string;
   isAr: boolean;
   active: boolean;
-  featured?: boolean;
   onNavigate: () => void;
 }) {
   return (
@@ -93,7 +89,7 @@ function MegaProductCard({
       href={item.href}
       prefetch
       role="menuitem"
-      className={`lux-mega-card${featured ? " lux-mega-card--featured" : ""}${active ? " lux-mega-card--active" : ""}`}
+      className={`lux-mega-card${active ? " lux-mega-card--active" : ""}`}
       onClick={onNavigate}
     >
       <div className="lux-mega-card__media">
@@ -102,16 +98,10 @@ function MegaProductCard({
           alt={productTitle(item, isAr)}
           fill
           className="object-cover"
-          sizes="5.5rem"
+          sizes="4.5rem"
         />
       </div>
-      <div className="lux-mega-card__body">
-        <p className="lux-mega-card__number">{item.number}</p>
-        <h3 className="lux-mega-card__title">{productTitle(item, isAr)}</h3>
-        <p className="lux-mega-card__en">{productAlt(item, isAr)}</p>
-        {featured ? <p className="lux-mega-card__desc">{item.description}</p> : null}
-        {featured ? <span className="lux-mega-card__cta">{explore} →</span> : null}
-      </div>
+      <span className="lux-mega-card__title">{productTitle(item, isAr)}</span>
     </Link>
   );
 }
@@ -164,8 +154,8 @@ export function LuxuryDesktopNav({
     };
   }, [open]);
 
-  const doors = products?.groups.find((group) => group.id === "doors");
-  const support = products?.groups.find((group) => group.id === "support");
+  const doors = products?.groups.find((group) => group.id === "doors")?.items ?? [];
+  const support = products?.groups.find((group) => group.id === "support")?.items ?? [];
 
   return (
     <nav className="lux-header-nav hidden min-w-0 items-center justify-center lg:flex" aria-label="Main">
@@ -198,29 +188,29 @@ export function LuxuryDesktopNav({
                 <p className="lux-mega__subtitle">{products.subtitle}</p>
               </header>
 
-              <div className="lux-mega__layout lux-mega__layout--doors">
-                {[doors, support].filter(Boolean).map((group) => (
-                  <section
-                    key={group!.id}
-                    className={`lux-mega__group${group!.id === "doors" ? " lux-mega__group--doors" : " lux-mega__group--support"}`}
-                    aria-label={group!.title}
-                  >
-                    <p className="lux-mega__group-title">{group!.title}</p>
-                    <div className="lux-mega__group-stack">
-                      {group!.items.map((item) => (
-                        <MegaProductCard
-                          key={item.href}
-                          item={item}
-                          explore={products.explore}
-                          isAr={isAr}
-                          active={isActive(item.href)}
-                          featured={Boolean(item.featured)}
-                          onNavigate={closeMenu}
-                        />
-                      ))}
-                    </div>
-                  </section>
-                ))}
+              <div className="lux-mega__grid">
+                <div className="lux-mega__row lux-mega__row--3" role="presentation">
+                  {doors.map((item) => (
+                    <MegaProductCard
+                      key={item.href}
+                      item={item}
+                      isAr={isAr}
+                      active={isActive(item.href)}
+                      onNavigate={closeMenu}
+                    />
+                  ))}
+                </div>
+                <div className="lux-mega__row lux-mega__row--4" role="presentation">
+                  {support.map((item) => (
+                    <MegaProductCard
+                      key={item.href}
+                      item={item}
+                      isAr={isAr}
+                      active={isActive(item.href)}
+                      onNavigate={closeMenu}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
