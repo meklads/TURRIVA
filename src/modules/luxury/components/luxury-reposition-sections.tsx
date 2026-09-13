@@ -11,13 +11,15 @@ export function LuxuryDefinitionSection({ locale }: Props) {
 
   return (
     <section className="lux-section lux-section--white lux-definition" aria-labelledby="lux-definition-title">
-      <div className="lux-container max-w-3xl">
-        <p className="lux-eyebrow">{copy.definition.eyebrow}</p>
-        <h2 id="lux-definition-title" className="lux-display mt-3 text-3xl leading-tight text-lux-ink md:text-4xl">
-          {copy.definition.title}
-        </h2>
-        <p className="lux-definition__audiences mt-5">{copy.definition.audiences}</p>
-        <p className="lux-body mt-5 text-lg leading-relaxed text-lux-ink-soft">{copy.definition.body}</p>
+      <div className="lux-container">
+        <div className="lux-section-intro">
+          <p className="lux-eyebrow">{copy.definition.eyebrow}</p>
+          <h2 id="lux-definition-title" className="lux-display lux-heading mt-3 text-lux-ink">
+            {copy.definition.title}
+          </h2>
+          <p className="lux-definition__audiences mt-5">{copy.definition.audiences}</p>
+          <p className="lux-body mt-5 text-lg leading-relaxed text-lux-ink-soft">{copy.definition.body}</p>
+        </div>
       </div>
     </section>
   );
@@ -34,15 +36,15 @@ export function LuxuryDevelopersSection({ locale, compact = false }: Props & { c
     >
       <div className="lux-container">
         {compact ? null : (
-          <div className="max-w-3xl">
+          <div className="lux-section-intro">
             <p className="lux-eyebrow">{copy.developers.eyebrow}</p>
-            <h2 id="lux-developers-title" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
+            <h2 id="lux-developers-title" className="lux-display lux-heading mt-3">
               {copy.developers.title}
             </h2>
             <p className="lux-body mt-4 text-lg leading-relaxed text-lux-ink-soft">{copy.developers.intro}</p>
           </div>
         )}
-        <ul className={`grid gap-4 md:grid-cols-3 ${compact ? "" : "mt-10"}`}>
+        <ul className={`lux-equal-cards ${compact ? "" : "mt-10"}`}>
           {copy.developers.points.map((point) => (
             <li key={point.title} className="lux-door-card">
               <h3 className="lux-display text-xl text-lux-ink">{point.title}</h3>
@@ -72,10 +74,10 @@ export function LuxuryProductsWeightedSection({ locale }: Props) {
   return (
     <section className="lux-section lux-section--white lux-products-weighted" aria-labelledby="lux-products-title">
       <div className="lux-container">
-        <div className="max-w-3xl">
+        <div className="lux-section-intro">
           <p className="lux-eyebrow">{copy.products.eyebrow}</p>
           <p className="lux-products-weighted__frame">{copy.products.frame}</p>
-          <h2 id="lux-products-title" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
+          <h2 id="lux-products-title" className="lux-display lux-heading mt-3">
             {copy.products.title}
           </h2>
           <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.products.intro}</p>
@@ -141,9 +143,9 @@ export function LuxuryHomeCapabilitiesSection({ locale }: Props) {
   return (
     <section className="lux-section lux-section--linen lux-home-capabilities" aria-labelledby="lux-capabilities-title">
       <div className="lux-container">
-        <div className="max-w-3xl">
+        <div className="lux-section-intro">
           <p className="lux-eyebrow">{copy.capabilities.eyebrow}</p>
-          <h2 id="lux-capabilities-title" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
+          <h2 id="lux-capabilities-title" className="lux-display lux-heading mt-3">
             {copy.capabilities.title}
           </h2>
           <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.capabilities.intro}</p>
@@ -173,7 +175,7 @@ export function LuxuryFeaturedExperienceSection({ locale }: Props) {
     <section className="lux-section lux-section--cream lux-featured-re" aria-labelledby="lux-featured-title">
       <div className="lux-container">
         <div className="lux-featured-re__grid">
-          <div className="lux-featured-re__media">
+          <div className="lux-featured-re__media lux-media-frame lux-media-frame--portrait">
             <Image
               src="/brand/turriva/makkah-charter-04.jpeg"
               alt={copy.featured.title}
@@ -182,9 +184,9 @@ export function LuxuryFeaturedExperienceSection({ locale }: Props) {
               sizes="(max-width: 900px) 100vw, 52vw"
             />
           </div>
-          <div className="lux-featured-re__copy">
+          <div className="lux-featured-re__copy lux-sticky-panel">
             <p className="lux-eyebrow">{copy.featured.eyebrow}</p>
-            <h2 id="lux-featured-title" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
+            <h2 id="lux-featured-title" className="lux-display lux-heading mt-3">
               {copy.featured.title}
             </h2>
             <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.featured.body}</p>
@@ -203,16 +205,18 @@ export function LuxuryAlbumSection({ locale }: Props) {
 
   return (
     <section className="lux-section lux-section--white lux-album" aria-labelledby="lux-album-title">
-      <div className="lux-container max-w-3xl text-center">
-        <p className="lux-eyebrow">{copy.album.eyebrow}</p>
-        <div className="lux-divider-gold" />
-        <h2 id="lux-album-title" className="lux-display lux-heading mt-6">
-          {copy.album.title}
-        </h2>
-        <p className="lux-body mx-auto mt-4 max-w-2xl text-lux-ink-muted">{copy.album.subtitle}</p>
-        <p className="lux-album__note mx-auto mt-3 max-w-xl">{copy.album.note}</p>
+      <div className="lux-container">
+        <div className="lux-section-intro lux-section-intro--center">
+          <p className="lux-eyebrow">{copy.album.eyebrow}</p>
+          <div className="lux-divider-gold" />
+          <h2 id="lux-album-title" className="lux-display lux-heading mt-6">
+            {copy.album.title}
+          </h2>
+          <p className="lux-body mt-4 text-lux-ink-muted">{copy.album.subtitle}</p>
+          <p className="lux-album__note mt-3">{copy.album.note}</p>
+        </div>
       </div>
-      <div className="lux-container mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="lux-container mt-14 lux-album__grid">
         {copy.album.items.map((item, index) => (
           <LocalizedLink
             key={item.href + item.title}
@@ -220,7 +224,7 @@ export function LuxuryAlbumSection({ locale }: Props) {
             className="lux-gallery-figure lux-album__frame group block"
           >
             <figure>
-              <div className="lux-gallery-media">
+              <div className="lux-gallery-media lux-media-frame lux-media-frame--portrait">
                 <span className="lux-album__index" aria-hidden>
                   {String(index + 1).padStart(2, "0")}
                 </span>
@@ -259,18 +263,18 @@ export function LuxuryTeamExperienceSection({ locale }: Props) {
   return (
     <section className="lux-section lux-section--linen lux-team-experience" aria-labelledby="lux-team-title">
       <div className="lux-container">
-        <div className="max-w-3xl">
+        <div className="lux-section-intro">
           <p className="lux-eyebrow">{copy.team.eyebrow}</p>
-          <h2 id="lux-team-title" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
+          <h2 id="lux-team-title" className="lux-display lux-heading mt-3">
             {copy.team.title}
           </h2>
           <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.team.intro}</p>
         </div>
-        <ul className="mt-10 grid gap-4 md:grid-cols-3">
+        <ul className="lux-equal-cards mt-10">
           {studies.map((study) => (
             <li key={study.slug}>
               <LocalizedLink href={`/our-work/${study.slug}`} className="lux-door-card group block h-full">
-                <div className="relative mb-4 aspect-[4/3] overflow-hidden rounded-lg bg-lux-stone">
+                <div className="lux-media-frame lux-media-frame--wide mb-4 overflow-hidden rounded-lg">
                   <Image
                     src={study.image}
                     alt={isAr ? study.titleAr : study.titleEn}
@@ -310,10 +314,10 @@ export function LuxuryMethodSection({ locale }: Props) {
 
   return (
     <section className="lux-section lux-section--white lux-method" aria-labelledby="lux-method-title">
-      <div className="lux-container max-w-5xl">
-        <div className="max-w-3xl">
+      <div className="lux-container">
+        <div className="lux-section-intro">
           <p className="lux-eyebrow">{copy.method.eyebrow}</p>
-          <h2 id="lux-method-title" className="lux-display mt-3 text-3xl leading-tight md:text-4xl">
+          <h2 id="lux-method-title" className="lux-display lux-heading mt-3">
             {copy.method.title}
           </h2>
           <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.method.intro}</p>

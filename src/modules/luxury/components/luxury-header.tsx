@@ -5,6 +5,7 @@ import { LocaleSwitcher } from "@/shared/i18n/locale-switcher";
 import { getLuxuryMessages } from "@/shared/i18n/messages/luxury";
 import { MarketingNavPrefetch } from "@/shared/components/marketing-nav-prefetch";
 import { LuxuryBrandLogo } from "./luxury-brand-logo";
+import { LuxuryHeaderScroll } from "./luxury-header-scroll";
 import { LuxuryDesktopNav, LuxuryMobileNav, LuxuryRouteProgress } from "./luxury-nav-links";
 import { getLuxuryHeaderNavLinks, getLuxuryNavLinks, getLuxuryProductMenu } from "../lib/nav";
 
@@ -29,10 +30,11 @@ export async function LuxuryHeader() {
   ];
 
   return (
-    <header className="lux-header">
+    <header className="lux-header lux-header--sticky">
+      <LuxuryHeaderScroll />
       <LuxuryRouteProgress />
       <MarketingNavPrefetch paths={Array.from(new Set(prefetchPaths))} />
-      <div className="lux-header-chrome lux-header--elevated">
+      <div className="lux-header-chrome">
         <div className="lux-container lux-header-shell">
           <div className="lux-header-bar">
             <div className="lux-header-brand">

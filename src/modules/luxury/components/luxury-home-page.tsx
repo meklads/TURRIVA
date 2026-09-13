@@ -26,7 +26,7 @@ export function LuxuryHomePage({ locale }: Props) {
   const lp = (path: string) => localizePath(path, locale);
 
   return (
-    <>
+    <div className="lux-home">
       <LuxuryHomeHero locale={locale} />
       <LuxuryGroupProofSection locale={locale} showLogos />
       <LuxuryDefinitionSection locale={locale} />
@@ -67,6 +67,6 @@ export function LuxuryHomePage({ locale }: Props) {
         href={`${lp("/")}#brief`}
         source="marketing_home"
       />
-    </>
+    </div>
   );
 }
