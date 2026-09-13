@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { LocalizedLink } from "@/shared/components/localized-link";
 import { getRepositionCopy } from "@/modules/luxury/lib/reposition-copy";
-import { getGroupProofCopy } from "@/modules/luxury/lib/group-proof-copy";
 import { CASE_STUDIES } from "@/modules/luxury/lib/case-studies";
 import type { Locale } from "@/shared/i18n/locale";
 
@@ -254,7 +253,6 @@ export function LuxuryAlbumSection({ locale }: Props) {
 
 export function LuxuryTeamExperienceSection({ locale }: Props) {
   const copy = getRepositionCopy(locale);
-  const proof = getGroupProofCopy(locale);
   const isAr = locale === "ar";
   const studies = CASE_STUDIES.filter((study) => study.attribution === "team").slice(0, 3);
 
@@ -267,10 +265,6 @@ export function LuxuryTeamExperienceSection({ locale }: Props) {
             {copy.team.title}
           </h2>
           <p className="lux-body mt-4 leading-relaxed text-lux-ink-soft">{copy.team.intro}</p>
-          <blockquote className="lux-team-experience__quote">
-            <p>“{proof.testimonial.quote}”</p>
-            <footer>{proof.testimonial.attribution}</footer>
-          </blockquote>
         </div>
         <ul className="mt-10 grid gap-4 md:grid-cols-3">
           {studies.map((study) => (
