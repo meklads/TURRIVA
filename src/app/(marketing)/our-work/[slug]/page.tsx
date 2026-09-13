@@ -81,7 +81,14 @@ export default async function CaseStudyPage({ params }: Props) {
           )}
 
           <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
-            <p className="text-sm text-lux-ink-muted">{location}</p>
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="text-sm text-lux-ink-muted">{location}</p>
+              {study.fitMode ? (
+                <span className="rounded-sm border border-lux-sand bg-white px-2.5 py-1 text-xs font-semibold text-lux-ink">
+                  {study.fitMode === "temporary" ? caseLabels.fitTemporary : caseLabels.fitPermanent}
+                </span>
+              ) : null}
+            </div>
             <ShareButton
               url={localizePath(`/our-work/${slug}`, locale)}
               title={title}

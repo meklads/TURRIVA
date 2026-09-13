@@ -19,21 +19,21 @@ export type ProductTier = {
   };
 };
 
-/** Core positioning offers (homepage). Extended spatial delivery lives in the product menu. */
+/** Flagship specialty offers on the homepage. Extended delivery lives in the product menu. */
 export const PRODUCT_TIERS: readonly ProductTier[] = [
   {
     id: "sales-environment",
     number: "01",
-    eyebrowAr: "بيئة البيع العقاري",
-    eyebrowEn: "Real Estate Sales Environment",
-    titleAr: "صالات البيع وتجربة المشروع في مكان واحد",
-    titleEn: "Sales galleries and project experience in one place",
+    eyebrowAr: "التخصص الرئيسي",
+    eyebrowEn: "Flagship specialty",
+    titleAr: "بيئات البيع العقاري",
+    titleEn: "Real Estate Sales Environments",
     bodyAr:
-      "نصمّم وننفّذ بيئة يستقبل فيها المطوّر عملاءه: مركز البيع، مسار العرض، والتجهيز الذي يجعل المشروع مفهوماً وملموساً.",
+      "صالات البيع وتجربة المشروع: المكان الذي يستقبل فيه المطوّر عملاءه ويجعل المشروع مفهوماً وملموساً حتى يوم الافتتاح.",
     bodyEn:
-      "We design and deliver the setting where developers receive buyers: the sales gallery, the presentation path, and the fit-out that makes the project clear and tangible.",
-    pointsAr: ["مركز بيع / صالة مبيعات", "تجربة المشروع", "جاهزية يوم الافتتاح"],
-    pointsEn: ["Sales gallery / center", "Project experience", "Opening-day readiness"],
+      "Sales galleries and project experience: the place where developers receive buyers and make the project clear and tangible through opening day.",
+    pointsAr: ["مركز بيع / صالة مبيعات", "تجربة المشروع", "جاهزية الافتتاح"],
+    pointsEn: ["Sales gallery / center", "Project experience", "Opening readiness"],
     href: "/real-estate-experience",
     media: {
       type: "image",
@@ -45,12 +45,12 @@ export const PRODUCT_TIERS: readonly ProductTier[] = [
     number: "02",
     eyebrowAr: "وحدة العرض",
     eyebrowEn: "Show Unit",
-    titleAr: "فيلا أو شقة عيّنة يختبر فيها المشتري أسلوب المعيشة",
-    titleEn: "A show villa or apartment where living quality becomes experience",
+    titleAr: "فيلا أو شقة عيّنة بمعيار المشروع",
+    titleEn: "Show villa or apartment to the project standard",
     bodyAr:
-      "وحدة تسويقية بمعيار المشروع: تكوين، تشطيب، وتأثيث يحوّل العرض من مخطط إلى مسار يمشي فيه المشتري.",
+      "وحدة تسويقية: تكوين وتشطيب وتأثيث يحوّل العرض من مخطط إلى مسار يمشي فيه المشتري.",
     bodyEn:
-      "A marketing unit to the project standard: composition, finishes, and furnishing that turn plans into a path the buyer can walk.",
+      "A marketing unit: composition, finishes, and furnishing that turn plans into a path the buyer can walk.",
     pointsAr: ["فيلا عرض", "شقة عيّنة", "معيار معيشة واضح"],
     pointsEn: ["Show villa", "Sample apartment", "Clear living standard"],
     href: "/show-unit",
@@ -62,17 +62,17 @@ export const PRODUCT_TIERS: readonly ProductTier[] = [
   {
     id: "launch-space",
     number: "03",
-    eyebrowAr: "مساحة الإطلاق",
-    eyebrowEn: "Project Launch Space",
-    titleAr: "أجنحة ومعارض إطلاق تدعم لحظة الافتتاح",
-    titleEn: "Launch centers and exhibition environments for opening moment",
+    eyebrowAr: "مساحة الإطلاق والتنفيذ الأوسع",
+    eyebrowEn: "Launch space & extended delivery",
+    titleAr: "إطلاق ومعارض، وضيافة وتجاري وسكني عند الحاجة",
+    titleEn: "Launch and exhibition, plus hospitality, commercial, and residential when required",
     bodyAr:
-      "بيئات إطلاق ومعارض موقّتة أو دائمة تخدم مرحلة البيع الأولى، مع إمكانية استكمال الطبقة الإبداعية عبر جرافيكس هاوس.",
+      "بيئات إطلاق ومعارض، مع امتداد التنفيذ المكاني إلى الضيافة والتجاري والسكني والتجهيز دون أن يغيّر ذلك تعريف الشركة.",
     bodyEn:
-      "Launch centers and exhibition environments that serve the first sales phase, with creative layers available through Graphics House when the brief requires them.",
-    pointsAr: ["مركز إطلاق", "بيئة معرض", "تكامل إبداعي عند الحاجة"],
-    pointsEn: ["Launch center", "Exhibition environment", "Creative integration when needed"],
-    href: "/real-estate-experience",
+      "Launch and exhibition environments, with spatial delivery extending to hospitality, commercial, residential, and fit-out without redefining the company.",
+    pointsAr: ["مركز إطلاق / معرض", "ضيافة وتجاري", "Fit-out ونجارة"],
+    pointsEn: ["Launch / exhibition", "Hospitality & commercial", "Fit-out & joinery"],
+    href: "/design-build",
     media: {
       type: "video",
       src: "/brand/graphics-house/rafal-pavilions-loop.mp4",
@@ -81,80 +81,94 @@ export const PRODUCT_TIERS: readonly ProductTier[] = [
   },
 ] as const;
 
-export type DemoProjectType = "sales_gallery" | "show_unit" | "launch_exhibition" | "extended_spatial";
+export type DemoProjectType =
+  | "developer"
+  | "hospitality"
+  | "commercial"
+  | "exhibition"
+  | "residential"
+  | "other";
 export type DemoTimeline = "urgent" | "1_3_months" | "planning";
 
 export function getConversionCopy(locale: Locale) {
   const isAr = locale === "ar";
   return {
-    heroEyebrow: isAr ? "بيئات البيع العقاري · مجموعة تسامي" : "Real Estate Sales Environments · Tasami Group",
-    heroTitle: isAr ? "بيئات البيع العقاري" : "Real Estate Sales Environments",
-    heroTitleAccent: isAr ? "تُصمَّم للإطلاق. وتُبنى لتدعم قرار الشراء." : "Designed to launch. Built to sell.",
+    heroEyebrow: isAr ? "مجموعة تسامي · تسليم مادي" : "Tasami Group · Physical delivery",
+    heroTitle: isAr ? "تنفيذ مكاني وتسليم مادي" : "Spatial Execution & Physical Delivery",
+    heroTitleAccent: isAr
+      ? "من التصميم المعتمد إلى واقع جاهز للتسليم."
+      : "From approved design to delivered reality.",
     heroPillars: isAr
-      ? "صالات البيع · وحدات العرض · تجارب المشروع"
-      : "Sales Galleries · Show Units · Project Experiences",
+      ? "التخصص الرئيسي: صالات البيع · وحدات العرض · مساحات الإطلاق"
+      : "Flagship: Sales Galleries · Show Units · Launch Spaces",
     heroSubtitle: isAr
-      ? "من الفكرة إلى يوم الافتتاح. توريفا ذراع التنفيذ المكاني، وجرافيكس هاوس تُكمِل الطبقة الإبداعية حين يخدم ذلك مسار البيع."
-      : "From concept to opening day. Turriva is the spatial execution arm; Graphics House completes the creative layer when it serves the sales journey.",
-    heroCapability: isAr ? "تصميم مكاني · تجربة · تنفيذ" : "Spatial Design · Experience · Build",
-    ctaDemo: isAr ? "ابدأ بموجز الإطلاق" : "Start with a launch brief",
-    ctaDemoEn: "Start with a launch brief",
-    ctaExplore: isAr ? "استكشف بيئات البيع" : "Explore sales environments",
-    logoLabel: isAr ? "يثق بنا مطورون ومؤسسات رائدة" : "Trusted by leading developers and institutions",
-    tiersEyebrow: isAr ? "العروض الأساسية" : "Core offers",
-    tiersTitle: isAr ? "ثلاثة عروض تبيع التخصص. والباقي يُثبت القدرة." : "Three offers that sell the specialty. The rest prove capacity.",
+      ? "نحوّل النية الإبداعية المعتمدة إلى مساحة جاهزة للاستخدام والافتتاح. تعاقد مع توريفا وحدها. المجموعة تُستدعى حين يحتاجها المشروع."
+      : "We bridge approved creative intent and physical delivery. Contract Turriva alone. The group joins only when the project needs it.",
+    heroCapability: isAr
+      ? "تطوير فني · تصنيع · تركيب · تسليم"
+      : "Technical Development · Fabrication · Installation · Handover",
+    ctaDemo: isAr ? "ناقش مشروعك" : "Discuss your project",
+    ctaDemoEn: "Discuss your project",
+    ctaExplore: isAr ? "استكشف ما نقدّمه" : "Explore what we deliver",
+    logoLabel: isAr ? "يثق بنا مطورون ومؤسسات وعلامات رائدة" : "Trusted by developers, institutions, and leading brands",
+    tiersEyebrow: isAr ? "التخصص ثم القدرة" : "Specialty, then capacity",
+    tiersTitle: isAr
+      ? "بيئات البيع عقاري كسلاح متخصص. والتنفيذ المكاني الأوسع يثبت القدرة."
+      : "Sales environments as the specialty weapon. Broader spatial delivery proves capacity.",
     tiersIntro: isAr
-      ? "نبدأ من بيئة البيع ووحدة العرض ومساحة الإطلاق. مسارات التصميم والتنفيذ والضيافة والتجاري تبقى متاحة دون أن تعرّف العلامة."
-      : "We lead with the sales environment, show unit, and launch space. Design & build, hospitality, and commercial remain available without defining the brand.",
+      ? "نبدأ من صالات البيع ووحدات العرض ومساحات الإطلاق لأنها أقوى باب مع المطورين. الضيافة والتجاري والمعارض والسكني والتجهيز تبقى مفتوحة دون أن تصبح تعريف العلامة."
+      : "We lead with sales galleries, show units, and launch spaces because they are the strongest door with developers. Hospitality, commercial, exhibition, residential, and fit-out stay open without becoming the brand definition.",
     videoEyebrow: isAr ? "التنفيذ على الأرض" : "Execution on the ground",
-    videoTitle: isAr ? "شاهد البيئات وهي تعمل" : "See the environments at work",
+    videoTitle: isAr ? "من المصنع إلى الموقع" : "From factory to site",
     journey: {
-      eyebrow: isAr ? "من إطلاق المشروع إلى يوم الافتتاح" : "From project launch to opening day",
-      title: isAr ? "مسار واحد يخدم هدف البيع" : "One path in service of the sales objective",
+      eyebrow: isAr ? "من الفكرة إلى الواقع المادي" : "From concept to physical reality",
+      title: isAr ? "توريفا تملك مسار التنفيذ" : "Turriva owns the execution path",
       intro: isAr
-        ? "قبل التصميم نفهم ماذا يجب أن يختبر العميل. ثم نربط التصور والتنفيذ والتجربة حتى جاهزية الافتتاح، مع جرافيكس هاوس حين تُطلب الهوية أو الـ CGI أو المحتوى."
-        : "Before design, we clarify what the buyer should experience. Then we connect visualization, build, and experience through opening readiness, with Graphics House when identity, CGI, or content is required.",
+        ? "العميل لا يشتري نجارة ودهاناً وتركيباً متفرقة. يشتري جهة مسؤولة عن تسليم المساحة. نربط التطوير الفني والتصنيع والتركيب والتسليم، مع جرافيكس هاوس حين تُطلب الطبقة البصرية."
+        : "Clients do not buy scattered joinery, paint, and install. They buy accountability for getting the space delivered. We connect technical development, fabrication, installation, and handover, with Graphics House when the visual layer is required.",
       steps: isAr
         ? [
-            { title: "تصوّر", body: "هوية المشروع والـ CGI والفيلم حين يوضحان العرض." },
-            { title: "تصميم", body: "بيئة البيع ووحدة العيّنة ومسار المشتري." },
-            { title: "تنفيذ", body: "تصنيع وتركيب وتسليم ميداني وفق المعتمد." },
-            { title: "تجربة", body: "مجسمات وشاشات ومواد تخدم الفهم، لا تستبدل المكان." },
-            { title: "إطلاق", body: "جاهزية يوم الافتتاح لفريق المبيعات." },
+            { title: "التطوير الفني", body: "مخططات تنفيذ، كميات، مواصفات، وعينات قبل التصنيع." },
+            { title: "التصنيع", body: "إنتاج مصنع وتنسيق توريد وفق المعتمد." },
+            { title: "التركيب", body: "تنسيق موقع وتركيب ميداني وضبط جودة." },
+            { title: "التسليم", body: "جاهزية الاستخدام أو الافتتاح مع قائمة ملاحظات وإغلاقها." },
+            { title: "الطبقة الإبداعية", body: "جرافيكس هاوس للهوية والـ CGI والفيلم حين يخدم المشروع." },
           ]
         : [
-            { title: "Visualize", body: "Project identity, CGI, and film when they clarify the offer." },
-            { title: "Design", body: "The sales environment, sample unit, and buyer path." },
-            { title: "Build", body: "Fabrication, install, and field handover to the approved scope." },
-            { title: "Experience", body: "Models, screens, and materials that aid understanding without replacing the room." },
-            { title: "Launch", body: "Opening-day readiness for the sales team." },
+            { title: "Technical development", body: "Shop drawings, quantities, specifications, and samples before production." },
+            { title: "Fabrication", body: "Factory production and procurement aligned to the approved package." },
+            { title: "Installation", body: "Site coordination, field install, and quality control." },
+            { title: "Handover", body: "Ready to use or open, with snagging closed." },
+            { title: "Creative layer", body: "Graphics House for identity, CGI, and film when the project needs it." },
           ],
     },
     demo: {
-      title: isAr ? "موجز إطلاق المشروع" : "Project launch brief",
+      title: isAr ? "ناقش مشروعك" : "Discuss your project",
       subtitle: isAr
-        ? "نبدأ من هدف البيع، ثم الجدول والتواصل."
-        : "We start from the sales objective, then timing and contact.",
-      stepObjective: isAr ? "هدف البيع" : "Sales objective",
-      stepProject: isAr ? "نوع البيئة" : "Environment type",
+        ? "أرسل المخطط أو نطاق العمل أو موعد التسليم، ونحدد الخطوة التالية."
+        : "Send drawings, scope, or the handover date, and we will define the next step.",
+      stepObjective: isAr ? "المطلوب" : "What is needed",
+      stepProject: isAr ? "نوع المشروع" : "Project type",
       stepTimeline: isAr ? "الجدول" : "Timeline",
       stepContact: isAr ? "التواصل" : "Contact",
       next: isAr ? "التالي" : "Next",
       back: isAr ? "رجوع" : "Back",
-      submit: isAr ? "أرسل الموجز" : "Send brief",
-      success: isAr ? "وصلنا موجزك. سنعود إليك قريباً." : "We received your brief. We’ll be in touch soon.",
+      submit: isAr ? "أرسل الطلب" : "Send request",
+      success: isAr ? "وصلنا طلبك. سنعود إليك قريباً." : "We received your request. We’ll be in touch soon.",
       error: isAr ? "تعذر الإرسال. حاول مرة أخرى أو واتساب." : "Could not submit. Try again or WhatsApp us.",
       objectivePrompt: isAr
-        ? "ماذا تريد أن يختبر العميل يوم الافتتاح؟"
-        : "What should the buyer experience on opening day?",
+        ? "ماذا تحتاج توريفا أن تسلم؟ وما موعد الجاهزية؟"
+        : "What should Turriva deliver, and when must it be ready?",
       objectivePlaceholder: isAr
-        ? "مثال: فهم المخطط، تجربة الوحدة، الإحساس بمعيار التشطيب…"
-        : "e.g. understand the masterplan, walk the unit, feel the finish standard…",
+        ? "مثال: صالة بيع، وحدة عرض، تجهيز فندق، جناح معرض، مطابخ متكررة…"
+        : "e.g. sales gallery, show unit, hotel fit-out, exhibition pavilion, repeat kitchens…",
       projectTypes: [
-        { id: "sales_gallery" as const, label: isAr ? "صالة / بيئة بيع" : "Sales gallery / environment" },
-        { id: "show_unit" as const, label: isAr ? "وحدة / فيلا عرض" : "Show unit / villa" },
-        { id: "launch_exhibition" as const, label: isAr ? "مساحة إطلاق / معرض" : "Launch space / exhibition" },
-        { id: "extended_spatial" as const, label: isAr ? "تنفيذ مكاني أوسع" : "Extended spatial delivery" },
+        { id: "developer" as const, label: isAr ? "مطور / بيئة بيع" : "Developer / sales environment" },
+        { id: "hospitality" as const, label: isAr ? "ضيافة / فندق" : "Hospitality / hotel" },
+        { id: "commercial" as const, label: isAr ? "تجاري / تجزئة" : "Commercial / retail" },
+        { id: "exhibition" as const, label: isAr ? "معرض / إطلاق" : "Exhibition / launch" },
+        { id: "residential" as const, label: isAr ? "سكني / فيلا" : "Residential / villa" },
+        { id: "other" as const, label: isAr ? "أخرى" : "Other" },
       ],
       timelines: [
         { id: "urgent" as const, label: isAr ? "عاجل: أقل من 3 أسابيع" : "Urgent: under 3 weeks" },
@@ -163,16 +177,18 @@ export function getConversionCopy(locale: Locale) {
       ],
       fields: {
         name: isAr ? "الاسم" : "Name",
-        company: isAr ? "الشركة / المطوّر" : "Company / developer",
+        company: isAr ? "الشركة / الجهة" : "Company / organisation",
         role: isAr ? "المنصب" : "Role",
         phone: isAr ? "الجوال / واتساب" : "Phone / WhatsApp",
         email: isAr ? "البريد" : "Email",
       },
     },
     caseStudy: {
-      challenge: isAr ? "التحدي" : "The Challenge",
-      solution: isAr ? "حل توريفا" : "Turriva Solution",
-      results: isAr ? "النتائج ومدة التسليم" : "Results & Delivery Timeframe",
+      challenge: isAr ? "التحدي" : "The challenge",
+      solution: isAr ? "النطاق الذي ملكناه" : "Scope owned",
+      results: isAr ? "ما سُلّم والنتيجة" : "What was delivered & the result",
+      fitTemporary: isAr ? "ديكور مؤقت" : "Temporary décor",
+      fitPermanent: isAr ? "ديكور دائم" : "Permanent décor",
     },
   };
 }

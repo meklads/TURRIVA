@@ -48,8 +48,8 @@ const en: GroupProofCopy = {
   stats: [{ value: "15+", label: "Years of experience" }],
   testimonial: {
     quote:
-      "We worked with Graphics House as a single execution partner. The smart maquette, interior fit-out, and interactive software arrived ready to present, at a standard that matched the League’s standing.",
-    attribution: "Senior Official, Muslim World League, Humanity Exhibition, Makkah",
+      "We worked with one execution partner. The interactive model, temporary presentation décor, interactive screens, and software arrived ready to present, at a standard that matched the League’s standing.",
+    attribution: "Senior Official, Muslim World League, Humanity Exhibition, Jeddah",
   },
   workIntro:
     "Delivered by the Turriva team. Some under Graphics House before the dedicated brand. Same team. Same execution standard.",
@@ -71,8 +71,8 @@ const ar: GroupProofCopy = {
   stats: [{ value: "15+", label: "عاماً من الخبرة" }],
   testimonial: {
     quote:
-      "تعاملنا مع جرافيكس هاوس كشريك تنفيذ واحد. المجسم الذكي والتشطيب الداخلي والبرمجيات التفاعلية وصلت جاهزة للعرض، بمستوى يليق بمكانة الرابطة.",
-    attribution: "مسؤول أول، رابطة العالم الإسلامي، معرض الإنسانية، مكة المكرمة",
+      "تعاملنا مع شريك تنفيذ واحد. المجسم التفاعلي وديكور العرض المؤقت والشاشات التفاعلية والبرمجيات وصلت جاهزة للعرض، بمستوى يليق بمكانة الرابطة.",
+    attribution: "مسؤول أول، رابطة العالم الإسلامي، معرض الإنسانية، جدة",
   },
   workIntro:
     "نفّذها فريق توريفا، بعضها تحت جرافيكس هاوس قبل العلامة المستقلة. نفس الفريق، نفس معايير التنفيذ.",

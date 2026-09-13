@@ -23,6 +23,8 @@ export type CaseStudy = {
    */
   attribution: "team";
   delivery: "field_execution";
+  /** Temporary exhibition décor vs permanent sales-gallery build. */
+  fitMode?: "temporary" | "permanent";
   partner?: { name: string; url: string; roleEn: string; roleAr: string };
   /** Optional external source for verification (e.g. Graphics House case page). */
   sourceUrl?: { ar: string; en: string };
@@ -40,77 +42,95 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
   {
     attribution: "team",
     delivery: "field_execution",
+    fitMode: "temporary",
     slug: "humanity-exhibition-mwl",
     image: "/brand/turriva/makkah-charter-04.jpeg",
-    categoryEn: "Exhibition · Institutional",
-    categoryAr: "معرض · مؤسسي",
+    categoryEn: "Temporary presentation fit-out",
+    categoryAr: "تجهيز عرض مؤقت",
     titleEn: "Humanity Exhibition · Muslim World League",
     titleAr: "معرض الإنسانية · رابطة العالم الإسلامي",
     locationEn: "Jeddah Hilton, Saudi Arabia",
     locationAr: "فندق Hilton جدة، السعودية",
     summaryEn:
-      "One execution partner for the League experience: interior fit-out, smart maquette, interactive screens, and custom software — delivered ready to present.",
+      "Temporary presentation-hall décor designed and built by the team: interactive architectural models, interactive display screens, and custom software, handed over ready to present.",
     summaryAr:
-      "شريك تنفيذ واحد لتجربة الرابطة: تشطيب داخلي، ومجسم ذكي، وشاشات تفاعلية، وبرمجيات مخصصة — وصلت جاهزة للعرض.",
+      "تجهيز ديكور مؤقت لقاعة عرض صمّمه ونفّذه الفريق: مجسمات معمارية تفاعلية، وشاشات عرض تفاعلية، وبرمجيات مخصصة، سُلّم جاهزاً للعرض.",
     bodyEn:
-      "A physical exhibition layer for an institutional programme: interior fit-out, exhibition décor, smart maquette integration, and interactive touchpoints developed with Graphics House. Visualization and software sat with sister companies; the spatial layer was field delivery — one coordinated handoff.",
+      "An institutional presentation environment for the Muslim World League. The owned scope was temporary décor design and on-site execution, production of interactive architectural models, interactive display screens, and custom software integrated as one visitor experience. The work was delivered by the same field and creative team now operating under Turriva, with Graphics House as the brand layer at the time. The environment was received as a strong presentation success: clear narrative, walkable path, and interactive tools that helped visitors understand the programme without scattering vendors.",
     bodyAr:
-      "طبقة مكانية لمعرض مؤسسي: تشطيب داخلي وديكور معرض ودمج مجسم ذكي ونقاط تفاعل طُوّرت مع جرافيكس هاوس. التصور والبرمجيات لدى الشركات الشقيقة، والطبقة المكانية تسليم ميداني — تسليم واحد منسّق.",
-    servicesEn: ["Interior fit-out", "Smart maquette", "Interactive screens", "Handover"],
-    servicesAr: ["تشطيب داخلي", "مجسم ذكي", "شاشات تفاعلية", "تسليم"],
+      "بيئة عرض مؤسسية لرابطة العالم الإسلامي. النطاق الذي ملكناه: تصميم وتنفيذ ديكور مؤقت لقاعة العرض، وإنتاج مجسمات معمارية تفاعلية، وشاشات عرض تفاعلية، وبرمجيات مخصصة دُمجت كتجربة زائر واحدة. نفّذ العمل نفس الفريق الميداني والإبداعي الذي يعمل اليوم تحت توريفا، وكانت جرافيكس هاوس الطبقة الاسمية حينها. لاقى التجهيز نجاحاً واضحاً في العرض: سرد واضح، ومسار يُمشى، وأدوات تفاعل تساعد الزائر على فهم البرنامج دون تشتت المقاولين.",
+    servicesEn: [
+      "Temporary décor design",
+      "Temporary décor execution",
+      "Interactive architectural models",
+      "Interactive screens",
+      "Custom software",
+      "Handover",
+    ],
+    servicesAr: [
+      "تصميم ديكور مؤقت",
+      "تنفيذ ديكور مؤقت",
+      "مجسمات معمارية تفاعلية",
+      "شاشات تفاعلية",
+      "برمجيات مخصصة",
+      "تسليم",
+    ],
     metrics: [
-      { labelEn: "Programme", labelAr: "البرنامج", valueEn: "Institutional exhibition", valueAr: "معرض مؤسسي" },
-      { labelEn: "Partner", labelAr: "الشريك", valueEn: "Graphics House", valueAr: "Graphics House" },
-      { labelEn: "Delivery", labelAr: "التسليم", valueEn: "Single field team", valueAr: "فريق ميداني واحد" },
+      { labelEn: "Fit mode", labelAr: "نوع التجهيز", valueEn: "Temporary décor", valueAr: "ديكور مؤقت" },
+      { labelEn: "Owned scope", labelAr: "النطاق المملوك", valueEn: "Decor + models + screens + software", valueAr: "ديكور + مجسمات + شاشات + برمجيات" },
+      { labelEn: "Outcome", labelAr: "النتيجة", valueEn: "Ready-to-present success", valueAr: "نجاح جاهز للعرض" },
     ],
     partner: {
       name: "Graphics House",
       url: GROUP_LINKS.graphicsHouse,
-      roleEn: "Creative & visual systems partner",
-      roleAr: "شريك الأنظمة البصرية والإبداعية",
+      roleEn: "Brand layer at the time of delivery",
+      roleAr: "الطبقة الاسمية وقت التسليم",
     },
     challengeEn:
-      "An institutional exhibition needed one field partner who could hand over a presentation-ready spatial layer — not scattered vendors.",
+      "The League needed a temporary presentation hall that explained a complex institutional programme clearly: décor, models, screens, and software as one experience, not separate suppliers.",
     challengeAr:
-      "معرض مؤسسي احتاج شريك ميدان واحد يسلّم طبقة مكانية جاهزة للعرض — لا مقاولين متفرقين.",
+      "احتاجت الرابطة قاعة عرض مؤقتة تشرح برنامجاً مؤسسياً معقداً بوضوح: ديكور ومجسمات وشاشات وبرمجيات كتجربة واحدة، لا موردين متفرقين.",
     solutionEn:
-      "Interior fit-out, smart maquette integration, and interactive touchpoints coordinated as one delivery with Graphics House systems.",
+      "The team designed and executed the temporary décor, produced interactive architectural models, integrated interactive display screens, and delivered custom software as one coordinated handover.",
     solutionAr:
-      "تشطيب داخلي ودمج مجسم ذكي ونقاط تفاعل نُسّقت كتسليم واحد مع أنظمة جرافيكس هاوس.",
-    resultsEn: "Ready-to-present environment at handover. Single team. One coordinated story.",
-    resultsAr: "بيئة جاهزة للعرض عند التسليم. فريق واحد. سرد واحد منسّق.",
+      "صمّم الفريق ونفّذ الديكور المؤقت، وأنتج مجسمات معمارية تفاعلية، ودمج شاشات عرض تفاعلية، وسلّم برمجيات مخصصة كتجهيز واحد منسّق.",
+    resultsEn:
+      "A presentation-ready temporary hall with a clear visitor path. Strong reception for clarity, presence, and the integrated interactive layer.",
+    resultsAr:
+      "قاعة عرض مؤقتة جاهزة مع مسار زائر واضح. استقبال قوي للوضوح والحضور والطبقة التفاعلية المتكاملة.",
   },
   {
     attribution: "team",
     delivery: "field_execution",
+    fitMode: "permanent",
     slug: "anan-eskan-sales-gallery",
     image: "/brand/turriva/projects/anan-eskan-youtube-poster.jpg",
-    categoryEn: "Sales Gallery · Design & Build",
-    categoryAr: "صالة بيع · تصميم وتنفيذ",
+    categoryEn: "Permanent sales gallery",
+    categoryAr: "صالة بيع دائمة",
     titleEn: "Anan Eskan Sales Gallery · Riyadh",
-    titleAr: "قاعة عرض عنان إسكان · الرياض",
+    titleAr: "صالة عرض عنان إسكان · الرياض",
     locationEn: "Riyadh, Saudi Arabia",
     locationAr: "الرياض، السعودية",
     summaryEn:
-      "Full spatial delivery for a sales gallery: design and fabrication of display models, and on-site exhibition fit-out from drawings to opening-ready handover.",
+      "Permanent sales-gallery décor: design and build of the presentation environment, including display models and on-site fit-out through opening-ready handover.",
     summaryAr:
-      "تنفيذ مكاني كامل لقاعة عرض مبيعات: تصميم وتصنيع مجسمات العرض، وتجهيز فعلي للمعرض من المخططات إلى التسليم الجاهز للافتتاح.",
+      "تجهيز ديكور دائم لصالة بيع: تصميم وتنفيذ بيئة العرض، بما في ذلك مجسمات العرض والتجهيز الميداني حتى التسليم الجاهز للافتتاح.",
     bodyEn:
-      "A full sales-gallery environment for Anan Eskan in Riyadh: interior composition, finishes, and fit-out delivered as Decor Design & Build. The brief was a place where the development meets its buyers — presentation-ready at handover.",
+      "A permanent sales environment for Anan Eskan in Riyadh. Unlike a temporary exhibition hall, this brief required durable gallery décor and a lasting presentation path for buyers. The owned scope was décor design and build, fabrication of display models, and on-site fit-out to opening readiness. Documented under Graphics House; field delivery by the same team now under Turriva.",
     bodyAr:
-      "بيئة قاعة عرض كاملة لعنان إسكان في الرياض: تكوين داخلي وتشطيبات وتجهيز ضمن نطاق تصميم وتنفيذ ديكور. الموجز كان مكاناً يلتقي فيه المشروع بالمشترين — جاهزاً للعرض عند التسليم.",
-    servicesEn: ["Sales gallery", "Decor design", "Fit-out", "Handover"],
-    servicesAr: ["قاعة عرض", "تصميم ديكور", "تجهيز", "تسليم"],
+      "بيئة بيع دائمة لعنان إسكان في الرياض. بخلاف قاعة العرض المؤقتة، تطلب الموجز ديكور صالة ثابتاً ومسار عرض دائماً للمشترين. النطاق الذي ملكناه: تصميم وتنفيذ الديكور، وتصنيع مجسمات العرض، والتجهيز الميداني حتى جاهزية الافتتاح. موثّق تحت جرافيكس هاوس؛ والتنفيذ الميداني لنفس الفريق تحت توريفا اليوم.",
+    servicesEn: ["Permanent décor design", "Permanent décor build", "Display models", "Gallery fit-out", "Handover"],
+    servicesAr: ["تصميم ديكور دائم", "تنفيذ ديكور دائم", "مجسمات عرض", "تجهيز صالة", "تسليم"],
     metrics: [
-      { labelEn: "Type", labelAr: "النوع", valueEn: "Sales gallery", valueAr: "قاعة عرض مبيعات" },
-      { labelEn: "Scope", labelAr: "النطاق", valueEn: "Decor Design & Build", valueAr: "تصميم وتنفيذ ديكور" },
+      { labelEn: "Fit mode", labelAr: "نوع التجهيز", valueEn: "Permanent décor", valueAr: "ديكور دائم" },
+      { labelEn: "Owned scope", labelAr: "النطاق المملوك", valueEn: "Decor design & build + models", valueAr: "تصميم وتنفيذ ديكور + مجسمات" },
       { labelEn: "City", labelAr: "المدينة", valueEn: "Riyadh", valueAr: "الرياض" },
     ],
     partner: {
       name: "Graphics House",
       url: GROUP_LINKS.graphicsHouse,
-      roleEn: "Group delivery partner",
-      roleAr: "شريك تسليم المجموعة",
+      roleEn: "Brand layer at the time of delivery",
+      roleAr: "الطبقة الاسمية وقت التسليم",
     },
     sourceUrl: {
       ar: "https://3dgraphicshouse.com/insights/projects/anan-eskan-riyadh.html",
@@ -118,15 +138,17 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     },
     videoUrl: "https://youtu.be/jP8vLnnRhb0",
     challengeEn:
-      "A Riyadh sales gallery needed full spatial delivery — models and exhibition fit-out — ready for opening day.",
+      "A developer sales gallery needed a permanent décor environment and display models ready for ongoing buyer presentations, not a short-run exhibition install.",
     challengeAr:
-      "قاعة عرض في الرياض احتاجت تنفيذاً مكانياً كاملاً — مجسمات وتجهيز معرض — جاهزاً يوم الافتتاح.",
+      "صالة بيع لمطور احتاجت بيئة ديكور دائمة ومجسمات عرض جاهزة لعروض المشترين المستمرة، لا تجهيز معرض قصير الأمد.",
     solutionEn:
-      "Design and fabrication of display models plus on-site gallery fit-out from drawings through opening-ready handover.",
+      "Decor design and build for a permanent sales gallery, with display-model fabrication and on-site fit-out through opening-ready handover.",
     solutionAr:
-      "تصميم وتصنيع مجسمات العرض مع تجهيز القاعة ميدانياً من المخططات حتى التسليم الجاهز للافتتاح.",
-    resultsEn: "Presentation-ready sales environment. Documented on Graphics House. Field execution by the same team now under Turriva.",
-    resultsAr: "بيئة بيع جاهزة للعرض. موثّقة على جرافيكس هاوس. تنفيذ ميداني لنفس الفريق تحت توريفا اليوم.",
+      "تصميم وتنفيذ ديكور لصالة بيع دائمة، مع تصنيع مجسمات العرض والتجهيز الميداني حتى التسليم الجاهز للافتتاح.",
+    resultsEn:
+      "A lasting sales-gallery environment ready for buyer presentations. Documented under Graphics House; same field team now under Turriva.",
+    resultsAr:
+      "بيئة صالة بيع دائمة جاهزة لعروض المشترين. موثّقة تحت جرافيكس هاوس؛ ونفس الفريق الميداني تحت توريفا اليوم.",
   },
   {
     attribution: "team",
