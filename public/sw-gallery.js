@@ -7,7 +7,7 @@ const PRECACHE = [
   "/brand/turriva/apple-touch-icon.png",
   "/brand/turriva/favicon-32.png",
   "/brand/turriva/logo-lockup-black.png",
-  "/brand/turriva/projects/anan-eskan-gallery.jpg",
+  "/brand/turriva/projects/mwl/hero.jpeg",
   "/brand/turriva/projects/rafal-pavilions.jpg",
   "/docs/turriva-agency-pitch-kit.html",
 ];

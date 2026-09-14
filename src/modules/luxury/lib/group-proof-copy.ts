@@ -54,10 +54,10 @@ const en: GroupProofCopy = {
   workIntro:
     "Delivered by the Turriva team. Some under Graphics House before the dedicated brand. Same team. Same execution standard.",
   visual: {
-    src: "/brand/turriva/projects/anan-eskan-gallery.jpg",
-    alt: "Sales gallery field delivery executed by the Turriva team",
+    src: "/brand/turriva/projects/mwl/hero.jpeg",
+    alt: "Interactive exhibition maquette delivered by the Turriva team for the Muslim World League",
     kicker: "Field delivery",
-    caption: "From approved drawings to an opening-ready space",
+    caption: "From approved drawings to a presentation-ready space",
   },
   chain: ["Create", "Grow", "Execute"],
 };
@@ -77,10 +77,10 @@ const ar: GroupProofCopy = {
   workIntro:
     "نفّذها فريق توريفا، بعضها تحت جرافيكس هاوس قبل العلامة المستقلة. نفس الفريق، نفس معايير التنفيذ.",
   visual: {
-    src: "/brand/turriva/projects/anan-eskan-gallery.jpg",
-    alt: "صالة بيع نُفّذت ميدانياً على يد فريق توريفا",
+    src: "/brand/turriva/projects/mwl/hero.jpeg",
+    alt: "مجسم تفاعلي لمعرض رابطة العالم الإسلامي نفّذه فريق توريفا",
     kicker: "تسليم ميداني",
-    caption: "من المخططات المعتمدة إلى مساحة جاهزة للافتتاح",
+    caption: "من المخططات المعتمدة إلى مساحة جاهزة للعرض",
   },
   chain: ["خلق", "نمو", "تنفيذ"],
 };

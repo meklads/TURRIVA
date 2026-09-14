@@ -33,15 +33,15 @@ const q = "auto=format&fit=crop&q=85";
 export const PRODUCT_VISUALS: Record<ProductVisualKey, ProductVisuals> = {
   "real-estate-experience": {
     hero: `https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?${q}&w=1800`,
-    mid: "/brand/turriva/projects/anan-eskan-gallery.jpg",
+    mid: "/brand/turriva/projects/mwl/hero.jpeg",
     form: "/brand/turriva/sample-kit-showroom.webp",
-    altEn: "Modern development presentation environment",
-    altAr: "بيئة عرض لمشروع عقاري حديث",
+    altEn: "Interactive project presentation environment",
+    altAr: "بيئة عرض تفاعلية للمشروع",
     midCaptionEn: "The place a project meets its clients",
     midCaptionAr: "المكان الذي يلتقي فيه المشروع بعملائه",
     story: [
       {
-        src: "/brand/turriva/projects/anan-eskan-gallery.jpg",
+        src: "/brand/turriva/projects/mwl/hero.jpeg",
         captionEn: "Sales environment",
         captionAr: "بيئة البيع",
       },

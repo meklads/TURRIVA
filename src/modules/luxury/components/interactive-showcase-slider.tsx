@@ -53,7 +53,7 @@ export function InteractiveShowcaseSlider({ locale }: Props) {
         >
           <div className="lux-showcase__layer lux-showcase__layer--after">
             <Image
-              src="/brand/turriva/projects/anan-eskan-gallery.jpg"
+              src="/brand/turriva/projects/mwl/hero.jpeg"
               alt={isAr ? "بيئة إطلاق توريفا" : "Turriva launch environment"}
               fill
               className="object-cover"

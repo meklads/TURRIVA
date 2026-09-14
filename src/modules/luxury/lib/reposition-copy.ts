@@ -81,8 +81,8 @@ export type RepositionCopy = {
 };
 
 const PRODUCT_IMAGES = {
-  /** Sales environment card. Avoid MWL phone still here; that stays in Selected Work / case study only. */
-  experience: "/brand/turriva/projects/anan-eskan-gallery.jpg",
+  /** Sales / presentation environment card — MWL interactive maquette execution. */
+  experience: "/brand/turriva/projects/mwl/hero.jpeg",
   showUnit: "/brand/turriva/inspiration/living-walnut-interior.webp",
   designBuild: "/brand/turriva/hero-interior.webp",
   fitOut: "/brand/turriva/projects/project-joinery-b2b.webp",
@@ -91,7 +91,7 @@ const PRODUCT_IMAGES = {
   renovation: "/brand/turriva/projects/project-kitchen-jeddah.webp",
 } as const;
 
-/** MWL exhibition. Selected Work / credibility only (execution photo; do not duplicate in product cards). */
+/** MWL exhibition — shared execution still for Selected Work and product surfaces. */
 const MWL_SELECTED_WORK_IMAGE = "/brand/turriva/projects/mwl/hero.jpeg";
 
 const en: RepositionCopy = {

@@ -14,7 +14,7 @@ type Props = {
   prefill?: DemoPrefill;
 };
 
-const DEMO_IMAGE = "/brand/turriva/projects/anan-eskan-gallery.jpg";
+const DEMO_IMAGE = "/brand/turriva/projects/mwl/hero.jpeg";
 
 function mapProjectType(type: DemoProjectType): string {
   switch (type) {

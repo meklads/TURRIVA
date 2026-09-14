@@ -99,7 +99,7 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             description: ar
               ? "صالات البيع وتجربة المشروع حتى جاهزية الافتتاح."
               : "Sales galleries and project experience through opening readiness.",
-            image: "/brand/turriva/projects/anan-eskan-gallery.jpg",
+            image: "/brand/turriva/projects/mwl/hero.jpeg",
             featured: true,
           },
           {
