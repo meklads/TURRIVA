@@ -25,9 +25,9 @@ export async function LuxuryFooter() {
     {
       title: locale === "ar" ? "الأبواب الرئيسية" : "Main doors",
       links: [
-        { href: lp("/real-estate-experience"), label: locale === "ar" ? "تجربة المشروع العقاري" : "Real estate project experience" },
+        { href: lp("/real-estate-experience"), label: locale === "ar" ? "تصميم وتنفيذ ديكور البيع" : "Sales décor design & build" },
         { href: lp("/show-unit"), label: locale === "ar" ? "وحدة العرض" : "Show unit" },
-        { href: lp("/fit-out"), label: locale === "ar" ? "التنفيذ والتجهيز" : "Fit-out and execution" },
+        { href: lp("/fit-out"), label: locale === "ar" ? "تصميم وتنفيذ الديكور" : "Décor design & build" },
       ],
     },
     {

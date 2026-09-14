@@ -26,10 +26,10 @@ function productNav(locale: Locale) {
   const lp = (path: string) => localizePath(path, locale);
   const ar = locale === "ar";
   return {
-    experience: { href: lp("/real-estate-experience"), label: ar ? "ديكور بيئة البيع" : "Sales décor" },
+    experience: { href: lp("/real-estate-experience"), label: ar ? "تصميم وتنفيذ ديكور البيع" : "Sales décor design & build" },
     showUnit: { href: lp("/show-unit"), label: ar ? "وحدة العرض" : "Show unit" },
-    designBuild: { href: lp("/design-build"), label: ar ? "تصميم وديكور" : "Design & décor" },
-    fitOut: { href: lp("/fit-out"), label: ar ? "الديكور والتنفيذ" : "Décor & fit-out" },
+    designBuild: { href: lp("/design-build"), label: ar ? "تصميم وتنفيذ" : "Design & build" },
+    fitOut: { href: lp("/fit-out"), label: ar ? "تصميم وتنفيذ الديكور" : "Décor design & build" },
     commercial: { href: lp("/commercial-spaces"), label: ar ? "التجاري" : "Commercial" },
     hospitality: { href: lp("/hospitality-spaces"), label: ar ? "الضيافة" : "Hospitality" },
     renovation: { href: lp("/renovation"), label: ar ? "التجديد" : "Renovation" },
@@ -82,11 +82,11 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
 
   return {
     label: ar ? "منتجاتنا" : "Our products",
-    eyebrow: ar ? "ديكور وتنفيذ مكاني" : "Décor & spatial delivery",
+    eyebrow: ar ? "تصميم وتنفيذ الديكور" : "Décor design & build",
     title: ar ? "منتجاتنا" : "Our products",
     subtitle: ar
-      ? "ديكور صالات البيع والمعارض والتنفيذ المكاني — اختر مسار مشروعك"
-      : "Sales-gallery décor, exhibition décor, and spatial delivery — pick your path",
+      ? "تصميم وتنفيذ ديكور صالات البيع والمعارض — اختر مسار مشروعك"
+      : "Design and build of sales-gallery and exhibition décor — pick your path",
     explore: ar ? "استكشف" : "Explore",
     groups: [
       {
@@ -96,11 +96,11 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
           {
             href: lp("/real-estate-experience"),
             number: "01",
-            nameAr: "ديكور بيئة البيع",
-            nameEn: "Sales Environment Décor",
+            nameAr: "تصميم وتنفيذ ديكور البيع",
+            nameEn: "Sales Décor Design & Build",
             description: ar
-              ? "ديكور وتنفيذ صالات البيع حتى جاهزية الافتتاح."
-              : "Sales-gallery décor and build through opening readiness.",
+              ? "تصميم وتنفيذ ديكور صالات البيع حتى جاهزية الافتتاح."
+              : "Design and build of sales-gallery décor through opening readiness.",
             image: "/brand/turriva/projects/mwl/hero.jpeg",
             featured: true,
           },
@@ -110,19 +110,19 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             nameAr: "وحدة العرض",
             nameEn: "Show Unit",
             description: ar
-              ? "ديكور فيلا أو شقة عيّنة يمشي فيها المشتري."
-              : "Show-villa or apartment décor the buyer can walk.",
+              ? "تصميم وتنفيذ ديكور فيلا أو شقة عيّنة يمشي فيها المشتري."
+              : "Design and build of show-villa or apartment décor the buyer can walk.",
             image: "/brand/turriva/inspiration/living-walnut-interior.webp",
             featured: true,
           },
           {
             href: lp("/real-estate-experience"),
             number: "03",
-            nameAr: "ديكور مساحة الإطلاق",
-            nameEn: "Launch Space Décor",
+            nameAr: "تصميم وتنفيذ ديكور الإطلاق",
+            nameEn: "Launch Décor Design & Build",
             description: ar
-              ? "ديكور مركز الإطلاق وبيئة المعرض لمرحلة البيع الأولى."
-              : "Launch-center and exhibition décor for the first sales phase.",
+              ? "تصميم وتنفيذ ديكور مركز الإطلاق وبيئة المعرض لمرحلة البيع الأولى."
+              : "Design and build of launch-center and exhibition décor for the first sales phase.",
             image: "/brand/graphics-house/rafal-pavilions-poster.jpg",
             featured: true,
           },
@@ -130,26 +130,26 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
       },
       {
         id: "support",
-        title: ar ? "ديكور وتنفيذ أوسع" : "Broader décor & delivery",
+        title: ar ? "تصميم وتنفيذ أوسع" : "Broader design & build",
         items: [
           {
             href: lp("/design-build"),
             number: "04",
-            nameAr: "التصميم والديكور",
-            nameEn: "Design & Décor",
+            nameAr: "التصميم والتنفيذ",
+            nameEn: "Design & Build",
             description: ar
-              ? "من الفكرة إلى ديكور جاهز. مسار واحد."
-              : "From idea to finished décor. One path.",
+              ? "من الفكرة إلى مساحة جاهزة — تصميم وتنفيذ في مسار واحد."
+              : "From idea to a ready space — design and build in one path.",
             image: "/brand/turriva/hero-interior.webp",
           },
           {
             href: lp("/fit-out"),
             number: "05",
-            nameAr: "الديكور والتنفيذ",
-            nameEn: "Décor & Fit-Out",
+            nameAr: "تصميم وتنفيذ الديكور",
+            nameEn: "Décor Design & Build",
             description: ar
-              ? "تصميمكم المعتمد. نحن ننفّذ الديكور ونبنيه."
-              : "Your approved design. We execute the décor and build it.",
+              ? "نصمم الديكور وننفّذه — من التصور إلى التسليم الجاهز."
+              : "We design the décor and build it — from concept to ready handover.",
             image: "/brand/turriva/projects/project-joinery-b2b.webp",
           },
           {
@@ -158,8 +158,8 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             nameAr: "التجاري والضيافة",
             nameEn: "Commercial & Hospitality",
             description: ar
-              ? "ديكور مساحات تحمل العلامة وتعمل يومياً."
-              : "Brand-led décor for spaces that work every day.",
+              ? "تصميم وتنفيذ ديكور مساحات تحمل العلامة وتعمل يومياً."
+              : "Design and build of brand-led décor for spaces that work every day.",
             image: "/brand/turriva/projects/project-commercial-retail.jpg",
           },
           {
@@ -168,8 +168,8 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             nameAr: "التجديد والتطوير",
             nameEn: "Renovation & Upgrade",
             description: ar
-              ? "تجديد ديكور مساحة قائمة — ما يبقى وما يتغير."
-              : "Refresh existing décor — what stays, what changes.",
+              ? "تصميم وتنفيذ تجديد ديكور مساحة قائمة — ما يبقى وما يتغير."
+              : "Design and build of décor refresh — what stays, what changes.",
             image: "/brand/turriva/projects/project-kitchen-jeddah.webp",
           },
         ],
