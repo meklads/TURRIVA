@@ -106,6 +106,7 @@ function MegaProductCard({
           {item.number}
         </span>
         <span className="lux-mega-card__title">{productTitle(item, isAr)}</span>
+        <span className="lux-mega-card__blurb">{item.description}</span>
       </span>
     </Link>
   );
@@ -316,7 +317,7 @@ export function LuxuryMobileNav({
                           <span className="lux-mega-mobile__num">{item.number}</span>
                           <span>
                             <span className="lux-mega-mobile__name">{productTitle(item, isAr)}</span>
-                            <span className="lux-mega-mobile__en">{productAlt(item, isAr)}</span>
+                            <span className="lux-mega-mobile__en">{item.description}</span>
                           </span>
                         </Link>
                       </li>

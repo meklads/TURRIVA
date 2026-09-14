@@ -24,15 +24,15 @@ export async function LuxuryFooter() {
   const importantLinks = [
     { href: lp("/real-estate-experience"), label: locale === "ar" ? "صالة البيع" : "Sales gallery" },
     { href: lp("/show-unit"), label: locale === "ar" ? "وحدة العرض" : "Show unit" },
-    { href: lp("/fit-out"), label: locale === "ar" ? "التنفيذ والتجهيز" : "Fit-out" },
+    { href: lp("/fit-out"), label: locale === "ar" ? "تنفيذ مخطط معتمد" : "Approved execution" },
     { href: lp("/our-work"), label: t.nav.ourWork },
     { href: lp("/about"), label: t.nav.about },
     { href: lp("/contact"), label: t.nav.contact },
   ];
 
   const workLinks = [
-    { href: lp("/design-build"), label: locale === "ar" ? "التصميم والتنفيذ" : "Design & build" },
-    { href: lp("/commercial-spaces"), label: locale === "ar" ? "التجاري والضيافة" : "Commercial & hospitality" },
+    { href: lp("/design-build"), label: locale === "ar" ? "من فكرة إلى تسليم" : "Idea to handover" },
+    { href: lp("/commercial-spaces"), label: locale === "ar" ? "تجاري وضيافة" : "Commercial & hospitality" },
     { href: lp("/services"), label: locale === "ar" ? "القدرات" : "Capabilities" },
     { href: lp("/portfolio"), label: seo.nav.portfolio },
   ];

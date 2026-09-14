@@ -28,11 +28,11 @@ function productNav(locale: Locale) {
   return {
     experience: { href: lp("/real-estate-experience"), label: ar ? "صالة البيع" : "Sales gallery" },
     showUnit: { href: lp("/show-unit"), label: ar ? "وحدة العرض" : "Show unit" },
-    designBuild: { href: lp("/design-build"), label: ar ? "التصميم والتنفيذ" : "Design & build" },
-    fitOut: { href: lp("/fit-out"), label: ar ? "التنفيذ والتجهيز" : "Fit-out" },
-    commercial: { href: lp("/commercial-spaces"), label: ar ? "التجاري" : "Commercial" },
-    hospitality: { href: lp("/hospitality-spaces"), label: ar ? "الضيافة" : "Hospitality" },
-    renovation: { href: lp("/renovation"), label: ar ? "التجديد" : "Renovation" },
+    designBuild: { href: lp("/design-build"), label: ar ? "من فكرة إلى تسليم" : "Idea to handover" },
+    fitOut: { href: lp("/fit-out"), label: ar ? "تنفيذ مخطط معتمد" : "Approved-drawing execution" },
+    commercial: { href: lp("/commercial-spaces"), label: ar ? "تجاري" : "Commercial" },
+    hospitality: { href: lp("/hospitality-spaces"), label: ar ? "ضيافة" : "Hospitality" },
+    renovation: { href: lp("/renovation"), label: ar ? "تجديد" : "Renovation" },
   };
 }
 
@@ -101,10 +101,8 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             href: lp("/real-estate-experience"),
             number: "01",
             nameAr: "صالة البيع",
-            nameEn: "Sales Gallery",
-            description: ar
-              ? "بيئة بيع دائمة: صالة مبيعات يستقبل فيها المشتري المشروع يومياً."
-              : "A lasting sales environment: the gallery where buyers meet the project every day.",
+            nameEn: "Sales gallery",
+            description: ar ? "المشتري يزور المشروع هنا يومياً." : "Where buyers visit the project every day.",
             image: "/brand/turriva/projects/anan-eskan-gallery.jpg",
             featured: true,
           },
@@ -112,10 +110,8 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             href: lp("/show-unit"),
             number: "02",
             nameAr: "وحدة العرض",
-            nameEn: "Show Unit",
-            description: ar
-              ? "فيلا أو شقة عيّنة: مسار معيشة يمشي فيه المشتري."
-              : "Show villa or apartment: a living path the buyer can walk.",
+            nameEn: "Show unit",
+            description: ar ? "فيلا أو شقة يمشي فيها المشتري." : "A villa or apartment the buyer walks through.",
             image: "/brand/turriva/inspiration/living-walnut-interior.webp",
             featured: true,
           },
@@ -128,51 +124,41 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
           {
             href: lp("/design-build"),
             number: "03",
-            nameAr: "التصميم والتنفيذ",
-            nameEn: "Design & Build",
-            description: ar
-              ? "من فكرة أولية — لا يوجد تصميم معتمد بعد — إلى مساحة مكتملة."
-              : "From an initial idea — no approved design yet — to a completed space.",
+            nameAr: "من فكرة إلى تسليم",
+            nameEn: "Idea to handover",
+            description: ar ? "نبدأ قبل وجود تصميم معتمد." : "We start before an approved design exists.",
             image: "/brand/turriva/hero-interior.webp",
           },
           {
             href: lp("/fit-out"),
             number: "04",
-            nameAr: "التنفيذ والتجهيز",
-            nameEn: "Fit-Out & Execution",
-            description: ar
-              ? "تصميمكم المعتمد جاهز. ننفّذه دون أن نحل محل المصمم."
-              : "Your approved design is ready. We execute it without replacing the designer.",
+            nameAr: "تنفيذ مخطط معتمد",
+            nameEn: "Approved-drawing execution",
+            description: ar ? "تصميمكم جاهز — ننفّذه كما هو." : "Your design is ready — we build it as approved.",
             image: "/brand/turriva/projects/project-joinery-b2b.webp",
           },
           {
             href: lp("/commercial-spaces"),
             number: "05",
-            nameAr: "المساحات التجارية",
-            nameEn: "Commercial Spaces",
-            description: ar
-              ? "متجر أو مطعم أو مكتب: مساحة تحمل العلامة وتعمل يومياً."
-              : "Store, restaurant, or office: a brand-led space that works every day.",
+            nameAr: "تجاري",
+            nameEn: "Commercial",
+            description: ar ? "متجر أو مطعم أو مكتب يعمل يومياً." : "Store, restaurant, or office for daily use.",
             image: "/brand/turriva/projects/project-commercial-retail.jpg",
           },
           {
             href: lp("/hospitality-spaces"),
             number: "06",
-            nameAr: "مساحات الضيافة",
-            nameEn: "Hospitality Spaces",
-            description: ar
-              ? "فندق أو شقق فندقية أو ردهة: مساحة مبنية حول تجربة الإقامة."
-              : "Hotel, serviced apartments, or lobby: a space built around the stay.",
+            nameAr: "ضيافة",
+            nameEn: "Hospitality",
+            description: ar ? "فندق أو شقق فندقية أو ردهة ضيوف." : "Hotel, serviced apartments, or guest lobby.",
             image: "/brand/turriva/projects/project-commercial-retail.jpg",
           },
           {
             href: lp("/renovation"),
             number: "07",
-            nameAr: "التجديد والتطوير",
-            nameEn: "Renovation & Upgrade",
-            description: ar
-              ? "مساحة قائمة موجودة. نحدد ما يبقى وما يتغير قبل التنفيذ."
-              : "An existing space. We define what stays and what changes before work.",
+            nameAr: "تجديد",
+            nameEn: "Renovation",
+            description: ar ? "مساحة قائمة: ما يبقى وما يتغير." : "An existing space: what stays and what changes.",
             image: "/brand/turriva/projects/project-kitchen-jeddah.webp",
           },
         ],
