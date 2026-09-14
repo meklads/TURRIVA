@@ -21,43 +21,22 @@ export async function LuxuryFooter() {
   const seo = getLuxurySeoMessages(locale);
   const lp = (path: string) => localizePath(path, locale);
 
-  const productGroups = [
-    {
-      title: locale === "ar" ? "الأبواب الرئيسية" : "Main doors",
-      links: [
-        { href: lp("/real-estate-experience"), label: locale === "ar" ? "تصميم وتنفيذ ديكور البيع" : "Sales décor design & build" },
-        { href: lp("/show-unit"), label: locale === "ar" ? "وحدة العرض" : "Show unit" },
-        { href: lp("/fit-out"), label: locale === "ar" ? "تصميم وتنفيذ الديكور" : "Décor design & build" },
-      ],
-    },
-    {
-      title: locale === "ar" ? "صفحات الدعم" : "Support pages",
-      links: [
-        { href: lp("/design-build"), label: locale === "ar" ? "التصميم والتنفيذ" : "Design and build" },
-        { href: lp("/commercial-spaces"), label: locale === "ar" ? "المساحات التجارية" : "Commercial spaces" },
-        { href: lp("/hospitality-spaces"), label: locale === "ar" ? "مساحات الضيافة" : "Hospitality spaces" },
-        { href: lp("/renovation"), label: locale === "ar" ? "التجديد والتطوير" : "Renovation and upgrade" },
-      ],
-    },
-  ];
-
-  const exploreLinks = [
+  const importantLinks = [
+    { href: lp("/real-estate-experience"), label: locale === "ar" ? "ديكور البيع" : "Sales décor" },
+    { href: lp("/show-unit"), label: locale === "ar" ? "وحدة العرض" : "Show unit" },
+    { href: lp("/fit-out"), label: locale === "ar" ? "تصميم وتنفيذ الديكور" : "Décor design & build" },
     { href: lp("/our-work"), label: t.nav.ourWork },
-    { href: lp("/portfolio"), label: seo.nav.portfolio },
-    { href: lp("/professionals"), label: t.nav.professionals },
-    { href: lp("/services"), label: seo.nav.services },
     { href: lp("/about"), label: t.nav.about },
     { href: lp("/contact"), label: t.nav.contact },
-    { href: lp("/faq"), label: seo.nav.faq },
   ];
 
   const workLinks = [
-    { href: lp("/fit-out"), label: locale === "ar" ? "نجارة وفق المخططات" : "Joinery to the drawings" },
-    { href: lp("/design-build"), label: locale === "ar" ? "مسكن من فكرة" : "A residence from an idea" },
+    { href: lp("/design-build"), label: locale === "ar" ? "التصميم والتنفيذ" : "Design & build" },
+    { href: lp("/commercial-spaces"), label: locale === "ar" ? "التجاري والضيافة" : "Commercial & hospitality" },
     { href: lp("/services"), label: locale === "ar" ? "القدرات" : "Capabilities" },
-    { href: lp("/our-work"), label: locale === "ar" ? "أعمال مختارة" : "Selected work" },
+    { href: lp("/portfolio"), label: seo.nav.portfolio },
   ];
-  const workTitle = locale === "ar" ? "قدرات متخصصة" : "Specialized execution";
+  const workTitle = locale === "ar" ? "المزيد" : "More";
 
   const offices = [
     {
@@ -169,18 +148,8 @@ export async function LuxuryFooter() {
           <div className="lux-footer-col">
             <h3 className="lux-footer-col-title">{t.footer.importantLinks}</h3>
             <nav className="lux-footer-links" aria-label={t.footer.importantLinks}>
-              {productGroups.map((group) => (
-                <div key={group.title} className="flex flex-col gap-2">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-lux-ink-muted">{group.title}</p>
-                  {group.links.map((link) => (
-                    <Link key={link.href} href={link.href}>
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              ))}
-              {exploreLinks.map((link) => (
-                <Link key={link.href + link.label} href={link.href}>
+              {importantLinks.map((link) => (
+                <Link key={link.href} href={link.href}>
                   {link.label}
                 </Link>
               ))}
