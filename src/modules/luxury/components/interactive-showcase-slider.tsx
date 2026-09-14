@@ -49,7 +49,7 @@ export function InteractiveShowcaseSlider({ locale }: Props) {
             dragging.current = false;
           }}
           role="img"
-          aria-label={isAr ? "مقارنة بيئة البيع" : "Sales environment comparison"}
+          aria-label={isAr ? "مقارنة ديكور بيئة البيع" : "Sales décor comparison"}
         >
           <div className="lux-showcase__layer lux-showcase__layer--after">
             <Image

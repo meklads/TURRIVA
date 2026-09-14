@@ -42,8 +42,8 @@ export const PRODUCT_VISUALS: Record<ProductVisualKey, ProductVisuals> = {
     story: [
       {
         src: "/brand/turriva/projects/mwl/hero.jpeg",
-        captionEn: "Sales environment",
-        captionAr: "بيئة البيع",
+          captionEn: "Sales environment décor",
+          captionAr: "ديكور بيئة البيع",
       },
       {
         src: "/brand/turriva/sample-kit-showroom.webp",
