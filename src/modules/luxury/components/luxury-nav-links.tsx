@@ -98,10 +98,15 @@ function MegaProductCard({
           alt={productTitle(item, isAr)}
           fill
           className="object-cover"
-          sizes="4.5rem"
+          sizes="5.5rem"
         />
       </div>
-      <span className="lux-mega-card__title">{productTitle(item, isAr)}</span>
+      <span className="lux-mega-card__copy">
+        <span className="lux-mega-card__num" aria-hidden>
+          {item.number}
+        </span>
+        <span className="lux-mega-card__title">{productTitle(item, isAr)}</span>
+      </span>
     </Link>
   );
 }
@@ -190,20 +195,9 @@ export function LuxuryDesktopNav({
 
               <div className="lux-mega__grid">
                 <div className="lux-mega__row lux-mega__row--3" role="presentation">
-                  {doors.map((item) => (
+                  {[...doors, ...support].map((item) => (
                     <MegaProductCard
-                      key={item.href}
-                      item={item}
-                      isAr={isAr}
-                      active={isActive(item.href)}
-                      onNavigate={closeMenu}
-                    />
-                  ))}
-                </div>
-                <div className="lux-mega__row lux-mega__row--4" role="presentation">
-                  {support.map((item) => (
-                    <MegaProductCard
-                      key={item.href}
+                      key={`${item.number}-${item.href}`}
                       item={item}
                       isAr={isAr}
                       active={isActive(item.href)}
@@ -212,6 +206,16 @@ export function LuxuryDesktopNav({
                   ))}
                 </div>
               </div>
+
+              <Link
+                href={products.viewAllHref}
+                prefetch
+                className="lux-mega__footer"
+                role="menuitem"
+                onClick={closeMenu}
+              >
+                {products.viewAll}
+              </Link>
             </div>
           </div>
         </div>

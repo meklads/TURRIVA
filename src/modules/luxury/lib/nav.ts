@@ -58,6 +58,8 @@ export type LuxuryProductMenu = {
   title: string;
   subtitle: string;
   explore: string;
+  viewAll: string;
+  viewAllHref: string;
   groups: readonly LuxuryProductMenuGroup[];
 };
 
@@ -81,13 +83,15 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
   const ar = locale === "ar";
 
   return {
-    label: ar ? "منتجاتنا" : "Our products",
+    label: ar ? "تصميم وتنفيذ" : "Design & build",
     eyebrow: ar ? "تصميم وتنفيذ الديكور" : "Décor design & build",
-    title: ar ? "منتجاتنا" : "Our products",
+    title: ar ? "تصميم وتنفيذ" : "Design & build",
     subtitle: ar
-      ? "تصميم وتنفيذ ديكور صالات البيع والمعارض — اختر مسار مشروعك"
-      : "Design and build of sales-gallery and exhibition décor — pick your path",
+      ? "اختر مسار مشروعك — صالات البيع، وحدات العرض، والديكور التنفيذي"
+      : "Pick your project path — sales galleries, show units, and executive décor",
     explore: ar ? "استكشف" : "Explore",
+    viewAll: ar ? "عرض كل المسارات ←" : "View all paths →",
+    viewAllHref: lp("/services"),
     groups: [
       {
         id: "doors",

@@ -62,34 +62,35 @@ export async function LuxuryFooter() {
   const offices = [
     {
       title: t.footer.countries.saudiArabia,
-      lines: [locale === "ar" ? "جدة" : "Jeddah", "P.O.Box 136972"],
+      city: locale === "ar" ? "جدة" : "Jeddah",
+      lines: ["P.O.Box 136972"],
       registry: "CR 4030502306",
       phone: "+966502786513",
     },
     {
       title: t.footer.countries.oman,
+      city: locale === "ar" ? "مسقط" : "Muscat",
       lines: [
         locale === "ar" ? "الخوض، السيب" : "Al Khod, Al Seeb",
-        locale === "ar" ? "مسقط" : "Muscat",
       ],
       registry: "CR 1460078",
       phone: "+96891326735",
     },
     {
       title: t.footer.countries.bahrain,
+      city: locale === "ar" ? "المنامة" : "Manama",
       lines: [
         locale === "ar" ? "مجمع 316" : "Block 316",
-        locale === "ar" ? "المنامة" : "Manama",
       ],
       registry: "CR 15571301",
       phone: "+97332150369",
     },
     {
       title: t.footer.countries.egypt,
+      city: locale === "ar" ? "القاهرة" : "Cairo",
       lines: [
         locale === "ar" ? "شارع محمد عثمان" : "Mohamed Othman St.",
         locale === "ar" ? "برج فيكتوريا سيتي" : "Victoria City Tower",
-        locale === "ar" ? "القاهرة" : "Cairo",
       ],
       registry: null,
       phone: "+201032955089",
@@ -231,11 +232,24 @@ export async function LuxuryFooter() {
         </div>
 
         <div className="lux-footer-offices">
-          <h3 className="lux-footer-offices-title">{t.footer.offices}</h3>
+          <div className="lux-footer-offices-head">
+            <h3 className="lux-footer-offices-title">{t.footer.offices}</h3>
+            <p className="lux-footer-offices-note">
+              {locale === "ar"
+                ? "تواجد إقليمي للتنسيق والمتابعة — المشروع يُدار تحت توريفا، والمجموعة تُستدعى عند الحاجة."
+                : "Regional presence for coordination and follow-through — projects are owned by Turriva; the group joins when needed."}
+            </p>
+          </div>
           <div className="lux-footer-offices-grid">
             {offices.map((office) => (
               <div key={office.title} className="lux-footer-office">
-                <h4 className="lux-footer-office-title">{office.title}</h4>
+                <div className="lux-footer-office-top">
+                  <span className="lux-footer-office-pin" aria-hidden>
+                    <MapPin className="h-3.5 w-3.5" strokeWidth={1.75} />
+                  </span>
+                  <h4 className="lux-footer-office-title">{office.title}</h4>
+                </div>
+                <p className="lux-footer-office-city">{office.city}</p>
                 <div className="lux-footer-office-lines">
                   {office.lines.map((line) => (
                     <p key={line}>{line}</p>
@@ -246,6 +260,9 @@ export async function LuxuryFooter() {
                     {office.registry}
                   </p>
                 ) : null}
+                <a href={`tel:${office.phone}`} className="lux-footer-office-phone" dir="ltr">
+                  {office.phone}
+                </a>
                 <a href={`tel:${office.phone}`} className="lux-footer-call">
                   <Phone className="h-3 w-3 shrink-0" strokeWidth={2} aria-hidden />
                   <span>{t.footer.callNow}</span>
