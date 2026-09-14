@@ -27,7 +27,7 @@ export function LuxuryHomeHero({ locale }: Props) {
             <div className="lux-flourish" aria-hidden />
             <p className="lux-body max-w-lg">{copy.heroSubtitle}</p>
             <p className="lux-hero-capability">{copy.heroCapability}</p>
-            <div className="lux-hero-cta mt-9 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap">
+            <div className="lux-hero-cta flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <button type="button" className="lux-btn-primary" onClick={() => openDemo({ source: "home_hero" })}>
                 {copy.ctaDemo}
               </button>
@@ -35,7 +35,7 @@ export function LuxuryHomeHero({ locale }: Props) {
                 {copy.ctaExplore}
               </a>
             </div>
-            <ul className="lux-hero-glow-stats mt-8" aria-label={isAr ? "مؤشرات" : "Highlights"}>
+            <ul className="lux-hero-glow-stats" aria-label={isAr ? "مؤشرات" : "Highlights"}>
               <li className="lux-glow-stat">
                 <strong>15+</strong>
                 <span>{isAr ? "عاماً من خبرة الفريق" : "years of team experience"}</span>

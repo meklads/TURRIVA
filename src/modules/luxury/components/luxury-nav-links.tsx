@@ -258,11 +258,11 @@ export function LuxuryMobileNav({
 
   return (
     <div className="lux-header-mobile lg:hidden">
-      <nav className="lux-header-mobile__row flex gap-2 overflow-x-auto border-t border-lux-sand/40 py-3.5" aria-label="Mobile">
+      <nav className="lux-header-mobile__row flex gap-2 overflow-x-auto border-t border-lux-sand/40 py-2.5" aria-label="Mobile">
         {products ? (
           <button
             type="button"
-            className={`shrink-0 rounded-full border px-3.5 py-2 text-xs font-semibold tracking-wide transition-colors lux-mobile-nav-link ${
+            className={`lux-mobile-nav-link shrink-0 rounded-full border px-3.5 py-2.5 text-xs font-semibold tracking-wide transition-colors ${
               open || menuActive
                 ? "border-lux-gold bg-lux-gold/10 text-lux-gold"
                 : "border-lux-sand bg-lux-gold-muted/40 text-lux-ink-soft"
@@ -278,7 +278,7 @@ export function LuxuryMobileNav({
             key={link.href}
             href={link.href}
             prefetch
-            className={`shrink-0 rounded-full border px-3.5 py-2 text-xs font-semibold tracking-wide transition-colors lux-mobile-nav-link sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-wider ${
+            className={`lux-mobile-nav-link shrink-0 rounded-full border px-3.5 py-2.5 text-xs font-semibold tracking-wide transition-colors ${
               isActive(link.href)
                 ? "border-lux-gold bg-lux-gold/10 text-lux-gold"
                 : "border-lux-sand bg-lux-gold-muted/40 text-lux-ink-soft"
