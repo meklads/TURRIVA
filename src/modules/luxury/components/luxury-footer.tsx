@@ -22,9 +22,9 @@ export async function LuxuryFooter() {
   const lp = (path: string) => localizePath(path, locale);
 
   const importantLinks = [
-    { href: lp("/real-estate-experience"), label: locale === "ar" ? "ديكور البيع" : "Sales décor" },
+    { href: lp("/real-estate-experience"), label: locale === "ar" ? "صالة البيع" : "Sales gallery" },
     { href: lp("/show-unit"), label: locale === "ar" ? "وحدة العرض" : "Show unit" },
-    { href: lp("/fit-out"), label: locale === "ar" ? "تصميم وتنفيذ الديكور" : "Décor design & build" },
+    { href: lp("/fit-out"), label: locale === "ar" ? "التنفيذ والتجهيز" : "Fit-out" },
     { href: lp("/our-work"), label: t.nav.ourWork },
     { href: lp("/about"), label: t.nav.about },
     { href: lp("/contact"), label: t.nav.contact },
