@@ -78,7 +78,7 @@ export type CommercialSpacesCopy = {
 
 const en: CommercialSpacesCopy = {
   nav: "Commercial spaces",
-  metaTitle: "Commercial Spaces · Spatial Execution",
+  metaTitle: "Commercial Spaces, Spatial Execution",
   metaDescription:
     "Turriva delivers commercial spaces around the brand, customer journey, and daily operation: technical development, fabrication, installation, and handover.",
   hero: {
@@ -198,7 +198,7 @@ const en: CommercialSpacesCopy = {
 
 const ar: CommercialSpacesCopy = {
   nav: "المساحات التجارية",
-  metaTitle: "تنفيذ المساحات التجارية · تنفيذ مكاني",
+  metaTitle: "تنفيذ المساحات التجارية, تنفيذ مكاني",
   metaDescription:
     "توريفا تسلّم المساحات التجارية وفق هوية العلامة ومسار العميل ومتطلبات التشغيل: تطوير فني وتصنيع وتركيب وتسليم.",
   hero: {

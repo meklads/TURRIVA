@@ -172,7 +172,7 @@ export function LuxuryQuoteForm({ messages, locale, source = "marketing_quote" }
           <span className="lux-quote-form__file-label">{q.formFile}</span>
           <input
             type="file"
-            accept=".pdf,.png,.jpg,.jpeg,.webp,.dwg,.dxf"
+            accept=".pdf.png.jpg.jpeg.webp.dwg.dxf"
             className="lux-quote-form__file-input"
             onChange={(e) => setFileName(e.target.files?.[0]?.name ?? "")}
           />

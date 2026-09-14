@@ -205,8 +205,8 @@ export async function LuxuryFooter() {
             <h3 className="lux-footer-offices-title">{t.footer.offices}</h3>
             <p className="lux-footer-offices-note">
               {locale === "ar"
-                ? "تواجد إقليمي للتنسيق والمتابعة — المشروع يُدار تحت توريفا، والمجموعة تُستدعى عند الحاجة."
-                : "Regional presence for coordination and follow-through — projects are owned by Turriva; the group joins when needed."}
+                ? "تواجد إقليمي للتنسيق والمتابعة, المشروع يُدار تحت توريفا، والمجموعة تُستدعى عند الحاجة."
+                : "Regional presence for coordination and follow-through, projects are owned by Turriva; the group joins when needed."}
             </p>
           </div>
           <div className="lux-footer-offices-grid">

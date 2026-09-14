@@ -37,7 +37,7 @@ export const ar = {
    areaSqm: "المساحة (م²)",
    areaSqmPlaceholder: "300",
    duration: "مدة التنفيذ المتوقعة",
-   durationPlaceholder: "مثال: 6–8 أسابيع",
+   durationPlaceholder: "مثال: 6-8 أسابيع",
    specifications: "مواصفات تقنية إضافية",
    specificationsPlaceholder:
     "مثال: أرضيات بورسلان، دهانات جوتن، مطابخ ايكيا...",
@@ -200,9 +200,9 @@ export const ar = {
   cta: "ابدأ عرضاً الآن",
   ctaSecondary: "عروضي",
   feature1: "⚡ 3 معلومات فقط",
-  feature2: "🛡️ بنود معتمدة SBC · ZATCA",
+  feature2: "🛡️ بنود معتمدة SBC, ZATCA",
   feature3: "🇸🇦 عربي/EN + CR/VAT",
-  trustLine: "بدون حساب للبدء · ملف شركة · دعم ومساعدة مجانية",
+  trustLine: "بدون حساب للبدء, ملف شركة, دعم ومساعدة مجانية",
  },
  sales: {
   hero: {
@@ -216,9 +216,9 @@ export const ar = {
    subtitleOutcomeAfter: "، وتصدّر PDF باسم شركتك.",
    cta: "ابدأ عرضاً الآن",
    ctaSecondary: "استعرض نموذجاً جاهزاً",
-   microcopy: "بدون حساب · بدون بطاقة · جاهز في أقل من 10 دقائق",
+   microcopy: "بدون حساب, بدون بطاقة, جاهز في أقل من 10 دقائق",
    imageBadgeTitle: "شريكك في الميدان",
-   imageBadge: "بنود معتمدة · SBC · ZATCA",
+   imageBadge: "بنود معتمدة, SBC, ZATCA",
   },
   heroSteps: {
    title: "ثلاث خطوات وعرضك جاهز",
@@ -503,7 +503,7 @@ export const ar = {
     },
    ],
    packTitle: "حزمة البنود المعتمدة",
-   packMeta: "حزمة تشطيب داخلي · v1.0 · 9 بنود معتمدة",
+   packMeta: "حزمة تشطيب داخلي, v1.0, 9 بنود معتمدة",
    clauses: [
     {
      category: "كود البناء SBC",
@@ -565,7 +565,7 @@ export const ar = {
     "3 معلومات. مراجعة ذكية. PDF باسم شركتك. ابدأ الآن بدون حساب، وشاهد الفرق في أول عرض.",
    primary: "أنشئ أول عرض",
    secondary: "استعرض النموذج",
-   microcopy: "مجاني للبدء · بدون بطاقة · دعم ومساعدة متاحة",
+   microcopy: "مجاني للبدء, بدون بطاقة, دعم ومساعدة متاحة",
   },
  },
  site: {
@@ -1104,7 +1104,7 @@ export const ar = {
  },
  share: {
   downloadOfficialPdf: "تحميل PDF الرسمي",
-  confidentialNotice: "سري · نسخة العميل",
+  confidentialNotice: "سري, نسخة العميل",
   notFoundTitle: "العرض غير متاح",
   notFoundMessage:
    "قد يكون الرابط منتهياً أو غير صالح. تواصل مع المرسل للحصول على رابط محدّث.",

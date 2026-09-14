@@ -295,7 +295,7 @@ export function LuxuryExperienceBriefForm({
         <span className="text-xs font-semibold uppercase tracking-wider text-lux-ink-muted">{copy.file}</span>
         <input
           type="file"
-          accept=".pdf,.png,.jpg,.jpeg,.webp,.dwg,.dxf"
+          accept=".pdf.png.jpg.jpeg.webp.dwg.dxf"
           className="mt-2 block w-full text-sm"
           onChange={(e) => setFile(e.target.files?.[0] ?? null)}
         />

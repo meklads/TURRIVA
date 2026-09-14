@@ -81,7 +81,7 @@ export type RepositionCopy = {
 };
 
 const PRODUCT_IMAGES = {
-  /** Sales / presentation environment card — MWL interactive maquette execution. */
+  /** Sales / presentation environment card, MWL interactive maquette execution. */
   experience: "/brand/turriva/projects/mwl/hero.jpeg",
   showUnit: "/brand/turriva/inspiration/living-walnut-interior.webp",
   designBuild: "/brand/turriva/hero-interior.webp",
@@ -91,7 +91,7 @@ const PRODUCT_IMAGES = {
   renovation: "/brand/turriva/projects/project-kitchen-jeddah.webp",
 } as const;
 
-/** MWL exhibition — shared execution still for Selected Work and product surfaces. */
+/** MWL exhibition, shared execution still for Selected Work and product surfaces. */
 const MWL_SELECTED_WORK_IMAGE = "/brand/turriva/projects/mwl/hero.jpeg";
 
 const en: RepositionCopy = {
@@ -100,7 +100,7 @@ const en: RepositionCopy = {
     eyebrow: "What Turriva is",
     title: "From approved design to delivered reality.",
     body: "Turriva is a spatial execution and physical delivery company. We bridge approved creative intent and the finished space: technical development, fabrication, installation, and handover. Real estate sales environments are our flagship specialty. Hospitality, commercial, exhibition, residential, and fit-out remain open doors. Graphics House creates the visual layer when the project needs it.",
-    audiences: "Developers · Hospitality · Commercial · Exhibition · Residential · Fit-out",
+    audiences: "Developers, Hospitality, Commercial, Exhibition, Residential, Fit-out",
     image: "/brand/turriva/sections/definition-spaces.jpg",
     imageAlt: "A finished premium interior. Designed, furnished, and presentation-ready",
   },
@@ -169,7 +169,7 @@ const en: RepositionCopy = {
         href: "/fit-out",
         nameAr: "تنفيذ مخطط معتمد",
         nameEn: "Approved-drawing execution",
-        description: "Your design is ready — we build it as approved.",
+        description: "Your design is ready. We build it as approved.",
         image: PRODUCT_IMAGES.fitOut,
       },
       {
@@ -259,7 +259,7 @@ const ar: RepositionCopy = {
     eyebrow: "ما هي توريفا",
     title: "من التصميم المعتمد إلى واقع جاهز للتسليم.",
     body: "توريفا شركة تنفيذ مكاني وتسليم مادي. نربط النية الإبداعية المعتمدة بالمساحة المكتملة: تطوير فني، تصنيع، تركيب، وتسليم. بيئات البيع العقاري هي تخصصنا الرئيسي. والضيافة والتجاري والمعارض والسكني والتجهيز أبواب مفتوحة. جرافيكس هاوس تخلق الطبقة البصرية حين يحتاجها المشروع.",
-    audiences: "مطورون · ضيافة · تجاري · معارض · سكني · تجهيز",
+    audiences: "مطورون، ضيافة، تجاري، معارض، سكني، تجهيز",
     image: "/brand/turriva/sections/definition-spaces.jpg",
     imageAlt: "مساحة داخلية فاخرة جاهزة. مصمّمة ومفروشة وجاهزة للعرض",
   },
@@ -328,7 +328,7 @@ const ar: RepositionCopy = {
         href: "/fit-out",
         nameAr: "تنفيذ مخطط معتمد",
         nameEn: "Approved-drawing execution",
-        description: "تصميمكم جاهز — ننفّذه كما هو.",
+        description: "تصميمكم جاهز. ننفّذه كما هو.",
         image: PRODUCT_IMAGES.fitOut,
       },
       {

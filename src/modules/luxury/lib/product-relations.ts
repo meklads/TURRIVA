@@ -26,7 +26,7 @@ const CATALOG: readonly ProductRelation[] = [
     nameAr: "وحدة العرض",
     nameEn: "Show Unit",
     blurbAr: "وحدة يمشي فيها المشتري ويفهم المعيار.",
-    blurbEn: "A unit the buyer walks — and understands.",
+    blurbEn: "A unit the buyer walks, and understands.",
   },
   {
     key: "fit-out",

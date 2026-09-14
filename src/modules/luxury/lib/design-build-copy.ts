@@ -72,7 +72,7 @@ export type DesignBuildCopy = {
 
 const en: DesignBuildCopy = {
   nav: "Design and build",
-  metaTitle: "Design & Build · Spatial Execution",
+  metaTitle: "Design & Build, Spatial Execution",
   metaDescription:
     "One coordinated path from approved intent to a completed space: technical development, fabrication, installation, and handover under Turriva.",
   hero: {
@@ -175,7 +175,7 @@ const en: DesignBuildCopy = {
 
 const ar: DesignBuildCopy = {
   nav: "التصميم والتنفيذ",
-  metaTitle: "التصميم والتنفيذ · تنفيذ مكاني",
+  metaTitle: "التصميم والتنفيذ, تنفيذ مكاني",
   metaDescription:
     "مسار منسق من النية المعتمدة إلى مساحة مكتملة: تطوير فني وتصنيع وتركيب وتسليم تحت توريفا.",
   hero: {

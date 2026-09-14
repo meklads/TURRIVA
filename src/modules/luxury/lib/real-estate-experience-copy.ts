@@ -136,7 +136,7 @@ const en: ExperienceCopy = {
     eyebrow: "Real estate project experience",
     title: "Ready to sell.",
     question: "Ready to show?",
-    body: "We deliver the sales environment — from gallery to show unit — where your project meets its buyers.",
+    body: "We deliver the sales environment, from gallery to show unit, where your project meets its buyers.",
     cta: "Discuss your project",
     secondary: "Send project details",
   },
@@ -159,7 +159,7 @@ const en: ExperienceCopy = {
   includes: {
     eyebrow: "Scope",
     title: "What the work can cover",
-    intro: "Six parts. Scoped after we understand the project — not a fixed package.",
+    intro: "Six parts. Scoped after we understand the project, not a fixed package.",
     items: [
       {
         title: "Sales environment",
@@ -188,7 +188,7 @@ const en: ExperienceCopy = {
         points: ["Technical development", "Supply", "Fabrication and install", "Coordination and handover"],
       },
     ],
-    techNote: "Screens and models are tools — used when they explain what drawings cannot. Turriva does not sell or build a software platform.",
+    techNote: "Screens and models are tools, used when they explain what drawings cannot. Turriva does not sell or build a software platform.",
   },
   flexible: {
     eyebrow: "Starting point",
@@ -206,7 +206,7 @@ const en: ExperienceCopy = {
   levels: {
     eyebrow: "Scale",
     title: "Three ways to size the work.",
-    note: "These describe the size of the environment — not a price list. Fee follows scope.",
+    note: "These describe the size of the environment, not a price list. Fee follows scope.",
     items: [
       {
         name: "Sales Environment",
@@ -263,11 +263,11 @@ const en: ExperienceCopy = {
       },
       {
         title: "Space built for understanding",
-        body: "A sales gallery is where the buyer understands the project — not only an interior finish.",
+        body: "A sales gallery is where the buyer understands the project, not only an interior finish.",
       },
       {
         title: "Visual layer when needed",
-        body: "Graphics House can add identity, CGI, film, models, and interactive content — without a separate hire unless you want one.",
+        body: "Graphics House can add identity, CGI, film, models, and interactive content, without a separate hire unless you want one.",
       },
     ],
     trust: "TURRIVA is a spatial execution and physical delivery company, backed by a team with 15+ years of group delivery experience.",
@@ -275,7 +275,7 @@ const en: ExperienceCopy = {
   scenario: {
     eyebrow: "Example",
     title: "From drawings to a place clients visit",
-    label: "Illustrative example — not a named Turriva project.",
+    label: "Illustrative example, not a named Turriva project.",
     project: "Multi-unit residential launch",
     needsTitle: "Typical needs",
     needs: ["Sales gallery", "Show unit", "Masterplan model", "Interactive screen", "Unit display", "Materials", "Visual content"],
@@ -286,9 +286,9 @@ const en: ExperienceCopy = {
   close: {
     line: "From gallery to show unit, we deliver the environment in which your project presents itself.",
     brand: "TURRIVA",
-    tagline: "Technical Development · Fabrication · Installation · Handover",
+    tagline: "Technical Development, Fabrication, Installation, Handover",
     title: "A project coming up?",
-    body: "Share what you have. We review the need and propose a scope. First step: a conversation — not a price in the dark.",
+    body: "Share what you have. We review the need and propose a scope. First step: a conversation, not a price in the dark.",
   },
   form: {
     company: "Company",
@@ -339,7 +339,7 @@ const ar: ExperienceCopy = {
     eyebrow: "تجربة المشروع العقاري",
     title: "جاهز للبيع.",
     question: "هل هو جاهز للعرض؟",
-    body: "ننفّذ بيئة البيع — من مركز البيع إلى وحدة العرض — حيث يلتقي مشروعك بالمشترين.",
+    body: "ننفّذ بيئة البيع, من مركز البيع إلى وحدة العرض, حيث يلتقي مشروعك بالمشترين.",
     cta: "ناقش مشروعك",
     secondary: "أرسل تفاصيل المشروع",
   },
@@ -362,7 +362,7 @@ const ar: ExperienceCopy = {
   includes: {
     eyebrow: "النطاق",
     title: "ما يمكن أن يشمله العمل",
-    intro: "ستة أجزاء. نحدد النطاق بعد فهم المشروع — ليست باقة ثابتة.",
+    intro: "ستة أجزاء. نحدد النطاق بعد فهم المشروع, ليست باقة ثابتة.",
     items: [
       {
         title: "بيئة البيع",
@@ -391,7 +391,7 @@ const ar: ExperienceCopy = {
         points: ["التطوير الفني", "التوريد", "التصنيع والتركيب", "التنسيق والتسليم"],
       },
     ],
-    techNote: "الشاشات والمجسمات أدوات — تُستخدم حين تشرح ما لا تشرحه المخططات. توريفا لا تبيع منصة برمجية ولا تبنيها.",
+    techNote: "الشاشات والمجسمات أدوات, تُستخدم حين تشرح ما لا تشرحه المخططات. توريفا لا تبيع منصة برمجية ولا تبنيها.",
   },
   flexible: {
     eyebrow: "نقطة البداية",
@@ -409,7 +409,7 @@ const ar: ExperienceCopy = {
   levels: {
     eyebrow: "الحجم",
     title: "ثلاثة مستويات لحجم العمل.",
-    note: "تصف حجم البيئة المطلوبة — ليست قائمة أسعار. السعر يتبع النطاق.",
+    note: "تصف حجم البيئة المطلوبة, ليست قائمة أسعار. السعر يتبع النطاق.",
     items: [
       {
         name: "بيئة البيع",
@@ -469,11 +469,11 @@ const ar: ExperienceCopy = {
       },
       {
         title: "مساحة تُفهم",
-        body: "مركز البيع مكان يفهم فيه المشتري المشروع — لا تشطيب داخلي فحسب.",
+        body: "مركز البيع مكان يفهم فيه المشتري المشروع, لا تشطيب داخلي فحسب.",
       },
       {
         title: "طبقة بصرية عند الحاجة",
-        body: "جرافيكس هاوس تضيف الهوية والتصوير والأفلام والمجسمات والمحتوى التفاعلي — دون تعاقد منفصل إلا إذا رغبت.",
+        body: "جرافيكس هاوس تضيف الهوية والتصوير والأفلام والمجسمات والمحتوى التفاعلي, دون تعاقد منفصل إلا إذا رغبت.",
       },
     ],
     trust: "توريفا شركة تنفيذ مكاني وتسليم مادي، مدعومة بفريق لديه أكثر من 15 عاماً من خبرة التسليم عبر المجموعة.",
@@ -481,7 +481,7 @@ const ar: ExperienceCopy = {
   scenario: {
     eyebrow: "مثال",
     title: "من المخططات إلى مكان يزوره العميل",
-    label: "مثال توضيحي — ليس مشروعًا باسم توريفا.",
+    label: "مثال توضيحي, ليس مشروعًا باسم توريفا.",
     project: "إطلاق سكني متعدد الوحدات",
     needsTitle: "احتياج نموذجي",
     needs: ["مركز مبيعات", "وحدة عرض", "مجسم المخطط", "شاشة تفاعلية", "عرض الوحدات", "المواد", "محتوى بصري"],
@@ -492,9 +492,9 @@ const ar: ExperienceCopy = {
   close: {
     line: "من مركز البيع إلى وحدة العرض، ننفّذ البيئة التي يقدّم فيها مشروعك نفسه.",
     brand: "TURRIVA",
-    tagline: "تطوير فني · تصنيع · تركيب · تسليم",
+    tagline: "تطوير فني, تصنيع, تركيب, تسليم",
     title: "لديك مشروع قادم؟",
-    body: "شاركنا ما لديك. نراجع الاحتياج ونقترح النطاق. الخطوة الأولى محادثة — لا سعر في الظلام.",
+    body: "شاركنا ما لديك. نراجع الاحتياج ونقترح النطاق. الخطوة الأولى محادثة, لا سعر في الظلام.",
   },
   form: {
     company: "اسم الشركة",

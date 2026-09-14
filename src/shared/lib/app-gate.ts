@@ -6,7 +6,7 @@
  * routes are gated, marketing stays public. Set to "true" to lock the entire site.
  */
 
-export const APP_GATE_REALM = "Turriva · Pre-launch";
+export const APP_GATE_REALM = "Turriva Pre-launch";
 
 /** SEO / crawler files — always public, never locale-redirected or gated */
 export function isSeoPublicPath(pathname: string): boolean {

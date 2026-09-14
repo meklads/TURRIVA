@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props) {
   const seo = getLuxurySeoMessages(locale);
   const city = seo.locationsPage.cities.find((c) => c.slug === slug);
   if (!city) return {};
-  return luxuryPageMetadata(locale, `${city.name} · Turriva`, city.summary, { path: `/locations/${slug}` });
+  return luxuryPageMetadata(locale, `${city.name} Turriva`, city.summary, { path: `/locations/${slug}` });
 }
 
 export default async function LocationCityPage({ params }: Props) {
@@ -37,7 +37,7 @@ export default async function LocationCityPage({ params }: Props) {
     <>
       <JsonLd
         data={serviceSchema(locale, {
-          name: `Turriva · ${city.name}`,
+          name: `Turriva ${city.name}`,
           description: city.summary,
           path: `/locations/${slug}`,
         })}

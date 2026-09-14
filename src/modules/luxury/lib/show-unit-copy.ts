@@ -73,7 +73,7 @@ export type ShowUnitCopy = {
 
 const en: ShowUnitCopy = {
   nav: "Show unit",
-  metaTitle: "Show Unit · Sales Environments",
+  metaTitle: "Show Unit, Sales Environments",
   metaDescription:
     "Turriva delivers show villas, apartments, and suites for real estate projects: technical development, fit-out, furniture, and handover. Commission a single unit or include it within a wider sales environment.",
   hero: {
@@ -169,7 +169,7 @@ const en: ShowUnitCopy = {
 
 const ar: ShowUnitCopy = {
   nav: "وحدة العرض",
-  metaTitle: "وحدة العرض · بيئات البيع",
+  metaTitle: "وحدة العرض, بيئات البيع",
   metaDescription:
     "توريفا تسلّم فلل وشقق وأجنحة العرض للمشاريع العقارية: تطوير فني وتجهيز وأثاث وتسليم. يمكن التعاقد على وحدة مستقلة أو إدراجها ضمن بيئة بيع أوسع.",
   hero: {

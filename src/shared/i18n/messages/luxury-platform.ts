@@ -111,9 +111,9 @@ export type LuxuryPlatformMessages = {
 const en: LuxuryPlatformMessages = {
   trustBar: {
     items: [
-      { icon: "build", label: "Technical Development · Fabrication · Installation · Handover" },
+      { icon: "build", label: "Technical Development, Fabrication, Installation, Handover" },
       { icon: "design", label: "From approved design to delivered reality" },
-      { icon: "factory", label: "Sales galleries · Show units · Launch spaces" },
+      { icon: "factory", label: "Sales galleries, Show units, Launch spaces" },
     ],
   },
   ecosystem: {
@@ -123,7 +123,7 @@ const en: LuxuryPlatformMessages = {
       "Turriva brings technical development, coordinated fabrication, site installation, quality control, and handover together under one delivery team.",
     pillars: [
       {
-        badge: "01 · Technical development",
+        badge: "01, Technical development",
         title: "Develop the design for delivery",
         points: [
           "Site surveys, material specifications, shop drawings, mock-ups, and coordinated approvals.",
@@ -132,7 +132,7 @@ const en: LuxuryPlatformMessages = {
       },
       {
         brand: "oppein",
-        badge: "02 · Fabrication & procurement",
+        badge: "02, Fabrication & procurement",
         title: "Coordinate fabrication and sourcing",
         points: [
           "Joinery, finishes, fixtures, and specialist fabrication coordinated through suitable supply partners.",
@@ -141,7 +141,7 @@ const en: LuxuryPlatformMessages = {
       },
       {
         brand: "turriva",
-        badge: "03 · Execution & handover",
+        badge: "03, Execution & handover",
         title: "Deliver the finished space",
         points: [
           "Specialist site teams manage installation, trade interfaces, snagging, and final quality checks.",
@@ -162,9 +162,9 @@ const en: LuxuryPlatformMessages = {
     flow: "Create → Grow → Execute",
     groupLink: "Discover Tasami Group",
     companies: [
-      { name: "Graphics House", role: "CREATE · visual work" },
-      { name: "Bees Motion", role: "GROW · launch and campaigns" },
-      { name: "Turriva", role: "EXECUTE · physical delivery", active: true },
+      { name: "Graphics House", role: "CREATE, visual work" },
+      { name: "Bees Motion", role: "GROW, launch and campaigns" },
+      { name: "Turriva", role: "EXECUTE, physical delivery", active: true },
     ],
   },
   comparison: {
@@ -295,7 +295,7 @@ const en: LuxuryPlatformMessages = {
     subtitleLine1: "Architectural visualisation, interior joinery, and woodwork for developer programmes.",
     subtitleLine2: "This project-specific creative work was produced by our sister company, Graphics House.",
     projectName: "Rafal Pavilions",
-    projectCredit: "Visualization & interior design · Graphics House",
+    projectCredit: "Visualization & interior design, Graphics House",
     cta: "View the project",
   },
   faq: {
@@ -398,9 +398,9 @@ const en: LuxuryPlatformMessages = {
 const ar: LuxuryPlatformMessages = {
   trustBar: {
     items: [
-      { icon: "build", label: "تطوير فني · تصنيع · تركيب · تسليم" },
+      { icon: "build", label: "تطوير فني, تصنيع, تركيب, تسليم" },
       { icon: "design", label: "من التصميم المعتمد إلى واقع جاهز للتسليم" },
-      { icon: "factory", label: "صالات بيع · وحدات عرض · مساحات إطلاق" },
+      { icon: "factory", label: "صالات بيع, وحدات عرض, مساحات إطلاق" },
     ],
   },
   ecosystem: {
@@ -410,7 +410,7 @@ const ar: LuxuryPlatformMessages = {
       "تجمع توريفا التطوير الفني وتنسيق التصنيع والتركيب وضبط الجودة والتسليم ضمن فريق واحد يقود المشروع.",
     pillars: [
       {
-        badge: "01 · التطوير الفني",
+        badge: "01, التطوير الفني",
         title: "تطوير التصميم للتنفيذ",
         points: [
           "رفع مساحي، مواصفات خامات، مخططات تنفيذ، نماذج واعتمادات منسّقة.",
@@ -419,7 +419,7 @@ const ar: LuxuryPlatformMessages = {
       },
       {
         brand: "oppein",
-        badge: "02 · التصنيع والتوريد",
+        badge: "02, التصنيع والتوريد",
         title: "تنسيق التصنيع والتوريد",
         points: [
           "تنسيق النجارة والتشطيبات والتجهيزات والأعمال المتخصصة عبر مورّدين مناسبين للمشروع.",
@@ -428,7 +428,7 @@ const ar: LuxuryPlatformMessages = {
       },
       {
         brand: "turriva",
-        badge: "03 · التنفيذ والتسليم",
+        badge: "03, التنفيذ والتسليم",
         title: "تسليم المكان المكتمل",
         points: [
           "فرق ميدانية متخصصة تدير التركيب والتقاطعات وإغلاق الملاحظات وضبط الجودة النهائي.",
@@ -449,9 +449,9 @@ const ar: LuxuryPlatformMessages = {
     flow: "خلق ← نمو ← تنفيذ",
     groupLink: "اكتشف مجموعة تسامي",
     companies: [
-      { name: "Graphics House", role: "CREATE · العمل البصري" },
-      { name: "Bees Motion", role: "GROW · الإطلاق والحملات" },
-      { name: "Turriva", role: "EXECUTE · التسليم المادي", active: true },
+      { name: "Graphics House", role: "CREATE, العمل البصري" },
+      { name: "Bees Motion", role: "GROW, الإطلاق والحملات" },
+      { name: "Turriva", role: "EXECUTE, التسليم المادي", active: true },
     ],
   },
   comparison: {
@@ -582,7 +582,7 @@ const ar: LuxuryPlatformMessages = {
     subtitleLine1: "تصور معماري ونجارة داخلية وأعمال خشبية لبرامج المطورين.",
     subtitleLine2: "أنتجت شركتنا الشقيقة Graphics House هذا العمل الإبداعي الخاص بالمشروع.",
     projectName: "Rafal Pavilions",
-    projectCredit: "إظهار وتصميم داخلي · Graphics House",
+    projectCredit: "إظهار وتصميم داخلي, Graphics House",
     cta: "شاهد المشروع",
   },
   faq: {

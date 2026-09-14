@@ -78,7 +78,7 @@ export type RenovationCopy = {
 
 const en: RenovationCopy = {
   nav: "Renovation and upgrade",
-  metaTitle: "Renovation · Spatial Execution",
+  metaTitle: "Renovation, Spatial Execution",
   metaDescription:
     "Turriva assesses and renovates existing spaces with a clear owned scope shaped by their condition and future use: technical development, fabrication, installation, and handover.",
   hero: {
@@ -198,7 +198,7 @@ const en: RenovationCopy = {
 
 const ar: RenovationCopy = {
   nav: "التجديد والتطوير",
-  metaTitle: "التجديد والتطوير · تنفيذ مكاني",
+  metaTitle: "التجديد والتطوير, تنفيذ مكاني",
   metaDescription:
     "تقيّم توريفا المساحات القائمة وتجدّدها ضمن نطاق ملكية واضح تحدده حالتها واستخدامها المستقبلي: تطوير فني وتصنيع وتركيب وتسليم.",
   hero: {

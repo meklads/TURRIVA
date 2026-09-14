@@ -10,8 +10,8 @@ export const PERMANENT_SALES_GALLERY_DRAFT = {
   status: "draft" as const,
   fitMode: "permanent" as const,
   slug: "permanent-sales-gallery-model",
-  titleEn: "Permanent Sales Gallery · Decor Design & Build",
-  titleAr: "صالة بيع دائمة · تصميم وتنفيذ ديكور",
+  titleEn: "Permanent Sales Gallery, Decor Design & Build",
+  titleAr: "صالة بيع دائمة, تصميم وتنفيذ ديكور",
   categoryEn: "Permanent sales gallery",
   categoryAr: "صالة بيع دائمة",
   summaryEn:

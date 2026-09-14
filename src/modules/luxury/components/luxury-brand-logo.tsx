@@ -7,7 +7,7 @@ export const TURRIVA_LOGO_ON_LIGHT = "/brand/turriva/logo-lockup-black.png";
 export const TURRIVA_LOGO_ON_DARK = "/brand/turriva/logo-lockup-white.png";
 /** Header: mark + wordmark only; tagline rendered centered below */
 export const TURRIVA_LOGO_HEADER = "/brand/turriva/logo-header-black.png";
-/** Icon mark cropped from above TURRIVA — favicon / watermark */
+/** Icon mark cropped from above TURRIVA, favicon / watermark */
 export const TURRIVA_MARK_GOLD = "/brand/turriva/mark-gold-on-black.png";
 export const TURRIVA_MARK_GOLD_CLEAR = "/brand/turriva/mark-gold.png";
 export const TURRIVA_MARK_BLACK = "/brand/turriva/mark-black.png";

@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 /**
  * Registers the gallery offline service worker once on marketing surfaces.
- * Failures are silent — PWA is progressive enhancement for exhibition floors.
+ * Failures are silent, PWA is progressive enhancement for exhibition floors.
  */
 export function LuxuryPwaRegister() {
   useEffect(() => {

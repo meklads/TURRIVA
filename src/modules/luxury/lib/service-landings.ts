@@ -50,8 +50,8 @@ export const SERVICE_LANDINGS: readonly ServiceLanding[] = [
       "مناطق رطبة مقاومة للرطوبة وجبس acoustic",
       "تسليم موثق متوافق مع مواعيد الافتتاح",
     ],
-    proofEn: "Delivered hospitality scope · Makkah",
-    proofAr: "نطاق ضيافة منفّذ · مكة",
+    proofEn: "Delivered hospitality scope, Makkah",
+    proofAr: "نطاق ضيافة منفّذ, مكة",
     relatedCaseSlug: "hospitality-fitout-makkah",
   },
   {
@@ -77,8 +77,8 @@ export const SERVICE_LANDINGS: readonly ServiceLanding[] = [
       "برنامج ميداني واحد مسؤول",
       "تسليم جاهز للافتتاح مع توثيق جودة",
     ],
-    proofEn: "Temporary presentation fit-out · Jeddah",
-    proofAr: "تجهيز عرض مؤقت · جدة",
+    proofEn: "Temporary presentation fit-out, Jeddah",
+    proofAr: "تجهيز عرض مؤقت, جدة",
     relatedCaseSlug: "humanity-exhibition-mwl",
   },
   {
@@ -131,8 +131,8 @@ export const SERVICE_LANDINGS: readonly ServiceLanding[] = [
       "نجارة معيارية وجدران مميزة",
       "إغلاق ملاحظات وتسليم بضمان",
     ],
-    proofEn: "Sales environment · Diriyah",
-    proofAr: "بيئة مبيعات · الدرعية",
+    proofEn: "Sales environment, Diriyah",
+    proofAr: "بيئة مبيعات, الدرعية",
     relatedCaseSlug: "rafal-pavilions",
   },
 ] as const;

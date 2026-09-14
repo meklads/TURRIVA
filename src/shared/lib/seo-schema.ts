@@ -26,8 +26,8 @@ export function organizationSchema(locale: Locale) {
     email: TURRIVA_PUBLIC_EMAIL,
     telephone: "+966502786513",
     description: isAr
-      ? "توريفا شركة تنفيذ مكاني وتسليم مادي — نفس فريق التسليم الذي نفّذ بيئات بيع وأعمالاً ميدانية لعملاء مجموعة تسامي لأكثر من 15 عاماً. من التصميم المعتمد إلى الواقع المسلَّم."
-      : "Turriva is a spatial execution and physical delivery company — the same delivery team that built sales environments and field work for Tasami Group clients for 15+ years. From approved design to delivered reality.",
+      ? "توريفا شركة تنفيذ مكاني وتسليم مادي, نفس فريق التسليم الذي نفّذ بيئات بيع وأعمالاً ميدانية لعملاء مجموعة تسامي لأكثر من 15 عاماً. من التصميم المعتمد إلى الواقع المسلَّم."
+      : "Turriva is a spatial execution and physical delivery company, the same delivery team that built sales environments and field work for Tasami Group clients for 15+ years. From approved design to delivered reality.",
     parentOrganization: {
       "@type": "Organization",
       name: "Tasami Group",
@@ -205,7 +205,7 @@ export function productPackagesSchema(locale: Locale) {
       name: isAr ? "التنفيذ والتجهيز" : "Fit-Out & Execution",
       description: isAr
         ? "من المخططات المعتمدة إلى التصنيع والتركيب والتسليم، لشريك تسليم مكاني لا مكتب تصميم."
-        : "From approved drawings through fabrication, installation, and handover — a spatial delivery partner, not a design firm.",
+        : "From approved drawings through fabrication, installation, and handover, a spatial delivery partner, not a design firm.",
       url: `${TURRIVA_PUBLIC_URL}${localizePath("/fit-out", locale)}`,
     },
   ];

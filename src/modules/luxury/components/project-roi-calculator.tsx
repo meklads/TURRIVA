@@ -78,8 +78,8 @@ export function ProjectRoiCalculator({ locale }: Props) {
       timeline,
       source: "roi_calculator",
       note: isAr
-        ? `حاسبة الإطلاق: ${kinds.find((k) => k.id === kind)?.label} · ${area} م² · تسليم تقديري ${result.deliveryDays} يوماً · ${pathLabel}`
-        : `Launch calculator: ${kinds.find((k) => k.id === kind)?.label} · ${area} m² · est. ${result.deliveryDays} days · ${pathLabel}`,
+        ? `حاسبة الإطلاق: ${kinds.find((k) => k.id === kind)?.label}, ${area} م², تسليم تقديري ${result.deliveryDays} يوماً, ${pathLabel}`
+        : `Launch calculator: ${kinds.find((k) => k.id === kind)?.label}, ${area} m², est. ${result.deliveryDays} days, ${pathLabel}`,
     });
   }
 
@@ -94,8 +94,8 @@ export function ProjectRoiCalculator({ locale }: Props) {
             </h2>
             <p className="lux-body mt-4 text-lux-ink-soft">
               {isAr
-                ? "أداة سريعة للمطورين: نوع المشروع، مساحة الصالة، وموعد الإطلاق — ثم مسار تسليم ومدة تقريبية. ليست باقة منتجات جاهزة."
-                : "A fast tool for developers: project type, gallery area, and launch window — then a delivery path and approximate timing. Not a fixed product package."}
+                ? "أداة سريعة للمطورين: نوع المشروع، مساحة الصالة، وموعد الإطلاق, ثم مسار تسليم ومدة تقريبية. ليست باقة منتجات جاهزة."
+                : "A fast tool for developers: project type, gallery area, and launch window, then a delivery path and approximate timing. Not a fixed product package."}
             </p>
           </div>
 
@@ -113,7 +113,7 @@ export function ProjectRoiCalculator({ locale }: Props) {
 
             <label className="lux-roi__label">
               <span>
-                {isAr ? "مساحة قاعة العرض" : "Target gallery area"} · {area} m²
+                {isAr ? "مساحة قاعة العرض" : "Target gallery area"}, {area} m²
               </span>
               <input
                 type="range"
@@ -127,7 +127,7 @@ export function ProjectRoiCalculator({ locale }: Props) {
 
             <label className="lux-roi__label">
               <span>
-                {isAr ? "أيام حتى الإطلاق المستهدف" : "Days until target launch"} · {daysToLaunch}
+                {isAr ? "أيام حتى الإطلاق المستهدف" : "Days until target launch"}, {daysToLaunch}
               </span>
               <input
                 type="range"

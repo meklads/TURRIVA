@@ -74,8 +74,8 @@ export function InteractiveUnitViewer3D({ locale }: Props) {
       projectType: "masterplan",
       timeline: "1_3_months",
       note: isAr
-        ? `استفسار وحدة ${unit.code} · ${unit.areaM2} م² · الطابق ${unit.floor}`
-        : `Unit inquiry ${unit.code} · ${unit.areaM2} m² · floor ${unit.floor}`,
+        ? `استفسار وحدة ${unit.code}, ${unit.areaM2} م², الطابق ${unit.floor}`
+        : `Unit inquiry ${unit.code}, ${unit.areaM2} m², floor ${unit.floor}`,
       source: "unit_viewer_3d",
     });
   }
@@ -185,7 +185,7 @@ export function InteractiveUnitViewer3D({ locale }: Props) {
               <>
                 <p className="lux-unit3d__drawer-code">{selected.code}</p>
                 <h3 className="lux-display text-xl text-lux-ink mt-1">
-                  {typeLabel(selected.type)} · {isAr ? `الطابق ${selected.floor}` : `Floor ${selected.floor}`}
+                  {typeLabel(selected.type)}, {isAr ? `الطابق ${selected.floor}` : `Floor ${selected.floor}`}
                 </h3>
                 <dl className="lux-unit3d__meta">
                   <div>

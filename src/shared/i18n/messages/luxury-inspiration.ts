@@ -1,4 +1,4 @@
-/** Inspiration carousel — Unsplash (free license), matched to space titles */
+/** Inspiration carousel, Unsplash (free license), matched to space titles */
 const IMG_Q = "auto=format&fit=crop&q=90";
 
 export const LUXURY_INSPIRATION_IMAGES = {

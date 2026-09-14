@@ -78,7 +78,7 @@ export type HospitalitySpacesCopy = {
 
 const en: HospitalitySpacesCopy = {
   nav: "Hospitality spaces",
-  metaTitle: "Hospitality Spaces · Spatial Execution",
+  metaTitle: "Hospitality Spaces, Spatial Execution",
   metaDescription:
     "Turriva delivers hotels, serviced apartments, and guest spaces around the stay and the operation: technical development, fabrication, installation, and handover.",
   hero: {
@@ -196,7 +196,7 @@ const en: HospitalitySpacesCopy = {
 
 const ar: HospitalitySpacesCopy = {
   nav: "مساحات الضيافة",
-  metaTitle: "تنفيذ مساحات الضيافة · تنفيذ مكاني",
+  metaTitle: "تنفيذ مساحات الضيافة, تنفيذ مكاني",
   metaDescription:
     "توريفا تسلّم الفنادق والشقق الفندقية ومساحات الضيوف بما يوازن بين تجربة الإقامة ومتطلبات التشغيل: تطوير فني وتصنيع وتركيب وتسليم.",
   hero: {

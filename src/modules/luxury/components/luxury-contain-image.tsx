@@ -10,7 +10,7 @@ type Props = {
   fillHeight?: boolean;
 };
 
-/** Full-frame brand / editorial image — never cropped (object-fit: contain). */
+/** Full-frame brand / editorial image, never cropped (object-fit: contain). */
 export function LuxuryContainImage({
   src,
   aspectRatio,

@@ -319,7 +319,7 @@ const en: DesignMessages = {
     title: "We design and build premium spaces",
     subtitle:
       "A Saudi contracting and decor company, fixed finishing for villas, apartments, palaces & shops, plus advertising booths and exhibitions.",
-    services: "Interior · Exterior · Booths & exhibitions, Jeddah & Makkah",
+    services: "Interior, Exterior, Booths & exhibitions, Jeddah & Makkah",
     ctaTryTool: "Try the AI preview",
     ctaBespoke: "Bespoke design, contact us",
     noteTryToolLabel: "Quick preview?",
@@ -385,7 +385,7 @@ const en: DesignMessages = {
     signInForCredits: "Sign in to get 3 free credits",
     before: "Your photo",
     after: "New design",
-    compareHint: "Drag the handle, right: your photo · left: AI design",
+    compareHint: "Drag the handle, right: your photo, left: AI design",
     mockNotice:
       "Basic preview only, AI redesign did not run. Our team can deliver a full bespoke design on request.",
     tryAnother: "Try another style",
@@ -539,7 +539,7 @@ const en: DesignMessages = {
     title: "Ready to see your space transformed?",
     subtitle: "Start free, sign in to get 3 credits. Then book execution with Turriva.",
     cta: "Redesign my room for free",
-    note: "No credit card · Free consultation · Real execution",
+    note: "No credit card, Free consultation, Real execution",
   },
   materials: {
     title: "Design components, executable materials",
@@ -721,7 +721,7 @@ const ar: DesignMessages = {
     title: "نصمّم وننفّذ مساحات فاخرة",
     subtitle:
       "شركة سعودية للديكور والمقاولات، تشطيبات ثابتة للفلل والشقق والقصور والمحلات، وديكور إعلاني للبوث والمعارض المؤقتة.",
-    services: "داخلي · خارجي · بوث ومعارض، جدة ومكة",
+    services: "داخلي, خارجي, بوث ومعارض، جدة ومكة",
     ctaTryTool: "جرّب معاينة الذكاء الاصطناعي",
     ctaBespoke: "تصميم خاص، تواصل معنا",
     noteTryToolLabel: "معاينة سريعة؟",
@@ -787,7 +787,7 @@ const ar: DesignMessages = {
     signInForCredits: "سجّل الدخول للحصول على 3 أرصدة مجانية",
     before: "صورتك الأصلية",
     after: "التصميم الجديد",
-    compareHint: "اسحب المقبض للمقارنة، يمين: صورتك · يسار: التصميم بالذكاء الاصطناعي",
+    compareHint: "اسحب المقبض للمقارنة، يمين: صورتك, يسار: التصميم بالذكاء الاصطناعي",
     mockNotice:
       "معاينة بسيطة فقط، لم يعمل إعادة التصميم بالذكاء الاصطناعي. فريق توريفا العقارية يقدّم تصميماً مخصصاً كاملاً عند الطلب.",
     tryAnother: "جرّب نمطاً آخر",
@@ -939,7 +939,7 @@ const ar: DesignMessages = {
     title: "مستعد لرؤية مساحتك بشكل جديد؟",
     subtitle: "ابدأ مجاناً، سجّل الدخول للحصول على 3 أرصدة. ثم احجز التنفيذ مع توريفا العقارية.",
     cta: "أعد تصميم غرفتي مجاناً",
-    note: "بدون بطاقة · استشارة مجانية · تنفيذ حقيقي",
+    note: "بدون بطاقة, استشارة مجانية, تنفيذ حقيقي",
   },
   materials: {
     title: "مكوّنات التصميم، خامات قابلة للتنفيذ",

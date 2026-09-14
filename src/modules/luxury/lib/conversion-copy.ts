@@ -93,20 +93,20 @@ export type DemoTimeline = "urgent" | "1_3_months" | "planning";
 export function getConversionCopy(locale: Locale) {
   const isAr = locale === "ar";
   return {
-    heroEyebrow: isAr ? "مجموعة تسامي · تصميم وتنفيذ الديكور" : "Tasami Group · Décor design & build",
+    heroEyebrow: isAr ? "مجموعة تسامي: تصميم وتنفيذ الديكور" : "Tasami Group: Décor design & build",
     heroTitle: isAr ? "تنفيذ مكاني وتسليم مادي" : "Spatial Execution & Physical Delivery",
     heroTitleAccent: isAr
-      ? "تصميم وتنفيذ الديكور — من التصميم المعتمد إلى واقع جاهز للتسليم."
-      : "Décor design & build — from approved design to delivered reality.",
+      ? "تصميم وتنفيذ الديكور: من التصميم المعتمد إلى واقع جاهز للتسليم."
+      : "Décor design & build: from approved design to delivered reality.",
     heroPillars: isAr
-      ? "صالات البيع · وحدات العرض · مساحات الإطلاق"
-      : "Sales Galleries · Show Units · Launch Spaces",
+      ? "صالات البيع، وحدات العرض، مساحات الإطلاق"
+      : "Sales Galleries, Show Units, Launch Spaces",
     heroSubtitle: isAr
       ? "نصمّم الديكور وننفّذه كمساحة جاهزة للاستخدام والافتتاح. تعاقد مع توريفا وحدها. المجموعة تُستدعى حين يحتاجها المشروع."
       : "We design the décor and deliver it as a space ready to use or open. Contract Turriva alone. The group joins only when the project needs it.",
     heroCapability: isAr
-      ? "تطوير فني · تصنيع · تركيب · تسليم"
-      : "Technical Development · Fabrication · Installation · Handover",
+      ? "تطوير فني، تصنيع، تركيب، تسليم"
+      : "Technical Development, Fabrication, Installation, Handover",
     ctaDemo: isAr ? "ناقش مشروعك" : "Discuss your project",
     ctaDemoEn: "Discuss your project",
     ctaExplore: isAr ? "استكشف ما نقدّمه" : "Explore what we deliver",

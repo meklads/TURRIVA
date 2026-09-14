@@ -39,7 +39,7 @@ export const en: Messages = {
    areaSqm: "Area (sqm)",
    areaSqmPlaceholder: "300",
    duration: "Expected duration",
-   durationPlaceholder: "e.g. 6–8 weeks",
+   durationPlaceholder: "e.g. 6-8 weeks",
    specifications: "Additional technical specs",
    specificationsPlaceholder:
     "e.g. porcelain flooring, Jotun paints, IKEA kitchens...",
@@ -70,7 +70,7 @@ export const en: Messages = {
   generate: "Generate proposal",
   generatingAnalyze: "Analyzing your project...",
   generatingWrite: "Writing your proposal...",
-  generatingWaitHint: "This usually takes 1–2 minutes. Please keep this tab open.",
+  generatingWaitHint: "This usually takes 1-2 minutes. Please keep this tab open.",
   errors: {
    projectRequired: "Project name and client name are required.",
    descriptionRequired: "Please describe the work briefly.",
@@ -205,9 +205,9 @@ export const en: Messages = {
   cta: "Start a proposal",
   ctaSecondary: "My proposals",
   feature1: "3 inputs only",
-  feature2: "Approved SBC · ZATCA clauses",
+  feature2: "Approved SBC, ZATCA clauses",
   feature3: "Arabic/EN + CR/VAT",
-  trustLine: "Start without an account · company profile · support & help included",
+  trustLine: "Start without an account, company profile, support & help included",
  },
  sales: {
   hero: {
@@ -221,9 +221,9 @@ export const en: Messages = {
    subtitleOutcomeAfter: ", then exports a PDF under your brand.",
    cta: "Start a proposal now",
    ctaSecondary: "View a sample",
-   microcopy: "No account · No card · Ready in under 10 minutes",
+   microcopy: "No account, No card, Ready in under 10 minutes",
    imageBadgeTitle: "Your partner in the field",
-   imageBadge: "Approved clauses · SBC · ZATCA",
+   imageBadge: "Approved clauses, SBC, ZATCA",
   },
   heroSteps: {
    title: "Three steps, your proposal ready",
@@ -508,7 +508,7 @@ export const en: Messages = {
     },
    ],
    packTitle: "Approved clause pack",
-   packMeta: "Interior fit-out pack · v1.0 · 9 approved clauses",
+   packMeta: "Interior fit-out pack, v1.0, 9 approved clauses",
    clauses: [
     {
      category: "SBC Building Code",
@@ -570,7 +570,7 @@ export const en: Messages = {
     "3 inputs. Smart review. PDF under your brand. Start now without an account, see the difference on your first proposal.",
    primary: "Create your first proposal",
    secondary: "View sample",
-   microcopy: "Free to start · No card · Support available",
+   microcopy: "Free to start, No card, Support available",
   },
  },
  site: {

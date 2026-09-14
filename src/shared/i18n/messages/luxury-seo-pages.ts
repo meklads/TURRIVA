@@ -236,7 +236,7 @@ const en: LuxurySeoMessages = {
   servicesPage: {
     title: "Capabilities",
     intro:
-      "Spatial execution capabilities built for delivery: technical development, fabrication, installation, and handover — with sales environments as the flagship specialty.",
+      "Spatial execution capabilities built for delivery: technical development, fabrication, installation, and handover, with sales environments as the flagship specialty.",
     items: [
       {
         slug: "spatial-design",
@@ -355,7 +355,7 @@ const en: LuxurySeoMessages = {
     companies: [
       {
         name: "Graphics House",
-        tagline: "CREATE · visual work",
+        tagline: "CREATE, visual work",
         description:
           "CGI, models, interactive sales tools, and visual direction for real estate and destination projects.",
         href: "https://3dgraphicshouse.com",
@@ -363,7 +363,7 @@ const en: LuxurySeoMessages = {
       },
       {
         name: "Bees Motion",
-        tagline: "GROW · launch and campaigns",
+        tagline: "GROW, launch and campaigns",
         description:
           "Strategy, campaigns, film, and creative production for healthcare and real estate brands.",
         href: "https://beesmotion.com",
@@ -399,7 +399,7 @@ const en: LuxurySeoMessages = {
     markets: "Markets",
   },
   professionalsPage: {
-    eyebrow: "Turriva · Technical resources",
+    eyebrow: "Turriva, Technical resources",
     title: "Technical resources",
     intro:
       "Practical specification notes and programme guides for architects, interior designers, developers, and contractors.",
@@ -556,7 +556,7 @@ const ar: LuxurySeoMessages = {
   servicesPage: {
     title: "القدرات",
     intro:
-      "قدرات تنفيذ مكاني مبنية للتسليم: تطوير فني وتصنيع وتركيب وتسليم — مع بيئات البيع كالتخصص الرئيسي.",
+      "قدرات تنفيذ مكاني مبنية للتسليم: تطوير فني وتصنيع وتركيب وتسليم, مع بيئات البيع كالتخصص الرئيسي.",
     items: [
       {
         slug: "spatial-design",
@@ -674,14 +674,14 @@ const ar: LuxurySeoMessages = {
     companies: [
       {
         name: "Graphics House",
-        tagline: "CREATE · العمل البصري",
+        tagline: "CREATE, العمل البصري",
         description: "تصور بصري وCGI ومجسمات وأدوات مبيعات تفاعلية للمشاريع العقارية والوجهات.",
         href: "https://3dgraphicshouse.com",
         cta: "استكشف Graphics House",
       },
       {
         name: "Bees Motion",
-        tagline: "GROW · الإطلاق والحملات",
+        tagline: "GROW, الإطلاق والحملات",
         description: "استراتيجية وحملات وأفلام وإنتاج إبداعي لعلامات الرعاية الصحية والعقار.",
         href: "https://beesmotion.com",
         cta: "استكشف Bees Motion",
@@ -715,7 +715,7 @@ const ar: LuxurySeoMessages = {
     markets: "الأسواق",
   },
   professionalsPage: {
-    eyebrow: "توريفا · موارد فنية",
+    eyebrow: "توريفا, موارد فنية",
     title: "موارد فنية",
     intro:
       "ملاحظات مواصفات وأدلة برامج عملية للمعماريين ومصممي الداخل والمطورين والمقاولين.",

@@ -70,7 +70,7 @@ export function LuxuryLaunchPage({ locale }: Props) {
             {copy.groupNote}{" "}
             {copy.links.map((link, i) => (
               <span key={link.href}>
-                {i > 0 ? " · " : null}
+                {i > 0 ? ", " : null}
                 <a href={withUtm(link.href, "launch_playbook")} target="_blank" rel="noopener noreferrer" className="font-semibold text-lux-gold hover:underline">
                   {link.label}
                 </a>

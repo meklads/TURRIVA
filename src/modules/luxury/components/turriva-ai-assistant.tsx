@@ -19,8 +19,8 @@ function replyFor(locale: Locale, input: string): Reply {
     return {
       openDemo: true,
       text: isAr
-        ? "حسناً — سأفتح نموذج مناقشة المشروع لنلتقط النطاق والجدول وبيانات التواصل. نرد خلال يوم عمل بخطوة تالية واضحة."
-        : "Understood — I’ll open the project discussion form so we can capture scope, timeline, and contact details. We reply within one business day with a clear next step.",
+        ? "حسناً, سأفتح نموذج مناقشة المشروع لنلتقط النطاق والجدول وبيانات التواصل. نرد خلال يوم عمل بخطوة تالية واضحة."
+        : "Understood, I’ll open the project discussion form so we can capture scope, timeline, and contact details. We reply within one business day with a clear next step.",
     };
   }
 
@@ -54,8 +54,8 @@ function replyFor(locale: Locale, input: string): Reply {
   if (/مجموعة|جرافيكس|graphics|bees|تسامي|group|cgi|فيلم/.test(q)) {
     return {
       text: isAr
-        ? "تعاقد مع توريفا للتنفيذ المكاني. جرافيكس هاوس للطبقة البصرية وBees Motion للإطلاق والحملات — تُستدعى فقط حين يحتاجها المشروع. توريفا هي جهة التسليم المادي."
-        : "Contract Turriva for spatial execution. Graphics House covers the visual layer and Bees Motion covers launch and campaigns — only when the project needs them. Turriva remains the physical delivery partner.",
+        ? "تعاقد مع توريفا للتنفيذ المكاني. جرافيكس هاوس للطبقة البصرية وBees Motion للإطلاق والحملات, تُستدعى فقط حين يحتاجها المشروع. توريفا هي جهة التسليم المادي."
+        : "Contract Turriva for spatial execution. Graphics House covers the visual layer and Bees Motion covers launch and campaigns, only when the project needs them. Turriva remains the physical delivery partner.",
     };
   }
 
@@ -94,8 +94,8 @@ export function TurrivaAiAssistant({ locale }: Props) {
     {
       role: "bot",
       text: isAr
-        ? "مرحباً — أنا مساعد توريفا. اسأل عن التنفيذ المكاني، بيئات البيع، الجداول، أو اطلب مناقشة مشروعك."
-        : "Hello — I’m the Turriva assistant. Ask about spatial execution, sales environments, timelines, or request a project discussion.",
+        ? "مرحباً, أنا مساعد توريفا. اسأل عن التنفيذ المكاني، بيئات البيع، الجداول، أو اطلب مناقشة مشروعك."
+        : "Hello, I’m the Turriva assistant. Ask about spatial execution, sales environments, timelines, or request a project discussion.",
     },
   ]);
 
@@ -146,7 +146,7 @@ export function TurrivaAiAssistant({ locale }: Props) {
             <div>
               <p className="lux-ai-assistant__title">{isAr ? "مساعد توريفا" : "Turriva assistant"}</p>
               <p className="lux-ai-assistant__status">
-                {isAr ? "تنفيذ مكاني · يرد فوراً" : "Spatial execution · replies instantly"}
+                {isAr ? "تنفيذ مكاني, يرد فوراً" : "Spatial execution, replies instantly"}
               </p>
             </div>
             <button

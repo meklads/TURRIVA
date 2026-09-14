@@ -1,4 +1,4 @@
-/** Style direction imagery — cropped local assets (no third-party watermarks) */
+/** Style direction imagery, cropped local assets (no third-party watermarks) */
 const STYLE_BASE = "/brand/turriva/styles";
 
 export const LUXURY_STYLE_IMAGES: Record<string, string> = {

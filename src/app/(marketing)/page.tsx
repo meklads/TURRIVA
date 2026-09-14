@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     ...base,
-    title: `${t.brand.name} · ${t.brand.tagline}`,
+    title: `${t.brand.name} ${t.brand.tagline}`,
     description: t.hero.subtitle,
     openGraph: {
       ...base.openGraph,

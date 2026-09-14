@@ -87,10 +87,10 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
     eyebrow: ar ? "تصميم وتنفيذ الديكور" : "Décor design & build",
     title: ar ? "تصميم وتنفيذ" : "Design & build",
     subtitle: ar
-      ? "سبعة أبواب واضحة — اختر حسب مهمة المشروع ونقطة البداية"
-      : "Seven clear doors — choose by project job and starting point",
+      ? "سبعة أبواب واضحة. اختر حسب مهمة المشروع ونقطة البداية"
+      : "Seven clear doors. Choose by project job and starting point",
     explore: ar ? "استكشف" : "Explore",
-    viewAll: ar ? "عرض كل المسارات ←" : "View all paths →",
+    viewAll: ar ? "عرض كل المسارات" : "View all paths",
     viewAllHref: lp("/services"),
     groups: [
       {
@@ -134,7 +134,7 @@ export function getLuxuryProductMenu(locale: Locale): LuxuryProductMenu {
             number: "04",
             nameAr: "تنفيذ مخطط معتمد",
             nameEn: "Approved-drawing execution",
-            description: ar ? "تصميمكم جاهز — ننفّذه كما هو." : "Your design is ready — we build it as approved.",
+            description: ar ? "تصميمكم جاهز. ننفّذه كما هو." : "Your design is ready. We build it as approved.",
             image: "/brand/turriva/projects/project-joinery-b2b.webp",
           },
           {

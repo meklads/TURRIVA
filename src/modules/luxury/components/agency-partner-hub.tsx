@@ -56,7 +56,7 @@ export function AgencyPartnerHub({ locale }: Props) {
                   company: isAr ? "وكالة شريكة" : "Partner agency",
                   note: isAr
                     ? "استفسار عمولة وتآزر شركاء ProjectLaunch™"
-                    : "Partner commission & synergy inquiry — ProjectLaunch™",
+                    : "Partner commission & synergy inquiry, ProjectLaunch™",
                 })
               }
             >

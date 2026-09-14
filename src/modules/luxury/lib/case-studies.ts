@@ -61,8 +61,8 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     image: "/brand/turriva/projects/mwl/hero.jpeg",
     categoryEn: "Temporary presentation fit-out",
     categoryAr: "تجهيز عرض مؤقت",
-    titleEn: "Humanity Exhibition · Muslim World League",
-    titleAr: "معرض الإنسانية · رابطة العالم الإسلامي",
+    titleEn: "Humanity Exhibition, Muslim World League",
+    titleAr: "معرض الإنسانية, رابطة العالم الإسلامي",
     locationEn: "Jeddah Hilton, Saudi Arabia",
     locationAr: "فندق Hilton جدة، السعودية",
     summaryEn:
@@ -130,8 +130,8 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     image: "/brand/turriva/projects/anan-eskan-gallery.jpg",
     categoryEn: "Permanent sales gallery",
     categoryAr: "صالة بيع دائمة",
-    titleEn: "Anan Eskan Sales Gallery · Riyadh",
-    titleAr: "صالة عرض عنان إسكان · الرياض",
+    titleEn: "Anan Eskan Sales Gallery, Riyadh",
+    titleAr: "صالة عرض عنان إسكان, الرياض",
     locationEn: "Riyadh, Saudi Arabia",
     locationAr: "الرياض، السعودية",
     summaryEn:
@@ -139,9 +139,9 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     summaryAr:
       "تجهيز ديكور دائم لصالة بيع صُمم ونُفّذ لعروض المشترين اليومية: بيئة الصالة، ومجسمات العرض، والتجهيز الميداني حتى التسليم الجاهز للافتتاح.",
     bodyEn:
-      "A permanent sales environment for Anan Eskan in Riyadh. Unlike a temporary exhibition hall, this brief required durable gallery décor and a lasting presentation path buyers walk every day. The owned scope was décor design and build, fabrication of display models, and on-site fit-out to opening readiness—one accountable path from approved intent to a space that can host presentations without a short-run teardown. Documented under Graphics House; field delivery by the same team now under Turriva.",
+      "A permanent sales environment for Anan Eskan in Riyadh. Unlike a temporary exhibition hall, this brief required durable gallery décor and a lasting presentation path buyers walk every day. The owned scope was décor design and build, fabrication of display models, and on-site fit-out to opening readiness, one accountable path from approved intent to a space that can host presentations without a short-run teardown. Documented under Graphics House; field delivery by the same team now under Turriva.",
     bodyAr:
-      "بيئة بيع دائمة لعنان إسكان في الرياض. بخلاف قاعة العرض المؤقتة، تطلّب المشروع ديكور صالة ثابتاً ومسار عرض دائماً يمشي فيه المشترون يومياً. النطاق الذي ملكناه: تصميم وتنفيذ الديكور، وتصنيع مجسمات العرض، والتجهيز الميداني حتى جاهزية الافتتاح—مسار مسؤولية واحد من النية المعتمدة إلى مساحة تستضيف العروض دون تفكيك قصير الأمد. موثّق تحت جرافيكس هاوس؛ والتنفيذ الميداني لنفس الفريق تحت توريفا اليوم.",
+      "بيئة بيع دائمة لعنان إسكان في الرياض. بخلاف قاعة العرض المؤقتة، تطلّب المشروع ديكور صالة ثابتاً ومسار عرض دائماً يمشي فيه المشترون يومياً. النطاق الذي ملكناه: تصميم وتنفيذ الديكور، وتصنيع مجسمات العرض، والتجهيز الميداني حتى جاهزية الافتتاح, مسار مسؤولية واحد من النية المعتمدة إلى مساحة تستضيف العروض دون تفكيك قصير الأمد. موثّق تحت جرافيكس هاوس؛ والتنفيذ الميداني لنفس الفريق تحت توريفا اليوم.",
     heroTaglineEn: "Permanent gallery décor. Built for daily buyer presentations.",
     heroTaglineAr: "ديكور صالة دائمة. مبني لعروض المشترين اليومية.",
     gallery: [
@@ -193,9 +193,9 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     },
     videoUrl: "https://youtu.be/jP8vLnnRhb0",
     challengeEn:
-      "A developer sales gallery needed a permanent décor environment and display models ready for ongoing buyer presentations—durable enough for daily use, not a short-run exhibition install.",
+      "A developer sales gallery needed a permanent décor environment and display models ready for ongoing buyer presentations, durable enough for daily use, not a short-run exhibition install.",
     challengeAr:
-      "صالة بيع لمطور احتاجت بيئة ديكور دائمة ومجسمات عرض جاهزة لعروض المشترين المستمرة—ثابتة بما يكفي للاستخدام اليومي، لا تجهيز معرض قصير الأمد.",
+      "صالة بيع لمطور احتاجت بيئة ديكور دائمة ومجسمات عرض جاهزة لعروض المشترين المستمرة, ثابتة بما يكفي للاستخدام اليومي، لا تجهيز معرض قصير الأمد.",
     solutionEn:
       "Decor design and build for a permanent sales gallery, with display-model fabrication and on-site fit-out through opening-ready handover under one owned scope.",
     solutionAr:
@@ -213,8 +213,8 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     image: "/brand/turriva/projects/al-rajhi/maquette.jpeg",
     categoryEn: "Presentation maquette",
     categoryAr: "مجسم عرض",
-    titleEn: "Al Rajhi · Architectural Maquette",
-    titleAr: "الراجحي · مجسم معماري",
+    titleEn: "Al Rajhi, Architectural Maquette",
+    titleAr: "الراجحي, مجسم معماري",
     locationEn: "Saudi Arabia",
     locationAr: "المملكة العربية السعودية",
     summaryEn:
@@ -264,8 +264,8 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     image: "/brand/turriva/projects/rafal-pavilions.jpg",
     categoryEn: "Launch pavilions",
     categoryAr: "أجنحة إطلاق",
-    titleEn: "Rafal Pavilions · Diriyah",
-    titleAr: "أجنحة رفال · الدرعية",
+    titleEn: "Rafal Pavilions, Diriyah",
+    titleAr: "أجنحة رفال, الدرعية",
     locationEn: "Diriyah, Riyadh",
     locationAr: "الدرعية، الرياض",
     summaryEn:
@@ -273,9 +273,9 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     summaryAr:
       "أجنحة معرض وبيئة مبيعات، من التصميم المعتمد إلى التصنيع والتركيب والتسليم الجاهز للافتتاح.",
     bodyEn:
-      "Physical sales pavilions in Diriyah: modular joinery, exhibition structures, and installation aligned with Graphics House launch assets. Graphics House created the visual work; the field layer was spatial delivery — design to fabrication to install to handover.",
+      "Physical sales pavilions in Diriyah: modular joinery, exhibition structures, and installation aligned with Graphics House launch assets. Graphics House created the visual work; the field layer was spatial delivery, design to fabrication to install to handover.",
     bodyAr:
-      "أجنحة مبيعات في الدرعية: نجارة معيارية وهياكل معرض وتركيب متسق مع أصول الإطلاق من جرافيكس هاوس. جرافيكس هاوس صنعت العمل البصري، والطبقة الميدانية تسليم مكاني — من التصميم إلى التصنيع والتركيب والتسليم.",
+      "أجنحة مبيعات في الدرعية: نجارة معيارية وهياكل معرض وتركيب متسق مع أصول الإطلاق من جرافيكس هاوس. جرافيكس هاوس صنعت العمل البصري، والطبقة الميدانية تسليم مكاني, من التصميم إلى التصنيع والتركيب والتسليم.",
     heroTaglineEn: "Launch pavilions built to open with the campaign, not after it.",
     heroTaglineAr: "أجنحة إطلاق تُبنى لتفتتح مع الحملة، لا بعدها.",
     gallery: ["/brand/turriva/projects/rafal-pavilions.jpg"],
@@ -294,9 +294,9 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     },
     videoUrl: "https://3dgraphicshouse.com/insights/projects/rafal-pavilions-en.html",
     challengeEn:
-      "A Diriyah launch needed physical sales pavilions aligned with cinematic CGI — ready for opening, not just renders.",
+      "A Diriyah launch needed physical sales pavilions aligned with cinematic CGI, ready for opening, not just renders.",
     challengeAr:
-      "إطلاق في الدرعية احتاج أجنحة مبيعات مادية متسقة مع CGI سينمائي — جاهزة للافتتاح لا مجرد رندرات.",
+      "إطلاق في الدرعية احتاج أجنحة مبيعات مادية متسقة مع CGI سينمائي, جاهزة للافتتاح لا مجرد رندرات.",
     solutionEn:
       "Modular joinery, exhibition structures, and field installation from approved drawings through fabrication and handover.",
     solutionAr:
@@ -310,10 +310,10 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     listed: false,
     slug: "villa-kitchen-jeddah",
     image: LUXURY_IMAGES.project2,
-    categoryEn: "Residential · Kitchen",
-    categoryAr: "سكني · مطبخ",
-    titleEn: "Private Villa Kitchen · North Jeddah",
-    titleAr: "مطبخ فيلا خاصة · شمال جدة",
+    categoryEn: "Residential, Kitchen",
+    categoryAr: "سكني, مطبخ",
+    titleEn: "Private Villa Kitchen, North Jeddah",
+    titleAr: "مطبخ فيلا خاصة, شمال جدة",
     locationEn: "Jeddah, Saudi Arabia",
     locationAr: "جدة، السعودية",
     summaryEn:
@@ -321,9 +321,9 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     summaryAr:
       "نطاق مطبخ سكني: عينات وتصنيع وتركيب لفيلا خاصة في شمال جدة.",
     bodyEn:
-      "A private villa kitchen in north Jeddah. Samples are agreed, then fabrication and installation follow — a clear residential delivery path from board to site.",
+      "A private villa kitchen in north Jeddah. Samples are agreed, then fabrication and installation follow, a clear residential delivery path from board to site.",
     bodyAr:
-      "مطبخ فيلا خاصة في شمال جدة. تُعتمد العينات ثم يأتي التصنيع والتركيب — مسار تسليم سكني واضح من اللوحة إلى الموقع.",
+      "مطبخ فيلا خاصة في شمال جدة. تُعتمد العينات ثم يأتي التصنيع والتركيب, مسار تسليم سكني واضح من اللوحة إلى الموقع.",
     servicesEn: ["Modular kitchens", "Sampling", "Installation", "Warranty"],
     servicesAr: ["مطابخ معيارية", "عينات", "تركيب", "ضمان"],
     metrics: [
@@ -344,10 +344,10 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     listed: false,
     slug: "hospitality-fitout-makkah",
     image: LUXURY_IMAGES.project3,
-    categoryEn: "Hospitality · Fit-out",
-    categoryAr: "ضيافة · تشطيب",
-    titleEn: "Boutique Hotel Programme · Makkah",
-    titleAr: "برنامج فندق بوتيك · مكة",
+    categoryEn: "Hospitality, Fit-out",
+    categoryAr: "ضيافة, تشطيب",
+    titleEn: "Boutique Hotel Programme, Makkah",
+    titleAr: "برنامج فندق بوتيك, مكة",
     locationEn: "Makkah, Saudi Arabia",
     locationAr: "مكة المكرمة، السعودية",
     summaryEn:
@@ -372,8 +372,8 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     listed: false,
     slug: "developer-joinery-batch",
     image: LUXURY_IMAGES.project4,
-    categoryEn: "B2B · Joinery",
-    categoryAr: "B2B · نجارة",
+    categoryEn: "B2B, Joinery",
+    categoryAr: "B2B, نجارة",
     titleEn: "Developer Tower Joinery Batch",
     titleAr: "دفعة نجارة برج مطور",
     locationEn: "Western Region, Saudi Arabia",

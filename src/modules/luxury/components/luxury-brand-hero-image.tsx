@@ -1,7 +1,7 @@
 import { LUXURY_IMAGES } from "@/shared/i18n/messages/luxury";
 import { LuxuryContainImage } from "./luxury-contain-image";
 
-/** hero-branded.jpg — full Turriva hero with logo + interior (1024×682) */
+/** hero-branded.jpg, full Turriva hero with logo + interior (1024×682) */
 export const LUXURY_BRANDED_HERO_ASPECT = 1024 / 682;
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
   fillHeight?: boolean;
 };
 
-/** Branded hero beside lead forms — always shown full frame, logo included. */
+/** Branded hero beside lead forms, always shown full frame, logo included. */
 export function LuxuryBrandHeroImage(props: Props) {
   return (
     <LuxuryContainImage

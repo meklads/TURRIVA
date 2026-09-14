@@ -176,7 +176,7 @@ export function LuxuryProjectFunnelForm({ locale, source, initialProjectType, wh
         ))}
       </div>
       <p className="lux-funnel__step-label">
-        {copy.stepOf(step + 1, totalSteps)} · {stepLabels[step]}
+        {copy.stepOf(step + 1, totalSteps)}, {stepLabels[step]}
       </p>
 
       {step === 0 && (
@@ -279,7 +279,7 @@ export function LuxuryProjectFunnelForm({ locale, source, initialProjectType, wh
             <span className="text-xs font-semibold uppercase tracking-wider text-lux-ink-muted">{copy.fileLabel}</span>
             <input
               type="file"
-              accept=".pdf,.png,.jpg,.jpeg,.webp,.dwg,.dxf"
+              accept=".pdf.png.jpg.jpeg.webp.dwg.dxf"
               className="mt-2 block w-full text-sm"
               onChange={(e) => setFile(e.target.files?.[0] ?? null)}
             />
@@ -323,7 +323,7 @@ export function LuxuryProjectFunnelForm({ locale, source, initialProjectType, wh
       <p className="lux-funnel__alt">
         {locale === "ar" ? "أو تواصل مباشرة:" : "Or contact directly:"}{" "}
         <a href={`mailto:${TURRIVA_PUBLIC_EMAIL}`}>{TURRIVA_PUBLIC_EMAIL}</a>
-        {" · "}
+        {", "}
         <a
           href={buildWhatsAppHref(
             whatsappMessage ??

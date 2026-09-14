@@ -109,7 +109,7 @@ export function middleware(request: NextRequest) {
   }
 
   return new NextResponse(
-    "Turriva · Pre-launch access only.\n\nتوريفا · الوصول للمعاينة قبل الإطلاق فقط.",
+    "Turriva Pre-launch access only.\n\nتوريفا الوصول للمعاينة قبل الإطلاق فقط.",
     {
       status: 401,
       headers: {

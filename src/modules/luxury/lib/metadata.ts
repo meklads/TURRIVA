@@ -12,7 +12,7 @@ type PageMetaOptions = {
 export function luxurySiteMetadata(locale: Locale): Metadata {
   const t = getLuxuryMessages(locale);
 
-  const title = `${t.brand.name} · ${t.brand.tagline}`;
+  const title = `${t.brand.name}, ${t.brand.tagline}`;
 
   const description =
     locale === "ar"
@@ -85,7 +85,7 @@ export function luxuryPageMetadata(
 ): Metadata {
   const base = luxurySiteMetadata(locale);
   const brand = locale === "ar" ? "توريفا" : "Turriva";
-  const title = `${pageTitle} · ${brand}`;
+  const title = `${pageTitle}, ${brand}`;
   const path = options.path ?? "/";
   const canonical = `${TURRIVA_PUBLIC_URL}${localizePath(path, locale)}`;
   const ogImage = options.ogImage ?? "/brand/turriva/hero-interior.webp";
