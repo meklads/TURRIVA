@@ -99,7 +99,7 @@ export function LuxuryProductTiersSection({ locale }: Props) {
                       <li key={p}>{p}</li>
                     ))}
                   </ul>
-                  <Link href={localizePath(tier.href, locale)} className="lux-product-card__cta mt-4 inline-flex">
+                  <Link href={localizePath(tier.href, locale)} className="lux-product-card__cta mt-5">
                     {isAr ? "استكشف" : "Explore"}
                   </Link>
                 </div>

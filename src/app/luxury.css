@@ -153,7 +153,7 @@
 }
 
 .lux-btn-primary {
-  @apply inline-flex min-w-[11rem] items-center justify-center rounded-sm bg-lux-ink px-7 py-3.5 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:bg-lux-charcoal;
+  @apply inline-flex min-w-[11rem] items-center justify-center rounded-full bg-lux-ink px-8 py-3.5 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:bg-lux-charcoal;
   font-family: var(--font-inter), system-ui, sans-serif;
   box-shadow:
     0 1px 0 color-mix(in srgb, var(--lux-gold) 35%, transparent),
@@ -172,7 +172,7 @@
 }
 
 .lux-btn-outline {
-  @apply inline-flex items-center justify-center rounded-sm border border-lux-ink bg-transparent px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.16em] text-lux-ink transition-all duration-300 hover:bg-lux-ink hover:text-white;
+  @apply inline-flex items-center justify-center rounded-full border border-lux-ink bg-transparent px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.16em] text-lux-ink transition-all duration-300 hover:bg-lux-ink hover:text-white;
 }
 
 [dir="rtl"] .lux-btn-outline {
@@ -180,7 +180,7 @@
 }
 
 .lux-btn-outline-gold {
-  @apply inline-flex min-w-[11rem] items-center justify-center rounded-sm border border-lux-gold bg-transparent px-7 py-3.5 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-lux-gold transition-all duration-300 hover:border-lux-ink hover:bg-lux-ink hover:text-white;
+  @apply inline-flex min-w-[11rem] items-center justify-center rounded-full border border-lux-gold bg-transparent px-8 py-3.5 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-lux-gold transition-all duration-300 hover:border-lux-ink hover:bg-lux-ink hover:text-white;
   font-family: var(--font-inter), system-ui, sans-serif;
 }
 
@@ -190,7 +190,7 @@
 }
 
 .lux-btn-workspace {
-  @apply inline-flex items-center gap-2 rounded-[3px] border border-lux-gold bg-transparent px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-lux-gold transition-all duration-300 hover:bg-lux-gold/5 sm:px-5 sm:py-2.5 sm:text-[11px] sm:tracking-[0.14em];
+  @apply inline-flex items-center gap-2 rounded-full border border-lux-gold bg-transparent px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-lux-gold transition-all duration-300 hover:bg-lux-gold/5 sm:px-5 sm:py-2.5 sm:text-[11px] sm:tracking-[0.14em];
   font-family: var(--font-latin), system-ui, sans-serif;
 }
 
@@ -4425,7 +4425,8 @@ html {
   min-width: 10.5rem;
   padding: 0.8rem 2rem;
   border: 1px solid var(--lux-gold);
-  background: transparent;
+  border-radius: 9999px;
+  background: #ffffff;
   font-family: var(--font-inter), system-ui, sans-serif;
   font-size: 0.6875rem;
   font-weight: 600;
@@ -4433,18 +4434,21 @@ html {
   text-transform: uppercase;
   text-decoration: none;
   color: var(--lux-gold);
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--lux-ink) 6%, transparent);
   transition:
     background 0.25s ease,
     color 0.25s ease,
     border-color 0.25s ease,
-    box-shadow 0.25s ease;
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
 }
 
 .lux-inspiration-ghost-btn:hover {
   background: var(--lux-gold);
   border-color: var(--lux-gold);
   color: #ffffff;
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--lux-gold) 28%, transparent);
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--lux-gold) 28%, transparent);
+  transform: translateY(-1px);
 }
 
 [dir="rtl"] .lux-inspiration-ghost-btn {
@@ -5809,11 +5813,47 @@ html {
 }
 
 .lux-product-card__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
   margin-top: auto;
-  padding-top: 1rem;
+  padding: 0.7rem 1.45rem;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in srgb, var(--lux-gold) 38%, var(--lux-sand));
+  background: #ffffff;
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--lux-gold) 18%, transparent),
+    0 8px 22px color-mix(in srgb, var(--lux-ink) 7%, transparent);
+  font-family: var(--font-inter), system-ui, sans-serif;
   font-size: 0.8125rem;
   font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
   color: var(--lux-gold);
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.lux-product-card__cta:hover,
+.lux-product-card:hover .lux-product-card__cta,
+.group:hover .lux-product-card__cta {
+  background: color-mix(in srgb, var(--lux-gold-muted) 55%, white);
+  border-color: var(--lux-gold);
+  color: var(--lux-ink);
+  box-shadow: 0 10px 26px color-mix(in srgb, var(--lux-gold) 16%, transparent);
+  transform: translateY(-1px);
+}
+
+[dir="rtl"] .lux-product-card__cta {
+  font-family: var(--font-tajawal), var(--font-marketing-ar), var(--font-ar), sans-serif;
+  letter-spacing: 0;
+  font-size: 0.875rem;
 }
 
 .lux-home-capabilities__grid {
@@ -6374,15 +6414,32 @@ html {
 }
 
 .lux-door-card__link {
-  font-size: 0.875rem;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 0.65rem 1.35rem;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in srgb, var(--lux-gold) 38%, var(--lux-sand));
+  background: #ffffff;
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--lux-ink) 6%, transparent);
+  font-size: 0.8125rem;
+  font-weight: 700;
   color: var(--lux-gold);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .lux-door-card__link:hover {
   color: var(--lux-ink);
+  border-color: var(--lux-gold);
+  background: color-mix(in srgb, var(--lux-gold-muted) 55%, white);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--lux-gold) 14%, transparent);
 }
 
 .lux-method__list {
@@ -6761,10 +6818,17 @@ html {
 }
 
 .lux-product-related__cta {
-  display: inline-block;
-  margin-top: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.95rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in srgb, var(--lux-gold) 38%, var(--lux-sand));
+  background: #ffffff;
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--lux-ink) 6%, transparent);
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--lux-gold);
 }
 
@@ -8921,7 +8985,7 @@ html[lang="en"] .lux-proof__title,
   flex-direction: column;
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--lux-gold) 18%, var(--lux-sand));
-  border-radius: 0.15rem;
+  border-radius: 1.15rem;
   background: white;
   box-shadow: 0 14px 36px color-mix(in srgb, var(--lux-ink) 5%, transparent);
   transition:
@@ -9598,8 +9662,8 @@ html[lang="en"] .lux-proof__title,
   width: calc(100% - 1.5rem);
   margin: 0 0.75rem 0.85rem;
   border: 1px solid color-mix(in srgb, var(--lux-gold) 55%, transparent);
-  border-radius: 0.15rem;
-  padding: 0.65rem 0.85rem;
+  border-radius: 9999px;
+  padding: 0.7rem 0.95rem;
   background: transparent;
   color: var(--lux-gold);
   font-size: 0.8125rem;
