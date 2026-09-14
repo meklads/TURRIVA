@@ -1,7 +1,7 @@
 export type Locale = "ar" | "en";
 
 export const LOCALE_COOKIE = "ruwaq_locale";
-export const defaultLocale: Locale = "ar";
+export const defaultLocale: Locale = "en";
 
 const ARABIC_RE =
   /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]/;

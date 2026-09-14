@@ -49,7 +49,7 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
       languages: {
         ar: `${TURRIVA_PUBLIC_URL}/ar`,
         en: `${TURRIVA_PUBLIC_URL}/en`,
-        "x-default": `${TURRIVA_PUBLIC_URL}/ar`,
+        "x-default": `${TURRIVA_PUBLIC_URL}/en`,
       },
     },
     openGraph: {
@@ -99,7 +99,7 @@ export function luxuryPageMetadata(
       languages: {
         ar: `${TURRIVA_PUBLIC_URL}${localizePath(path, "ar")}`,
         en: `${TURRIVA_PUBLIC_URL}${localizePath(path, "en")}`,
-        "x-default": `${TURRIVA_PUBLIC_URL}${localizePath(path, "ar")}`,
+        "x-default": `${TURRIVA_PUBLIC_URL}${localizePath(path, "en")}`,
       },
     },
     openGraph: {
