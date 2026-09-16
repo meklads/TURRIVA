@@ -7870,31 +7870,6 @@ html[lang="en"] .lux-rx-method__title {
 }
 
 
-/* Tasami Group structure map — homepage */
-.lux-tasami-map__figure {
-  margin: clamp(1.75rem, 3.5vw, 2.5rem) auto 0;
-  max-width: 58rem;
-}
-
-.lux-tasami-map__frame {
-  overflow: hidden;
-  border-radius: 1.15rem;
-  border: 1px solid color-mix(in srgb, var(--lux-gold) 22%, var(--lux-sand));
-  background: #ffffff;
-  box-shadow: 0 18px 48px color-mix(in srgb, var(--lux-ink) 7%, transparent);
-}
-
-.lux-tasami-map__img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.lux-tasami-map__caption {
-  display: flex;
-  justify-content: center;
-  margin-top: 1.25rem;
-}
 
 .lux-proof {
   position: relative;
