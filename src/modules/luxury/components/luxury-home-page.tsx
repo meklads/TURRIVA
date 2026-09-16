@@ -9,6 +9,7 @@ import {
   LuxuryExecutionCapabilitiesSection,
 } from "./luxury-reposition-sections";
 import { LuxuryGroupProofSection } from "./luxury-group-proof-section";
+import { LuxuryTasamiGroupMap } from "./luxury-tasami-group-map";
 import { LuxuryConversionProvider } from "./luxury-conversion-provider";
 import { LuxuryLogoMarquee } from "./luxury-logo-marquee";
 import { LuxuryProductTiersSection } from "./luxury-product-tiers";
@@ -30,6 +31,7 @@ export function LuxuryHomePage({ locale }: Props) {
       <div className="lux-home">
         <LuxuryHomeHero locale={locale} />
         <LuxuryLogoMarquee locale={locale} />
+        <LuxuryTasamiGroupMap locale={locale} />
         <LuxuryGroupProofSection locale={locale} showLogos={false} showTestimonial compact />
         <LuxuryProductTiersSection locale={locale} />
         <LuxuryExecutionCapabilitiesSection locale={locale} />
