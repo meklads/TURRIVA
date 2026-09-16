@@ -38,10 +38,10 @@ export function LuxuryTasamiGroupMap({ locale }: Props) {
         <figure className="lux-tasami-map__figure">
           <div className="lux-tasami-map__frame">
             <Image
-              src="/brand/tasami/group-structure.jpg"
+              src="/brand/tasami/group-structure.png"
               alt={copy.alt}
-              width={1024}
-              height={682}
+              width={1536}
+              height={1024}
               className="lux-tasami-map__img"
               sizes="(max-width: 1024px) 100vw, 84rem"
               priority
