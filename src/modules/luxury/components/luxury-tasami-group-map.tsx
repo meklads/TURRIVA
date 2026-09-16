@@ -25,7 +25,7 @@ export function LuxuryTasamiGroupMap({ locale }: Props) {
   const copy = COPY[locale];
 
   return (
-    <section className="lux-section lux-section--cream lux-tasami-map" aria-labelledby="lux-tasami-map-title">
+    <section id="tasami-group" className="lux-section lux-section--cream lux-tasami-map scroll-mt-28" aria-labelledby="lux-tasami-map-title">
       <div className="lux-container">
         <div className="lux-section-intro lux-section-intro--center">
           <p className="lux-eyebrow">{copy.eyebrow}</p>
@@ -44,7 +44,8 @@ export function LuxuryTasamiGroupMap({ locale }: Props) {
               height={682}
               className="lux-tasami-map__img"
               sizes="(max-width: 1024px) 100vw, 84rem"
-              priority={false}
+              priority
+              unoptimized
             />
           </div>
           <figcaption className="lux-tasami-map__caption">
