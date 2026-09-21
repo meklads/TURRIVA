@@ -77,6 +77,11 @@ export function localizePath(path: string, locale: Locale): string {
   const { pathname: bare } = stripLocalePrefix(base);
   if (!shouldLocalizePath(bare)) return path;
 
+  // Default locale (English) uses clean URLs without /en prefix.
+  if (locale === defaultLocale) {
+    return `${bare}${suffix}`;
+  }
+
   const localized = bare === "/" ? `/${locale}` : `/${locale}${bare}`;
   return `${localized}${suffix}`;
 }

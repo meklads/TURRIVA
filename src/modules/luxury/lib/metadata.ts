@@ -48,8 +48,8 @@ export function luxurySiteMetadata(locale: Locale): Metadata {
       canonical,
       languages: {
         ar: `${TURRIVA_PUBLIC_URL}/ar`,
-        en: `${TURRIVA_PUBLIC_URL}/en`,
-        "x-default": `${TURRIVA_PUBLIC_URL}/en`,
+        en: `${TURRIVA_PUBLIC_URL}/`,
+        "x-default": `${TURRIVA_PUBLIC_URL}/`,
       },
     },
     openGraph: {

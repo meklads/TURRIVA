@@ -58,11 +58,30 @@ function handleLocaleRouting(request: NextRequest): NextResponse | null {
   const { pathname: barePath } = stripLocalePrefix(pathname);
 
   if (pathLocale) {
+    // Keep /en working, but send English visitors to clean URLs.
+    if (pathLocale === defaultLocale && barePath === "/") {
+      const clean = request.nextUrl.clone();
+      clean.pathname = "/";
+      const response = NextResponse.redirect(clean, 308);
+      return withLocaleCookie(response, pathLocale);
+    }
+    if (pathLocale === defaultLocale) {
+      const clean = request.nextUrl.clone();
+      clean.pathname = barePath;
+      const response = NextResponse.redirect(clean, 308);
+      return withLocaleCookie(response, pathLocale);
+    }
     return rewriteWithLocale(request, barePath, pathLocale);
   }
 
   if (shouldLocalizePath(barePath)) {
     const locale = resolveLocaleFromRequest(pathname, cookieLocale);
+
+    // English (default): serve at the bare domain/path — no forced /en.
+    if (locale === defaultLocale) {
+      return rewriteWithLocale(request, barePath, locale);
+    }
+
     const redirectUrl = request.nextUrl.clone();
     redirectUrl.pathname = barePath === "/" ? `/${locale}` : `/${locale}${barePath}`;
     const response = NextResponse.redirect(redirectUrl, 308);
