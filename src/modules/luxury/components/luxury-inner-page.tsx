@@ -45,8 +45,8 @@ export function LuxuryInnerPage({
             <p className="lux-body text-lux-ink-soft">
               {page === "interiorDesign"
                 ? locale === "ar"
-                  ? "توريفا تنفّذ التشطيب الداخلي والنجارة والتركيب، من الفلل إلى الضيافة والتجزئة. للتصور قبل التنفيذ، يمكن لجرافيكس هاوس أن تقدّم التصوير والمجسم."
-                  : "Turriva delivers interior fit-out, modular joinery, and installation, from villas to hospitality and retail. For visualization before execution, Graphics House can provide the imagery and the model."
+                  ? (<>توريفا تنفّذ التشطيب الداخلي والنجارة والتركيب، من الفلل إلى الضيافة والتجزئة. للتصور قبل التنفيذ، يمكن لـ<a href="https://3dgraphicshouse.com/services/rendering.html" className="lux-case-ref__link" target="_blank" rel="noopener noreferrer">جرافيكس هاوس</a> أن تقدّم <a href="https://3dgraphicshouse.com/services/maquettes.html" className="lux-case-ref__link" target="_blank" rel="noopener noreferrer">التصوير والمجسم</a>.</>)
+                  : (<>Turriva delivers interior fit-out, modular joinery, and installation, from villas to hospitality and retail. For visualization before execution, <a href="https://3dgraphicshouse.com/services/rendering-en.html" className="lux-case-ref__link" target="_blank" rel="noopener noreferrer">Graphics House</a> can provide the imagery and <a href="https://3dgraphicshouse.com/services/maquettes-en.html" className="lux-case-ref__link" target="_blank" rel="noopener noreferrer">the model</a>.</>)
                 : locale === "ar"
                   ? "توريفا تدير التسليم الميداني: تنسيق التصنيع والتخصصات والتركيب وضبط الجودة والتسليم الموثق. للحملات والإطلاق، Bees Motion تقدّم التسويق والإنتاج الإبداعي."
                   : "Turriva manages field delivery: fabrication coordination, trades, installation, QC, and documented handover. For launch campaigns, Bees Motion provides marketing and creative production."}
